@@ -1,0 +1,21 @@
+.footer{
+    background-color: var(--libling-main-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 1rem;
+}
+
+.footer ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+.footer>*{
+    width: 250px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}

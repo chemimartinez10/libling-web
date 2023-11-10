@@ -1,0 +1,62 @@
+.button {
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    border-radius: 4rem;
+    border: solid 2px transparent;
+    background-color: var(--libling-main-color);
+    color: #fff;
+    transition: color 500ms ease, background-color 500ms ease, border-color 500ms ease;
+}
+
+.button:hover {
+    border: solid 2px #000;
+    background-color: #000;
+    color: #fff;
+}
+
+.buttonAlternative {
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    border-radius: 4rem;
+    border: solid 2px var(--libling-main-color);
+    background-color: transparent;
+    color: var(--libling-main-color);
+    transition: color 500ms ease, background-color 500ms ease, border-color 500ms ease;
+}
+
+.buttonAlternative:hover {
+
+    border: solid 2px #000;
+    background-color: #000;
+    color: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+    .buttonAlternative {
+        padding: .5rem 1rem;
+        font-size: 1rem;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: .5rem;
+        border-radius: 4rem;
+        border: solid 2px #fff;
+        background-color: #fff;
+        color: var(--libling-main-color);
+        transition: color 500ms ease, background-color 500ms ease, border-color 500ms ease;
+    }
+}
