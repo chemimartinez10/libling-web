@@ -1,0 +1,23 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    justify-content: center;
+    align-items: center;
+}
+.title{
+    text-align: center;
+}
+.description{
+    text-align: center;
+}
+.circleContainer{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--mask-color);
+    overflow: hidden;
+}

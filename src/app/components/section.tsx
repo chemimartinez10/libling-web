@@ -8,10 +8,11 @@ interface ISection {
     vertical?: boolean
     children?: ReactNode
     backgroundColor?: string
+    reverse?: boolean
 
 }
 
-const Section: React.FC<ISection> = ({ title, subtitle, resume, vertical = false, children, backgroundColor }) => {
+const Section: React.FC<ISection> = ({ title, subtitle, resume, vertical = false, reverse = false, children, backgroundColor }) => {
     return (
         <div className={styles.container}>
             {
@@ -32,9 +33,17 @@ const Section: React.FC<ISection> = ({ title, subtitle, resume, vertical = false
                     }
                 </div>
             }
-            <div className={styles.body}>
-                {children}
-            </div>
+            {
+                (vertical === true)
+                ?
+                <div className={reverse ? styles.bodyVerticalReversed : styles.bodyVertical}>
+                    {children}
+                </div>
+                :
+                <div className={reverse ? styles.bodyReversed : styles.body}>
+                    {children}
+                </div>
+            }
         </div>
     )
 }

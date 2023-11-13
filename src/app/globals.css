@@ -12,6 +12,7 @@
   --background-end-rgb: 0, 0, 0;
   --background-color: #f1f1f1;
   --mask-color: #fffb;
+  --secondary-text-color: #000a;
 
   --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
   --secondary-glow: linear-gradient(to bottom right,
@@ -52,6 +53,7 @@
     --background-start-rgb: 214, 219, 220;
     --background-end-rgb: 255, 255, 255;
     --mask-color: #000a;
+    --secondary-text-color: #fffb;
 
     --primary-glow: conic-gradient(from 180deg at 50% 50%,
         #16abff33 0deg,
