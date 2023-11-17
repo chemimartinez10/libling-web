@@ -5,6 +5,9 @@ import headerImg from '@/app/img/header_2.jpg'
 import travelImg from '@/app/img/travel.jpg'
 import familyImg from '@/app/img/family.jpg'
 import alarmImg from '@/app/img/alarm.jpg'
+import planBasic from '@/app/img/plan_basic.jpg'
+import planNormal from '@/app/img/plan_normal.jpg'
+import planPremium from '@/app/img/plan_premium.jpg'
 import { poppinsBold, poppinsRegular, poppinsSemiBold } from '@/app/fonts'
 import { FiCalendar, FiMail } from 'react-icons/fi'
 import Button from '@/app/components/button'
@@ -13,6 +16,7 @@ import Article from '@/app/components/article'
 import { FaPeopleCarryBox, FaPeopleRoof, FaPersonWalkingLuggage, FaVanShuttle, FaVideo, FaNewspaper, FaMapLocationDot, FaHourglassHalf } from "react-icons/fa6";
 import Section from '@/app/components/section'
 import Highlight from '@/app/components/highlight'
+import Card from '@/app/components/card'
 interface IPage {
   params: {
     lang: string
@@ -75,6 +79,15 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
             {
             listaBeneficios.map((el, index) => (<Highlight key={index} title={el?.title} alt={`highlight${index}`} Icon={el?.icon}/>))
             }
+        </div>
+
+      </Section>
+      <Section vertical={true}>
+        <Article subtitle='Planes para todos'/>
+        <div className={styles.listCard}>
+          <Card subtitle='$34' title='Básico' content='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis laborum, dolores necessitatibus architecto ullam provident?' image={planBasic} actionText='Solicitar' actionUrl='solicitud' />
+          <Card subtitle='$50' title='Estándar' content='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis laborum, dolores necessitatibus architecto ullam provident?' big={true} image={planNormal} actionText='Solicitar' actionUrl='solicitud'/>
+          <Card subtitle='$63' title='Premium' content='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis laborum, dolores necessitatibus architecto ullam provident?' image={planPremium} actionText='Solicitar' actionUrl='solicitud' />
         </div>
 
       </Section>
