@@ -73,8 +73,7 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
         <Article subtitle='Juntos podremos lograrlo' content='Empezar en un país distinto a veces puede ser retador, pero no te preocupes.  Estaremos contigo para facilitarte los procesos administrativos, legales y culturales para que puedas adaptarte rápidamente en la comunidad Luxemburguesa.' Icon={FaPeopleRoof} />
         <Image src={familyImg} width={600} height={400} style={{ borderRadius: 24 }} alt='family' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 600px' layout="responsive" />
       </Section>
-      <Section vertical={true} title='Servicios'>
-        <Article subtitle='Tenemos para ofecerte'/>
+      <Section vertical={true} title='Servicios' subtitle='Tenemos para ofecerte'>
         <div className={styles.listHighlights}>
             {
             listaBeneficios.map((el, index) => (<Highlight key={index} title={el?.title} alt={`highlight${index}`} Icon={el?.icon}/>))
@@ -99,6 +98,12 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
           "Solicitud de Permiso de Residencia por persona extra(cónyuge / pareja / hijos) si no se realiza al mismo tiempo",
           "Renovación de permisos de trabajo y residencia",
         ]} Icon={FaPeopleCarryBox} />
+        <Image src={alarmImg} width={500} height={500} style={{ borderRadius: 24 }} alt='work' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 600px' layout="responsive" />
+
+      </Section>
+      
+      <Section title='Contactanos'>
+        <Article subtitle={'Apunta tu cita'} content='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus, eaque quisquam doloremque molestias velit quas minima. Harum at obcaecati porro.'/>
         <Image src={alarmImg} width={500} height={500} style={{ borderRadius: 24 }} alt='work' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 600px' layout="responsive" />
 
       </Section>

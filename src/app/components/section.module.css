@@ -1,11 +1,18 @@
 .container{
     padding: 3rem 2rem;
     width: 100%;
+    gap: 3rem;
+    display: flex;
+    flex-direction: column;
 }
 .title{
     text-align: center;
 }
-.subtitle{}
+.subtitle {
+    font-size: 2.5rem;
+    line-height: 3rem;
+    margin-bottom: 1rem;
+}
 .resume{}
 .body{
     display: flex;
@@ -35,7 +42,12 @@
     justify-content: space-between;
     gap: 5rem;
 }
-.head{}
+.head{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 /* mobile screens */
 @media (max-width: 768px) {

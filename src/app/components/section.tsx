@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react'
 import styles from './section.module.css'
+import { poppinsSemiBold } from '../fonts'
 
 interface ISection {
     title?: string
@@ -24,7 +25,7 @@ const Section: React.FC<ISection> = ({ title, subtitle, resume, vertical = false
                     }
                     {
                         subtitle &&
-                        <h3 className={styles.subtitle}>{subtitle}</h3>
+                            <h3 className={styles.subtitle} style={poppinsSemiBold.style}>{subtitle}</h3>
                     }
                     {
                         resume &&
