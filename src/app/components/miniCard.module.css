@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.title {
+    text-align: center;
+}
+
+.description {
+    text-align: center;
+    font-size: .75rem;
+}
+
+.infoContainer {
+    padding: .75rem .5rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--mask-color);
+    overflow: hidden;
+    transition: transform .5s ease;
+    transform: translateY(175px);
+}
+
+.container:hover .infoContainer{
+    transform: translateY(0);
+    
+}

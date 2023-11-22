@@ -81,15 +81,6 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
         </div>
 
       </Section>
-      <Section vertical={true}>
-        <Article subtitle='Planes para todos'/>
-        <div className={styles.listCard}>
-          <Card subtitle='$34' title='Básico' content='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis laborum, dolores necessitatibus architecto ullam provident?' image={planBasic} actionText='Solicitar' actionUrl='solicitud' />
-          <Card subtitle='$50' title='Estándar' content='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis laborum, dolores necessitatibus architecto ullam provident?' big={true} image={planNormal} actionText='Solicitar' actionUrl='solicitud'/>
-          <Card subtitle='$63' title='Premium' content='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis laborum, dolores necessitatibus architecto ullam provident?' image={planPremium} actionText='Solicitar' actionUrl='solicitud' />
-        </div>
-
-      </Section>
       <Section reverse={true}>
         <Article subtitle='Estaremos allí para ti' content='Libling ofrece que tu proceso de adaptación sea el más reconfortante y más tranquilo posible, ofreciendo los siguientes servicios:' list={[
           "Solicitud de Permiso de Trabajo / Autorización Temporal",
@@ -98,12 +89,6 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
           "Solicitud de Permiso de Residencia por persona extra(cónyuge / pareja / hijos) si no se realiza al mismo tiempo",
           "Renovación de permisos de trabajo y residencia",
         ]} Icon={FaPeopleCarryBox} />
-        <Image src={alarmImg} width={500} height={500} style={{ borderRadius: 24 }} alt='work' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 600px' layout="responsive" />
-
-      </Section>
-      
-      <Section title='Contactanos'>
-        <Article subtitle={'Apunta tu cita'} content='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus, eaque quisquam doloremque molestias velit quas minima. Harum at obcaecati porro.'/>
         <Image src={alarmImg} width={500} height={500} style={{ borderRadius: 24 }} alt='work' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 600px' layout="responsive" />
 
       </Section>

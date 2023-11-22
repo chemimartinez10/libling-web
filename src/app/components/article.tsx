@@ -2,16 +2,20 @@ import React from 'react'
 import styles from './article.module.css'
 import { FiCheckCircle } from 'react-icons/fi'
 import { poppinsSemiBold } from '../fonts'
+import Button from './button'
+import Link from 'next/link'
 
 interface IArticle {
     title?: string
     subtitle: string
+    buttonText?: string
+    buttonAction?: string
     content?: string
     list?: string[]
     Icon?: React.ElementType
 }
 
-const Article: React.FC<IArticle> = ({ title, subtitle, content, list, Icon }) => {
+const Article: React.FC<IArticle> = ({ title, subtitle, content, list, Icon, buttonText, buttonAction='#' }) => {
     return (
         <article className={styles.container}>
             {Icon &&
@@ -45,6 +49,12 @@ const Article: React.FC<IArticle> = ({ title, subtitle, content, list, Icon }) =
                         ))
                     }
                 </ul>
+            }
+            {
+                buttonText &&
+                <Link href={buttonAction}>
+                    <Button text={buttonText}/>
+                </Link>
             }
         </article>
     )
