@@ -1,11 +1,11 @@
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import React from 'react'
 import styles from './highlight.module.css'
 
 interface IHighlight {
     title?: string
     description?: string
-    img?: string
+    img?: StaticImageData
     alt: string
     Icon?: React.ElementType
 }
@@ -29,7 +29,7 @@ const Highlight: React.FC<IHighlight> = ({ title, description, img, Icon, alt })
                 img
                 &&
                 <div className={styles.circleContainer}>
-                    <Image src={img} width={100} height={100} alt={alt} />
+                    <Image src={img} width={80} height={80} alt={alt} />
 
                 </div>
             }

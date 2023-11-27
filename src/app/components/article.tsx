@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './article.module.css'
 import { FiCheckCircle } from 'react-icons/fi'
-import { poppinsSemiBold } from '../fonts'
+import { poppinsBold, poppinsSemiBold } from '../fonts'
 import Button from './button'
 import Link from 'next/link'
 
@@ -26,7 +26,7 @@ const Article: React.FC<IArticle> = ({ title, subtitle, content, list, Icon, but
             }
             {
                 subtitle &&
-                <h3 className={styles.subtitle} style={poppinsSemiBold.style}>{subtitle}</h3>
+                <h3 className={styles.subtitle} style={poppinsBold.style}>{subtitle}</h3>
             }
             {
                 content &&

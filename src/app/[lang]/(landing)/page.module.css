@@ -15,13 +15,16 @@
   padding: 0;
   margin: 0 5rem;
 }
+.textContainer{
+  width: 100vw;
+}
 
 .headerMask{
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
-  height: 600px;
+  height: 500px;
   background-color: var(--mask-color);
   z-index: 1;
   display: flex;
@@ -34,7 +37,7 @@
 
 .headerMask > *{
   max-width: 80vw;
-  text-align: center;
+  text-align: left;
 }
 
 .buttonContainer{
@@ -89,6 +92,7 @@
 @media (max-width: 700px) {
   .headerMask{
     padding: 4rem;
+
   }
   #travel-img{
     width: 100%;
