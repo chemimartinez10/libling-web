@@ -1,7 +1,7 @@
 
-.container {
+.container{
     display: flex;
-    background-color: var(--background-color);
+    background: var(--mask-color);
     flex-direction: column;
     gap: 1rem;
     justify-content: stretch;
@@ -37,4 +37,5 @@
     border: none;
     outline: none;
     flex-grow: 1;
+    resize: none;
 }

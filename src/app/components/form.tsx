@@ -13,6 +13,7 @@ interface IContactForm {
 const ContactForm: React.FC<IContactForm> = ({ }) => {
     return (
         <div className={styles.container}>
+            <h3>Dejanos tu mensaje</h3>
             <div className={styles.formControl}>
                 <label htmlFor="nameInput">Nombres</label>
                 <input type="text" id='nameInput' />
@@ -30,7 +31,7 @@ const ContactForm: React.FC<IContactForm> = ({ }) => {
             </div>
             <div className={styles.formControl}>
                 <label htmlFor="messageInput">Mensaje</label>
-                <textarea name="" id="messageInput" cols={30} rows={10}></textarea>
+                <textarea name="" id="messageInput" cols={30} rows={10} ></textarea>
 
             </div>
             <Button text='Enviar' />
