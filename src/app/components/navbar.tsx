@@ -13,7 +13,7 @@ export default function Navbar() {
                     <Image src={LogoImg} width={95} height={29} alt='Logo' />
                 </div>
                 <ul style={poppinsBold.style}>
-                    <li><Link href={'/aboutus'}>Quienes somos</Link></li>
+                    <li><Link href={'/about'}>Quienes somos</Link></li>
                     <li><Link href={'/'}>Home</Link></li>
                     <li><Link href={'/services'}>Servicios</Link></li>
                     <li><Link href={'/contact'}>Contacto</Link></li>

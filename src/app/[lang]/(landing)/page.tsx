@@ -67,7 +67,7 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
         <Image src={headerImg} alt='header image' width={1500} height={500} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} />
       </header>
       <Section>
-        <Article subtitle='Estamos a tu lado para ayudarte en lo que necesites' content='Te brindaremos apoyo durante tu proceso de adaptación facilitándote toda la información que necesitas para que puedas vivir una vida de calidad en Luxemburgo.
+        <Article subtitle='Estamos a tu lado para ayudarte en lo que necesites' content='Te brindaremos apoyo durante tu proceso de adaptación facilitando toda la información que necesitas  para que puedas vivir una vida de calidad en Luxemburgo.
 '  />
         <Image src={travelImg} id='travel-img' width={490} height={465} style={{ borderRadius: 24 }} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 490px' layout="responsive" />
       </Section>
@@ -84,13 +84,13 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
 
       </Section>
       <Section>
-        <Article subtitle='Estaremos allí para ti' content='Libling ofrece que tu proceso de adaptación sea el más reconfortante y más tranquilo posible, ofreciendo los siguientes servicios:' list={[
+        <Article subtitle='Te ayudamos a gestionar y asesorar' list={[
           "Solicitud de Permiso de Trabajo / Autorización Temporal",
-          "Requisitos del Permiso de Residencia a la llegada - Cita médica, Rayos X, prueba de tuberculosis, declaración de llegada(Principal)",
-          "Biometría acompañada",
-          "Solicitud de Permiso de Residencia por persona extra(cónyuge / pareja / hijos) si no se realiza al mismo tiempo",
+          "Requisitos de Permiso de Residencia",
           "Renovación de permisos de trabajo y residencia",
-        ]}/>
+          "Búsqueda de escuelas para tus hijos."
+
+        ]} />
         <Image src={alarmImg} width={535} height={731} style={{ borderRadius: 24 }} alt='work' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 380px, 535px' layout="responsive" />
 
       </Section>

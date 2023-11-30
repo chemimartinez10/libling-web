@@ -6,7 +6,7 @@
   padding: 0rem 2rem 3rem;
   min-height: 100vh;
   max-width: var(--max-width);
-  background: var(--background-color);
+  /* background: var(--background-color); */
   margin: auto;
 }
 
@@ -68,7 +68,6 @@
   gap: 1rem;
   row-gap: 2rem;
 }
-
 
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
