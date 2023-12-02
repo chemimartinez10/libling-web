@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './article.module.css'
-import { FiCheckCircle } from 'react-icons/fi'
+import { FaCircle } from "react-icons/fa6";
 import { poppinsBold, poppinsSemiBold } from '../fonts'
 import Button from './button'
 import Link from 'next/link'
@@ -39,8 +39,7 @@ const Article: React.FC<IArticle> = ({ title, subtitle, content, list, Icon, but
                         list.map((el, index) => (
                             <li key={index}>
                                 <div style={{ width: 20, height: 20, paddingTop:2 }}>
-                                <FiCheckCircle style={{ fontSize: 20, alignSelf: 'center' }} />
-
+                                    <FaCircle style={{ fontSize: 10, alignSelf: 'center', color:'#225FE7' }} />
                                 </div>
                                 <span>
                                     {el}

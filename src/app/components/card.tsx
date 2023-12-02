@@ -3,6 +3,7 @@ import styles from './card.module.css'
 import Button from './button'
 import Image, { StaticImageData } from 'next/image'
 import { FiCheckCircle } from 'react-icons/fi'
+import { poppinsBold, poppinsMedium } from '../fonts'
 
 interface ICard {
     image?: StaticImageData
@@ -21,19 +22,23 @@ const Card: React.FC<ICard> = ({ image, title, subtitle, content, list, actionTe
             <div className={big ? styles.cardBigHead : styles.cardHead}>
                 {
                     image &&
-                    <Image className={styles.cardImage} src={image} width={big ? 350 : 300} height={big ? 350 : 300} alt='planImg' />
-                }
-                <div className={styles.cardHeadMask}>
+                    <div className={styles.cardImage}>
+                        <Image src={image} width={big ? 350 : 300} height={big ? 175 : 150} alt='planImg' style={{objectFit:"cover", objectPosition:"center center"}} />
 
-                    {
-                        title &&
-                        <h5>{title}</h5>
-                    }
-                    {
-                        subtitle &&
-                        <h3>{subtitle}</h3>
-                    }
-                </div>
+                    </div>
+                }
+                {
+                    (title && subtitle)
+                    &&
+                    <>
+                    <div className={styles.subtitleContainer}>
+                        <h3 style={poppinsMedium.style}>{title}</h3>
+                        <h3 style={poppinsBold.style}>{subtitle}</h3>
+                    </div>
+                    <div className={styles.underline}></div>
+                    </>
+                    
+                }
             </div>
             <div className={styles.cardBody}>
                 <div className={styles.cardText}>

@@ -12,6 +12,7 @@
     font-size: 2.5rem;
     line-height: 3rem;
     margin-bottom: 1rem;
+    text-align: center;
 }
 .resume{}
 .body{
@@ -19,28 +20,28 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 5rem;
+    gap: 120px;
 }
 .bodyReversed{
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
     justify-content: space-between;
-    gap: 5rem;
+    gap: 120px;
 }
 .bodyVertical{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    gap: 5rem;
+    gap: 120px;
 }
 .bodyVerticalReversed{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    gap: 5rem;
+    gap: 100px;
 }
 .head{
     display: flex;

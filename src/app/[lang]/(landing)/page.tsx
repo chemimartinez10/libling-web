@@ -3,8 +3,8 @@ import styles from './page.module.css'
 import Image from 'next/image'
 import headerImg from '@/app/img/home_banner.png'
 import travelImg from '@/app/img/Recurso 18 1.png'
-import familyImg from '@/app/img/Recurso 19 1.png'
-import alarmImg from '@/app/img/Recurso 21 1.png'
+import familyImg from '@/app/img/Recurso 20 1.png'
+import alarmImg from '@/app/img/Recurso 22 1.png'
 import Recurso3 from '@/app/img/Recurso 3.png'
 import Recurso4 from '@/app/img/Recurso 4.png'
 import Recurso5 from '@/app/img/Recurso 5.png'
@@ -69,11 +69,11 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
       <Section>
         <Article subtitle='Estamos a tu lado para ayudarte en lo que necesites' content='Te brindaremos apoyo durante tu proceso de adaptación facilitando toda la información que necesitas  para que puedas vivir una vida de calidad en Luxemburgo.
 '  />
-        <Image src={travelImg} id='travel-img' width={490} height={465} style={{ borderRadius: 24 }} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 490px' layout="responsive" />
+        <Image src={travelImg} id='travel-img' width={490} height={465} style={{ borderRadius: 24, maxWidth:490 }} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 490px' layout="responsive" />
       </Section>
       <Section reverse={true}>
         <Article subtitle='Juntos podremos lograrlo' content='Empezar en un país distinto a veces puede ser retador, pero no te preocupes.  Estaremos contigo para facilitarte los procesos administrativos, legales y culturales para que puedas adaptarte rápidamente en la comunidad Luxemburguesa.' />
-        <Image src={familyImg} width={674} height={575} style={{ borderRadius: 24 }} alt='family' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 500px, 674px' layout="responsive" />
+        <Image src={familyImg} width={674} height={575} style={{ borderRadius: 24, maxWidth:674 }} alt='family' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 500px, 674px' layout="responsive" />
       </Section>
       <Section vertical={true} subtitle='Nuestros servicios:'>
         <div className={styles.listHighlights}>
@@ -91,8 +91,11 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
           "Búsqueda de escuelas para tus hijos."
 
         ]} />
-        <Image src={alarmImg} width={535} height={731} style={{ borderRadius: 24 }} alt='work' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 380px, 535px' layout="responsive" />
+        <Image src={alarmImg} width={558} height={631} style={{ borderRadius: 24, maxWidth:558 }} alt='work' sizes='(max-width: 768px) 558px, (max-width: 1120px) 380px, 558px' layout="responsive" />
 
+      </Section>
+      <Section>
+        
       </Section>
     </main>
   )

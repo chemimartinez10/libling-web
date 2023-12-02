@@ -1,6 +1,6 @@
 .button {
-    padding: .5rem 1rem;
-    font-size: 1rem;
+    padding: 1rem 2rem;
+    font-size: 24px;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
@@ -22,8 +22,8 @@
 }
 
 .buttonAlternative {
-    padding: .5rem 1rem;
-    font-size: 1rem;
+    padding: 1rem 2rem;
+    font-size: 24px;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
@@ -47,8 +47,8 @@
 
 @media (prefers-color-scheme: dark) {
     .buttonAlternative {
-        padding: .5rem 1rem;
-        font-size: 1rem;
+        padding: 1rem 2rem;
+        font-size: 24px;
         display: flex;
         flex-wrap: nowrap;
         flex-direction: row;
