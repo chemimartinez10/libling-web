@@ -6,13 +6,14 @@ interface IContactCard {
     description?: string
     Icon: React.ElementType
     color:string
+    background?:string
 }
 
-const ContactCard: React.FC<IContactCard> = ({ description, Icon, color }) => {
+const ContactCard: React.FC<IContactCard> = ({ description, Icon, color, background = '#225FE7' }) => {
     return (
-        <div className={styles.container} style={{borderColor:color}}>
+        <div className={styles.container} style={{borderColor:color, backgroundColor:background}}>
             {Icon &&
-                <Icon style={{ fontSize: 24, alignSelf: 'center' }} />
+                <Icon style={{ fontSize: 80, alignSelf: 'center', color:'#fff' }} />
             }
             {
                 description &&

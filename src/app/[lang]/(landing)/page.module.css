@@ -69,6 +69,15 @@
   gap: 1rem;
   row-gap: 2rem;
 }
+.listReview{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 70px;
+  flex-wrap: wrap;
+  width: 100%;
+}
 
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {

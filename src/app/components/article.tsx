@@ -11,11 +11,12 @@ interface IArticle {
     buttonText?: string
     buttonAction?: string
     content?: string
+    bigSubtitle?: boolean
     list?: string[]
     Icon?: React.ElementType
 }
 
-const Article: React.FC<IArticle> = ({ title, subtitle, content, list, Icon, buttonText, buttonAction='#' }) => {
+const Article: React.FC<IArticle> = ({ title, subtitle, content, list, Icon, buttonText, buttonAction='#', bigSubtitle=false }) => {
     return (
         <article className={styles.container}>
             {Icon &&
@@ -26,7 +27,7 @@ const Article: React.FC<IArticle> = ({ title, subtitle, content, list, Icon, but
             }
             {
                 subtitle &&
-                <h3 className={styles.subtitle} style={poppinsBold.style}>{subtitle}</h3>
+                <h3 className={bigSubtitle ? styles.bigSubtitle : styles.subtitle} style={poppinsBold.style}>{subtitle}</h3>
             }
             {
                 content &&

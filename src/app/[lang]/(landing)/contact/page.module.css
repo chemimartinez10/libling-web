@@ -3,21 +3,21 @@
   flex-direction: column;
   /* justify-content: space-between; */
   align-items: center;
-  padding: 0rem 2rem 3rem;
+  padding: 0;
   min-height: 100vh;
   max-width: var(--max-width);
-  background: var(--background-color);
+  /* background: var(--background-color); */
   margin: auto;
 }
-.calendar{
-  width: 600px;
-  height: 100%;
-  flex-grow: 1;
-}
+
 .header {
   position: relative;
   padding: 0;
   margin: 0 5rem;
+}
+
+.textContainer {
+  width: 100vw;
 }
 
 .headerMask {
@@ -25,7 +25,7 @@
   left: 0;
   top: 0;
   width: 100%;
-  height: 600px;
+  height: 500px;
   background-color: var(--mask-color);
   z-index: 1;
   display: flex;
@@ -33,13 +33,19 @@
   align-items: center;
   flex-direction: column;
   gap: .5rem;
-  padding: 10rem;
+  padding: 10rem 0px;
 }
 
 .headerMask>* {
   max-width: 80vw;
-  text-align: center;
+  text-align: left;
 }
+.calendar{
+  width: 600px;
+  height: 100%;
+  flex-grow: 1;
+}
+
 
 .buttonContainer {
   display: flex;
@@ -72,8 +78,10 @@
 }
 .listContactCards{
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  flex-direction: row;
+  justify-content: center;
+  gap: 80px;
+  flex-grow: 1;
 }
 
 

@@ -9,12 +9,16 @@
     text-align: center;
 }
 .subtitle {
-    font-size: 2.5rem;
-    line-height: 3rem;
-    margin-bottom: 1rem;
+    font-size: 60px;
+    line-height: 72px;
+    margin-bottom: 24px;
     text-align: center;
 }
-.resume{}
+.resume{
+    font-size: 24px;
+    text-align: center;
+
+}
 .body{
     display: flex;
     flex-direction: row;

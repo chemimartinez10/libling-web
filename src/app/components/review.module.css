@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+    width: 231px;
+}
+.title{
+    font-size: 24px;
+    color: var(--libling-main-color);
+}
+.description{
+    text-align: justify;
+    font-size: 15px;
+    color: var(--libling-main-color);
+}
+.circleReview{
+    width: 231px;
+    height: 231px;
+    border: solid 4px var(--libling-main-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.listStars{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+}
+
+@media (prefers-color-scheme: dark){
+    .title {
+        font-size: 24px;
+        color: #fff;
+    }
+    .description{
+        color: #fff;
+    }
+}
