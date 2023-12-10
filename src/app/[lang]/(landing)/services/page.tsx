@@ -3,8 +3,8 @@ import styles from './page.module.css'
 import Image from 'next/image'
 import headerImg from '@/app/img/services_banner.png'
 import meetImg from '@/app/img/Recurso 24 1.png'
-import placesImg from '@/app/img/places.jpg'
-import calendarImg from '@/app/img/calendar.jpg'
+import placesImg from '@/app/img/Recurso 29 1.png'
+import calendarImg from '@/app/img/Recurso 30 1.png'
 import houseImg from '@/app/img/Recurso 24 2.png'
 import planBasic from '@/app/img/plan_basic.jpg'
 import planNormal from '@/app/img/plan_normal.jpg'
@@ -32,7 +32,7 @@ const Services: React.FC<IPage> = ({ params: { lang } }) => {
   const listaBeneficios = [
     {
       img: imagen1,
-      description:'Organización de recogida en el aeropuerto.'
+      description: 'Organización de recogida en el aeropuerto.'
     },
     {
       img: imagen2,
@@ -55,7 +55,7 @@ const Services: React.FC<IPage> = ({ params: { lang } }) => {
       <header className={styles.header}>
         <div className={styles.headerMask}>
           {/* logotipo de libling */}
-          
+
         </div>
         <Image src={headerImg} alt='header image' width={1500} height={500} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} />
       </header>
@@ -65,9 +65,29 @@ const Services: React.FC<IPage> = ({ params: { lang } }) => {
       </Section>
       <Section vertical={true} subtitle='Paquetes para todos'>
         <div className={styles.listCard}>
-          <Card subtitle='$34' title='Básico' content='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis laborum, dolores necessitatibus architecto ullam provident?' image={planBasic} actionText='Solicitar' actionUrl='solicitud' />
-          <Card subtitle='$50' title='Estándar' content='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis laborum, dolores necessitatibus architecto ullam provident?' image={planNormal} actionText='Solicitar' actionUrl='solicitud' />
-          <Card subtitle='$63' title='Premium' content='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis laborum, dolores necessitatibus architecto ullam provident?' image={planPremium} actionText='Solicitar' actionUrl='solicitud' />
+          <Card title='Básico' list={[
+            "Asistencia ligera",
+            "Trámites administrativos - Inscripción",
+            "Inscripción + 4 servicios",
+            "1 día de asistencia"
+          ]} image={planBasic} actionText='Solicitar' actionUrl='solicitud' />
+          <Card title='Estándar' list={[
+            "Asistencia estándar",
+            "Trámite administrativos - Inscripción + 4 servicios",
+            "Búsqueda de casa + acompañamiento",
+            "Búsqueda de colegio",
+            "2 días de asistencia"
+          ]} image={planNormal} actionText='Solicitar' actionUrl='solicitud' />
+          <Card title='Premium' list={[
+            "Asistencia completa",
+            "Trámites administrativos - Inscripción + 4 servicios",
+            "Búsqueda de casa acompañamiento durante el proceso de buscaqueda",
+            "Búsqueda de colegio / guardería",
+            "Alojamiento a corto plazo",
+            "Organización de recogida en el aeropuerto",
+            "Tour de orientación",
+            "3 días de asistencia"
+          ]} image={planPremium} actionText='Solicitar' actionUrl='solicitud' />
         </div>
 
       </Section>
@@ -89,7 +109,7 @@ const Services: React.FC<IPage> = ({ params: { lang } }) => {
 
       </Section>
       <Section>
-        <Article subtitle={'Apunta tu cita'} content='Si quieres escoger un día ideal donde quieras tener una reunión con nosotros, revisa nuestro calendario para visualizar la disponibilidad que tenemos y darte el mejor servicio que mereces.' buttonText='Agendar'  />
+        <Article subtitle={'Apunta tu cita'} content='Si quieres escoger un día ideal donde quieras tener una reunión con nosotros, revisa nuestro calendario para visualizar la disponibilidad que tenemos y darte el mejor servicio que mereces.' buttonText='Agendar' />
         <Image src={calendarImg} width={400} height={400} style={{ borderRadius: 24 }} alt='work' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 350px, 400px' layout="responsive" />
       </Section>
     </main>

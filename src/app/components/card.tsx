@@ -2,13 +2,13 @@ import React from 'react'
 import styles from './card.module.css'
 import Button from './button'
 import Image, { StaticImageData } from 'next/image'
-import { FiCheckCircle } from 'react-icons/fi'
+import { FiCheck, FiCheckCircle } from 'react-icons/fi'
 import { poppinsBold, poppinsMedium } from '../fonts'
 
 interface ICard {
     image?: StaticImageData
     title?: string
-    subtitle: string
+    subtitle?: string
     content?: string
     list?: string[]
     actionText?: string
@@ -21,23 +21,24 @@ const Card: React.FC<ICard> = ({ image, title, subtitle, content, list, actionTe
         <div className={big ? styles.cardBigContainer : styles.cardContainer}>
             <div className={big ? styles.cardBigHead : styles.cardHead}>
                 {
-                    image &&
-                    <div className={styles.cardImage}>
-                        <Image src={image} width={big ? 350 : 300} height={big ? 175 : 150} alt='planImg' style={{objectFit:"cover", objectPosition:"center center"}} />
-
-                    </div>
-                }
-                {
-                    (title && subtitle)
+                    (title)
                     &&
                     <>
-                    <div className={styles.subtitleContainer}>
-                        <h3 style={poppinsMedium.style}>{title}</h3>
-                        <h3 style={poppinsBold.style}>{subtitle}</h3>
-                    </div>
-                    <div className={styles.underline}></div>
+                        <div className={styles.subtitleContainer}>
+                            <h3 style={poppinsMedium.style}>{title}</h3>
+                        </div>
+
                     </>
-                    
+
+                }
+                {
+                    (subtitle)
+                    &&
+                    <>
+                        <h3 style={poppinsBold.style}>{subtitle}</h3>
+
+                    </>
+
                 }
             </div>
             <div className={styles.cardBody}>
@@ -48,11 +49,11 @@ const Card: React.FC<ICard> = ({ image, title, subtitle, content, list, actionTe
                     }
                     {
                         list &&
-                        <ul>
+                        <ul className={styles.list}>
                             {list.map((el, index) => (<li key={index}>
-                                <div style={{ width: 20, height: 20, paddingTop: 2 }}>
-                                    <FiCheckCircle style={{ fontSize: 20, alignSelf: 'center' }} />
+                                <div style={{ width: 32, height: 32 }}>
 
+                                    <FiCheck style={{ fontSize: 32, alignSelf: 'center', color: '#225FE7' }} />
                                 </div>
                                 <span>
                                     {el}

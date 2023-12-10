@@ -51,8 +51,16 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
           {/* <h1 className={poppinsSemiBold.className}>Libling</h1>
           <AnimatedText /> */}
           <div className={styles.textContainer}>
-            <h4 style={poppinsBold.style}>Transforma tu vida en Luxemburgo</h4>
-            <h4 style={poppinsBold.style}>con nuestra asesoría.</h4>
+            <div>
+              <h4 className={styles.headerTitle} style={poppinsBold.style}>Libling Solutions está para ti</h4>
+              <h4 className={styles.headerTitle} style={poppinsBold.style}>y contigo en el proceso de tu</h4>
+              <h4 className={styles.headerTitle} style={poppinsBold.style}>instalación en Luxemburgo.</h4>
+
+            </div>
+            <div>
+              <h3 className={styles.headerSubtitle} style={poppinsBold.style}>Te asesoramos y gestionamos para ti,</h3>
+              <h3 className={styles.headerSubtitle} style={poppinsBold.style}>garantizandote un trámite de calidad.</h3>
+            </div>
 
           </div>
           {/* <div className={styles.buttonContainer}>

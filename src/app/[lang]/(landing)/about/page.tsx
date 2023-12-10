@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './page.module.css'
 import Image from 'next/image'
 import headerImg from '@/app/img/contact_banner.png'
-import meetImg from '@/app/img/meet.jpg'
+import meetImg from '@/app/img/Capa_Logo.png'
 import placesImg from '@/app/img/places.jpg'
 import calendarImg from '@/app/img/calendar.jpg'
 import houseImg from '@/app/img/house.jpg'
@@ -41,7 +41,7 @@ const Services: React.FC<IPage> = ({ params: { lang } }) => {
         <Image src={meetImg} id='travel-img' width={600} height={600} style={{ borderRadius: 24 }} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 600px' layout="responsive" />
       </Section>
       <Section reverse={true}>
-        <Article subtitle='Para los más pequeños' content='La educación de los pequeños es de gran importancia y Libling te ayudará a encontrar las escuelas o guarderías que sean de agrado para ti, para que tus pequeños puedan seguir estudiando y cumplir sus sueños.' />
+        <Article subtitle='Innovadores en relocalización' content='En Libling creemos que la reubicación debe ser grata y tranquila. Es por ello que nos enorgullece ser la primera empresa de relocalización manejada por latinos. Nos aseguraremos de que te sientas cómodo y seguro en todo momento, garantizandote de que tu proceso de relocalización sea la mejor para ti.' />
         <Image src={placesImg} id='places-img' width={600} height={600} style={{ borderRadius: 24 }} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 600px' layout="responsive" />
       </Section>
       <Section>
