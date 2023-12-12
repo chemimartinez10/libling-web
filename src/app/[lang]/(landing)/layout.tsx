@@ -12,9 +12,12 @@ export const metadata: Metadata = {
 
 export default function RootLandingLayout({
   children,
+  lang
 }: {
-  children: React.ReactNode
+  children: React.ReactNode,
+    lang: "es" | "en" | "fr"
 }) {
+  console.log('aqui', lang)
   return (
     <html lang="en">
       <body className={poppinsRegular.className}>

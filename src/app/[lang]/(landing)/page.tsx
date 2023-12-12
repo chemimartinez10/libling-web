@@ -19,27 +19,29 @@ import Article from '@/app/components/article'
 import Section from '@/app/components/section'
 import Highlight from '@/app/components/highlight'
 import Review from '@/app/components/review'
+import { dict } from '@/app/utils'
 interface IPage {
   params: {
-    lang: string
+    lang: "es" | "en" | "fr"
   }
 }
 const Home: React.FC<IPage> = ({ params: { lang } }) => {
+  const glosary = dict[lang]?.home
   const listaBeneficios = [
     {
-      title: 'Lorem, ipsum.',
+      title: glosary.sectionList_3[0],
       img: Recurso3
     },
     {
-      title: 'Lorem, ipsum.',
+      title: glosary.sectionList_3[1],
       img: Recurso4
     },
     {
-      title: 'Lorem, ipsum.',
+      title: glosary.sectionList_3[2],
       img: Recurso5
     },
     {
-      title: 'Lorem, ipsum.',
+      title: glosary.sectionList_3[3],
       img: Recurso6
     },
   ]
@@ -52,14 +54,14 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
           <AnimatedText /> */}
           <div className={styles.textContainer}>
             <div>
-              <h4 className={styles.headerTitle} style={poppinsBold.style}>Libling Solutions está para ti</h4>
-              <h4 className={styles.headerTitle} style={poppinsBold.style}>y contigo en el proceso de tu</h4>
-              <h4 className={styles.headerTitle} style={poppinsBold.style}>instalación en Luxemburgo.</h4>
+              <h4 className={styles.headerTitle} style={poppinsBold.style}>{glosary.titleHeader_1}</h4>
+              <h4 className={styles.headerTitle} style={poppinsBold.style}>{glosary.titleHeader_2}</h4>
+              <h4 className={styles.headerTitle} style={poppinsBold.style}>{glosary.titleHeader_3}</h4>
 
             </div>
             <div>
-              <h3 className={styles.headerSubtitle} style={poppinsBold.style}>Te asesoramos y gestionamos para ti,</h3>
-              <h3 className={styles.headerSubtitle} style={poppinsBold.style}>garantizandote un trámite de calidad.</h3>
+              <h3 className={styles.headerSubtitle} style={poppinsBold.style}>{glosary.subtitleHeader_1}</h3>
+              <h3 className={styles.headerSubtitle} style={poppinsBold.style}>{glosary.subtitleHeader_2}</h3>
             </div>
 
           </div>
@@ -75,15 +77,14 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
         <Image src={headerImg} alt='header image' width={1500} height={500} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} />
       </header>
       <Section>
-        <Article subtitle='Estamos a tu lado para ayudarte en lo que necesites' content='Te brindaremos apoyo durante tu proceso de adaptación facilitando toda la información que necesitas  para que puedas vivir una vida de calidad en Luxemburgo.
-'  />
+        <Article subtitle={glosary.sectionTitle_1} content={glosary.sectionContent_1} />
         <Image src={travelImg} id='travel-img' width={490} height={465} style={{ borderRadius: 24, maxWidth: 490 }} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 490px' layout="responsive" />
       </Section>
       <Section reverse={true}>
-        <Article subtitle='Juntos podremos lograrlo' content='Empezar en un país distinto a veces puede ser retador, pero no te preocupes.  Estaremos contigo para facilitarte los procesos administrativos, legales y culturales para que puedas adaptarte rápidamente en la comunidad Luxemburguesa.' />
+        <Article subtitle={glosary.sectionTitle_2} content={glosary.sectionContent_2} />
         <Image src={familyImg} width={674} height={575} style={{ borderRadius: 24, maxWidth: 674 }} alt='family' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 500px, 674px' layout="responsive" />
       </Section>
-      <Section vertical={true} subtitle='Nuestros servicios:'>
+      <Section vertical={true} subtitle={glosary.sectionTitle_3}>
         <div className={styles.listHighlights}>
           {
             listaBeneficios.map((el, index) => (<Highlight key={index} title={el?.title} alt={`highlight${index}`} img={el?.img} />))
@@ -92,21 +93,15 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
 
       </Section>
       <Section>
-        <Article subtitle='Te ayudamos a gestionar y asesorar' list={[
-          "Solicitud de Permiso de Trabajo / Autorización Temporal",
-          "Requisitos de Permiso de Residencia",
-          "Renovación de permisos de trabajo y residencia",
-          "Búsqueda de escuelas para tus hijos."
-
-        ]} />
+        <Article subtitle={glosary.sectionTitle_4} list={glosary.sectionList_4} />
         <Image src={alarmImg} width={558} height={631} style={{ borderRadius: 24, maxWidth: 558 }} alt='work' sizes='(max-width: 768px) 558px, (max-width: 1120px) 380px, 558px' layout="responsive" />
 
       </Section>
       <Section>
         <div className={styles.listReview}>
-          <Review title='MARIA SMITH' img={Testigo1} description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt amet molestiae repudiandae laboriosam! Molestias laboriosam, dignissimos corrupti, praesentium dolorum quasi officia nam sequi numquam eius, animi reiciendis consequatur quam enim.' />
-          <Review title='LUIS MORENO' img={Testigo2} description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt amet molestiae repudiandae laboriosam! Molestias laboriosam, dignissimos corrupti, praesentium dolorum quasi officia nam sequi numquam eius, animi reiciendis consequatur quam enim.' />
-          <Review title='LAURA MARTINEZ' img={Testigo3} description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt amet molestiae repudiandae laboriosam! Molestias laboriosam, dignissimos corrupti, praesentium dolorum quasi officia nam sequi numquam eius, animi reiciendis consequatur quam enim.' />
+          <Review title={glosary.reviewName_1} img={Testigo1} description={glosary.reviewDescription_1} />
+          <Review title={glosary.reviewName_2} img={Testigo2} description={glosary.reviewDescription_2} />
+          <Review title={glosary.reviewName_3} img={Testigo3} description={glosary.reviewDescription_3} />
         </div>
       </Section>
     </main>
