@@ -21,12 +21,15 @@ import Section from '@/app/components/section'
 import Highlight from '@/app/components/highlight'
 import Card from '@/app/components/card'
 import MiniCard from '@/app/components/miniCard'
+import { dict } from '@/app/utils'
 interface IPage {
   params: {
-    lang: string
+    lang: "es" | "en" | "fr"
   }
 }
 const Services: React.FC<IPage> = ({ params: { lang } }) => {
+  const glosary = dict[lang]?.about
+
   return (
     <main className={styles.main}>
       <header className={styles.header}>
@@ -37,15 +40,15 @@ const Services: React.FC<IPage> = ({ params: { lang } }) => {
         <Image src={headerImg} alt='header image' width={1500} height={500} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} />
       </header>
       <Section>
-        <Article subtitle='¿Quiénes somos?' content='Empezar una nueva vida en un país distinto no siempre es fácil, pero no te preocupes, con apoyo todo será más sencillo. En Libling, nuestro objetivo es ayudarte a que tu relocalización en Luxemburgo sea la mejor y la más reconfortante para ti.' />
+        <Article subtitle={glosary.sectionTitle_1} content={glosary.sectionContent_1} />
         <Image src={meetImg} id='travel-img' width={600} height={600} style={{ borderRadius: 24 }} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 600px' layout="responsive" />
       </Section>
       <Section reverse={true}>
-        <Article subtitle='Innovadores en relocalización' content='En Libling creemos que la reubicación debe ser grata y tranquila. Es por ello que nos enorgullece ser la primera empresa de relocalización manejada por latinos. Nos aseguraremos de que te sientas cómodo y seguro en todo momento, garantizandote de que tu proceso de relocalización sea la mejor para ti.' />
+        <Article subtitle={glosary.sectionTitle_2} content={glosary.sectionContent_2} />
         <Image src={placesImg} id='places-img' width={600} height={600} style={{ borderRadius: 24 }} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 600px' layout="responsive" />
       </Section>
       <Section>
-        <Article subtitle='Te ayudamos con tus trámites' content='Durante tu llegada a Luxemburgo te ayudaremos con tus trámites administrativos a ti y a tu familia. Esto incluye el registro y 4 servicios adicionales para que poco a poco todo vaya sobre la marcha. Durante tu mudanza, te acompañaremos en todos los procesos que necesites para que puedas disfrutar tu estadía permanente en  Luxemburgo, pero eso no es todo, ya que Libling te brindará asistencia de soporte gratuito durante 30 días.' />
+        <Article subtitle={glosary.sectionTitle_3} content={glosary.sectionContent_3} />
         <Image src={houseImg} id='house-img' width={600} height={600} style={{ borderRadius: 24 }} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 600px' layout="responsive" />
       </Section>
     </main>

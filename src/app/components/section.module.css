@@ -62,4 +62,9 @@
     .bodyReversed{
         flex-direction: column;
     }
+        .subtitle {
+            font-size: 36px;
+            line-height: 48px;
+            margin-bottom: 24px;
+        }
 }

@@ -3,6 +3,8 @@ import '../../globals.css'
 import Navbar from '../../components/navbar'
 import { poppinsRegular } from '../../fonts'
 import Footer from '@/app/components/footer'
+import styles from '@/app/[lang]/(landing)/page.module.css'
+import Menu from '@/app/components/menu'
 
 
 export const metadata: Metadata = {
@@ -20,7 +22,8 @@ export default function RootLandingLayout({
   console.log('aqui', lang)
   return (
     <html lang="en">
-      <body className={poppinsRegular.className}>
+      <body style={poppinsRegular.style} className={styles.layout}>
+        <Menu/>
         <Navbar/>
         {children}
         <Footer/>

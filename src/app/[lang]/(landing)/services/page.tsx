@@ -23,30 +23,32 @@ import Section from '@/app/components/section'
 import Highlight from '@/app/components/highlight'
 import Card from '@/app/components/card'
 import MiniCard from '@/app/components/miniCard'
+import { dict } from '@/app/utils'
 interface IPage {
   params: {
-    lang: string
+    lang: "es" | "en" | "fr"
   }
 }
 const Services: React.FC<IPage> = ({ params: { lang } }) => {
-  const listaBeneficios = [
+  const glosary = dict[lang]?.services
+  const serviciosAdicionales = [
     {
       img: imagen1,
-      description: 'Organización de recogida en el aeropuerto.'
+      description: glosary.aditionalService_1
     },
     {
       img: imagen2,
-      description: 'VISAS: Oferta estándar (sin incluir tasa de visa-apostilla + correo postal).'
+      description: glosary.aditionalService_2
 
     },
     {
       img: imagen3,
-      description: 'Enseñanza de idiomas, Limpieza de la casa, Pintura de casas/pisos, Servicios de mantenimiento, Transporte de mascotas.'
+      description: glosary.aditionalService_3
 
     },
     {
       img: imagen4,
-      description: 'Asistencia de soporte después de la mudanza (1 mes).'
+      description: glosary.aditionalService_4
 
     },
   ]
@@ -60,56 +62,36 @@ const Services: React.FC<IPage> = ({ params: { lang } }) => {
         <Image src={headerImg} alt='header image' width={1500} height={500} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} />
       </header>
       <Section>
-        <Article subtitle='El idioma no será un problema' content='En libling contarás con todas las herramientas para aprender un nuevo idioma sin problema,  ya que contamos con atención especial para los hispanohablantes y en tan sólo cuestión de tiempo podrás hablarlo perfectamente. Desde tu llegada al aeropuerto te daremos un tour por las calles de Luxemburgo, brindándote toda la información cultural que necesitas para que tu adaptación sea la más cómoda posible.' />
+        <Article subtitle={glosary.sectionTitle_1} content={glosary.sectionContent_1} />
         <Image src={meetImg} id='travel-img' width={600} height={600} style={{ borderRadius: 24 }} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 600px' layout="responsive" />
       </Section>
-      <Section vertical={true} subtitle='Paquetes para todos'>
+      <Section vertical={true} subtitle={glosary.sectionTitle_2}>
         <div className={styles.listCard}>
-          <Card title='Básico' list={[
-            "Asistencia ligera",
-            "Trámites administrativos - Inscripción",
-            "Inscripción + 4 servicios",
-            "1 día de asistencia"
-          ]} image={planBasic} actionText='Solicitar' actionUrl='solicitud' />
-          <Card title='Estándar' list={[
-            "Asistencia estándar",
-            "Trámite administrativos - Inscripción + 4 servicios",
-            "Búsqueda de casa + acompañamiento",
-            "Búsqueda de colegio",
-            "2 días de asistencia"
-          ]} image={planNormal} actionText='Solicitar' actionUrl='solicitud' />
-          <Card title='Premium' list={[
-            "Asistencia completa",
-            "Trámites administrativos - Inscripción + 4 servicios",
-            "Búsqueda de casa acompañamiento durante el proceso de buscaqueda",
-            "Búsqueda de colegio / guardería",
-            "Alojamiento a corto plazo",
-            "Organización de recogida en el aeropuerto",
-            "Tour de orientación",
-            "3 días de asistencia"
-          ]} image={planPremium} actionText='Solicitar' actionUrl='solicitud' />
+          <Card title={glosary.cardTitle_1} list={glosary.cardList_1} image={planBasic} actionText={glosary.cardActionText} actionUrl='solicitud' />
+          <Card title={glosary.cardTitle_2} list={glosary.cardList_2} image={planNormal} actionText={glosary.cardActionText} actionUrl='solicitud' />
+          <Card title={glosary.cardTitle_3} list={glosary.cardList_3} image={planPremium} actionText={glosary.cardActionText} actionUrl='solicitud' />
         </div>
 
       </Section>
       <Section reverse={true}>
-        <Article subtitle='Para los más pequeños' content='La educación de los pequeños es de gran importancia y Libling te ayudará a encontrar las escuelas o guarderías que sean de agrado para ti, para que tus pequeños puedan seguir estudiando y cumplir sus sueños.' />
+        <Article subtitle={glosary.sectionTitle_3} content={glosary.sectionContent_3} />
         <Image src={placesImg} id='places-img' width={600} height={600} style={{ borderRadius: 24 }} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 600px' layout="responsive" />
       </Section>
       <Section>
-        <Article subtitle='Te ayudamos con tus trámites' content='Durante tu llegada a Luxemburgo te ayudaremos con tus trámites administrativos a ti y a tu familia. Esto incluye el registro y 4 servicios adicionales para que poco a poco todo vaya sobre la marcha. Durante tu mudanza, te acompañaremos en todos los procesos que necesites para que puedas disfrutar tu estadía permanente en  Luxemburgo, pero eso no es todo, ya que Libling te brindará asistencia de soporte gratuito durante 30 días.' />
+        <Article subtitle={glosary.sectionTitle_4} content={glosary.sectionContent_4} />
         <Image src={houseImg} id='house-img' width={600} height={600} style={{ borderRadius: 24 }} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 600px' layout="responsive" />
       </Section>
 
       <Section vertical={true} subtitle='Tenemos más para ti'>
         <div className={styles.listServices}>
           {
-            listaBeneficios.map((el, index) => (<MiniCard key={index} alt={`minicard${index}`} description={el?.description} img={el?.img} />))
+            serviciosAdicionales.map((el, index) => (<MiniCard key={index} alt={`minicard${index}`} description={el?.description} img={el?.img} />))
           }
         </div>
 
       </Section>
       <Section>
-        <Article subtitle={'Apunta tu cita'} content='Si quieres escoger un día ideal donde quieras tener una reunión con nosotros, revisa nuestro calendario para visualizar la disponibilidad que tenemos y darte el mejor servicio que mereces.' buttonText='Agendar' />
+        <Article subtitle={glosary.sectionTitle_5} content={glosary.sectionContent_5} buttonText={glosary.sectionButton_5} />
         <Image src={calendarImg} width={400} height={400} style={{ borderRadius: 24 }} alt='work' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 350px, 400px' layout="responsive" />
       </Section>
     </main>

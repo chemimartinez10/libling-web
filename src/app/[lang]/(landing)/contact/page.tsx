@@ -21,38 +21,17 @@ import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import ContactForm from '@/app/components/form'
 import ContactCard from '@/app/components/contactCard'
+import { dict } from '@/app/utils'
 
 interface IPage {
   params: {
-    lang: string
+    lang: "es" | "en" | "fr"
   }
 }
 const Contact: React.FC<IPage> = ({ params: { lang } }) => {
-  const listaBeneficios = [
-    {
-      title: 'Lorem, ipsum.',
-      img: locationImg,
-      description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque quo veritatis quia qui iste laudantium.'
-    },
-    {
-      title: 'Lorem, ipsum.',
-      img: timeImg,
-      description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque quo veritatis quia qui iste laudantium.'
+  const glosary = dict[lang]?.contact
 
-    },
-    {
-      title: 'Lorem, ipsum.',
-      img: locationImg,
-      description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque quo veritatis quia qui iste laudantium.'
-
-    },
-    {
-      title: 'Lorem, ipsum.',
-      img: timeImg,
-      description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque quo veritatis quia qui iste laudantium.'
-
-    },
-  ]
+  
 
   return (
     <main className={styles.main}>
@@ -64,7 +43,7 @@ const Contact: React.FC<IPage> = ({ params: { lang } }) => {
         <Image src={headerImg} alt='header image' width={1500} height={500} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} />
       </header>
       <Section>
-        <Article subtitle='¡Agenda con nosotros!' bigSubtitle={true} content='Si quieres escoger un día ideal donde quieras tener una reunión con nosotros, revisa nuestro calendario para visualizar la disponibilidad que tenemos y darte el mejor servicio que mereces. ' />
+        <Article subtitle={glosary.sectionTitle_1} content={glosary.sectionContent_1} bigSubtitle={true}/>
         <div className={styles.calendar}>
           <FullCalendar
             plugins={[dayGridPlugin]}
@@ -73,7 +52,7 @@ const Contact: React.FC<IPage> = ({ params: { lang } }) => {
           />
         </div>
       </Section>
-      <Section subtitle='Te mantendremos siempre al tanto' resume='Sabemos que a veces no tenemos tiempo de estar al tanto de las cosas, pero no te preocupes, haremos esa labor para ti. Inscríbete en nuestro boletín informativo para que seas siempre el primero en recibir todas nuestras novedades, noticias, productos y servicios.'>
+      <Section subtitle={glosary.sectionTitle_2} resume={glosary.sectionContent_2}>
         <div className={styles.listContactCards}>
           <ContactCard description='+897287298724' Icon={RiWhatsappLine} color={'#659E43'}/>
           <ContactCard description='+897287298724' Icon={RiMessengerLine} color={'#225FE7'} />
@@ -82,7 +61,7 @@ const Contact: React.FC<IPage> = ({ params: { lang } }) => {
         </div>
       </Section>
       <Section vertical={true}>
-        <ContactForm/>
+        <ContactForm lang={lang}/>
       </Section>
     </main>
   )

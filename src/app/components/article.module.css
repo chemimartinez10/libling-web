@@ -49,4 +49,7 @@
         font-size: 2rem;
         line-height: 2.25rem;
     }
+        .bigSubtitle {
+            font-size: 36px;
+        }
 }
