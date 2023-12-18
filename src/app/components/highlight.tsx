@@ -1,6 +1,10 @@
+'use client'
+
 import Image, { StaticImageData } from 'next/image'
-import React from 'react'
+import React, { BaseSyntheticEvent, SyntheticEvent, useState } from 'react'
 import styles from './highlight.module.css'
+import { FaTimes } from 'react-icons/fa'
+import { poppinsBold } from '../fonts'
 
 interface IHighlight {
     title?: string
@@ -11,8 +15,27 @@ interface IHighlight {
 }
 
 const Highlight: React.FC<IHighlight> = ({ title, description, img, Icon, alt }) => {
-    return (
-        <div className={styles.container}>
+    const [open, setOpen] = useState(false)
+    const handleClose = (event: BaseSyntheticEvent) => {
+        console.log(event)
+        if (event?.target?.id === 'dialogBackdrop') {
+            setOpen(false)
+        }
+    }
+    return (<>
+        {
+            open &&
+            <div id='dialogBackdrop' className={styles.dialog} onClick={handleClose}>
+                <article id='dialogCard' className={styles.dialogContainer}>
+                    <div className={styles.dialogClose} onClick={()=>{setOpen(false)}}>
+                        <FaTimes/>
+                    </div>
+                    <h2 style={{...poppinsBold.style, fontSize:32}}>{title}</h2>
+                    <p>{description}</p>
+                </article>
+            </div>
+        }
+        <div className={styles.container} onClick={() => { setOpen(state => !state) }}>
             {
                 title &&
                 <h4 className={styles.title}>{title}</h4>
@@ -38,6 +61,7 @@ const Highlight: React.FC<IHighlight> = ({ title, description, img, Icon, alt })
                 <p>{description}</p>
             }
         </div>
+    </>
     )
 }
 

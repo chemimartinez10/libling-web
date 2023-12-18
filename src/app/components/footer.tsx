@@ -4,7 +4,7 @@ import React from 'react'
 import styles from './footer.module.css'
 import Image from 'next/image'
 import luxemburgImg from '../img/Capa_1.png'
-import { poppinsBold } from '../fonts'
+import { poppinsBold, poppinsMedium } from '../fonts'
 import { RiFacebookFill, RiInstagramFill, RiLinkedinFill } from "react-icons/ri";
 
 
@@ -25,20 +25,12 @@ export default function Footer({lang}:{lang:string}) {
                 <div className={styles.contactInfo}>
                     <h4 style={poppinsBold.style}>Contacto</h4>
                     <p>
-                        27 Bd Prince Henri, L- 1724 Luxembourg
+                        <span style={poppinsMedium.style}>Email: </span>info@libling.lu / <span style={poppinsMedium.style}>Telf: </span>+352691217216
+                        <br />
+                        27 Bd Prince Henri, L- 1724 Luxembourg / RCS número d’Immatriculation B278845 Autorisation d’établissement N°10154859/0
+                        
                     </p>
-                    <p>
-                        +352691217216
-                    </p>
-                    <p>
-                        info@libling.lu
-                    </p>
-                    <p>
-                        RCS: B278845
-                    </p>
-                    <p>
-                        Autorisation N°10154859/0
-                    </p>
+                    
                 </div>
                 {/* <div className={styles.luxemburgContainer}>
                     <Image src={luxemburgImg} alt='madeInLuxemburg' width={96} height={77} />

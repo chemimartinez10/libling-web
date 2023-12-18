@@ -14,14 +14,14 @@ const Menu = ({ lang }: { lang: "es" | "en" | "fr" }) => {
     }
     return (
         <div className={styles.container}>
-            <ul className={open ? styles.menuContainerOpen : styles.menuContainer}>
+            <ul className={open ? styles.menuContainerOpen : styles.menuContainer} onClick={close}>
                 {
                     !!open &&
                     <>
-                        <li style={poppinsBold.style} onClick={close}><Link href={'/about'}>{glosary.link_1}</Link></li>
-                        <li style={poppinsBold.style} onClick={close}><Link href={'/'}>{glosary.link_2}</Link></li>
-                        <li style={poppinsBold.style} onClick={close}><Link href={'/services'}>{glosary.link_3}</Link></li>
-                        <li style={poppinsBold.style} onClick={close}><Link href={'/contact'}>{glosary.link_4}</Link></li>
+                        <li style={poppinsBold.style} ><Link href={'/about'}>{glosary.link_1}</Link></li>
+                        <li style={poppinsBold.style} ><Link href={'/'}>{glosary.link_2}</Link></li>
+                        <li style={poppinsBold.style} ><Link href={'/services'}>{glosary.link_3}</Link></li>
+                        <li style={poppinsBold.style} ><Link href={'/contact'}>{glosary.link_4}</Link></li>
                     </>
                 }
             </ul>

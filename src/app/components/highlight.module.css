@@ -6,6 +6,40 @@
     align-items: center;
     width: 150px;
     height: 150px;
+    cursor: pointer;
+}
+.dialog{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0004;
+    backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dialogContainer{
+    min-width: 50vw;
+    min-height: 50vw;
+    background-color: var(--background-color);
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 2px var(--shadow-color);
+    position: relative;
+}
+.dialogClose{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    font-size: 2rem;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    border-radius: 10px;
+    background-color: var(--shadow-color);
 }
 .title{
     text-align: center;
@@ -23,4 +57,10 @@
     align-items: center;
     background-color: var(--mask-color);
     overflow: hidden;
+}
+@media (max-width: 700px) {
+    .dialogContainer{
+        width: 80vw;
+        min-height: 80vw;
+    }
 }

@@ -13,7 +13,7 @@ const ContactCard: React.FC<IContactCard> = ({ description, Icon, color, backgro
     return (
         <div className={styles.container} style={{borderColor:color, backgroundColor:background}}>
             {Icon &&
-                <Icon style={{ fontSize: 56, alignSelf: 'center', color:'#fff' }} />
+                <Icon style={{ fontSize: 48, alignSelf: 'center', color:'#fff' }} />
             }
             {
                 description &&
