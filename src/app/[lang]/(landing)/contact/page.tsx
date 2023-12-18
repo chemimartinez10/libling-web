@@ -1,6 +1,7 @@
 "use client"
 
 import React from 'react'
+import 'react-calendar/dist/Calendar.css';
 import styles from './page.module.css'
 import Image from 'next/image'
 import headerImg from '@/app/img/contact_banner.png'
@@ -22,6 +23,7 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import ContactForm from '@/app/components/form'
 import ContactCard from '@/app/components/contactCard'
 import { dict } from '@/app/utils'
+import { Calendar } from 'react-calendar'
 
 interface IPage {
   params: {
@@ -30,9 +32,6 @@ interface IPage {
 }
 const Contact: React.FC<IPage> = ({ params: { lang } }) => {
   const glosary = dict[lang]?.contact
-
-  
-
   return (
     <main className={styles.main}>
       <header className={styles.header}>
@@ -45,11 +44,7 @@ const Contact: React.FC<IPage> = ({ params: { lang } }) => {
       <Section>
         <Article subtitle={glosary.sectionTitle_1} content={glosary.sectionContent_1} bigSubtitle={true}/>
         <div className={styles.calendar}>
-          <FullCalendar
-            plugins={[dayGridPlugin]}
-            initialView="dayGridMonth"
-            aspectRatio={1}
-          />
+          <Calendar locale={lang} className={styles.calendarForm}/>
         </div>
       </Section>
       <Section subtitle={glosary.sectionTitle_2} resume={glosary.sectionContent_2}>

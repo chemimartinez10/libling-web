@@ -4,8 +4,10 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import React, { useState } from 'react'
 import Link from 'next/link';
 import { poppinsBold } from '../fonts';
+import { dict } from '../utils';
 
-const Menu = () => {
+const Menu = ({ lang }: { lang: "es" | "en" | "fr" }) => {
+    const glosary = dict[lang]?.navbar
     const [open, setOpen] = useState(false)
     const close = ()=>{
         setOpen(false)
@@ -16,10 +18,10 @@ const Menu = () => {
                 {
                     !!open &&
                     <>
-                        <li style={poppinsBold.style} onClick={close}><Link href={'/about'}>Quienes somos</Link></li>
-                        <li style={poppinsBold.style} onClick={close}><Link href={'/'}>Home</Link></li>
-                        <li style={poppinsBold.style} onClick={close}><Link href={'/services'}>Servicios</Link></li>
-                        <li style={poppinsBold.style} onClick={close}><Link href={'/contact'}>Contacto</Link></li>
+                        <li style={poppinsBold.style} onClick={close}><Link href={'/about'}>{glosary.link_1}</Link></li>
+                        <li style={poppinsBold.style} onClick={close}><Link href={'/'}>{glosary.link_2}</Link></li>
+                        <li style={poppinsBold.style} onClick={close}><Link href={'/services'}>{glosary.link_3}</Link></li>
+                        <li style={poppinsBold.style} onClick={close}><Link href={'/contact'}>{glosary.link_4}</Link></li>
                     </>
                 }
             </ul>

@@ -117,6 +117,12 @@ export const dict = {
 		},
 	},
 	en: {
+		navbar: {
+			link_1: "About us",
+			link_2: "Home",
+			link_3: "Services",
+			link_4: "Contact",
+		},
 		home: {
 			titleHeader_1: "Libling Solutions está para ti",
 			titleHeader_2: "y contigo en el proceso de tu",
@@ -228,6 +234,12 @@ export const dict = {
 		},
 	},
 	fr: {
+		navbar: {
+			link_1: "About us",
+			link_2: "Home",
+			link_3: "Services",
+			link_4: "Contact",
+		},
 		home: {
 			titleHeader_1: "Libling Solutions está para ti",
 			titleHeader_2: "y contigo en el proceso de tu",

@@ -1,3 +1,4 @@
+'use client'
 import Link from 'next/link'
 import React from 'react'
 import styles from './footer.module.css'
@@ -6,7 +7,18 @@ import luxemburgImg from '../img/Capa_1.png'
 import { poppinsBold } from '../fonts'
 import { RiFacebookFill, RiInstagramFill, RiLinkedinFill } from "react-icons/ri";
 
-export default function Footer() {
+
+export default function Footer({lang}:{lang:string}) {
+    const handleClick = (currLang:string)=>{
+        console.log(lang, currLang)
+        let currentLocation = window.location.href
+        console.log('current location', currentLocation)
+        currentLocation = currentLocation.replace(`/${lang}`, `/${currLang}`)
+        console.log('new location', currentLocation)
+        document.cookie = `NEXT_LOCALE=${currLang}; max-age=31536000; path=/`
+        console.log(document.cookie)
+        window.location.href = currentLocation
+    }
     return (
         <div className={styles.footer}>
             <div className={styles.footerContainer}>
@@ -19,19 +31,19 @@ export default function Footer() {
                         +352691217216
                     </p>
                     <p>
-                        liblinglc@gmail.com
+                        info@libling.lu
                     </p>
                     <p>
-                        RCS número d’Immatriculation B278845
+                        RCS: B278845
                     </p>
                     <p>
-                        Autorisation d’établissement N°10154859/0
+                        Autorisation N°10154859/0
                     </p>
                 </div>
-                <div className={styles.luxemburgContainer}>
+                {/* <div className={styles.luxemburgContainer}>
                     <Image src={luxemburgImg} alt='madeInLuxemburg' width={96} height={77} />
 
-                </div>
+                </div> */}
                 <div className={styles.contactInfo}>
                     <h4 style={poppinsBold.style}>Deja tu mensaje y te contactaremos</h4>
                     <input type="text" name="some" id="" />
@@ -51,6 +63,13 @@ export default function Footer() {
                     </div>
 
                 </div>
+            </div>
+            <div className={styles.langSelector}>
+                <span onClick={()=>{handleClick('es')}}>ES</span>
+                <span>|</span>
+                <span onClick={() => { handleClick('en') }}>EN</span>
+                <span>|</span>
+                <span onClick={() => { handleClick('fr') }}>FR</span>
             </div>
         </div>
     )

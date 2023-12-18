@@ -14,19 +14,20 @@ export const metadata: Metadata = {
 
 export default function RootLandingLayout({
   children,
-  lang
+  params: { lang }
 }: {
   children: React.ReactNode,
-    lang: "es" | "en" | "fr"
+  params: { lang: "es" | "en" | "fr" }
+
 }) {
   console.log('aqui', lang)
   return (
-    <html lang="en">
+    <html lang={lang}>
       <body style={poppinsRegular.style} className={styles.layout}>
-        <Menu/>
-        <Navbar/>
+        <Menu lang={lang} />
+        <Navbar lang={lang} />
         {children}
-        <Footer/>
+        <Footer lang={lang} />
       </body>
     </html>
   )
