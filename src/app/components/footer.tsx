@@ -43,13 +43,16 @@ export default function Footer({lang}:{lang:string}) {
                         <h4 style={poppinsBold.style}>Síguenos</h4>
                         <div className={styles.socialIconsContainer}>
                             <div className={styles.icon}>
-                                <RiFacebookFill />
+                                <link href="https://www.facebook.com/profile.php?id=61554771181200">
+                                <RiFacebookFill /> </link>
                             </div>
                             <div className={styles.icon}>
-                                <RiInstagramFill />
+                                <link href="https://www.instagram.com/libling_solutions/">
+                                <RiInstagramFill /> </link>
                             </div>
                             <div className={styles.icon}>
-                                <RiLinkedinFill />
+                                <link href="https://www.linkedin.com/company/libling/">
+                                <RiLinkedinFill /> </link>
                             </div>
                         </div>
                     </div>
