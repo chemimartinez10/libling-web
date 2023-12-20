@@ -39,9 +39,9 @@ const Contact: React.FC<IPage> = ({ params: { lang } }) => {
       <Section subtitle={glosary.sectionTitle_2} resume={glosary.sectionContent_2}>
         <div className={styles.listContactCards}>
           <ContactCard description='+897287298724' Icon={RiWhatsappLine} color={'#659E43'}/>
-          <ContactCard description='+897287298724' Icon={RiMessengerLine} color={'#225FE7'} href="https://www.facebook.com/profile.php?id=61554771181200" />
-          <ContactCard description='+897287298724' Icon={RiInstagramLine} color={'#FB8501'} href="https://www.instagram.com/libling_solutions" />
-          <ContactCard description='+897287298724' Icon={RiLinkedinFill} color={'#F0C712'} href="https://www.linkedin.com/company/libling/" />
+          <ContactCard description='+897287298724' Icon={RiMessengerLine} color={'#225FE7'} />
+          <ContactCard description='+897287298724' Icon={RiInstagramLine} color={'#FB8501'} />
+          <ContactCard description='+897287298724' Icon={RiLinkedinFill} color={'#F0C712'} />
         </div>
       </Section>
       <Section vertical={true}>
