@@ -34,13 +34,13 @@ export const dict = {
 			],
 			reviewName_1: "MARIA SMITH",
 			reviewDescription_1:
-				"'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt amet molestiae repudiandae laboriosam! Molestias laboriosam, dignissimos corrupti, praesentium dolorum quasi officia nam sequi numquam eius, animi reiciendis consequatur quam enim.'",
+				"'¡Libling Solutions hizo que nuestra mudanza a Luxemburgo fuera impecable! Orientación experta, proceso sin estrés. Muy recomendado para una experiencia de reubicación tranquila.'",
 			reviewName_2: "LUIS MORENO",
 			reviewDescription_2:
-				"'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt amet molestiae repudiandae laboriosam! Molestias laboriosam, dignissimos corrupti, praesentium dolorum quasi officia nam sequi numquam eius, animi reiciendis consequatur quam enim.'",
+				"'Libling Solutions se encargó de todos nuestros trámites administrativos durante nuestra mudanza a Luxemburgo. Su experiencia hizo que el proceso fuera sin esfuerzo. Agradecidos por su apoyo en la gestión de documentos.'",
 			reviewName_3: "LAURA MARTINEZ",
 			reviewDescription_3:
-				"'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt amet molestiae repudiandae laboriosam! Molestias laboriosam, dignissimos corrupti, praesentium dolorum quasi officia nam sequi numquam eius, animi reiciendis consequatur quam enim.'",
+				"'Gracias a Libling Solutions, aseguramos sin esfuerzo una escuela ideal para nuestros hijos en Luxemburgo. Apreciamos su dedicación y recomendamos encarecidamente sus servicios para una mudanza familiar.'",
 		},
 		services: {
 			aditionalService_1: "Organización de recogida en el aeropuerto",
@@ -151,13 +151,13 @@ export const dict = {
 			],
 			reviewName_1: "MARIA SMITH",
 			reviewDescription_1:
-				"'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt amet molestiae repudiandae laboriosam! Molestias laboriosam, dignissimos corrupti, praesentium dolorum quasi officia nam sequi numquam eius, animi reiciendis consequatur quam enim.'",
+				"'Libling Solutions made our move to Luxembourg seamless! Expert guidance, stress-free process. Highly recommend for a smooth relocation experience!'",
 			reviewName_2: "LUIS MORENO",
 			reviewDescription_2:
-				"'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt amet molestiae repudiandae laboriosam! Molestias laboriosam, dignissimos corrupti, praesentium dolorum quasi officia nam sequi numquam eius, animi reiciendis consequatur quam enim.'",
+				"'Libling Solutions took care of all our administrative issues during our move to Luxembourg. Their expertise made the process effortless. Grateful for their support in handling paperwork.'",
 			reviewName_3: "LAURA MARTINEZ",
 			reviewDescription_3:
-				"'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt amet molestiae repudiandae laboriosam! Molestias laboriosam, dignissimos corrupti, praesentium dolorum quasi officia nam sequi numquam eius, animi reiciendis consequatur quam enim.'",
+				"'Thanks to Libling Solutions, we effortlessly secured an ideal school for our children in Luxembourg. We appreciate their dedication and highly recommend their services for a family-friendly move!'",
 		},
 		services: {
 			aditionalService_1: "Airport pickup arrangement",
@@ -268,13 +268,13 @@ export const dict = {
 			],
 			reviewName_1: "MARIA SMITH",
 			reviewDescription_1:
-				"'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt amet molestiae repudiandae laboriosam! Molestias laboriosam, dignissimos corrupti, praesentium dolorum quasi officia nam sequi numquam eius, animi reiciendis consequatur quam enim.'",
+				"'Libling Solutions a rendu notre déménagement au Luxembourg sans accroc ! Orientation experte, processus sans stress. Je le recommande fortement pour une expérience de déménagement en douceur.'",
 			reviewName_2: "LUIS MORENO",
 			reviewDescription_2:
-				"'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt amet molestiae repudiandae laboriosam! Molestias laboriosam, dignissimos corrupti, praesentium dolorum quasi officia nam sequi numquam eius, animi reiciendis consequatur quam enim.'",
+				"'Libling Solutions s'est occupé de toutes nos démarches administratives lors de notre déménagement au Luxembourg. Leur expertise a rendu le processus si simple. Je suis reconnaissant pour leur soutien dans la gestion des documents.'",
 			reviewName_3: "LAURA MARTINEZ",
 			reviewDescription_3:
-				"'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt amet molestiae repudiandae laboriosam! Molestias laboriosam, dignissimos corrupti, praesentium dolorum quasi officia nam sequi numquam eius, animi reiciendis consequatur quam enim.'",
+				"'Grâce à Libling Solutions, nous avons obtenu sans effort une école idéale pour nos enfants au Luxembourg. Nous apprécions leur dévouement et recommandons vivement leurs services pour un déménagement familial.'",
 		},
 		services: {
 			aditionalService_1: "Organisation de la prise en charge à l'aéroport",
