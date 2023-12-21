@@ -1,15 +1,25 @@
 'use client'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './navbar.module.css'
 import LogoSVG from '../img/Recurso 1 1.svg'
 import Image from 'next/image'
 import { poppinsBold } from '../fonts'
 import { dict } from '../utils'
 import { usePathname } from 'next/navigation'
+import spainImg from '@/app/img/spain.png'
+import franceImg from '@/app/img/france.png'
+import englandImg from '@/app/img/england.png'
 
 export default function Navbar({ lang }: { lang: "es" | "en" | "fr" }) {
     const glosary = dict[lang]?.navbar
+    const flags = {
+        'es': spainImg,
+        'en': englandImg,
+        'fr': franceImg,
+    }
+    const [open, setOpen] = useState(false)
+
     const pathname = usePathname()
     const handleClick = (currLang: string) => {
         console.log(lang, currLang)
@@ -42,11 +52,14 @@ export default function Navbar({ lang }: { lang: "es" | "en" | "fr" }) {
                     <li className={verifyCurrentLink('/contact') ? styles.selectedLink : undefined}><Link href={'/contact'}>{glosary.link_4}</Link></li>
                 </ul>
                 <div className={styles.formSelector}>
-                    <select name="language" id="language" onChange={(event) => { handleClick(event?.target?.value) }}>
-                        <option value="es" selected={lang === 'es' ? true : undefined}>🇪🇸</option>
-                        <option value="en" selected={lang === 'en' ? true : undefined}>🏴󠁧󠁢󠁥󠁮󠁧󠁿</option>
-                        <option value="fr" selected={lang === 'fr' ? true : undefined}>🇫🇷</option>
-                    </select>
+                    <div className={styles.selectedLang} onClick={()=>{setOpen(state => !state)}}>
+                        <Image alt='esp' src={flags[lang]} width={24} height={24} style={{ width: 24, height: 24 }} />
+                    </div>
+                    <div className={open ? styles.langListActive : styles.langList}>
+                        <Image alt='esp' src={spainImg} onClick={() => { handleClick('es') }} style={{ width: 24, height: 24 }} />
+                        <Image alt='eng' src={englandImg} onClick={() => { handleClick('en') }} style={{ width: 24, height: 24 }} />
+                        <Image alt='fra' src={franceImg} onClick={() => { handleClick('fr') }} style={{ width: 24, height: 24 }} />
+                    </div>
                 </div>
             </div>
         </nav>

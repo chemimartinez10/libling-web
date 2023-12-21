@@ -67,7 +67,7 @@ const Services: React.FC<IPage> = ({ params: { lang } }) => {
       </header>
       <Section>
         <Article subtitle={glosary.sectionTitle_1} content={glosary.sectionContent_1} />
-        <Image src={meetImg} id='travel-img' width={600} height={600} style={{ borderRadius: 24 }} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 600px' layout="responsive" />
+        <Image src={meetImg} id='travel-img' width={600} height={600} style={{ borderRadius: 24, padding:24 }} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 600px' layout="responsive" />
       </Section>
       <Section vertical={true} subtitle={glosary.sectionTitle_2}>
         <div className={styles.listCard}>
@@ -86,11 +86,11 @@ const Services: React.FC<IPage> = ({ params: { lang } }) => {
       </Section>
       <Section reverse={true}>
         <Article subtitle={glosary.sectionTitle_3} content={glosary.sectionContent_3} />
-        <Image src={placesImg} id='places-img' width={600} height={600} style={{ borderRadius: 24 }} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 600px' layout="responsive" />
+        <Image src={placesImg} id='places-img' width={600} height={600} style={{ borderRadius: 24, padding:24 }} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 600px' layout="responsive" />
       </Section>
       <Section>
         <Article subtitle={glosary.sectionTitle_4} content={glosary.sectionContent_4} />
-        <Image src={houseImg} id='house-img' width={600} height={600} style={{ borderRadius: 24 }} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 600px' layout="responsive" />
+        <Image src={houseImg} id='house-img' width={600} height={600} style={{ borderRadius: 24, padding: 24 }} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 600px' layout="responsive" />
       </Section>
 
       <Section vertical={true} subtitle='Tenemos más para ti'>
@@ -102,7 +102,7 @@ const Services: React.FC<IPage> = ({ params: { lang } }) => {
 
       </Section>
       <Section>
-        <Article subtitle={glosary.sectionTitle_5} content={glosary.sectionContent_5} buttonText={glosary.sectionButton_5} />
+        <Article subtitle={glosary.sectionTitle_5} content={glosary.sectionContent_5} buttonText={glosary.sectionButton_5} buttonAction='/contact' />
         <Image src={calendarImg} width={400} height={400} style={{ borderRadius: 24 }} alt='work' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 350px, 400px' layout="responsive" />
       </Section>
     </main>
