@@ -7,11 +7,11 @@ export const dict = {
 			link_4: "Contacto",
 		},
 		home: {
-			titleHeader_1: "Libling Solutions está para ti",
-			titleHeader_2: "y contigo en el proceso de tu",
-			titleHeader_3: "instalación en Luxemburgo.",
-			subtitleHeader_1: "Te asesoramos y gestionamos para ti,",
-			subtitleHeader_2: "garantizandote un trámite de calidad.",
+			titleHeader_1: "Con Libling solutions tu",
+			titleHeader_2: "instalación en Luxemburgo",
+			titleHeader_3: "es fácil y segura.",
+			subtitleHeader_1: "",
+			subtitleHeader_2: "",
 			sectionTitle_1: "Estamos a tu lado para ayudarte en lo que necesites",
 			sectionContent_1:
 				"Te brindaremos apoyo durante tu proceso de adaptación facilitando toda la información que necesitas  para que puedas vivir una vida de calidad en Luxemburgo.",
@@ -34,7 +34,7 @@ export const dict = {
 			],
 			reviewName_1: "MARIA SMITH",
 			reviewDescription_1:
-				"'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt amet molestiae repudiandae laboriosam! Molestias laboriosam, dignissimos corrupti, praesentium dolorum quasi officia nam sequi numquam eius, animi reiciendis consequatur quam enim.'",
+				"Hola, soy Maria Smith de Venezuela. Hace 6 meses que vivo en Luxemburgo gracias a Libling. Pude encontrar un trabajo en el sector de tecnología, que es donde mejor me especializo. También me ayudaron sobre cómo abrir una cuenta bancaria, solicitud de permiso de residencia y como hacer amigos en Luxemburgo. Gracias a ellos pude lograr la estabilidad en un país nuevo, sintiéndome feliz, tranquila y segura.",
 			reviewName_2: "LUIS MORENO",
 			reviewDescription_2:
 				"'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt amet molestiae repudiandae laboriosam! Molestias laboriosam, dignissimos corrupti, praesentium dolorum quasi officia nam sequi numquam eius, animi reiciendis consequatur quam enim.'",
@@ -80,6 +80,8 @@ export const dict = {
 				"Tour de orientación",
 				"3 días de asistencia",
 			],
+			cardTitle_4: "General",
+			cardDescription_4: "Servicio de orientación y consultoría básica",
 			cardActionText: "Solicitar",
 			sectionTitle_3: "Para los más pequeños",
 			sectionContent_3:
@@ -197,6 +199,8 @@ export const dict = {
 				"Tour de orientación",
 				"3 días de asistencia",
 			],
+			cardTitle_4: "General",
+			cardDescription_4: "Servicio de orientación y consultoría básica",
 			cardActionText: "Solicitar",
 			sectionTitle_3: "Para los más pequeños",
 			sectionContent_3:
@@ -314,6 +318,8 @@ export const dict = {
 				"Tour de orientación",
 				"3 días de asistencia",
 			],
+			cardTitle_4: "General",
+			cardDescription_4: "Servicio de orientación y consultoría básica",
 			cardActionText: "Solicitar",
 			sectionTitle_3: "Para los más pequeños",
 			sectionContent_3:
