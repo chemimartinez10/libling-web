@@ -44,7 +44,7 @@ export default function Navbar({ lang }: { lang: "es" | "en" | "fr" }) {
                 <div className={styles.formSelector}>
                     <select name="language" id="language" onChange={(event) => { handleClick(event?.target?.value) }}>
                         <option value="es" selected={lang === 'es' ? true : undefined}>🇪🇸</option>
-                        <option value="en" selected={lang === 'en' ? true : undefined}>🇬🇧</option>
+                        <option value="en" selected={lang === 'en' ? true : undefined}>🏴󠁧󠁢󠁥󠁮󠁧󠁿</option>
                         <option value="fr" selected={lang === 'fr' ? true : undefined}>🇫🇷</option>
                     </select>
                 </div>
