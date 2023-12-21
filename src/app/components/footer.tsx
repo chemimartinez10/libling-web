@@ -6,9 +6,13 @@ import Image from 'next/image'
 import luxemburgImg from '../img/Capa_1.png'
 import { poppinsBold, poppinsMedium } from '../fonts'
 import { RiFacebookFill, RiInstagramFill, RiLinkedinFill } from "react-icons/ri";
+import { IoMdSend } from "react-icons/io";
+import { dict } from '../utils'
 
 
-export default function Footer({ lang }: { lang: string }) {
+export default function Footer({ lang }: { lang: "es" | "en" | "fr" }) {
+    const glosary = dict[lang]?.footer
+
     const handleClick = (currLang: string) => {
         console.log(lang, currLang)
         let currentLocation = window.location.href
@@ -23,7 +27,7 @@ export default function Footer({ lang }: { lang: string }) {
         <div className={styles.footer}>
             <div className={styles.footerContainer}>
                 <div className={styles.contactInfo}>
-                    <h4 style={poppinsBold.style}>Contacto</h4>
+                    <h4 style={poppinsBold.style}>{glosary.title_1}</h4>
                     <p>
                         <span style={poppinsMedium.style}>Email: </span>info@libling.lu / <span style={poppinsMedium.style}>Telf: </span>+352691217216
                         <br />
@@ -37,10 +41,13 @@ export default function Footer({ lang }: { lang: string }) {
 
                 </div> */}
                 <div className={styles.contactInfo}>
-                    <h4 style={poppinsBold.style}>Deja tu mensaje y te contactaremos</h4>
-                    <input type="text" name="some" id="" />
+                    <h4 style={poppinsBold.style}>{glosary.title_2}</h4>
+                    <form onSubmit={(e)=>{e.preventDefault()}} className={styles.formEmail}>
+                        <input type="email" name="some" id="" />
+                        <button><IoMdSend /></button>
+                    </form>
                     <div className={styles.socialContainer}>
-                        <h4 style={poppinsBold.style}>Síguenos</h4>
+                        <h4 style={poppinsBold.style}>{glosary.title_3}</h4>
                         <div className={styles.socialIconsContainer}>
                             <a className={styles.icon} href="https://www.facebook.com/profile.php?id=61554771181200" >
                                 <RiFacebookFill />

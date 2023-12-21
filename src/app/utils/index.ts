@@ -6,6 +6,11 @@ export const dict = {
 			link_3: "Servicios",
 			link_4: "Contacto",
 		},
+		footer: {
+			title_1: "Contacto",
+			title_2: "Deja tu correo y te contactaremos",
+			title_3: "Síguenos",
+		},
 		home: {
 			titleHeader_1: "Con Libling solutions tu",
 			titleHeader_2: "instalación en Luxemburgo",
@@ -105,6 +110,7 @@ export const dict = {
 			form_subject: "Asunto",
 			form_email: "Correo electrónico",
 			form_message: "Mensaje",
+			form_button: "Enviar",
 		},
 		about: {
 			sectionTitle_1: "¿Quiénes somos?",
@@ -125,25 +131,26 @@ export const dict = {
 			link_3: "Services",
 			link_4: "Contact",
 		},
+		footer: {
+			title_1: "Contacto",
+			title_2: "Deja tu correo y te contactaremos",
+			title_3: "Síguenos",
+		},
 		home: {
 			titleHeader_1: "With Libling Solutions, ",
 			titleHeader_2: "your relocation to Luxembourg ",
 			titleHeader_3: "is easy and secure.",
 			subtitleHeader_1: " ",
 			subtitleHeader_2: " ",
-			sectionTitle_1: "We are by your side to assist you with whatever you need",
+			sectionTitle_1:
+				"We are by your side to assist you with whatever you need",
 			sectionContent_1:
 				"We will provide support during your adaptation process, offering all the information you need to live a quality life in Luxembourg.",
 			sectionTitle_2: "Together, we can achieve it",
 			sectionContent_2:
 				"Starting in a different country can be challenging at times, but don't worry. We will be with you to facilitate administrative, legal, and cultural processes so that you can adapt quickly to the Luxembourgish community.",
 			sectionTitle_3: "Our services :",
-			sectionList_3: [
-				"Travel",
-				"News",
-				"Entertainment",
-				"Points of interest",
-			],
+			sectionList_3: ["Travel", "News", "Entertainment", "Points of interest"],
 			sectionTitle_4: "We help you manage and advise you",
 			sectionList_4: [
 				"Work Permit Application / Temporary Authorization",
@@ -167,8 +174,7 @@ export const dict = {
 				"VISAS: Standard offer (excluding visa-apostille fee + postal service)",
 			aditionalService_3:
 				"Language teaching, House cleaning, House/apartment painting, Maintenance services, Pet transportation.",
-			aditionalService_4:
-				"Post-move support assistance (1 month).",
+			aditionalService_4: "Post-move support assistance (1 month).",
 			sectionTitle_1: "Language will not be a problem",
 			sectionContent_1:
 				"In Libling, you will have all the tools to learn a new language without any problem, as we provide special attention for Spanish speakers. In just a matter of time, you will be able to speak it perfectly. From your arrival at the airport, we will give you a tour of the streets of Luxembourg, providing you with all the cultural information you need to make your adaptation as comfortable as possible.",
@@ -224,6 +230,7 @@ export const dict = {
 			form_subject: "Subject",
 			form_email: "E-mail",
 			form_message: "Message",
+			form_button: "Enviar",
 		},
 		about: {
 			sectionTitle_1: " Who are we ?",
@@ -244,13 +251,19 @@ export const dict = {
 			link_3: "Services",
 			link_4: "Contact",
 		},
+		footer: {
+			title_1: "Contacto",
+			title_2: "Deja tu correo y te contactaremos",
+			title_3: "Síguenos",
+		},
 		home: {
 			titleHeader_1: "Avec Libling Solutions,",
 			titleHeader_2: "ton installation au Luxembourg",
 			titleHeader_3: "est facile et sécurisée.",
 			subtitleHeader_1: " ",
 			subtitleHeader_2: " ",
-			sectionTitle_1: "Nous sommes à tes côtés pour t'aider dans tous tes besoins",
+			sectionTitle_1:
+				"Nous sommes à tes côtés pour t'aider dans tous tes besoins",
 			sectionContent_1:
 				"Nous te soutiendrons pendant ton processus d'adaptation, en fournissant toutes les informations dont tu as besoin pour mener une vide de qualité au Luxembourg",
 			sectionTitle_2: "Ensemble, nous pouvons y arriver",
@@ -286,8 +299,7 @@ export const dict = {
 				"VISAS: Offre standard (hors frais de visa-apostille + service postal).",
 			aditionalService_3:
 				"Enseignement des langues, Nettoyage de la maison, Peinture de maisons/appartements, Services de maintenance, Transport d'animaux de compagnie.",
-			aditionalService_4:
-				"Assistance après le déménagement (1 mois).",
+			aditionalService_4: "Assistance après le déménagement (1 mois).",
 			sectionTitle_1: "La langue ne sera pas un problème",
 			sectionContent_1:
 				"Chez Libling, tu disposeras de tous les outils pour apprendre une nouvelle langue sans problème, car nous accordons une attention particulière aux hispanophones. En peu de temps, tu pourras la parler parfaitement. Dès ton arrivée à l'aéroport, nous te ferons visiter les rues de Luxembourg, en te fournissant toutes les informations culturelles nécessaires pour rendre ton adaptation aussi confortable que possible.",
@@ -343,6 +355,7 @@ export const dict = {
 			form_subject: "Objet",
 			form_email: "E-mail",
 			form_message: "Message",
+			form_button: "Enviar",
 		},
 		about: {
 			sectionTitle_1: "Qui sommes-nous ?",

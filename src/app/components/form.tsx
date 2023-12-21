@@ -38,7 +38,7 @@ const ContactForm: React.FC<IContactForm> = ({ lang }) => {
                 <textarea name="" id="messageInput" cols={30} rows={10} ></textarea>
 
             </div>
-            <Button text='Enviar' />
+            <Button text={glosary.form_button} />
 
 
         </div>
