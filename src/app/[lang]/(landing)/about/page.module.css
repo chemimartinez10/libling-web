@@ -36,6 +36,12 @@
   padding: 10rem 0px;
 }
 
+.image {
+  max-width: 400px;
+  align-self: center;
+  padding: 40px;
+}
+
 .headerMask>* {
   max-width: 80vw;
   text-align: left;
@@ -98,6 +104,11 @@
 
   #travel-img {
     width: 100%;
+  }
+
+  .image {
+    max-width: 100%;
+    padding: 40px;
   }
 }
 

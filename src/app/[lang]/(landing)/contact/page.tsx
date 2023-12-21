@@ -4,8 +4,8 @@ import React from 'react'
 import './calendar.css';
 import styles from './page.module.css'
 import Image from 'next/image'
-import headerImg from '@/app/img/contact_banner.png'
-import familyImg from '@/app/img/family.png'
+import headerImg from '@/app/img/contact_banner.gif'
+import familyImg from '@/app/img/big_family.png'
 import Article from '@/app/components/article'
 import { RiWhatsappLine, RiInstagramLine, RiMessengerLine, RiLinkedinFill } from "react-icons/ri";
 import Section from '@/app/components/section'
@@ -41,13 +41,13 @@ const Contact: React.FC<IPage> = ({ params: { lang } }) => {
         }
       </header>
       <Section>
-        <Article subtitle={glosary.sectionTitle_1} content={glosary.sectionContent_1} bigSubtitle={true} image={familyImg}/>
+        <Article subtitle={glosary.sectionTitle_1} content={glosary.sectionContent_1} image={familyImg}/>
         <div className={styles.calendar}>
           <h3 style={poppinsMedium.style}>Selecciona una fecha</h3>
           <Calendar locale={lang} className={poppinsRegular.className}/>
         </div>
       </Section>
-      <Section subtitle={glosary.sectionTitle_2} resume={glosary.sectionContent_2}>
+      <Section title={glosary.sectionTitle_2} resume={glosary.sectionContent_2}>
         <div className={styles.listContactCards}>
           <ContactCard description='+897287298724' Icon={RiWhatsappLine} color={'#659E43'}/>
           <ContactCard description='+897287298724' Icon={RiMessengerLine} color={'#225FE7'} />

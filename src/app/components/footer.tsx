@@ -8,8 +8,8 @@ import { poppinsBold, poppinsMedium } from '../fonts'
 import { RiFacebookFill, RiInstagramFill, RiLinkedinFill } from "react-icons/ri";
 
 
-export default function Footer({lang}:{lang:string}) {
-    const handleClick = (currLang:string)=>{
+export default function Footer({ lang }: { lang: string }) {
+    const handleClick = (currLang: string) => {
         console.log(lang, currLang)
         let currentLocation = window.location.href
         console.log('current location', currentLocation)
@@ -28,9 +28,9 @@ export default function Footer({lang}:{lang:string}) {
                         <span style={poppinsMedium.style}>Email: </span>info@libling.lu / <span style={poppinsMedium.style}>Telf: </span>+352691217216
                         <br />
                         27 Bd Prince Henri, L- 1724 Luxembourg / RCS número d’Immatriculation B278845 Autorisation d’établissement N°10154859/0
-                        
+
                     </p>
-                    
+
                 </div>
                 {/* <div className={styles.luxemburgContainer}>
                     <Image src={luxemburgImg} alt='madeInLuxemburg' width={96} height={77} />
@@ -42,22 +42,22 @@ export default function Footer({lang}:{lang:string}) {
                     <div className={styles.socialContainer}>
                         <h4 style={poppinsBold.style}>Síguenos</h4>
                         <div className={styles.socialIconsContainer}>
-                            <div className={styles.icon}>
-                                <RiFacebookFill href="https://www.facebook.com/profile.php?id=61554771181200" />
-                            </div>
-                            <div className={styles.icon}>
-                                <RiInstagramFill href="https://www.instagram.com/libling_solutions" />
-                            </div>
-                            <div className={styles.icon}>
-                                <RiLinkedinFill href="https://www.linkedin.com/company/libling/" />
-                            </div>
+                            <a className={styles.icon} href="https://www.facebook.com/profile.php?id=61554771181200" >
+                                <RiFacebookFill />
+                            </a>
+                            <a className={styles.icon} href="https://www.instagram.com/libling_solutions">
+                                <RiInstagramFill />
+                            </a>
+                            <a className={styles.icon} href="https://www.linkedin.com/company/libling/">
+                                <RiLinkedinFill />
+                            </a>
                         </div>
                     </div>
 
                 </div>
             </div>
             <div className={styles.langSelector}>
-                <span onClick={()=>{handleClick('es')}}>ES</span>
+                <span onClick={() => { handleClick('es') }}>ES</span>
                 <span>|</span>
                 <span onClick={() => { handleClick('en') }}>EN</span>
                 <span>|</span>

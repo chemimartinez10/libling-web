@@ -21,7 +21,7 @@ const Section: React.FC<ISection> = ({ title, subtitle, resume, vertical = false
                 <div className={styles.head}>
                     {
                         title &&
-                        <h2 className={styles.title}>{title}</h2>
+                            <h2 className={styles.title} style={poppinsBold.style}>{title}</h2>
                     }
                     {
                         subtitle &&

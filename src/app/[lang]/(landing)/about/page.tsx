@@ -41,15 +41,15 @@ const Services: React.FC<IPage> = ({ params: { lang } }) => {
       </header>
       <Section>
         <Article subtitle={glosary.sectionTitle_1} content={glosary.sectionContent_1} />
-        <Image src={meetImg} id='travel-img' width={600} height={600} style={{ borderRadius: 24 }} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 600px' layout="responsive" />
+        <Image src={meetImg} id='travel-img' width={600} height={600} style={{ borderRadius: 24 }} className={styles.image} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 600px' layout="responsive" />
       </Section>
       <Section reverse={true}>
         <Article subtitle={glosary.sectionTitle_2} content={glosary.sectionContent_2} />
-        <Image src={placesImg} id='places-img' width={600} height={600} style={{ borderRadius: 24 }} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 600px' layout="responsive" />
+        <Image src={placesImg} id='places-img' width={600} height={600} style={{ borderRadius: 24 }} className={styles.image} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 600px' layout="responsive" />
       </Section>
       <Section>
         <Article subtitle={glosary.sectionTitle_3} content={glosary.sectionContent_3} />
-        <Image src={houseImg} id='house-img' width={600} height={600} style={{ borderRadius: 24 }} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 600px' layout="responsive" />
+        <Image src={houseImg} id='house-img' width={600} height={600} style={{ borderRadius: 24 }} className={styles.image} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 600px' layout="responsive" />
       </Section>
     </main>
   )

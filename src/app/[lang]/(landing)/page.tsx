@@ -3,7 +3,8 @@ import styles from './page.module.css'
 import Image from 'next/image'
 import headerImg from '@/app/img/home_banner.png'
 import travelImg from '@/app/img/Recurso 18 1.png'
-import familyImg from '@/app/img/Recurso 20 1.png'
+import teamImg from '@/app/img/Recurso 20 1.png'
+import familyImg from '@/app/img/family.png'
 import alarmImg from '@/app/img/Recurso 22 1.png'
 import Recurso3 from '@/app/img/Recurso 3.png'
 import Recurso4 from '@/app/img/Recurso 4.png'
@@ -82,7 +83,7 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
       </Section>
       <Section reverse={true}>
         <Article subtitle={glosary.sectionTitle_2} content={glosary.sectionContent_2} />
-        <Image src={familyImg} width={674} height={575} style={{ borderRadius: 24, maxWidth: 674 }} alt='family' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 500px, 674px' layout="responsive" />
+        <Image src={teamImg} width={674} height={575} style={{ borderRadius: 24, maxWidth: 674 }} alt='family' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 500px, 674px' layout="responsive" />
       </Section>
       <Section vertical={true} subtitle={glosary.sectionTitle_3}>
         <div className={styles.listHighlights}>
@@ -94,7 +95,7 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
       </Section>
       <Section>
         <Article subtitle={glosary.sectionTitle_4} list={glosary.sectionList_4} />
-        <Image src={alarmImg} width={558} height={631} style={{ borderRadius: 24, maxWidth: 558 }} alt='work' sizes='(max-width: 768px) 558px, (max-width: 1120px) 380px, 558px' layout="responsive" />
+        <Image src={familyImg} width={558} height={631} style={{ borderRadius: 24, maxWidth: 558 }} className={styles.image} alt='work' sizes='(max-width: 768px) 558px, (max-width: 1120px) 380px, 558px' layout="responsive" />
 
       </Section>
       <Section>

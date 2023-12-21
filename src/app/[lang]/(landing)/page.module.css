@@ -91,12 +91,16 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: center;
+  align-items: start;
   gap: 70px;
   flex-wrap: wrap;
   width: 100%;
 }
-
+.image {
+  max-width: 400px;
+  align-self: center;
+  padding: 40px;
+}
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
@@ -123,6 +127,10 @@
       gap: 16px;
   
     }
+        .image {
+          max-width: 100%;
+          padding: 40px;
+        }
   
     .headerTitle {
       font-size: 24px;
