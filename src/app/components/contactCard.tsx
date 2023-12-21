@@ -7,11 +7,12 @@ interface IContactCard {
     Icon: React.ElementType
     color:string
     background?:string
+    url:string
 }
 
-const ContactCard: React.FC<IContactCard> = ({ description, Icon, color, background = '#225FE7' }) => {
+const ContactCard: React.FC<IContactCard> = ({ description, Icon, color, background = '#225FE7', url }) => {
     return (
-        <div className={styles.container} style={{borderColor:color, backgroundColor:background}}>
+        <a className={styles.container} style={{borderColor:color, backgroundColor:background}} href={url}>
             {Icon &&
                 <Icon style={{ fontSize: 48, alignSelf: 'center', color:'#fff' }} />
             }
@@ -19,7 +20,7 @@ const ContactCard: React.FC<IContactCard> = ({ description, Icon, color, backgro
                 description &&
                 <p className={styles.description}>{description}</p>
             }
-        </div>
+        </a>
     )
 }
 

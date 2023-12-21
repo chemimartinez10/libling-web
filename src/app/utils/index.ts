@@ -100,6 +100,7 @@ export const dict = {
 			sectionButton_5: "Agendar",
 		},
 		contact: {
+			calendarTitle: "Selecciona una fecha",
 			sectionTitle_1: "¡Agenda con nosotros!",
 			sectionContent_1:
 				"Si quieres escoger un día ideal donde quieras tener una reunión con nosotros, revisa nuestro calendario para visualizar la disponibilidad que tenemos y darte el mejor servicio que mereces. ",
@@ -220,6 +221,7 @@ export const dict = {
 			sectionButton_5: "Book an appointment",
 		},
 		contact: {
+			calendarTitle: "Selecciona una fecha",
 			sectionTitle_1: "Schedule with us!",
 			sectionContent_1:
 				"If you want to choose an ideal day for a meeting with us, check our calendar to confirm our availability and we will provide you with the best service you deserve. ",
@@ -345,6 +347,7 @@ export const dict = {
 			sectionButton_5: "Planifier un rendez-vous",
 		},
 		contact: {
+			calendarTitle: "Selecciona una fecha",
 			sectionTitle_1: "Planifies avec nous !",
 			sectionContent_1:
 				"Si tu veux choisir un jour idéal pour une réunion avec nous, consulte notre calendrier confirmer notre disponibilité et nous te fournirons le meilleur service que tu mérites.",

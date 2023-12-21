@@ -43,16 +43,16 @@ const Contact: React.FC<IPage> = ({ params: { lang } }) => {
       <Section>
         <Article subtitle={glosary.sectionTitle_1} content={glosary.sectionContent_1} image={familyImg}/>
         <div className={styles.calendar}>
-          <h3 style={poppinsMedium.style}>Selecciona una fecha</h3>
+          <h3 style={poppinsMedium.style}>{glosary.calendarTitle}</h3>
           <Calendar locale={lang} className={poppinsRegular.className}/>
         </div>
       </Section>
       <Section title={glosary.sectionTitle_2} resume={glosary.sectionContent_2}>
         <div className={styles.listContactCards}>
-          <ContactCard description='+897287298724' Icon={RiWhatsappLine} color={'#659E43'}/>
-          <ContactCard description='+897287298724' Icon={RiMessengerLine} color={'#225FE7'} />
-          <ContactCard description='+897287298724' Icon={RiInstagramLine} color={'#FB8501'} />
-          <ContactCard description='+897287298724' Icon={RiLinkedinFill} color={'#F0C712'} />
+          <ContactCard description='+897287298724' url={`https://api.whatsapp.com/send?phone=${352691217216}`} Icon={RiWhatsappLine} color={'#659E43'}/>
+          <ContactCard description='+897287298724' url='https://m.me/libling_solutions' Icon={RiMessengerLine} color={'#225FE7'} />
+          <ContactCard description='+897287298724' url='https://www.instagram.com/libling_solutions' Icon={RiInstagramLine} color={'#FB8501'} />
+          <ContactCard description='+897287298724' url='https://www.linkedin.com/company/libling/' Icon={RiLinkedinFill} color={'#F0C712'} />
         </div>
       </Section>
       <Section vertical={true}>
