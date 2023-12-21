@@ -12,6 +12,7 @@
   --background-end-rgb: 0, 0, 0;
   --background-color: #f1f1f1;
   --mask-color: #fffb;
+  --calendar-color: #fff;
   --shadow-color: #0003;
   --secondary-text-color: #000a;
 
@@ -54,6 +55,7 @@
     --background-start-rgb: 214, 219, 220;
     --background-end-rgb: 255, 255, 255;
     --mask-color: #000a;
+    --calendar-color: #000a;
     --secondary-text-color: #fffb;
     --shadow-color: #fff3;
 

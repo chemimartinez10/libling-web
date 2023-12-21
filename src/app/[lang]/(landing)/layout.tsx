@@ -5,6 +5,7 @@ import { poppinsRegular } from '../../fonts'
 import Footer from '@/app/components/footer'
 import styles from '@/app/[lang]/(landing)/page.module.css'
 import Menu from '@/app/components/menu'
+import { useParams } from 'next/navigation'
 
 
 export const metadata: Metadata = {
@@ -20,7 +21,6 @@ export default function RootLandingLayout({
   params: { lang: "es" | "en" | "fr" }
 
 }) {
-  console.log('aqui', lang)
   return (
     <html lang={lang}>
       <body style={poppinsRegular.style} className={styles.layout}>

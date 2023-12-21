@@ -14,7 +14,7 @@ const MiniCard: React.FC<IMiniCard> = ({ title, description, img, alt }) => {
         <div className={styles.container}>
 
 
-            <Image src={img} width={200} height={250} alt={alt} style={{objectFit:'cover', objectPosition:'center'}} />
+            <Image src={img} width={300} height={400} alt={alt} style={{objectFit:'cover', objectPosition:'center'}} />
             <div className={styles.infoContainer}>
                 {
                     title &&

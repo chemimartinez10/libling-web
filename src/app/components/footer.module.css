@@ -134,6 +134,11 @@
 }
 
 @media (max-width: 700px) {
+    .footer {
+
+            padding: 2rem 3rem;
+
+        }
     .footerContainer>* {
         justify-content: center;
         align-items: stretch;

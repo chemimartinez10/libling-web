@@ -15,6 +15,7 @@
     padding: 14px 112px;
     justify-content: space-between;
     align-items: center;
+    position: relative;
     /* max-width: var(--max-width); */
 
 }
@@ -34,8 +35,30 @@
     align-items: center;
     padding: 20px 0;
 }
+.selectedLink{
+    border-bottom: 4px solid #fff;
+}
+.formSelector{
+    position: absolute;
+    right: 24px;
+    top:36px
+    
+}
+.formSelector select{
+    padding: 8px;
+    font-size: 32px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
 
 /* Mobile */
+@media (max-width: 350px) {
+    .formSelector{
+        display: none;
+    }
+
+}
 @media (max-width: 700px) {
     .innernav {
         justify-content: center;

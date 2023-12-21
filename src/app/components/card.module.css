@@ -1,6 +1,6 @@
 .cardContainer {
     border-radius: 1rem;
-    background-color: var(--mask-color);
+    background-color: var(--background-color);
     box-shadow: 0px 0px 5px var(--shadow-color);
     width: 320px;
     height: 850px;
