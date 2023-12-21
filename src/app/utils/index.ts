@@ -34,13 +34,13 @@ export const dict = {
 			],
 			reviewName_1: "MARIA SMITH",
 			reviewDescription_1:
-				"Hola, soy Maria Smith de Venezuela. Hace 6 meses que vivo en Luxemburgo gracias a Libling. Pude encontrar un trabajo en el sector de tecnología, que es donde mejor me especializo. También me ayudaron sobre cómo abrir una cuenta bancaria, solicitud de permiso de residencia y como hacer amigos en Luxemburgo. Gracias a ellos pude lograr la estabilidad en un país nuevo, sintiéndome feliz, tranquila y segura.",
+				"Hace 6 meses que vivo en Luxemburgo gracias a Libling. Pude encontrar un trabajo en el sector de tecnología, que es donde mejor me especializo. También me ayudaron sobre cómo abrir una cuenta bancaria, solicitud de permiso de residencia y como hacer amigos en Luxemburgo.",
 			reviewName_2: "LUIS MORENO",
 			reviewDescription_2:
-				"'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt amet molestiae repudiandae laboriosam! Molestias laboriosam, dignissimos corrupti, praesentium dolorum quasi officia nam sequi numquam eius, animi reiciendis consequatur quam enim.'",
+				"Mi  nombre es Luis Moreno y soy de Peru. Mi novia y yo decidimos irnos a Luxemburgo buscando un mejor futuro para ambos hace un año, solicitamos la ayuda de Libling y definitivamente una de las mejores decisiones que pudimos tomar.",
 			reviewName_3: "LAURA MARTINEZ",
 			reviewDescription_3:
-				"'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt amet molestiae repudiandae laboriosam! Molestias laboriosam, dignissimos corrupti, praesentium dolorum quasi officia nam sequi numquam eius, animi reiciendis consequatur quam enim.'",
+				"Hola, soy Laura de Mexico. Luxemburgo para mí siempre ha sido una ciudad magnífica y con grandes oportunidades, así que contacté a Libling para tener los requisitos necesarios para poder vivir allí. Los recomiendo al 100%",
 		},
 		services: {
 			aditionalService_1: "Organización de recogida en el aeropuerto",
