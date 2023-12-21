@@ -132,9 +132,9 @@ export const dict = {
 			link_4: "Contact",
 		},
 		footer: {
-			title_1: "Contacto",
-			title_2: "Deja tu correo y te contactaremos",
-			title_3: "Síguenos",
+			title_1: "Contact",
+			title_2: "Leave your email, and we will contact you",
+			title_3: "Follow us",
 		},
 		home: {
 			titleHeader_1: "With Libling Solutions, ",
@@ -230,7 +230,7 @@ export const dict = {
 			form_subject: "Subject",
 			form_email: "E-mail",
 			form_message: "Message",
-			form_button: "Enviar",
+			form_button: "Send",
 		},
 		about: {
 			sectionTitle_1: " Who are we ?",
@@ -252,9 +252,9 @@ export const dict = {
 			link_4: "Contact",
 		},
 		footer: {
-			title_1: "Contacto",
-			title_2: "Deja tu correo y te contactaremos",
-			title_3: "Síguenos",
+			title_1: "Contact",
+			title_2: "Laisses nous ton e-mail et nous te recontacterons",
+			title_3: "Suis-nous",
 		},
 		home: {
 			titleHeader_1: "Avec Libling Solutions,",
@@ -330,7 +330,7 @@ export const dict = {
 				"Visite d'orientation",
 				"3 jours d'assistance",
 			],
-			cardTitle_4: "General",
+			cardTitle_4: "Général",
 			cardDescription_4: "Service d'orientation et de consultation basique",
 			cardActionText: "Demander",
 			sectionTitle_3: "Pour les plus petits",
@@ -355,7 +355,7 @@ export const dict = {
 			form_subject: "Objet",
 			form_email: "E-mail",
 			form_message: "Message",
-			form_button: "Enviar",
+			form_button: "Envoyer",
 		},
 		about: {
 			sectionTitle_1: "Qui sommes-nous ?",
