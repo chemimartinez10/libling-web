@@ -1,8 +1,8 @@
 import React from 'react'
-import styles from './card.module.css'
+import styles from './cardHorizontal.module.css'
 import Button from './button'
 import Image, { StaticImageData } from 'next/image'
-import { FiCheck, FiCheckCircle } from 'react-icons/fi'
+import { FiCheck } from 'react-icons/fi'
 import { poppinsBold, poppinsMedium } from '../fonts'
 
 interface ICard {
@@ -16,10 +16,10 @@ interface ICard {
     big?: boolean
 }
 
-const Card: React.FC<ICard> = ({ image, title, subtitle, content, list, actionText, actionUrl, big = false }) => {
+const CardHorizontal: React.FC<ICard> = ({ image, title, subtitle, content, list, actionText, actionUrl }) => {
     return (
-        <div className={big ? styles.cardBigContainer : styles.cardContainer}>
-            <div className={big ? styles.cardBigHead : styles.cardHead}>
+        <div className={styles.cardContainer}>
+            <div className={styles.cardHead}>
                 {
                     (title)
                     &&
@@ -27,15 +27,6 @@ const Card: React.FC<ICard> = ({ image, title, subtitle, content, list, actionTe
                         <div className={styles.subtitleContainer}>
                             <h3 style={poppinsMedium.style}>{title}</h3>
                         </div>
-
-                    </>
-
-                }
-                {
-                    (subtitle)
-                    &&
-                    <>
-                        <h3 style={poppinsBold.style} className={styles.subtitle}>{subtitle}</h3>
 
                     </>
 
@@ -63,16 +54,25 @@ const Card: React.FC<ICard> = ({ image, title, subtitle, content, list, actionTe
                         </ul>
                     }
 
+                    {
+                        (actionText && actionUrl)
+                        &&
+                        <Button text={actionText} />
+                    }
                 </div>
-
                 {
-                    (actionText && actionUrl)
+                    (subtitle)
                     &&
-                    <Button text={actionText} />
+                    <>
+                        <h3 style={poppinsBold.style} className={styles.subtitle}>{subtitle}</h3>
+
+                    </>
+
                 }
+
             </div>
         </div>
     )
 }
 
-export default Card
+export default CardHorizontal

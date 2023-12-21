@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import styles from './page.module.css'
 import Image from 'next/image'
@@ -24,6 +25,8 @@ import Highlight from '@/app/components/highlight'
 import Card from '@/app/components/card'
 import MiniCard from '@/app/components/miniCard'
 import { dict } from '@/app/utils'
+import useWindowDimensions from '@/app/hooks/useWindowDimensions'
+import CardHorizontal from '@/app/components/cardHorizontal'
 interface IPage {
   params: {
     lang: "es" | "en" | "fr"
@@ -31,6 +34,7 @@ interface IPage {
 }
 const Services: React.FC<IPage> = ({ params: { lang } }) => {
   const glosary = dict[lang]?.services
+  const { height, width } = useWindowDimensions();
   const serviciosAdicionales = [
     {
       img: imagen1,
@@ -59,7 +63,13 @@ const Services: React.FC<IPage> = ({ params: { lang } }) => {
           {/* logotipo de libling */}
 
         </div>
-        <Image src={headerImg} alt='header image' width={1500} height={500} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} />
+        {
+          (width && width < 600)
+            ?
+            <Image src={headerImg} alt='header image' width={1500} height={500} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} />
+            :
+            <video src={"/en/videos/services_video.mp4"} autoPlay muted loop style={{ width: '1500px', height: '500px', objectFit: 'cover', objectPosition: 'center center' }}></video>
+        }
       </header>
       <Section>
         <Article subtitle={glosary.sectionTitle_1} content={glosary.sectionContent_1} />
@@ -67,11 +77,18 @@ const Services: React.FC<IPage> = ({ params: { lang } }) => {
       </Section>
       <Section vertical={true} subtitle={glosary.sectionTitle_2}>
         <div className={styles.listCard}>
-          <Card title={glosary.cardTitle_1} list={glosary.cardList_1} image={planBasic} actionText={glosary.cardActionText} actionUrl='solicitud' />
-          <Card title={glosary.cardTitle_2} list={glosary.cardList_2} image={planNormal} actionText={glosary.cardActionText} actionUrl='solicitud' />
-          <Card title={glosary.cardTitle_3} list={glosary.cardList_3} image={planPremium} actionText={glosary.cardActionText} actionUrl='solicitud' />
+          <Card title={glosary.cardTitle_1} subtitle='50€' list={glosary.cardList_1} image={planBasic} actionText={glosary.cardActionText} actionUrl='solicitud' />
+          <Card title={glosary.cardTitle_2} subtitle='70€' list={glosary.cardList_2} image={planNormal} actionText={glosary.cardActionText} actionUrl='solicitud' />
+          <Card title={glosary.cardTitle_3} subtitle='90€' list={glosary.cardList_3} image={planPremium} actionText={glosary.cardActionText} actionUrl='solicitud' />
+          {
+            (width && width < 1100) &&
+            <Card title={glosary.cardTitle_4} subtitle='56€' content={glosary.cardDescription_4} image={planPremium} actionText={glosary.cardActionText} actionUrl='solicitud' />
+          }
         </div>
-
+        {
+          (width && width >= 1100) &&
+          <CardHorizontal title={glosary.cardTitle_4} subtitle='56€' content={glosary.cardDescription_4} image={planPremium} actionText={glosary.cardActionText} actionUrl='solicitud' />
+        }
       </Section>
       <Section reverse={true}>
         <Article subtitle={glosary.sectionTitle_3} content={glosary.sectionContent_3} />

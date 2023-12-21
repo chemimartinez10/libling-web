@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react'
-import 'react-calendar/dist/Calendar.css';
+import './calendar.css';
 import styles from './page.module.css'
 import Image from 'next/image'
 import headerImg from '@/app/img/contact_banner.png'
@@ -13,6 +13,8 @@ import ContactForm from '@/app/components/form'
 import ContactCard from '@/app/components/contactCard'
 import { dict } from '@/app/utils'
 import { Calendar } from 'react-calendar'
+import { poppinsMedium, poppinsRegular } from '@/app/fonts';
+import useWindowDimensions from '@/app/hooks/useWindowDimensions';
 
 interface IPage {
   params: {
@@ -21,6 +23,8 @@ interface IPage {
 }
 const Contact: React.FC<IPage> = ({ params: { lang } }) => {
   const glosary = dict[lang]?.contact
+  const { height, width } = useWindowDimensions();
+
   return (
     <main className={styles.main}>
       <header className={styles.header}>
@@ -28,12 +32,19 @@ const Contact: React.FC<IPage> = ({ params: { lang } }) => {
           {/* logotipo de libling */}
 
         </div>
-        <Image src={headerImg} alt='header image' width={1500} height={500} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} />
+        {
+          (width && width < 600)
+            ?
+            <Image src={headerImg} alt='header image' width={1500} height={500} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} />
+            :
+            <video src={"/en/videos/contact_video.mp4"} autoPlay muted loop style={{ width: '1500px', height: '500px', objectFit: 'cover', objectPosition: 'center center' }}></video>
+        }
       </header>
       <Section>
         <Article subtitle={glosary.sectionTitle_1} content={glosary.sectionContent_1} bigSubtitle={true} image={familyImg}/>
         <div className={styles.calendar}>
-          <Calendar locale={lang} className={styles.calendarForm}/>
+          <h3 style={poppinsMedium.style}>Selecciona una fecha</h3>
+          <Calendar locale={lang} className={poppinsRegular.className}/>
         </div>
       </Section>
       <Section subtitle={glosary.sectionTitle_2} resume={glosary.sectionContent_2}>

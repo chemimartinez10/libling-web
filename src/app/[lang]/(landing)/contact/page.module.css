@@ -44,16 +44,22 @@
   width: 600px;
   height: 100%;
   flex-grow: 1;
+  border-radius: 12px;
+  box-shadow: 0 0 10px 2px var(--shadow-color);
+  padding: 32px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--background-color);
 }
-.calendarForm{
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  color: #225FE7;
+.calendar>h3{
+  font-size: 24px;
+  color: #006edc;
+  text-align: center;
+  padding-bottom: 20px;
 }
-.calendarForm button .react-calendar__month-view__days__day--weekend{
-  color: #225FE7 !important;
-}
+
 
 .buttonContainer {
   display: flex;

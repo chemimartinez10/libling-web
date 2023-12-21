@@ -1,27 +1,32 @@
-.container{
+.container {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     max-width: 40vw;
 }
-.title{
+
+.title {
     font-size: .75rem;
-    
+
 }
-.subtitle{
+
+.subtitle {
     font-size: 32px;
     line-height: 3rem;
     margin-bottom: 1rem;
 }
-.bigSubtitle{
+
+.bigSubtitle {
     font-size: 60px;
 }
-.content{
+
+.content {
     text-align: justify;
-    color:var(--secondary-text-color);
+    color: var(--secondary-text-color);
     font-size: 20px;
 }
-.list{
+
+.list {
     padding-top: 1rem;
     list-style: none;
     display: flex;
@@ -30,16 +35,25 @@
     font-size: 20px;
     color: var(--secondary-text-color);
 }
-.list > li{
+
+.list>li {
     display: flex;
     flex-direction: row;
     gap: 1rem;
 }
+.image{
+    max-width: 400px;
+    align-self: center;
+}
 
 @media (max-width: 700px) {
-    .container{
+    .image{
         max-width: 100%;
     }
+    .container {
+        max-width: 100%;
+    }
+
     .title {
         text-align: center;
     }
@@ -49,7 +63,8 @@
         font-size: 2rem;
         line-height: 2.25rem;
     }
-        .bigSubtitle {
-            font-size: 36px;
-        }
+
+    .bigSubtitle {
+        font-size: 36px;
+    }
 }

@@ -59,10 +59,10 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
               <h4 className={styles.headerTitle} style={poppinsBold.style}>{glosary.titleHeader_3}</h4>
 
             </div>
-            <div>
+            {/* <div>
               <h3 className={styles.headerSubtitle} style={poppinsBold.style}>{glosary.subtitleHeader_1}</h3>
               <h3 className={styles.headerSubtitle} style={poppinsBold.style}>{glosary.subtitleHeader_2}</h3>
-            </div>
+            </div> */}
 
           </div>
           {/* <div className={styles.buttonContainer}>
