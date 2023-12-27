@@ -21,6 +21,7 @@ import MiniCard from '@/app/components/miniCard'
 import { dict } from '@/app/utils'
 import useWindowDimensions from '@/app/hooks/useWindowDimensions'
 import CardHorizontal from '@/app/components/cardHorizontal'
+import { useRouter } from 'next/navigation'
 interface IPage {
   params: {
     lang: "es" | "en" | "fr"
@@ -29,6 +30,10 @@ interface IPage {
 const Services: React.FC<IPage> = ({ params: { lang } }) => {
   const glosary = dict[lang]?.services
   const { height, width } = useWindowDimensions();
+  const router = useRouter()
+  const onRequest = (pack: string) => {
+    router.push(`/contact?pack=${pack}#contactForm`, {scroll:true})
+  }
   const serviciosAdicionales = [
     {
       img: imagen1,
@@ -62,31 +67,31 @@ const Services: React.FC<IPage> = ({ params: { lang } }) => {
             ?
             <Image src={headerImg} alt='header image' width={1500} height={500} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} />
             :
-            <video src={"/en/videos/services_video.mp4"} autoPlay muted loop style={{ width: '1500px', height: '500px', objectFit: 'cover', objectPosition: 'center center' }}></video>
+            <video src={"/en/videos/services_video.mp4"} autoPlay muted={true} loop style={{ width: '1500px', height: '500px', objectFit: 'cover', objectPosition: 'center center' }}></video>
         }
       </header>
       <Section>
         <Article subtitle={glosary.sectionTitle_1} content={glosary.sectionContent_1} />
-        <Image src={meetImg} id='travel-img' width={600} height={600} style={{ borderRadius: 24, padding:24 }} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 600px' layout="responsive" />
+        <Image src={meetImg} id='travel-img' width={600} height={600} style={{ borderRadius: 24, padding: 24 }} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 600px' layout="responsive" />
       </Section>
       <Section vertical={true} subtitle={glosary.sectionTitle_2}>
         <div className={styles.listCard}>
-          <Card title={glosary.cardTitle_1} subtitle='50€' list={glosary.cardList_1} image={planBasic} actionText={glosary.cardActionText} actionUrl='solicitud' />
-          <Card title={glosary.cardTitle_2} subtitle='70€' list={glosary.cardList_2} image={planNormal} actionText={glosary.cardActionText} actionUrl='solicitud' />
-          <Card title={glosary.cardTitle_3} subtitle='90€' list={glosary.cardList_3} image={planPremium} actionText={glosary.cardActionText} actionUrl='solicitud' />
+          <Card title={glosary.cardTitle_1} subtitle='50€' list={glosary.cardList_1} image={planBasic} actionText={glosary.cardActionText} action={() => { onRequest(glosary.cardTitle_1) }} />
+          <Card title={glosary.cardTitle_2} subtitle='70€' list={glosary.cardList_2} image={planNormal} actionText={glosary.cardActionText} action={() => { onRequest(glosary.cardTitle_2) }} />
+          <Card title={glosary.cardTitle_3} subtitle='90€' list={glosary.cardList_3} image={planPremium} actionText={glosary.cardActionText} action={() => { onRequest(glosary.cardTitle_3) }} />
           {
             (width && width < 1100) &&
-            <Card title={glosary.cardTitle_4} subtitle='56€' content={glosary.cardDescription_4} image={planPremium} actionText={glosary.cardActionText} actionUrl='solicitud' />
+            <Card title={glosary.cardTitle_4} subtitle='56€' content={glosary.cardDescription_4} image={planPremium} actionText={glosary.cardActionText} action={() => { onRequest(glosary.cardTitle_4) }} />
           }
         </div>
         {
           (width && width >= 1100) &&
-          <CardHorizontal title={glosary.cardTitle_4} subtitle='56€' content={glosary.cardDescription_4} image={planPremium} actionText={glosary.cardActionText} actionUrl='solicitud' />
+          <CardHorizontal title={glosary.cardTitle_4} subtitle='56€' content={glosary.cardDescription_4} image={planPremium} actionText={glosary.cardActionText} action={() => { onRequest(glosary.cardTitle_4) }} />
         }
       </Section>
       <Section reverse={true}>
         <Article subtitle={glosary.sectionTitle_3} content={glosary.sectionContent_3} />
-        <Image src={placesImg} id='places-img' width={600} height={600} style={{ borderRadius: 24, padding:24 }} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 600px' layout="responsive" />
+        <Image src={placesImg} id='places-img' width={600} height={600} style={{ borderRadius: 24, padding: 24 }} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 600px' layout="responsive" />
       </Section>
       <Section>
         <Article subtitle={glosary.sectionTitle_4} content={glosary.sectionContent_4} />

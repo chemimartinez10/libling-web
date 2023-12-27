@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import styles from './page.module.css'
 import Image from 'next/image'
@@ -21,6 +22,7 @@ import Section from '@/app/components/section'
 import Highlight from '@/app/components/highlight'
 import Review from '@/app/components/review'
 import { dict } from '@/app/utils'
+import useWindowDimensions from '@/app/hooks/useWindowDimensions'
 interface IPage {
   params: {
     lang: "es" | "en" | "fr"
@@ -28,6 +30,8 @@ interface IPage {
 }
 const Home: React.FC<IPage> = ({ params: { lang } }) => {
   const glosary = dict[lang]?.home
+  const { height, width } = useWindowDimensions();
+
   const listaBeneficios = [
     {
       title: glosary.sectionList_3[0],
@@ -75,15 +79,22 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
             </Button>
           </div> */}
         </div>
-        <Image src={headerImg} alt='header image' width={1500} height={500} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} />
+        {
+          (width && width < 600)
+            ?
+            <Image src={headerImg} alt='header image' width={1500} height={500} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} />
+            :
+            <video src={"/en/videos/home_video.mp4"} autoPlay muted={true} loop style={{ width: '1500px', height: '500px', objectFit: 'cover', objectPosition: 'center center' }}></video>
+        }
+        
       </header>
       <Section>
-        <Article subtitle={glosary.sectionTitle_1} content={glosary.sectionContent_1} />
+        <Article subtitle={glosary.sectionTitle_1} content={glosary.sectionContent_1} buttonText={glosary.sectionButton_1} buttonAction='/contact' />
         <Image src={travelImg} id='travel-img' width={490} height={465} style={{ borderRadius: 24, maxWidth: 490 }} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 490px' layout="responsive" />
       </Section>
       <Section reverse={true}>
-        <Article subtitle={glosary.sectionTitle_2} content={glosary.sectionContent_2} />
-        <Image src={teamImg} width={674} height={575} style={{ borderRadius: 24, maxWidth: 674 }} alt='family' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 500px, 674px' layout="responsive" />
+        <Article subtitle={glosary.sectionTitle_2} content={glosary.sectionContent_2} buttonText={glosary.sectionButton_2} buttonAction='/services' />
+        <Image src={teamImg} width={674} height={575} style={{ borderRadius: 24, maxWidth: 504 }} alt='family' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 500px, 674px' layout="responsive" />
       </Section>
       <Section vertical={true} subtitle={glosary.sectionTitle_3}>
         <div className={styles.listHighlights}>

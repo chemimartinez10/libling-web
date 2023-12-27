@@ -5,7 +5,8 @@ import { poppinsRegular } from '../../fonts'
 import Footer from '@/app/components/footer'
 import styles from '@/app/[lang]/(landing)/page.module.css'
 import Menu from '@/app/components/menu'
-import { useParams } from 'next/navigation'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export const metadata: Metadata = {
@@ -24,6 +25,7 @@ export default function RootLandingLayout({
   return (
     <html lang={lang}>
       <body style={poppinsRegular.style} className={styles.layout}>
+        <ToastContainer />
         <Menu lang={lang} />
         <Navbar lang={lang} />
         {children}

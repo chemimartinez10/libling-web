@@ -12,6 +12,8 @@ export const dict = {
 			title_3: "Síguenos",
 		},
 		home: {
+			sectionButton_1: "Agendar",
+			sectionButton_2: "Ver más",
 			titleHeader_1: "Con Libling solutions tu",
 			titleHeader_2: "instalación en Luxemburgo",
 			titleHeader_3: "es fácil y segura.",
@@ -124,6 +126,14 @@ export const dict = {
 			sectionContent_3:
 				"Durante tu llegada a Luxemburgo te ayudaremos con tus trámites administrativos a ti y a tu familia. Esto incluye el registro y 4 servicios adicionales para que poco a poco todo vaya sobre la marcha. Durante tu mudanza, te acompañaremos en todos los procesos que necesites para que puedas disfrutar tu estadía permanente en  Luxemburgo, pero eso no es todo, ya que Libling te brindará asistencia de soporte gratuito durante 30 días.",
 		},
+		mail: {
+			main: "Quiero obtener más información acerca de libling",
+			subject_1: "Información",
+			subject_2: "Servicios",
+			package: "Estoy interesado en el siguiente paquete: ",
+			notify: "Su mensaje ha sido enviado con éxito",
+			failed: "No se ha podido completar la solicitud",
+		},
 	},
 	en: {
 		navbar: {
@@ -138,6 +148,8 @@ export const dict = {
 			title_3: "Follow us",
 		},
 		home: {
+			sectionButton_1: "Agendar",
+			sectionButton_2: "Ver más",
 			titleHeader_1: "With Libling Solutions, ",
 			titleHeader_2: "your relocation to Luxembourg ",
 			titleHeader_3: "is easy and secure.",
@@ -245,6 +257,14 @@ export const dict = {
 			sectionContent_3:
 				"During your arrival in Luxembourg, we will assist you and your family with your administrative procedures. This includes registration and 4 additional services to ensure that everything runs smoothly. Throughout your move, we will accompany you in all the processes you need so that you can enjoy your permanent stay in Luxembourg. But that's not all, Libling will provide you with free support assistance for 30 days.",
 		},
+		mail: {
+			main: "Quiero obtener más información acerca de libling",
+			subject_1: "Información",
+			subject_2: "Servicios",
+			package: "Estoy interesado en el siguiente paquete: ",
+			notify: "Su mensaje ha sido enviado con éxito",
+			failed: "No se ha podido completar la solicitud",
+		},
 	},
 	fr: {
 		navbar: {
@@ -259,6 +279,8 @@ export const dict = {
 			title_3: "Suis-nous",
 		},
 		home: {
+			sectionButton_1: "Agendar",
+			sectionButton_2: "Ver más",
 			titleHeader_1: "Avec Libling Solutions,",
 			titleHeader_2: "ton installation au Luxembourg",
 			titleHeader_3: "est facile et sécurisée.",
@@ -370,6 +392,14 @@ export const dict = {
 			sectionTitle_3: "Nous t'aidons avec tes démarches administratives",
 			sectionContent_3:
 				"Pendant ton arrivée au Luxembourg, on t'aidera, ainsi que ta famille, avec tes démarches administratives. Cela inclut l'inscription et 4 services supplémentaires pour que tout se déroule progressivement. Tout au long de ton déménagement, on t'accompagnera dans tous les processus nécessaires pour que tu puisses profiter de ton séjour permanent au Luxembourg. Mais ce n'est pas tout, car Libling te fournira une assistance de support gratuite pendant 30 jours.",
+		},
+		mail: {
+			main: "Quiero obtener más información acerca de libling",
+			subject_1: "Información",
+			subject_2: "Servicios",
+			package: "Estoy interesado en el siguiente paquete: ",
+			notify: "Su mensaje ha sido enviado con éxito",
+			failed: "No se ha podido completar la solicitud",
 		},
 	},
 }

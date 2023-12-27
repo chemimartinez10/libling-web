@@ -12,11 +12,11 @@ interface ICard {
     content?: string
     list?: string[]
     actionText?: string
-    actionUrl?: string
+    action?: VoidFunction
     big?: boolean
 }
 
-const CardHorizontal: React.FC<ICard> = ({ image, title, subtitle, content, list, actionText, actionUrl }) => {
+const CardHorizontal: React.FC<ICard> = ({ image, title, subtitle, content, list, actionText, action }) => {
     return (
         <div className={styles.cardContainer}>
             <div className={styles.cardHead}>
@@ -55,7 +55,7 @@ const CardHorizontal: React.FC<ICard> = ({ image, title, subtitle, content, list
                     }
 
                     {
-                        (actionText && actionUrl)
+                        (actionText && action)
                         &&
                         <Button text={actionText} />
                     }

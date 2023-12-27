@@ -19,8 +19,8 @@ export default function Navbar({ lang }: { lang: "es" | "en" | "fr" }) {
         'fr': franceImg,
     }
     const [open, setOpen] = useState(false)
-
     const pathname = usePathname()
+    
     const handleClick = (currLang: string) => {
         console.log(lang, currLang)
         if (currLang) {
@@ -52,13 +52,13 @@ export default function Navbar({ lang }: { lang: "es" | "en" | "fr" }) {
                     <li className={verifyCurrentLink('/contact') ? styles.selectedLink : undefined}><Link href={'/contact'}>{glosary.link_4}</Link></li>
                 </ul>
                 <div className={styles.formSelector}>
-                    <div className={styles.selectedLang} onClick={()=>{setOpen(state => !state)}}>
-                        <Image alt='esp' src={flags[lang]} width={24} height={24} style={{ width: 24, height: 24 }} />
+                    <div className={styles.selectedLang} onClick={() => { setOpen(state => !state) }}>
+                        <Image alt={lang} src={flags[lang]} width={24} height={24} style={{ width: 24, height: 24 }} />
                     </div>
                     <div className={open ? styles.langListActive : styles.langList}>
-                        <Image alt='esp' src={spainImg} onClick={() => { handleClick('es') }} style={{ width: 24, height: 24 }} />
-                        <Image alt='eng' src={englandImg} onClick={() => { handleClick('en') }} style={{ width: 24, height: 24 }} />
-                        <Image alt='fra' src={franceImg} onClick={() => { handleClick('fr') }} style={{ width: 24, height: 24 }} />
+                        <Image alt='esp' src={spainImg} onClick={() => { handleClick('es') }} width={24} height={24} style={{ width: 24, height: 24 }} />
+                        <Image alt='eng' src={englandImg} onClick={() => { handleClick('en') }} width={24} height={24} style={{ width: 24, height: 24 }} />
+                        <Image alt='fra' src={franceImg} onClick={() => { handleClick('fr') }} width={24} height={24} style={{ width: 24, height: 24 }} />
                     </div>
                 </div>
             </div>

@@ -11,7 +11,7 @@ interface IButton extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTM
 const Button: React.FC<IButton> = (props) => {
     const { text, alternativeColor=false, children } = props
     return (
-        <button className={(alternativeColor === true) ? styles.buttonAlternative : styles.button} onClick={props.onClick}>
+        <button className={(alternativeColor === true) ? styles.buttonAlternative : styles.button} onClick={props.onClick} {...props}>
             {children}
             <span>
                 {text}
