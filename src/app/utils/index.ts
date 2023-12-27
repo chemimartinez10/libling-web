@@ -148,8 +148,8 @@ export const dict = {
 			title_3: "Follow us",
 		},
 		home: {
-			sectionButton_1: "Agendar",
-			sectionButton_2: "Ver más",
+			sectionButton_1: "Schedule",
+			sectionButton_2: "See more",
 			titleHeader_1: "With Libling Solutions, ",
 			titleHeader_2: "your relocation to Luxembourg ",
 			titleHeader_3: "is easy and secure.",
@@ -233,7 +233,7 @@ export const dict = {
 			sectionButton_5: "Book an appointment",
 		},
 		contact: {
-			calendarTitle: "Selecciona una fecha",
+			calendarTitle: "Select a date",
 			sectionTitle_1: "Schedule with us!",
 			sectionContent_1:
 				"If you want to choose an ideal day for a meeting with us, check our calendar to confirm our availability and we will provide you with the best service you deserve. ",
@@ -258,12 +258,12 @@ export const dict = {
 				"During your arrival in Luxembourg, we will assist you and your family with your administrative procedures. This includes registration and 4 additional services to ensure that everything runs smoothly. Throughout your move, we will accompany you in all the processes you need so that you can enjoy your permanent stay in Luxembourg. But that's not all, Libling will provide you with free support assistance for 30 days.",
 		},
 		mail: {
-			main: "Quiero obtener más información acerca de libling",
-			subject_1: "Información",
-			subject_2: "Servicios",
-			package: "Estoy interesado en el siguiente paquete: ",
-			notify: "Su mensaje ha sido enviado con éxito",
-			failed: "No se ha podido completar la solicitud",
+			main: "I would like to know more about Libling",
+			subject_1: "Information",
+			subject_2: "Services",
+			package: "I am interested by the following pack: ",
+			notify: "Your message was sent with success",
+			failed: "Your request could not be completed",
 		},
 	},
 	fr: {
@@ -279,8 +279,8 @@ export const dict = {
 			title_3: "Suis-nous",
 		},
 		home: {
-			sectionButton_1: "Agendar",
-			sectionButton_2: "Ver más",
+			sectionButton_1: "Planifier",
+			sectionButton_2: "Voir plus",
 			titleHeader_1: "Avec Libling Solutions,",
 			titleHeader_2: "ton installation au Luxembourg",
 			titleHeader_3: "est facile et sécurisée.",
@@ -369,7 +369,7 @@ export const dict = {
 			sectionButton_5: "Planifier un rendez-vous",
 		},
 		contact: {
-			calendarTitle: "Selecciona una fecha",
+			calendarTitle: "Sélectionne une date",
 			sectionTitle_1: "Planifies avec nous !",
 			sectionContent_1:
 				"Si tu veux choisir un jour idéal pour une réunion avec nous, consulte notre calendrier confirmer notre disponibilité et nous te fournirons le meilleur service que tu mérites.",
@@ -394,12 +394,12 @@ export const dict = {
 				"Pendant ton arrivée au Luxembourg, on t'aidera, ainsi que ta famille, avec tes démarches administratives. Cela inclut l'inscription et 4 services supplémentaires pour que tout se déroule progressivement. Tout au long de ton déménagement, on t'accompagnera dans tous les processus nécessaires pour que tu puisses profiter de ton séjour permanent au Luxembourg. Mais ce n'est pas tout, car Libling te fournira une assistance de support gratuite pendant 30 jours.",
 		},
 		mail: {
-			main: "Quiero obtener más información acerca de libling",
-			subject_1: "Información",
-			subject_2: "Servicios",
-			package: "Estoy interesado en el siguiente paquete: ",
-			notify: "Su mensaje ha sido enviado con éxito",
-			failed: "No se ha podido completar la solicitud",
+			main: "J'aimerais avoir plus d'informations sur Libling",
+			subject_1: "Information",
+			subject_2: "Services",
+			package: "Je suis intéressé par le pack suivant: ",
+			notify: "Ton message a été envoyé avec succès",
+			failed: "La demande n'a pas pu être complétée",
 		},
 	},
 }
