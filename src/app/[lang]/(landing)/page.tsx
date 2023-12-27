@@ -97,7 +97,7 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
       </Section>
       <Section reverse={true}>
         <Article subtitle={glosary.sectionTitle_2} content={glosary.sectionContent_2} buttonText={glosary.sectionButton_2} buttonAction='/services' />
-        <Image src={teamImg} width={674} height={575} style={{ borderRadius: 24, maxWidth: 504 }} alt='family' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 500px, 674px' layout="responsive" />
+        <Image src={teamImg} width={674} height={575} style={{ borderRadius: 24, maxWidth: 490, flexShrink:1 }} alt='family' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 500px, 674px' layout="responsive" />
       </Section>
       <Section vertical={true} subtitle={glosary.sectionTitle_3}>
         <div className={styles.listHighlights}>
@@ -109,7 +109,7 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
       </Section>
       <Section>
         <Article subtitle={glosary.sectionTitle_4} list={glosary.sectionList_4} />
-        <Image src={familyImg} width={558} height={631} style={{ borderRadius: 24, maxWidth: 558 }} className={styles.image} alt='work' sizes='(max-width: 768px) 558px, (max-width: 1120px) 380px, 558px' layout="responsive" />
+        <Image src={familyImg} width={558} height={631} style={{ borderRadius: 24, maxWidth: 520 }} className={styles.image} alt='work' sizes='(max-width: 768px) 558px, (max-width: 1120px) 380px, 558px' layout="responsive" />
 
       </Section>
       <Section>

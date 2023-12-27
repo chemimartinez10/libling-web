@@ -100,6 +100,7 @@
   max-width: 400px;
   align-self: center;
   padding: 40px;
+  flex-shrink: 1;
 }
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
