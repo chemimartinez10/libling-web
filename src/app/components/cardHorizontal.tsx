@@ -57,7 +57,7 @@ const CardHorizontal: React.FC<ICard> = ({ image, title, subtitle, content, list
                     {
                         (actionText && action)
                         &&
-                        <Button text={actionText} />
+                        <Button text={actionText} onClick={action} />
                     }
                 </div>
                 {
