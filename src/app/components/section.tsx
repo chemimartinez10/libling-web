@@ -29,7 +29,7 @@ const Section: React.FC<ISection> = ({ title, subtitle, resume, vertical = false
                     }
                     {
                         resume &&
-                        <h4 className={styles.resume}>{resume}</h4>
+                        <span className={styles.resume}>{resume}</span>
 
                     }
                 </div>
