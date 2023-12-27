@@ -2,7 +2,7 @@
 import React from 'react'
 import styles from './page.module.css'
 import Image from 'next/image'
-import headerImg from '@/app/img/home_banner.png'
+import headerImg from '@/app/img/home_banner.gif'
 import travelImg from '@/app/img/Recurso 18 1.png'
 import teamImg from '@/app/img/Recurso 20 1.png'
 import familyImg from '@/app/img/family.png'
