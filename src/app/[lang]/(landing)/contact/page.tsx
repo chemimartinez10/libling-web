@@ -37,7 +37,10 @@ const Contact: React.FC<IPage> = ({ params: { lang } }) => {
             ?
             <Image src={headerImg} alt='header image' width={1500} height={500} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} />
             :
-            <video src={"/en/videos/contact_video.mp4"} autoPlay muted={true} loop style={{ width: '1500px', height: '500px', objectFit: 'cover', objectPosition: 'center center' }}></video>
+            <video autoPlay muted={true} loop style={{ width: '1500px', height: '500px', objectFit: 'cover', objectPosition: 'center center' }}>
+              <source src={"/en/videos/contact_video.webm"} type="video/webm" />
+              <source src={"/en/videos/contact_video.mp4"} type="video/mp4" />
+            </video>
         }
       </header>
       <Section>
