@@ -22,7 +22,7 @@
 }
 
 .content {
-    text-align: justify;
+    text-align: left;
     color: var(--secondary-text-color);
     font-size: 20px;
 }

@@ -98,6 +98,7 @@
   #travel-img {
     width: 100%;
   }
+    
 }
 
 /* Tablet and Smaller Desktop */
@@ -106,6 +107,7 @@
     width: 450px;
     height: 450px;
   }
+    
 }
 
 @media (prefers-color-scheme: dark) {}

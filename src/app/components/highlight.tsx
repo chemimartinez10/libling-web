@@ -30,7 +30,7 @@ const Highlight: React.FC<IHighlight> = ({ title, description, img, Icon, alt })
                     <div className={styles.dialogClose} onClick={()=>{setOpen(false)}}>
                         <FaTimes/>
                     </div>
-                    <h2 style={{...poppinsBold.style, fontSize:32}}>{title}</h2>
+                    <h2 style={{...poppinsBold.style}} className={styles.modalTitle}>{title}</h2>
                     <p>{description}</p>
                 </article>
             </div>

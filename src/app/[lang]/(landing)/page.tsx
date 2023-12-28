@@ -54,30 +54,13 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
     <main className={styles.main}>
       <header className={styles.header}>
         <div className={styles.headerMask}>
-          {/* logotipo de libling */}
-          {/* <h1 className={poppinsSemiBold.className}>Libling</h1>
-          <AnimatedText /> */}
           <div className={styles.textContainer}>
             <div>
               <h4 className={styles.headerTitle} style={poppinsBold.style}>{glosary.titleHeader_1}</h4>
               <h4 className={styles.headerTitle} style={poppinsBold.style}>{glosary.titleHeader_2}</h4>
               <h4 className={styles.headerTitle} style={poppinsBold.style}>{glosary.titleHeader_3}</h4>
-
             </div>
-            {/* <div>
-              <h3 className={styles.headerSubtitle} style={poppinsBold.style}>{glosary.subtitleHeader_1}</h3>
-              <h3 className={styles.headerSubtitle} style={poppinsBold.style}>{glosary.subtitleHeader_2}</h3>
-            </div> */}
-
           </div>
-          {/* <div className={styles.buttonContainer}>
-            <Button text='Agendar' alternativeColor={true}>
-              <FiCalendar />
-            </Button>
-            <Button text='Contactar'>
-              <FiMail />
-            </Button>
-          </div> */}
         </div>
         {
           (width && width < 600)

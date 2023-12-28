@@ -1,4 +1,4 @@
-.container{
+.container {
     display: flex;
     flex-direction: column;
     gap: .5rem;
@@ -8,7 +8,8 @@
     height: 150px;
     cursor: pointer;
 }
-.dialog{
+
+.dialog {
     position: fixed;
     left: 0;
     top: 0;
@@ -21,7 +22,12 @@
     align-items: center;
     z-index: 999;
 }
-.dialogContainer{
+
+.modalTitle {
+    font-size: 32px;
+}
+
+.dialogContainer {
     min-width: 50vw;
     min-height: 50vw;
     background-color: var(--background-color);
@@ -30,7 +36,8 @@
     box-shadow: 0 0 5px 2px var(--shadow-color);
     position: relative;
 }
-.dialogClose{
+
+.dialogClose {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,14 +49,17 @@
     border-radius: 10px;
     background-color: var(--shadow-color);
 }
-.title{
+
+.title {
     text-align: center;
     display: none;
 }
-.description{
+
+.description {
     text-align: center;
 }
-.circleContainer{
+
+.circleContainer {
     border-radius: 50%;
     width: 150px;
     height: 150px;
@@ -59,9 +69,26 @@
     background-color: var(--mask-color);
     overflow: hidden;
 }
+
 @media (max-width: 700px) {
-    .dialogContainer{
+    .dialogContainer {
         width: 80vw;
         min-height: 80vw;
     }
+
+    .modalTitle {
+        font-size: 20px;
+    }
+        .dialogClose {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: .75rem;
+            font-size: 1.5rem;
+            position: absolute;
+            right: 8px;
+            top: 8px;
+            border-radius: 10px;
+            background-color: var(--shadow-color);
+        }
 }

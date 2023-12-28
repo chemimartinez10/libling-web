@@ -46,8 +46,8 @@ export default function Navbar({ lang }: { lang: "es" | "en" | "fr" }) {
                     <Image src={LogoSVG} width={191} height={58} alt='Logo' />
                 </div>
                 <ul style={poppinsBold.style}>
-                    <li className={verifyCurrentLink('/about') ? styles.selectedLink : undefined}><Link href={'/about'}>{glosary.link_1}</Link></li>
                     <li className={(!verifyCurrentLink('/about') && !verifyCurrentLink('/services') && !verifyCurrentLink('/contact')) ? styles.selectedLink : undefined}><Link href={'/'}>{glosary.link_2}</Link></li>
+                    <li className={verifyCurrentLink('/about') ? styles.selectedLink : undefined}><Link href={'/about'}>{glosary.link_1}</Link></li>
                     <li className={verifyCurrentLink('/services') ? styles.selectedLink : undefined}><Link href={'/services'}>{glosary.link_3}</Link></li>
                     <li className={verifyCurrentLink('/contact') ? styles.selectedLink : undefined}><Link href={'/contact'}>{glosary.link_4}</Link></li>
                 </ul>

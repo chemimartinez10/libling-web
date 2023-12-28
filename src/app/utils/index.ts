@@ -57,9 +57,9 @@ export const dict = {
 				"Enseñanza de idiomas, Limpieza de la casa, Pintura de casas/pisos, Servicios de mantenimiento, Transporte de mascotas.",
 			aditionalService_4:
 				"Asistencia de soporte después de la mudanza (1 mes).",
-			sectionTitle_1: "El idioma no será un problema",
+			sectionTitle_1: "Te acompañamos desde el día 1",
 			sectionContent_1:
-				"En libling contarás con todas las herramientas para aprender un nuevo idioma sin problema,  ya que contamos con atención especial para los hispanohablantes y en tan sólo cuestión de tiempo podrás hablarlo perfectamente. Desde tu llegada al aeropuerto te daremos un tour por las calles de Luxemburgo, brindándote toda la información cultural que necesitas para que tu adaptación sea la más cómoda posible.",
+				"Desde tu llegada al aeropuerto, hasta haciendo tours por las calles de Luxemburgo, Libling estará allí para ti, para brindarte todo lo que necesitas para que tu estancia permanente sea la mejor de todas en tu idioma nativo.",
 			sectionTitle_2: "Paquetes para todos",
 			cardTitle_1: "Básico",
 			cardList_1: [
@@ -95,7 +95,7 @@ export const dict = {
 				"La educación de los pequeños es de gran importancia y Libling te ayudará a encontrar las escuelas o guarderías que sean de agrado para ti, para que tus pequeños puedan seguir estudiando y cumplir sus sueños.",
 			sectionTitle_4: "Te ayudamos con tus trámites",
 			sectionContent_4:
-				"Durante tu llegada a Luxemburgo te ayudaremos con tus trámites administrativos a ti y a tu familia. Esto incluye el registro y 4 servicios adicionales para que poco a poco todo vaya sobre la marcha. Durante tu mudanza, te acompañaremos en todos los procesos que necesites para que puedas disfrutar tu estadía permanente en  Luxemburgo, pero eso no es todo, ya que Libling te brindará asistencia de soporte gratuito durante 30 días.",
+				"Durante tu llegada a Luxemburgo te ayudaremos con tus trámites administrativos a ti y a tu familia. Esto incluye el registro y 4 servicios adicionales para que poco a poco todo vaya sobre la marcha.",
 			sectionTitle_5: "Apunta tu cita",
 			sectionContent_5:
 				"Si quieres escoger un día ideal donde quieras tener una reunión con nosotros, revisa nuestro calendario para visualizar la disponibilidad que tenemos y darte el mejor servicio que mereces.",
@@ -116,6 +116,9 @@ export const dict = {
 			form_button: "Enviar",
 		},
 		about: {
+			titleHeader_1: "Compartimos",
+			titleHeader_2: "nuestra historia",
+			titleHeader_3: "contigo",
 			sectionTitle_1: "¿Quiénes somos?",
 			sectionContent_1:
 				"Empezar una nueva vida en un país distinto no siempre es fácil, pero no te preocupes, con apoyo todo será más sencillo. En Libling, nuestro objetivo es ayudarte a que tu relocalización en Luxemburgo sea la mejor y la más reconfortante para ti.",
@@ -188,9 +191,9 @@ export const dict = {
 			aditionalService_3:
 				"Language teaching, House cleaning, House/apartment painting, Maintenance services, Pet transportation.",
 			aditionalService_4: "Post-move support assistance (1 month).",
-			sectionTitle_1: "Language will not be a problem",
+			sectionTitle_1: "We’ll be with you every step of the journey",
 			sectionContent_1:
-				"In Libling, you will have all the tools to learn a new language without any problem, as we provide special attention for Spanish speakers. In just a matter of time, you will be able to speak it perfectly. From your arrival at the airport, we will give you a tour of the streets of Luxembourg, providing you with all the cultural information you need to make your adaptation as comfortable as possible.",
+				"From your arrival at the airport, to doing tours through the streets of Luxembourg, Libling will be there for you, to provide you with everything you need to make your permanent stay the best of all in your native language.",
 			sectionTitle_2: "Packages for everyone",
 			cardTitle_1: "Basic",
 			cardList_1: [
@@ -223,10 +226,10 @@ export const dict = {
 			cardActionText: "Request",
 			sectionTitle_3: "For the little ones",
 			sectionContent_3:
-				" The education of the little ones is of great importance, and Libling will help you find schools or daycares that suit your preferences, so that your little ones can continue studying and fulfill their dreams.",
-			sectionTitle_4: "We help you with your paperwork",
+				"Our children's education is essential and significant, so our purpose is helping you to find schools and daycares that suit you as well and your little ones can continue studying and fulfilling their dreams.",
+			sectionTitle_4: "Your paperwork will be a breeze",
 			sectionContent_4:
-				"During your arrival in Luxembourg, we will assist you and your family with your administrative procedures. This includes registration and 4 additional services to ensure that everything runs smoothly. Throughout your move, we will accompany you in all the processes you need so that you can enjoy your permanent stay in Luxembourg. But that's not all, Libling will provide you with free support assistance for 30 days.",
+				"During your arrival in Luxembourg, Libling will help you with administrative procedures for you and your family. This includes registration and four additional services to ensure all and sundry goes smoothly over time.",
 			sectionTitle_5: "Schedule your appointment",
 			sectionContent_5:
 				"If you want to choose an ideal day for a meeting with us, check our calendar to confirm our availability and we will provide you with the best service you deserve.",
@@ -247,6 +250,9 @@ export const dict = {
 			form_button: "Send",
 		},
 		about: {
+			titleHeader_1: "We share",
+			titleHeader_2: "our story",
+			titleHeader_3: "with you",
 			sectionTitle_1: " Who are we ?",
 			sectionContent_1:
 				"Starting a new life in a different country is not always easy, but don't worry, with support, everything will be simpler. At Libling, our goal is to help make your relocation to Luxembourg the best and most comforting experience for you.",
@@ -324,9 +330,9 @@ export const dict = {
 			aditionalService_3:
 				"Enseignement des langues, Nettoyage de la maison, Peinture de maisons/appartements, Services de maintenance, Transport d'animaux de compagnie.",
 			aditionalService_4: "Assistance après le déménagement (1 mois).",
-			sectionTitle_1: "La langue ne sera pas un problème",
+			sectionTitle_1: "Nous vous accompagnons dès le premier jour",
 			sectionContent_1:
-				"Chez Libling, tu disposeras de tous les outils pour apprendre une nouvelle langue sans problème, car nous accordons une attention particulière aux hispanophones. En peu de temps, tu pourras la parler parfaitement. Dès ton arrivée à l'aéroport, nous te ferons visiter les rues de Luxembourg, en te fournissant toutes les informations culturelles nécessaires pour rendre ton adaptation aussi confortable que possible.",
+				"De votre arrivée à l'aéroport à la visite des rues de Luxembourg, Libling sera là pour vous, pour vous fournir tout ce dont vous avez besoin pour que votre séjour permanent soit le meilleur possible dans votre langue maternelle.",
 			sectionTitle_2: "Des forfaits pour tout le monde",
 			cardTitle_1: "Basique",
 			cardList_1: [
@@ -362,7 +368,7 @@ export const dict = {
 				"L'éducation des petits est d'une grande importance, et Libling t'aidera à trouver des écoles ou des garderies qui te conviennent, afin que tes petits puissent continuer à étudier et réaliser leurs rêves.",
 			sectionTitle_4: "Nous t'aidons avec tes démarches administratives",
 			sectionContent_4:
-				"Pendant ton arrivée au Luxembourg, on t'aidera, ainsi que ta famille, avec tes démarches administratives. Cela inclut l'inscription et 4 services supplémentaires pour que tout se déroule progressivement. Tout au long de ton déménagement, on t'accompagnera dans tous les processus nécessaires pour que tu puisses profiter de ton séjour permanent au Luxembourg. Mais ce n'est pas tout, car Libling te fournira une assistance de support gratuite pendant 30 jours.",
+				"Lors de votre arrivée au Luxembourg, nous vous aiderons, vous et votre famille, à accomplir vos formalités administratives. Cela comprend l'enregistrement et 4 services supplémentaires pour que tout se passe bien.",
 			sectionTitle_5: "Prends rendez-vous",
 			sectionContent_5:
 				"Si tu veux choisir un jour idéal pour une réunion avec nous, consulte notre calendrier confirmer notre disponibilité et nous te fournirons le meilleur service que tu mérites.",
@@ -383,6 +389,9 @@ export const dict = {
 			form_button: "Envoyer",
 		},
 		about: {
+			titleHeader_1: "Nous partageons",
+			titleHeader_2: "notre histoire",
+			titleHeader_3: "avec vous",
 			sectionTitle_1: "Qui sommes-nous ?",
 			sectionContent_1:
 				"Commencer une nouvelle vie dans un pays différent n'est pas toujours facile, mais ne t'inquiète pas, avec du soutien, tout sera plus simple. Chez Libling, notre objectif est de t'aider à faire de ta relocalisation au Luxembourg la meilleure et la plus réconfortante pour toi.",
