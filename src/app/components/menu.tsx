@@ -19,8 +19,8 @@ const Menu = ({ lang }: { lang: "es" | "en" | "fr" }) => {
                     !!open &&
                     <>
                         <li style={poppinsBold.style} ><Link href={'/'}>{glosary.link_2}</Link></li>
-                        <li style={poppinsBold.style} ><Link href={'/about'}>{glosary.link_1}</Link></li>
                         <li style={poppinsBold.style} ><Link href={'/services'}>{glosary.link_3}</Link></li>
+                        <li style={poppinsBold.style} ><Link href={'/about'}>{glosary.link_1}</Link></li>
                         <li style={poppinsBold.style} ><Link href={'/contact'}>{glosary.link_4}</Link></li>
                     </>
                 }
