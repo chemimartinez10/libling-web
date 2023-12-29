@@ -53,7 +53,7 @@ const Contact: React.FC<IPage> = ({ params: { lang } }) => {
       <Section title={glosary.sectionTitle_2} resume={glosary.sectionContent_2}>
         <div className={styles.listContactCards}>
           <ContactCard description='+897287298724' url={`https://api.whatsapp.com/send?phone=${352691217216}`} Icon={RiWhatsappLine} color={'#659E43'}/>
-          <ContactCard description='+897287298724' url='https://m.me/libling_solutions' Icon={RiMessengerLine} color={'#225FE7'} />
+          <ContactCard description='+897287298724' url='https://m.me/61554771181200' Icon={RiMessengerLine} color={'#225FE7'} />
           <ContactCard description='+897287298724' url='https://www.instagram.com/libling_solutions' Icon={RiInstagramLine} color={'#FB8501'} />
           <ContactCard description='+897287298724' url='https://www.linkedin.com/company/libling/' Icon={RiLinkedinFill} color={'#F0C712'} />
         </div>
