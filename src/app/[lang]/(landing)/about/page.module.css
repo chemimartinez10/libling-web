@@ -20,7 +20,7 @@
   color: #000;
   font-size: 54px;
   text-shadow: 0 0 5px #fff;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 .textContainer {
