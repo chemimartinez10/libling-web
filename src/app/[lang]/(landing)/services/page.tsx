@@ -84,12 +84,12 @@ const Services: React.FC<IPage> = ({ params: { lang } }) => {
           <Card title={glosary.cardTitle_3}  list={glosary.cardList_3} image={planPremium} actionText={glosary.cardActionText} action={() => { onRequest(glosary.cardTitle_3) }} />
           {
             (width && width < 1100) &&
-            <Card title={glosary.cardTitle_4} subtitle='56€' content={glosary.cardDescription_4} image={planPremium} actionText={glosary.cardActionText} action={() => { onRequest(glosary.cardTitle_4) }} />
+            <Card title={glosary.cardTitle_4} content={glosary.cardDescription_4} image={planPremium} actionText={glosary.cardActionText} action={() => { onRequest(glosary.cardTitle_4) }} />
           }
         </div>
         {
           (width && width >= 1100) &&
-          <CardHorizontal title={glosary.cardTitle_4} subtitle='56€' content={glosary.cardDescription_4} image={planPremium} actionText={glosary.cardActionText} action={() => { onRequest(glosary.cardTitle_4) }} />
+          <CardHorizontal title={glosary.cardTitle_4} content={glosary.cardDescription_4} image={planPremium} actionText={glosary.cardActionText} action={() => { onRequest(glosary.cardTitle_4) }} />
         }
       </Section>
       <Section reverse={true}>

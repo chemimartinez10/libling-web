@@ -1,6 +1,6 @@
 "use client"
 import Image, { StaticImageData } from 'next/image'
-import React, { SyntheticEvent, useState } from 'react'
+import React, { SyntheticEvent, useEffect, useState } from 'react'
 import styles from './form.module.css'
 import Button from './button'
 import { poppinsBold, poppinsRegular } from '../fonts'
@@ -22,20 +22,11 @@ const ContactForm: React.FC<IContactForm> = ({ lang }) => {
     const glosary = dict[lang]?.contact
     const mailMessages = dict[lang]?.mail
     const query = useSearchParams()
-    let initialSubject = ''
-    let initialMessage = ''
-    if (query.get('pack')){
-        initialSubject = mailMessages.subject_2
-        initialMessage = `${mailMessages.package} ${query.get('pack')}`
-    }
-    if (query.get('date')){
-        initialSubject = mailMessages.subject_1
-        initialMessage = `${mailMessages.date} ${query.get('date')}`
-    }
+    
     const [inputValue, setInputValue] = useState('');
     const [inputName, setInputName] = useState('');
-    const [inputSubject, setInputSubject] = useState(initialSubject);
-    const [inputMessage, setInputMessage] = useState(initialMessage);
+    const [inputSubject, setInputSubject] = useState('');
+    const [inputMessage, setInputMessage] = useState('');
     const [loading, setLoading] = useState<boolean | undefined>();
 
     const handleSubmit = async (event: SyntheticEvent) => {
@@ -56,6 +47,20 @@ const ContactForm: React.FC<IContactForm> = ({ lang }) => {
         setInputName('')
         setInputSubject('')
     }
+    useEffect(() => {
+        let initialSubject = ''
+        let initialMessage = ''
+        if (query.get('pack')) {
+            initialSubject = mailMessages.subject_2
+            initialMessage = `${mailMessages.package} ${query.get('pack')}`
+        }
+        if (query.get('date')) {
+            initialSubject = mailMessages.subject_1
+            initialMessage = `${mailMessages.date} ${query.get('date')}`
+        }
+        setInputSubject(initialSubject)
+        setInputMessage(initialMessage)
+    },[query])
 
     return (
         <form className={styles.container} onSubmit={handleSubmit} id='contactForm'>

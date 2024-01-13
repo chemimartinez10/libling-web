@@ -46,6 +46,7 @@ export const CalendarEvent: React.FC<ICalendarEvents> = ({ calendarTitle, lang, 
         console.log(eventList)
         console.log(date.toDateString())
         if (!eventList.some(el => el === date.toDateString())){
+            // router.push(`/home`)
             router.push(`/contact?date=${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}#contactForm`, { scroll: true })
         }
     }
