@@ -79,9 +79,9 @@ const Services: React.FC<IPage> = ({ params: { lang } }) => {
       </Section>
       <Section vertical={true} subtitle={glosary.sectionTitle_2}>
         <div className={styles.listCard}>
-          <Card title={glosary.cardTitle_1} subtitle='50€' list={glosary.cardList_1} image={planBasic} actionText={glosary.cardActionText} action={() => { onRequest(glosary.cardTitle_1) }} />
-          <Card title={glosary.cardTitle_2} subtitle='70€' list={glosary.cardList_2} image={planNormal} actionText={glosary.cardActionText} action={() => { onRequest(glosary.cardTitle_2) }} />
-          <Card title={glosary.cardTitle_3} subtitle='90€' list={glosary.cardList_3} image={planPremium} actionText={glosary.cardActionText} action={() => { onRequest(glosary.cardTitle_3) }} />
+          <Card title={glosary.cardTitle_1}  list={glosary.cardList_1} image={planBasic} actionText={glosary.cardActionText} action={() => { onRequest(glosary.cardTitle_1) }} />
+          <Card title={glosary.cardTitle_2}  list={glosary.cardList_2} image={planNormal} actionText={glosary.cardActionText} action={() => { onRequest(glosary.cardTitle_2) }} />
+          <Card title={glosary.cardTitle_3}  list={glosary.cardList_3} image={planPremium} actionText={glosary.cardActionText} action={() => { onRequest(glosary.cardTitle_3) }} />
           {
             (width && width < 1100) &&
             <Card title={glosary.cardTitle_4} subtitle='56€' content={glosary.cardDescription_4} image={planPremium} actionText={glosary.cardActionText} action={() => { onRequest(glosary.cardTitle_4) }} />
@@ -101,7 +101,7 @@ const Services: React.FC<IPage> = ({ params: { lang } }) => {
         <Image src={houseImg} id='house-img' width={600} height={600} style={{ borderRadius: 24, padding: 24 }} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 600px' layout="responsive" />
       </Section>
 
-      <Section vertical={true} subtitle='Tenemos más para ti'>
+      <Section vertical={true} subtitle={glosary.aditionalTitle_1}>
         <div className={styles.listServices}>
           {
             serviciosAdicionales.map((el, index) => (<MiniCard key={index} alt={`minicard${index}`} description={el?.description} img={el?.img} />))

@@ -19,12 +19,12 @@ export const dict = {
 			titleHeader_3: "es fácil y segura.",
 			subtitleHeader_1: "",
 			subtitleHeader_2: "",
-			sectionTitle_1: "Estamos a tu lado para ayudarte en lo que necesites",
+			sectionTitle_1: "Estamos a su lado para ayudarle en todo lo que necesite",
 			sectionContent_1:
-				"Te brindaremos apoyo durante tu proceso de adaptación facilitando toda la información que necesitas  para que puedas vivir una vida de calidad en Luxemburgo.",
+				"Brindándole un servicio y apoyo óptimo y completo en su proceso de instalación en Luxemburgo.",
 			sectionTitle_2: "Juntos podremos lograrlo",
 			sectionContent_2:
-				"Empezar en un país distinto a veces puede ser retador, pero no te preocupes.  Estaremos contigo para facilitarte los procesos administrativos, legales y culturales para que puedas adaptarte rápidamente en la comunidad Luxemburguesa.",
+				"Empezar en un país distinto a veces puede ser retador, pero no se preocupe estamos con usted para facilitarle los procesos administrativos y pueda integrarse rápidamente en la comunidad luxemburguesa.",
 			sectionTitle_3: "Nuestros servicios:",
 			sectionList_3: [
 				"Viajes",
@@ -32,12 +32,12 @@ export const dict = {
 				"Entretenimiento",
 				"Sitios de interés",
 			],
-			sectionTitle_4: "Te ayudamos a gestionar y asesorar",
+			sectionTitle_4: "Le ayudamos a gestionar y le asesoramos",
 			sectionList_4: [
-				"Solicitud de Permiso de Trabajo / Autorización Temporal",
-				"Requisitos de Permiso de Residencia",
-				"Renovación de permisos de trabajo y residencia",
-				"Búsqueda de escuelas para tus hijos.",
+				"Solicitud de permiso de trabajo/autorización temporal.",
+				"Búsqueda de su casa, apartamento.",
+				"Busqueda de escuela y guardería para sus hijos.",
+				"Mercado inmobiliario, servicios de compra-venta de bienes inmuebles.",
 			],
 			reviewName_1: "MARIA SMITH",
 			reviewDescription_1:
@@ -50,16 +50,17 @@ export const dict = {
 				"Hola, soy Laura de Mexico. Luxemburgo para mí siempre ha sido una ciudad magnífica y con grandes oportunidades, así que contacté a Libling para tener los requisitos necesarios para poder vivir allí. Los recomiendo al 100%",
 		},
 		services: {
+			aditionalTitle_1: "Tenemos más para usted",
 			aditionalService_1: "Organización de recogida en el aeropuerto",
 			aditionalService_2:
 				"VISAS: Oferta estándar (sin incluir tasa de visa-apostilla + correo postal).",
 			aditionalService_3:
 				"Enseñanza de idiomas, Limpieza de la casa, Pintura de casas/pisos, Servicios de mantenimiento, Transporte de mascotas.",
 			aditionalService_4:
-				"Asistencia de soporte después de la mudanza (1 mes).",
-			sectionTitle_1: "Te acompañamos desde el día 1",
+				"Asistencia de soporte después de la mudanza (1 mes 24/7 vía teléfono).",
+			sectionTitle_1: "Le acompañamos desde el día 1",
 			sectionContent_1:
-				"Desde tu llegada al aeropuerto, hasta haciendo tours por las calles de Luxemburgo, Libling estará allí para ti, para brindarte todo lo que necesitas para que tu estancia permanente sea la mejor de todas en tu idioma nativo.",
+				"Desde su llegada al aeropuerto, hasta hacer un tour por la ciudad de Luxemburgo, Libling estará allí para usted, brindándole toda la información y en su idioma nativo.",
 			sectionTitle_2: "Paquetes para todos",
 			cardTitle_1: "Básico",
 			cardList_1: [
@@ -90,25 +91,25 @@ export const dict = {
 			cardTitle_4: "General",
 			cardDescription_4: "Servicio de orientación y consultoría básica",
 			cardActionText: "Solicitar",
-			sectionTitle_3: "Para los más pequeños",
+			sectionTitle_3: "Para los pequeños.",
 			sectionContent_3:
-				"La educación de los pequeños es de gran importancia y Libling te ayudará a encontrar las escuelas o guarderías que sean de agrado para ti, para que tus pequeños puedan seguir estudiando y cumplir sus sueños.",
-			sectionTitle_4: "Te ayudamos con tus trámites",
+				"¡La educación en Luxemburgo es GRATIS! La educación de los pequeños es de gran importancia y Libling le ayudará a encontrar las escuelas/colegios y guarderías que sean de agrado para su familia.",
+			sectionTitle_4: "Le ayudamos con sus tramites administrativos",
 			sectionContent_4:
-				"Durante tu llegada a Luxemburgo te ayudaremos con tus trámites administrativos a ti y a tu familia. Esto incluye el registro y 4 servicios adicionales para que poco a poco todo vaya sobre la marcha.",
-			sectionTitle_5: "Apunta tu cita",
+				"Durante su llegada a Luxemburgo Libling tendrá todo a la mano para usted y su familia. Esto incluye hospedaje temporal y servicios de traslado y una guía de instalación y asistencia telefónica 24/7.",
+			sectionTitle_5: "Agende su cita",
 			sectionContent_5:
-				"Si quieres escoger un día ideal donde quieras tener una reunión con nosotros, revisa nuestro calendario para visualizar la disponibilidad que tenemos y darte el mejor servicio que mereces.",
+				"Si desea tener una reunión con nosotros, puede revisar nuestro calendario haciendo click en el botón de agendar para visualizar la disponibilidad y así darle la atención y servicio que usted merece.",
 			sectionButton_5: "Agendar",
 		},
 		contact: {
 			calendarTitle: "Selecciona una fecha",
-			sectionTitle_1: "¡Agenda con nosotros!",
+			sectionTitle_1: "¡Agende con nosotros!",
 			sectionContent_1:
-				"Si quieres escoger un día ideal donde quieras tener una reunión con nosotros, revisa nuestro calendario para visualizar la disponibilidad que tenemos y darte el mejor servicio que mereces. ",
-			sectionTitle_2: "Te mantendremos siempre al tanto",
+				"Desea tener una reunión con Libling solutions. Estamos a su entera disposición, para darle un servicio integral.",
+			sectionTitle_2: "Le mantendremos siempre al corriente de todo",
 			sectionContent_2:
-				"Sabemos que a veces no tenemos tiempo de estar al tanto de las cosas, pero no te preocupes, haremos esa labor para ti. Inscríbete en nuestro boletín informativo para que seas siempre el primero en recibir todas nuestras novedades, noticias, productos y servicios.",
+				"Porque usted es nuestra prioridad. Inscríbase a nuestro boletín informativo para que sea el primero en recibir todas nuestras novedades, noticias, productos y servicios.",
 			form_name: "Nombres",
 			form_subject: "Asunto",
 			form_email: "Correo electrónico",
@@ -121,19 +122,20 @@ export const dict = {
 			titleHeader_3: "contigo",
 			sectionTitle_1: "¿Quiénes somos?",
 			sectionContent_1:
-				"Empezar una nueva vida en un país distinto no siempre es fácil, pero no te preocupes, con apoyo todo será más sencillo. En Libling, nuestro objetivo es ayudarte a que tu relocalización en Luxemburgo sea la mejor y la más reconfortante para ti.",
+				"Libling es la primera empresa hispanoamericana de reubicación y servicios inmobiliarios en el gran ducado, con cede en Luxemburgo, creada y dirigida por Madame Lidiz Cruz Luxemburguesa y hondureña quién cree firmemente qué con la guía correcta se puede tener una reubicación exitosa e integración en Luxemburgo y con ese enfoque es creada la empresa Libling Solutions que está al servicio de ustedes.",
 			sectionTitle_2: "Innovadores en relocalización",
 			sectionContent_2:
-				"En Libling creemos que la reubicación debe ser grata y tranquila. Es por ello que nos enorgullece ser la primera empresa de relocalización manejada por latinos. Nos aseguraremos de que te sientas cómodo y seguro en todo momento, garantizandote de que tu proceso de relocalización sea la mejor para ti.",
+				"Agencia inmobiliaria en el Gran ducado, en Libling Solutions encontrara todo lo que usted necesita, creemos que la reubicación debe ser grata y personalizada, garantizándole a usted y su familia un proceso de reubicación de excelencia.",
 			sectionTitle_3: "Te ayudamos con tus trámites",
 			sectionContent_3:
-				"Durante tu llegada a Luxemburgo te ayudaremos con tus trámites administrativos a ti y a tu familia. Esto incluye el registro y 4 servicios adicionales para que poco a poco todo vaya sobre la marcha. Durante tu mudanza, te acompañaremos en todos los procesos que necesites para que puedas disfrutar tu estadía permanente en  Luxemburgo, pero eso no es todo, ya que Libling te brindará asistencia de soporte gratuito durante 30 días.",
+				"Libling Solutions tiene el objetivo de ayudarle y facilitarle todo para que su reubicación en Luxemburgo sea grata y reconfortante, contamos con un equipo de profesionales especializados en cada una de sus necesidades y en su idioma. nuestra prioridad es brindarle un servicio de calidad.",
 		},
 		mail: {
 			main: "Quiero obtener más información acerca de libling",
 			subject_1: "Información",
 			subject_2: "Servicios",
 			package: "Estoy interesado en el siguiente paquete: ",
+			date: "Hola quisiera una cita para el día: ",
 			notify: "Su mensaje ha sido enviado con éxito",
 			failed: "No se ha podido completar la solicitud",
 		},
@@ -185,6 +187,7 @@ export const dict = {
 				"'Hello, I'm Laura from Mexico. Luxembourg has always been a magnificent city with great opportunities for me, so I contacted Libling to get the necessary requirements to live there. I recommend them 100%.'",
 		},
 		services: {
+			aditionalTitle_1: "We have more for you",
 			aditionalService_1: "Airport pickup arrangement",
 			aditionalService_2:
 				"VISAS: Standard offer (excluding visa-apostille fee + postal service)",
@@ -268,6 +271,7 @@ export const dict = {
 			subject_1: "Information",
 			subject_2: "Services",
 			package: "I am interested by the following pack: ",
+			date: "Hello, I would like an appointment for the day: ",
 			notify: "Your message was sent with success",
 			failed: "Your request could not be completed",
 		},
@@ -324,6 +328,7 @@ export const dict = {
 				"'Bonjour, je m'appelle Laura et je viens du Mexique. Luxembourg a toujours été une ville magnifique avec de grandes opportunités pour moi, alors j'ai contacté Libling pour obtenir les requis nécessaires pour y vivre. Je les recommande à 100%.'",
 		},
 		services: {
+			aditionalTitle_1: "Nous en avons plus pour vous",
 			aditionalService_1: "Organisation de la prise en charge à l'aéroport",
 			aditionalService_2:
 				"VISAS: Offre standard (hors frais de visa-apostille + service postal).",
@@ -407,6 +412,7 @@ export const dict = {
 			subject_1: "Information",
 			subject_2: "Services",
 			package: "Je suis intéressé par le pack suivant: ",
+			date: "Bonjour, je souhaite un rendez-vous pour la journée :",
 			notify: "Ton message a été envoyé avec succès",
 			failed: "La demande n'a pas pu être complétée",
 		},

@@ -50,7 +50,7 @@ export default function Footer({ lang }: { lang: "es" | "en" | "fr" }) {
                     <p>
                         <span style={poppinsMedium.style}>Email: </span>info@libling.lu
                         <br />
-                        Autorisation n°10154859/0 /RCS B278845 / (..TVA..)
+                        Autorisation n°10154859/0 /RCS B278845
                         <br />
                         Advice - Management and Relocation to Luxembourg 🇱🇺
                         <br />

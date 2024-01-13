@@ -22,10 +22,20 @@ const ContactForm: React.FC<IContactForm> = ({ lang }) => {
     const glosary = dict[lang]?.contact
     const mailMessages = dict[lang]?.mail
     const query = useSearchParams()
+    let initialSubject = ''
+    let initialMessage = ''
+    if (query.get('pack')){
+        initialSubject = mailMessages.subject_2
+        initialMessage = `${mailMessages.package} ${query.get('pack')}`
+    }
+    if (query.get('date')){
+        initialSubject = mailMessages.subject_1
+        initialMessage = `${mailMessages.date} ${query.get('date')}`
+    }
     const [inputValue, setInputValue] = useState('');
     const [inputName, setInputName] = useState('');
-    const [inputSubject, setInputSubject] = useState(query.get('pack') ? mailMessages.subject_2 : '');
-    const [inputMessage, setInputMessage] = useState(query.get('pack') ? `${mailMessages.package} ${query.get('pack')}` : '');
+    const [inputSubject, setInputSubject] = useState(initialSubject);
+    const [inputMessage, setInputMessage] = useState(initialMessage);
     const [loading, setLoading] = useState<boolean | undefined>();
 
     const handleSubmit = async (event: SyntheticEvent) => {
