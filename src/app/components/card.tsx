@@ -24,7 +24,7 @@ const Card: React.FC<ICard> = ({ image, title, subtitle, content, list, actionTe
                     (title)
                     &&
                     <>
-                        <div className={styles.subtitleContainer}>
+                        <div className={title?.length < 9 ? styles.subtitleContainer : styles.subtitleLargeContainer}>
                             <h3 style={poppinsMedium.style}>{title}</h3>
                         </div>
 
