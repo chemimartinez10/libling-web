@@ -58,7 +58,7 @@ const Article: React.FC<IArticle> = ({ title, subtitle, content, list, Icon, but
             }
             {
                 buttonText &&
-                <Link href={buttonAction} style={{alignSelf:'center'}}>
+                <Link href={buttonAction} style={{alignSelf:'left'}}>
                     <Button text={buttonText}/>
                 </Link>
             }
