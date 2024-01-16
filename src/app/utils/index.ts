@@ -131,13 +131,13 @@ export const dict = {
 			titleHeader_3: "contigo",
 			sectionTitle_1: "¿Quiénes somos?",
 			sectionContent_1:
-				"Libling es la primera empresa hispanoamericana de reubicación y servicios inmobiliarios en el gran ducado, con cede en Luxemburgo, creada y dirigida por Madame Lidiz Cruz Luxemburguesa y hondureña quién cree firmemente qué con la guía correcta se puede tener una reubicación exitosa e integración en Luxemburgo y con ese enfoque es creada la empresa Libling Solutions que está al servicio de ustedes.",
+				"Libling es la primera empresa hispanoamericana de reubicación e inmobiliaria en el Gran Ducado de Luxemburgo. Fue creada y está dirigida por Madame Lidiz Cruz, luxemburguesa y hondureña, quien cree firmemente que con la guía adecuada podrá tener éxito en su mudanza e integración en Luxemburgo.",
 			sectionTitle_2: "Innovadores en relocalización",
 			sectionContent_2:
-				"Agencia inmobiliaria en el Gran ducado, en Libling Solutions encontrara todo lo que usted necesita, creemos que la reubicación debe ser grata y personalizada, garantizándole a usted y su familia un proceso de reubicación de excelencia.",
-			sectionTitle_3: "Te ayudamos con tus trámites",
+				"En Libling Solutions encontrara todo lo que usted necesita, creemos que la reubicación debe ser grata y personalizada, garantizándole a usted y su familia un proceso de reubicación de excelencia.",
+			sectionTitle_3: "Nuestro objetivo es su bienestar",
 			sectionContent_3:
-				"Libling Solutions tiene el objetivo de ayudarle y facilitarle todo para que su reubicación en Luxemburgo sea grata y reconfortante, contamos con un equipo de profesionales especializados en cada una de sus necesidades y en su idioma. nuestra prioridad es brindarle un servicio de calidad.",
+				"Libling Solutions tiene como objetivo apoyarle, ayudarle y facilitarle todo para que su mudanza al Gran Ducado sea placentera y cómoda. Contamos con un equipo de profesionales especializados en cada una de sus necesidades y en su idioma. Nuestra prioridad es brindarle un servicio de calidad.",
 		},
 		mail: {
 			main: "Quiero obtener más información acerca de libling",
