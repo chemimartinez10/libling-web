@@ -21,7 +21,7 @@ export const dict = {
 			subtitleHeader_2: "",
 			sectionTitle_1: "Estamos a su lado para ayudarle en todo lo que necesite",
 			sectionContent_1:
-				"Brindándole un servicio y apoyo óptimo y completo en su proceso de instalación en Luxemburgo.",
+				"Brindándole un servicio completo y apoyo óptimo en su proceso de instalación en Luxemburgo 🇱🇺",
 			sectionTitle_2: "Juntos podremos lograrlo",
 			sectionContent_2:
 				"Empezar en un país distinto a veces puede ser retador, pero no se preocupe estamos con usted para facilitarle los procesos administrativos y pueda integrarse rápidamente en la comunidad luxemburguesa.",
@@ -37,7 +37,8 @@ export const dict = {
 				"Solicitud de permiso de trabajo/autorización temporal.",
 				"Búsqueda de su casa, apartamento.",
 				"Busqueda de escuela y guardería para sus hijos.",
-				"Mercado inmobiliario, servicios de compra-venta de bienes inmuebles.",
+				"Mercado inmobiliario, servicio de de compra-venta, alquiler y gestión de propiedades.",
+				"Asoramiento de bienes inmuebles.",
 			],
 			reviewName_1: "MARIA SMITH",
 			reviewDescription_1:
@@ -53,7 +54,7 @@ export const dict = {
 			aditionalTitle_1: "Tenemos más para usted",
 			aditionalService_1: "Organización de recogida en el aeropuerto",
 			aditionalService_2:
-				"VISAS: Oferta estándar (sin incluir tasa de visa-apostilla + correo postal).",
+				"Planificamos y organizamos su viaje para visitar Luxemburgo  🇱🇺",
 			aditionalService_3:
 				"Enseñanza de idiomas, Limpieza de la casa, Pintura de casas/pisos, Servicios de mantenimiento, Transporte de mascotas.",
 			aditionalService_4:
@@ -100,9 +101,9 @@ export const dict = {
 			],
 			cardDescription_4: "Servicio de orientación y consultoría básica",
 			cardActionText: "Solicitar",
-			sectionTitle_3: "Para los pequeños.",
+			sectionTitle_3: "¡La educación en Luxemburgo es GRATIS!",
 			sectionContent_3:
-				"¡La educación en Luxemburgo es GRATIS! La educación de los pequeños es de gran importancia y Libling le ayudará a encontrar las escuelas/colegios y guarderías que sean de agrado para su familia.",
+				"La educación de los pequeños es de gran importancia y Libling le ayudará a encontrar las escuelas/colegios y guarderías que sean de agrado para su familia.",
 			sectionTitle_4: "Le ayudamos con sus tramites administrativos",
 			sectionContent_4:
 				"Durante su llegada a Luxemburgo Libling tendrá todo a la mano para usted y su familia. Esto incluye hospedaje temporal y servicios de traslado y una guía de instalación y asistencia telefónica 24/7.",
