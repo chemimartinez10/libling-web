@@ -55,8 +55,7 @@ export const dict = {
 			aditionalService_1: "Organización de recogida en el aeropuerto",
 			aditionalService_2:
 				"Planificamos y organizamos su viaje para visitar Luxemburgo  🇱🇺",
-			aditionalService_3:
-				"Enseñanza de idiomas, Limpieza de la casa, Pintura de casas/pisos, Servicios de mantenimiento, Transporte de mascotas.",
+			aditionalService_3: "Asistencia de limpieza y servicios mantenimiento",
 			aditionalService_4:
 				"Asistencia de soporte después de la mudanza (1 mes 24/7 vía teléfono).",
 			sectionTitle_1: "Le acompañamos desde el día 1",
