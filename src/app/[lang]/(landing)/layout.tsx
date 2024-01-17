@@ -7,6 +7,9 @@ import styles from '@/app/[lang]/(landing)/page.module.css'
 import Menu from '@/app/components/menu'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Script from 'next/script'
+
+
 
 
 export const metadata: Metadata = {
@@ -24,6 +27,23 @@ export default function RootLandingLayout({
 }) {
   return (
     <html lang={lang}>
+      <Script
+        id="google-analytics-call"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
+        strategy="afterInteractive">
+      </Script>
+      <Script
+        id="google-analytics"
+        strategy="afterInteractive"
+      >
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+  
+          gtag('config', '${process.env.GOOGLE_ANALYTICS}');`
+        }
+      </Script>
       <body style={poppinsRegular.style} className={styles.layout}>
         <ToastContainer />
         <Menu lang={lang} />
