@@ -37,7 +37,7 @@ export const dict = {
 				"Solicitud de permiso de trabajo/autorización temporal.",
 				"Búsqueda de su casa, apartamento.",
 				"Busqueda de escuela y guardería para sus hijos.",
-				"Mercado inmobiliario, servicio de de compra-venta, alquiler y gestión de propiedades.",
+				"Mercado inmobiliario, servicio de compra-venta, alquiler y gestión de propiedades.",
 				"Asoramiento de bienes inmuebles.",
 			],
 			reviewName_1: "MARIA SMITH",
@@ -90,8 +90,7 @@ export const dict = {
 			],
 			cardTitle_4: "Lista de servicios y consultorías adicionales",
 			cardList_4: [
-				"Organización de recogida en el aeropuerto",
-				"Servicios de mantenimiento y limpieza de casas y apartamentos",
+				"Asesoramiento y servicio personalizado para la planificación y organización de su viaje a Luxemburgo.",
 				"Consejeros inmobiliarios",
 				"Arquitectos",
 				"Abogados",
