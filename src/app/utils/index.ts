@@ -130,7 +130,7 @@ export const dict = {
 			titleHeader_3: "contigo",
 			sectionTitle_1: "¿Quiénes somos?",
 			sectionContent_1:
-				"Libling es la primera empresa hispanoamericana de reubicación e inmobiliaria en el Gran Ducado de Luxemburgo. Fue creada y está dirigida por Madame Lidiz Cruz, luxemburguesa y hondureña, quien cree firmemente que con la guía adecuada podrá tener éxito en su mudanza e integración en Luxemburgo.",
+				"Libling Solutions es la primera empresa hispanoamericana de reubicación e inmobiliaria en el Gran Duque de Luxemburgo. Fue creada y está dirigida por Madame Lidiz Cruz, luxemburguesa y hondureña, quien cree firmemente que con la información y la guía de excelencia podrá tener éxito en su visita, mudanza e integración en Luxemburgo.",
 			sectionTitle_2:
 				"Innovadores en relocalización y agencia inmobiliaria en el gran ducado",
 			sectionContent_2:
