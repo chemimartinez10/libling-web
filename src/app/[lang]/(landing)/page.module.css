@@ -9,25 +9,29 @@
   /* background: var(--background-color); */
   margin: auto;
 }
-.layout{
+
+.layout {
   position: relative;
 }
-.headerTitle{
+
+.headerTitle {
   font-size: 40px;
   color: #ffffffcc;
 }
-.headerSubtitle{
+
+.headerSubtitle {
   font-size: 30px;
   color: #ffffffcc;
 }
 
-.header{
+.header {
   position: relative;
   padding: 0;
   margin: 0 5rem;
   z-index: 1;
 }
-.textContainer{
+
+.textContainer {
   width: 100vw;
   padding: 0rem 3rem;
   max-width: 1200px;
@@ -37,7 +41,7 @@
   gap: 48px;
 }
 
-.headerMask{
+.headerMask {
   position: absolute;
   left: 0;
   top: 0;
@@ -58,7 +62,7 @@
   text-align: left;
 } */
 
-.buttonContainer{
+.buttonContainer {
   display: flex;
   flex-direction: row;
   gap: .5rem;
@@ -67,7 +71,8 @@
   padding: .5rem;
   flex-wrap: wrap;
 }
-.listHighlights{
+
+.listHighlights {
   display: grid;
   justify-content: center;
   align-items: center;
@@ -76,9 +81,10 @@
   row-gap: 2rem;
   width: 100%;
   grid-template-columns:
-      repeat(auto-fit, minmax(150px, 1fr));
+    repeat(auto-fit, minmax(150px, 1fr));
 }
-.listCard{
+
+.listCard {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -87,7 +93,8 @@
   gap: 1rem;
   row-gap: 2rem;
 }
-.listReview{
+
+.listReview {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -96,12 +103,14 @@
   flex-wrap: wrap;
   width: 100%;
 }
+
 .image {
   max-width: 400px;
   align-self: center;
   padding: 40px;
   flex-shrink: 1;
 }
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
@@ -123,30 +132,33 @@
 /* Mobile */
 @media (max-width: 700px) {
   .textContainer {
-  
-      text-align: center;
-      gap: 16px;
-  
-    }
-        .image {
-          max-width: 100%;
-          padding: 40px;
-        }
-  
-    .headerTitle {
-      font-size: 24px;
-      color: var(--subtitle-text-color);
-    }
-  
-    .headerSubtitle {
-      font-size: 18px;
-      color: var(--subtitle-text-color);
-    }
-  .headerMask{
+
+    text-align: center;
+    gap: 16px;
+
+  }
+
+  .image {
+    max-width: 100%;
+    padding: 40px;
+  }
+
+  .headerTitle {
+    font-size: 24px;
+    color: #ffffffcc;
+  }
+
+  .headerSubtitle {
+    font-size: 18px;
+    color: #ffffffcc;
+  }
+
+  .headerMask {
     padding: 4rem;
 
   }
-  #travel-img{
+
+  #travel-img {
     width: 100%;
   }
 }
@@ -155,33 +167,34 @@
 @media (min-width: 701px) and (max-width: 1120px) {
   .textContainer {
 
-      text-align: center;
-      gap: 32px;
+    text-align: center;
+    gap: 32px;
 
-    }
+  }
+
   .headerTitle {
-      font-size: 36px;
-      color: var(--subtitle-text-color);
-    }
-  
-    .headerSubtitle {
-      font-size: 24px;
-      color: var(--subtitle-text-color);
-    }
-  #travel-img{
+    font-size: 36px;
+    color: #ffffffcc;
+  }
+
+  .headerSubtitle {
+    font-size: 24px;
+    color: #ffffffcc;
+  }
+
+  #travel-img {
     width: 450px;
     height: 450px;
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  
-}
+@media (prefers-color-scheme: dark) {}
 
 @keyframes rotate {
   from {
     transform: rotate(360deg);
   }
+
   to {
     transform: rotate(0deg);
   }

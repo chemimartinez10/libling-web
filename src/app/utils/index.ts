@@ -27,10 +27,10 @@ export const dict = {
 				"Empezar en un país distinto a veces puede ser retador, pero no se preocupe estamos con usted para facilitarle los procesos administrativos y pueda integrarse rápidamente en la comunidad luxemburguesa.",
 			sectionTitle_3: "Nuestros servicios:",
 			sectionList_3: [
-				"Viajes",
-				"Noticias",
-				"Entretenimiento",
-				"Sitios de interés",
+				"Visitar o  instalarse en el gran ducado",
+				"Busqueda o venta de un bien inmobiliario",
+				"Asesoramiento personalizado 24/7",
+				"Tours y puntos de interes",
 			],
 			sectionTitle_4: "Le ayudamos a gestionar y le asesoramos",
 			sectionList_4: [
