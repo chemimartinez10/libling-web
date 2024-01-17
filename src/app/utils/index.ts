@@ -28,7 +28,7 @@ export const dict = {
 			sectionTitle_3: "Nuestros servicios:",
 			sectionList_3: [
 				"Visitar o  instalarse en el gran ducado",
-				"Busqueda o venta de un bien inmobiliario",
+				"Busqueda o venta/compra de un bien inmobiliario",
 				"Asesoramiento personalizado 24/7",
 				"Tours y puntos de interes",
 			],
