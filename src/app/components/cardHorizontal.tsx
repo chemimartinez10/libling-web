@@ -42,10 +42,7 @@ const CardHorizontal: React.FC<ICard> = ({ image, title, subtitle, content, list
                         list &&
                         <ul className={styles.list}>
                             {list.map((el, index) => (<li key={index}>
-                                <div style={{ width: 24, height: 24 }}>
-
-                                    <FiCheck style={{ fontSize: 24, alignSelf: 'center', color: '#225FE7' }} />
-                                </div>
+                                
                                 <span>
                                     {el}
                                 </span>

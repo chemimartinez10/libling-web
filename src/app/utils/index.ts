@@ -90,7 +90,7 @@ export const dict = {
 			],
 			cardTitle_4: "Lista de servicios y consultorías adicionales",
 			cardList_4: [
-				"Asesoramiento y servicio personalizado para la planificación y organización de su viaje a Luxemburgo.",
+				"Planificación personalizada de su viaje",
 				"Consejeros inmobiliarios",
 				"Arquitectos",
 				"Abogados",
