@@ -110,10 +110,10 @@ const Contact: React.FC<IPage> = async ({ params: { lang } }) => {
       </Section>
       <Section title={glosary.sectionTitle_2} resume={glosary.sectionContent_2}>
         <div className={styles.listContactCards}>
-          <ContactCard description='+897287298724' url={`https://api.whatsapp.com/send?phone=${352691217216}`} Icon={RiWhatsappLine} color={'#659E43'} />
-          <ContactCard description='+897287298724' url='https://m.me/61554771181200' Icon={RiMessengerLine} color={'#225FE7'} />
-          <ContactCard description='+897287298724' url='https://www.instagram.com/libling_solutions' Icon={RiInstagramLine} color={'#FB8501'} />
-          <ContactCard description='+897287298724' url='https://www.linkedin.com/company/libling/' Icon={RiLinkedinFill} color={'#F0C712'} />
+          <ContactCard description='+352691367757' url={`https://api.whatsapp.com/send?phone=${352691367757}`} Icon={RiWhatsappLine} color={'#659E43'} />
+          <ContactCard description='+352691367757' url='https://m.me/61554771181200' Icon={RiMessengerLine} color={'#225FE7'} />
+          <ContactCard description='+352691367757' url='https://www.instagram.com/libling_solutions' Icon={RiInstagramLine} color={'#FB8501'} />
+          <ContactCard description='+352691367757' url='https://www.linkedin.com/company/libling/' Icon={RiLinkedinFill} color={'#F0C712'} />
         </div>
       </Section>
       <Section vertical={true}>
