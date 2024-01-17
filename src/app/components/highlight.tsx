@@ -35,7 +35,7 @@ const Highlight: React.FC<IHighlight> = ({ title, description, img, Icon, alt })
                 </article>
             </div>
         }
-        <div className={styles.container} onClick={() => { setOpen(state => !state) }}>
+        <div className={styles.container} onClick={() => {  }}>
             {
                 title &&
                 <h4 className={styles.title}>{title}</h4>
@@ -58,7 +58,7 @@ const Highlight: React.FC<IHighlight> = ({ title, description, img, Icon, alt })
             }
             {
                 description &&
-                <p>{description}</p>
+                <p className={styles.description}>{description}</p>
             }
         </div>
     </>

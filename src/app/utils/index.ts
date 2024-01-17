@@ -14,7 +14,7 @@ export const dict = {
 		home: {
 			sectionButton_1: "Agendar",
 			sectionButton_2: "Ver más",
-			titleHeader_1: "Con Libling solutions tu",
+			titleHeader_1: "Con Libling solutions su",
 			titleHeader_2: "instalación en Luxemburgo",
 			titleHeader_3: "es fácil y segura.",
 			subtitleHeader_1: "",

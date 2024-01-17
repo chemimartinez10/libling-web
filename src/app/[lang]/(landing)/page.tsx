@@ -85,7 +85,7 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
       <Section vertical={true} subtitle={glosary.sectionTitle_3}>
         <div className={styles.listHighlights}>
           {
-            listaBeneficios.map((el, index) => (<Highlight key={index} title={el?.title} alt={`highlight${index}`} img={el?.img} />))
+            listaBeneficios.map((el, index) => (<Highlight key={index} title={el?.title} alt={`highlight${index}`} img={el?.img} description={el?.title} />))
           }
         </div>
 
