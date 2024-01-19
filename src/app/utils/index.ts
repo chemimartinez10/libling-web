@@ -92,9 +92,9 @@ export const dict = {
 			cardTitle_4: "Lista de servicios y consultorías adicionales",
 			cardList_4: [
 				"Contamos con un equipo completo que forman parte de Libling Solutions y estan a su disposicion:",
-				"Consultoria inmobiliario/ Vivienda",
-				"Consultoria con arquitectos/construcción/inversión",
-				"Consultorias jurídicas",
+				"Consultoría inmobiliaria/vivienda",
+				"Consultoría con arquitectos/construcción/inversión",
+				"Consultoría jurídica",
 				"Consultorias médicas",
 				"Vida social/eventos sociales y culturales",
 				"Organización y planificación personalizada de su mudanza",
