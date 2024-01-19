@@ -29,7 +29,7 @@ export const dict = {
 			sectionList_3: [
 				"Visitar o  instalarse en el gran ducado",
 				"Busqueda o venta/compra de un bien inmobiliario",
-				"Asesoramiento personalizado 24/7",
+				"Asesoramiento personalizado",
 				"Tours y puntos de interes",
 			],
 			sectionTitle_4: "Le ayudamos a gestionar y le asesoramos",
@@ -57,7 +57,7 @@ export const dict = {
 				"Planificamos y organizamos su viaje para visitar Luxemburgo  🇱🇺",
 			aditionalService_3: "Asistencia en servicios de limpieza y mantenimiento",
 			aditionalService_4:
-				"Asistencia de soporte después de la mudanza (1 mes 24/7 vía teléfono).",
+				"Asistencia de soporte después de la mudanza (1 mes vía teléfono).",
 			sectionTitle_1: "Le acompañamos desde el día 1",
 			sectionContent_1:
 				"Desde su llegada al aeropuerto, hasta hacer un tour por la ciudad de Luxemburgo, Libling estará allí para usted, brindándole toda la información y en su idioma nativo.",
@@ -104,7 +104,7 @@ export const dict = {
 				"La educación de los pequeños es de gran importancia y Libling le ayudará a encontrar las escuelas/colegios y guarderías que sean de agrado para su familia.",
 			sectionTitle_4: "Le ayudamos con sus tramites administrativos",
 			sectionContent_4:
-				"Durante su llegada a Luxemburgo Libling tendrá todo a la mano para usted y su familia. Esto incluye hospedaje temporal y servicios de traslado y una guía de instalación y asistencia telefónica 24/7.",
+				"Durante su llegada a Luxemburgo Libling tendrá todo a la mano para usted y su familia. Esto incluye hospedaje temporal y servicios de traslado y una guía de instalación y asistencia telefónica.",
 			sectionTitle_5: "Agende su cita",
 			sectionContent_5:
 				"Si desea tener una reunión con nosotros, puede revisar nuestro calendario haciendo click en el botón de agendar para visualizar la disponibilidad y así darle la atención y servicio que usted merece.",
@@ -180,7 +180,7 @@ export const dict = {
 			sectionList_3: [
 				"Visit or settle in the Grand Duchy",
 				"Search or buy/sell real estate",
-				"Personalized advice 24/7",
+				"Personalized advice",
 				"Tours and points of interest",
 			  ],
 			sectionTitle_4: "We help you manage and advise you",
@@ -208,7 +208,7 @@ export const dict = {
 				"We plan and organize your trip to visit Luxembourg 🇱🇺",
 			aditionalService_3:
 				"Assistance in cleaning and maintenance services",
-			aditionalService_4: "Support assistance after the move (1 month 24/7 via phone).",
+			aditionalService_4: "Support assistance after the move (1 month via phone).",
 			sectionTitle_1: "We accompany you from day 1",
 			sectionContent_1:
 				"From your arrival at the airport to taking a tour of the city of Luxembourg, Libling will be there for you, providing you with all the information in your native language.",
@@ -255,7 +255,7 @@ export const dict = {
 				"The education of the little ones is of great importance, and Libling will help you find schools/colleges and nurseries that suit your family.",
 			sectionTitle_4: "We help you with your administrative procedures",
 			sectionContent_4:
-				"During your arrival in Luxembourg, Libling will have everything at hand for you and your family. This includes temporary accommodation and transfer services, an installation guide, and 24/7 telephone assistance.",
+				"During your arrival in Luxembourg, Libling will have everything at hand for you and your family. This includes temporary accommodation and transfer services, an installation guide, and telephone assistance.",
 			sectionTitle_5: "Schedule your appointment",
 			sectionContent_5:
 				"If you want to have a meeting with us, you can check our calendar by clicking the schedule button to view availability and provide the attention and service you deserve.",
@@ -330,7 +330,7 @@ export const dict = {
 			sectionList_3: [
 				"Visiter ou s'installer dans le Grand-Duché",
 				"Recherche ou achat/vente de biens immobiliers",
-				"Conseils personnalisés 24/7",
+				"Conseils personnalisés",
 				"Visites et points d'intérêt",
 			  ],
 			sectionTitle_4: "Nous vous aidons à gérer et nous vous conseillons",
@@ -358,7 +358,7 @@ export const dict = {
 				"Nous planifions et organisons votre voyage pour visiter le Luxembourg 🇱🇺",
 			aditionalService_3:
 				"Assistance dans les services de nettoyage et d'entretien",
-			aditionalService_4: "Assistance de soutien après le déménagement (1 mois 24/7 par téléphone).",
+			aditionalService_4: "Assistance de soutien après le déménagement (1 mois par téléphone).",
 			sectionTitle_1: "Nous vous accompagnons dès le premier jour",
 			sectionContent_1:
 				"De votre arrivée à l'aéroport à une visite de la ville de Luxembourg, Libling sera là pour vous, vous fournissant toutes les informations dans votre langue maternelle.",
@@ -405,7 +405,7 @@ export const dict = {
 				"L'éducation des tout-petits est d'une grande importance, et Libling vous aidera à trouver des écoles/collèges et des garderies qui conviennent à votre famille.",
 			sectionTitle_4: "Nous vous aidons avec vos procédures administratives",
 			sectionContent_4:
-				"Lors de votre arrivée au Luxembourg, Libling aura tout à portée de main pour vous et votre famille. Cela comprend un logement temporaire, des services de transfert, un guide d'installation et une assistance téléphonique 24/7.",
+				"Lors de votre arrivée au Luxembourg, Libling aura tout à portée de main pour vous et votre famille. Cela comprend un logement temporaire, des services de transfert, un guide d'installation et une assistance téléphonique.",
 			sectionTitle_5: "Planifiez votre rendez-vous",
 			sectionContent_5:
 				"Si vous souhaitez avoir une réunion avec nous, vous pouvez consulter notre calendrier pour vérifier notre disponibilité et ainsi offrir l'attention et le service que vous méritez.",
