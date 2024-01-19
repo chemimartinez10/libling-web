@@ -132,7 +132,7 @@ export const dict = {
 			titleHeader_3: "contigo",
 			sectionTitle_1: "¿Quiénes somos?",
 			sectionContent_1:
-				"Libling Solutions es la primera empresa hispanoamericana de reubicación e inmobiliaria en el Gran Duque de Luxemburgo. Fue creada y está dirigida por Madame Lidiz Cruz, luxemburguesa y hondureña, quien cree firmemente que con la información y la guía de excelencia podrá tener éxito en su visita, mudanza e integración en Luxemburgo.",
+				"Libling Solutions es la primera empresa hispanoamericana de reubicación e inmobiliaria en el Gran Duque de Luxemburgo. Fue creada y está dirigida por Madame Lidiz Cruz, luxemburguesa y hondureña, quien cree firmemente que con la información y la guía de excelencia podrá tener éxito en su mudanza e integración en Luxemburgo.",
 			sectionTitle_2:
 				"Innovadores en relocalización y agencia inmobiliaria en el gran ducado",
 			sectionContent_2:
@@ -285,7 +285,7 @@ export const dict = {
 			titleHeader_3: "with you",
 			sectionTitle_1: " Who are we ?",
 			sectionContent_1:
-				"Libling Solutions is the first Latin American relocation and real estate company in the Grand Duchy of Luxembourg. It was founded and is led by Madame Lidiz Cruz, Luxembourgish and Honduran, who firmly believes that with information and excellent guidance, you can succeed in your visit, move, and integration in Luxembourg.",
+				"Libling Solutions is the first Spanish-American relocation/moving and real estate company in the Grand Duchy of Luxembourg. It was founded and is managed by Mrs. Lidiz Cruz, Luxembourgish and Honduran. She firmly believes that with information and excellent guidance, you can succeed in your move and integration in Luxembourg.",
 			sectionTitle_2:
 				"Innovators in Relocation and Real Estate in the Grand Duchy",
 			sectionContent_2:
@@ -440,7 +440,7 @@ export const dict = {
 			titleHeader_3: "avec vous",
 			sectionTitle_1: "Qui sommes-nous ?",
 			sectionContent_1:
-				"Libling Solutions est la première entreprise de relocalisation et d'immobilier d'Amérique latine au Grand-Duché de Luxembourg. Elle a été fondée et est dirigée par Madame Lidiz Cruz, luxembourgeoise et hondurienne. Elle croit fermement qu'avec de l'information et une excellente guidance, vous pouvez réussir dans votre visite, votre déménagement et votre intégration au Luxembourg.",
+				"Libling Solutions est la première entreprise hispano-américaine de relocalisation/déménagement et d'immobilier au Grand-Duché de Luxembourg. Elle a été fondée et est dirigée par Madame Lidiz Cruz, luxembourgeoise et hondurienne, Elle croit fermement qu'avec de l'informations et une excellente guidance, vous pouvez réussir votre déménagement et votre intégration au Luxemboug.",
 			sectionTitle_2:
 				"Innovateurs en relocalisation et immobilier au Grand-Duché",
 			sectionContent_2:
