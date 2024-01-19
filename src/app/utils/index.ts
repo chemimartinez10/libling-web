@@ -55,7 +55,7 @@ export const dict = {
 			aditionalTitle_1: "Tenemos más para usted",
 			aditionalService_1: "Organización de recogida en el aeropuerto",
 			aditionalService_2:
-				"Planificamos y organizamos su viaje para visitar Luxemburgo  🇱🇺",
+				"Planificamos y organizamos su viaje y mudanza a Luxemburgo 🇱🇺",
 			aditionalService_3: "Asistencia en servicios de limpieza y mantenimiento",
 			aditionalService_4:
 				"Asistencia de soporte después de la mudanza (1 mes vía teléfono).",
@@ -208,7 +208,7 @@ export const dict = {
 			aditionalTitle_1: "We have more for you",
 			aditionalService_1: "Airport pickup arrangement",
 			aditionalService_2:
-				"We plan and organize your trip to visit Luxembourg 🇱🇺",
+				"We plan and organize your trip and move to Luxembourg 🇱🇺",
 			aditionalService_3: "Assistance in cleaning and maintenance services",
 			aditionalService_4:
 				"Support assistance after the move (1 month via phone).",
@@ -361,7 +361,7 @@ export const dict = {
 			aditionalTitle_1: "Nous en avons plus pour vous",
 			aditionalService_1: "Organisation de la prise en charge à l'aéroport",
 			aditionalService_2:
-				"Nous planifions et organisons votre voyage pour visiter le Luxembourg 🇱🇺",
+				"Nous planifions et organisons votre voyage et déménagement au Luxembourg 🇱🇺",
 			aditionalService_3:
 				"Assistance dans les services de nettoyage et d'entretien",
 			aditionalService_4:
