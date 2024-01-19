@@ -39,6 +39,7 @@ export const dict = {
 				"Busqueda de escuela y guardería para sus hijos.",
 				"Mercado inmobiliario, servicio de compra-venta, alquiler y gestión de propiedades.",
 				"Asoramiento de bienes inmuebles.",
+				"Organización de la mudanza.",
 			],
 			reviewName_1: "MARIA SMITH",
 			reviewDescription_1:
@@ -182,7 +183,7 @@ export const dict = {
 				"Search or buy/sell real estate",
 				"Personalized advice",
 				"Tours and points of interest",
-			  ],
+			],
 			sectionTitle_4: "We help you manage and advise you",
 			sectionList_4: [
 				"Work permit application/temporary authorization.",
@@ -190,7 +191,8 @@ export const dict = {
 				"Search for a school and daycare for your children.",
 				"Real estate market, buying and selling services, rental and property management.",
 				"Real estate advice.",
-			  ],
+				"Organisation of the move.",
+			],
 			reviewName_1: "MARIA SMITH",
 			reviewDescription_1:
 				"'I have been living in Luxembourg for 1 month thanks to Libling. I found a job in the technology sector, where I specialize the most. They also helped me with opening a bank account, residence permit application, and making friends in Luxembourg.'",
@@ -206,9 +208,9 @@ export const dict = {
 			aditionalService_1: "Airport pickup arrangement",
 			aditionalService_2:
 				"We plan and organize your trip to visit Luxembourg 🇱🇺",
-			aditionalService_3:
-				"Assistance in cleaning and maintenance services",
-			aditionalService_4: "Support assistance after the move (1 month via phone).",
+			aditionalService_3: "Assistance in cleaning and maintenance services",
+			aditionalService_4:
+				"Support assistance after the move (1 month via phone).",
 			sectionTitle_1: "We accompany you from day 1",
 			sectionContent_1:
 				"From your arrival at the airport to taking a tour of the city of Luxembourg, Libling will be there for you, providing you with all the information in your native language.",
@@ -282,7 +284,8 @@ export const dict = {
 			sectionTitle_1: " Who are we ?",
 			sectionContent_1:
 				"Libling Solutions is the first Latin American relocation and real estate company in the Grand Duchy of Luxembourg. It was founded and is led by Madame Lidiz Cruz, Luxembourgish and Honduran, who firmly believes that with information and excellent guidance, you can succeed in your visit, move, and integration in Luxembourg.",
-			sectionTitle_2: "Innovators in Relocation and Real Estate in the Grand Duchy",
+			sectionTitle_2:
+				"Innovators in Relocation and Real Estate in the Grand Duchy",
 			sectionContent_2:
 				"At Libling Solutions, you will find everything you need. We believe that relocation should be pleasant and personalized, guaranteeing you and your family an excellent moving process.",
 			sectionTitle_3: "Our Goal is Your Well-being",
@@ -332,7 +335,7 @@ export const dict = {
 				"Recherche ou achat/vente de biens immobiliers",
 				"Conseils personnalisés",
 				"Visites et points d'intérêt",
-			  ],
+			],
 			sectionTitle_4: "Nous vous aidons à gérer et nous vous conseillons",
 			sectionList_4: [
 				"Demande de permis de travail/autorisation temporaire.",
@@ -340,7 +343,8 @@ export const dict = {
 				"Recherche d'école et de garderie pour vos enfants.",
 				"Marché immobilier, services d'achat et de vente, location et gestion immobilière.",
 				"Conseils immobiliers.",
-			  ],
+				"Organisation du déménagement.",
+			],
 			reviewName_1: "MARIA SMITH",
 			reviewDescription_1:
 				"'Cela fait 1 mois que je vis au Luxembourg grâce à Libling. J'ai trouvé un emploi dans le secteur de la technologie, là où je suis le plus spécialisé. Ils m'ont également aidé à ouvrir un compte bancaire, à faire la demande de permis de résidence et à me faire des amis au Luxembourg.'",
@@ -358,7 +362,8 @@ export const dict = {
 				"Nous planifions et organisons votre voyage pour visiter le Luxembourg 🇱🇺",
 			aditionalService_3:
 				"Assistance dans les services de nettoyage et d'entretien",
-			aditionalService_4: "Assistance de soutien après le déménagement (1 mois par téléphone).",
+			aditionalService_4:
+				"Assistance de soutien après le déménagement (1 mois par téléphone).",
 			sectionTitle_1: "Nous vous accompagnons dès le premier jour",
 			sectionContent_1:
 				"De votre arrivée à l'aéroport à une visite de la ville de Luxembourg, Libling sera là pour vous, vous fournissant toutes les informations dans votre langue maternelle.",
@@ -432,7 +437,8 @@ export const dict = {
 			sectionTitle_1: "Qui sommes-nous ?",
 			sectionContent_1:
 				"Libling Solutions est la première entreprise de relocalisation et d'immobilier d'Amérique latine au Grand-Duché de Luxembourg. Elle a été fondée et est dirigée par Madame Lidiz Cruz, luxembourgeoise et hondurienne. Elle croit fermement qu'avec de l'information et une excellente guidance, vous pouvez réussir dans votre visite, votre déménagement et votre intégration au Luxembourg.",
-			sectionTitle_2: "Innovateurs en relocalisation et immobilier au Grand-Duché",
+			sectionTitle_2:
+				"Innovateurs en relocalisation et immobilier au Grand-Duché",
 			sectionContent_2:
 				"Chez Libling Solutions, vous trouverez tout ce dont vous avez besoin. Nous croyons que la relocalisation doit être agréable et personnalisée, vous garantissant, à vous et à votre famille, un excellent processus de déménagement.",
 			sectionTitle_3: "Notre objectif est votre bien-être",
