@@ -92,8 +92,8 @@ export const dict = {
 			cardTitle_4: "Lista de servicios y consultorías adicionales",
 			cardList_4: [
 				"Contamos con un equipo completo que forman parte de Libling Solutions y estan a su disposicion:",
-				"Consultoría inmobiliaria/vivienda",
-				"Consultoría con arquitectos/construcción/inversión",
+				"Consultoría inmobiliaria / vivienda",
+				"Consultoría con arquitectos / construcción / inversión",
 				"Consultoría jurídica",
 				"Consultorias médicas",
 				"Vida social/eventos sociales y culturales",
@@ -245,8 +245,8 @@ export const dict = {
 			cardTitle_4: "List of additional services and consultantions",
 			cardList_4: [
 				"We have a complete team that are part of Libling Solutions and are at your disposal:",
-				"Real estate consulting/housing",
-				"Consulting with architect/construction/investment",
+				"Real estate consulting / housing",
+				"Consulting with architect / construction / investment advice",
 				"Legal consulting",
 				"Medical consulting",
 				"Social life/social and cultural events",
@@ -399,8 +399,8 @@ export const dict = {
 			cardTitle_4: "Liste des services et consultations supplémentaires",
 			cardList_4: [
 				"Nous disposons d'une équipe complète faisant partie de Libling Solutions et sommes à votre disposition :",
-				"Conseil immobilier/logement",
-				"Conseil aux architectes/construction/ investissement",
+				"Conseil immobilier / logement",
+				"Conseil aux architectes / construction / investissement",
 				"Conseil juridique",
 				"Consultation médicale",
 				"Vie sociale/événements sociaux et culturels",
