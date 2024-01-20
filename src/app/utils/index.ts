@@ -400,12 +400,11 @@ export const dict = {
 			cardList_4: [
 				"Nous disposons d'une équipe complète faisant partie de Libling Solutions et sommes à votre disposition :",
 				"Conseil immobilier/logement",
-				"Conseil aux architectes/construction/investissement",
+				"Conseil aux architectes/construction/ investissement",
 				"Conseil juridique",
 				"Consultation médicale",
 				"Vie sociale/événements sociaux et culturels",
 				"Organisation et planification personnalisées de votre voyage et déménagement",
-				"Organisation et planification personnalisée de votre voyage et déménagement",
 			],
 			cardDescription_4: "Service d'orientation et de consultation basique",
 			cardActionText: "Demander",
