@@ -246,7 +246,7 @@ export const dict = {
 			cardList_4: [
 				"We have a complete team that are part of Libling Solutions and are at your disposal:",
 				"Real estate consulting / housing",
-				"Consulting of architecture / construction / investment advice",
+				"Consulting architecture / construction / investment advice",
 				"Legal consulting",
 				"Medical consulting",
 				"Social life/social and cultural events",
