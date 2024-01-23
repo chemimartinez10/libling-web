@@ -83,8 +83,8 @@ const getEvents = async () => {
 }
 const Contact: React.FC<IPage> = async ({ params: { lang } }) => {
   const glosary = dict[lang]?.contact
-  const events: IEvent[] | [] = await getEvents()
-  console.log(events.length)
+  const events: IEvent[] | [] = await getEvents() || []
+  console.log(events?.length)
 
   return (
     <main className={styles.main}>
