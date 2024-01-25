@@ -131,7 +131,7 @@
         border-radius: 50%;
         font-size: 16px;
         transform: translateY(0px);
-        color: #fff;
+        
         opacity: .85;
         border: 2px var(--shadow-color) solid;
     }
