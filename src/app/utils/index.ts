@@ -212,7 +212,7 @@ export const dict = {
 			aditionalService_3: "Assistance in cleaning and maintenance services",
 			aditionalService_4:
 				"Support assistance after the move (1 month via phone).",
-			sectionTitle_1: "We accompany you from day 1",
+			sectionTitle_1: "We accompany you from day one",
 			sectionContent_1:
 				"From your arrival at the airport to taking a tour of the city of Luxembourg, Libling will be there for you, providing you with all the information in your native language.",
 			sectionTitle_2: "Packages for everyone",
@@ -267,7 +267,7 @@ export const dict = {
 		},
 		contact: {
 			calendarTitle: "Select a date",
-			sectionTitle_1: "Schedule with us!",
+			sectionTitle_1: "Schedule with us !",
 			sectionContent_1:
 				"Do you want to have a meeting with Libling Solutions? We are at your complete disposal to provide you with comprehensive service.",
 			sectionTitle_2: "We will always keep you informed of everything",
@@ -314,7 +314,7 @@ export const dict = {
 		footer: {
 			title_1: "Contact",
 			title_2: "Laissez nous votre e-mail et nous vous recontacterons",
-			title_3: "Suis-nous",
+			title_3: "Suivez-nous",
 		},
 		home: {
 			sectionButton_1: "Planifier",
@@ -330,7 +330,7 @@ export const dict = {
 				"En vous fournissant un service complet et un soutien optimal dans votre processus d'installation au Luxembourg 🇱🇺",
 			sectionTitle_2: "Ensemble, nous pouvons y arriver",
 			sectionContent_2:
-				"Tout recommencer dans un pays différent peut parfois être un défi, mais ne vous inquiètez pas. Nous serons à vos côtés pour faciliter les processus administratifs, légaux et culturels afin que vous puissiez vous adapter rapidement à la communauté luxembourgeoise.",
+				"Tout recommencer dans un pays différent peut parfois être un défi, mais ne vous inquiètez pas. Nous serons à vos côtés pour faciliter vos processus administratifs, légaux et culturels afin que vous puissiez vous adapter rapidement à la communauté luxembourgeoise.",
 			sectionTitle_3: "Nos services :",
 			sectionList_3: [
 				"Visiter ou s'installer dans le Grand-Duché",
