@@ -95,13 +95,13 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
         <Image src={familyImg} width={558} height={631} style={{ borderRadius: 24, maxWidth: 520 }} className={styles.image} alt='work' sizes='(max-width: 768px) 558px, (max-width: 1120px) 380px, 558px' layout="responsive" />
 
       </Section>
-      <Section>
+      {/* <Section>
         <div className={styles.listReview}>
           <Review title={glosary.reviewName_1} img={Testigo1} description={glosary.reviewDescription_1} />
           <Review title={glosary.reviewName_2} img={Testigo2} description={glosary.reviewDescription_2} />
           <Review title={glosary.reviewName_3} img={Testigo3} description={glosary.reviewDescription_3} />
         </div>
-      </Section>
+      </Section> */}
     </main>
   )
 }

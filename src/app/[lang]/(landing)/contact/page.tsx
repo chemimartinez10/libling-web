@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './page.module.css'
 import Image from 'next/image'
 import headerImg from '@/app/img/contact_banner.gif'
-import familyImg from '@/app/img/big_family.png'
+import familyImg from '@/app/img/CEO_contact.jpg'
 import Article from '@/app/components/article'
 import { RiWhatsappLine, RiInstagramLine, RiMessengerLine, RiLinkedinFill } from "react-icons/ri";
 import Section from '@/app/components/section'
