@@ -12,11 +12,26 @@ import { dict } from '@/app/utils'
 import { Calendar } from 'react-calendar'
 import { poppinsMedium, poppinsRegular } from '@/app/fonts';
 import { CalendarEvent } from './calendar'
+import ical from 'ical'
 
 interface IPage {
   params: {
     lang: "es" | "en" | "fr"
   }
+}
+interface ICalEvent {
+  type: string
+  params: any[]
+  start: Date
+  end: Date
+  dtstamp: Date
+  uid: string
+  created: Date
+  lastmodified: Date
+  sequence: string
+  status: string
+  summary: string
+  transparency: string
 }
 interface IEvent {
   kind: string,
@@ -47,43 +62,21 @@ interface IEvent {
 
 
 const getEvents = async () => {
-  const params = new URLSearchParams({
-    grant_type: "refresh_token",
-    client_secret: process.env.CALENDAR_OAUTH_SECRET || '',
-    refresh_token: process.env.CALENDAR_REFRESH_TOKEN || '',
-    client_id: process.env.CALENDAR_OAUTH_CLIENT_ID || '',
-  })
-  let items = []
-  try {
-    const tokenResponse = await fetch("https://oauth2.googleapis.com/token", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: params.toString(),
-      cache: "no-cache",
-    })
-    const accessToken = await tokenResponse.json()
-    console.log('datos de los token', accessToken)
-    const eventsResponse = await fetch('https://www.googleapis.com/calendar/v3/calendars/primary/events', {
-      method: 'GET',
-      cache: "no-cache",
-      headers: {
-        'Authorization': `Bearer ${accessToken.access_token}`,
-        "Content-Type": "application/json",
+  let items: ICalEvent[] | [] = await new Promise((resolve, reject) => {
+    ical.fromURL('https://calendar.google.com/calendar/ical/liblinglc%40gmail.com/public/basic.ics', {}, (err: any, data: any) => {
+      if (err) {
+        reject([])
       }
+      resolve(Object.values(data))
     })
-    const eventsData = await eventsResponse.json()
-    console.log('datos de los eventos', eventsData.items)
-    items = eventsData.items
-  } catch (err) {
-    console.log('ha ocurrido un error', err)
-  }
+  })
+  console.log(items)
   return items
+
 }
 const Contact: React.FC<IPage> = async ({ params: { lang } }) => {
   const glosary = dict[lang]?.contact
-  const events: IEvent[] | [] = await getEvents() || []
+  const events: ICalEvent[] | [] = await getEvents() || []
   console.log(events?.length)
 
   return (
@@ -106,7 +99,7 @@ const Contact: React.FC<IPage> = async ({ params: { lang } }) => {
       </header>
       <Section>
         <Article subtitle={glosary.sectionTitle_1} content={glosary.sectionContent_1} image={familyImg} />
-        <CalendarEvent calendarTitle={glosary.calendarTitle} events={events} lang={lang}/>
+        <CalendarEvent calendarTitle={glosary.calendarTitle} events={events} lang={lang} />
       </Section>
       <Section title={glosary.sectionTitle_2} resume={glosary.sectionContent_2}>
         <div className={styles.listContactCards}>

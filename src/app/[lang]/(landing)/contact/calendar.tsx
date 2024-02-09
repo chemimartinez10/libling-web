@@ -9,7 +9,21 @@ import { useRouter } from 'next/navigation';
 interface ICalendarEvents {
     calendarTitle: string
     lang: "es" | "en" | "fr"
-    events: IEvent[] | []
+    events: ICalEvent[] | []
+}
+interface ICalEvent {
+    type: string
+    params: any[]
+    start: Date
+    end: Date
+    dtstamp: Date
+    uid: string
+    created: Date
+    lastmodified: Date
+    sequence: string
+    status: string
+    summary: string
+    transparency: string
 }
 interface IEvent {
     kind: string,
@@ -42,33 +56,32 @@ interface IEvent {
 export const CalendarEvent: React.FC<ICalendarEvents> = ({ calendarTitle, lang, events }) => {
     const router = useRouter()
     const setClickDate = (date: Date) => {
-        let eventList = events.map(el => new Date(el.start.dateTime || el.start.date).toDateString())
+        let eventList = events.map(el => el.start.toDateString())
         console.log(eventList)
-        console.log(date.toDateString())
-        if (!eventList.some(el => el === date.toDateString())){
+        if (!eventList.some(el => el === date.toDateString())) {
             // router.push(`/home`)
-            router.push(`/contact?date=${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}#contactForm`, { scroll: true })
+            router.push(`/contact?date=${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}#contactForm`, { scroll: true })
         }
     }
     return (
         <div className={styles.calendar}>
             <h3 style={poppinsMedium.style}>{calendarTitle}</h3>
-            <Calendar 
-            locale={lang} 
-            className={poppinsRegular.className} 
-            onClickDay={setClickDate}
-            tileClassName={({ date }) => {
-                return events.some(
-                    (event) => {
-                        let dateStr = event.start.dateTime || event.start.date
-                        return new Date(`${dateStr}${dateStr.length <= 8 ? 'T00:00:00+02:00' : ''}`).toDateString() === date.toDateString()
-                    }
-                )
-                    ? "event-marked"
-                    : ""
+            <Calendar
+                locale={lang}
+                className={poppinsRegular.className}
+                onClickDay={setClickDate}
+                tileClassName={({ date }) => {
+                    return events.some(
+                        (event) => {
+                            let dateStr = event.start
+                            return dateStr.toDateString() === date.toDateString()
+                        }
+                    )
+                        ? "event-marked"
+                        : ""
 
-            }
-            } />
+                }
+                } />
         </div>
     )
 }
