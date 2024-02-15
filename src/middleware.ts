@@ -1,40 +1,52 @@
 import { match } from "@formatjs/intl-localematcher"
 import Negotiator from "negotiator"
-import { NextRequest } from "next/server"
-import { useState } from "react"
+import { NextRequest, NextResponse } from "next/server"
+import { auth } from "./auth"
+
 
 // -> 'en-US'
 
 let locales = ["en", "fr", "es"]
-
 // Get the preferred locale, similar to the above or using a library
-function getLocale(request:NextRequest) {
+function getLocale(request: NextRequest) {
 	const selectedLanguage = request.cookies.get("NEXT_LOCALE")?.value
-	console.log('selectedLanguage', selectedLanguage)
-	if (selectedLanguage && locales.includes(selectedLanguage.toLocaleLowerCase())) {
+	console.log("selectedLanguage", selectedLanguage)
+	if (
+		selectedLanguage &&
+		locales.includes(selectedLanguage.toLocaleLowerCase())
+	) {
 		return selectedLanguage
 	}
-	let headers = { "accept-language": request.headers.get("accept-language") || "en-US,en;q=0.5" }
+	let headers = {
+		"accept-language":
+			request.headers.get("accept-language") || "en-US,en;q=0.5",
+	}
 	let languages = new Negotiator({ headers }).languages()
 	let defaultLocale = "en"
 	return match(languages, locales, defaultLocale)
 }
 
-export function middleware(request:NextRequest) {
+export async function middleware(request: NextRequest, response: NextResponse) {
 	// Check if there is any supported locale in the pathname
 	const { pathname } = request.nextUrl
 	const pathnameHasLocale = locales.some(
 		(locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
 	)
 
-	if (pathnameHasLocale) return
-
-	// Redirect if there is no locale
-	const locale = getLocale(request)
-	request.nextUrl.pathname = `/${locale}${pathname}`
-	// e.g. incoming request is /products
-	// The new URL is now /en-US/products
-	return Response.redirect(request.nextUrl)
+	if (!pathnameHasLocale) {
+		// Redirect if there is no locale
+		const locale = getLocale(request)
+		request.nextUrl.pathname = `/${locale}${pathname}`
+		// e.g. incoming request is /products
+		// The new URL is now /en-US/products
+		return Response.redirect(request.nextUrl)
+	}
+	if (
+		request.nextUrl.pathname.includes("/admin") ||
+		request.nextUrl.pathname.includes("/login")
+	) {
+		return await auth(request, response)
+	}
 }
 
 export const config = {

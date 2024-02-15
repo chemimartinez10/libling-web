@@ -39,6 +39,7 @@
 .selectedLink {
     border-bottom: 4px solid #fff;
 }
+
 .formSelector {
     position: absolute;
     right: 24px;

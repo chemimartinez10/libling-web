@@ -1,0 +1,51 @@
+
+.selectedLang {
+    border-radius: 50%;
+    border: 3px solid #fff;
+    margin: 8px 16px;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    outline: none;
+    cursor: pointer;
+}
+
+.langList {
+    display: none;
+    opacity: 0;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 5;
+    position: absolute;
+    background-color: #fff7;
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    padding: 12px;
+    transition: opacity 500ms ease;
+}
+
+.langListActive {
+    display: flex;
+    opacity: 1;
+    flex-direction: column;
+    gap: 16px;
+    z-index: 5;
+    position: absolute;
+    background-color: #fff7;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    padding: 16px;
+    transition: opacity 500ms ease;
+}
+
+.langList>* {
+    cursor: pointer;
+}
+
+/* Mobile */
+@media (max-width: 350px) {
+    .formSelector {
+        display: none;
+    }
+
+}

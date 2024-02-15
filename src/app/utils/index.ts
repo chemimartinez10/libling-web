@@ -1,10 +1,18 @@
 export const dict = {
 	es: {
+		auth: {
+			login_title: "Ingresa tus credenciales",
+			login_email: "Correo",
+			login_password: "Contraseña",
+			login_forgot: "¿olvidaste tu contraseña?",
+			login_button: "Ingresar",
+		},
 		navbar: {
 			link_1: "Quienes somos",
 			link_2: "Inicio",
 			link_3: "Servicios",
 			link_4: "Contacto",
+			admin_1: "Propiedades",
 		},
 		footer: {
 			title_1: "Contacto",
@@ -152,11 +160,19 @@ export const dict = {
 		},
 	},
 	en: {
+		auth: {
+			login_title: "Enter your credentials",
+			login_email: "Email",
+			login_password: "Password",
+			login_forgot: "Forgot your password?",
+			login_button: "Login",
+		},
 		navbar: {
 			link_1: "About us",
 			link_2: "Home",
 			link_3: "Services",
 			link_4: "Contact",
+			admin_1: "Properties",
 		},
 		footer: {
 			title_1: "Contact",
@@ -305,11 +321,19 @@ export const dict = {
 		},
 	},
 	fr: {
+		auth: {
+			login_title: "Entrez vos données d'identification",
+			login_email: "E-mail",
+			login_password: "Mot de passe",
+			login_forgot: "Vous avez oublié votre mot de passe?",
+			login_button: "Entrer",
+		},
 		navbar: {
 			link_1: "A propos de nous",
 			link_2: "Accueil",
 			link_3: "Services",
 			link_4: "Contact",
+			admin_1: "Propriétés",
 		},
 		footer: {
 			title_1: "Contact",
