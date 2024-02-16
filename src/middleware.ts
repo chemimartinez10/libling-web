@@ -26,7 +26,7 @@ function getLocale(request: NextRequest) {
 	return match(languages, locales, defaultLocale)
 }
 
-export async function middleware(request: NextRequest, response: NextResponse) {
+export async function middleware(request: any, response: any) {
 	// Check if there is any supported locale in the pathname
 	const { pathname } = request.nextUrl
 	const pathnameHasLocale = locales.some(
