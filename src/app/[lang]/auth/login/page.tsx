@@ -27,7 +27,6 @@ const Login = ({ params }: { params: { lang: "es" | "en" | "fr" } }) => {
         <section className={styles.section}>
             <LogoSVG />
             <div className={styles.card}>
-                <CountrySelector lang={lang} />
                 {
                     !!errorMessage &&
                     <span className={styles.errorMessage}>{errorMessage}</span>

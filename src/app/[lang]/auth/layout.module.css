@@ -2,6 +2,11 @@
     background-image: url(../../img/auth_bg_lg.jpg);
     background-size: cover;
 }
+.floatSelector{
+    position: absolute;
+    right: 16px;
+    top: 16px;
+}
 @media (min-width: 1080px) {
     /* Estilos para pantallas de 1080px o más */
 }
