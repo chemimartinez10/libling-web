@@ -1,5 +1,6 @@
 .layout{
     background-image: url(../../img/auth_bg_lg.jpg);
+    background-size: cover;
 }
 @media (min-width: 1080px) {
     /* Estilos para pantallas de 1080px o más */
