@@ -1,11 +1,13 @@
 export const dict = {
 	es: {
 		auth: {
-			login_title: "Ingresa tus credenciales",
+			login_title: "Vamos a ingresar a tu cuenta",
+			login_subtitle: "Por favor, ingresa tus datos",
 			login_email: "Correo",
 			login_password: "Contraseña",
 			login_forgot: "¿olvidaste tu contraseña?",
-			login_button: "Ingresar",
+			login_button: "Iniciar sesión",
+			login_remember: "Recuérdame",
 		},
 		navbar: {
 			link_1: "Quienes somos",
@@ -161,11 +163,13 @@ export const dict = {
 	},
 	en: {
 		auth: {
-			login_title: "Enter your credentials",
+			login_title: "Let's log in to your account",
+			login_subtitle: "Please enter your data",
 			login_email: "Email",
 			login_password: "Password",
 			login_forgot: "Forgot your password?",
 			login_button: "Login",
+			login_remember: "Remember me",
 		},
 		navbar: {
 			link_1: "About us",
@@ -322,11 +326,13 @@ export const dict = {
 	},
 	fr: {
 		auth: {
-			login_title: "Entrez vos données d'identification",
+			login_title: "Nous allons nous connecter à votre compte",
+			login_subtitle: "Veuillez saisir vos coordonnées",
 			login_email: "E-mail",
 			login_password: "Mot de passe",
 			login_forgot: "Vous avez oublié votre mot de passe?",
-			login_button: "Entrer",
+			login_button: "Se connecter",
+			login_remember: "Souvenez-vous de moi",
 		},
 		navbar: {
 			link_1: "A propos de nous",

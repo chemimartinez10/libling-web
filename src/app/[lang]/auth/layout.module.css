@@ -1,0 +1,15 @@
+.layout{
+    background-image: url(../../img/auth_bg_lg.jpg);
+}
+@media (min-width: 1080px) {
+    /* Estilos para pantallas de 1080px o más */
+}
+@media (min-width: 900px) and (max-width: 1079px) {
+    /* Estilos para pantallas entre 900px y 1079px */
+}
+@media (min-width: 500px) and (max-width: 899px) {
+    /* Estilos para pantallas entre 600px y 899px */
+}
+@media (max-width: 599px) {
+    /* Estilos para pantallas de 599px o menos */
+}

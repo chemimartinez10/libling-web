@@ -43,7 +43,7 @@ export async function middleware(request: any, response: any) {
 	}
 	if (
 		request.nextUrl.pathname.includes("/admin") ||
-		request.nextUrl.pathname.includes("/login")
+		request.nextUrl.pathname.includes("/auth")
 	) {
 		return await auth(request, response)
 	}

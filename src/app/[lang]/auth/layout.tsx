@@ -1,13 +1,9 @@
 import type { Metadata } from 'next'
 import '../../globals.css'
-import Navbar from '../../components/navbar'
 import { poppinsRegular } from '../../fonts'
-import Footer from '@/app/components/footer'
-import styles from '@/app/[lang]/(landing)/page.module.css'
-import Menu from '@/app/components/menu'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Script from 'next/script'
+import styles from './layout.module.css'
 
 
 
