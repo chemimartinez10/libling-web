@@ -11,10 +11,15 @@
   --background-start-rgb: 0, 0, 0;
   --background-end-rgb: 0, 0, 0;
   --background-color: #f1f1f1;
+  --button-flat-hover-color:#56B7FF;
+  --button-flat-pressed-color:#0086FF;
   --mask-color: #fffb;
   --calendar-color: #fff;
   --shadow-color: #0003;
   --secondary-text-color: #000a;
+  --color-success: #00C851;
+  --color-warning: #FFBB33;
+  --color-error: #FF4444;
 
   --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
   --secondary-glow: linear-gradient(to bottom right,
@@ -59,6 +64,9 @@
     --calendar-color: #000a;
     --secondary-text-color: #fffb;
     --shadow-color: #fff3;
+    --toastify-color-success: #00C851;
+    --toastify-color-warning: #FFBB33;
+    --toastify-color-error: #FF4444;
 
     --primary-glow: conic-gradient(from 180deg at 50% 50%,
         #16abff33 0deg,

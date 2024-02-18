@@ -1,0 +1,25 @@
+.toastContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+    align-items: flex-start;
+}
+.toastText{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.title{
+    color: #fff;
+    font-size: 16px;
+}
+.content{
+    color: #FFFFFFBD;
+    font-size: 14px;
+}
+.icon{
+    color: #FFFFFFBD;
+    font-size: 20px;
+    
+}

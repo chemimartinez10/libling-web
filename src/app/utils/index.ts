@@ -5,9 +5,12 @@ export const dict = {
 			login_subtitle: "Por favor, ingresa tus datos",
 			login_email: "Correo",
 			login_password: "Contraseña",
-			login_forgot: "¿olvidaste tu contraseña?",
+			login_forgot: "¿Olvidaste tu contraseña?",
 			login_button: "Iniciar sesión",
 			login_remember: "Recuérdame",
+			login_placeholder: "Escribe aqui...",
+			login_email_required: "El correo es requerido",
+			login_password_required: "La contraseña es requerida",
 		},
 		navbar: {
 			link_1: "Quienes somos",
@@ -170,6 +173,9 @@ export const dict = {
 			login_forgot: "Forgot your password?",
 			login_button: "Login",
 			login_remember: "Remember me",
+			login_placeholder: "Type here...",
+			login_email_required: "Email is required",
+			login_password_required: "Password is required",
 		},
 		navbar: {
 			link_1: "About us",
@@ -333,6 +339,9 @@ export const dict = {
 			login_forgot: "Vous avez oublié votre mot de passe?",
 			login_button: "Se connecter",
 			login_remember: "Souvenez-vous de moi",
+			login_placeholder: "Tapez ici...",
+			login_email_required: "Le courrier est obligatoire",
+			login_password_required: "Le mot de passe est requis",
 		},
 		navbar: {
 			link_1: "A propos de nous",
