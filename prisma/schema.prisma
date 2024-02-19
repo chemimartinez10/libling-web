@@ -6,8 +6,8 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
   directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 
@@ -56,11 +56,12 @@ model PropertyType {
 }
 
 model PropertyImage {
-  id         Int      @id @default(autoincrement())
-  name       String
-  path       String
-  property   Property @relation(fields: [propertyId], references: [id])
-  propertyId Int
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String
+  path        String
+  property    Property @relation(fields: [propertyId], references: [id])
+  propertyId  Int
 }
 
 model Surface {
