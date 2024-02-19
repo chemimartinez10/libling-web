@@ -1,10 +1,10 @@
+
 import type { Metadata } from 'next'
 import '../../globals.css'
-import Navbar from '../../components/admin/navbar'
-import { poppinsRegular } from '../../fonts'
-import styles from './layout.module.css'
-import { ToastContainer } from 'react-toastify';
+
 import 'react-toastify/dist/ReactToastify.css';
+import { Body } from '@/app/components/admin/body';
+
 
 
 export const metadata: Metadata = {
@@ -22,13 +22,9 @@ export default function RootLandingLayout({
 }) {
   return (
     <html lang={lang}>
-      <body style={poppinsRegular.style} className={styles.layout}>
-        <ToastContainer />
-        <Navbar lang={lang} />
-        <main className={styles.container}>
-          {children}
-        </main>
-      </body>
+      <Body lang={lang}>
+        {children}
+      </Body>
     </html>
   )
 }

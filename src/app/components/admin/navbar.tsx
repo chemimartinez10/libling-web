@@ -7,13 +7,23 @@ import { usePathname } from 'next/navigation';
 import LogoSVG from '../../img/Recurso 1 1.svg'
 import Image from 'next/image';
 import Link from 'next/link';
-import { poppinsBold } from '@/app/fonts';
+import { poppinsBold, poppinsMedium } from '@/app/fonts';
 import { CountrySelector } from '../countrySelector';
 import LogoNavSVG from '../icons/logoNavSVG';
 import { FiChevronDown, FiChevronUp, FiMenu } from 'react-icons/fi'
 
-export default function Navbar({ lang }: { lang: "es" | "en" | "fr" }) {
-    const glosary = dict[lang]?.navbar
+export default function Navbar({ lang, handleAside }: { lang: "es" | "en" | "fr", handleAside: VoidFunction }) {
+    const glosary = dict[lang]?.adminNav
+    const routes = [
+        {
+            name: glosary.dashboardTitle,
+            uri: '/admin/dashboard'
+        },
+        {
+            name: glosary.propertiesTitle,
+            uri: '/admin/properties'
+        },
+    ]
     const pathname = usePathname()
     const verifyCurrentLink = (site: string) => {
         let currentLocation = pathname
@@ -21,10 +31,13 @@ export default function Navbar({ lang }: { lang: "es" | "en" | "fr" }) {
         return false
     }
     const [showMenu, setShowMenu] = useState<boolean>(false)
-    return (
+    return (<>
         <nav className={styles.navbar}>
             <div className={styles.logoContainer}>
-                <FiMenu className={styles.menuIcon} />
+                <div onClick={handleAside}>
+                    <FiMenu className={styles.menuIcon} />
+
+                </div>
                 <LogoNavSVG />
             </div>
             <div className={styles.userContainer}>
@@ -37,10 +50,10 @@ export default function Navbar({ lang }: { lang: "es" | "en" | "fr" }) {
                         <span>Admin</span>
                         {
                             showMenu
-                            ?
-                            <FiChevronUp className={styles.roleIcon} />
-                            :
-                            <FiChevronDown className={styles.roleIcon} />
+                                ?
+                                <FiChevronUp className={styles.roleIcon} />
+                                :
+                                <FiChevronDown className={styles.roleIcon} />
                         }
                     </div>
                     <div className={styles.menu} style={{ display: showMenu ? 'block' : 'none' }}>
@@ -57,5 +70,6 @@ export default function Navbar({ lang }: { lang: "es" | "en" | "fr" }) {
                 </div>
             </div>
         </nav>
+    </>
     )
 }
