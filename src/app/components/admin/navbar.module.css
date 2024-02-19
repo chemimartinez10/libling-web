@@ -2,30 +2,12 @@
     background-color: var(--libling-main-color);
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    color: var(--navbar-text-color);
-
-}
-
-.innernav {
-    display: flex;
-    flex-direction: row;
-    flex-grow: 1;
-    padding: 14px 112px;
     justify-content: space-between;
     align-items: center;
-    position: relative;
-    /* max-width: var(--max-width); */
+    color: var(--navbar-text-color);
+    height: 64px;
+    padding: 0px 25px;
 
-}
-
-.innernav>ul {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    gap: 64px;
-    font-size: 24px;
 }
 
 .logoContainer {
@@ -33,17 +15,58 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 20px 0;
+    gap: 24px;
+}
+
+.userContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.userData {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    position: relative;
+}
+.menu{
+    position: absolute;
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 10px;
+    z-index: 999;
+    top:64px;
+    right: 0px;
+}
+
+.userRole {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFFBD;
+    cursor: pointer;
+    
+}
+.userRole span{
+    font-size: 12px;
+}
+.roleIcon{
+    padding: 4px;
+    font-size: 24px;
 }
 
 .selectedLink {
     border-bottom: 4px solid #fff;
 }
 
-.formSelector {
-    position: absolute;
-    right: 24px;
-    top: 38px
+.menuIcon {
+    font-size: 24px;
+    color: #FFFFFFBD;
 }
 
 

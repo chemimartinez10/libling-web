@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import '../../globals.css'
 import Navbar from '../../components/admin/navbar'
 import { poppinsRegular } from '../../fonts'
-import styles from '@/app/[lang]/(landing)/page.module.css'
+import styles from './layout.module.css'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -25,7 +25,9 @@ export default function RootLandingLayout({
       <body style={poppinsRegular.style} className={styles.layout}>
         <ToastContainer />
         <Navbar lang={lang} />
-        {children}
+        <main className={styles.container}>
+          {children}
+        </main>
       </body>
     </html>
   )
