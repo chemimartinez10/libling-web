@@ -1,0 +1,145 @@
+.button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    color: #fff;
+    background-color: var(--libling-main-ui-color);
+    border-radius: 24px;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid var(--libling-main-ui-color);
+    box-shadow: 0px 6px 12px #1973FA29;
+}
+
+.button:hover {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    color: #fff;
+    background-color: var(--button-flat-hover-color);
+    border-radius: 24px;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid var(--button-flat-hover-color);
+    box-shadow: 0px 6px 12px #1973FA29;
+}
+
+.button:focus {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    color: #fff;
+    background-color: var(--button-flat-pressed-color);
+    border-radius: 24px;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid var(--button-flat-pressed-color);
+    box-shadow: 0px 6px 12px #1973FA29;
+}
+
+.card {
+    background-color: #fff;
+    box-shadow: 0px 2px 4px #1973FA1A;
+    border-radius: 10px;
+    padding: 24px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.cardTitle {
+    font-size: 18px;
+    color: #000000DE;
+}
+
+.cardContent {
+    flex-grow: 1;
+}
+
+.emptyContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding: 36px 0px 96px;
+}
+
+.emptyText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    padding-bottom: 8px;
+}
+
+.emptyIcon {
+    color: var(--libling-main-ui-color);
+    font-size: 48px;
+    padding: 4px;
+}
+
+.emptyTitle {
+    font-size: 18px;
+    color: #000000DE;
+}
+
+.emptyDescription {
+    color: #00000099;
+    font-size: 16px;
+}
+
+.titleBar {
+    height: 60px;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 8px 10px #1973FA14;
+    padding: 0px 24px;
+}
+
+.titleBarTitle {
+    color: #000000DE;
+    font-size: 21px;
+}
+
+.breadcrumsContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.breadcrumsLink {
+    color: #000000DE;
+    font-size: 14px;
+    text-decoration: underline;
+
+}
+
+.breadcrumsText {
+    color: #00000099;
+    font-size: 14px;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+    min-height: 70vh;
+    flex-grow: 1;
+}

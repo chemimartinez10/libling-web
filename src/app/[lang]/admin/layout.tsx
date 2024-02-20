@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   title: 'Libling Solutions',
   description: 'Landing page for Libling solutions',
 }
+export interface IPage {
+  params: {
+    lang: "es" | "en" | "fr"
+  }
+}
 
 export default function RootLandingLayout({
   children,

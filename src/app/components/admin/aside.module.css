@@ -63,8 +63,13 @@
 
 }
 
-.asideItemIcon {
+.asideItemIconSelected {
     color: #ffffff99;
+    font-size: 24px;
+    padding: 4px;
+}
+.asideItemIcon {
+    color: var(--libling-main-ui-color);
     font-size: 24px;
     padding: 4px;
 }
