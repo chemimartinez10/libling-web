@@ -1,12 +1,14 @@
 'use client'
 import React from 'react'
 import styles from './page.module.css'
+import globalStyles from '@/app/globals.module.css'
 import { dict } from '@/app/utils'
 import { IPage } from '../layout'
 import { FiHome } from 'react-icons/fi'
 import { poppinsMedium } from '@/app/fonts'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { Button } from '@/app/components/admin/button'
 
 const Properties: React.FC<IPage> = ({ params: { lang } }) => {
   const glosary = dict[lang]?.adminProperties
@@ -40,7 +42,7 @@ const Properties: React.FC<IPage> = ({ params: { lang } }) => {
                   <span className={styles.emptyTitle} style={poppinsMedium.style}>{glosary.indexEmptyListTitle}</span>
                   <span className={styles.emptyDescription}>{glosary.indexEmptyListDescription}</span>
                 </div>
-                <button className={styles.button} style={poppinsMedium.style} onClick={goToCreate}>{glosary.formButtonRegister}</button>
+                <Button title={glosary.formButtonRegister} onClick={goToCreate} type='main'/>
               </div>
               :
               <div></div>

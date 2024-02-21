@@ -86,6 +86,9 @@ export const dict = {
 			login_placeholder: "Escribe aqui...",
 			login_email_required: "El correo es requerido",
 			login_password_required: "La contraseña es requerida",
+			login_password_confirmation_required: "Las contraseñas no coninciden",
+			error_credentials: "Las credenciales no son correctas",
+			error_default: "Ha ocurrido un error",
 		},
 		navbar: {
 			link_1: "Quienes somos",
@@ -326,6 +329,9 @@ export const dict = {
 			login_placeholder: "Type here...",
 			login_email_required: "Email is required",
 			login_password_required: "Password is required",
+			login_password_confirmation_required: "Passwords do not match",
+			error_credentials: "The credentials are not correct",
+			error_default: "An error has occurred",
 		},
 		navbar: {
 			link_1: "About us",
@@ -567,6 +573,11 @@ export const dict = {
 			login_placeholder: "Tapez ici...",
 			login_email_required: "Le courrier est obligatoire",
 			login_password_required: "Le mot de passe est requis",
+			login_password_confirmation_required:
+				"les mots de passe ne correspondent pas",
+			error_credentials:
+				"Les informations d'identification ne sont pas correctes",
+			error_default: "Une erreur s'est produite",
 		},
 		navbar: {
 			link_1: "A propos de nous",

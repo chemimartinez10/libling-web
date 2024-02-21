@@ -5,7 +5,6 @@ import styles from './form.module.css'
 import Button from './button'
 import { poppinsBold, poppinsRegular } from '../fonts'
 import { dict } from '../utils'
-import emailjs from '@emailjs/browser';
 import { sendEmail } from '../utils/funtions'
 import { useSearchParams } from 'next/navigation'
 

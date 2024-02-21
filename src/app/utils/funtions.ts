@@ -14,10 +14,10 @@ export const sendEmail = (
 	const mailMessages = dict[lang]?.mail
 	return emailjs
 		.send(
-			process.env.MAIL_SERVICE_ID || "service_qhp1f0h",
-			process.env.MAIL_TEMPLATE_ID || "template_klc96ba",
+			process.env.MAIL_SERVICE_ID || "service",
+			process.env.MAIL_TEMPLATE_ID || "template",
 			templateParams,
-			process.env.MAIL_PUBLIC_KEY || "D5UQeT_KAv0WV3RZr"
+			process.env.MAIL_PUBLIC_KEY || "api_key"
 		)
 		.then(
 			(response) => {

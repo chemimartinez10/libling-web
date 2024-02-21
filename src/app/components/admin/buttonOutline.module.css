@@ -1,0 +1,99 @@
+.button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    color: #000000DE;
+    background-color: #fff;
+    border-radius: 24px;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid #0000001F;
+    cursor: pointer;
+}
+
+
+.buttonPressed {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    color: #000000DE;
+    background-color: #EEEEEE;
+    border-radius: 24px;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid #0000001F;
+}
+
+.buttonDisabled {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    color: #00000061;
+    background-color: #fff;
+    border-radius: 24px;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid #0000001F;
+}
+
+.icon {
+    font-size: 24px;
+    padding: 4px;
+    color: #000000DE;
+}
+
+.loader {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: block;
+    margin: 8px auto;
+    position: relative;
+    color: #0095FF;
+    box-sizing: border-box;
+    animation: animloader 1.25s linear infinite alternate;
+}
+
+@keyframes animloader {
+    0% {
+        box-shadow: -38px -12px, -14px 0, 14px 0, 38px 0;
+    }
+
+    33% {
+        box-shadow: -38px 0px, -14px -12px, 14px 0, 38px 0;
+    }
+
+    66% {
+        box-shadow: -38px 0px, -14px 0, 14px -12px, 38px 0;
+    }
+
+    100% {
+        box-shadow: -38px 0, -14px 0, 14px 0, 38px -12px;
+    }
+}
+
+@media (hover: hover) {
+    .button:hover {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 16px;
+        color: #000000DE;
+        background-color: #FAFAFA;
+        border-radius: 24px;
+        font-size: 16px;
+        outline: none;
+        border: 1px solid #0000001F;
+    }
+}

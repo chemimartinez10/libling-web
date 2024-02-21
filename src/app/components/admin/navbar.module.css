@@ -43,6 +43,7 @@
     z-index: 999;
     top:64px;
     right: 0px;
+    box-shadow: 0px 8px 10px #1973FA14;
 }
 
 .userRole {
@@ -60,6 +61,7 @@
 .roleIcon{
     padding: 4px;
     font-size: 24px;
+    cursor: pointer;
 }
 
 .selectedLink {
@@ -69,6 +71,7 @@
 .menuIcon {
     font-size: 24px;
     color: #FFFFFFBD;
+    cursor: pointer;
 }
 
 

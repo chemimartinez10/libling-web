@@ -1,0 +1,74 @@
+.buttonMain {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    color: #fff;
+    background-color: var(--libling-main-ui-color);
+    border-radius: 24px;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid var(--libling-main-ui-color);
+    box-shadow: 0px 6px 12px #1973FA29;
+    cursor: pointer;
+}
+
+.buttonMain:hover {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    color: #fff;
+    background-color: var(--button-flat-hover-color);
+    border-radius: 24px;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid var(--button-flat-hover-color);
+    box-shadow: 0px 6px 12px #1973FA29;
+}
+
+.buttonMain:focus {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    color: #fff;
+    background-color: var(--button-flat-pressed-color);
+    border-radius: 24px;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid var(--button-flat-pressed-color);
+    box-shadow: 0px 6px 12px #1973FA29;
+}
+.buttonOutline {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 16px;
+    color: #000000DE;
+    background-color: transparent;
+    border-radius: 24px;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid #0000001F;
+    cursor: pointer;
+}
+
+.buttonLink {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 16px;
+    color: var(--libling-main-ui-color);
+    background-color: transparent;
+    border-radius: 24px;
+    font-size: 14px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}

@@ -9,21 +9,17 @@ import { poppinsMedium, poppinsRegular } from '@/app/fonts'
 import { toast } from 'react-toastify'
 import CustomToast from '@/app/components/toast'
 import { FiEye, FiEyeOff } from 'react-icons/fi'
-import { Button } from '@/app/components/admin/button'
-import { useRouter } from 'next/navigation'
 
-const Login = ({ params }: { params: { lang: "es" | "en" | "fr" } }) => {
+const ForgotPassword = ({ params }: { params: { lang: "es" | "en" | "fr" } }) => {
     const [emailErrorMessage, setEmailErrorMessage] = useState<string | null>(null)
     const [passwordErrorMessage, setPasswordErrorMessage] = useState<string | null>(null)
     const lang = params.lang
     const glosary = dict[lang]?.auth
     const [focusedEmail, setFocusedEmail] = useState(false)
-    const [loading, setLoading] = useState(false)
     const [focusedPassword, setFocusedPassword] = useState(false)
     const [errorPassword, setErrorPassword] = useState(false)
     const [visiblePassword, setVisiblePassword] = useState(false)
     const [errorEmail, setErrorEmail] = useState(false)
-    const router = useRouter()
     const onFocusEmail = () => {
         if (!errorEmail) {
             setFocusedEmail(true)
@@ -40,35 +36,23 @@ const Login = ({ params }: { params: { lang: "es" | "en" | "fr" } }) => {
     const passwordRef = useRef<HTMLInputElement | null>(null)
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        try {
-            setLoading(true)
-            const formData = new FormData()
-            const email = emailRef.current?.value?.trim()
-            const password = passwordRef.current?.value
-            if (!email) {
-                setErrorEmail(true)
-                setEmailErrorMessage(glosary.login_email_required)
-                setLoading(false)
-            }
-            if (!password) {
-                setErrorPassword(true)
-                setPasswordErrorMessage(glosary.login_password_required)
-                setLoading(false)
-            }
-            if (!email || !password) return
-            if (email) formData.append('email', email)
-            if (password) formData.append('password', password)
-            const response = await authenticate(undefined, formData)
-            if (response)
-                toast.error(<CustomToast type='error' title='Error' content={glosary.error_credentials} />, { theme: 'colored', icon: false, style: { backgroundColor: '#FF4444', maxWidth: 450, padding: 24, borderRadius: 10 } })
+        const formData = new FormData()
+        const email = emailRef.current?.value?.trim()
+        const password = passwordRef.current?.value
+        if (!email) {
+            setErrorEmail(true)
+            setEmailErrorMessage(glosary.login_email_required)
         }
-        catch (e) {
-            toast.error(<CustomToast type='error' title='Error' content={glosary.error_default} />, { theme: 'colored', icon: false, style: { backgroundColor: '#FF4444', maxWidth: 450, padding: 24, borderRadius: 10 } })
-
-        } finally {
-            setLoading(false)
-
+        if (!password) {
+            setErrorPassword(true)
+            setPasswordErrorMessage(glosary.login_password_required)
         }
+        if (!email || !password) return
+        if (email) formData.append('email', email)
+        if (password) formData.append('password', password)
+        const response = await authenticate(undefined, formData)
+        if (response)
+            toast.error(<CustomToast type='error' title='Error' content='Las credenciales no son correctas' />, { theme: 'colored', icon: false, style: { backgroundColor: '#FF4444', maxWidth: 450, padding: 24, borderRadius: 10 } })
     }
     const handleTypeEmail = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.currentTarget.value !== '') {
@@ -126,12 +110,14 @@ const Login = ({ params }: { params: { lang: "es" | "en" | "fr" } }) => {
                         <input type="checkbox" id="cboxInput" name="remember_me" />
                         <label htmlFor="cboxInput">{glosary.login_remember}</label>
                     </div>
-                    <Button title={glosary.login_button} loading={loading} type='main' />
+                    <button className={globalStyles.buttonMain} style={poppinsMedium.style} type="submit">
+                        {glosary.login_button}
+                    </button>
                 </form>
-                <Button title={glosary.login_forgot} type='text' onClick={() => { router.push('/auth/forgot-password') }} />
+                <a href="#" className={globalStyles.buttonLink} style={poppinsMedium.style}>{glosary.login_forgot}</a>
             </div>
         </section>
     )
 }
 
-export default Login
+export default ForgotPassword

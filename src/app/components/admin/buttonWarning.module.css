@@ -1,0 +1,104 @@
+.button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    color: #fff;
+    background-color: #FFBB33;
+    border-radius: 24px;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid #FFBB33;
+    box-shadow: 0px 6px 12px #FFBB3329;
+    cursor: pointer;
+}
+
+
+
+.buttonPressed {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    color: #fff;
+    background-color: #FFB34C;
+    border-radius: 24px;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid #FFB34C;
+    box-shadow: 0px 6px 12px #FFBB3329;
+}
+
+.buttonDisabled {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    color: #fff;
+    background-color: #00000061;
+    border-radius: 24px;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid #00000061;
+}
+
+.icon {
+    font-size: 24px;
+    padding: 4px;
+    color: #fff;
+}
+
+.loader {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: block;
+    margin: 8px auto;
+    position: relative;
+    color: #FFF;
+    box-sizing: border-box;
+    animation: animloader 1.25s linear infinite alternate;
+}
+
+@keyframes animloader {
+    0% {
+        box-shadow: -38px -12px, -14px 0, 14px 0, 38px 0;
+    }
+
+    33% {
+        box-shadow: -38px 0px, -14px -12px, 14px 0, 38px 0;
+    }
+
+    66% {
+        box-shadow: -38px 0px, -14px 0, 14px -12px, 38px 0;
+    }
+
+    100% {
+        box-shadow: -38px 0, -14px 0, 14px 0, 38px -12px;
+    }
+}
+
+@media (hover: hover) {
+
+    .button:hover {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 16px;
+        color: #fff;
+        background-color: #FFC97F;
+        border-radius: 24px;
+        font-size: 16px;
+        outline: none;
+        border: 1px solid #FFC97F;
+        box-shadow: 0px 6px 12px #FFBB3329;
+    }
+}
