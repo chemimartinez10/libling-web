@@ -91,7 +91,7 @@ const Login = ({ params }: { params: { lang: "es" | "en" | "fr" } }) => {
             <div className={styles.card}>
                 <div className={styles.cardHeader}>
                     <h2 className={styles.title} style={poppinsMedium.style}>{glosary.login_title}</h2>
-                    <h4 className={styles.subtitle} style={poppinsRegular.style}>{glosary.login_title}</h4>
+                    <h4 className={styles.subtitle} style={poppinsRegular.style}>{glosary.login_subtitle}</h4>
                 </div>
                 <form className={styles.form} onSubmit={handleSubmit}>
                     <div className={styles.formControl}>

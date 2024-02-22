@@ -1,123 +1,92 @@
 'use client'
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react';
+import { Formik, Form, FormikHelpers } from 'formik';
+import * as Yup from 'yup';
+import { dict } from '@/app/utils';
+import CustomToast from '@/app/components/toast';
+import { toast } from 'react-toastify';
+import { InputText } from '@/app/components/admin/inputText';
 import styles from './page.module.css'
-import globalStyles from '@/app/globals.module.css'
-import { authenticate } from '@/app/actions'
-import { dict } from '@/app/utils'
-import LogoSVG from '@/app/components/icons/logoSVG'
-import { poppinsMedium, poppinsRegular } from '@/app/fonts'
-import { toast } from 'react-toastify'
-import CustomToast from '@/app/components/toast'
-import { FiEye, FiEyeOff } from 'react-icons/fi'
+import { Button } from '@/app/components/admin/button';
+import LogoSVG from '@/app/components/icons/logoSVG';
+import { poppinsMedium, poppinsRegular } from '@/app/fonts';
+import { InputPassword } from '@/app/components/admin/inputPassword';
+import { useRouter } from 'next/navigation';
+import { FiMail } from 'react-icons/fi';
+
+interface IValues {
+    email: string
+}
 
 const ForgotPassword = ({ params }: { params: { lang: "es" | "en" | "fr" } }) => {
-    const [emailErrorMessage, setEmailErrorMessage] = useState<string | null>(null)
-    const [passwordErrorMessage, setPasswordErrorMessage] = useState<string | null>(null)
     const lang = params.lang
     const glosary = dict[lang]?.auth
-    const [focusedEmail, setFocusedEmail] = useState(false)
-    const [focusedPassword, setFocusedPassword] = useState(false)
-    const [errorPassword, setErrorPassword] = useState(false)
-    const [visiblePassword, setVisiblePassword] = useState(false)
-    const [errorEmail, setErrorEmail] = useState(false)
-    const onFocusEmail = () => {
-        if (!errorEmail) {
-            setFocusedEmail(true)
-        }
-    }
-    const onBlurEmail = () => setFocusedEmail(false)
-    const onFocusPassword = () => {
-        if (!errorPassword) {
-            setFocusedPassword(true)
-        }
-    }
-    const onBlurPassword = () => setFocusedPassword(false)
-    const emailRef = useRef<HTMLInputElement | null>(null)
-    const passwordRef = useRef<HTMLInputElement | null>(null)
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault()
-        const formData = new FormData()
-        const email = emailRef.current?.value?.trim()
-        const password = passwordRef.current?.value
-        if (!email) {
-            setErrorEmail(true)
-            setEmailErrorMessage(glosary.login_email_required)
-        }
-        if (!password) {
-            setErrorPassword(true)
-            setPasswordErrorMessage(glosary.login_password_required)
-        }
-        if (!email || !password) return
-        if (email) formData.append('email', email)
-        if (password) formData.append('password', password)
-        const response = await authenticate(undefined, formData)
-        if (response)
-            toast.error(<CustomToast type='error' title='Error' content='Las credenciales no son correctas' />, { theme: 'colored', icon: false, style: { backgroundColor: '#FF4444', maxWidth: 450, padding: 24, borderRadius: 10 } })
-    }
-    const handleTypeEmail = (e: React.KeyboardEvent<HTMLInputElement>) => {
-        if (e.currentTarget.value !== '') {
-            setErrorEmail(false)
-            setEmailErrorMessage(null)
-            setFocusedEmail(true)
-        }
-    }
-    const handleTypePassword = (e: React.KeyboardEvent<HTMLInputElement>) => {
-        if (e.currentTarget.value !== '') {
-            setErrorPassword(false)
-            setPasswordErrorMessage(null)
-            setFocusedPassword(true)
-        }
+    const [success, setSuccess] = useState(false)
+    const [fail, setFail] = useState(false)
+    const router = useRouter()
 
+    const validationSchema = Yup.object({
+        email: Yup.string().email(glosary.email_send_validation).required(glosary.email_send_required),
+    });
+    const handleSubmit = (values: IValues, { setSubmitting }: FormikHelpers<IValues>) => {
+        toast.error(<CustomToast type='error' title='Error' content={glosary.error_default} />, { theme: 'colored', icon: false, style: { backgroundColor: '#FF4444', maxWidth: 450, padding: 24, borderRadius: 10 } })
+        setSubmitting(false)
+        setFail(true)
     }
+
     return (
         <section className={styles.section}>
             <LogoSVG />
-            <div className={styles.card}>
-                <div className={styles.cardHeader}>
-                    <h2 className={styles.title} style={poppinsMedium.style}>{glosary.login_title}</h2>
-                    <h4 className={styles.subtitle} style={poppinsRegular.style}>{glosary.login_title}</h4>
-                </div>
-                <form className={styles.form} onSubmit={handleSubmit}>
-                    <div className={styles.formControl}>
-                        <label htmlFor="emailInput" style={poppinsMedium.style} className={focusedEmail ? styles.labelActive : errorEmail ? styles.labelError : undefined}>{glosary.login_email}</label>
-                        <div className={styles.inputContainer}>
-                            <input id='emailInput' name='email' type="email" ref={emailRef} placeholder={glosary.login_placeholder} style={poppinsRegular.style} onFocus={onFocusEmail} onBlur={onBlurEmail} onKeyDown={handleTypeEmail} className={focusedEmail ? styles.inputFocus : errorEmail ? styles.inputError : styles.input} />
+            {
+                (!success && !fail)
+                    ?
+                    <div className={styles.card}>
+                        <div className={styles.cardHeader}>
+                            <h2 className={styles.title} style={poppinsMedium.style}>{glosary.forgot_password_title}</h2>
+                            <h4 className={styles.subtitle} style={poppinsRegular.style}>{glosary.forgot_password_subtitle}</h4>
                         </div>
-                        {
-                            !!emailErrorMessage && <span className={styles.errorMessage} style={poppinsRegular.style}>{emailErrorMessage}</span>
-                        }
-                    </div>
-                    <div className={styles.formControl}>
-                        <label htmlFor="passwordInput" style={poppinsMedium.style} className={focusedPassword ? styles.labelActive : errorPassword ? styles.labelError : undefined}>{glosary.login_password}</label>
-                        <div className={styles.inputContainer}>
-                            <input id='passwordInput' name='password' type={visiblePassword ? "text" : "password"} ref={passwordRef} placeholder={glosary.login_placeholder} style={poppinsRegular.style} onFocus={onFocusPassword} onBlur={onBlurPassword} onKeyDown={handleTypePassword} className={focusedPassword ? styles.inputFocus : errorPassword ? styles.inputError : styles.input} />
-                            <div className={styles.passwordButton} onClick={() => { setVisiblePassword(state => !state) }}>
-                                {
-                                    visiblePassword
-                                        ?
-                                        <FiEyeOff className={styles.passwordIcon} />
-                                        :
-                                        <FiEye className={styles.passwordIcon} />
-                                }
-                            </div>
+                        <Formik
+                            initialValues={{ email: '' }}
+                            validationSchema={validationSchema}
+                            onSubmit={handleSubmit}
+                        >
+                            {({ isSubmitting, values, handleChange, errors, touched }) => (
+                                <Form className={styles.form}>
 
+                                    <InputText label={glosary.login_email} placeholder={glosary.login_placeholder} value={values.email} onChange={handleChange('email')} error={errors.email} touched={touched.email} />
+                                    <Button title={glosary.formButtonSendLink} loading={isSubmitting} />
+                                    <Button title={glosary.formButtonReturn} type='text' onClick={() => { router.back() }} />
+                                </Form>
+                            )}
+                        </Formik>
+                    </div>
+                    :
+                    (success && !fail)
+                        ?
+                        <div className={styles.card}>
+                            <div className={styles.cardHeader}>
+                                <FiMail className={styles.icon} />
+                                <h2 className={styles.title} style={poppinsMedium.style}>{glosary.email_send_title}</h2>
+                                <h4 className={styles.subtitle} style={poppinsRegular.style}>{glosary.email_send_subtitle}</h4>
+                            </div>
+                            <Button title={glosary.formButtonReturn} type='text' onClick={() => { router.back() }} />
                         </div>
-                        {
-                            !!passwordErrorMessage && <span className={styles.errorMessage} style={poppinsRegular.style}>{passwordErrorMessage}</span>
-                        }
-                    </div>
-                    <div className={styles.checkboxControl}>
-                        <input type="checkbox" id="cboxInput" name="remember_me" />
-                        <label htmlFor="cboxInput">{glosary.login_remember}</label>
-                    </div>
-                    <button className={globalStyles.buttonMain} style={poppinsMedium.style} type="submit">
-                        {glosary.login_button}
-                    </button>
-                </form>
-                <a href="#" className={globalStyles.buttonLink} style={poppinsMedium.style}>{glosary.login_forgot}</a>
-            </div>
+                        :
+                        <div className={styles.card}>
+                            <div className={styles.cardHeader}>
+                                <FiMail className={styles.icon} />
+                                <h2 className={styles.title} style={poppinsMedium.style}>{glosary.email_not_found_title}</h2>
+                                <h4 className={styles.subtitle} style={poppinsRegular.style}>{glosary.email_not_found_subtitle}</h4>
+                            </div>
+                            <Button title={glosary.formButtonReturn} type='text' onClick={() => {
+                                setFail(false)
+                                setSuccess(false)
+                            }} />
+                        </div>
+            }
+
         </section>
-    )
+    );
 }
 
-export default ForgotPassword
+export default ForgotPassword;

@@ -9,7 +9,7 @@ import errorStyle from './buttonError.module.css'
 import React, { useState } from 'react'
 
 interface IButton {
-    type: 'main' | 'tonal' | 'outline' | 'text' | 'warning' | 'error'
+    type?: 'main' | 'tonal' | 'outline' | 'text' | 'warning' | 'error'
     title: string
     Icon?: React.ComponentType<any>
     loading?: boolean

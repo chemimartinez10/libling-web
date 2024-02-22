@@ -78,8 +78,12 @@ export const dict = {
 		auth: {
 			login_title: "Vamos a ingresar a tu cuenta",
 			login_subtitle: "Por favor, ingresa tus datos",
-			login_email: "Correo",
+			change_password_title: "Cambiar contraseña",
+			change_password_subtitle:
+				"A continuación, ingresa tu nueva contraseña para restablecerla",
+			login_email: "Correo electrónico",
 			login_password: "Contraseña",
+			login_password_confirm: "Repetir contraseña",
 			login_forgot: "¿Olvidaste tu contraseña?",
 			login_button: "Iniciar sesión",
 			login_remember: "Recuérdame",
@@ -87,6 +91,21 @@ export const dict = {
 			login_email_required: "El correo es requerido",
 			login_password_required: "La contraseña es requerida",
 			login_password_confirmation_required: "Las contraseñas no coninciden",
+			forgot_password_title: "Recuperar contraseña",
+			forgot_password_subtitle:
+				"Ingresa el correo electrónico que usaste al registrarte. Recibirás un enlace para restablecer tu contraseña.",
+			email_not_found_title: "Correo electrónico no registrado",
+			email_not_found_subtitle:
+				"Parece que no encontramos una cuenta asociada a tu correo electrónico. Asegúrate de haber introducido la dirección correcta y vuelve a intentarlo.",
+			email_send_title: "Correo electrónico enviado",
+			email_send_subtitle:
+				"Ingresa al enlace enviado a tu correo electrónico para restablecer tu contraseña.",
+			email_send_required: "El correo electrónico es requerido",
+			email_send_validation: "El campo debe ser un correo electrónico",
+			formButtonSendLink: "Enviar enlace",
+			formButtonReturn: "Volver",
+			formButtonChangePassword: "Cambiar contraseña",
+			formButtonOrLogin: "O inicia sesión",
 			error_credentials: "Las credenciales no son correctas",
 			error_default: "Ha ocurrido un error",
 		},
@@ -321,8 +340,11 @@ export const dict = {
 		auth: {
 			login_title: "Let's log in to your account",
 			login_subtitle: "Please enter your data",
+			change_password_title: "Change password",
+			change_password_subtitle: "Then enter your new password to reset it",
 			login_email: "Email",
 			login_password: "Password",
+			login_password_confirm: "Confirm password",
 			login_forgot: "Forgot your password?",
 			login_button: "Login",
 			login_remember: "Remember me",
@@ -330,6 +352,21 @@ export const dict = {
 			login_email_required: "Email is required",
 			login_password_required: "Password is required",
 			login_password_confirmation_required: "Passwords do not match",
+			forgot_password_title: "Recover password",
+			forgot_password_subtitle:
+				"Enter the email address you used to register. You will receive a link to reset your password.",
+			email_not_found_title: "Email not registered",
+			email_not_found_subtitle:
+				"We can't seem to find an account associated with your email. Please make sure you entered the correct address and try again.",
+			email_send_title: "Email sent",
+			email_send_subtitle:
+				" Enter the link sent to your email to reset your password.",
+			email_send_required: "The email is required",
+			email_send_validation: "The field must be an email",
+			formButtonSendLink: "Send link",
+			formButtonReturn: "Return",
+			formButtonChangePassword: "Change password",
+			formButtonOrLogin: "Or log in",
 			error_credentials: "The credentials are not correct",
 			error_default: "An error has occurred",
 		},
@@ -565,8 +602,12 @@ export const dict = {
 		auth: {
 			login_title: "Nous allons nous connecter à votre compte",
 			login_subtitle: "Veuillez saisir vos coordonnées",
+			change_password_title: "Modifier le mot de passe",
+			change_password_subtitle:
+				"Saisissez ensuite votre nouveau mot de passe pour le réinitialiser",
 			login_email: "E-mail",
 			login_password: "Mot de passe",
+			login_password_confirm: "Répéter le mot de passe",
 			login_forgot: "Vous avez oublié votre mot de passe?",
 			login_button: "Se connecter",
 			login_remember: "Souvenez-vous de moi",
@@ -575,6 +616,21 @@ export const dict = {
 			login_password_required: "Le mot de passe est requis",
 			login_password_confirmation_required:
 				"les mots de passe ne correspondent pas",
+			forgot_password_title: "Récupérer le mot de passe",
+			forgot_password_subtitle:
+				"Entrez l'adresse électronique que vous avez utilisée pour vous inscrire. Vous recevrez un lien pour réinitialiser votre mot de passe",
+			email_not_found_title: "Email non enregistré",
+			email_not_found_subtitle:
+				"Nous ne parvenons pas à trouver un compte associé à votre adresse électronique. Veuillez vous assurer que vous avez saisi l'adresse correcte et réessayez",
+			email_send_title: "Email envoyé",
+			email_send_subtitle:
+				"Saisissez le lien envoyé à votre adresse électronique pour réinitialiser votre mot de passe",
+			email_send_required: "L'email est obligatoire",
+			email_send_validation: "Le champ doit être un courriel",
+			formButtonSendLink: "Envoyer le lien",
+			formButtonReturn: "Retour",
+			formButtonChangePassword: "Modifier le mot de passe",
+			formButtonOrLogin: "Ou se connecter",
 			error_credentials:
 				"Les informations d'identification ne sont pas correctes",
 			error_default: "Une erreur s'est produite",

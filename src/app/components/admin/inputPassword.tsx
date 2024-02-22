@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import styles from './input.module.css'
 import { poppinsMedium, poppinsRegular } from '@/app/fonts'
+import { FiEye, FiEyeOff } from 'react-icons/fi'
 
 interface ITextInput {
     touched?: boolean
@@ -14,10 +15,11 @@ interface ITextInput {
     onChange?: (e: string | React.ChangeEvent<any>) => void
 }
 
-export const InputText: React.FC<ITextInput> = ({ name, error, touched, label, placeholder, Icon, description, onChange, value }) => {
+export const InputPassword: React.FC<ITextInput> = ({ name, error, touched, label, placeholder, Icon, description, onChange, value }) => {
     // const [active, setActive] = useState(false)
     const [focused, setFocused] = useState(false)
     const inputRef = useRef<HTMLInputElement | null>(null)
+    const [visiblePassword, setVisiblePassword] = useState(false)
     const handleChange: ((e: string | React.ChangeEvent<any>) => void) | undefined = (e) => {
         if (!!value && (!error || !touched)) setFocused(true)
         if (!!e && !!onChange) {
@@ -45,7 +47,16 @@ export const InputText: React.FC<ITextInput> = ({ name, error, touched, label, p
                 </label>
             }
             <div className={styles.inputContainer}>
-                <input id={`${name}Input`} name={name} type="text" ref={inputRef} value={value} placeholder={placeholder} style={poppinsRegular.style} onFocus={handleFocus} onBlur={handleBlur} onChange={handleChange} className={(error && touched) ? styles.inputError : focused ? styles.inputFocus : styles.input} />
+                <input id={`${name}Input`} name={name} type={visiblePassword ? "text" : "password"} ref={inputRef} value={value} placeholder={placeholder} style={poppinsRegular.style} onFocus={handleFocus} onBlur={handleBlur} onChange={handleChange} className={(error && touched) ? styles.inputError : focused ? styles.inputFocus : styles.input} />
+                <div className={styles.passwordButton} onClick={() => { setVisiblePassword(state => !state) }}>
+                    {
+                        visiblePassword
+                            ?
+                            <FiEyeOff className={styles.passwordIcon} />
+                            :
+                            <FiEye className={styles.passwordIcon} />
+                    }
+                </div>
             </div>
             {
                 !!(error && touched) && <span className={styles.errorMessage} style={poppinsRegular.style}>{error}</span>

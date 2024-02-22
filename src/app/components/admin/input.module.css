@@ -1,0 +1,118 @@
+
+.checkboxControl {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+}
+
+.checkboxControl input {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 2px;
+    background-color: #fff;
+    border: 1px solid #0000001F;
+    position: relative;
+}
+
+.checkboxControl input:checked:after {
+    content: '\2714';
+    font-size: 14px;
+    position: absolute;
+    top: 0px;
+    left: 1.5px;
+    color: #fff;
+}
+
+.checkboxControl input:active,
+.checkboxControl input:checked,
+.checkboxControl input:checked:active {
+    border-radius: 2px;
+    background-color: var(--libling-main-ui-color);
+    border: 2px solid var(--libling-main-ui-color);
+    color: #fff;
+}
+
+.formControl {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.formControl label {
+    font-size: 14px;
+    letter-spacing: .1px;
+    color: #00000099;
+}
+
+.formControl label.labelActive {
+    font-size: 14px;
+    letter-spacing: .1px;
+    color: var(--libling-main-ui-color);
+}
+
+.formControl label.labelError {
+    font-size: 14px;
+    letter-spacing: .1px;
+    color: var(--color-error);
+}
+
+.formControl .inputContainer {
+    flex-grow: 1;
+    display: flex;
+    position: relative;
+}
+
+.input {
+    flex-grow: 1;
+    border: 1px solid #0000001F;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #000000DE;
+    padding: 12px 16px;
+    font-size: 14px;
+
+}
+
+.inputFocus {
+    flex-grow: 1;
+    border: 2px solid var(--libling-main-ui-color);
+    border-radius: 10px;
+    background-color: #fff;
+    color: #000000DE;
+    padding: 12px 16px;
+    font-size: 14px;
+    outline: none;
+}
+
+.inputError {
+    flex-grow: 1;
+    border: 2px solid var(--color-error);
+    border-radius: 10px;
+    background-color: #fff;
+    color: #000000DE;
+    padding: 12px 16px;
+    font-size: 14px;
+    outline: none;
+
+}
+
+.errorMessage {
+    color: #FF4444;
+    font-size: 12px;
+}
+
+.passwordButton {
+    position: absolute;
+    right: 16px;
+    top: 12px;
+
+}
+
+.passwordIcon {
+    font-size: 24px;
+    color: #00000099;
+}
