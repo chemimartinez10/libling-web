@@ -30,7 +30,11 @@ export async function main() {
 			},
 		]
 		data.forEach(async (el) => {
-			let user = await prisma.user.create({ data: el })
+			let user = await prisma.user.upsert({
+				where: { email: el.email },
+				update: el,
+				create: el,
+			})
 			users.push(user)
 		})
 		console.log(users)

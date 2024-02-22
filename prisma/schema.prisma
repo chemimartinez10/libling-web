@@ -28,7 +28,8 @@ model Property {
   longitude      Decimal?
   latitude       Decimal?
   area           Decimal?
-  rooms          Decimal?
+  bedrooms       Decimal?
+  bathrooms      Decimal?
   price          Decimal?
   heatingType    String?
   heatingMedium  String?
