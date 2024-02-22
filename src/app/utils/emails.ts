@@ -2,7 +2,7 @@
 import nodemailer from "nodemailer"
 
 const transporter = nodemailer.createTransport({
-	host: "smtp.forwardemail.net",
+	host: process.env.SMTP_SERVER || "test.net",
 	port: 465,
 	secure: true,
 	auth: {
@@ -16,6 +16,20 @@ export const sendMessage = async (
 	message: string,
 	subject: string
 ) => {
+	transporter.verify(function (error, success) {
+		if (error) {
+			console.log(error)
+		} else {
+			console.log("Server is ready to take our messages")
+		}
+	})
+	console.log(
+		"sending email... ",
+		process.env.SMTP_SERVER,
+		process.env.MAIL_USER,
+		process.env.MAIL_PWD
+	)
+	console.log('env variables... ',to,subject,message)
 	const info = await transporter.sendMail({
 		from: '"Libling solutions" <info@libling.lu>', // sender address
 		to: to, // list of receivers

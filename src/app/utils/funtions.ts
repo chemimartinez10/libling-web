@@ -30,3 +30,14 @@ export const sendEmail = (
 			}
 		)
 }
+
+export const templates = {
+	forgotPassword: (name: string, url: string) => `
+	<h2>Hello ${name}</h2>
+	<p>Here is your url to change password</p>
+	<a href="${url}">Change password</a>
+	`,
+}
+export const subjects = {
+	forgotPassword: `Change your password`,
+}

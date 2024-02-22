@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server"
 import jwt from "jsonwebtoken"
 import { auth } from "@/auth"
 import { getUser } from "@/services"
+import { sendMessage } from "@/app/utils/emails"
+import { subjects, templates } from "@/app/utils/funtions"
 
 const BASE_URL =
 	process.env.VERCEL_ENV === "production"
@@ -32,6 +34,12 @@ export async function POST(request: NextRequest, response: NextResponse) {
 
 		const url = `${BASE_URL}/auth/change-password?token=${token}`
 		console.log("send this url to email", url)
+		//send an email
+		await sendMessage(
+			email,
+			templates.forgotPassword(user.name || "user", url),
+			subjects.forgotPassword
+		)
 		return NextResponse.json(
 			{
 				message: token,
