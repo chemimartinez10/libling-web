@@ -11,8 +11,13 @@ import { poppinsBold, poppinsMedium } from '@/app/fonts';
 import { CountrySelector } from '../countrySelector';
 import LogoNavSVG from '../icons/logoNavSVG';
 import { FiChevronDown, FiChevronUp, FiMenu } from 'react-icons/fi'
+import { useSession } from "next-auth/react"
+import { UserDTO } from '@/dto';
+import { IUserSession } from '@/services';
+import { Button } from './button';
 
-export default function Navbar({ lang, handleAside }: { lang: "es" | "en" | "fr", handleAside: VoidFunction }) {
+
+export default function Navbar({ lang, handleAside, user }: { lang: "es" | "en" | "fr", handleAside: VoidFunction, user?: IUserSession }) {
     const glosary = dict[lang]?.adminNav
     const routes = [
         {
@@ -45,7 +50,7 @@ export default function Navbar({ lang, handleAside }: { lang: "es" | "en" | "fr"
                     <CountrySelector lang={lang} />
                 </div>
                 <div className={styles.userData}>
-                    <span>Anna Muller</span>
+                    <span>{user?.name}</span>
                     <div className={styles.userRole} onClick={() => { setShowMenu(state => !state) }}>
                         <span>Admin</span>
                         {
@@ -57,11 +62,9 @@ export default function Navbar({ lang, handleAside }: { lang: "es" | "en" | "fr"
                         }
                     </div>
                     <div className={styles.menu} style={{ display: showMenu ? 'block' : 'none' }}>
-                        <button className={styles.logOut} onClick={async () => {
+                        <Button title={glosary.closeSession} onClick={async () => {
                             await logOut();
-                        }}>
-                            Cerrar sesión
-                        </button>
+                        }} />
                     </div>
                 </div>
 

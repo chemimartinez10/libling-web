@@ -1,5 +1,5 @@
 'use server'
-import { signIn, signOut } from "@/auth"
+import { auth, signIn, signOut } from "@/auth"
 import { AuthError } from "next-auth"
 
 
@@ -24,6 +24,19 @@ export async function authenticate(
 export async function logOut() {
 	try {
 		await signOut()
+	} catch (error) {
+		if (error instanceof AuthError) {
+			switch (error.type) {
+				default:
+					return "Some error."
+			}
+		}
+		throw error
+	}
+}
+export async function getSession() {
+	try {
+		await auth()
 	} catch (error) {
 		if (error instanceof AuthError) {
 			switch (error.type) {

@@ -20,6 +20,10 @@ export interface IUserResult {
 	name: string | null
 	password: string
 }
+export interface IUserSession {
+	name?: string | null | undefined
+	email?: string | null | undefined
+}
 export async function getUser(email: string) {
 	try {
 		const user = prisma.user.findFirstOrThrow({

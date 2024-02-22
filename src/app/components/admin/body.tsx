@@ -9,6 +9,8 @@ import { dict } from '@/app/utils';
 import { FiHome } from 'react-icons/fi';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { UserDTO } from '@/dto';
+import { IUserSession } from '@/services';
 
 export interface IRoute {
     // Name of the route (displayed in navigation elements)
@@ -23,10 +25,12 @@ export interface IRoute {
 
 export const Body = ({
     children,
-    lang
+    lang,
+    user
 }: {
     children: React.ReactNode,
-    lang: "es" | "en" | "fr"
+    lang: "es" | "en" | "fr",
+    user?: IUserSession
 
 }) => {
     const [open, setOpen] = useState<boolean>(false)
@@ -46,7 +50,7 @@ export const Body = ({
     const toggleOpen = () => { setOpen(state => !state) }
     return (
         <body style={poppinsRegular.style} className={styles.layout}>
-            <Navbar lang={lang} handleAside={toggleOpen} />
+            <Navbar lang={lang} handleAside={toggleOpen} user={user} />
             <div className={styles.container}>
                 <Aside lang={lang} open={open} routes={routes} />
                 <main className={styles.main}>
