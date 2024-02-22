@@ -15,10 +15,11 @@ interface IButton {
     loading?: boolean
     disabled?: boolean
     onClick?: VoidFunction
+    submit?: boolean
 }
 
 
-export const Button: React.FC<IButton> = ({ type = 'main', title, Icon, loading = false, disabled = false, onClick = () => { } }) => {
+export const Button: React.FC<IButton> = ({ type = 'main', title, Icon, loading = false, disabled = false, onClick = () => { }, submit = false }) => {
     let style: {
         readonly [key: string]: string;
     }
@@ -46,19 +47,19 @@ export const Button: React.FC<IButton> = ({ type = 'main', title, Icon, loading 
             break
     }
     const [currentStyle, setCurrentStyle] = useState(disabled ? style.buttonDisabled : style.button)
-    const handleMouseDown = ()=>{
-        if(!loading && !disabled){
+    const handleMouseDown = () => {
+        if (!loading && !disabled) {
             setCurrentStyle(style?.buttonPressed)
         }
     }
-    const handleMouseUp = ()=>{
-        if(!loading && !disabled){
+    const handleMouseUp = () => {
+        if (!loading && !disabled) {
             setCurrentStyle(style.button)
         }
     }
 
     return (
-        <button className={currentStyle} onClick={loading || disabled ? () => { } : onClick} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} onTouchStart={handleMouseDown} onTouchEnd={handleMouseUp}>
+        <button className={currentStyle} onClick={loading || disabled ? () => { } : onClick} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} onTouchStart={handleMouseDown} onTouchEnd={handleMouseUp} type={submit ? 'submit' : 'button'}>
             {!!Icon && <Icon className={style.icon} />}
             {
                 loading

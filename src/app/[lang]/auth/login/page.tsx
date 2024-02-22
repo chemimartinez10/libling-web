@@ -126,7 +126,7 @@ const Login = ({ params }: { params: { lang: "es" | "en" | "fr" } }) => {
                         <input type="checkbox" id="cboxInput" name="remember_me" />
                         <label htmlFor="cboxInput">{glosary.login_remember}</label>
                     </div>
-                    <Button title={glosary.login_button} loading={loading} type='main' />
+                    <Button title={glosary.login_button} loading={loading} type='main' submit={true} />
                 </form>
                 <Button title={glosary.login_forgot} type='text' onClick={() => { router.push('/auth/forgot-password') }} />
             </div>

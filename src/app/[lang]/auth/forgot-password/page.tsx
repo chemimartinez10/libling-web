@@ -13,6 +13,7 @@ import { poppinsMedium, poppinsRegular } from '@/app/fonts';
 import { InputPassword } from '@/app/components/admin/inputPassword';
 import { useRouter } from 'next/navigation';
 import { FiMail } from 'react-icons/fi';
+import { useAuthFetch } from '@/hooks/useFetch';
 
 interface IValues {
     email: string
@@ -24,14 +25,28 @@ const ForgotPassword = ({ params }: { params: { lang: "es" | "en" | "fr" } }) =>
     const [success, setSuccess] = useState(false)
     const [fail, setFail] = useState(false)
     const router = useRouter()
+    const authFetch = useAuthFetch()
 
     const validationSchema = Yup.object({
         email: Yup.string().email(glosary.email_send_validation).required(glosary.email_send_required),
     });
-    const handleSubmit = (values: IValues, { setSubmitting }: FormikHelpers<IValues>) => {
-        toast.error(<CustomToast type='error' title='Error' content={glosary.error_default} />, { theme: 'colored', icon: false, style: { backgroundColor: '#FF4444', maxWidth: 450, padding: 24, borderRadius: 10 } })
-        setSubmitting(false)
-        setFail(true)
+    const handleSubmit = async (values: IValues, { setSubmitting }: FormikHelpers<IValues>) => {
+        const formData = values
+        try {
+
+            const response = await authFetch({
+                endpoint: 'forgot-password',
+                formData
+            })
+            setSuccess(true)
+        } catch (e) {
+            console.error(e)
+            toast.error(<CustomToast type='error' title='Error' content={glosary.error_default} />, { theme: 'colored', icon: false, style: { backgroundColor: '#FF4444', maxWidth: 450, padding: 24, borderRadius: 10 } })
+            setFail(true)
+        } finally {
+            setSubmitting(false)
+
+        }
     }
 
     return (
@@ -54,7 +69,7 @@ const ForgotPassword = ({ params }: { params: { lang: "es" | "en" | "fr" } }) =>
                                 <Form className={styles.form}>
 
                                     <InputText label={glosary.login_email} placeholder={glosary.login_placeholder} value={values.email} onChange={handleChange('email')} error={errors.email} touched={touched.email} />
-                                    <Button title={glosary.formButtonSendLink} loading={isSubmitting} />
+                                    <Button title={glosary.formButtonSendLink} loading={isSubmitting} submit={true} />
                                     <Button title={glosary.formButtonReturn} type='text' onClick={() => { router.back() }} />
                                 </Form>
                             )}
