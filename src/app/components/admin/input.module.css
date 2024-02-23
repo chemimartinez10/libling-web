@@ -1,4 +1,3 @@
-
 .checkboxControl {
     display: flex;
     flex-direction: row;
@@ -66,6 +65,68 @@
     position: relative;
 }
 
+.listContainer {
+    display: block;
+    position: absolute;
+    max-height: 256px;
+    width: 100%;
+    top: 50px;
+    left: 0px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 12px 30px #1973FA14;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: 99;
+    transition: all .25s ease;
+}
+
+.listContainerHidden {
+    position: absolute;
+    max-height: 0px;
+    width: 100%;
+    top: 50px;
+    left: 0px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 12px 30px #1973FA14;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: -1;
+    transition: all .25s ease;
+}
+
+.listItem {
+    color: #000000DE;
+    padding: 14px 16px;
+    background-color: transparent;
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+}
+
+.listItem:hover {
+    color: #1973FA;
+    padding: 14px 16px;
+    background-color: #1973FA14;
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    cursor: pointer;
+
+}
+
+.iconPlus {
+    font-size: 16px;
+    color: inherit;
+}
+
 .input {
     flex-grow: 1;
     border: 1px solid #0000001F;
@@ -115,4 +176,113 @@
 .passwordIcon {
     font-size: 24px;
     color: #00000099;
+}
+
+.radioContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-radius: 10px;
+    border: 1px solid #0000001F;
+    padding: 10px 16px 2px 16px;
+}
+
+.radioOptionContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+
+}
+
+.radioControl {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.radioLabel {
+    color: #000000DD;
+    font-size: 14px;
+}
+
+.radioSelected {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.radioSelected .radioRing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: 2px solid #1973FA;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+
+}
+
+.radioSelected .radioRing .radioCircle {
+    background-color: #1973FA;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+}
+
+.radioSelected:hover {
+    background-color: #1973FA0A;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.radio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+
+}
+
+.radio .radioRing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: 2px solid #00000099;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+
+}
+
+.radio .radioRing .radioCircle {
+    background-color: transparent;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+
+}
+
+.radio:hover {
+    background-color: #0000000B;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+
+}
+
+.radioOption {
+
+    color: #000000DE;
+    font-size: 14px;
 }

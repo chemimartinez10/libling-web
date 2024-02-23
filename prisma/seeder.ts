@@ -38,6 +38,43 @@ export async function main() {
 			users.push(user)
 		})
 		console.log(users)
+
+		const propertyTypes: {
+			id: number
+			name: string
+			code: string
+		}[] = []
+		const dataPropertyTypes = [
+			{
+				name: "Apartamento",
+				code: "APARTMENT",
+			},
+			{
+				name: "Casa",
+				code: "HOUSE",
+			},
+			{
+				name: "Ático",
+				code: "BASEMENT",
+			},
+			{
+				name: "Duplex",
+				code: "DUPLEX",
+			},
+			{
+				name: "Triplex",
+				code: "TRIPLEX",
+			},
+		]
+		dataPropertyTypes.forEach(async (el) => {
+			let propertyType = await prisma.propertyType.upsert({
+				where: { code: el.code },
+				update: el,
+				create: el,
+			})
+			propertyTypes.push(propertyType)
+		})
+		console.log(propertyTypes)
 		await prisma.$disconnect()
 	} catch (e) {
 		console.error(e)

@@ -1,8 +1,14 @@
+'use server'
 import { PrismaClient } from "@prisma/client"
 const saltRounds = 12
 
 const prisma = new PrismaClient()
 
+export interface IPropertyTypeData {
+	id?: number
+	name: string
+	code: string
+}
 export interface IUserData {
 	id?: number
 	name: string
@@ -69,6 +75,29 @@ export async function updateUser(id: number, data: IUserUpdateData) {
 	try {
 		const user = await prisma.user.update({ where: { id }, data })
 		console.log(user)
+		await prisma.$disconnect()
+	} catch (e) {
+		console.error(e)
+		await prisma.$disconnect()
+		process.exit(1)
+	}
+}
+export async function getPropertyTypes() {
+	try {
+		const propertyTypes = await prisma.propertyType.findMany()
+		await prisma.$disconnect()
+		return propertyTypes
+	} catch (e) {
+		console.error("Error getting propertyTypes")
+		await prisma.$disconnect()
+		return undefined
+	}
+}
+
+export async function createPropertyType(data: IPropertyTypeData) {
+	try {
+		const propertyType = await prisma.propertyType.create({ data })
+		console.log(propertyType)
 		await prisma.$disconnect()
 	} catch (e) {
 		console.error(e)
