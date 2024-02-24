@@ -2,6 +2,9 @@
 import { auth, signIn, signOut } from "@/auth"
 import { AuthError } from "next-auth"
 
+export async function getMapStyles(){
+	return `https://api.maptiler.com/maps/streets/style.json?key=${process.env.MAP_KEY}`
+}
 
 export async function authenticate(
 	prevState: string | undefined,
