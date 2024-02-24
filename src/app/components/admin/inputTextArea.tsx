@@ -3,10 +3,10 @@ import styles from './input.module.css'
 import { poppinsMedium, poppinsRegular } from '@/app/fonts'
 import { ITextInput } from '@/app/interfaces'
 
-export const InputText: React.FC<ITextInput> = ({ name, error, touched, label, placeholder, Icon, description, onChange, value }) => {
+export const InputTextArea: React.FC<ITextInput> = ({ name, error, touched, label, placeholder, Icon, description, onChange, value }) => {
     // const [active, setActive] = useState(false)
     const [focused, setFocused] = useState(false)
-    const inputRef = useRef<HTMLInputElement | null>(null)
+    const inputRef = useRef<HTMLTextAreaElement | null>(null)
     const handleChange: ((e: string | React.ChangeEvent<any>) => void) | undefined = (e) => {
         if (!!value && (!error || !touched)) setFocused(true)
         if (!!e && !!onChange) {
@@ -34,10 +34,7 @@ export const InputText: React.FC<ITextInput> = ({ name, error, touched, label, p
                 </label>
             }
             <div className={styles.inputContainer}>
-                {
-                    !!Icon && <Icon className={styles.textIcon} />
-                }
-                <input id={`${name}Input`} name={name} type="text" ref={inputRef} value={value} placeholder={placeholder} style={{ ...poppinsRegular.style, paddingLeft: !!Icon ? 46 : 16 }} onFocus={handleFocus} onBlur={handleBlur} onChange={handleChange} className={(error && touched) ? styles.inputError : focused ? styles.inputFocus : styles.input} />
+                <textarea id={`${name}Input`} name={name} ref={inputRef} value={value} placeholder={placeholder} style={poppinsRegular.style} onFocus={handleFocus} onBlur={handleBlur} onChange={handleChange} className={(error && touched) ? styles.inputError : focused ? styles.inputFocus : styles.input} rows={4}></textarea>
             </div>
             {
                 !!(error && touched) && <span className={styles.errorMessage} style={poppinsRegular.style}>{error}</span>

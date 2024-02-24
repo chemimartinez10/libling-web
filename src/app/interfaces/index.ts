@@ -35,3 +35,19 @@ export interface IInputRadio {
 	option_2: string
 	initialValue?: boolean
 }
+export interface IInputSwitch {
+	onChange?: (e: string | number) => void
+	list: ISelectElement[]
+	initialValue?: string | number
+}
+export interface ITextInput {
+	touched?: boolean
+	error?: string
+	placeholder?: string
+	label?: string
+	description?: string
+	Icon?: React.ComponentType<any>
+	name?: string
+	value?: string
+	onChange?: (e: string | React.ChangeEvent<any>) => void
+}
