@@ -8,7 +8,7 @@ import { IInputSelect, ISelectElement } from '@/app/interfaces'
 const InputSelect: React.FC<IInputSelect> = ({ label, placeholder, list, error, touched, description, onChange, name, initialValue }) => {
     const [focused, setFocused] = useState(false)
     const [openList, setOpenList] = useState(false)
-    const [listFiltered, setListFiltered] = useState<ISelectElement[]>(list)
+    const [listFiltered, setListFiltered] = useState<ISelectElement[]>(list || [])
     const inputRef = useRef<HTMLInputElement | null>(null)
     if (!!initialValue) {
         const initialElement = list.find(el => el.key.toString() === initialValue.toString())
@@ -25,8 +25,8 @@ const InputSelect: React.FC<IInputSelect> = ({ label, placeholder, list, error, 
                 inputRef.current.value = e.value.toString()
             }
             onChange(e.key.toString())
-            handleBlur()
         }
+        handleBlur()
     }
     const handleClick: MouseEventHandler<HTMLDivElement> = () => {
         if (openList && inputRef?.current) {
@@ -48,7 +48,9 @@ const InputSelect: React.FC<IInputSelect> = ({ label, placeholder, list, error, 
         setOpenList(false)
     }
     useEffect(() => {
-        setListFiltered(list)
+        if (!!list) {
+            setListFiltered(list)
+        }
     }, [list])
     return (
         <div className={styles.formControl}>
@@ -57,11 +59,14 @@ const InputSelect: React.FC<IInputSelect> = ({ label, placeholder, list, error, 
                 &&
                 <label htmlFor={`${name}Input`} style={poppinsMedium.style} className={error && touched ? styles.labelError : focused ? styles.labelActive : undefined}>
                     <span>{label}</span>
-                    <span className={styles.descriptionLabel}>{description}</span>
+                    {
+                        !!description &&
+                        <span className={styles.descriptionLabel}>{" "}({description})</span>
+                    }
                 </label>
             }
             <div className={styles.inputContainer}>
-                <input id={`${name}Input`} name={name} type={"text"} ref={inputRef} readOnly placeholder={placeholder} style={poppinsRegular.style} onFocus={handleFocus} onBlur={handleBlur} className={(error && touched) ? styles.inputError : focused ? styles.inputFocus : styles.input} />
+                <input id={`${name}Input`} name={name} type={"text"} ref={inputRef} readOnly placeholder={placeholder} style={{cursor:'pointer',...poppinsRegular.style}} onFocus={handleFocus} onBlur={handleBlur} className={(error && touched) ? styles.inputError : focused ? styles.inputFocus : styles.input} />
                 <div className={styles.passwordButton} onClick={handleClick}>
                     {
                         openList

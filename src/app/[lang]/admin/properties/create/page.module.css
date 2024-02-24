@@ -62,7 +62,16 @@
     background-color: #fff;
     box-shadow: 0px 2px 4px #1973FA1A;
     border-radius: 10px;
+    min-width: 700px;
 
+}
+
+.textIcon {
+    position: absolute;
+    top: 12.5px;
+    left: 16px;
+    font-size: 14px;
+    color: #00000060;
 }
 
 .cardBody {
@@ -116,6 +125,11 @@
 
 .stepOneInputLeft {
     flex-grow: 1;
+}
+
+.inputRowHalf {
+
+    width: 50%;
 }
 
 .stepOneInputRight {

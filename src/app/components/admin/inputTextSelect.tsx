@@ -63,9 +63,9 @@ const InputTextSelect: React.FC<IInputTextSelect> = ({ label, placeholder, list,
         }
         setOpenList(false)
     }
-    useEffect(()=>{
+    useEffect(() => {
         setListFiltered(list)
-    },[list])
+    }, [list])
     return (
         <div className={styles.formControl}>
             {
@@ -73,7 +73,10 @@ const InputTextSelect: React.FC<IInputTextSelect> = ({ label, placeholder, list,
                 &&
                 <label htmlFor={`${name}Input`} style={poppinsMedium.style} className={error && touched ? styles.labelError : focused ? styles.labelActive : undefined}>
                     <span>{label}</span>
-                    <span className={styles.descriptionLabel}>{description}</span>
+                    {
+                        !!description &&
+                        <span className={styles.descriptionLabel}>{" "}({description})</span>
+                    }
                 </label>
             }
             <div className={styles.inputContainer}>

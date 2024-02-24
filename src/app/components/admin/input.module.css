@@ -126,6 +126,10 @@
     font-size: 16px;
     color: inherit;
 }
+.descriptionLabel{
+    color: #00000060;
+    font-size: 14px;
+}
 
 .input {
     flex-grow: 1;
@@ -137,13 +141,6 @@
     font-size: 14px;
     resize: none;
 
-}
-
-.textIcon {
-    position: absolute;
-    left: 16px;
-    font-size: 14px;
-    color: #00000060;
 }
 
 .inputFocus {

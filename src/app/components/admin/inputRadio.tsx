@@ -13,7 +13,10 @@ export const InputRadio: React.FC<IInputRadio> = ({ label, description, initialV
         <div className={styles.radioContainer}>
             <label className={styles.radioLabel} style={poppinsMedium.style}>
                 <span>{label}</span>
-                <span className={styles.descriptionLabel}>{description}</span>
+                {
+                    !!description &&
+                    <span className={styles.descriptionLabel}>{" "}({description})</span>
+                }
             </label>
             <div className={styles.radioOptionContainer}>
                 <div className={styles.radioControl} onClick={() => { handleOption(true) }}>

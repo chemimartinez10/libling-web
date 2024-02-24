@@ -27,10 +27,13 @@ import { Button } from '@/app/components/admin/button'
 interface IValues {
     email: string
 }
+interface IStepOne extends IPage{
+    onNext: VoidFunction
+}
 
 
 
-const StepOne: React.FC<IPage> = ({ params: { lang } }) => {
+const StepOne: React.FC<IStepOne> = ({ params: { lang }, onNext }) => {
     const glosary = dict[lang]?.adminProperties
     const glosaryError = dict[lang]?.auth
     const [latLng, setLatLng] = useState({ lat: 49.61675, lng: 6.12777 })
@@ -115,7 +118,7 @@ const StepOne: React.FC<IPage> = ({ params: { lang } }) => {
                                                 latitude: latLng.lat,
                                                 zoom: 10
                                             }}
-                                            style={{ width: 600, height: 400 }}
+                                            style={{ width: 600, height: 400, borderRadius:10 }}
                                             mapStyle={mapStyle}
                                         >
                                             <Marker draggable={true} latitude={latLng.lat} longitude={latLng.lng} onDragEnd={(e) => {
@@ -135,12 +138,10 @@ const StepOne: React.FC<IPage> = ({ params: { lang } }) => {
                         </Form>
                     )}
                 </Formik>
-                {/* <InputRadio label={glosary.formLabelFurnished} option_1={glosary.formOptionYes} option_2={glosary.formOptionNo} />
-                    <InputSelect label={glosary.formLabelHeatingMedium} placeholder={glosary.formPlaceholderSelect} list={list} onChange={handlePropertyType} /> */}
 
             </div>
             <div className={styles.cardFooter}>
-                <Button title={glosary.formButtonNext}/>
+                <Button title={glosary.formButtonNext} onClick={onNext}/>
             </div>
         </div>
     )

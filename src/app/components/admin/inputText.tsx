@@ -30,12 +30,16 @@ export const InputText: React.FC<ITextInput> = ({ name, error, touched, label, p
                 &&
                 <label htmlFor={`${name}Input`} style={poppinsMedium.style} className={error && touched ? styles.labelError : focused ? styles.labelActive : undefined}>
                     <span>{label}</span>
-                    <span className={styles.descriptionLabel}>{description}</span>
+                    {
+                        !!description &&
+                        <span className={styles.descriptionLabel}>{" "}({description})</span>
+                    }
+
                 </label>
             }
             <div className={styles.inputContainer}>
                 {
-                    !!Icon && <Icon className={styles.textIcon} />
+                    !!Icon && <Icon />
                 }
                 <input id={`${name}Input`} name={name} type="text" ref={inputRef} value={value} placeholder={placeholder} style={{ ...poppinsRegular.style, paddingLeft: !!Icon ? 46 : 16 }} onFocus={handleFocus} onBlur={handleBlur} onChange={handleChange} className={(error && touched) ? styles.inputError : focused ? styles.inputFocus : styles.input} />
             </div>

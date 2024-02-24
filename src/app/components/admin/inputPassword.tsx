@@ -43,7 +43,10 @@ export const InputPassword: React.FC<ITextInput> = ({ name, error, touched, labe
                 &&
                 <label htmlFor={`${name}Input`} style={poppinsMedium.style} className={error && touched ? styles.labelError : focused ? styles.labelActive : undefined}>
                     <span>{label}</span>
-                    <span className={styles.descriptionLabel}>{description}</span>
+                    {
+                        !!description &&
+                        <span className={styles.descriptionLabel}>{" "}({description})</span>
+                    }
                 </label>
             }
             <div className={styles.inputContainer}>

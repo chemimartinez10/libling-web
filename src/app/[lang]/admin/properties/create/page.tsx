@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation'
 import { ISelectElement } from '@/app/interfaces'
 import { createPropertyType, getPropertyTypes } from '@/services'
 import StepOne from './stepOne'
+import StepTwo from './stepTwo'
 
 
 const PropertyCreate: React.FC<IPage> = ({ params: { lang } }) => {
@@ -16,6 +17,16 @@ const PropertyCreate: React.FC<IPage> = ({ params: { lang } }) => {
     const finalStep = 5
     const arraySteps = new Array(finalStep).fill(0)
     const router = useRouter()
+    const handleNext = () => {
+        if (currentStep < 5) {
+            setCurrentStep(state => state + 1)
+        }
+    }
+    const handleBack = () => {
+        if (currentStep > 1) {
+            setCurrentStep(state => state - 1)
+        }
+    }
 
 
 
@@ -44,7 +55,12 @@ const PropertyCreate: React.FC<IPage> = ({ params: { lang } }) => {
             {
                 currentStep === 1
                 &&
-                <StepOne params={{ lang }} />
+                <StepOne params={{ lang }} onNext={handleNext} />
+            }
+            {
+                currentStep === 2
+                &&
+                <StepTwo params={{ lang }} onNext={handleNext} onBack={handleBack} />
             }
         </section>
     </>

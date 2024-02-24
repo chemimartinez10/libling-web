@@ -23,7 +23,7 @@ export const CountrySelector = ({ lang }: { lang: "es" | "en" | "fr" }) => {
             console.log('new location', currentLocation)
             document.cookie = `NEXT_LOCALE=${currLang}; max-age=31536000; path=/`
             console.log(document.cookie)
-            window.location.href = currentLocation
+            window.location.replace(currentLocation)
 
         }
     }
