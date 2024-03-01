@@ -1,6 +1,7 @@
 export interface ISelectElement {
 	key: string | number
 	value: string | number
+	description?: string | number
 }
 
 export interface IInputTextSelect {
@@ -39,6 +40,10 @@ export interface IInputSwitch {
 	onChange?: (e: string | number) => void
 	list: ISelectElement[]
 	initialValue?: string | number
+}
+export interface IInputPhoto {
+	description?: string
+	facename: string
 }
 export interface ITextInput {
 	touched?: boolean

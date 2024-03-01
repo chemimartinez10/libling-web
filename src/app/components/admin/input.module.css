@@ -107,6 +107,10 @@
     justify-content: flex-start;
     gap: 8px;
 }
+.listItemDescription {
+    color: #00000099;
+    font-size: 12px;
+}
 
 .listItem:hover {
     color: #1973FA;
@@ -330,4 +334,101 @@
     transition: all .15s ease;
     font-size: 14px;
 
+}
+.thumbsContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.thumb {
+    display: inline-flex;
+    border-radius: 2;
+    border: 1px solid #eaeaea;
+    margin-bottom: 8;
+    margin-right: 8;
+    width: 100px;
+    height: 100px;
+    padding: 4;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+.thumbDelete{
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    padding: 2px;
+    background-color: #FF4444;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.thumbFace{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 32px;
+    padding: 8px;
+    background-color: #000000BD;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    font-size: 12px;
+}
+
+.thumbInner {
+    display: flex;
+    min-width: 0;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.img {
+    display: block;
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+}
+.photoContainer{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin-top: 8px;
+    gap: 16px;
+}
+.photoDropzone{
+    border-radius: 10px;
+    border: 1px dashed #1973FA;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    gap: 10px;
+    min-height: 100px;
+    min-width: 100px;
+}
+.photoIcon{
+    font-size: 24px;
+    color: #1973FA;
+}
+.photoDescription{
+    font-size: 12px;
+    color: #1973FA;
+    
+}
+.thumbsContainer{
+    max-height: 100px;
 }

@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
 import styles from './page.module.css'
 import { dict } from '@/app/utils'
 import { IPage } from '../../layout'
@@ -10,26 +10,32 @@ import { createPropertyType, getPropertyTypes } from '@/services'
 import StepOne from './stepOne'
 import StepTwo from './stepTwo'
 import StepThree from './stepThree'
+import StepFour from './stepFour'
+import StepFive from './stepFive'
+import useStore from '@/app/hooks/useStore'
+import { usePropertyStore } from '@/app/hooks/usePropertyStore'
 
 
 const PropertyCreate: React.FC<IPage> = ({ params: { lang } }) => {
+    const store = useStore(usePropertyStore, (state) => state)
+    const step = store?.lastStep
     const glosary = dict[lang]?.adminProperties
-    const [currentStep, setCurrentStep] = useState<number>(1)
     const finalStep = 5
     const arraySteps = new Array(finalStep).fill(0)
     const router = useRouter()
     const handleNext = () => {
-        if (currentStep < 5) {
-            setCurrentStep(state => state + 1)
+        if (!!step && step < 5) {
+            store?.addStep()
         }
     }
     const handleBack = () => {
-        if (currentStep > 1) {
-            setCurrentStep(state => state - 1)
+        if (!!step && step > 1) {
+            store?.removeStep()
         }
     }
+    const handleSubmit = () => {
 
-
+    }
 
     const goToCreate = () => {
         router.push('/admin/properties/create')
@@ -39,11 +45,11 @@ const PropertyCreate: React.FC<IPage> = ({ params: { lang } }) => {
     return (<>
         <div className={styles.titleBar}>
             <div className={styles.stepContainer}>
-                <span className={styles.stepText}>{glosary.formStep}{" "}{currentStep}{" "}{glosary.formStepConnector}{" "}{finalStep}</span>
+                <span className={styles.stepText}>{glosary.formStep}{" "}{step}{" "}{glosary.formStepConnector}{" "}{finalStep}</span>
                 <div className={styles.indicatorContainer}>
                     {
                         arraySteps.map((el, index) => (
-                            <div key={index} className={index <= currentStep - 1 ? styles.indicatorFill : styles.indicator}></div>
+                            <div key={index} className={!!step && index <= step - 1 ? styles.indicatorFill : styles.indicator}></div>
                         ))
                     }
                 </div>
@@ -54,19 +60,29 @@ const PropertyCreate: React.FC<IPage> = ({ params: { lang } }) => {
         </div>
         <section className={styles.section}>
             {
-                currentStep === 1
+                step === 1
                 &&
                 <StepOne params={{ lang }} onNext={handleNext} />
             }
             {
-                currentStep === 2
+                step === 2
                 &&
                 <StepTwo params={{ lang }} onNext={handleNext} onBack={handleBack} />
             }
             {
-                currentStep === 3
+                step === 3
                 &&
                 <StepThree params={{ lang }} onNext={handleNext} onBack={handleBack} />
+            }
+            {
+                step === 4
+                &&
+                <StepFour params={{ lang }} onNext={handleNext} onBack={handleBack} />
+            }
+            {
+                step === 5
+                &&
+                <StepFive params={{ lang }} onNext={handleSubmit} onBack={handleBack} />
             }
         </section>
     </>

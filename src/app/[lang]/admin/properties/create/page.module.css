@@ -245,3 +245,25 @@
     height: 2px;
     border-radius: 1px;
 }
+.advertisingIcon{
+    font-size: 24px;
+    color: #1973FA;
+}
+.avertisingContainer{
+    padding: 18px 16px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    border: 1px solid #0000001F;
+    border-radius: 10px;
+    justify-content: flex-start;
+    align-items: center;
+}
+.avertisingText{
+    font-size: 14px;
+    color: #000000DE;
+}
+.multiFormDescription{
+    font-size: 14px;
+    color: #000000DD;
+}
