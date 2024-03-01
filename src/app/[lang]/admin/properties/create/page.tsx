@@ -9,6 +9,7 @@ import { ISelectElement } from '@/app/interfaces'
 import { createPropertyType, getPropertyTypes } from '@/services'
 import StepOne from './stepOne'
 import StepTwo from './stepTwo'
+import StepThree from './stepThree'
 
 
 const PropertyCreate: React.FC<IPage> = ({ params: { lang } }) => {
@@ -61,6 +62,11 @@ const PropertyCreate: React.FC<IPage> = ({ params: { lang } }) => {
                 currentStep === 2
                 &&
                 <StepTwo params={{ lang }} onNext={handleNext} onBack={handleBack} />
+            }
+            {
+                currentStep === 3
+                &&
+                <StepThree params={{ lang }} onNext={handleNext} onBack={handleBack} />
             }
         </section>
     </>

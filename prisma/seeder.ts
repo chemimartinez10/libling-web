@@ -1,11 +1,31 @@
 import { PrismaClient } from "@prisma/client"
 import bcrypt from "bcryptjs"
+import countries from "./paises.json"
+import currency from "./currency.json"
 const saltRounds = 12
+
+const countryArray = Object.values(countries).map((el) => ({
+	name: el.name,
+	code: el.siglas,
+	capital: el.capital,
+	phone: el.phone,
+	currency: el.currency,
+}))
+const currencyArray = Object.values(currency).map((el) => ({
+	symbol: el.symbol,
+	name: el.name,
+	nativeSymbol: el.symbol_native,
+	decimalDigits: el.decimal_digits,
+	round: el.rounding,
+	code: el.code,
+	pluralName: el.name_plural,
+}))
 
 const prisma = new PrismaClient()
 
 export async function main() {
 	try {
+		//property users
 		const users: {
 			id: number
 			email: string
@@ -38,6 +58,8 @@ export async function main() {
 			users.push(user)
 		})
 		console.log(users)
+
+		//property types
 
 		const propertyTypes: {
 			id: number
@@ -75,6 +97,25 @@ export async function main() {
 			propertyTypes.push(propertyType)
 		})
 		console.log(propertyTypes)
+
+		//countries
+		
+		countryArray.forEach(async (el) => {
+			await prisma.country.upsert({
+				where: { code: el.code },
+				update: el,
+				create: el,
+			})
+		})
+		
+		//currencies
+		currencyArray.forEach(async (el) => {
+			await prisma.currency.upsert({
+				where: { code: el.code },
+				update: el,
+				create: el,
+			})
+		})
 		await prisma.$disconnect()
 	} catch (e) {
 		console.error(e)

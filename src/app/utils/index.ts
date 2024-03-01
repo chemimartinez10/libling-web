@@ -6,6 +6,8 @@ export const dict = {
 			indexEmptyListDescription:
 				"Puedes registrar y gestionar tus inmuebles desde aquí.",
 			createTitle: "Nueva propiedad",
+			formLabelCountry: "Pais",
+			formLabelCurrency: "Moneda",
 			formLabelOptional: "Opcional",
 			formLabelTitle: "Título",
 			formLabelDescription: "Descripción",
@@ -273,6 +275,8 @@ export const dict = {
 			indexEmptyListDescription:
 				"You can register and manage your properties from here.",
 			createTitle: "New property",
+			formLabelCountry: "Country",
+			formLabelCurrency: "Currency",
 			formLabelOptional: "Optional",
 			formLabelTitle: "Title",
 			formLabelDescription: "Description",
@@ -538,6 +542,8 @@ export const dict = {
 			indexEmptyListDescription:
 				"Vous pouvez enregistrer et gérer vos propriétés à partir d'ici.",
 			createTitle: "Nouvelle propriété",
+			formLabelCountry: "Pays",
+			formLabelCurrency: "Devise",
 			formLabelOptional: "Optionnel",
 			formLabelTitle: "Titre",
 			formLabelDescription: "Description",

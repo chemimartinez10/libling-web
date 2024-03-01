@@ -103,6 +103,37 @@
     gap: 24px;
 }
 
+.cardContentBig {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.multiFormControl {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.multiFormLabel {
+    font-size: 18px;
+    color: #000000DE;
+}
+
+.multiFormLabelDescription {
+    font-size: 14px;
+    color: #00000060;
+}
+
+.buttonTopPadding {
+    padding-top: 8px;
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    flex-direction: column
+}
+
 .mapContainer {
     display: flex;
     flex-direction: column;

@@ -40,6 +40,10 @@ model Property {
   frecuency      String?
   publishedBy    User            @relation(fields: [publishedById], references: [id])
   publishedById  Int
+  country        Country         @relation(fields: [countryId], references: [id])
+  countryId      Int
+  currency       Currency        @relation(fields: [currencyId], references: [id])
+  currencyId     Int
   propertyType   PropertyType    @relation(fields: [propertyTypeId], references: [id])
   propertyTypeId Int
   PropertyImage  PropertyImage[]
@@ -96,4 +100,26 @@ model NearPlace {
   description String
   property    Property @relation(fields: [propertyId], references: [id])
   propertyId  Int
+}
+
+model Currency {
+  id            Int        @id @default(autoincrement())
+  symbol        String
+  name          String
+  nativeSymbol  String
+  decimalDigits Int
+  round         Int
+  code          String     @unique
+  pluralName    String
+  Property      Property[]
+}
+
+model Country {
+  id       Int        @id @default(autoincrement())
+  name     String
+  code     String     @unique
+  capital  String
+  phone    String
+  currency String
+  Property Property[]
 }

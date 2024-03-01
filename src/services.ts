@@ -93,6 +93,28 @@ export async function getPropertyTypes() {
 		return undefined
 	}
 }
+export async function getCountries() {
+	try {
+		const countries = await prisma.country.findMany({orderBy:{name:"asc"}})
+		await prisma.$disconnect()
+		return countries
+	} catch (e) {
+		console.error("Error getting Countries", e)
+		await prisma.$disconnect()
+		return undefined
+	}
+}
+export async function getCurrencies() {
+	try {
+		const currencies = await prisma.currency.findMany()
+		await prisma.$disconnect()
+		return currencies
+	} catch (e) {
+		console.error("Error getting Currencies")
+		await prisma.$disconnect()
+		return undefined
+	}
+}
 
 export async function createPropertyType(data: IPropertyTypeData) {
 	try {

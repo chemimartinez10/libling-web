@@ -16,7 +16,7 @@ import { poppinsMedium } from '@/app/fonts'
 import styles from './page.module.css'
 import { dict } from '@/app/utils';
 import { IPage } from '../../layout';
-import { createPropertyType, getPropertyTypes } from '@/services'
+import { createPropertyType, getCountries, getPropertyTypes } from '@/services'
 import { ISelectElement } from '@/app/interfaces'
 import CustomToast from '@/app/components/toast'
 import * as Yup from 'yup';
@@ -39,14 +39,15 @@ const StepOne: React.FC<IStepOne> = ({ params: { lang }, onNext }) => {
     const [latLng, setLatLng] = useState({ lat: 49.61675, lng: 6.12777 })
     const [mapStyle, setMapStyle] = useState<string | null>(null)
     const [list, setList] = useState<ISelectElement[]>([])
+    const [countries, setCountries] = useState<ISelectElement[]>([])
     const listSwitch = [
         {
             key: 1,
-            value: 'Venta',
+            value: glosary.formLabelSale,
         },
         {
             key: 2,
-            value: 'Alquiler',
+            value: glosary.formLabelRent,
         },
     ]
     const fetchPropertyTypes = async () => {
@@ -54,10 +55,18 @@ const StepOne: React.FC<IStepOne> = ({ params: { lang }, onNext }) => {
         const newArray = data?.map(el => ({ key: el.id, value: el.name }))
         setList(newArray || [])
     }
+    const fetchCountries = async () => {
+        const data = await getCountries()
+        const newArray = data?.map(el => ({ key: el.id, value: el.name }))
+        setCountries(newArray || [])
+    }
     const handleSellType = (key: string | number) => {
         console.log(key)
     }
     const handlePropertyType = (key: string) => {
+        console.log('selected key', key)
+    }
+    const handleCountry = (key: string) => {
         console.log('selected key', key)
     }
     const handleAddPropertyType = async (el: string) => {
@@ -85,6 +94,7 @@ const StepOne: React.FC<IStepOne> = ({ params: { lang }, onNext }) => {
     }
     useEffect(() => {
         fetchPropertyTypes()
+        fetchCountries()
         getMapStyles().then(result => setMapStyle(result))
     }, [])
     return (
@@ -107,6 +117,7 @@ const StepOne: React.FC<IStepOne> = ({ params: { lang }, onNext }) => {
                                     <InputSwitch list={listSwitch} initialValue={1} onChange={handleSellType} />
                                 </div>
                             </div>
+                            <InputSelect label={glosary.formLabelCountry} placeholder={glosary.formPlaceholderSelectText} list={countries} onChange={handleCountry} />
                             <InputTextArea label={glosary.formLabelAddress} placeholder={glosary.formPlaceholderText} />
                             <div className={styles.mapContainer}>
                                 <span className={styles.mapTitle} style={poppinsMedium.style}>{glosary.formLabelMap}</span>

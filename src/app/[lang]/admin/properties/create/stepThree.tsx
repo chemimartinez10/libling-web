@@ -16,6 +16,7 @@ import * as Yup from 'yup';
 import { Form, Formik, FormikHelpers } from 'formik'
 import { Button } from '@/app/components/admin/button'
 import { InputText } from '@/app/components/admin/inputText'
+import { FiPlus } from 'react-icons/fi';
 
 
 interface IValues {
@@ -25,26 +26,21 @@ interface IStepThree extends IPage {
     onNext: VoidFunction
     onBack: VoidFunction
 }
+const medidasAreaTerrenos = [
+    { key: 1, value: "m²" },
+    { key: 2, value: "ha" },
+    { key: 3, value: "km²" },
+    { key: 4, value: "acre" },
+];
 
 
 
 const StepThree: React.FC<IStepThree> = ({ params: { lang }, onNext, onBack }) => {
     const glosary = dict[lang]?.adminProperties
     const glosaryError = dict[lang]?.auth
-    const [latLng, setLatLng] = useState({ lat: 49.61675, lng: 6.12777 })
-    const [mapStyle, setMapStyle] = useState<string | null>(null)
-    const [list, setList] = useState<ISelectElement[]>([])
-   
-    const fetchPropertyTypes = async () => {
-        const data = await getPropertyTypes()
-        const newArray = data?.map(el => ({ key: el.id, value: el.name }))
-        setList(newArray || [])
-    }
+    const [areaList, setAreaList] = useState<ISelectElement[]>(medidasAreaTerrenos)
 
-    const handleSellType = (key: string | number) => {
-        console.log(key)
-    }
-    const handleHeatingType = (key: string) => {
+    const handleAreaSelect = (key: string) => {
         console.log('selected key', key)
     }
     const handleHeatingMedium = (key: string) => {
@@ -71,32 +67,63 @@ const StepThree: React.FC<IStepThree> = ({ params: { lang }, onNext, onBack }) =
 
         }
     }
-    const AreaIcon = () => (<span className={styles.textIcon}>m{"\u00B2"}</span>)
     useEffect(() => {
-        fetchPropertyTypes()
-        getMapStyles().then(result => setMapStyle(result))
     }, [])
     return (
         <div className={styles.card}>
             <div className={styles.cardBody}>
 
-                <h2 className={styles.cardTitle} style={poppinsMedium.style}>{glosary.formStepTitle_2}</h2>
+                <h2 className={styles.cardTitle} style={poppinsMedium.style}>{glosary.formStepTitle_3}</h2>
                 <Formik
                     initialValues={{ email: '' }}
                     validationSchema={validationSchema}
                     onSubmit={handleSubmit}
                 >
                     {({ isSubmitting, values, handleChange, errors, touched }) => (
-                        <Form className={styles.cardContent}>
-                            <div className={styles.inputRow}>
-                                <div className={styles.inputRowHalf}>
-                                    <InputText label={glosary.formLabelArea} placeholder={glosary.formPlaceholderText} Icon={AreaIcon} />
+                        <Form className={styles.cardContentBig}>
+                            <InputText label={glosary.formLabelView} placeholder={glosary.formPlaceholderView} />
+                            <div className={styles.multiFormControl}>
+                                <h4 className={styles.multiFormLabel} style={poppinsMedium.style}>{glosary.formLabelSufaces}{" "} <span className={styles.multiFormLabelDescription}>({glosary.formLabelOptional})</span> </h4>
+                                <div className={styles.inputRow}>
+                                    <InputText placeholder={glosary.formPlaceholderSurfaces_1} />
+                                    <div >
+                                        <InputText placeholder={glosary.formPlaceholderSurfaces_2} />
+                                    </div>
+                                    <div style={{}}>
+                                        <InputText placeholder={glosary.formPlaceholderSurfaces_3} />
+
+                                    </div>
+                                    <div style={{}}>
+                                        <InputSelect placeholder={glosary.formPlaceholderSelect} list={areaList} onChange={handleAreaSelect} />
+
+                                    </div>
                                 </div>
-                                <div className={styles.inputRowHalf}>
-                                    <InputText label={glosary.formLabelBedrooms} placeholder={glosary.formPlaceholderText} />
+                                <div className={styles.buttonTopPadding}>
+                                    <Button Icon={FiPlus} title={glosary.formButtonAddSurfaces} type='tonal' />
                                 </div>
                             </div>
-                            
+                            <div className={styles.multiFormControl}>
+                                <h4 className={styles.multiFormLabel} style={poppinsMedium.style}>{glosary.formLabelBenefits}{" "} <span className={styles.multiFormLabelDescription}>({glosary.formLabelOptional})</span> </h4>
+                                <InputText placeholder={glosary.formPlaceholderBenefits} />
+                                <div className={styles.buttonTopPadding}>
+                                    <Button Icon={FiPlus} title={glosary.formButtonAddBenefits} type='tonal' />
+                                </div>
+                            </div>
+                            <div className={styles.multiFormControl}>
+                                <h4 className={styles.multiFormLabel} style={poppinsMedium.style}>{glosary.formLabelNearPlaces}{" "} <span className={styles.multiFormLabelDescription}>({glosary.formLabelOptional})</span> </h4>
+                                <InputText placeholder={glosary.formPlaceholderNearPlaces} />
+                                <div className={styles.buttonTopPadding}>
+                                    <Button Icon={FiPlus} title={glosary.formButtonAddNearPlaces} type='tonal' />
+                                </div>
+                            </div>
+                            <div className={styles.multiFormControl}>
+                                <h4 className={styles.multiFormLabel} style={poppinsMedium.style}>{glosary.formLabelLegalNotes}{" "} <span className={styles.multiFormLabelDescription}>({glosary.formLabelOptional})</span> </h4>
+                                <InputText placeholder={glosary.formPlaceholderLegalNotes} />
+                                <div className={styles.buttonTopPadding}>
+                                    <Button Icon={FiPlus} title={glosary.formButtonAddLegalNotes} type='tonal' />
+                                </div>
+                            </div>
+
 
                         </Form>
                     )}

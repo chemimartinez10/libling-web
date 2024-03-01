@@ -1,7 +1,7 @@
 'use client'
 import { poppinsMedium } from '@/app/fonts'
 import mainStyle from './buttonMain.module.css'
-import tonalStyle from './buttonOutline.module.css'
+import tonalStyle from './buttonTonal.module.css'
 import outlineStyle from './buttonOutline.module.css'
 import textStyle from './buttonText.module.css'
 import warningStyle from './buttonWarning.module.css'

@@ -11,7 +11,7 @@
     font-size: 16px;
     outline: none;
     border: 1px solid #E2F2FF;
-    box-shadow: 0px 6px 12px #1973FA1A;
+    box-shadow: none;
     cursor: pointer;
 }
 
@@ -29,7 +29,13 @@
     font-size: 16px;
     outline: none;
     border: 1px solid #23A6FF;
-    box-shadow: 0px 6px 12px #1973FA29;
+    box-shadow: none;
+}
+
+.buttonPressed .icon {
+    font-size: 24px;
+    padding: 4px;
+    color: #fff;
 }
 
 .buttonDisabled {
@@ -45,6 +51,12 @@
     font-size: 16px;
     outline: none;
     border: 1px solid #00000061;
+}
+
+.buttonDisabled .icon {
+    font-size: 24px;
+    padding: 4px;
+    color: #fff;
 }
 
 .icon {
@@ -97,6 +109,12 @@
         font-size: 16px;
         outline: none;
         border: 1px solid #8CCBFF;
-        box-shadow: 0px 6px 12px #1973FA29;
+        box-shadow: none;
+    }
+
+    .button:hover .icon {
+        font-size: 24px;
+        padding: 4px;
+        color: #fff;
     }
 }

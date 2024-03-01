@@ -17,7 +17,7 @@ export interface IInputTextSelect {
 	lang: "es" | "en" | "fr"
 }
 export interface IInputSelect {
-	label: string
+	label?: string
 	placeholder: string
 	list: ISelectElement[]
 	touched?: boolean
