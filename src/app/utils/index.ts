@@ -73,6 +73,9 @@ export const dict = {
 			formConfirmOption: "Publicar inmueble",
 			formStep: "Paso",
 			formStepConnector: "de",
+			formValidationRequired: "Este campo es requerido",
+			formValidationNumbers: "Este campo solo acepta números",
+			formValidationLetters: "Este campo solo acepta letras",
 		},
 		adminNav: {
 			propertiesTitle: "Inmuebles",
@@ -340,6 +343,9 @@ export const dict = {
 			formConfirmOption: "Publish property",
 			formStep: "Step",
 			formStepConnector: "of",
+			formValidationRequired: "This field is required",
+			formValidationNumbers: "This field only accepts numbers",
+			formValidationLetters: "This field only accepts letters",
 		},
 		adminNav: {
 			propertiesTitle: "Real estate",
@@ -608,6 +614,9 @@ export const dict = {
 			formConfirmOption: "Publier la propriété",
 			formStep: "Étape",
 			formStepConnector: "de",
+			formValidationRequired: "Ce champ est obligatoire",
+			formValidationNumbers: "Ce champ n'accepte que des chiffres",
+			formValidationLetters: "Ce champ n'accepte que des lettres",
 		},
 
 		adminNav: {

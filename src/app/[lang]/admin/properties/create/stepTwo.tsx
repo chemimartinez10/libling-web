@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { InputRadio } from '@/app/components/admin/inputRadio'
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { toast } from 'react-toastify';
@@ -10,13 +10,21 @@ import { dict } from '@/app/utils';
 import { IPage } from '../../layout';
 import CustomToast from '@/app/components/toast'
 import * as Yup from 'yup';
-import { Form, Formik, FormikHelpers } from 'formik'
+import { Form, Formik, FormikHelpers, FormikProps } from 'formik'
 import { Button } from '@/app/components/admin/button'
 import { InputText } from '@/app/components/admin/inputText'
+import useStore from '@/app/hooks/useStore';
+import { usePropertyStore } from '@/app/hooks/usePropertyStore';
 
 
 interface IValues {
-    email: string
+    area?: string
+    bedrooms?: string
+    bathrooms?: string
+    heatingType?: number
+    heatingMedium?: number
+    heatingEnergy?: number
+    furnished?: boolean
 }
 interface IStepTwo extends IPage {
     onNext: VoidFunction
@@ -28,6 +36,17 @@ interface IStepTwo extends IPage {
 const StepTwo: React.FC<IStepTwo> = ({ params: { lang }, onNext, onBack }) => {
     const glosary = dict[lang]?.adminProperties
     const glosaryError = dict[lang]?.auth
+    const formRef = useRef<FormikProps<IValues>>(null)
+    const store = useStore(usePropertyStore, (state) => state)
+    const initialValues: IValues = {
+        area: store?.form_2?.area,
+        bedrooms: store?.form_2?.bedrooms,
+        bathrooms: store?.form_2?.bathrooms,
+        heatingType: store?.form_2?.heatingType,
+        heatingMedium: store?.form_2?.heatingMedium,
+        heatingEnergy: store?.form_2?.heatingEnergy,
+        furnished: !!store?.form_2?.furnished,
+    }
     const mediosCalefaccion = [
         {
             key: 1,
@@ -124,25 +143,36 @@ const StepTwo: React.FC<IStepTwo> = ({ params: { lang }, onNext, onBack }) => {
             value: "Estufas de pellet",
         },
     ];
+    const handleFurnishedChange = (key: boolean) => {
+        console.log('selected key', key)
+        formRef.current?.setFieldValue('furnished', key)
+    }
     const handleHeatingType = (key: string) => {
         console.log('selected key', key)
+        formRef.current?.setFieldValue('heatingType', key)
     }
     const handleHeatingMedium = (key: string) => {
         console.log('selected key', key)
+        formRef.current?.setFieldValue('heatingMedium', key)
     }
     const handleHeatingEnergy = (key: string) => {
         console.log('selected key', key)
+        formRef.current?.setFieldValue('heatingEnergy', key)
     }
     const validationSchema = Yup.object({
-        email: Yup.string().email(glosaryError.email_send_validation).required(glosaryError.email_send_required),
+        area: Yup.number().required(glosary.formValidationRequired).typeError(glosary.formValidationNumbers),
+        bedrooms: Yup.number().required(glosary.formValidationRequired).typeError(glosary.formValidationNumbers),
+        bathrooms: Yup.number().required(glosary.formValidationRequired).typeError(glosary.formValidationNumbers),
+        heatingType: Yup.number().required(glosary.formValidationRequired),
+        heatingMedium: Yup.number().required(glosary.formValidationRequired),
+        heatingEnergy: Yup.number().required(glosary.formValidationRequired),
     });
     const handleSubmit = async (values: IValues, { setSubmitting }: FormikHelpers<IValues>) => {
         const formData = values
+        console.log(formData)
         try {
-            // const response = await authFetch({
-            //     endpoint: 'forgot-password',
-            //     formData
-            // })
+            store?.setForm_2(formData)
+            onNext()
         } catch (e) {
             console.error(e)
             toast.error(<CustomToast type='error' title='Error' content={glosaryError.error_default} />, { theme: 'colored', icon: false, style: { backgroundColor: '#FF4444', maxWidth: 450, padding: 24, borderRadius: 10 } })
@@ -160,39 +190,41 @@ const StepTwo: React.FC<IStepTwo> = ({ params: { lang }, onNext, onBack }) => {
 
                 <h2 className={styles.cardTitle} style={poppinsMedium.style}>{glosary.formStepTitle_2}</h2>
                 <Formik
-                    initialValues={{ email: '' }}
+                    initialValues={initialValues}
                     validationSchema={validationSchema}
                     onSubmit={handleSubmit}
+                    innerRef={formRef}
+                    enableReinitialize
                 >
-                    {({ isSubmitting, values, handleChange, errors, touched }) => (
+                    {({ values, handleChange, errors, touched }) => (
                         <Form className={styles.cardContent}>
                             <div className={styles.inputRow}>
                                 <div className={styles.inputRowHalf}>
-                                    <InputText label={glosary.formLabelArea} placeholder={glosary.formPlaceholderText} Icon={AreaIcon} />
+                                    <InputText label={glosary.formLabelArea} placeholder={glosary.formPlaceholderText} Icon={AreaIcon} error={errors.area} touched={touched.area} value={values.area} onChange={handleChange('area')} />
                                 </div>
                                 <div className={styles.inputRowHalf}>
-                                    <InputText label={glosary.formLabelBedrooms} placeholder={glosary.formPlaceholderText} />
-                                </div>
-                            </div>
-                            <div className={styles.inputRow}>
-                                <div className={styles.inputRowHalf}>
-                                    <InputText label={glosary.formLabelBathrooms} placeholder={glosary.formPlaceholderText} />
-                                </div>
-                                <div className={styles.inputRowHalf}>
-                                    <InputSelect label={glosary.formLabelHeatingType} description={glosary.formLabelOptional} placeholder={glosary.formPlaceholderSelect} list={mecanismosCalefaccion} onChange={handleHeatingType} />
+                                    <InputText label={glosary.formLabelBedrooms} placeholder={glosary.formPlaceholderText} error={errors.bedrooms} touched={touched.bedrooms} value={values.bedrooms} onChange={handleChange('bedrooms')} />
                                 </div>
                             </div>
                             <div className={styles.inputRow}>
                                 <div className={styles.inputRowHalf}>
-                                    <InputSelect label={glosary.formLabelHeatingMedium} description={glosary.formLabelOptional} placeholder={glosary.formPlaceholderSelect} list={mediosCalefaccion} onChange={handleHeatingMedium} />
+                                    <InputText label={glosary.formLabelBathrooms} placeholder={glosary.formPlaceholderText} error={errors.bathrooms} touched={touched.bathrooms} value={values.bathrooms} onChange={handleChange('bathrooms')} />
                                 </div>
                                 <div className={styles.inputRowHalf}>
-                                    <InputSelect label={glosary.formLabelHeatingEnergy} description={glosary.formLabelOptional} placeholder={glosary.formPlaceholderSelect} list={combustiblesCalefaccion} onChange={handleHeatingEnergy} />
+                                    <InputSelect label={glosary.formLabelHeatingType} description={glosary.formLabelOptional} placeholder={glosary.formPlaceholderSelect} list={mecanismosCalefaccion} onChange={handleHeatingType} error={errors.heatingType} touched={touched.heatingType} initialValue={values.heatingType} />
                                 </div>
                             </div>
                             <div className={styles.inputRow}>
                                 <div className={styles.inputRowHalf}>
-                                    <InputRadio label={glosary.formLabelFurnished} option_1={glosary.formOptionYes} option_2={glosary.formOptionNo} />
+                                    <InputSelect label={glosary.formLabelHeatingMedium} description={glosary.formLabelOptional} placeholder={glosary.formPlaceholderSelect} list={mediosCalefaccion} onChange={handleHeatingMedium} error={errors.heatingMedium} touched={touched.heatingMedium} initialValue={values.heatingMedium} />
+                                </div>
+                                <div className={styles.inputRowHalf}>
+                                    <InputSelect label={glosary.formLabelHeatingEnergy} description={glosary.formLabelOptional} placeholder={glosary.formPlaceholderSelect} list={combustiblesCalefaccion} onChange={handleHeatingEnergy} error={errors.heatingEnergy} touched={touched.heatingEnergy} initialValue={values.heatingEnergy} />
+                                </div>
+                            </div>
+                            <div className={styles.inputRow}>
+                                <div className={styles.inputRowHalf}>
+                                    <InputRadio label={glosary.formLabelFurnished} option_1={glosary.formOptionYes} option_2={glosary.formOptionNo} initialValue={!!values.furnished} onChange={handleFurnishedChange} />
                                 </div>
                                 <div className={styles.inputRowHalf}>
 
@@ -208,7 +240,7 @@ const StepTwo: React.FC<IStepTwo> = ({ params: { lang }, onNext, onBack }) => {
             </div>
             <div className={styles.cardFooter}>
                 <Button title={glosary.formButtonBack} type='outline' onClick={onBack} />
-                <Button title={glosary.formButtonNext} onClick={onNext} />
+                <Button title={glosary.formButtonNext} onClick={formRef.current?.handleSubmit} loading={formRef.current?.isSubmitting} />
             </div>
         </div>
     )

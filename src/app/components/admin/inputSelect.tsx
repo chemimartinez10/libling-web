@@ -79,7 +79,7 @@ const InputSelect: React.FC<IInputSelect> = ({ label, placeholder, list, error, 
                 <div className={openList ? styles.listContainer : styles.listContainerHidden}>
                     {
                         listFiltered.map((el, index) => (
-                            <div key={index} className={styles.listItem} onClick={() => { handleChange(el) }}>
+                            <div key={index} className={styles.listItem} onClick={() => { handleChange(el) }} onMouseDown={()=>{handleChange(el)}}>
                                 {el.value}
                                 {
                                     !!el.description ? <span className={styles.listItemDescription}>

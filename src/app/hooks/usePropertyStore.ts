@@ -2,8 +2,23 @@ import { create } from "zustand"
 import { persist } from "zustand/middleware"
 
 // the store itself does not need any change
-interface IForm1 {}
-interface IForm2 {}
+interface IForm1 {
+    propertyType?: number
+    country?: number
+    type?: number
+    address?: string
+    longitude?: number
+    latitude?: number
+}
+interface IForm2 {
+    area?: string
+    bedrooms?: string
+    bathrooms?: string
+    heatingType?:number
+    heatingMedium?:number
+    heatingEnergy?:number
+    furnished?:boolean
+}
 interface IForm3 {}
 interface IForm4 {}
 interface IForm5 {}

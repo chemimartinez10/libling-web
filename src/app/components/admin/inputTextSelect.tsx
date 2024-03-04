@@ -12,12 +12,7 @@ const InputTextSelect: React.FC<IInputTextSelect> = ({ label, placeholder, list,
     const [listFiltered, setListFiltered] = useState<ISelectElement[]>(list)
     const inputRef = useRef<HTMLInputElement | null>(null)
     const glosary = dict[lang]?.adminProperties
-    if (!!initialValue) {
-        const initialElement = list.find(el => el.key.toString() === initialValue.toString())
-        if (initialElement && inputRef?.current) {
-            inputRef.current.value = initialElement.value.toString()
-        }
-    }
+    
 
     const handleChange: ((el: ISelectElement) => void) | undefined = (e) => {
         console.log(e)
@@ -65,7 +60,16 @@ const InputTextSelect: React.FC<IInputTextSelect> = ({ label, placeholder, list,
     }
     useEffect(() => {
         setListFiltered(list)
-    }, [list])
+        console.log('here 0', initialValue)
+        if (!!initialValue) {
+            const initialElement = list.find(el => el.key.toString() === initialValue.toString())
+            console.log('here 1')
+            if (initialElement && inputRef?.current) {
+                console.log('here 2')
+                inputRef.current.value = initialElement.value.toString()
+            }
+        }
+    }, [initialValue, list])
     return (
         <div className={styles.formControl}>
             {

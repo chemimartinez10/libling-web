@@ -1,6 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react'
-import { InputRadio } from '@/app/components/admin/inputRadio'
+import React, { useEffect, useRef, useState } from 'react'
 import InputSwitch from '@/app/components/admin/inputSwitch'
 import { InputTextArea } from '@/app/components/admin/inputTextArea'
 import Map, { Marker } from 'react-map-gl/maplibre';
@@ -20,14 +19,21 @@ import { createPropertyType, getCountries, getPropertyTypes } from '@/services'
 import { ISelectElement } from '@/app/interfaces'
 import CustomToast from '@/app/components/toast'
 import * as Yup from 'yup';
-import { Form, Formik, FormikHelpers } from 'formik'
+import { Form, Formik, FormikHelpers, FormikProps } from 'formik'
 import { Button } from '@/app/components/admin/button'
+import useStore from '@/app/hooks/useStore'
+import { usePropertyStore } from '@/app/hooks/usePropertyStore'
 
 
 interface IValues {
-    email: string
+    propertyType?: number
+    country?: number
+    type?: number
+    address?: string
+    longitude?: number
+    latitude?: number
 }
-interface IStepOne extends IPage{
+interface IStepOne extends IPage {
     onNext: VoidFunction
 }
 
@@ -36,17 +42,28 @@ interface IStepOne extends IPage{
 const StepOne: React.FC<IStepOne> = ({ params: { lang }, onNext }) => {
     const glosary = dict[lang]?.adminProperties
     const glosaryError = dict[lang]?.auth
-    const [latLng, setLatLng] = useState({ lat: 49.61675, lng: 6.12777 })
     const [mapStyle, setMapStyle] = useState<string | null>(null)
     const [list, setList] = useState<ISelectElement[]>([])
     const [countries, setCountries] = useState<ISelectElement[]>([])
+    const formRef = useRef<FormikProps<IValues>>(null)
+    const store = useStore(usePropertyStore, (state) => state)
+    const initialValues: IValues = {
+        propertyType: store?.form_1?.propertyType,
+        country: store?.form_1?.country,
+        type: store?.form_1?.type ? 1 : 0,
+        address: store?.form_1?.address,
+        longitude: store?.form_1?.longitude ||  6.12777,
+        latitude: store?.form_1?.latitude || 49.61675,
+    }
+    const [latLng, setLatLng] = useState({ lat: initialValues.latitude, lng: initialValues.longitude })
+    console.log('initialValues',initialValues)
     const listSwitch = [
         {
             key: 1,
             value: glosary.formLabelSale,
         },
         {
-            key: 2,
+            key: 0,
             value: glosary.formLabelRent,
         },
     ]
@@ -61,29 +78,39 @@ const StepOne: React.FC<IStepOne> = ({ params: { lang }, onNext }) => {
         setCountries(newArray || [])
     }
     const handleSellType = (key: string | number) => {
-        console.log(key)
+        console.log('selected key', key)
+        formRef.current?.setFieldValue('type', key)
     }
     const handlePropertyType = (key: string) => {
         console.log('selected key', key)
+        formRef.current?.setFieldValue('propertyType', key)
     }
     const handleCountry = (key: string) => {
         console.log('selected key', key)
+        formRef.current?.setFieldValue('country', key)
     }
     const handleAddPropertyType = async (el: string) => {
         const added = await createPropertyType({ name: el, code: el.toUpperCase() })
         console.log('added', added)
         await fetchPropertyTypes()
+        formRef.current?.setFieldValue('propertyType', added.id)
     }
     const validationSchema = Yup.object({
-        email: Yup.string().email(glosaryError.email_send_validation).required(glosaryError.email_send_required),
+        propertyType: Yup.number().required(glosary.formValidationRequired),
+        country: Yup.number().required(glosary.formValidationRequired),
+        type: Yup.number().required(glosary.formValidationRequired),
+        address: Yup.string().required(glosary.formValidationRequired),
+        longitude: Yup.number().required(glosary.formValidationRequired),
+        latitude: Yup.number().required(glosary.formValidationRequired),
+
     });
     const handleSubmit = async (values: IValues, { setSubmitting }: FormikHelpers<IValues>) => {
         const formData = values
+        console.log('formik values', formData)
+        console.log('coordinates',latLng)
         try {
-            // const response = await authFetch({
-            //     endpoint: 'forgot-password',
-            //     formData
-            // })
+            store?.setForm_1(formData)
+            onNext()
         } catch (e) {
             console.error(e)
             toast.error(<CustomToast type='error' title='Error' content={glosaryError.error_default} />, { theme: 'colored', icon: false, style: { backgroundColor: '#FF4444', maxWidth: 450, padding: 24, borderRadius: 10 } })
@@ -103,38 +130,42 @@ const StepOne: React.FC<IStepOne> = ({ params: { lang }, onNext }) => {
 
                 <h2 className={styles.cardTitle} style={poppinsMedium.style}>{glosary.formStepTitle_1}</h2>
                 <Formik
-                    initialValues={{ email: '' }}
+                    initialValues={initialValues}
                     validationSchema={validationSchema}
                     onSubmit={handleSubmit}
+                    innerRef={formRef}
+                    enableReinitialize
                 >
                     {({ isSubmitting, values, handleChange, errors, touched }) => (
                         <Form className={styles.cardContent}>
                             <div className={styles.inputRow}>
                                 <div className={styles.stepOneInputLeft}>
-                                    <InputTextSelect label={glosary.formLabelPropertyType} placeholder={glosary.formPlaceholderSelectText} list={list} lang={lang} onChange={handlePropertyType} onAdd={handleAddPropertyType} />
+                                    <InputTextSelect label={glosary.formLabelPropertyType} placeholder={glosary.formPlaceholderSelectText} list={list} lang={lang} onChange={handlePropertyType} onAdd={handleAddPropertyType} error={errors.propertyType} touched={touched.propertyType} initialValue={values.propertyType} />
                                 </div>
                                 <div className={styles.stepOneInputRight}>
-                                    <InputSwitch list={listSwitch} initialValue={1} onChange={handleSellType} />
+                                    <InputSwitch list={listSwitch} initialValue={values.type} onChange={handleSellType} />
                                 </div>
                             </div>
-                            <InputSelect label={glosary.formLabelCountry} placeholder={glosary.formPlaceholderSelectText} list={countries} onChange={handleCountry} />
-                            <InputTextArea label={glosary.formLabelAddress} placeholder={glosary.formPlaceholderText} />
+                            <InputSelect label={glosary.formLabelCountry} placeholder={glosary.formPlaceholderSelectText} list={countries} onChange={handleCountry} error={errors.country} touched={touched.country} initialValue={values.country} />
+                            <InputTextArea label={glosary.formLabelAddress} placeholder={glosary.formPlaceholderText} error={errors.address} touched={touched.address} value={values.address} onChange={handleChange('address')} />
                             <div className={styles.mapContainer}>
                                 <span className={styles.mapTitle} style={poppinsMedium.style}>{glosary.formLabelMap}</span>
                                 {
-                                    !!mapStyle ?
+                                    !!mapStyle && !!values.latitude && !!values.longitude ?
                                         <Map
                                             initialViewState={{
-                                                longitude: latLng.lng,
-                                                latitude: latLng.lat,
+                                                longitude: values.longitude,
+                                                latitude: values.latitude,
                                                 zoom: 10
                                             }}
-                                            style={{ width: 600, height: 400, borderRadius:10 }}
+                                            style={{ width: 600, height: 400, borderRadius: 10 }}
                                             mapStyle={mapStyle}
                                         >
-                                            <Marker draggable={true} latitude={latLng.lat} longitude={latLng.lng} onDragEnd={(e) => {
+                                            <Marker draggable={true} latitude={values.latitude} longitude={values.longitude} onDragEnd={(e) => {
                                                 console.log(e.lngLat)
                                                 setLatLng(e.lngLat)
+                                                formRef.current?.setFieldValue('longitude', e.lngLat.lng)
+                                                formRef.current?.setFieldValue('latitude', e.lngLat.lat)
                                             }}>
                                                 <Image width={36} height={36} src={pin} alt='pin' style={{ width: 36, height: 36 }} />
                                             </Marker>
@@ -152,7 +183,7 @@ const StepOne: React.FC<IStepOne> = ({ params: { lang }, onNext }) => {
 
             </div>
             <div className={styles.cardFooter}>
-                <Button title={glosary.formButtonNext} onClick={onNext}/>
+                <Button title={glosary.formButtonNext} onClick={formRef.current?.handleSubmit} loading={formRef.current?.isSubmitting} />
             </div>
         </div>
     )

@@ -121,6 +121,7 @@ export async function createPropertyType(data: IPropertyTypeData) {
 		const propertyType = await prisma.propertyType.create({ data })
 		console.log(propertyType)
 		await prisma.$disconnect()
+		return propertyType
 	} catch (e) {
 		console.error(e)
 		await prisma.$disconnect()
