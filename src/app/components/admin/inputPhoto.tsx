@@ -35,12 +35,12 @@ const InputPhoto: React.FC<IInputPhoto> = ({ description, facename, onChange, in
         <div className={styles.thumb} key={file?.name}>
             <div className={styles.thumbInner}>
                 {
-                    file.path &&
+                    (file.path && !!onChange) &&
                     <div className={styles.thumbDelete} onClick={() => { deleteFile(index) }}>
                         <FiX />
                     </div>
                 }
-                <Image src={file.preview} alt={'image'} onClick={() => { setFace(index) }} className={styles.img} width={100} height={100} />
+                <Image src={file.preview} alt={'image'} onClick={!!onChange ? () => { setFace(index) }: undefined} className={styles.img} width={100} height={100} />
                 {
                     face === index && <div className={styles.thumbFace}>{facename}</div>
                 }
@@ -50,7 +50,7 @@ const InputPhoto: React.FC<IInputPhoto> = ({ description, facename, onChange, in
 
     useEffect(
         () => {
-            onChange(files, face)
+            if (!!onChange) onChange(files, face)
             // return () => {
             //     // Make sure to revoke the data uris to avoid memory leaks
             //     files.forEach((file: any) => URL.revokeObjectURL(file.preview));
@@ -67,11 +67,14 @@ const InputPhoto: React.FC<IInputPhoto> = ({ description, facename, onChange, in
 
     return (
         <section className={styles.photoContainer}>
-            <div {...getRootProps({ className: styles.photoDropzone })}>
-                <input {...getInputProps()} />
-                <FiCamera className={styles.photoIcon} />
-                <p className={styles.photoDescription} style={poppinsMedium.style}>{description}</p>
-            </div>
+            {
+                !!onChange &&
+                <div {...getRootProps({ className: styles.photoDropzone })}>
+                    <input {...getInputProps()} />
+                    <FiCamera className={styles.photoIcon} />
+                    <p className={styles.photoDescription} style={poppinsMedium.style}>{description}</p>
+                </div>
+            }
             {
                 files?.length > 0
                 &&

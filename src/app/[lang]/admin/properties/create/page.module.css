@@ -310,6 +310,7 @@
     display: flex;
     flex-direction: column;
     padding-bottom: 32px;
+    gap: 24px;
     
 }
 .sectionRow{
@@ -325,6 +326,7 @@
 .sectionLink{
     color: #1973FA;
     font-size: 14px;
+    cursor: pointer;
 }
 .sectionContent{
     display: flex;
@@ -344,4 +346,41 @@
 .sectionDescription{
     color: #000000DE;
     font-size: 18px;
+}
+.sectionContentRow{
+    display: flex;
+    flex-direction: row;
+}
+.sectionContentRowHalf{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.sectionSeparator{
+    padding: 0px 24px;
+}
+.listItem{
+    margin-left: 16px;
+    gap: 8px;
+}
+.actionBar{
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    align-items: center;
+    justify-content: flex-end;
+    flex-grow:1;
+}
+.modalIcon{
+    font-size: 48px;
+    padding: 4px;
+    color: #1973FA;
+}
+.modalButtons{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 24px;
+    padding-top: 8px;
 }

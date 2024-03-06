@@ -7,10 +7,10 @@ import { poppinsMedium, poppinsRegular } from '@/app/fonts';
 import Navbar from './navbar';
 import { dict } from '@/app/utils';
 import { FiHome } from 'react-icons/fi';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { UserDTO } from '@/dto';
 import { IUserSession } from '@/services';
+import ActionBar from './actionBar';
+import useStore from '@/app/hooks/useStore';
+import { useInterfaceStore } from '@/app/hooks/useInterfaceStore';
 
 export interface IRoute {
     // Name of the route (displayed in navigation elements)
@@ -35,6 +35,8 @@ export const Body = ({
 }) => {
     const [open, setOpen] = useState<boolean>(false)
     const glosary = dict[lang]?.adminNav
+    const store = useStore(useInterfaceStore, (state) => state)
+    const ActionContent = ()=>(<div/>)
 
     const routes = [
         {
@@ -51,7 +53,7 @@ export const Body = ({
     return (
         <body style={poppinsRegular.style} className={styles.layout}>
             <Navbar lang={lang} handleAside={toggleOpen} user={user} />
-            <div className={styles.container}>
+            <div className={!!store?.showBar && !!store?.barContent ? styles.containerBar : styles.container}>
                 <Aside lang={lang} open={open} routes={routes} />
                 <main className={styles.main}>
                     {children}
@@ -60,6 +62,12 @@ export const Body = ({
                     </div>
                 </main>
             </div>
+            {
+                (!!store?.showBar && !!store?.barContent)
+                &&
+                // <ActionContent/>
+                <ActionBar show={!!store?.showBar} Content={store?.barContent} />
+            }
             <ToastContainer />
         </body>
     )

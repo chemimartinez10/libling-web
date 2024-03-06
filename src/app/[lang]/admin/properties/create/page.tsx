@@ -32,6 +32,11 @@ const PropertyCreate: React.FC<IPage> = ({ params: { lang } }) => {
             store?.removeStep()
         }
     }
+    const handleStep = (newStep:number) => {
+        if (!!newStep && newStep > 0 && newStep <= 6) {
+            store?.setStep(newStep)
+        }
+    }
     const handleFiles = (newFiles: any[]) => {
         setFiles(newFiles)
     }
@@ -90,7 +95,7 @@ const PropertyCreate: React.FC<IPage> = ({ params: { lang } }) => {
             {
                 step === 6
                 &&
-                <Preview params={{ lang }} onNext={handleSubmit} onBack={handleBack} />
+                <Preview params={{ lang }} onNext={handleSubmit} onGo={handleStep} files={files} />
             }
         </section>
     </>

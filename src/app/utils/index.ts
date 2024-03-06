@@ -30,6 +30,7 @@ export const dict = {
 			formLabelNearPlaces: "Lugares cercanos",
 			formLabelLegalNotes: "Noticias legales",
 			formLabelTumbnail: "Portada",
+			formLabelImages: "Imagenes",
 			formLabelPhotos: "Sube fotos del inmueble",
 			formLabelPhotosDescription:
 				"Una vez cargadas, selecciona la imagen que quieras como portada.",
@@ -82,6 +83,23 @@ export const dict = {
 			previewSectionTitle_3: "Ventajas del inmueble",
 			previewSectionTitle_4: "Título, descripción e imágenes",
 			previewSectionTitle_5: "Condiciones de pago",
+			modalCreateTitle: "Confirma la creación del nuevo inmueble",
+			modalCreateOption: "Publicar inmueble.",
+			modalPublishConfirm: "Confirma la publicación del inmueble",
+			modalPauseConfirm: "Confirma la pausa de la publicación",
+			modalDeleteTitle: "Si eliminas el inmueble ya no podrás recuperarlo.",
+			modalDeletePauseTitle:
+				"Si eliminas el inmueble ya no podrás recuperarlo.",
+			modalDeleteText:
+				"Puedes pausar la publicación para conservarlo y reactivarla más tarde.",
+			modalDeleteButton: "Eliminar",
+			toastDelete: "El inmueble fue eliminado con éxito.",
+			toastPublish: "El inmueble fue publicado con éxito.",
+			toastPause: "La publicación fue pausada con éxito.",
+			actionPublish: "Publicar",
+			actionPause: "Pausar",
+			actionDetail: "Ver detalle",
+			actionPreview: "Vista previa",
 		},
 		adminNav: {
 			propertiesTitle: "Inmuebles",
@@ -308,6 +326,7 @@ export const dict = {
 			formLabelNearPlaces: "Nearby places",
 			formLabelLegalNotes: "Legal notes",
 			formLabelTumbnail: "Thumbnail",
+			formLabelImages: "Images",
 			formLabelPhotos: "Upload photos of the property",
 			formLabelPhotosDescription:
 				"Once uploaded, select the image you want to use as a cover.",
@@ -358,6 +377,24 @@ export const dict = {
 			previewSectionTitle_3: "Property Advantages",
 			previewSectionTitle_4: "Title, Description and Images",
 			previewSectionTitle_5: "Payment Terms",
+			modalCreateTitle: "Confirm New Property Creation",
+			modalCreateOption: "Publish Property.",
+			modalPublishConfirm: "Confirm Property Publication",
+			modalPauseConfirm: "Confirm Publication Pause",
+			modalDeleteTitle:
+				"If you delete the property, you will not be able to recover it.",
+			modalDeletePauseTitle:
+				"If you delete the property, you will not be able to recover it.",
+			modalDeleteText:
+				"You can pause the publication to keep it and reactivate it later.",
+			modalDeleteButton: "Delete",
+			toastDelete: "Property successfully deleted.",
+			toastPublish: "Property successfully published.",
+			toastPause: "Publication successfully paused.",
+			actionPublish: "Publish",
+			actionPause: "Pause",
+			actionDetail: "View Details",
+			actionPreview: "Preview",
 		},
 		adminNav: {
 			propertiesTitle: "Real estate",
@@ -584,6 +621,7 @@ export const dict = {
 			formLabelNearPlaces: "Lieux à proximité",
 			formLabelLegalNotes: "Notes légales",
 			formLabelTumbnail: "Vignette",
+			formLabelImages: "Images",
 			formLabelPhotos: "Téléchargez des photos du bien",
 			formLabelPhotosDescription:
 				"Une fois chargées, sélectionnez l'image que vous souhaitez utiliser comme couverture.",
@@ -635,6 +673,24 @@ export const dict = {
 			previewSectionTitle_3: "Avantages du bien",
 			previewSectionTitle_4: "Titre, description et images",
 			previewSectionTitle_5: "Conditions de paiement",
+			modalCreateTitle: "Confirmer la création d'un nouveau bien",
+			modalCreateOption: "Publier un bien.",
+			modalPublishConfirm: "Confirmer la publication du bien",
+			modalPauseConfirm: "Confirmer la pause de la publication",
+			modalDeleteTitle:
+				"Si vous supprimez le bien, vous ne pourrez plus le récupérer.",
+			modalDeletePauseTitle:
+				"Si vous supprimez le bien, vous ne pourrez plus le récupérer.",
+			modalDeleteText:
+				"Vous pouvez suspendre la publication pour la conserver et la réactiver ultérieurement.",
+			modalDeleteButton: "Supprimer",
+			toastDelete: "Le bien a été supprimé avec succès.",
+			toastPublish: "Le bien a été publié avec succès.",
+			toastPause: "La publication a été suspendue avec succès.",
+			actionPublish: "Publier",
+			actionPause: "Suspendre",
+			actionDetail: "Voir les détails",
+			actionPreview: "Aperçu",
 		},
 
 		adminNav: {
