@@ -44,6 +44,8 @@ export interface IInputSwitch {
 export interface IInputPhoto {
 	description?: string
 	facename: string
+	onChange: (files: any[], faceIndex:number) => void
+	initialValues: any[]
 }
 export interface ITextInput {
 	touched?: boolean

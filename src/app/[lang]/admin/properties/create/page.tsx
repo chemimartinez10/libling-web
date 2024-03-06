@@ -1,12 +1,9 @@
 'use client'
-import React, { useEffect, useLayoutEffect, useState } from 'react'
+import React, { useState } from 'react'
 import styles from './page.module.css'
 import { dict } from '@/app/utils'
 import { IPage } from '../../layout'
 import { useRouter } from 'next/navigation'
-
-import { ISelectElement } from '@/app/interfaces'
-import { createPropertyType, getPropertyTypes } from '@/services'
 import StepOne from './stepOne'
 import StepTwo from './stepTwo'
 import StepThree from './stepThree'
@@ -14,6 +11,7 @@ import StepFour from './stepFour'
 import StepFive from './stepFive'
 import useStore from '@/app/hooks/useStore'
 import { usePropertyStore } from '@/app/hooks/usePropertyStore'
+import Preview from './preview'
 
 
 const PropertyCreate: React.FC<IPage> = ({ params: { lang } }) => {
@@ -23,8 +21,9 @@ const PropertyCreate: React.FC<IPage> = ({ params: { lang } }) => {
     const finalStep = 5
     const arraySteps = new Array(finalStep).fill(0)
     const router = useRouter()
+    const [files, setFiles] = useState<any[]>([])
     const handleNext = () => {
-        if (!!step && step < 5) {
+        if (!!step && step <= 5) {
             store?.addStep()
         }
     }
@@ -33,31 +32,35 @@ const PropertyCreate: React.FC<IPage> = ({ params: { lang } }) => {
             store?.removeStep()
         }
     }
+    const handleFiles = (newFiles: any[]) => {
+        setFiles(newFiles)
+    }
     const handleSubmit = () => {
 
     }
 
-    const goToCreate = () => {
-        router.push('/admin/properties/create')
-    }
-
 
     return (<>
-        <div className={styles.titleBar}>
-            <div className={styles.stepContainer}>
-                <span className={styles.stepText}>{glosary.formStep}{" "}{step}{" "}{glosary.formStepConnector}{" "}{finalStep}</span>
-                <div className={styles.indicatorContainer}>
-                    {
-                        arraySteps.map((el, index) => (
-                            <div key={index} className={!!step && index <= step - 1 ? styles.indicatorFill : styles.indicator}></div>
-                        ))
-                    }
+        {
+            !!(step && step < finalStep && step > 0)
+            &&
+            <div className={styles.titleBar}>
+                <div className={styles.stepContainer}>
+                    <span className={styles.stepText}>{glosary.formStep}{" "}{step}{" "}{glosary.formStepConnector}{" "}{finalStep}</span>
+
+                    <div className={styles.indicatorContainer}>
+                        {
+                            arraySteps.map((el, index) => (
+                                <div key={index} className={!!step && index <= step - 1 ? styles.indicatorFill : styles.indicator}></div>
+                            ))
+                        }
+                    </div>
                 </div>
+                <span className={styles.buttonLink} onClick={() => { router.replace('/admin/properties') }}>
+                    {glosary.formOptionCancel}
+                </span>
             </div>
-            <span className={styles.buttonLink} onClick={() => { router.replace('/admin/properties') }}>
-                {glosary.formOptionCancel}
-            </span>
-        </div>
+        }
         <section className={styles.section}>
             {
                 step === 1
@@ -77,12 +80,17 @@ const PropertyCreate: React.FC<IPage> = ({ params: { lang } }) => {
             {
                 step === 4
                 &&
-                <StepFour params={{ lang }} onNext={handleNext} onBack={handleBack} />
+                <StepFour params={{ lang }} onNext={handleNext} onBack={handleBack} handleFiles={handleFiles} files={files} />
             }
             {
                 step === 5
                 &&
-                <StepFive params={{ lang }} onNext={handleSubmit} onBack={handleBack} />
+                <StepFive params={{ lang }} onNext={handleNext} onBack={handleBack} />
+            }
+            {
+                step === 6
+                &&
+                <Preview params={{ lang }} onNext={handleSubmit} onBack={handleBack} />
             }
         </section>
     </>

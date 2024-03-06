@@ -1,25 +1,27 @@
 'use client'
-import React, { useEffect, useState } from 'react'
-import InputSwitch from '@/app/components/admin/inputSwitch'
-import { InputTextArea } from '@/app/components/admin/inputTextArea'
+import React, { useEffect, useRef, useState } from 'react'
 import { toast } from 'react-toastify';
-import InputTextSelect from '@/app/components/admin/inputTextSelect'
 import { poppinsMedium } from '@/app/fonts'
 import styles from './page.module.css'
 import { dict } from '@/app/utils';
 import { IPage } from '../../layout';
-import { createPropertyType, getCountries, getCurrencies, getPropertyTypes } from '@/services'
+import { getCurrencies } from '@/services'
 import { ISelectElement } from '@/app/interfaces'
 import CustomToast from '@/app/components/toast'
 import * as Yup from 'yup';
-import { Form, Formik, FormikHelpers } from 'formik'
+import { Form, Formik, FormikHelpers, FormikProps } from 'formik'
 import { Button } from '@/app/components/admin/button'
 import InputSelect from '@/app/components/admin/inputSelect';
 import { InputText } from '@/app/components/admin/inputText';
+import useStore from '@/app/hooks/useStore';
+import { usePropertyStore } from '@/app/hooks/usePropertyStore';
+import { rentPaymentPeriods } from '@/app/utils/data';
 
 
 interface IValues {
-    email: string
+    price?: string
+    currency?: number
+    frecuency?: number
 }
 interface IStepFive extends IPage {
     onNext: VoidFunction
@@ -29,17 +31,18 @@ interface IStepFive extends IPage {
 
 
 const StepFive: React.FC<IStepFive> = ({ params: { lang }, onNext, onBack }) => {
+    const store = useStore(usePropertyStore, (state) => state)
     const glosary = dict[lang]?.adminProperties
     const glosaryError = dict[lang]?.auth
     const [list, setList] = useState<ISelectElement[]>([])
     const [currency, setCurrency] = useState<ISelectElement[]>([])
-    const rentPaymentPeriods = [
-        { key: 1, value: "mo.", description: "Monthly" },
-        { key: 2, value: "bi-wkly", description: "Bi-weekly" },
-        { key: 3, value: "qtr.", description: "Quarterly" },
-        { key: 4, value: "yr.", description: "Annually" },
-      ];
-      
+    const formRef = useRef<FormikProps<IValues>>(null)
+    const initialValues: IValues = {
+        price: store?.form_5?.price || '',
+        currency: store?.form_5?.currency,
+        frecuency: store?.form_5?.frecuency,
+    }
+
     const [periods, setPeriods] = useState<ISelectElement[]>(rentPaymentPeriods)
 
     const fetchCurrency = async () => {
@@ -49,20 +52,23 @@ const StepFive: React.FC<IStepFive> = ({ params: { lang }, onNext, onBack }) => 
     }
     const handleCurrency = (key: string) => {
         console.log('selected key', key)
+        formRef.current?.setFieldValue('currency', key)
     }
     const handleFrecuency = (key: string) => {
         console.log('selected key', key)
+        formRef.current?.setFieldValue('frecuency', key)
     }
     const validationSchema = Yup.object({
-        email: Yup.string().email(glosaryError.email_send_validation).required(glosaryError.email_send_required),
+        price: Yup.string().required(glosary.formValidationRequired),
+        currency: Yup.number().required(glosary.formValidationRequired),
+        frecuency: store?.form_1?.type ? Yup.number().required(glosary.formValidationRequired) : Yup.number().optional(),
     });
     const handleSubmit = async (values: IValues, { setSubmitting }: FormikHelpers<IValues>) => {
         const formData = values
+        console.log(formData)
         try {
-            // const response = await authFetch({
-            //     endpoint: 'forgot-password',
-            //     formData
-            // })
+            store?.setForm_5(formData)
+            onNext()
         } catch (e) {
             console.error(e)
             toast.error(<CustomToast type='error' title='Error' content={glosaryError.error_default} />, { theme: 'colored', icon: false, style: { backgroundColor: '#FF4444', maxWidth: 450, padding: 24, borderRadius: 10 } })
@@ -80,21 +86,29 @@ const StepFive: React.FC<IStepFive> = ({ params: { lang }, onNext, onBack }) => 
 
                 <h2 className={styles.cardTitle} style={poppinsMedium.style}>{glosary.formStepTitle_5}</h2>
                 <Formik
-                    initialValues={{ email: '' }}
+                    initialValues={initialValues}
                     validationSchema={validationSchema}
                     onSubmit={handleSubmit}
+                    innerRef={formRef}
+                    enableReinitialize
                 >
-                    {({ isSubmitting, values, handleChange, errors, touched }) => (
+                    {({ values, handleChange, errors, touched }) => (
                         <Form className={styles.cardContent}>
                             <div className={styles.inputRow}>
                                 <div className={styles.inputRowHalf}>
-                                    <InputSelect label={glosary.formLabelCurrency} placeholder={glosary.formPlaceholderSelectText} list={currency} onChange={handleCurrency} />
+                                    <InputSelect label={glosary.formLabelCurrency} placeholder={glosary.formPlaceholderSelectText} list={currency} onChange={handleCurrency} initialValue={values.currency} error={errors.currency} touched={touched.currency} />
                                 </div>
                                 <div className={styles.inputRowHalf}>
-                                    <InputText label={glosary.formLabelPrice} placeholder={glosary.formPlaceholderText} />
+                                    <InputText label={glosary.formLabelPrice} placeholder={glosary.formPlaceholderText} value={values.price} error={errors.price} touched={touched.price} onChange={handleChange('price')}  />
                                 </div>
                             </div>
-                            <InputSelect label={glosary.formLabelFrecuency} placeholder={glosary.formPlaceholderSelectText} list={periods} onChange={handleFrecuency} />
+                            {
+                                !(store?.form_1?.type)
+                                ?
+                                <InputSelect label={glosary.formLabelFrecuency} placeholder={glosary.formPlaceholderSelectText} list={periods} onChange={handleFrecuency} initialValue={values.frecuency} error={errors.frecuency} touched={touched.frecuency}/>
+                                :
+                                null
+                            }
 
                         </Form>
                     )}
@@ -103,7 +117,7 @@ const StepFive: React.FC<IStepFive> = ({ params: { lang }, onNext, onBack }) => 
             </div>
             <div className={styles.cardFooter}>
                 <Button title={glosary.formButtonBack} type='outline' onClick={onBack} />
-                <Button title={glosary.formButtonNext} onClick={onNext} />
+                <Button title={glosary.formButtonNext} onClick={formRef.current?.handleSubmit} loading={formRef.current?.isSubmitting} />
             </div>
         </div>
     )

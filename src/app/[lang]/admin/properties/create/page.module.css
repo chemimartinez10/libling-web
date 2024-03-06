@@ -267,3 +267,81 @@
     font-size: 14px;
     color: #000000DD;
 }
+.iconClose{
+    align-self: center;
+    font-size: 16px;
+    color: #FFF;
+    background-color: #FF4444;
+    padding: 4px;
+    border-radius: 50%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+}
+.simpleMultiFormControl{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.titlePreview{
+    color: #000000DE;
+    font-size: 24px;
+    padding-bottom: 16px;
+    justify-self: flex-start;
+    align-self: self-start;
+}
+.previewContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 24px 0;
+    gap: 32px;
+}
+.cardSection{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 32px;
+    padding-top: 4px;
+    border-bottom: 1px solid #0000001F;
+    gap: 24px;
+}
+.cardSectionEnd{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 32px;
+    
+}
+.sectionRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.sectionTitle{
+    color: #000000DE;
+    font-size: 20px;
+}
+.sectionLink{
+    color: #1973FA;
+    font-size: 14px;
+}
+.sectionContent{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.sectionBlock{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+}
+.sectionSubtitle{
+    color: #00000099;
+    font-size: 14px;
+}
+.sectionDescription{
+    color: #000000DE;
+    font-size: 18px;
+}

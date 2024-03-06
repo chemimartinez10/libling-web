@@ -3,25 +3,49 @@ import { persist } from "zustand/middleware"
 
 // the store itself does not need any change
 interface IForm1 {
-    propertyType?: number
-    country?: number
-    type?: number
-    address?: string
-    longitude?: number
-    latitude?: number
+	propertyType?: number
+	country?: number
+	type?: number
+	address?: string
+	longitude?: number
+	latitude?: number
 }
 interface IForm2 {
-    area?: string
-    bedrooms?: string
-    bathrooms?: string
-    heatingType?:number
-    heatingMedium?:number
-    heatingEnergy?:number
-    furnished?:boolean
+	area?: string
+	bedrooms?: string
+	bathrooms?: string
+	heatingType?: number
+	heatingMedium?: number
+	heatingEnergy?: number
+	furnished?: boolean
 }
-interface IForm3 {}
-interface IForm4 {}
-interface IForm5 {}
+interface IForm3 {
+	view?: string | null
+	surfaces: {
+		quantity: string
+		description: string
+		area: string
+		areaUnit: number
+	}[]
+	benefits: string[]
+	nearPlaces: string[]
+	legalNotes: string[]
+}
+interface IForm4 {
+	title: string
+    description?: string
+    uploadedPhotos: boolean
+    photos?: {
+		preview:string
+		thumbnail:boolean
+	}[]
+	faceIndex?: number
+}
+interface IForm5 {
+	price?: string
+    currency?: number
+    frecuency?: number
+}
 interface TypePropertyStore {
 	lastStep: number
 	form_1: IForm1 | undefined

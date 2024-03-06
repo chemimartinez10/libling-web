@@ -15,6 +15,7 @@ import { Button } from '@/app/components/admin/button'
 import { InputText } from '@/app/components/admin/inputText'
 import useStore from '@/app/hooks/useStore';
 import { usePropertyStore } from '@/app/hooks/usePropertyStore';
+import { combustiblesCalefaccion, mecanismosCalefaccion, mediosCalefaccion } from '@/app/utils/data';
 
 
 interface IValues {
@@ -47,102 +48,7 @@ const StepTwo: React.FC<IStepTwo> = ({ params: { lang }, onNext, onBack }) => {
         heatingEnergy: store?.form_2?.heatingEnergy,
         furnished: !!store?.form_2?.furnished,
     }
-    const mediosCalefaccion = [
-        {
-            key: 1,
-            value: "Individual",
-        },
-        {
-            key: 2,
-            value: "Colectivo",
-        },
 
-    ];
-    const combustiblesCalefaccion = [
-        {
-            key: 1,
-            value: "Gas natural",
-        },
-        {
-            key: 2,
-            value: "Gasóleo",
-        },
-        {
-            key: 3,
-            value: "Propano",
-        },
-        {
-            key: 4,
-            value: "Leña",
-        },
-        {
-            key: 5,
-            value: "Pellet",
-        },
-        {
-            key: 6,
-            value: "Biomasa",
-        },
-        {
-            key: 7,
-            value: "Electricidad",
-        },
-        {
-            key: 8,
-            value: "Energía solar térmica",
-        },
-        {
-            key: 9,
-            value: "Aerotermia",
-        },
-        {
-            key: 10,
-            value: "Geotermia",
-        },
-    ];
-
-    const mecanismosCalefaccion = [
-        {
-            key: 1,
-            value: "Radiadores",
-        },
-        {
-            key: 2,
-            value: "Suelo radiante",
-        },
-        {
-            key: 3,
-            value: "Convectores",
-        },
-        {
-            key: 4,
-            value: "Emisores térmicos",
-        },
-        {
-            key: 5,
-            value: "Chimeneas",
-        },
-        {
-            key: 6,
-            value: "Bombas de calor",
-        },
-        {
-            key: 7,
-            value: "Sistemas de aerotermia",
-        },
-        {
-            key: 8,
-            value: "Sistemas de geotermia",
-        },
-        {
-            key: 9,
-            value: "Paneles solares térmicos",
-        },
-        {
-            key: 10,
-            value: "Estufas de pellet",
-        },
-    ];
     const handleFurnishedChange = (key: boolean) => {
         console.log('selected key', key)
         formRef.current?.setFieldValue('furnished', key)

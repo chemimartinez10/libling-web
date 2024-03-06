@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { InputTextArea } from '@/app/components/admin/inputTextArea'
 import { toast } from 'react-toastify';
 import { poppinsMedium } from '@/app/fonts'
@@ -9,41 +9,65 @@ import { IPage } from '../../layout';
 import { ISelectElement } from '@/app/interfaces'
 import CustomToast from '@/app/components/toast'
 import * as Yup from 'yup';
-import { Form, Formik, FormikHelpers } from 'formik'
+import { Form, Formik, FormikHelpers, FormikProps } from 'formik'
 import { Button } from '@/app/components/admin/button'
 import { InputText } from '@/app/components/admin/inputText';
 import { FiInfo } from 'react-icons/fi';
 import InputPhoto from '@/app/components/admin/inputPhoto';
+import useStore from '@/app/hooks/useStore';
+import { usePropertyStore } from '@/app/hooks/usePropertyStore';
 
 
 interface IValues {
-    email: string
+    title: string
+    description: string
+    uploadedPhotos: boolean
+    faceIndex: number
 }
 interface IStepFour extends IPage {
     onNext: VoidFunction
     onBack: VoidFunction
+    files: any[]
+    handleFiles: (files: any[]) => void
 }
 
 
 
-const StepFour: React.FC<IStepFour> = ({ params: { lang }, onNext, onBack }) => {
+const StepFour: React.FC<IStepFour> = ({ params: { lang }, onNext, onBack, files, handleFiles }) => {
+    const store = useStore(usePropertyStore, (state) => state)
+    const initialValues = {
+        title: store?.form_4?.title || '',
+        description: store?.form_4?.description || '',
+        uploadedPhotos: store?.form_4?.uploadedPhotos || false,
+        faceIndex: store?.form_4?.faceIndex || 0,
+    }
+    const formRef = useRef<FormikProps<IValues>>(null)
     const glosary = dict[lang]?.adminProperties
     const glosaryError = dict[lang]?.auth
-    const [list, setList] = useState<ISelectElement[]>([])
+    const [photos, setPhotos] = useState(store?.form_4?.photos)
 
-    const handleTitle = (key: string | React.ChangeEvent<any>) => {
+    const handlePhoto = (key: any[], index:number) => {
         console.log('selected key', key)
+        formRef.current?.setFieldValue('uploadedPhotos', key?.length > 0)
+        formRef.current?.setFieldValue('faceIndex', index)
+        // setPhotos(key)
+        handleFiles(key)
     }
     const validationSchema = Yup.object({
-        email: Yup.string().email(glosaryError.email_send_validation).required(glosaryError.email_send_required),
+        title: Yup.string().required(glosary.formValidationRequired),
+        description: Yup.string().optional(),
+        uploadedPhotos: Yup.string().required(glosary.formValidationRequired),
     });
     const handleSubmit = async (values: IValues, { setSubmitting }: FormikHelpers<IValues>) => {
         const formData = values
         try {
-            // const response = await authFetch({
-            //     endpoint: 'forgot-password',
-            //     formData
-            // })
+            console.log(formData)
+            console.log(files)
+            if (files.length <= 0) return toast.error(<CustomToast type='error' title='Error' content={glosary.formValidationPhotos} />, { theme: 'colored', icon: false, style: { backgroundColor: '#FF4444', maxWidth: 450, padding: 24, borderRadius: 10 } })
+            store?.setForm_4({
+                ...formData
+            })
+            onNext()
         } catch (e) {
             console.error(e)
             toast.error(<CustomToast type='error' title='Error' content={glosaryError.error_default} />, { theme: 'colored', icon: false, style: { backgroundColor: '#FF4444', maxWidth: 450, padding: 24, borderRadius: 10 } })
@@ -57,17 +81,20 @@ const StepFour: React.FC<IStepFour> = ({ params: { lang }, onNext, onBack }) => 
     return (
         <div className={styles.card}>
             <div className={styles.cardBody}>
-
                 <h2 className={styles.cardTitle} style={poppinsMedium.style}>{glosary.formStepTitle_4}</h2>
                 <Formik
-                    initialValues={{ email: '' }}
+                    initialValues={initialValues}
                     validationSchema={validationSchema}
                     onSubmit={handleSubmit}
+                    innerRef={formRef}
+                    enableReinitialize
                 >
-                    {({ isSubmitting, values, handleChange, errors, touched }) => (
+                    {({ values, handleChange, errors, touched }) => (
                         <Form className={styles.cardContent}>
-                            <InputText label={glosary.formLabelTitle} placeholder={glosary.formPlaceholderSelectText} onChange={handleTitle} />
-                            <InputTextArea label={glosary.formLabelDescription} placeholder={glosary.formPlaceholderText} description={glosary.formLabelOptional} />
+                            <InputText label={glosary.formLabelTitle} placeholder={glosary.formPlaceholderSelectText} onChange={handleChange('title')} value={values.title} error={errors.title} touched={touched.title} />
+
+                            <InputTextArea label={glosary.formLabelDescription} placeholder={glosary.formPlaceholderText} description={glosary.formLabelOptional} onChange={handleChange('description')} value={values.description} error={errors.description} touched={touched.description} />
+
                             <div className={styles.multiFormControl}>
                                 <h4 className={styles.multiFormLabel} style={poppinsMedium.style}>{glosary.formLabelPhotos}</h4>
                                 <p className={styles.multiFormDescription}>{glosary.formLabelPhotosDescription}</p>
@@ -75,7 +102,7 @@ const StepFour: React.FC<IStepFour> = ({ params: { lang }, onNext, onBack }) => 
                                     <FiInfo className={styles.advertisingIcon} />
                                     <span className={styles.avertisingText}>{glosary.formLabelPhotosAdvertise}</span>
                                 </div>
-                                <InputPhoto description={glosary.formButtonAddPhoto} facename={glosary.formLabelTumbnail}/>
+                                <InputPhoto description={glosary.formButtonAddPhoto} facename={glosary.formLabelTumbnail} onChange={handlePhoto} initialValues={files || []} />
                             </div>
                         </Form>
                     )}
@@ -84,7 +111,7 @@ const StepFour: React.FC<IStepFour> = ({ params: { lang }, onNext, onBack }) => 
             </div>
             <div className={styles.cardFooter}>
                 <Button title={glosary.formButtonBack} type='outline' onClick={onBack} />
-                <Button title={glosary.formButtonNext} onClick={onNext} />
+                <Button title={glosary.formButtonNext} onClick={formRef.current?.handleSubmit} loading={formRef.current?.isSubmitting} />
             </div>
         </div>
     )

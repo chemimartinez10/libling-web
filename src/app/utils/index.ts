@@ -76,6 +76,12 @@ export const dict = {
 			formValidationRequired: "Este campo es requerido",
 			formValidationNumbers: "Este campo solo acepta números",
 			formValidationLetters: "Este campo solo acepta letras",
+			formValidationPhotos: "Debe agregar como mínimo una imagen",
+			previewSectionTitle_1: "Descripción del inmueble",
+			previewSectionTitle_2: "Detalles del espacio",
+			previewSectionTitle_3: "Ventajas del inmueble",
+			previewSectionTitle_4: "Título, descripción e imágenes",
+			previewSectionTitle_5: "Condiciones de pago",
 		},
 		adminNav: {
 			propertiesTitle: "Inmuebles",
@@ -346,6 +352,12 @@ export const dict = {
 			formValidationRequired: "This field is required",
 			formValidationNumbers: "This field only accepts numbers",
 			formValidationLetters: "This field only accepts letters",
+			formValidationPhotos: "You must add at least one image.",
+			previewSectionTitle_1: "Property Description",
+			previewSectionTitle_2: "Space Details",
+			previewSectionTitle_3: "Property Advantages",
+			previewSectionTitle_4: "Title, Description and Images",
+			previewSectionTitle_5: "Payment Terms",
 		},
 		adminNav: {
 			propertiesTitle: "Real estate",
@@ -617,6 +629,12 @@ export const dict = {
 			formValidationRequired: "Ce champ est obligatoire",
 			formValidationNumbers: "Ce champ n'accepte que des chiffres",
 			formValidationLetters: "Ce champ n'accepte que des lettres",
+			formValidationPhotos: "Vous devez ajouter au moins une image.",
+			previewSectionTitle_1: "Description du bien",
+			previewSectionTitle_2: "Détails de l'espace",
+			previewSectionTitle_3: "Avantages du bien",
+			previewSectionTitle_4: "Titre, description et images",
+			previewSectionTitle_5: "Conditions de paiement",
 		},
 
 		adminNav: {

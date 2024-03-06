@@ -6,8 +6,8 @@ import { FiCamera, FiX } from 'react-icons/fi';
 import { IInputPhoto } from '@/app/interfaces';
 import { poppinsMedium } from '@/app/fonts';
 
-const InputPhoto: React.FC<IInputPhoto> = ({ description, facename }) => {
-    const [files, setFiles] = useState([]);
+const InputPhoto: React.FC<IInputPhoto> = ({ description, facename, onChange, initialValues }) => {
+    const [files, setFiles] = useState(initialValues);
     const deleteFile = (index: number) => {
         if (face > index) {
             setFace(state => state - 1)
@@ -18,6 +18,8 @@ const InputPhoto: React.FC<IInputPhoto> = ({ description, facename }) => {
     const [face, setFace] = useState<number>(0)
     const { getRootProps, getInputProps } = useDropzone({
         accept: { "image/jpeg": [], "image/png": [] },
+        maxFiles: 5,
+        maxSize: 2_097_152,
         onDrop: (acceptedFiles: any) => {
             setFiles(
                 acceptedFiles.map((file: any) =>
@@ -32,9 +34,12 @@ const InputPhoto: React.FC<IInputPhoto> = ({ description, facename }) => {
     const thumbs = files.map((file: any, index) => (
         <div className={styles.thumb} key={file?.name}>
             <div className={styles.thumbInner}>
-                <div className={styles.thumbDelete} onClick={() => { deleteFile(index) }}>
-                    <FiX />
-                </div>
+                {
+                    file.path &&
+                    <div className={styles.thumbDelete} onClick={() => { deleteFile(index) }}>
+                        <FiX />
+                    </div>
+                }
                 <Image src={file.preview} alt={'image'} onClick={() => { setFace(index) }} className={styles.img} width={100} height={100} />
                 {
                     face === index && <div className={styles.thumbFace}>{facename}</div>
@@ -44,11 +49,20 @@ const InputPhoto: React.FC<IInputPhoto> = ({ description, facename }) => {
     ));
 
     useEffect(
-        () => () => {
-            // Make sure to revoke the data uris to avoid memory leaks
-            files.forEach((file: any) => URL.revokeObjectURL(file.preview));
+        () => {
+            onChange(files, face)
+            // return () => {
+            //     // Make sure to revoke the data uris to avoid memory leaks
+            //     files.forEach((file: any) => URL.revokeObjectURL(file.preview));
+            // }
         },
-        [files]
+        [files, onChange, face]
+    );
+    useEffect(
+        () => {
+            setFiles(initialValues)
+        },
+        [initialValues]
     );
 
     return (
