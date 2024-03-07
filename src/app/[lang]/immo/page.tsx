@@ -2,20 +2,15 @@
 import React from 'react'
 import styles from './page.module.css'
 import Image from 'next/image'
-import headerImg from '@/app/img/home_banner.gif'
+import bannerMedium from '@/app/img/immo/hero_landing_1440x900.jpg'
+import bannerSmall from '@/app/img/immo/hero_landing_320x568.jpg'
 import travelImg from '@/app/img/Recurso 18 1.png'
 import teamImg from '@/app/img/Recurso 20 1.png'
 import familyImg from '@/app/img/family.png'
-import alarmImg from '@/app/img/Recurso 22 1.png'
 import Recurso3 from '@/app/img/Recurso 3.png'
 import Recurso4 from '@/app/img/Recurso 4.png'
 import Recurso5 from '@/app/img/Recurso 5.png'
 import Recurso6 from '@/app/img/Recurso 6.png'
-
-import Testigo1 from '@/app/img/contact_1.png'
-import Testigo2 from '@/app/img/contact_2.png'
-import Testigo3 from '@/app/img/contact_3.png'
-
 import { poppinsBold, poppinsRegular, poppinsSemiBold } from '@/app/fonts'
 import Article from '@/app/components/article'
 import Section from '@/app/components/section'
@@ -63,14 +58,12 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
           </div>
         </div>
         {
-          (width && width < 600)
+          (width && width < 500)
             ?
-            <Image src={headerImg} alt='header image' width={1500} height={500} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} />
+            <img src={bannerSmall.src} alt='header image' width={320} height={568} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} />
             :
-            <video autoPlay muted={true} loop style={{ width: '1500px', height: '500px', objectFit: 'cover', objectPosition: 'center center' }}>
-              <source src={"/en/videos/home_video.webm"} type="video/webm" />
-              <source src={"/en/videos/home_video.mp4"} type="video/mp4" />
-            </video>
+            <img src={bannerMedium.src} alt='header image' width={1440} height={450} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} />
+            
         }
         
       </header>
