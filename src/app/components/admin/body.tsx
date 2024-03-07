@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './body.module.css'
 import { ToastContainer } from 'react-toastify';
 import Aside from './aside';
@@ -36,7 +36,7 @@ export const Body = ({
     const [open, setOpen] = useState<boolean>(false)
     const glosary = dict[lang]?.adminNav
     const store = useStore(useInterfaceStore, (state) => state)
-    const ActionContent = ()=>(<div/>)
+
 
     const routes = [
         {
@@ -50,6 +50,12 @@ export const Body = ({
         },
     ]
     const toggleOpen = () => { setOpen(state => !state) }
+    useEffect(() => {
+        if (store?.setUser) {
+            store.setUser(user)
+        }
+        console.log('render')
+    }, [store?.setUser, user])
     return (
         <body style={poppinsRegular.style} className={styles.layout}>
             <Navbar lang={lang} handleAside={toggleOpen} user={user} />
@@ -65,7 +71,6 @@ export const Body = ({
             {
                 (!!store?.showBar && !!store?.barContent)
                 &&
-                // <ActionContent/>
                 <ActionBar show={!!store?.showBar} Content={store?.barContent} />
             }
             <ToastContainer />

@@ -28,7 +28,7 @@ export default async function RootLandingLayout({
 }) {
   const session = await auth()
   return (
-    <html lang={lang}>
+    <html id='main' lang={lang}>
       <Body lang={lang} user={session?.user}>
         {children}
       </Body>

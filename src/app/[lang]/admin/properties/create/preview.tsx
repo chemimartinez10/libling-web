@@ -18,7 +18,7 @@ import Modal from '@/app/components/admin/modal';
 import { FiHome } from 'react-icons/fi';
 
 interface IPreview extends IPage {
-    onNext: VoidFunction
+    onNext: (active: boolean) => void
     onGo: (step: number) => void
     files: any[]
 }
@@ -31,7 +31,7 @@ const Preview: React.FC<IPreview> = ({ params: { lang }, onNext, onGo, files }) 
     const glosary = dict[lang]?.adminProperties
     const [list, setList] = useState<ISelectElement[]>([])
     const [open, setOpen] = useState<boolean>(false)
-    const [chacked, setChecked] = useState<boolean>(false)
+    const [checked, setChecked] = useState<boolean>(false)
     const [currency, setCurrency] = useState<ISelectElement[]>([])
     const [propertyTypes, setPropertyTypes] = useState<ISelectElement[]>([])
     const [countries, setCountries] = useState<ISelectElement[]>([])
@@ -64,6 +64,10 @@ const Preview: React.FC<IPreview> = ({ params: { lang }, onNext, onGo, files }) 
     const handleCheck = (event: React.ChangeEvent<HTMLInputElement>) => {
         setChecked(event.target.checked)
     }
+    const handleNext = () => {
+        onNext(checked)
+        setOpen(false)
+    }
 
     useEffect(() => {
         fetchCurrency()
@@ -95,7 +99,7 @@ const Preview: React.FC<IPreview> = ({ params: { lang }, onNext, onGo, files }) 
                 </div>
                 <div className={styles.modalButtons}>
                     <Button title={glosary.formButtonReturn} type='outline' onClick={() => { setOpen(false) }} />
-                    <Button title={glosary.formButtonRegister} onClick={onNext} />
+                    <Button title={glosary.formButtonRegister} onClick={handleNext} />
                 </div>
             </Modal>
             <div className={styles.cardBody}>

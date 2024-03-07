@@ -1,12 +1,12 @@
-export interface User {
+export interface IUser {
 	id: number
 	email: string // Unique constraint
 	name?: string
 	password: string
-	properties?: Property[] // One-to-Many relationship with Property
+	properties?: IProperty[] // One-to-Many relationship with Property
 }
 
-export interface Property {
+export interface IProperty {
 	id: number
 	title: string
 	content?: string
@@ -26,23 +26,23 @@ export interface Property {
 	active: boolean
 	type: boolean // Might be better represented by an enum
 	frecuency?: string
-	publishedBy: User // Many-to-One relationship with User
+	publishedBy: IUser // Many-to-One relationship with User
 	publishedById: number
-	country: Country // Many-to-One relationship with Country
+	country: ICountry // Many-to-One relationship with Country
 	countryId: number
-	currency: Currency // Many-to-One relationship with Currency
+	currency: ICurrency // Many-to-One relationship with Currency
 	currencyId: number
-	propertyType: PropertyType // Many-to-One relationship with PropertyType
+	propertyType: IPropertyType // Many-to-One relationship with PropertyType
 	propertyTypeId: number
-	PropertyImage: PropertyImage[] // One-to-Many relationship with PropertyImage
-	Surface: Surface[] // One-to-Many relationship with Surface
-	Benefits: Benefits[] // One-to-Many relationship with Benefits
-	NearPlace: NearPlace[] // One-to-Many relationship with NearPlace
-	LegalNotice: LegalNotice[] // One-to-Many relationship with LegalNotice
+	PropertyImage: IPropertyImage[] // One-to-Many relationship with PropertyImage
+	Surface: ISurface[] // One-to-Many relationship with Surface
+	Benefits: IBenefits[] // One-to-Many relationship with Benefits
+	NearPlace: INearPlace[] // One-to-Many relationship with NearPlace
+	LegalNotice: ILegalNotice[] // One-to-Many relationship with LegalNotice
 	createdAt: Date
 	updatedAt: Date
 }
-export interface PropertyCreate {
+export interface IPropertyCreate {
 	title: string
 	content?: string
 	address: string
@@ -66,76 +66,112 @@ export interface PropertyCreate {
 	currencyId: number
 	propertyTypeId: number
 }
+export interface IPropertyCreateDTO extends IPropertyCreate{
+    Surface?: ISurfaceCreate[] // One-to-Many relationship with Surface
+	Benefits?: IBenefitsCreate[] // One-to-Many relationship with Benefits
+	NearPlace?: INearPlaceCreate[] // One-to-Many relationship with NearPlace
+	LegalNotice?: ILegalNoticeCreate[]
+}
+export interface IPropertyUpdateDTO{
+	title?: string
+	content?: string
+	address?: string
+	thumbnail?: string
+	longitude?: number
+	latitude?: number
+	area?: number
+	bedrooms?: number
+	bathrooms?: number
+	price?: number
+	heatingType?: string
+	heatingMedium?: string
+	heatingEnergy?: string
+	view?: string
+	furnished?: boolean
+	active?: boolean
+	type?: boolean
+	frecuency?: string
+	publishedById?: number
+	countryId?: number
+	currencyId?: number
+	propertyTypeId?: number
+    Surface?: ISurfaceCreate[] 
+	Benefits?: IBenefitsCreate[]
+	NearPlace?: INearPlaceCreate[] 
+	LegalNotice?: ILegalNoticeCreate[]
+}
 
-export interface PropertyType {
+export interface IPropertyType {
 	id: number
 	name: string
 	code: string // Unique constraint
-	Property: Property[] // Many-to-Many relationship with Property (through another table?)
+	Property: IProperty[] // Many-to-Many relationship with Property (through another table?)
 }
 
-export interface PropertyImage {
+export interface IPropertyImage {
 	id: number
 	name: string
 	description: string
 	path: string
-	property: Property // Many-to-One relationship with Property
+	property: IProperty // Many-to-One relationship with Property
 	propertyId: number
 }
-export interface PropertyImageCreate {
+export interface IPropertyImageCreate {
 	name: string
 	description: string
 	path: string
 	propertyId: number
 }
 
-export interface Surface {
+export interface ISurface {
 	id: number
 	name: string
 	description: string
 	quantity: string
-	property: Property // Many-to-One relationship with Property
+	areaId: number
+	property: IProperty // Many-to-One relationship with Property
 	propertyId: number
 }
-export interface SurfaceCreate {
-	name: string
+export interface ISurfaceCreate {
+    name: string
 	description: string
 	quantity: string
+    areaId: number
 	propertyId: number
 }
-export interface Benefits {
+export interface IBenefits {
 	id: number
 	name: string
-	property: Property // Many-to-One relationship with Property
+	property: IProperty // Many-to-One relationship with Property
 	propertyId: number
 }
-export interface BenefitsCreate {
+export interface IBenefitsCreate {
 	name: string
 	propertyId: number
 }
-export interface LegalNotice {
+export interface ILegalNotice {
 	id: number
 	name: string
-	property: Property // Many-to-One relationship with Property
+	property: IProperty // Many-to-One relationship with Property
 	propertyId: number
 }
-export interface LegalNoticeCreate {
+export interface ILegalNoticeCreate {
 	name: string
 	propertyId: number
 }
-export interface NearPlace {
+export interface INearPlace {
 	id: number
 	name: string
 	description: string
-	property: Property // Many-to-One relationship with Property
+	property: IProperty // Many-to-One relationship with Property
 	propertyId: number
 }
-export interface NearPlaceCreate {
+export interface INearPlaceCreate {
 	name: string
 	description: string
 	propertyId: number
 }
-export interface Currency {
+export interface ICurrency {
 	id: number
 	symbol: string
 	name: string
@@ -144,14 +180,14 @@ export interface Currency {
 	round: number
 	code: string // Unique constraint
 	pluralName: string
-	Property: Property[] // Many-to-Many relationship with Property (through another table?)
+	Property: IProperty[] // Many-to-Many relationship with Property (through another table?)
 }
-export interface Country {
+export interface ICountry {
 	id: number
 	name: string
 	code: string // Unique constraint
 	capital: string
 	phone: string
 	currency: string
-	Property: Property[] // Many-to-Many relationship with Property (through another table?)
+	Property: IProperty[] // Many-to-Many relationship with Property (through another table?)
 }

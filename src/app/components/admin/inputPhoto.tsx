@@ -16,15 +16,18 @@ const InputPhoto: React.FC<IInputPhoto> = ({ description, facename, onChange, in
 
     }
     const [face, setFace] = useState<number>(0)
+    
     const { getRootProps, getInputProps } = useDropzone({
         accept: { "image/jpeg": [], "image/png": [] },
         maxFiles: 5,
         maxSize: 2_097_152,
         onDrop: (acceptedFiles: any) => {
+            console.log(acceptedFiles)
+            console.log(typeof acceptedFiles)
             setFiles(
                 acceptedFiles.map((file: any) =>
                     Object.assign(file, {
-                        preview: URL.createObjectURL(file)
+                        preview: URL.createObjectURL(file),
                     })
                 )
             );

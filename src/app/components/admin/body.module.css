@@ -16,6 +16,7 @@
     background-color: #EDF0F4;
     color: #000000DE;
     justify-content: space-between;
+    min-height: calc(100vh - 64px);
 }
 
 .layout {
