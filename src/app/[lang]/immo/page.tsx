@@ -60,9 +60,9 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
         {
           (width && width < 500)
             ?
-            <img src={bannerSmall.src} alt='header image' width={320} height={568} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} />
+            <Image src={bannerSmall.src} alt='header image' width={320} height={568} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} />
             :
-            <img src={bannerMedium.src} alt='header image' width={1440} height={450} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} />
+            <Image src={bannerMedium.src} alt='header image' width={1440} height={450} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} />
             
         }
         
