@@ -147,7 +147,7 @@ export const dict = {
 			link_1: "Quienes somos",
 			link_2: "Inicio",
 			link_3: "Servicios",
-			link_4: "Contacto",
+			link_4: "Contáctanos",
 			admin_1: "Propiedades",
 		},
 		footer: {
