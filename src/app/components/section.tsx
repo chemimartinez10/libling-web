@@ -10,12 +10,13 @@ interface ISection {
     children?: ReactNode
     backgroundColor?: string
     reverse?: boolean
+    space?: boolean
 
 }
 
-const Section: React.FC<ISection> = ({ title, subtitle, resume, vertical = false, reverse = false, children, backgroundColor }) => {
+const Section: React.FC<ISection> = ({ title, subtitle, resume, vertical = false, reverse = false, children, backgroundColor, space }) => {
     return (
-        <div className={styles.container}>
+        <div className={styles.container} style={{backgroundColor, paddingTop: space ? 100 : undefined, paddingBottom: space ? 100 : undefined}}>
             {
                 (title || subtitle || resume) &&
                 <div className={styles.head}>

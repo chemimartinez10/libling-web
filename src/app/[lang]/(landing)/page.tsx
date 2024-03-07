@@ -82,7 +82,7 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
         <Article subtitle={glosary.sectionTitle_2} content={glosary.sectionContent_2} buttonText={glosary.sectionButton_2} buttonAction='/services' />
         <Image src={teamImg} width={674} height={575} style={{ borderRadius: 24, maxWidth: 490, flexShrink:1 }} alt='family' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 500px, 674px' layout="responsive" />
       </Section>
-      <Section vertical={true} subtitle={glosary.sectionTitle_3}>
+      <Section vertical={true} subtitle={glosary.sectionTitle_3} space={true} backgroundColor={'transparent'}>
         <div className={styles.listHighlights}>
           {
             listaBeneficios.map((el, index) => (<Highlight key={index} title={el?.title} alt={`highlight${index}`} img={el?.img} description={el?.title} />))

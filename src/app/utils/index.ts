@@ -151,9 +151,13 @@ export const dict = {
 			admin_1: "Propiedades",
 		},
 		footer: {
-			title_1: "Contacto",
+			title_1: "Contáctanos",
 			title_2: "Deja tu correo y te contactaremos",
 			title_3: "Síguenos",
+			rights: "Todos los derechos reservados",
+			privacy: "Políticas de privacidad",
+			cookies: "Política de cookies",
+			terms: "Términos de uso",
 		},
 		home: {
 			sectionButton_1: "Agendar",
@@ -448,6 +452,10 @@ export const dict = {
 			title_1: "Contact",
 			title_2: "Leave your email, and we will contact you",
 			title_3: "Follow us",
+			rights: "All rights reserved",
+			privacy: "Privacy Policy",
+			cookies: "Cookie Policy",
+			terms: "Terms of Use",
 		},
 		home: {
 			sectionButton_1: "Schedule",
@@ -748,6 +756,10 @@ export const dict = {
 			title_1: "Contact",
 			title_2: "Laissez nous votre e-mail et nous vous recontacterons",
 			title_3: "Suivez-nous",
+			rights: "Tous droits réservés",
+			privacy: "Politique de confidentialité",
+			cookies: "Politique de cookies",
+			terms: "Conditions d'utilisation",
 		},
 		home: {
 			sectionButton_1: "Planifier",
