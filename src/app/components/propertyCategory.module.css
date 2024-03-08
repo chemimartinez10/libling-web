@@ -1,0 +1,83 @@
+
+.propertiesContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+  
+  .propertiesTextContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  
+  }
+  
+  .propertiesContainerTitle {
+    font-size: 24px;
+    color: #000000DE;
+  }
+  
+  .propertiesContainerDescription {
+    font-size: 16px;
+    color: #00000099;
+  }
+  
+  .propertiesCarrouselContainer {
+    position: relative;
+    padding: 0px 25px;
+  
+  }
+  .propertiesCarrousel {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar; 
+    gap: 16px;
+    padding: 0px 27px;
+  }
+  
+  .propertiesCard {
+    position: relative;
+    flex: 0 0 auto; 
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px #21212114;
+    height: 375px;
+    width: 280px;
+  }
+  .leftScroller{
+    position: absolute;
+    z-index: 2;
+    left: 0px;
+    top: calc(50% - 27px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 54px;
+    height: 54px;
+    background-color: #FB8601;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  .rightScroller{
+    position: absolute;
+    right: 0px;
+    top: calc(50% - 27px);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 54px;
+    height: 54px;
+    background-color: #FB8601;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+  }

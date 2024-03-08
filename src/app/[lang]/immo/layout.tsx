@@ -8,6 +8,8 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Script from 'next/script'
 import NavbarImmo from '@/app/components/navbarImmo'
+import ContactSection from '@/app/components/contactSection'
+import FooterImmo from '@/app/components/footerImmo'
 
 
 
@@ -26,7 +28,7 @@ export default function RootLandingLayout({
 
 }) {
   return (
-    <html lang={lang}>
+    <html lang={lang} style={{backgroundColor:'#FAFAFA', color:'#000000DE'}}>
       <Script
         id="google-analytics-call"
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
@@ -49,7 +51,8 @@ export default function RootLandingLayout({
         <Menu lang={lang} />
         <NavbarImmo lang={lang} />
         {children}
-        <Footer lang={lang} />
+        <ContactSection lang={lang}/>
+        <FooterImmo lang={lang} />
       </body>
     </html>
   )

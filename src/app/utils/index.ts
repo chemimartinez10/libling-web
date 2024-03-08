@@ -1,5 +1,31 @@
 export const dict = {
 	es: {
+		immo: {
+			headerTitle: "Tu hogar ideal te espera",
+			headerDescription:
+				"Oportunidades únicas de vivienda en Luxemburgo, España y Dubái: ¡no las dejes escapar!",
+			headerButton: "Buscar",
+			sectionTitle_1: "Estrena tu nuevo espacio",
+			sectionDescription_1:
+				"Sé el primero en conocer las propiedades recién disponibles en el mercado.",
+			sectionTitle_2: "Confort y seguridad para ti y tu familia",
+			sectionDescription_2:
+				"Disfruta de hogares acogedores y seguros para crear recuerdos inolvidables.",
+			sectionTitle_3: "Emprende tu negocio ideal",
+			sectionDescription_3:
+				"Encuentra locales y oficinas perfectas para hacer crecer tu empresa, en ubicaciones estratégicas.",
+			sectionTitle_4: "Listo para mudarse",
+			sectionDescription_4:
+				"Inmuebles con todo lo que necesitas para empezar a disfrutar de tu nuevo hogar desde el primer momento.",
+			sectionTitle_5: "Espacio para toda la familia",
+			sectionDescription_5:
+				"Las más amplias propiedades con múltiples habitaciones y baños.",
+			contactTitle: "Tu futuro comienza aquí",
+			contactDescription:
+				"Libling Immo es tu aliado perfecto para encontrar la propiedad de tus sueños.",
+			contactFormTitle: "Déjanos tus datos y te contactaremos",
+			contactFormButton: "Enviar",
+		},
 		adminProperties: {
 			indexTitle: "Inmuebles registrados",
 			indexEmptyListTitle: "Aún no has registrado tus inmuebles",
@@ -7,6 +33,7 @@ export const dict = {
 				"Puedes registrar y gestionar tus inmuebles desde aquí.",
 			createTitle: "Nueva propiedad",
 			formLabelCountry: "Pais",
+			formLabelCategory: "Categoría",
 			formLabelCurrency: "Moneda",
 			formLabelOptional: "Opcional",
 			formLabelTitle: "Título",
@@ -77,6 +104,7 @@ export const dict = {
 			formValidationRequired: "Este campo es requerido",
 			formValidationNumbers: "Este campo solo acepta números",
 			formValidationLetters: "Este campo solo acepta letras",
+			formValidationEmail: "Este campo debe ser un correo electrónico",
 			formValidationPhotos: "Debe agregar como mínimo una imagen",
 			previewSectionTitle_1: "Descripción del inmueble",
 			previewSectionTitle_2: "Detalles del espacio",
@@ -300,12 +328,41 @@ export const dict = {
 		},
 	},
 	en: {
+		immo: {
+			headerTitle: "Your dream home awaits",
+			headerDescription:
+				"Unique housing opportunities in Luxembourg, Spain and Dubai: don't miss out!",
+			headerButton: "Search",
+
+			sectionTitle_1: "Discover your new space",
+			sectionDescription_1:
+				"Be the first to know about newly available properties on the market.",
+			sectionTitle_2: "Comfort and security for you and your family",
+			sectionDescription_2:
+				"Enjoy cozy and safe homes to create unforgettable memories.",
+			sectionTitle_3: "Start your ideal business",
+			sectionDescription_3:
+				"Find perfect commercial and office spaces to grow your business, in strategic locations.",
+			sectionTitle_4: "Move-in ready",
+			sectionDescription_4:
+				"Properties with everything you need to start enjoying your new home from the first moment.",
+			sectionTitle_5: "Space for the whole family",
+			sectionDescription_5:
+				"The most spacious properties with multiple bedrooms and bathrooms.",
+			contactTitle: "Your future starts here",
+			contactDescription:
+				"Libling Immo is your perfect ally to find the property of your dreams.",
+			contactFormTitle: "Leave us your details and we will contact you",
+			contactFormButton: "Send",
+		},
+
 		adminProperties: {
 			indexTitle: "Registered properties",
 			indexEmptyListTitle: "You have not registered your properties yet",
 			indexEmptyListDescription:
 				"You can register and manage your properties from here.",
 			createTitle: "New property",
+			formLabelCategory: "Category",
 			formLabelCountry: "Country",
 			formLabelCurrency: "Currency",
 			formLabelOptional: "Optional",
@@ -375,6 +432,7 @@ export const dict = {
 			formValidationRequired: "This field is required",
 			formValidationNumbers: "This field only accepts numbers",
 			formValidationLetters: "This field only accepts letters",
+			formValidationEmail: "This field must be an email address",
 			formValidationPhotos: "You must add at least one image.",
 			previewSectionTitle_1: "Property Description",
 			previewSectionTitle_2: "Space Details",
@@ -599,12 +657,41 @@ export const dict = {
 		},
 	},
 	fr: {
+		immo: {
+			headerTitle: "Votre maison idéale vous attend",
+			headerDescription:
+				"Opportunités immobilières uniques au Luxembourg, en Espagne et à Dubaï : ne les manquez pas !",
+			headerButton: "Recherche",
+			sectionTitle_1: "Découvrez votre nouvel espace",
+			sectionDescription_1:
+				"Soyez le premier à connaître les propriétés nouvellement disponibles sur le marché.",
+			sectionTitle_2: "Confort et sécurité pour vous et votre famille",
+			sectionDescription_2:
+				"Profitez de maisons confortables et sécurisées pour créer des souvenirs inoubliables.",
+			sectionTitle_3: "Démarrez votre entreprise idéale",
+			sectionDescription_3:
+				"Trouvez des locaux commerciaux et des bureaux parfaits pour développer votre entreprise, dans des emplacements stratégiques.",
+			sectionTitle_4: "Prêt à emménager",
+			sectionDescription_4:
+				"Des biens immobiliers avec tout ce dont vous avez besoin pour commencer à profiter de votre nouvelle maison dès le premier instant.",
+			sectionTitle_5: "Espace pour toute la famille",
+			sectionDescription_5:
+				"Les propriétés les plus spacieuses avec plusieurs chambres et salles de bain.",
+			contactTitle: "Votre avenir commence ici",
+			contactDescription:
+				"Libling Immo est votre allié idéal pour trouver la propriété de vos rêves.",
+			contactFormTitle:
+				"Laissez-nous vos coordonnées et nous vous contacterons",
+			contactFormButton: "Envoyer",
+		},
+
 		adminProperties: {
 			indexTitle: "Propriétés enregistrées",
 			indexEmptyListTitle: "Vous n'avez pas encore enregistré vos propriétés",
 			indexEmptyListDescription:
 				"Vous pouvez enregistrer et gérer vos propriétés à partir d'ici.",
 			createTitle: "Nouvelle propriété",
+			formLabelCategory: "Catégorie",
 			formLabelCountry: "Pays",
 			formLabelCurrency: "Devise",
 			formLabelOptional: "Optionnel",
@@ -675,6 +762,7 @@ export const dict = {
 			formValidationRequired: "Ce champ est obligatoire",
 			formValidationNumbers: "Ce champ n'accepte que des chiffres",
 			formValidationLetters: "Ce champ n'accepte que des lettres",
+			formValidationEmail: "Ce champ doit être une adresse e-mail",
 			formValidationPhotos: "Vous devez ajouter au moins une image.",
 			previewSectionTitle_1: "Description du bien",
 			previewSectionTitle_2: "Détails de l'espace",

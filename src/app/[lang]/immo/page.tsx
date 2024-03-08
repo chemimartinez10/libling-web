@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { LegacyRef, UIEvent, useEffect, useRef, useState } from 'react'
 import styles from './page.module.css'
 import Image from 'next/image'
 import bannerMedium from '@/app/img/immo/hero_landing_1440x900.jpg'
@@ -11,50 +11,86 @@ import Recurso3 from '@/app/img/Recurso 3.png'
 import Recurso4 from '@/app/img/Recurso 4.png'
 import Recurso5 from '@/app/img/Recurso 5.png'
 import Recurso6 from '@/app/img/Recurso 6.png'
-import { poppinsBold, poppinsRegular, poppinsSemiBold } from '@/app/fonts'
+import { poppinsBold, poppinsMedium, poppinsRegular, poppinsSemiBold } from '@/app/fonts'
 import Article from '@/app/components/article'
 import Section from '@/app/components/section'
 import Highlight from '@/app/components/highlight'
 import Review from '@/app/components/review'
 import { dict } from '@/app/utils'
 import useWindowDimensions from '@/app/hooks/useWindowDimensions'
+import InputSwitch from '@/app/components/admin/inputSwitch'
+import InputSelect from '@/app/components/admin/inputSelect'
+import { ISelectElement } from '@/app/interfaces'
+import { getPropertyTypes } from '@/services'
+import { InputText } from '@/app/components/admin/inputText'
+import { Button } from '@/app/components/admin/button'
+import { FiChevronLeft, FiChevronRight, FiSearch } from 'react-icons/fi'
+import PropertyCategory from '@/app/components/propertyCategory'
 interface IPage {
   params: {
     lang: "es" | "en" | "fr"
   }
 }
 const Home: React.FC<IPage> = ({ params: { lang } }) => {
-  const glosary = dict[lang]?.home
+  const glosary = dict[lang]?.immo
+  const glosaryAdmin = dict[lang]?.adminProperties
+  const mainColor = '#FFB34C'
+  const textColor = '#000000DD'
+  const [list, setList] = useState<ISelectElement[]>([])
+  const [type, setType] = useState<string | number>(1)
+  const [address, setAddress] = useState<string>('')
+  const [propertyType, setPropertyType] = useState<string>('')
   const { height, width } = useWindowDimensions();
-
-  const listaBeneficios = [
+  const listSwitch = [
     {
-      title: glosary.sectionList_3[0],
-      img: Recurso3
+      key: 1,
+      value: glosaryAdmin.formLabelSale,
     },
     {
-      title: glosary.sectionList_3[1],
-      img: Recurso4
-    },
-    {
-      title: glosary.sectionList_3[2],
-      img: Recurso5
-    },
-    {
-      title: glosary.sectionList_3[3],
-      img: Recurso6
+      key: 0,
+      value: glosaryAdmin.formLabelRent,
     },
   ]
+  const fetchPropertyTypes = async () => {
+    const data = await getPropertyTypes()
+    const newArray = data?.map(el => ({ key: el.id, value: el.name }))
+    setList(newArray || [])
+  }
+  const handlePropertyType = (key: string) => {
+    console.log('selected key', key)
+    setPropertyType(key)
+  }
+  const handleSellType = (key: string | number) => {
+    console.log('selected key', key)
+    setType(key)
+  }
+  const handleAddress: ((e: string | React.ChangeEvent<any>) => void) | undefined = (e) => {
+    if (typeof e !== 'string') {
+      setAddress(e.target.value)
+    }
+  }
+  
+  useEffect(() => {
+    fetchPropertyTypes()
+  }, [])
   return (
     <main className={styles.main}>
       <header className={styles.header}>
         <div className={styles.headerMask}>
           <div className={styles.textContainer}>
-            <div>
-              <h4 className={styles.headerTitle} style={poppinsBold.style}>{glosary.titleHeader_1}</h4>
-              <h4 className={styles.headerTitle} style={poppinsBold.style}>{glosary.titleHeader_2}</h4>
-              <h4 className={styles.headerTitle} style={poppinsBold.style}>{glosary.titleHeader_3}</h4>
-            </div>
+            <h4 className={styles.headerTitle} style={poppinsSemiBold.style}>{glosary.headerTitle}</h4>
+            <p className={styles.headerDescription}>{glosary.headerDescription}</p>
+          </div>
+          <div className={styles.formHeader}>
+            <InputSwitch list={listSwitch} initialValue={1} onChange={handleSellType} label={glosaryAdmin.formLabelCategory} mainColor={mainColor} textColor={textColor} />
+            <InputSelect label={glosaryAdmin.formLabelPropertyType} placeholder={glosaryAdmin.formPlaceholderSelect} list={list} onChange={handlePropertyType} />
+            <InputText label={glosaryAdmin.formLabelAddress} placeholder='Ej.: 17, rue du Marché-aux-Herbes' value={address} onChange={handleAddress} />
+            <button className={styles.headerButton}>
+              <FiSearch className={styles.headerButtonIcon} />
+              <span className={styles.headerButtonText} style={poppinsMedium.style}>
+                {glosary.headerButton}
+              </span>
+            </button>
           </div>
         </div>
         {
@@ -63,38 +99,17 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
             <Image src={bannerSmall.src} alt='header image' width={320} height={568} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} />
             :
             <Image src={bannerMedium.src} alt='header image' width={1440} height={450} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} />
-            
+
         }
-        
+
       </header>
-      <Section>
-        <Article subtitle={glosary.sectionTitle_1} content={glosary.sectionContent_1} buttonText={glosary.sectionButton_1} buttonAction='/contact' />
-        <Image src={travelImg} id='travel-img' width={490} height={465} style={{ borderRadius: 24, maxWidth: 490 }} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 490px' layout="responsive" />
-      </Section>
-      <Section reverse={true}>
-        <Article subtitle={glosary.sectionTitle_2} content={glosary.sectionContent_2} buttonText={glosary.sectionButton_2} buttonAction='/services' />
-        <Image src={teamImg} width={674} height={575} style={{ borderRadius: 24, maxWidth: 490, flexShrink:1 }} alt='family' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 500px, 674px' layout="responsive" />
-      </Section>
-      <Section vertical={true} subtitle={glosary.sectionTitle_3}>
-        <div className={styles.listHighlights}>
-          {
-            listaBeneficios.map((el, index) => (<Highlight key={index} title={el?.title} alt={`highlight${index}`} img={el?.img} description={el?.title} />))
-          }
-        </div>
-
-      </Section>
-      <Section>
-        <Article subtitle={glosary.sectionTitle_4} list={glosary.sectionList_4} />
-        <Image src={familyImg} width={558} height={631} style={{ borderRadius: 24, maxWidth: 520 }} className={styles.image} alt='work' sizes='(max-width: 768px) 558px, (max-width: 1120px) 380px, 558px' layout="responsive" />
-
-      </Section>
-      {/* <Section>
-        <div className={styles.listReview}>
-          <Review title={glosary.reviewName_1} img={Testigo1} description={glosary.reviewDescription_1} />
-          <Review title={glosary.reviewName_2} img={Testigo2} description={glosary.reviewDescription_2} />
-          <Review title={glosary.reviewName_3} img={Testigo3} description={glosary.reviewDescription_3} />
-        </div>
-      </Section> */}
+      <section className={styles.propertiesSection}>
+        <PropertyCategory title={glosary.sectionTitle_1} description={glosary.sectionDescription_1}/>
+        <PropertyCategory title={glosary.sectionTitle_2} description={glosary.sectionDescription_2}/>
+        <PropertyCategory title={glosary.sectionTitle_3} description={glosary.sectionDescription_3}/>
+        <PropertyCategory title={glosary.sectionTitle_4} description={glosary.sectionDescription_4}/>
+        <PropertyCategory title={glosary.sectionTitle_5} description={glosary.sectionDescription_5}/>
+      </section>
     </main>
   )
 }

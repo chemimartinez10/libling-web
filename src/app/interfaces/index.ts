@@ -40,6 +40,9 @@ export interface IInputSwitch {
 	onChange?: (e: string | number) => void
 	list: ISelectElement[]
 	initialValue?: string | number
+	label?:string
+	mainColor?:string
+	textColor?:string
 }
 export interface IInputPhoto {
 	description?: string
