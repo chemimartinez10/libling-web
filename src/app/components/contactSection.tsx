@@ -31,7 +31,7 @@ const ContactSection = ({ lang }: { lang: "es" | "en" | "fr" }) => {
         console.log(values)
     }
     return (
-        <section className={styles.contactSection}>
+        <section className={styles.contactSection} id='contact'>
             <div className={styles.innerContactSection}>
                 <div className={styles.contactTextContainer}>
                     <h3 className={styles.contactTitle} style={poppinsSemiBold.style}>{glosary.contactTitle}</h3>

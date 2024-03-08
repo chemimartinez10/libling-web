@@ -32,14 +32,16 @@ export default function NavbarImmo({ lang }: { lang: "es" | "en" | "fr" }) {
 
                     </div>
                     <CountrySelector lang={lang} />
-                    <li className={verifyCurrentLink('/immo/contact') ? styles.selectedLink : undefined}><Link href={'/contact'}>
+                    <li><a href="#contact">
                         <div className={styles.textImageContainer}>
                             <img style={{ width: 24, height: 24 }} src={WhatsappIcon.src} alt='contact' />
                             <span>
                                 {glosary.link_4}
                             </span>
                         </div>
-                    </Link></li>
+
+                    </a>
+                    </li>
                 </ul>
             </div>
         </nav>
