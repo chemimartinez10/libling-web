@@ -17,26 +17,26 @@ export const mediosCalefaccion = [
     },
     {
         key: 2,
-        value: "Colectivo",
+        value: "Collective",
     },
 
 ];
 export const combustiblesCalefaccion = [
     {
         key: 1,
-        value: "Gas natural",
+        value: "Natural gas",
     },
     {
         key: 2,
-        value: "Gasóleo",
+        value: "Diesel",
     },
     {
         key: 3,
-        value: "Propano",
+        value: "Propane",
     },
     {
         key: 4,
-        value: "Leña",
+        value: "Wood",
     },
     {
         key: 5,
@@ -44,65 +44,65 @@ export const combustiblesCalefaccion = [
     },
     {
         key: 6,
-        value: "Biomasa",
+        value: "Biomass",
     },
     {
         key: 7,
-        value: "Electricidad",
+        value: "Electricity",
     },
     {
         key: 8,
-        value: "Energía solar térmica",
+        value: "Solar thermal energy",
     },
     {
         key: 9,
-        value: "Aerotermia",
+        value: "Air heat pump",
     },
     {
         key: 10,
-        value: "Geotermia",
+        value: "Geothermal",
     },
 ];
 
 export const mecanismosCalefaccion = [
     {
         key: 1,
-        value: "Radiadores",
+        value: "Radiators",
     },
     {
         key: 2,
-        value: "Suelo radiante",
+        value: "Underfloor heating",
     },
     {
         key: 3,
-        value: "Convectores",
+        value: "Convectors",
     },
     {
         key: 4,
-        value: "Emisores térmicos",
+        value: "Thermal emitters",
     },
     {
         key: 5,
-        value: "Chimeneas",
+        value: "Fireplaces",
     },
     {
         key: 6,
-        value: "Bombas de calor",
+        value: "Heat pumps",
     },
     {
         key: 7,
-        value: "Sistemas de aerotermia",
+        value: "Air heat pump systems",
     },
     {
         key: 8,
-        value: "Sistemas de geotermia",
+        value: "Geothermal systems",
     },
     {
         key: 9,
-        value: "Paneles solares térmicos",
+        value: "Solar thermal panels",
     },
     {
         key: 10,
-        value: "Estufas de pellet",
+        value: "Pellet stoves",
     },
 ]

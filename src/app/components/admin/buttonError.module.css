@@ -14,7 +14,10 @@
     box-shadow: 0px 6px 12px #FF444429;
     cursor: pointer;
 }
-
+.iconFunc{
+    font-size: 24px;
+    color: #FFFFFFBC;
+}
 
 
 .buttonPressed {

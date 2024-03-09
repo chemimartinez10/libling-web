@@ -1,9 +1,26 @@
+import { Decimal } from "@prisma/client/runtime/library"
+
+export interface IMetaPaginate {
+	page: number
+	totalPages: number
+	nextPage: number | null
+	prevPage: number | null
+	totalData: number
+	dataPerPage: number
+}
 export interface IUser {
 	id: number
-	email: string // Unique constraint
+	email: string
 	name?: string
 	password: string
-	properties?: IProperty[] // One-to-Many relationship with Property
+	properties?: IProperty[]
+}
+export interface IUserData {
+	id: number
+	email: string
+	name: string | null
+	password: string
+	properties?: IProperty[]
 }
 
 export interface IProperty {
@@ -24,21 +41,57 @@ export interface IProperty {
 	view?: string
 	furnished: boolean
 	active: boolean
-	type: boolean // Might be better represented by an enum
+	type: boolean
 	frecuency?: string
-	publishedBy: IUser // Many-to-One relationship with User
+	publishedBy: IUser
 	publishedById: number
-	country: ICountry // Many-to-One relationship with Country
+	country: ICountry
 	countryId: number
-	currency: ICurrency // Many-to-One relationship with Currency
+	currency: ICurrency
 	currencyId: number
-	propertyType: IPropertyType // Many-to-One relationship with PropertyType
+	propertyType: IPropertyType
 	propertyTypeId: number
-	PropertyImage: IPropertyImage[] // One-to-Many relationship with PropertyImage
-	Surface: ISurface[] // One-to-Many relationship with Surface
-	Benefits: IBenefits[] // One-to-Many relationship with Benefits
-	NearPlace: INearPlace[] // One-to-Many relationship with NearPlace
-	LegalNotice: ILegalNotice[] // One-to-Many relationship with LegalNotice
+	PropertyImage: IPropertyImage[]
+	Surface: ISurface[]
+	Benefits: IBenefits[]
+	NearPlace: INearPlace[]
+	LegalNotice: ILegalNotice[]
+	createdAt: Date
+	updatedAt: Date
+}
+export interface IPropertyData {
+	id: number
+	title: string
+	content: string | null
+	address: string
+	thumbnail: string | null
+	longitude?: number
+	latitude?: number
+	area?: number
+	bedrooms?: number
+	bathrooms?: number
+	price?: number
+	heatingType: string | null
+	heatingMedium: string | null
+	heatingEnergy: string | null
+	view: string | null
+	furnished: boolean
+	active: boolean
+	type: boolean
+	frecuency: string | null
+	publishedBy: IUserData
+	publishedById: number
+	country: ICountry
+	countryId: number
+	currency: ICurrency
+	currencyId: number
+	propertyType: IPropertyType
+	propertyTypeId: number
+	PropertyImage: IPropertyImage[]
+	Surface: ISurface[]
+	Benefits: IBenefits[]
+	NearPlace: INearPlace[]
+	LegalNotice: ILegalNotice[]
 	createdAt: Date
 	updatedAt: Date
 }
@@ -59,20 +112,15 @@ export interface IPropertyCreate {
 	view?: string
 	furnished: boolean
 	active: boolean
-	type: boolean // Might be better represented by an enum
+	type: boolean
 	frecuency?: string
 	publishedById: number
 	countryId: number
 	currencyId: number
 	propertyTypeId: number
 }
-export interface IPropertyCreateDTO extends IPropertyCreate{
-    Surface?: ISurfaceCreate[] // One-to-Many relationship with Surface
-	Benefits?: IBenefitsCreate[] // One-to-Many relationship with Benefits
-	NearPlace?: INearPlaceCreate[] // One-to-Many relationship with NearPlace
-	LegalNotice?: ILegalNoticeCreate[]
-}
-export interface IPropertyUpdateDTO{
+export interface IPropertySearch {
+	id?:number
 	title?: string
 	content?: string
 	address?: string
@@ -95,17 +143,47 @@ export interface IPropertyUpdateDTO{
 	countryId?: number
 	currencyId?: number
 	propertyTypeId?: number
-    Surface?: ISurfaceCreate[] 
+}
+export interface IPropertyCreateDTO extends IPropertyCreate {
+	Surface?: ISurfaceCreate[]
 	Benefits?: IBenefitsCreate[]
-	NearPlace?: INearPlaceCreate[] 
+	NearPlace?: INearPlaceCreate[]
+	LegalNotice?: ILegalNoticeCreate[]
+}
+export interface IPropertyUpdateDTO {
+	title?: string
+	content?: string
+	address?: string
+	thumbnail?: string
+	longitude?: number
+	latitude?: number
+	area?: number
+	bedrooms?: number
+	bathrooms?: number
+	price?: number
+	heatingType?: string
+	heatingMedium?: string
+	heatingEnergy?: string
+	view?: string
+	furnished?: boolean
+	active?: boolean
+	type?: boolean
+	frecuency?: string
+	publishedById?: number
+	countryId?: number
+	currencyId?: number
+	propertyTypeId?: number
+	Surface?: ISurfaceCreate[]
+	Benefits?: IBenefitsCreate[]
+	NearPlace?: INearPlaceCreate[]
 	LegalNotice?: ILegalNoticeCreate[]
 }
 
 export interface IPropertyType {
 	id: number
 	name: string
-	code: string // Unique constraint
-	Property: IProperty[] // Many-to-Many relationship with Property (through another table?)
+	code: string
+	Property?: IPropertyData[]
 }
 
 export interface IPropertyImage {
@@ -113,7 +191,7 @@ export interface IPropertyImage {
 	name: string
 	description: string
 	path: string
-	property: IProperty // Many-to-One relationship with Property
+	property?: IPropertyData
 	propertyId: number
 }
 export interface IPropertyImageCreate {
@@ -129,20 +207,20 @@ export interface ISurface {
 	description: string
 	quantity: string
 	areaId: number
-	property: IProperty // Many-to-One relationship with Property
+	property?: IPropertyData
 	propertyId: number
 }
 export interface ISurfaceCreate {
-    name: string
+	name: string
 	description: string
 	quantity: string
-    areaId: number
+	areaId: number
 	propertyId: number
 }
 export interface IBenefits {
 	id: number
 	name: string
-	property: IProperty // Many-to-One relationship with Property
+	property?: IPropertyData
 	propertyId: number
 }
 export interface IBenefitsCreate {
@@ -152,7 +230,7 @@ export interface IBenefitsCreate {
 export interface ILegalNotice {
 	id: number
 	name: string
-	property: IProperty // Many-to-One relationship with Property
+	property?: IPropertyData
 	propertyId: number
 }
 export interface ILegalNoticeCreate {
@@ -163,7 +241,7 @@ export interface INearPlace {
 	id: number
 	name: string
 	description: string
-	property: IProperty // Many-to-One relationship with Property
+	property?: IPropertyData
 	propertyId: number
 }
 export interface INearPlaceCreate {
@@ -178,16 +256,16 @@ export interface ICurrency {
 	nativeSymbol: string
 	decimalDigits: number
 	round: number
-	code: string // Unique constraint
+	code: string
 	pluralName: string
-	Property: IProperty[] // Many-to-Many relationship with Property (through another table?)
+	Property?: IPropertyData[]
 }
 export interface ICountry {
 	id: number
 	name: string
-	code: string // Unique constraint
+	code: string
 	capital: string
 	phone: string
 	currency: string
-	Property: IProperty[] // Many-to-Many relationship with Property (through another table?)
+	Property?: IPropertyData[]
 }

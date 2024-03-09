@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+}
+
+.miniContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.mini {
+    border-radius: 5px;
+    width: 74px;
+    height: 74px;
+    cursor: pointer;
+}
+.miniSelected {
+    border-radius: 5px;
+    border: 2px solid #F98602;
+    width: 74px;
+    height: 74px;
+    cursor: pointer;
+}
+
+
+.bigImageContainer {
+    object-fit: cover;
+    border-radius: 5px;
+    width: 580px;
+    height: 436px;
+}

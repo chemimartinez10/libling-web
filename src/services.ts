@@ -1,13 +1,15 @@
 "use server"
 import { PrismaClient } from "@prisma/client"
 import {
+	IMetaPaginate,
+	IProperty,
 	IPropertyCreateDTO,
+	IPropertyData,
 	IPropertyImageCreate,
+	IPropertySearch,
 	IPropertyUpdateDTO,
 } from "./app/interfaces/models"
 import { PropertyCreate, PropertyUpdate } from "./app/classes"
-import { revalidatePath } from "next/cache"
-import { PutBlobResult, put } from "@vercel/blob"
 const saltRounds = 12
 
 const prisma = new PrismaClient()
@@ -101,6 +103,17 @@ export async function getPropertyTypes() {
 		return undefined
 	}
 }
+export async function findPropertyType(id: number) {
+	try {
+		const propertyType = await prisma.propertyType.findFirst({ where: { id } })
+		await prisma.$disconnect()
+		return propertyType
+	} catch (e) {
+		console.error("Error getting propertyType")
+		await prisma.$disconnect()
+		return undefined
+	}
+}
 export async function getCountries() {
 	try {
 		const countries = await prisma.country.findMany({
@@ -125,7 +138,74 @@ export async function getCurrencies() {
 		return undefined
 	}
 }
-
+export async function indexProperty(
+	filters: IPropertySearch = {},
+	page: number = 1,
+	limit: number = 15
+) {
+	console.log(filters)
+	const properties = await prisma.property.findMany({
+		where: {
+			...filters,
+			address: filters.address ? { contains: filters.address } : undefined,
+		},
+		include: {
+			publishedBy: true,
+			country: true,
+			currency: true,
+			propertyType: true,
+			Surface: true,
+			NearPlace: true,
+			LegalNotice: true,
+			PropertyImage: true,
+			Benefits: true,
+		},
+	})
+	const fromResult = (page - 1) * limit
+	const toResult = fromResult + limit
+	const data: IPropertyData[] = properties
+		.slice(fromResult, toResult)
+		.map((el) => ({
+			...el,
+			longitude: el.longitude?.toNumber(),
+			latitude: el.latitude?.toNumber(),
+			area: el.area?.toNumber(),
+			bedrooms: el.bedrooms?.toNumber(),
+			bathrooms: el.bathrooms?.toNumber(),
+			price: el.price?.toNumber(),
+		}))
+	const totalPages = Math.ceil(properties.length / limit)
+	const newPage = page > totalPages ? totalPages : page
+	const meta: IMetaPaginate = {
+		page: newPage,
+		prevPage: newPage <= 1 ? null : newPage - 1,
+		nextPage: newPage >= totalPages ? null : newPage + 1,
+		dataPerPage: properties.length >= limit ? limit : properties.length,
+		totalData: properties.length,
+		totalPages,
+	}
+	return {
+		data,
+		meta,
+	}
+}
+export async function showProperty(filters: IPropertySearch) {
+	const property = await prisma.property.findFirst({
+		where: filters,
+		include: {
+			publishedBy: true,
+			country: true,
+			currency: true,
+			propertyType: true,
+			Surface: true,
+			NearPlace: true,
+			LegalNotice: true,
+			PropertyImage: true,
+			Benefits: true,
+		},
+	})
+	return property
+}
 export async function createProperty(data: IPropertyCreateDTO) {
 	try {
 		const newProperty = new PropertyCreate(data)

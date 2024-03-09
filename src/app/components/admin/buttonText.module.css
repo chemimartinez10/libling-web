@@ -14,7 +14,10 @@
     cursor: pointer;
 }
 
-
+.iconFunc{
+    font-size: 24px;
+    color: #FFFFFFBC;
+}
 
 .buttonPressed {
     display: flex;

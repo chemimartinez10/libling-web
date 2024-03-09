@@ -117,15 +117,15 @@ const StepTwo: React.FC<IStepTwo> = ({ params: { lang }, onNext, onBack }) => {
                                     <InputText label={glosary.formLabelBathrooms} placeholder={glosary.formPlaceholderText} error={errors.bathrooms} touched={touched.bathrooms} value={values.bathrooms} onChange={handleChange('bathrooms')} />
                                 </div>
                                 <div className={styles.inputRowHalf}>
-                                    <InputSelect label={glosary.formLabelHeatingType} description={glosary.formLabelOptional} placeholder={glosary.formPlaceholderSelect} list={mecanismosCalefaccion} onChange={handleHeatingType} error={errors.heatingType} touched={touched.heatingType} initialValue={values.heatingType} />
+                                    <InputSelect label={glosary.formLabelHeatingType} description={glosary.formLabelOptional} placeholder={glosary.formPlaceholderSelect} list={mecanismosCalefaccion} onChange={handleHeatingType} error={errors.heatingType} touched={touched.heatingType} initialValue={values.heatingType} lang={lang} />
                                 </div>
                             </div>
                             <div className={styles.inputRow}>
                                 <div className={styles.inputRowHalf}>
-                                    <InputSelect label={glosary.formLabelHeatingMedium} description={glosary.formLabelOptional} placeholder={glosary.formPlaceholderSelect} list={mediosCalefaccion} onChange={handleHeatingMedium} error={errors.heatingMedium} touched={touched.heatingMedium} initialValue={values.heatingMedium} />
+                                    <InputSelect label={glosary.formLabelHeatingMedium} description={glosary.formLabelOptional} placeholder={glosary.formPlaceholderSelect} list={mediosCalefaccion} onChange={handleHeatingMedium} error={errors.heatingMedium} touched={touched.heatingMedium} initialValue={values.heatingMedium} lang={lang} />
                                 </div>
                                 <div className={styles.inputRowHalf}>
-                                    <InputSelect label={glosary.formLabelHeatingEnergy} description={glosary.formLabelOptional} placeholder={glosary.formPlaceholderSelect} list={combustiblesCalefaccion} onChange={handleHeatingEnergy} error={errors.heatingEnergy} touched={touched.heatingEnergy} initialValue={values.heatingEnergy} />
+                                    <InputSelect label={glosary.formLabelHeatingEnergy} description={glosary.formLabelOptional} placeholder={glosary.formPlaceholderSelect} list={combustiblesCalefaccion} onChange={handleHeatingEnergy} error={errors.heatingEnergy} touched={touched.heatingEnergy} initialValue={values.heatingEnergy} lang={lang} />
                                 </div>
                             </div>
                             <div className={styles.inputRow}>

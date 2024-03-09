@@ -4,8 +4,9 @@ import styles from './input.module.css'
 import { poppinsMedium, poppinsRegular } from '@/app/fonts'
 import { FiChevronDown, FiChevronUp, FiPlus } from 'react-icons/fi'
 import { IInputSelect, ISelectElement } from '@/app/interfaces'
+import { dict } from '@/app/utils'
 
-const InputSelect: React.FC<IInputSelect> = ({ label, placeholder, list, error, touched, description, onChange, name, initialValue }) => {
+const InputSelect: React.FC<IInputSelect> = ({ label, placeholder, list, error, touched, description, onChange, name, initialValue, lang }) => {
     const [focused, setFocused] = useState(false)
     const [openList, setOpenList] = useState(false)
     const [listFiltered, setListFiltered] = useState<ISelectElement[]>(list || [])
@@ -80,7 +81,15 @@ const InputSelect: React.FC<IInputSelect> = ({ label, placeholder, list, error, 
                     {
                         listFiltered.map((el, index) => (
                             <div key={index} className={styles.listItem} onClick={() => { handleChange(el) }} onMouseDown={()=>{handleChange(el)}}>
-                                {el.value}
+                                {
+                                    //@ts-ignore
+                                    (!!lang && !!el.value && el.value in dict[lang].data && dict[lang].data[el.value])
+                                    ?
+                                    //@ts-ignore
+                                    dict[lang].data[el.value]
+                                    :
+                                    el.value
+                                }
                                 {
                                     !!el.description ? <span className={styles.listItemDescription}>
                                         {` (${el.description})`}

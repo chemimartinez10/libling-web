@@ -6,19 +6,16 @@
     gap: 8px;
     padding: 8px 16px;
     color: #fff;
-    background-color: #FFBB33;
+    background-color: var(--button-secondary-color);
     border-radius: 24px;
     font-size: 16px;
     outline: none;
-    border: 1px solid #FFBB33;
-    box-shadow: 0px 6px 12px #FFBB3329;
+    border: 1px solid var(--button-secondary-color);
+    box-shadow: 0px 6px 12px #FB860129;
     cursor: pointer;
 }
 
-.iconFunc{
-    font-size: 24px;
-    color: #FFFFFFBC;
-}
+
 
 .buttonPressed {
     display: flex;
@@ -28,12 +25,12 @@
     gap: 8px;
     padding: 8px 16px;
     color: #fff;
-    background-color: #FFB34C;
+    background-color: var(--button-secondary-pressed-color);
     border-radius: 24px;
     font-size: 16px;
     outline: none;
-    border: 1px solid #FFB34C;
-    box-shadow: 0px 6px 12px #FFBB3329;
+    border: 1px solid var(--button-secondary-pressed-color);
+    box-shadow: 0px 6px 12px #FB860129;
 }
 
 .buttonDisabled {
@@ -55,6 +52,10 @@
     font-size: 24px;
     padding: 4px;
     color: #fff;
+}
+.iconFunc{
+    font-size: 24px;
+    color: #FFFFFFBC;
 }
 
 .loader {
@@ -97,11 +98,11 @@
         gap: 8px;
         padding: 8px 16px;
         color: #fff;
-        background-color: #FFC97F;
+        background-color: var(--button-secondary-hover-color);
         border-radius: 24px;
         font-size: 16px;
         outline: none;
-        border: 1px solid #FFC97F;
-        box-shadow: 0px 6px 12px #FFBB3329;
+        border: 1px solid var(--button-secondary-hover-color);
+        box-shadow: 0px 6px 12px #FB860129;
     }
 }

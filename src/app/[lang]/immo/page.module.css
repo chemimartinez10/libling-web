@@ -117,6 +117,7 @@
 
 .propertiesSection {
   max-width: 1214px;
+  width: 100%;
   margin: auto;
   display: flex;
   flex-direction: column;

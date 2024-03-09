@@ -289,7 +289,7 @@ const Preview: React.FC<IPreview> = ({ params: { lang }, onNext, onGo, files }) 
                             <span className={styles.sectionDescription}>
                                 {findByKey(currency, store?.form_5?.currency)}
                                 {" "}
-                                {store?.form_5?.price}
+                                {parseFloat(store?.form_5?.price || '0').toLocaleString('en-US')}
                                 {store?.form_1?.type ? null : ` / ${findByKey(rentPaymentPeriods, store?.form_5?.frecuency)}`}
                             </span>
                         </div>

@@ -29,23 +29,6 @@ export default function RootLandingLayout({
 }) {
   return (
     <html lang={lang} style={{backgroundColor:'#FAFAFA', color:'#000000DE'}}>
-      <Script
-        id="google-analytics-call"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
-        strategy="afterInteractive">
-      </Script>
-      <Script
-        id="google-analytics"
-        strategy="afterInteractive"
-      >
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-  
-          gtag('config', '${process.env.GOOGLE_ANALYTICS}');`
-        }
-      </Script>
       <body style={poppinsRegular.style} className={styles.layout}>
         <ToastContainer />
         <Menu lang={lang} />

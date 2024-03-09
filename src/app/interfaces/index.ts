@@ -27,6 +27,7 @@ export interface IInputSelect {
 	description?: string
 	name?: string
 	initialValue?: string | number
+	lang?: "es" | "en" | "fr"
 }
 export interface IInputRadio {
 	label: string

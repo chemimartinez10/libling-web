@@ -1,0 +1,30 @@
+.navigationBar{
+    height: 56px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0px 2px 4px #0000001A;
+    
+}
+.innerNavigationBar{
+    height: 56px;
+    width: 1160px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+.navigationBarItem{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    color: #FB8601;
+    cursor: pointer;
+    padding: 15px 0px;
+}
+.navigationBarIcon{
+    font-size: 26px;
+    padding: 4px;
+}

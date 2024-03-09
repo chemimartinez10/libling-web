@@ -13,6 +13,9 @@
   --background-color: #f1f1f1;
   --button-flat-hover-color:#56B7FF;
   --button-flat-pressed-color:#0086FF;
+  --button-secondary-color:#FB8601;
+  --button-secondary-hover-color:#FFC97F;
+  --button-secondary-pressed-color:#FFA225;
   --mask-color: #fffb;
   --calendar-color: #fff;
   --shadow-color: #0003;

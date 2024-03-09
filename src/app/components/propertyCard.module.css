@@ -1,0 +1,73 @@
+.propertiesCard {
+    position: relative;
+    flex: 0 0 auto;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px #21212114;
+    height: 375px;
+    width: 280px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 16px;
+    color: #00000099;
+    font-size: 14px;
+}
+
+.propertyPhoto {
+    width: 280px;
+    height: 188px;
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0px 16px;
+}
+
+.featuresContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    padding: 0px 16px;
+    padding-bottom: 24px;
+
+}
+
+.feature {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.locationContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.icon {
+    color: #FB8601;
+    font-size: 16px;
+}
+
+.priceContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.price {
+    font-size: 24px;
+    color: #000000DE;
+}
+
+.frecuency {
+    color: #00000060;
+    font-size: 16px;
+}
