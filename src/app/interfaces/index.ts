@@ -1,9 +1,46 @@
+export type countryType = "ES" | "AE" | "LU" | "ALL"
+export type langType = "es" | "en" | "fr"
+export type dataTranslate =
+	| "Individual"
+	| "Collective"
+	| "Natural gas"
+	| "Diesel"
+	| "Propane"
+	| "Wood"
+	| "Pellet"
+	| "Biomass"
+	| "Electricity"
+	| "Solar thermal energy"
+	| "Air heat pump"
+	| "Geothermal"
+	| "Radiators"
+	| "Underfloor heating"
+	| "Convectors"
+	| "Thermal emitters"
+	| "Fireplaces"
+	| "Heat pumps"
+	| "Air heat pump systems"
+	| "Geothermal systems"
+	| "Solar thermal panels"
+	| "Pellet stoves"
+	| "Townhouse"
+	| "Apartamento"
+	| "Casa"
+	| "Ático"
+	| "Basement"
+	| "Duplex"
+	| "Triplex"
 export interface ISelectElement {
 	key: string | number
 	value: string | number
 	description?: string | number
 }
-
+export interface ICountry {
+	country: countryType
+}
+export interface ILang {
+	lang: langType
+}
 export interface IInputTextSelect {
 	label: string
 	placeholder: string
@@ -15,7 +52,7 @@ export interface IInputTextSelect {
 	description?: string
 	name?: string
 	initialValue?: string | number
-	lang: "es" | "en" | "fr"
+	lang: langType
 }
 export interface IInputSelect {
 	label?: string
@@ -27,7 +64,7 @@ export interface IInputSelect {
 	description?: string
 	name?: string
 	initialValue?: string | number
-	lang?: "es" | "en" | "fr"
+	lang?: langType
 }
 export interface IInputRadio {
 	label: string
@@ -41,14 +78,14 @@ export interface IInputSwitch {
 	onChange?: (e: string | number) => void
 	list: ISelectElement[]
 	initialValue?: string | number
-	label?:string
-	mainColor?:string
-	textColor?:string
+	label?: string
+	mainColor?: string
+	textColor?: string
 }
 export interface IInputPhoto {
 	description?: string
 	facename: string
-	onChange?: (files: any[], faceIndex:number) => void
+	onChange?: (files: any[], faceIndex: number) => void
 	initialValues: any[]
 }
 export interface ITextInput {

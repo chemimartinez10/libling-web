@@ -1,6 +1,7 @@
-.container{
+.container {
     position: relative;
 }
+
 .selectedLang {
     border-radius: 50%;
     border: 3px solid #fff;
@@ -10,6 +11,16 @@
     height: 30px;
     outline: none;
     cursor: pointer;
+}
+
+.selectedLangImmo {
+    padding: 0;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
 }
 
 .langList {
@@ -34,7 +45,7 @@
     gap: 16px;
     z-index: 5;
     position: absolute;
-    right:0px;
+    right: 0px;
     background-color: #fff;
     backdrop-filter: blur(5px);
     border-radius: 10px;
@@ -42,35 +53,59 @@
     transition: opacity 500ms ease;
     box-shadow: 0px 8px 10px #1973FA14;
 }
-.langItem{
+
+.langItem {
     display: flex;
     flex-direction: row;
     gap: 8px;
     cursor: pointer;
     align-items: center;
 }
-.langTitle{
+
+.countryItem {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    cursor: pointer;
+    align-items: center;
+}
+
+.langTitle {
     font-size: 14px;
     color: #000000DD;
+    flex-grow: 1;
 }
-.langTitleSelected{
+
+.langTitleSelected {
     font-size: 14px;
     color: #1973FA;
+    flex-grow: 1;
 }
-.langPlaceholder{
+
+.langPlaceholder {
     font-size: 14px;
     color: #00000060;
-    
+
 }
 
 .langList>* {
     cursor: pointer;
 }
 
-/* Mobile */
-@media (max-width: 350px) {
-    .formSelector {
-        display: none;
-    }
+.langHeader {
+    color: #FFFFFF;
+    font-size: 14px;
+    padding: 10px;
+}
 
+.icon {
+    color: #FFFFFFBC;
+    font-size: 24px;
+}
+
+.flag {
+    border-radius: 50%;
+    border: 2px solid #fff;
+    height: 24px;
+    width: 24px;
 }

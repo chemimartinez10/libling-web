@@ -3,7 +3,7 @@ import React, { MouseEventHandler, useEffect, useRef, useState } from 'react'
 import styles from './input.module.css'
 import { poppinsMedium, poppinsRegular } from '@/app/fonts'
 import { FiChevronDown, FiChevronUp, FiPlus } from 'react-icons/fi'
-import { IInputSelect, ISelectElement } from '@/app/interfaces'
+import { IInputSelect, ISelectElement, dataTranslate } from '@/app/interfaces'
 import { dict } from '@/app/utils'
 
 const InputSelect: React.FC<IInputSelect> = ({ label, placeholder, list, error, touched, description, onChange, name, initialValue, lang }) => {
@@ -23,7 +23,17 @@ const InputSelect: React.FC<IInputSelect> = ({ label, placeholder, list, error, 
         if (!!e.value && (!error || !touched)) setFocused(true)
         if (!!e.key && !!e.value && !!onChange) {
             if (inputRef?.current) {
-                inputRef.current.value = e.value.toString()
+
+                if (!!lang && !!e.value && e.value in dict[lang].data && dict[lang].data[e.value as dataTranslate]) {
+
+                    inputRef.current.value = dict[lang].data[e.value.toString() as dataTranslate]
+
+                } else {
+
+                    inputRef.current.value = e.value.toString()
+                }
+
+
             }
             onChange(e.key.toString())
         }
@@ -67,7 +77,7 @@ const InputSelect: React.FC<IInputSelect> = ({ label, placeholder, list, error, 
                 </label>
             }
             <div className={styles.inputContainer}>
-                <input id={`${name}Input`} name={name} type={"text"} ref={inputRef} readOnly placeholder={placeholder} style={{cursor:'pointer',...poppinsRegular.style}} onFocus={handleFocus} onBlur={handleBlur} className={(error && touched) ? styles.inputError : focused ? styles.inputFocus : styles.input} />
+                <input id={`${name}Input`} name={name} type={"text"} ref={inputRef} readOnly placeholder={placeholder} style={{ cursor: 'pointer', ...poppinsRegular.style }} onFocus={handleFocus} onBlur={handleBlur} className={(error && touched) ? styles.inputError : focused ? styles.inputFocus : styles.input} />
                 <div className={styles.passwordButton} onClick={handleClick}>
                     {
                         openList
@@ -80,15 +90,13 @@ const InputSelect: React.FC<IInputSelect> = ({ label, placeholder, list, error, 
                 <div className={openList ? styles.listContainer : styles.listContainerHidden}>
                     {
                         listFiltered.map((el, index) => (
-                            <div key={index} className={styles.listItem} onClick={() => { handleChange(el) }} onMouseDown={()=>{handleChange(el)}}>
+                            <div key={index} className={styles.listItem} onClick={() => { handleChange(el) }} onMouseDown={() => { handleChange(el) }}>
                                 {
-                                    //@ts-ignore
-                                    (!!lang && !!el.value && el.value in dict[lang].data && dict[lang].data[el.value])
-                                    ?
-                                    //@ts-ignore
-                                    dict[lang].data[el.value]
-                                    :
-                                    el.value
+                                    (!!lang && !!el.value && el.value in dict[lang].data && dict[lang].data[el.value as dataTranslate])
+                                        ?
+                                        dict[lang].data[el.value as dataTranslate]
+                                        :
+                                        el.value
                                 }
                                 {
                                     !!el.description ? <span className={styles.listItemDescription}>

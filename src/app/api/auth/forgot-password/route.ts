@@ -13,7 +13,6 @@ const BASE_URL =
 export async function POST(request: NextRequest, response: NextResponse) {
 	try {
 		console.log(request)
-		//@ts-ignore
 		const { email } = await request.json()
 		const user = await getUser(email)
 		if (!user) {

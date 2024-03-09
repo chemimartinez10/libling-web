@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { poppinsBold, poppinsMedium } from '../fonts'
 import { dict } from '../utils'
 import { usePathname, useRouter } from 'next/navigation'
-import { CountrySelector } from './countrySelector'
+import { LanguageSelector } from './languageSelector'
 import LogoNavSVG from './icons/logoNavSVG'
 import WhatsappIcon from '@/app/img/whatsapp.png'
 
@@ -33,7 +33,7 @@ export default function Navbar({ lang }: { lang: "es" | "en" | "fr" }) {
                     <div className={styles.separator}>
 
                     </div>
-                    <CountrySelector lang={lang} />
+                    <LanguageSelector lang={lang} />
                     <li className={verifyCurrentLink('/contact') ? styles.selectedLink : undefined}><Link href={'/contact'}>
                         <div className={styles.textImageContainer}>
                             <img style={{ width: 24, height: 24 }} src={WhatsappIcon.src} alt='contact' />

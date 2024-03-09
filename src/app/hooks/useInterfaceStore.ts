@@ -17,6 +17,7 @@ interface TypeInterfaceStore {
 export const useInterfaceStore = create<TypeInterfaceStore>()(
 	persist(
 		(set, get) => ({
+			
 			showBar: false,
 			user: undefined,
 			barContent: undefined,

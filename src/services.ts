@@ -6,10 +6,12 @@ import {
 	IPropertyCreateDTO,
 	IPropertyData,
 	IPropertyImageCreate,
+	IPropertyOrderBy,
 	IPropertySearch,
 	IPropertyUpdateDTO,
 } from "./app/interfaces/models"
 import { PropertyCreate, PropertyUpdate } from "./app/classes"
+import { cookies } from "next/headers"
 const saltRounds = 12
 
 const prisma = new PrismaClient()
@@ -127,6 +129,21 @@ export async function getCountries() {
 		return undefined
 	}
 }
+export async function findCountryByCode(code: string) {
+	try {
+		const country = await prisma.country.findFirst({
+			where: {
+				code,
+			},
+		})
+		await prisma.$disconnect()
+		return country
+	} catch (e) {
+		console.error("Error getting Country", e)
+		await prisma.$disconnect()
+		return undefined
+	}
+}
 export async function getCurrencies() {
 	try {
 		const currencies = await prisma.currency.findMany()
@@ -140,15 +157,19 @@ export async function getCurrencies() {
 }
 export async function indexProperty(
 	filters: IPropertySearch = {},
+	orderBy: IPropertyOrderBy = {},
 	page: number = 1,
 	limit: number = 15
 ) {
 	console.log(filters)
+	const countryFilter = await getCountryFilter()
 	const properties = await prisma.property.findMany({
 		where: {
 			...filters,
 			address: filters.address ? { contains: filters.address } : undefined,
+			countryId: countryFilter,
 		},
+		orderBy,
 		include: {
 			publishedBy: true,
 			country: true,
@@ -303,5 +324,17 @@ export async function deletePropertyImage(id: number) {
 		console.error(e)
 		await prisma.$disconnect()
 		process.exit(1)
+	}
+}
+export const getCountryFilter = async () => {
+	const countryCookie = cookies().get("immo-country")?.value
+	if (!countryCookie) {
+		return (await findCountryByCode("LU"))?.id
+	}
+	if (!!countryCookie && countryCookie === "ALL") {
+		return undefined
+	}
+	if (!!countryCookie && countryCookie !== "ALL") {
+		return (await findCountryByCode(countryCookie))?.id
 	}
 }

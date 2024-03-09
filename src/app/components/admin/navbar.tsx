@@ -8,7 +8,7 @@ import LogoSVG from '../../img/Recurso 1 1.svg'
 import Image from 'next/image';
 import Link from 'next/link';
 import { poppinsBold, poppinsMedium } from '@/app/fonts';
-import { CountrySelector } from '../countrySelector';
+import { LanguageSelector } from '../languageSelector';
 import LogoNavSVG from '../icons/logoNavSVG';
 import { FiChevronDown, FiChevronUp, FiMenu } from 'react-icons/fi'
 import { useSession } from "next-auth/react"
@@ -47,7 +47,7 @@ export default function Navbar({ lang, handleAside, user }: { lang: "es" | "en" 
             </div>
             <div className={styles.userContainer}>
                 <div className={styles.formSelector}>
-                    <CountrySelector lang={lang} />
+                    <LanguageSelector lang={lang} />
                 </div>
                 <div className={styles.userData}>
                     <span>{user?.name}</span>

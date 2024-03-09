@@ -119,8 +119,15 @@ export interface IPropertyCreate {
 	currencyId: number
 	propertyTypeId: number
 }
+export interface INumberSearch{
+	equals?: number,
+	gt?: number,
+	gte?: number,
+	lt?: number,
+	lte?: number,
+}
 export interface IPropertySearch {
-	id?:number
+	id?: number
 	title?: string
 	content?: string
 	address?: string
@@ -128,9 +135,9 @@ export interface IPropertySearch {
 	longitude?: number
 	latitude?: number
 	area?: number
-	bedrooms?: number
-	bathrooms?: number
-	price?: number
+	bedrooms?: number | INumberSearch
+	bathrooms?: number | INumberSearch
+	price?: number | INumberSearch
 	heatingType?: string
 	heatingMedium?: string
 	heatingEnergy?: string
@@ -143,6 +150,31 @@ export interface IPropertySearch {
 	countryId?: number
 	currencyId?: number
 	propertyTypeId?: number
+}
+export interface IPropertyOrderBy {
+	id?: "asc" | "desc"
+	title?: "asc" | "desc"
+	content?: "asc" | "desc"
+	address?: "asc" | "desc"
+	thumbnail?: "asc" | "desc"
+	longitude?: "asc" | "desc"
+	latitude?: "asc" | "desc"
+	area?: "asc" | "desc"
+	bedrooms?: "asc" | "desc"
+	bathrooms?: "asc" | "desc"
+	price?: "asc" | "desc"
+	heatingType?: "asc" | "desc"
+	heatingMedium?: "asc" | "desc"
+	heatingEnergy?: "asc" | "desc"
+	view?: "asc" | "desc"
+	furnished?: "asc" | "desc"
+	active?: "asc" | "desc"
+	type?: "asc" | "desc"
+	frecuency?: "asc" | "desc"
+	publishedById?: "asc" | "desc"
+	countryId?: "asc" | "desc"
+	currencyId?: "asc" | "desc"
+	propertyTypeId?: "asc" | "desc"
 }
 export interface IPropertyCreateDTO extends IPropertyCreate {
 	Surface?: ISurfaceCreate[]

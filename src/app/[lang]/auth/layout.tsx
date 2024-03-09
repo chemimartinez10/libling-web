@@ -4,7 +4,7 @@ import { poppinsRegular } from '../../fonts'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import styles from './layout.module.css'
-import { CountrySelector } from '@/app/components/countrySelector';
+import { LanguageSelector } from '@/app/components/languageSelector';
 
 
 
@@ -27,7 +27,7 @@ export default function RootLandingLayout({
       <body style={poppinsRegular.style} className={styles.layout}>
         <ToastContainer />
         <div className={styles.floatSelector}>
-          <CountrySelector lang={lang} />
+          <LanguageSelector lang={lang} />
         </div>
         {children}
       </body>

@@ -10,7 +10,7 @@ import IconArea from '@/app/components/icons/iconArea'
 import IconBed from '@/app/components/icons/iconBed'
 import IconBath from '@/app/components/icons/iconBath'
 import { Button } from '@/app/components/admin/button'
-import { ISelectElement } from '@/app/interfaces'
+import { ISelectElement, dataTranslate } from '@/app/interfaces'
 import { getMapStyles } from '@/app/actions'
 import CustomMap from '@/app/components/map'
 
@@ -42,8 +42,7 @@ const Detail: React.FC<IDetail> = async ({ params: { id, lang } }) => {
                     <div className={styles.textContainer}>
                         <h4 className={styles.type}>
                             {
-                                //@ts-ignore
-                                `${property?.propertyType?.name && property?.propertyType?.name in glosaryData ? glosaryData[property.propertyType.name] : property?.propertyType.name} ${glosary.miniatureConector} ${property?.type ? glosaryAdmin.formLabelSale.toLocaleLowerCase() : glosaryAdmin.formLabelRent.toLocaleLowerCase()}`
+                                `${property?.propertyType?.name && property?.propertyType?.name in glosaryData ? glosaryData[property.propertyType.name as dataTranslate] : property?.propertyType.name} ${glosary.miniatureConector} ${property?.type ? glosaryAdmin.formLabelSale.toLocaleLowerCase() : glosaryAdmin.formLabelRent.toLocaleLowerCase()}`
                             }
                         </h4>
                         <h1 className={styles.title} style={poppinsMedium.style}>
@@ -124,8 +123,7 @@ const Detail: React.FC<IDetail> = async ({ params: { id, lang } }) => {
                             </div>
                             <div className={styles.sectionContentRowDescription}>
                                 {
-                                    //@ts-ignore
-                                    (!!heatingType && heatingType in glosaryData) && glosaryData[heatingType]
+                                    (!!heatingType && heatingType in glosaryData) && glosaryData[heatingType as dataTranslate]
                                 }
                             </div>
                         </div>
@@ -165,8 +163,7 @@ const Detail: React.FC<IDetail> = async ({ params: { id, lang } }) => {
                             </div>
                             <div className={styles.sectionContentRowDescription}>
                                 {
-                                    //@ts-ignore
-                                    (!!heatingMedium && heatingMedium in glosaryData) && glosaryData[heatingMedium]
+                                    (!!heatingMedium && heatingMedium in glosaryData) && glosaryData[heatingMedium as dataTranslate]
                                 }
                             </div>
                         </div>
@@ -194,8 +191,7 @@ const Detail: React.FC<IDetail> = async ({ params: { id, lang } }) => {
                             </div>
                             <div className={styles.sectionContentRowDescription}>
                                 {
-                                    //@ts-ignore
-                                    (!!heatingEnergy && heatingEnergy in glosaryData) && glosaryData[heatingEnergy]
+                                    (!!heatingEnergy && heatingEnergy in glosaryData) && glosaryData[heatingEnergy as dataTranslate]
                                 }
                             </div>
                         </div>

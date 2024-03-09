@@ -10,7 +10,7 @@ import { IPage } from '../../layout';
 import { ISelectElement } from '@/app/interfaces'
 import CustomToast from '@/app/components/toast'
 import * as Yup from 'yup';
-import { FieldArray, Form, Formik, FormikHelpers, FormikProps } from 'formik'
+import { FieldArray, Form, Formik, FormikErrors, FormikHelpers, FormikProps } from 'formik'
 import { Button } from '@/app/components/admin/button'
 import { InputText } from '@/app/components/admin/inputText'
 import { FiPlus, FiX } from 'react-icons/fi';
@@ -107,20 +107,19 @@ const StepThree: React.FC<IStepThree> = ({ params: { lang }, onNext, onBack }) =
                                             {
                                                 values.surfaces.length > 0 && values.surfaces.map((el, index) => (
                                                     <div key={index} className={styles.inputRow}>
-                                                        {/* @ts-ignore */}
-                                                        <InputText placeholder={glosary.formPlaceholderSurfaces_1} error={(('surfaces' in errors) && (typeof errors.surfaces === 'object') && (index in errors.surfaces) && (typeof errors.surfaces[index] !== 'string')) ? errors.surfaces[index]?.quantity : undefined} touched={'surfaces' in touched && (typeof touched.surfaces === 'object') && (index in touched.surfaces) && (typeof touched.surfaces[index] === 'object') ? touched.surfaces[index]?.quantity : undefined} onChange={handleChange(`surfaces.${index}.quantity`)} value={values.surfaces[index]?.quantity} />
+
+                                                        <InputText placeholder={glosary.formPlaceholderSurfaces_1} error={(('surfaces' in errors) && (typeof errors.surfaces === 'object') && (index in errors.surfaces) && (typeof errors.surfaces[index] !== 'string')) ? (errors.surfaces[index] as FormikErrors<{ quantity: string; description: string; area: string; areaUnit: number; }>)?.quantity : undefined} touched={'surfaces' in touched && (typeof touched.surfaces === 'object') && (index in touched.surfaces) && (typeof touched.surfaces[index] === 'object') ? touched.surfaces[index]?.quantity : undefined} onChange={handleChange(`surfaces.${index}.quantity`)} value={values.surfaces[index]?.quantity} />
                                                         <div >
-                                                            {/* @ts-ignore */}
-                                                            <InputText placeholder={glosary.formPlaceholderSurfaces_2} error={(('surfaces' in errors) && (typeof errors.surfaces === 'object') && (errors.surfaces[index] !== undefined) && (typeof errors.surfaces[index] !== 'string')) ? errors.surfaces[index]?.description : undefined} touched={'surfaces' in touched && (typeof touched.surfaces === 'object') && (index in touched.surfaces) && (typeof touched.surfaces[index] === 'object') ? touched.surfaces[index]?.description : undefined} onChange={handleChange(`surfaces.${index}.description`)} value={values.surfaces[index]?.description} />
+                                                            <InputText placeholder={glosary.formPlaceholderSurfaces_2} error={(('surfaces' in errors) && (typeof errors.surfaces === 'object') && (errors.surfaces[index] !== undefined) && (typeof errors.surfaces[index] !== 'string')) ? (errors.surfaces[index] as FormikErrors<{ quantity: string; description: string; area: string; areaUnit: number; }>)?.description : undefined} touched={'surfaces' in touched && (typeof touched.surfaces === 'object') && (index in touched.surfaces) && (typeof touched.surfaces[index] === 'object') ? touched.surfaces[index]?.description : undefined} onChange={handleChange(`surfaces.${index}.description`)} value={values.surfaces[index]?.description} />
                                                         </div>
                                                         <div style={{}}>
-                                                            {/* @ts-ignore */}
-                                                            <InputText placeholder={glosary.formPlaceholderSurfaces_3} error={(('surfaces' in errors) && (typeof errors.surfaces === 'object') && (index in errors.surfaces) && (typeof errors.surfaces[index] !== 'string')) ? errors.surfaces[index]?.area : undefined} touched={'surfaces' in touched && (typeof touched.surfaces === 'object') && (index in touched.surfaces) && (typeof touched.surfaces[index] === 'object') ? touched.surfaces[index]?.area : undefined} onChange={handleChange(`surfaces.${index}.area`)} value={values.surfaces[index]?.area} />
+
+                                                            <InputText placeholder={glosary.formPlaceholderSurfaces_3} error={(('surfaces' in errors) && (typeof errors.surfaces === 'object') && (index in errors.surfaces) && (typeof errors.surfaces[index] !== 'string')) ? (errors.surfaces[index] as FormikErrors<{ quantity: string; description: string; area: string; areaUnit: number; }>)?.area : undefined} touched={'surfaces' in touched && (typeof touched.surfaces === 'object') && (index in touched.surfaces) && (typeof touched.surfaces[index] === 'object') ? touched.surfaces[index]?.area : undefined} onChange={handleChange(`surfaces.${index}.area`)} value={values.surfaces[index]?.area} />
 
                                                         </div>
                                                         <div style={{}}>
-                                                            {/* @ts-ignore */}
-                                                            <InputSelect placeholder={glosary.formPlaceholderSelect} list={areaList} onChange={(key: string) => { handleAreaSelect(index, key) }} error={(('surfaces' in errors) && (typeof errors.surfaces === 'object') && (index in errors.surfaces) && (typeof errors.surfaces[index] !== 'string')) ? errors.surfaces[index]?.areaUnit : undefined} touched={'surfaces' in touched && (typeof touched.surfaces === 'object') && (index in touched.surfaces) && (typeof touched.surfaces[index] === 'object') ? touched.surfaces[index]?.areaUnit : undefined} initialValue={values.surfaces[index]?.areaUnit} />
+
+                                                            <InputSelect placeholder={glosary.formPlaceholderSelect} list={areaList} onChange={(key: string) => { handleAreaSelect(index, key) }} error={(('surfaces' in errors) && (typeof errors.surfaces === 'object') && (index in errors.surfaces) && (typeof errors.surfaces[index] !== 'string')) ? (errors.surfaces[index] as FormikErrors<{ quantity: string; description: string; area: string; areaUnit: number; }>)?.areaUnit : undefined} touched={'surfaces' in touched && (typeof touched.surfaces === 'object') && (index in touched.surfaces) && (typeof touched.surfaces[index] === 'object') ? touched.surfaces[index]?.areaUnit : undefined} initialValue={values.surfaces[index]?.areaUnit} />
 
                                                         </div>
                                                         <div className={styles.iconClose} onClick={() => { remove(index) }}>

@@ -1,34 +1,50 @@
+'use client'
 import React, { useEffect, useRef, useState } from 'react'
 import styles from './propertyCategory.module.css'
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
-import { IProperty, IPropertyData, IPropertySearch } from '../interfaces/models'
+import { IMetaPaginate, IPropertyData, IPropertyOrderBy, IPropertySearch } from '../interfaces/models'
 import { indexProperty } from '@/services'
 import PropertyCard from './propertyCard'
 import { rentPaymentPeriods } from '../utils/data'
 import { dict } from '../utils'
+import { dataTranslate } from '../interfaces'
 
 interface IPropertyCategory {
     title: string
     description: string
     filters?: IPropertySearch
+    orderBy?: IPropertyOrderBy
+    initialData?: IPropertyData[] | null
+    metaData?: IMetaPaginate
     page?: number
     limit?: number
     lang: 'es' | 'en' | 'fr'
 }
 
-const PropertyCategory: React.FC<IPropertyCategory> = ({ title, description, filters, page, limit, lang }) => {
+const PropertyCategory: React.FC<IPropertyCategory> = ({ title, description, filters, orderBy, page, limit, lang, initialData, metaData }) => {
     const sectionRef = useRef<HTMLDivElement>(null)
     const [enableLeft, setEnableLeft] = useState(false)
     const [enableRight, setEnableRight] = useState(false)
-    const [properties, setProperties] = useState<IPropertyData[] | null>(null)
+    const [properties, setProperties] = useState<IPropertyData[] | null | undefined>(initialData)
+    const [currentPage, setCurrentPage] = useState<number>(initialData ? page || 2 : 1)
+    const [meta, setMeta] = useState<IMetaPaginate | undefined>(metaData)
     const glosary = dict[lang].immo
     const glosaryData = dict[lang].data
     const glosaryAdmin = dict[lang].adminProperties
     const fetchProperties = async () => {
-        const data = await indexProperty(filters, page, limit)
+        const data = await indexProperty(filters, orderBy, currentPage, limit)
         console.log('propertyData', data)
         const newArray = data?.data
-        setProperties(newArray || [])
+        setMeta(data?.meta)
+        setProperties(state => {
+            if (!state) {
+                return [...newArray]
+            }
+            else {
+                return [...state, ...newArray]
+            }
+        })
+        setCurrentPage(state => state + 1)
     }
     const handleLeftScroll = (reference: React.RefObject<HTMLDivElement>) => {
         if (reference.current?.offsetWidth) {
@@ -44,7 +60,6 @@ const PropertyCategory: React.FC<IPropertyCategory> = ({ title, description, fil
     }
     const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
         const scrollRight = e.currentTarget.scrollLeft + e.currentTarget.offsetWidth
-        console.log(e.currentTarget.offsetWidth, e.currentTarget.scrollLeft, scrollRight, e.currentTarget.scrollWidth)
         if (e.currentTarget.scrollLeft > 0) {
             setEnableLeft(true)
         }
@@ -53,6 +68,10 @@ const PropertyCategory: React.FC<IPropertyCategory> = ({ title, description, fil
             setEnableLeft(false)
         }
         if (e.currentTarget.scrollWidth <= scrollRight) {
+            //hacer scroll hasta el final
+            if(meta?.nextPage){
+                fetchProperties()
+            }
             setEnableRight(false)
         }
         else {
@@ -61,12 +80,14 @@ const PropertyCategory: React.FC<IPropertyCategory> = ({ title, description, fil
         }
     };
     useEffect(() => {
-        fetchProperties()
-    }, [filters, page, limit])
+        if (properties === undefined) {
+            fetchProperties()
+        }
+    }, [])
     useEffect(() => {
-        if(sectionRef.current && sectionRef.current?.scrollWidth > sectionRef.current?.offsetWidth){
+        if (sectionRef.current && sectionRef.current?.scrollWidth > sectionRef.current?.offsetWidth) {
             setEnableRight(true)
-        }else{
+        } else {
             setEnableRight(false)
         }
     }, [properties])
@@ -89,9 +110,8 @@ const PropertyCategory: React.FC<IPropertyCategory> = ({ title, description, fil
                 }
                 <div className={styles.propertiesCarrousel} onScroll={handleScroll} ref={sectionRef}>
                     {
-                        properties?.map((el,index)=>(
-                            //@ts-ignore
-                            <PropertyCard key={index} id={el.id} location={el.country.name} currency={el.currency.symbol} price={el.price} frecuency={el.frecuency ? rentPaymentPeriods.find(element=>el.frecuency?.toString() === element.key.toString())?.value : undefined} subtitle={`${el.propertyType.name in glosaryData ? glosaryData[el.propertyType.name] : el.propertyType.name} ${glosary.miniatureConector} ${el.type ? glosaryAdmin.formLabelSale.toLocaleLowerCase() : glosaryAdmin.formLabelRent.toLocaleLowerCase()}`} area={`${el.area} m${"\u00B2"}`} bedrooms={el.bedrooms} bathrooms={el.bathrooms} thumbnail={el.thumbnail}/>
+                        properties?.map((el, index) => (
+                            <PropertyCard key={index} id={el.id.toString()} location={el.country.name} currency={el.currency.symbol} price={el.price} frecuency={el.frecuency ? rentPaymentPeriods.find(element => el.frecuency?.toString() === element.key.toString())?.value : undefined} subtitle={`${el.propertyType.name in glosaryData ? glosaryData[el.propertyType.name as dataTranslate] : el.propertyType.name} ${glosary.miniatureConector} ${el.type ? glosaryAdmin.formLabelSale.toLocaleLowerCase() : glosaryAdmin.formLabelRent.toLocaleLowerCase()}`} area={`${el.area} m${"\u00B2"}`} bedrooms={el.bedrooms?.toString()} bathrooms={el.bathrooms?.toString()} thumbnail={el.thumbnail?.toString()} />
                         ))
                     }
                 </div>

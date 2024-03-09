@@ -20,22 +20,22 @@ export async function POST(request: NextRequest) {
 
 		try {
 			const isTokenValid = jwt.verify(token, "secreto")
-
-			// @ts-ignore
-			const { data } = isTokenValid
-
-			console.log(data)
-			const userFind = await getUserById(data.id)
-
-			// Validamos que exista el usuario
-			if (!userFind) {
-				return NextResponse.json({ message: "No user found" }, { status: 400 })
+			if(typeof isTokenValid !== 'string'){
+				const { data } = isTokenValid
+	
+				console.log(data)
+				const userFind = await getUserById(data.id)
+	
+				// Validamos que exista el usuario
+				if (!userFind) {
+					return NextResponse.json({ message: "No user found" }, { status: 400 })
+				}
+	
+				return NextResponse.json(
+					{ message: 'link verified' },
+					{ status: 200 }
+				)
 			}
-
-			return NextResponse.json(
-				{ message: 'link verified' },
-				{ status: 200 }
-			)
 		} catch (error) {
 			return NextResponse.json(
 				{ message: 'token not valid', error },

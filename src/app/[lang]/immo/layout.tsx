@@ -10,6 +10,9 @@ import Script from 'next/script'
 import NavbarImmo from '@/app/components/navbarImmo'
 import ContactSection from '@/app/components/contactSection'
 import FooterImmo from '@/app/components/footerImmo'
+import { getCookie } from 'cookies-next'
+import { countryType } from '@/app/interfaces'
+import { cookies } from 'next/headers'
 
 
 
@@ -27,12 +30,13 @@ export default function RootLandingLayout({
   params: { lang: "es" | "en" | "fr" }
 
 }) {
+  const country = cookies().get('immo-country')?.value as countryType || 'LU'
   return (
     <html lang={lang} style={{backgroundColor:'#FAFAFA', color:'#000000DE'}}>
       <body style={poppinsRegular.style} className={styles.layout}>
         <ToastContainer />
         <Menu lang={lang} />
-        <NavbarImmo lang={lang} />
+        <NavbarImmo lang={lang} country={country} />
         {children}
         <ContactSection lang={lang}/>
         <FooterImmo lang={lang} />

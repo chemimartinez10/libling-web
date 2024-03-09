@@ -23,6 +23,7 @@
 		"@vercel/postgres": "^0.7.2",
 		"axios": "^1.6.7",
 		"bcryptjs": "^2.4.3",
+		"cookies-next": "^4.1.1",
 		"formik": "^2.4.5",
 		"ical": "0.6.0",
 		"jsonwebtoken": "^9.0.2",

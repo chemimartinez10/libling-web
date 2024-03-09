@@ -66,54 +66,7 @@
   color: #000000DE;
 }
 
-.formHeader {
-  display: flex;
-  flex-direction: row;
-  gap: 16px;
-  align-items: flex-end;
-  justify-content: flex-start;
-}
 
-.headerButton {
-  padding: 12px 20px;
-  border-radius: 23px;
-  box-shadow: 0px 6px 12px #FB860129;
-  background-color: #FB8601;
-  outline: none;
-  border: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-}
-
-.headerButton:hover {
-  padding: 12px 20px;
-  border-radius: 23px;
-  box-shadow: 0px 6px 12px #FB860129;
-  background-color: #FB8601DE;
-  outline: none;
-  border: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-}
-
-.headerButtonIcon {
-  color: #FFFFFFDE;
-  font-size: 20px;
-
-}
-
-.headerButtonText {
-  color: #FFFFFF;
-  font-size: 16px;
-}
 
 .propertiesSection {
   max-width: 1214px;
