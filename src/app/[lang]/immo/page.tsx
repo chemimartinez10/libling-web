@@ -6,7 +6,7 @@ import { poppinsSemiBold } from '@/app/fonts'
 import { dict } from '@/app/utils'
 import { getPropertyTypes, indexProperty } from '@/services'
 import PropertyCategory from '@/app/components/propertyCategory'
-import PropertySearchForm from '@/app/components/PropertySearchForm'
+import PropertySearchForm from '@/app/components/propertySearchForm'
 interface IPage {
   params: {
     lang: "es" | "en" | "fr"
