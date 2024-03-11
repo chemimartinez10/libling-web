@@ -86,7 +86,7 @@
     height: 18px;
     border-radius: 2px;
     background-color: #fff;
-    border: 1px solid #0000001F;
+    border: 2px solid #00000099;
     position: relative;
 }
 .checkboxControl input:checked:after {

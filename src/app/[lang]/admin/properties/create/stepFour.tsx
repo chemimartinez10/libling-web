@@ -28,7 +28,7 @@ interface IStepFour extends IPage {
     onNext: VoidFunction
     onBack: VoidFunction
     files: any[]
-    handleFiles: (files: any[]) => void
+    handleFiles: (files: any[], face:number) => void
 }
 
 
@@ -51,7 +51,7 @@ const StepFour: React.FC<IStepFour> = ({ params: { lang }, onNext, onBack, files
         formRef.current?.setFieldValue('uploadedPhotos', key?.length > 0)
         formRef.current?.setFieldValue('faceIndex', index)
         // setPhotos(key)
-        handleFiles(key)
+        handleFiles(key, index)
     }
     const validationSchema = Yup.object({
         title: Yup.string().required(glosary.formValidationRequired),

@@ -65,12 +65,70 @@
     position: relative;
 }
 
+.formControl .inputContainerMini {
+    display: flex;
+    position: relative;
+    flex-shrink: 1;
+}
+
+.inputMini {
+    width: 60px;
+    border: 1px solid #0000001F;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #000000DE;
+    padding: 4px 8px;
+    font-size: 12px;
+    resize: none;
+
+}
+
+.inputFocusMini {
+    width: 60px;
+    border: 2px solid var(--libling-main-ui-color);
+    border-radius: 10px;
+    background-color: #fff;
+    color: #000000DE;
+    padding: 4px 8px;
+    font-size: 12px;
+    outline: none;
+    resize: none;
+}
+
+.inputErrorMini {
+    width: 60px;
+    border: 2px solid var(--color-error);
+    border-radius: 10px;
+    background-color: #fff;
+    color: #000000DE;
+    padding: 4px 8px;
+    font-size: 12px;
+    outline: none;
+    resize: none;
+
+}
+
 .listContainer {
     display: block;
     position: absolute;
     max-height: 256px;
     width: 100%;
     top: 50px;
+    left: 0px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 12px 30px #1973FA14;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: 99;
+    transition: all .25s ease;
+}
+.listContainerMini {
+    display: block;
+    position: absolute;
+    max-height: 100px;
+    width: 100%;
+    top: 32px;
     left: 0px;
     border-radius: 10px;
     background-color: #FFFFFF;
@@ -107,6 +165,19 @@
     justify-content: flex-start;
     gap: 8px;
 }
+.listItemMini {
+    color: #000000DE;
+    padding: 4px 8px;
+    background-color: transparent;
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4px;
+    cursor: pointer;
+}
+
 .listItemDescription {
     color: #00000099;
     font-size: 12px;
@@ -130,7 +201,8 @@
     font-size: 16px;
     color: inherit;
 }
-.descriptionLabel{
+
+.descriptionLabel {
     color: #00000060;
     font-size: 14px;
 }
@@ -184,8 +256,20 @@
 
 }
 
+.passwordButtonMini {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+
+}
+
 .passwordIcon {
     font-size: 24px;
+    color: #00000099;
+}
+
+.passwordIconMini {
+    font-size: 14px;
     color: #00000099;
 }
 
@@ -335,6 +419,7 @@
     font-size: 14px;
 
 }
+
 .thumbsContainer {
     display: flex;
     flex-direction: row;
@@ -354,7 +439,8 @@
     box-sizing: border-box;
     border-radius: 10px;
 }
-.thumbDelete{
+
+.thumbDelete {
     position: absolute;
     right: 4px;
     top: 4px;
@@ -369,7 +455,8 @@
     align-items: center;
     cursor: pointer;
 }
-.thumbFace{
+
+.thumbFace {
     position: absolute;
     left: 0px;
     bottom: 0px;
@@ -400,14 +487,16 @@
     width: 100px;
     height: 100px;
 }
-.photoContainer{
+
+.photoContainer {
     position: relative;
     display: flex;
     flex-direction: row;
     margin-top: 8px;
     gap: 16px;
 }
-.photoDropzone{
+
+.photoDropzone {
     border-radius: 10px;
     border: 1px dashed #1973FA;
     padding: 24px;
@@ -421,15 +510,18 @@
     min-width: 100px;
     cursor: pointer;
 }
-.photoIcon{
+
+.photoIcon {
     font-size: 24px;
     color: #1973FA;
 }
-.photoDescription{
+
+.photoDescription {
     font-size: 12px;
     color: #1973FA;
-    
+
 }
-.thumbsContainer{
+
+.thumbsContainer {
     max-height: 100px;
 }

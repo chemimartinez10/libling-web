@@ -1,3 +1,5 @@
+import { IMetaPaginate, IPropertyData, IPropertyOrderBy, IPropertySearch } from "./models"
+
 export type countryType = "ES" | "AE" | "LU" | "ALL"
 export type langType = "es" | "en" | "fr"
 export type dataTranslate =
@@ -87,6 +89,7 @@ export interface IInputPhoto {
 	facename: string
 	onChange?: (files: any[], faceIndex: number) => void
 	initialValues: any[]
+	initialFace?:number
 }
 export interface ITextInput {
 	touched?: boolean
@@ -98,4 +101,21 @@ export interface ITextInput {
 	name?: string
 	value?: string
 	onChange?: (e: string | React.ChangeEvent<any>) => void
+}
+export interface IPropertyCategory {
+    title: string
+    description: string
+    filters?: IPropertySearch
+    orderBy?: IPropertyOrderBy
+    initialData?: IPropertyData[] | null
+    metaData?: IMetaPaginate
+    page?: number
+    limit?: number
+    lang: 'es' | 'en' | 'fr'
+}
+export interface IPropertyList{
+	lang: 'es' | 'en' | 'fr'
+	initialData?: IPropertyData[] | null
+	metaData?: IMetaPaginate
+	
 }

@@ -7,19 +7,9 @@ import { indexProperty } from '@/services'
 import PropertyCard from './propertyCard'
 import { rentPaymentPeriods } from '../utils/data'
 import { dict } from '../utils'
-import { dataTranslate } from '../interfaces'
+import { IPropertyCategory, dataTranslate } from '../interfaces'
 
-interface IPropertyCategory {
-    title: string
-    description: string
-    filters?: IPropertySearch
-    orderBy?: IPropertyOrderBy
-    initialData?: IPropertyData[] | null
-    metaData?: IMetaPaginate
-    page?: number
-    limit?: number
-    lang: 'es' | 'en' | 'fr'
-}
+
 
 const PropertyCategory: React.FC<IPropertyCategory> = ({ title, description, filters, orderBy, page, limit, lang, initialData, metaData }) => {
     const sectionRef = useRef<HTMLDivElement>(null)

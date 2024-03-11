@@ -159,10 +159,14 @@ export async function indexProperty(
 	filters: IPropertySearch = {},
 	orderBy: IPropertyOrderBy = {},
 	page: number = 1,
-	limit: number = 15
+	limit: number = 15,
+	country: boolean = true
 ) {
-	console.log(filters)
-	const countryFilter = await getCountryFilter()
+	console.log("index request", filters, orderBy, page, limit, country)
+	let countryFilter
+	if (country) {
+		countryFilter = await getCountryFilter()
+	}
 	const properties = await prisma.property.findMany({
 		where: {
 			...filters,
@@ -184,6 +188,7 @@ export async function indexProperty(
 	})
 	const fromResult = (page - 1) * limit
 	const toResult = fromResult + limit
+	console.log('properties found:', properties.length, fromResult, toResult)
 	const data: IPropertyData[] = properties
 		.slice(fromResult, toResult)
 		.map((el) => ({

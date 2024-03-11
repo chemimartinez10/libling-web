@@ -1,4 +1,3 @@
-'use client'
 import React from 'react'
 import styles from './page.module.css'
 import globalStyles from '@/app/globals.module.css'
@@ -7,17 +6,14 @@ import { IPage } from '../layout'
 import { FiHome } from 'react-icons/fi'
 import { poppinsMedium } from '@/app/fonts'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 import { Button } from '@/app/components/admin/button'
+import PropertyList from '@/app/components/admin/propertyList'
+import { indexProperty } from '@/services'
 
-const Properties: React.FC<IPage> = ({ params: { lang } }) => {
+const Properties: React.FC<IPage> = async ({ params: { lang } }) => {
   const glosary = dict[lang]?.adminProperties
   const glosaryNav = dict[lang]?.adminNav
-  const router = useRouter()
-  const goToCreate = ()=>{
-    router.push('/admin/properties/create')
-  }
-  const properties = []
+  const properties = await indexProperty()
   return (<>
     <div className={styles.titleBar}>
       <h1 className={styles.titleBarTitle} style={poppinsMedium.style}>{glosaryNav.propertiesTitle}</h1>
@@ -30,25 +26,27 @@ const Properties: React.FC<IPage> = ({ params: { lang } }) => {
       </div>
     </div>
     <section className={styles.section}>
-      <div className={styles.card}>
-        <h2 className={styles.cardTitle} style={poppinsMedium.style}>{glosary.indexTitle}</h2>
-        <article className={styles.cardContent}>
-          {
-            properties?.length <= 0
-              ?
+      {
+        properties.data?.length <= 0
+          ?
+
+          <div className={styles.card}>
+            <h2 className={styles.cardTitle} style={poppinsMedium.style}>{glosary.indexTitle}</h2>
+            <article className={styles.cardContent}>
               <div className={styles.emptyContainer}>
                 <FiHome className={styles.emptyIcon} />
                 <div className={styles.emptyText}>
                   <span className={styles.emptyTitle} style={poppinsMedium.style}>{glosary.indexEmptyListTitle}</span>
                   <span className={styles.emptyDescription}>{glosary.indexEmptyListDescription}</span>
                 </div>
-                <Button title={glosary.formButtonRegister} onClick={goToCreate} type='main'/>
+                <Button title={glosary.formButtonRegister} goTo={'/admin/properties/create'} type='main' />
               </div>
-              :
-              <div></div>
-          }
-        </article>
-      </div>
+            </article>
+
+          </div>
+          :
+          <PropertyList initialData={properties.data} metaData={properties.meta} lang={lang} />
+      }
 
     </section>
   </>

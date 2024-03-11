@@ -28,6 +28,7 @@ const PropertyCreate: React.FC<IPage> = ({ params: { lang } }) => {
     const arraySteps = new Array(finalStep).fill(0)
     const router = useRouter()
     const [files, setFiles] = useState<any[]>([])
+    const [face, setFace] = useState<number>(0)
     const handleNext = () => {
         if (!!step && step <= 5) {
             store?.addStep()
@@ -43,8 +44,9 @@ const PropertyCreate: React.FC<IPage> = ({ params: { lang } }) => {
             store?.setStep(newStep)
         }
     }
-    const handleFiles = (newFiles: any[]) => {
+    const handleFiles = (newFiles: any[], face:number) => {
         setFiles(newFiles)
+        setFace(face)
     }
 
     const handleSubmit = async (active: boolean) => {
@@ -97,13 +99,13 @@ const PropertyCreate: React.FC<IPage> = ({ params: { lang } }) => {
             const createdProperty = await createProperty(data)
             const id = createdProperty.id
             if (files.length > 0) {
-                files.forEach(async (file, index) => {
+                await Promise.all(files.map(async (file, index) => {
                     const response = await fetch(`/api/image?propertyId=${id}&type=${file?.name?.split('.')?.at(-1) || 'jpg'}${store?.form_4?.faceIndex === index ? '&face=1' : ''}`, {
                         method: 'POST',
                         body: file,
                     })
-                    console.log(await response.json())
-                })
+                    console.log('chemi', await response.json())
+                }))
 
             } else {
                 toast.error(<CustomToast type='error' title='Error' content={'error particular'} />, { theme: 'colored', icon: false, style: { backgroundColor: '#FF4444', maxWidth: 450, padding: 24, borderRadius: 10 } })
@@ -170,7 +172,7 @@ const PropertyCreate: React.FC<IPage> = ({ params: { lang } }) => {
             {
                 step === 6
                 &&
-                <Preview params={{ lang }} onNext={handleSubmit} onGo={handleStep} files={files} />
+                <Preview params={{ lang }} onNext={handleSubmit} onGo={handleStep} files={files} face={face} />
             }
         </section>
     </>

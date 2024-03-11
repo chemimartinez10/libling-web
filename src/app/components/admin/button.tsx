@@ -9,6 +9,7 @@ import warningStyle from './buttonWarning.module.css'
 import errorStyle from './buttonError.module.css'
 import React, { useState } from 'react'
 import { FaWhatsapp } from 'react-icons/fa6'
+import { useRouter } from 'next/navigation'
 
 interface IButton {
     type?: 'main' | 'secondary' | 'tonal' | 'outline' | 'text' | 'warning' | 'error'
@@ -18,11 +19,12 @@ interface IButton {
     loading?: boolean
     disabled?: boolean
     onClick?: VoidFunction
+    goTo?: string
     submit?: boolean
 }
 
 
-export const Button: React.FC<IButton> = ({ type = 'main', title, Icon, loading = false, disabled = false, onClick = () => { }, submit = false, icon }) => {
+export const Button: React.FC<IButton> = ({ type = 'main', title, Icon, loading = false, disabled = false, onClick = () => { }, submit = false, icon, goTo }) => {
     let style: {
         readonly [key: string]: string;
     }
@@ -63,6 +65,7 @@ export const Button: React.FC<IButton> = ({ type = 'main', title, Icon, loading 
             break
     }
     const [currentStyle, setCurrentStyle] = useState(disabled ? style.buttonDisabled : style.button)
+    const router = useRouter()
     const handleMouseDown = () => {
         if (!loading && !disabled) {
             setCurrentStyle(style?.buttonPressed)
@@ -75,10 +78,10 @@ export const Button: React.FC<IButton> = ({ type = 'main', title, Icon, loading 
     }
 
     return (
-        <button className={currentStyle} onClick={loading || disabled ? () => { } : onClick} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} onTouchStart={handleMouseDown} onTouchEnd={handleMouseUp} type={submit ? 'submit' : 'button'}>
+        <button className={currentStyle} onClick={loading || disabled ? () => { } : !!goTo ? () => { router.push(goTo) } : onClick} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} onTouchStart={handleMouseDown} onTouchEnd={handleMouseUp} type={submit ? 'submit' : 'button'}>
             {!!Icon && <Icon className={style.icon} />}
             {!!IconFunc && <IconFunc className={style.iconFunc} />}
-            
+
             {
                 loading
                     ?

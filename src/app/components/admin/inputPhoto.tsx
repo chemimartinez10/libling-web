@@ -6,7 +6,7 @@ import { FiCamera, FiX } from 'react-icons/fi';
 import { IInputPhoto } from '@/app/interfaces';
 import { poppinsMedium } from '@/app/fonts';
 
-const InputPhoto: React.FC<IInputPhoto> = ({ description, facename, onChange, initialValues }) => {
+const InputPhoto: React.FC<IInputPhoto> = ({ description, facename, onChange, initialValues, initialFace }) => {
     const [files, setFiles] = useState(initialValues);
     const deleteFile = (index: number) => {
         if (face > index) {
@@ -15,7 +15,7 @@ const InputPhoto: React.FC<IInputPhoto> = ({ description, facename, onChange, in
         setFiles(state => state.filter((el, indexEl) => index !== indexEl))
 
     }
-    const [face, setFace] = useState<number>(0)
+    const [face, setFace] = useState<number>(initialFace || 0)
     
     const { getRootProps, getInputProps } = useDropzone({
         accept: { "image/jpeg": [], "image/png": [] },

@@ -21,11 +21,12 @@ interface IPreview extends IPage {
     onNext: (active: boolean) => void
     onGo: (step: number) => void
     files: any[]
+    face: number
 }
 
 
 
-const Preview: React.FC<IPreview> = ({ params: { lang }, onNext, onGo, files }) => {
+const Preview: React.FC<IPreview> = ({ params: { lang }, onNext, onGo, files, face }) => {
     const store = useStore(usePropertyStore, (state) => state)
     const interfaceStore = useStore(useInterfaceStore, (state) => state)
     const glosary = dict[lang]?.adminProperties
@@ -273,7 +274,7 @@ const Preview: React.FC<IPreview> = ({ params: { lang }, onNext, onGo, files }) 
                         }
                         <div className={styles.sectionBlock}>
                             <span style={poppinsMedium.style} className={styles.sectionSubtitle}>{glosary.formLabelImages}</span>
-                            <InputPhoto description={glosary.formButtonAddPhoto} facename={glosary.formLabelTumbnail} initialValues={files || []} />
+                            <InputPhoto description={glosary.formButtonAddPhoto} facename={glosary.formLabelTumbnail} initialValues={files || []} initialFace={face}/>
                         </div>
                     </div>
                 </div>
