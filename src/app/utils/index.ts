@@ -67,6 +67,8 @@ export const dict = {
 			Basement: "Sótano",
 			Duplex: "Dúplex",
 			Triplex: "Tríplex",
+			"Local Comercial": "Local comercial",
+			Oficina: "Oficina",
 		},
 		adminProperties: {
 			indexTitle: "Inmuebles registrados",
@@ -179,7 +181,7 @@ export const dict = {
 			linesPerPage: "Líneas por página",
 			selecteds: "seleccionados",
 			activePub: "Publicación activa",
-			inactivePub:"Publicación pausada",
+			inactivePub: "Publicación pausada",
 		},
 		adminNav: {
 			propertiesTitle: "Inmuebles",
@@ -448,6 +450,8 @@ export const dict = {
 			Basement: "Basement",
 			Duplex: "Duplex",
 			Triplex: "Triplex",
+			"Local Comercial": "Commercial Premises",
+			Oficina: "Office",
 		},
 
 		adminProperties: {
@@ -829,6 +833,8 @@ export const dict = {
 			Basement: "Sótano",
 			Duplex: "Dúplex",
 			Triplex: "Tríplex",
+			"Local Comercial": "Local commercial",
+			Oficina: "Bureau",
 		},
 
 		adminProperties: {

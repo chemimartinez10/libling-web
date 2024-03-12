@@ -84,7 +84,7 @@ const InputTextSelect: React.FC<IInputTextSelect> = ({ label, placeholder, list,
                 </label>
             }
             <div className={styles.inputContainer}>
-                <input id={`${name}Input`} name={name} type={"text"} ref={inputRef} placeholder={placeholder} style={poppinsRegular.style} onFocus={handleFocus} onBlur={handleBlur} onChange={handleSearch} className={(error && touched) ? styles.inputError : focused ? styles.inputFocus : styles.input} />
+                <input id={`${name}Input`} name={name} type={"text"} ref={inputRef} placeholder={placeholder} style={poppinsRegular.style} onFocus={handleFocus} onBlur={handleBlur} onChange={handleSearch} className={(error && touched) ? styles.inputError : focused ? styles.inputFocus : styles.input} autoComplete='off'/>
                 <div className={styles.passwordButton} onClick={handleClick}>
                     {
                         openList
