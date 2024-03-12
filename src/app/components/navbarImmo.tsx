@@ -36,7 +36,7 @@ export default function NavbarImmo({ lang, country }: ICountry & ILang) {
                     <LanguageSelector lang={lang} />
                     <li><a href="#contact">
                         <div className={styles.textImageContainer}>
-                            <Image src={WhatsappIcon} width={24} height={24} alt='contact' style={{ width: 24, height: 24 }} />
+                            <Image src={WhatsappIcon} width={24} height={24} alt='contact' style={{ width: 24, height: 24 }}/>
                             <span>
                                 {glosary.link_4}
                             </span>

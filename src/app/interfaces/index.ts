@@ -26,12 +26,14 @@ export type dataTranslate =
 	| "Solar thermal panels"
 	| "Pellet stoves"
 	| "Townhouse"
-	| "Apartamento"
-	| "Casa"
-	| "Ático"
+	| "Apartment"
+	| "House"
+	| "Attic"
 	| "Basement"
 	| "Duplex"
 	| "Triplex"
+	| "Commercial Premise"
+	| "Office"
 export interface ISelectElement {
 	key: string | number
 	value: string | number

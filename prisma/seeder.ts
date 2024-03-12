@@ -68,15 +68,27 @@ export async function main() {
 		}[] = []
 		const dataPropertyTypes = [
 			{
-				name: "Apartamento",
+				name: "Apartment",
 				code: "APARTMENT",
 			},
 			{
-				name: "Casa",
+				name: "Commercial Premise",
+				code: "COMMERCIAL_PREMISE",
+			},
+			{
+				name: "Office",
+				code: "OFFICE",
+			},
+			{
+				name: "Apartment",
+				code: "APARTMENT",
+			},
+			{
+				name: "House",
 				code: "HOUSE",
 			},
 			{
-				name: "Ático",
+				name: "Basement",
 				code: "BASEMENT",
 			},
 			{
