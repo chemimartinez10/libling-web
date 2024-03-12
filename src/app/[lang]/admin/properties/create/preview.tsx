@@ -79,8 +79,8 @@ const Preview: React.FC<IPreview> = ({ params: { lang }, onNext, onGo, files, fa
         if (interfaceStore?.setBarContent) {
             interfaceStore?.setShowBar(true)
             interfaceStore?.setBarContent(() => (
-                <div className={styles.actionBar}>
-                    <Button title={glosary.formButtonPreview} type='outline' />
+                <div className={styles.actionBar} style={{maxWidth:760}}>
+                    {/* <Button title={glosary.formButtonPreview} type='outline' /> */}
                     <Button title={glosary.formButtonRegister} onClick={handleSubmit} />
                 </div>
             ))

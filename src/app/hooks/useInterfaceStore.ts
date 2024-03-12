@@ -7,11 +7,13 @@ interface TypeInterfaceStore {
 	barContent?: React.ElementType<any> | null
 	user?: IUserSession
 	limit?: number
+	loading?: boolean
 
 	//actions
 	setUser?: (user: IUserSession | undefined) => void
 	setShowBar: (show: boolean) => void
 	setBarContent: (item: React.ElementType<any>) => void
+	setLoading: (loading: boolean) => void
 	setLimit: (limit: number) => void
 	resetLimit: () => void
 	resetBar: VoidFunction
@@ -24,6 +26,8 @@ export const useInterfaceStore = create<TypeInterfaceStore>()(
 			user: undefined,
 			barContent: undefined,
 			limit: 15,
+			loading:false,
+			setLoading: (loading: boolean) => set({ loading }),
 			setLimit: (limit: number) => set({ limit }),
 			resetLimit: () => set({ limit: 15 }),
 			setUser: (user: IUserSession | undefined) => set({ user }),

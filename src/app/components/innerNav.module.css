@@ -5,6 +5,13 @@
     box-shadow: 0px 2px 4px #0000001A;
     
 }
+.navigationBarAdmin{
+    height: 56px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0px 2px 4px #1973FA14;
+    
+}
 .innerNavigationBar{
     height: 56px;
     width: 1160px;
@@ -21,6 +28,16 @@
     gap: 4px;
     font-size: 14px;
     color: #FB8601;
+    cursor: pointer;
+    padding: 15px 0px;
+}
+.navigationBarItemAdmin{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    color: #000000DE;
     cursor: pointer;
     padding: 15px 0px;
 }

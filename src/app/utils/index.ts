@@ -177,6 +177,9 @@ export const dict = {
 			listActive: "Activo",
 			listInactive: "Inactivo",
 			linesPerPage: "Líneas por página",
+			selecteds: "seleccionados",
+			activePub: "Publicación activa",
+			inactivePub:"Publicación pausada",
 		},
 		adminNav: {
 			propertiesTitle: "Inmuebles",
@@ -555,6 +558,9 @@ export const dict = {
 			listActive: "Active",
 			listInactive: "Inactive",
 			linesPerPage: "Lines per page",
+			selecteds: "selected",
+			activePub: "Active Publication",
+			inactivePub: "Paused Publication",
 		},
 		adminNav: {
 			propertiesTitle: "Real estate",
@@ -934,6 +940,9 @@ export const dict = {
 			listActive: "Actif",
 			listInactive: "Inactif",
 			linesPerPage: "Lignes par page",
+			selecteds: "sélectionnés",
+			activePub: "Publication active",
+			inactivePub: "Publication suspendue",
 		},
 
 		adminNav: {

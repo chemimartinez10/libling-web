@@ -370,6 +370,7 @@
     align-items: center;
     justify-content: flex-end;
     flex-grow:1;
+    width: 760px;
 }
 .modalIcon{
     font-size: 48px;

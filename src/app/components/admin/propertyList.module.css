@@ -169,3 +169,76 @@
 .pageControl {
     font-size: 18px;
 }
+.actionBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-grow: 1;
+    height: 100%;
+    color: #000000DE;
+}
+.actionButton{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 24px;
+    cursor: pointer;
+}
+.actionButton:hover{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 24px;
+    background-color: #E2F2FF;
+    cursor: pointer;
+}
+.actionButton:hover span {
+    font-size: 14px;
+    color: #1973FA;
+}
+.actionButton span {
+    font-size: 14px;
+}
+.actionInfo{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 24px;
+    padding-right: 48px;
+}
+.actionIcon{
+    font-size: 32px;
+    padding: 4px;
+    color: #00000099;
+}
+.actionButton:hover .actionIcon{
+    font-size: 32px;
+    padding: 4px;
+    color: #1973FA;
+}
+.modalIconPublish{
+    font-size: 48px;
+    padding: 4px;
+    color: #1973FA;
+}
+.modalIconDelete{
+    font-size: 48px;
+    padding: 4px;
+    color: #FF4444;
+}
+.modalButtons{
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    justify-content: flex-end;
+}
+.modalText{
+    color: #00000099;
+    font-size: 14px;
+}

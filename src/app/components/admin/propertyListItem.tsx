@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './propertyList.module.css'
 import globalStyles from '@/app/globals.module.css'
 import { IPropertyData } from '@/app/interfaces/models'
@@ -14,21 +14,29 @@ import Image from 'next/image'
 interface IListItem {
     item: IPropertyData
     lang: langType
-    onSelect?: () => void
-    onEdit?: () => void
-    onPreview?: () => void
-    onDelete?: () => void
+    isChecked?: boolean
+    onSelect?: (id: number) => void
+    onEdit?: (id: number) => void
+    onPreview?: (id: number) => void
+    onDelete?: (id: number, active: boolean) => void
 }
 
-const PropertyListItem: React.FC<IListItem> = ({ item, lang, onSelect, onPreview, onDelete, onEdit }) => {
+const PropertyListItem: React.FC<IListItem> = ({ item, lang, onSelect, onPreview, onDelete, onEdit, isChecked = false }) => {
     const glosaryData = dict[lang].data
     const glosaryAdmin = dict[lang].adminProperties
     const glosary = dict[lang].immo
+    const [checked, setChecked] = useState(isChecked)
+    const handleSelect = (event: React.FormEvent<HTMLInputElement>) => {
+        if (onSelect) onSelect(item.id)
+    }
+    useEffect(() => {
+        setChecked(isChecked)
+    }, [isChecked])
     return (
         <tr>
             <td>
                 <div className={globalStyles.checkboxControl}>
-                    <input type="checkbox" id="cboxInput" name="select_all" onChange={onSelect} />
+                    <input type="checkbox" id="cboxInput" name="select_all" onChange={handleSelect} checked={checked} />
                 </div>
             </td>
             <td>
@@ -75,9 +83,9 @@ const PropertyListItem: React.FC<IListItem> = ({ item, lang, onSelect, onPreview
             </td>
             <td>
                 <div className={styles.actionContainer}>
-                    <FiEye className={styles.action} onClick={!!onPreview ? onPreview : () => { }} />
-                    <FiEdit2 className={styles.action} onClick={!!onEdit ? onEdit : () => { }} />
-                    <FiTrash className={styles.action} onClick={!!onDelete ? onDelete : () => { }} />
+                    {/* <FiEye className={styles.action} onClick={!!onPreview ? onPreview : () => { }} /> */}
+                    {/* <FiEdit2 className={styles.action} onClick={!!onEdit ? onEdit : () => { }} /> */}
+                    <FiTrash className={styles.action} onClick={!!onDelete ? () => { onDelete(item.id, item.active) } : () => { }} />
                 </div>
             </td>
         </tr>

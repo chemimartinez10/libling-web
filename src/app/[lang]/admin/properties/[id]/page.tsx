@@ -34,13 +34,25 @@ const Detail: React.FC<IDetail> = async ({ params: { id, lang } }) => {
         return array.find(el => key?.toString() === el.key.toString())?.value
     }
     return (<>
-        <InnerNav text={glosary.backList} />
+        <InnerNav text={glosaryAdmin.actionPreview} admin={true} />
         <div className={styles.card}>
             <div className={styles.head}>
                 <ImageGallery images={property?.PropertyImage} thumbnail={property?.thumbnail} />
                 <div className={styles.summaryContainer}>
                     <div className={styles.textContainer}>
                         <h4 className={styles.type}>
+                            {
+                                property?.active
+                                    ?
+                                    <span className={styles.badgeActive}>
+                                        {glosaryAdmin.activePub}
+                                    </span>
+                                    :
+                                    <span className={styles.badge}>
+
+                                        {glosaryAdmin.inactivePub}
+                                    </span>
+                            }
                             {
                                 `${property?.propertyType?.name && property?.propertyType?.name in glosaryData ? glosaryData[property.propertyType.name as dataTranslate] : property?.propertyType.name} ${glosary.miniatureConector} ${property?.type ? glosaryAdmin.formLabelSale.toLocaleLowerCase() : glosaryAdmin.formLabelRent.toLocaleLowerCase()}`
                             }
@@ -67,28 +79,23 @@ const Detail: React.FC<IDetail> = async ({ params: { id, lang } }) => {
                     </div>
                     <div className={styles.featureList}>
                         <span className={styles.feature}>
-                            <IconArea fill='#FB8601' />
+                            <IconArea fill='#1973FA' />
                             <span>
                                 {`${glosaryAdmin.formLabelArea}: ${property?.area} m${"\u00B2"}`}
                             </span>
                         </span>
                         <span className={styles.feature}>
-                            <IconBed fill='#FB8601' />
+                            <IconBed fill='#1973FA' />
                             <span>
                                 {`${glosaryAdmin.formLabelBedrooms}: ${property?.bedrooms}`}
                             </span>
                         </span>
                         <span className={styles.feature}>
-                            <IconBath fill='#FB8601' />
+                            <IconBath fill='#1973FA' />
                             <span>
                                 {`${glosaryAdmin.formLabelBathrooms}: ${property?.bathrooms}`}
                             </span>
                         </span>
-                    </div>
-                    <div className={styles.buttonContainer}>
-                        <Button title={'Whatsapp'} type='secondary'
-                            icon='ws' goTo={`https://api.whatsapp.com/send?phone=${352691367757}`}/>
-                        <Button title={glosary.askFor} type='outline' />
                     </div>
                 </div>
             </div>

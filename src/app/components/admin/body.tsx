@@ -58,6 +58,13 @@ export const Body = ({
     }, [store?.setUser, user])
     return (
         <body style={poppinsRegular.style} className={styles.layout}>
+            {
+                store?.loading
+                &&
+                <div className={styles.overlayLoader}>
+                    <span className={styles.loader}></span>
+                </div>
+            }
             <Navbar lang={lang} handleAside={toggleOpen} user={user} />
             <div className={!!store?.showBar && !!store?.barContent ? styles.containerBar : styles.container}>
                 <Aside lang={lang} open={open} routes={routes} />

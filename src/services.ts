@@ -188,7 +188,7 @@ export async function indexProperty(
 	})
 	const fromResult = (page - 1) * limit
 	const toResult = fromResult + limit
-	console.log('properties found:', properties.length, fromResult, toResult)
+	console.log("properties found:", properties.length, fromResult, toResult)
 	const data: IPropertyData[] = properties
 		.slice(fromResult, toResult)
 		.map((el) => ({
@@ -295,6 +295,60 @@ export async function updateProperty(id: number, data: IPropertyUpdateDTO) {
 		process.exit(1)
 	}
 }
+export async function deleteProperty(id: number) {
+	try {
+		const propertyDeleted = await prisma.property.delete({ where: { id } })
+		console.log(propertyDeleted)
+		await prisma.$disconnect()
+		return propertyDeleted
+	} catch (e) {
+		console.error(e)
+		await prisma.$disconnect()
+		process.exit(1)
+	}
+}
+export async function activeMultipleProperty(ids: number[]) {
+	try {
+		let updatedProperties: any[] = []
+		await Promise.all(
+			ids.map(async (el) => {
+				const updatedProperty = await prisma.property.update({
+					where: { id: el },
+					data: { active: true },
+				})
+				updatedProperties.push(updatedProperty)
+			})
+		)
+		console.log(updatedProperties)
+		await prisma.$disconnect()
+		return updatedProperties
+	} catch (e) {
+		console.error(e)
+		await prisma.$disconnect()
+		process.exit(1)
+	}
+}
+export async function deactivateMultipleProperty(ids: number[]) {
+	try {
+		let updatedProperties: any[] = []
+		await Promise.all(
+			ids.map(async (el) => {
+				const updatedProperty = await prisma.property.update({
+					where: { id: el },
+					data: { active: false },
+				})
+				updatedProperties.push(updatedProperty)
+			})
+		)
+		console.log(updatedProperties)
+		await prisma.$disconnect()
+		return updatedProperties
+	} catch (e) {
+		console.error(e)
+		await prisma.$disconnect()
+		process.exit(1)
+	}
+}
 export async function createPropertyType(data: IPropertyTypeData) {
 	try {
 		const propertyType = await prisma.propertyType.create({ data })
@@ -331,6 +385,7 @@ export async function deletePropertyImage(id: number) {
 		process.exit(1)
 	}
 }
+
 export const getCountryFilter = async () => {
 	const countryCookie = cookies().get("immo-country")?.value
 	if (!countryCookie) {

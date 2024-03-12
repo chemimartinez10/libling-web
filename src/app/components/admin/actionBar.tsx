@@ -7,7 +7,7 @@ interface IActionBar {
     width?: number
 }
 
-const ActionBar: React.FC<IActionBar> = ({ show, Content, width = 760 }) => {
+const ActionBar: React.FC<IActionBar> = ({ show, Content, width = '100%' }) => {
     return (show ?
         <div className={styles.container}>
             <div className={styles.innerContainer} style={{ width }}>
