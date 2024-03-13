@@ -91,6 +91,10 @@ export async function main() {
 				name: "Investment",
 				code: "INVESTMENT",
 			},
+			{
+				name: "Rental management",
+				code: "RENTAL_MANAGEMENT",
+			},
 		]
 		dataPropertyTypes.forEach(async (el) => {
 			let propertyType = await prisma.propertyType.upsert({

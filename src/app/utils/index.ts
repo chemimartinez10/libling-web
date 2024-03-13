@@ -71,6 +71,8 @@ export const dict = {
 			"Office": "Oficina",
 			"Terrain": "Terreno",
 			"Investment": "Inversión inmobiliaria",
+			"Rental management": "Gestión de alquiler",
+
 		},
 		adminProperties: {
 			indexTitle: "Inmuebles registrados",
@@ -456,6 +458,7 @@ export const dict = {
 			"Office": "Office",
 			"Terrain": "Terrain",
 			"Investment": "Investment",
+			"Rental management": "Rental management",
 		},
 
 		adminProperties: {
@@ -841,6 +844,7 @@ export const dict = {
 			"Office": "Bureau",
 			"Terrain": "Terrain",
 			"Investment": "Investissement",
+			"Rental management": "Gestión locative",
 		},
 
 		adminProperties: {
