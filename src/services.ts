@@ -116,6 +116,17 @@ export async function findPropertyType(id: number) {
 		return undefined
 	}
 }
+export async function findPropertyTypeByCode(code: string) {
+	try {
+		const propertyType = await prisma.propertyType.findFirst({ where: { code } })
+		await prisma.$disconnect()
+		return propertyType
+	} catch (e) {
+		console.error("Error getting propertyType")
+		await prisma.$disconnect()
+		return undefined
+	}
+}
 export async function getCountries() {
 	try {
 		const countries = await prisma.country.findMany({

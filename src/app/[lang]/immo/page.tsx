@@ -4,7 +4,7 @@ import Image from 'next/image'
 import bannerMedium from '@/app/img/immo/hero_landing_1440x900.jpg'
 import { poppinsSemiBold } from '@/app/fonts'
 import { dict } from '@/app/utils'
-import { getPropertyTypes, indexProperty } from '@/services'
+import { findPropertyTypeByCode, getPropertyTypes, indexProperty } from '@/services'
 import PropertyCategory from '@/app/components/propertyCategory'
 import PropertySearchForm from '@/app/components/propertySearchForm'
 interface IPage {
@@ -22,7 +22,8 @@ const Home: React.FC<IPage> = async ({ params: { lang } }) => {
   const propertyTypes = await fetchPropertyTypes()
   const lastProperties = await indexProperty({ active: true }, { id: 'desc' })
   const saleProperties = await indexProperty({ active: true, type: true })
-  const officeProperties = await indexProperty({ active: true, propertyTypeId: 2 })
+  const officeType = await findPropertyTypeByCode('OFFICE')
+  const officeProperties = await indexProperty({ active: true, propertyTypeId: officeType?.id })
   const furnishedProperties = await indexProperty({ active: true, furnished: true })
   const bigProperties = await indexProperty({ active: true, bedrooms: { gte: 4 }, bathrooms: { gte: 3 } })
 
