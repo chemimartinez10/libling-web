@@ -35,7 +35,7 @@ export const dict = {
 			luxemburg: "Propiedades en Luxemburgo",
 			emirates: "Propiedades en Emiratos Árabes Unidos",
 			spain: "Propiedades en España",
-			earth: "Propiedades en el mundo",
+			earth: "Otros paises",
 		},
 		data: {
 			"Individual": "Individual",
@@ -69,6 +69,8 @@ export const dict = {
 			"Triplex": "Tríplex",
 			"Commercial Premise": "Local comercial",
 			"Office": "Oficina",
+			"Terrain": "Terreno",
+			"Investment": "Inversión inmobiliaria",
 		},
 		adminProperties: {
 			indexTitle: "Inmuebles registrados",
@@ -418,7 +420,7 @@ export const dict = {
 			luxemburg: "Properties in Luxembourg",
 			emirates: "Properties in United Arab Emirates",
 			spain: "Properties in Spain",
-			earth: "Properties around the world",
+			earth: "Other countries",
 		},
 		data: {
 			"Individual": "Individual",
@@ -452,6 +454,8 @@ export const dict = {
 			"Triplex": "Triplex",
 			"Commercial Premise": "Commercial Premises",
 			"Office": "Office",
+			"Terrain": "Terrain",
+			"Investment": "Investment",
 		},
 
 		adminProperties: {
@@ -766,7 +770,7 @@ export const dict = {
 	},
 	fr: {
 		immo: {
-			headerTitle: "Votre maison idéale vous attend",
+			headerTitle: "Votre bien immobilier idéale vous attend",
 			headerDescription:
 				"Opportunités immobilières uniques au Luxembourg, en Espagne et à Dubaï : ne les manquez pas !",
 			headerButton: "Recherche",
@@ -801,7 +805,7 @@ export const dict = {
 			luxemburg: "Propriétés au Luxembourg",
 			emirates: "Propriétés aux Émirats arabes unis",
 			spain: "Propriétés en Espagne",
-			earth: "Propriétés dans le monde entier",
+			earth: "Autres pays",
 		},
 		data: {
 			"Individual": "Individuel",
@@ -835,6 +839,8 @@ export const dict = {
 			"Triplex": "Triplex",
 			"Commercial Premise": "Local commercial",
 			"Office": "Bureau",
+			"Terrain": "Terrain",
+			"Investment": "Investissement",
 		},
 
 		adminProperties: {

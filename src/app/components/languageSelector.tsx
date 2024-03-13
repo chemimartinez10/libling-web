@@ -36,17 +36,17 @@ export const LanguageSelector = ({ lang }: { lang: "es" | "en" | "fr" }) => {
                 <div className={styles.langItem} onClick={() => { handleClick('es') }}>
                     <Image alt='esp' src={spainImg} width={24} height={24} style={{ width: 24, height: 24 }} />
                     <span className={lang === 'es' ? styles.langTitleSelected : styles.langTitle}>Español</span>
-                    <span className={styles.langPlaceholder}>(ES)</span>
+                    {/* <span className={styles.langPlaceholder}>(ES)</span> */}
                 </div>
                 <div className={styles.langItem} onClick={() => { handleClick('en') }}>
                     <Image alt='eng' src={englandImg} width={24} height={24} style={{ width: 24, height: 24 }} />
                     <span className={lang === 'en' ? styles.langTitleSelected : styles.langTitle}>English</span>
-                    <span className={styles.langPlaceholder}>(USA)</span>
+                    {/* <span className={styles.langPlaceholder}>(USA)</span> */}
                 </div>
                 <div className={styles.langItem} onClick={() => { handleClick('fr') }}>
                     <Image alt='fra' src={franceImg} width={24} height={24} style={{ width: 24, height: 24 }} />
                     <span className={lang === 'fr' ? styles.langTitleSelected : styles.langTitle}>Français</span>
-                    <span className={styles.langPlaceholder}>(FR)</span>
+                    {/* <span className={styles.langPlaceholder}>(FR)</span> */}
                 </div>
             </div>
         </div>

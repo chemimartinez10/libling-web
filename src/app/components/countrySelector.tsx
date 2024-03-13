@@ -60,23 +60,20 @@ export const CountrySelector = ({ country, lang }: ICountry & ILang) => {
                     }
                 </div>
                 <div className={open ? styles.langListActive : styles.langList}>
+                    <div className={styles.countryItem} onClick={() => { handleClick('LU') }}>
+                        <Image alt='lux' src={luxemburgImg} width={24} height={24} className={styles.flag} />
+                        <span className={currentCountry === 'LU' ? styles.langTitleSelected : styles.langTitle}>{glosary.luxemburg}</span>
+                    </div>
                     <div className={styles.countryItem} onClick={() => { handleClick('ES') }}>
                         <Image alt='esp' src={spainImg} width={24} height={24} className={styles.flag} />
                         <span className={currentCountry === 'ES' ? styles.langTitleSelected : styles.langTitle}>{glosary.spain}</span>
-                        <span className={styles.langPlaceholder}>(ES)</span>
                     </div>
                     <div className={styles.countryItem} onClick={() => { handleClick('AE') }}>
                         <Image alt='aeu' src={emiratesImg} width={24} height={24} className={styles.flag} />
                         <span className={currentCountry === 'AE' ? styles.langTitleSelected : styles.langTitle}>{glosary.emirates}</span>
-                        <span className={styles.langPlaceholder}>(AE)</span>
-                    </div>
-                    <div className={styles.countryItem} onClick={() => { handleClick('LU') }}>
-                        <Image alt='lux' src={luxemburgImg} width={24} height={24} className={styles.flag} />
-                        <span className={currentCountry === 'LU' ? styles.langTitleSelected : styles.langTitle}>{glosary.luxemburg}</span>
-                        <span className={styles.langPlaceholder}>(LU)</span>
                     </div>
                     <div className={styles.countryItem} onClick={() => { handleClick('ALL') }}>
-                        <Image alt='lux' src={earthImg} width={24} height={24} className={styles.flag} />
+                        <Image alt='all' src={earthImg} width={24} height={24} className={styles.flag} />
                         <span className={currentCountry === 'ALL' ? styles.langTitleSelected : styles.langTitle}>{glosary.earth}</span>
                     </div>
                 </div>
