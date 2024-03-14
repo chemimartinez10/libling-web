@@ -17,7 +17,7 @@
     justify-content: center;
     align-items: stretch;
     align-content: stretch;
-    padding: 88px 32px;
+    padding: 88px 16px;
     padding-bottom: 80px;
     color: #fff;
     flex-direction: column;
@@ -261,7 +261,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 20px 32px;
+    padding: 20px 16px;
 }
 
 .bottomRibbon {

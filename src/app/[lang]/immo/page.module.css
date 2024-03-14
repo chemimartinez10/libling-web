@@ -186,7 +186,7 @@
 }
 
 /* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {
+@media (min-width: 701px) and (max-width: 1214px) {
   .textContainer {
 
     text-align: center;
@@ -233,7 +233,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    padding: 0;
+    padding: 0px 16px;
     z-index: 1;
     width: 100%;
     background: url(/en/img/immo/hero_landing_1440x900.jpg);
