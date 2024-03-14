@@ -13,6 +13,9 @@
 .layout {
   position: relative;
 }
+.contactForm{
+  display: none;
+}
 
 .headerTitle {
   font-size: 40px;
@@ -187,7 +190,11 @@
     height: 450px;
   }
 }
-
+@media (width < 700px){
+  .contactForm{
+    display: flex;
+  }
+}
 @media (prefers-color-scheme: dark) {}
 
 @keyframes rotate {

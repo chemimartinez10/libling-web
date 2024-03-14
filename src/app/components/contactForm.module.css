@@ -1,0 +1,76 @@
+.card {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    box-shadow: 0px 12px 30px #FB860114;
+    border-radius: 10px;
+    padding: 40px;
+    max-width: 400px;
+}
+.formTitle{
+    font-size: 24px;
+    color: #000000DE;
+}
+.button{
+    padding: 8px 16px;
+    font-size: 14px;
+    color: #FFFFFF;
+    border-radius: 18px;
+    background-color: #FB8601;
+    box-shadow: 0px 6px 12px #FB860129;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    align-self: flex-end;
+    transition: all .25s ease;
+}
+.button:hover{
+    padding: 8px 16px;
+    font-size: 14px;
+    color: #FFFFFF;
+    border-radius: 18px;
+    background-color: #FB8601D0;
+    box-shadow: 0px 6px 12px #FB860129;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    align-self: flex-end;
+    transition: all .25s ease;
+}
+@media (width <= 700px){
+    .card {
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        padding: 32px 16px;
+        max-width: 100%;
+    }
+    .button{
+        padding: 8px 16px;
+        font-size: 14px;
+        color: #FFFFFF;
+        border-radius: 18px;
+        background-color: #FB8601;
+        box-shadow: 0px 6px 12px #FB860129;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        align-self: stretch;
+        transition: all .25s ease;
+    }
+    .button:hover{
+        padding: 8px 16px;
+        font-size: 14px;
+        color: #FFFFFF;
+        border-radius: 18px;
+        background-color: #FB8601D0;
+        box-shadow: 0px 6px 12px #FB860129;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        align-self: stretch;
+        transition: all .25s ease;
+    }
+}

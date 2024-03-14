@@ -11,7 +11,8 @@
 }
 
 .innerContactSection {
-    width: 1440px;
+    max-width: 1440px;
+    width: 100%;
     height: 675px;
     display: flex;
     flex-direction: row;
@@ -37,44 +38,61 @@
     font-size: 16px;
     color: #FFFFFFBD;
 }
-
-.card {
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    box-shadow: 0px 12px 30px #FB860114;
-    border-radius: 10px;
-    padding: 40px;
-    max-width: 400px;
-}
-.formTitle{
-    font-size: 24px;
-    color: #000000DE;
-}
-.button{
-    padding: 8px 16px;
-    font-size: 14px;
-    color: #FFFFFF;
-    border-radius: 18px;
-    background-color: #FB8601;
-    box-shadow: 0px 6px 12px #FB860129;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    align-self: flex-end;
-    transition: all .25s ease;
-}
-.button:hover{
-    padding: 8px 16px;
-    font-size: 14px;
-    color: #FFFFFF;
-    border-radius: 18px;
-    background-color: #FB8601D0;
-    box-shadow: 0px 6px 12px #FB860129;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    align-self: flex-end;
-    transition: all .25s ease;
-}
+@media (1440px <=width) {
+    .contactSection {
+        width: 100%;
+        height: 675px;
+        background: url(/en/img/immo/cta_tu_futuro_comienza_aqui_1920x1080.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+  }
+  
+  @media (500px <=width <=1440px) {
+    .contactSection {
+        width: 100%;
+        height: 675px;
+        background: url(/en/img/immo/cta_tu_futuro_comienza_aqui_1440x900.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+  }
+  
+  @media (width <=700px) {
+    .contactSection {
+        width: 100%;
+        height: 460px;
+        background: url(/en/img/immo/cta_tu_futuro_comienza_aqui_320x568.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .form{
+        display: none;
+    }
+    .innerContactSection {
+        width: 100%;
+        height: 460px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding: 24px 16px;
+        gap: 100px;
+    }
+  }

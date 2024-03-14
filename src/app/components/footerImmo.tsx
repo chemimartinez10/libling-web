@@ -54,14 +54,16 @@ export default function FooterImmo({ lang }: { lang: "es" | "en" | "fr" }) {
 
             </p>
         </div>
-        <div className={styles.bottomRibbon}>
-            <div className={styles.ribbonHalf}>
-                <span className={styles.ribbonText}>{`© Libling 2024 | ${glosary.rights}.`}</span>
-            </div>
-            <div className={styles.ribbonHalf}>
-                <span className={styles.ribbonTextFaded}>{glosary.cookies}</span>
-                <span className={styles.ribbonTextFaded}>{glosary.privacy}</span>
-                <span className={styles.ribbonTextFaded}>{glosary.terms}</span>
+        <div className={styles.ribbon}>
+            <div className={styles.bottomRibbon}>
+                <div className={styles.ribbonHalf}>
+                    <span className={styles.ribbonText}>{`© Libling 2024 | ${glosary.rights}.`}</span>
+                </div>
+                <div className={styles.ribbonHalf}>
+                    <span className={styles.ribbonTextFaded}>{glosary.cookies}</span>
+                    <span className={styles.ribbonTextFaded}>{glosary.privacy}</span>
+                    <span className={styles.ribbonTextFaded}>{glosary.terms}</span>
+                </div>
             </div>
         </div>
     </>

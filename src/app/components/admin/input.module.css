@@ -525,3 +525,20 @@
 .thumbsContainer {
     max-height: 100px;
 }
+
+@media (width < 500px) {
+    .switchContainer {
+        border-radius: 10px;
+        background-color: #fff;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #0000001F;
+        flex-shrink: 1;
+        align-self: flex-start;
+        padding: 0px;
+        cursor: pointer;
+        overflow: hidden;
+    }
+}

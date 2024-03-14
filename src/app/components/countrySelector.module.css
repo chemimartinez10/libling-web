@@ -69,6 +69,18 @@
     cursor: pointer;
     align-items: center;
 }
+.langHeaderAlt{
+    color: #00000099;
+    font-size: 14px;
+    padding: 10px;
+    flex-grow: 1;
+}
+.iconAlt{
+    color: #00000099;
+    font-size: 24px;
+
+
+}
 
 .langTitle {
     font-size: 14px;

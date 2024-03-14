@@ -11,6 +11,7 @@ import WhatsappIcon from '@/app/img/whatsapp.png'
 import { CountrySelector } from './countrySelector'
 import Image from 'next/image'
 import { ICountry, ILang } from '../interfaces'
+import Menu from './menu'
 
 
 export default function NavbarImmo({ lang, country }: ICountry & ILang) {
@@ -28,6 +29,17 @@ export default function NavbarImmo({ lang, country }: ICountry & ILang) {
                 <div className={styles.logoContainer} onClick={() => { router.push('/') }}>
                     <LogoNavSVG />
                 </div>
+                <div className={styles.hiddenNav}>
+
+                    <a href="#contact">
+                        <div className={styles.textImageContainer}>
+                            <Image src={WhatsappIcon} width={24} height={24} alt='contact' style={{ width: 24, height: 24 }} />
+                        </div>
+                    </a>
+                    <Menu lang={lang} alt={true} />
+
+
+                </div>
                 <ul style={poppinsMedium.style}>
                     <CountrySelector country={country} lang={lang} />
                     <li className={verifyCurrentLink('/') ? styles.selectedLink : undefined}><Link href={'/'}>{'Libling relocation'}</Link></li>
@@ -36,7 +48,7 @@ export default function NavbarImmo({ lang, country }: ICountry & ILang) {
                     <LanguageSelector lang={lang} />
                     <li><a href="#contact">
                         <div className={styles.textImageContainer}>
-                            <Image src={WhatsappIcon} width={24} height={24} alt='contact' style={{ width: 24, height: 24 }}/>
+                            <Image src={WhatsappIcon} width={24} height={24} alt='contact' style={{ width: 24, height: 24 }} />
                             <span>
                                 {glosary.link_4}
                             </span>

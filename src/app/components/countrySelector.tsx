@@ -13,12 +13,12 @@ import { FiChevronDown, FiChevronUp } from 'react-icons/fi'
 import { poppinsMedium } from '../fonts'
 import { useRouter } from 'next/navigation'
 
-export const CountrySelector = ({ country, lang }: ICountry & ILang) => {
+export const CountrySelector = ({ country, lang, dark = false }: ICountry & ILang & { dark?: boolean }) => {
     const flags = {
         'ES': spainImg,
         'AE': emiratesImg,
         'LU': luxemburgImg,
-        'ALL':earthImg,
+        'ALL': earthImg,
     }
     const [open, setOpen] = useState(false)
     const [currentCountry, setCurrentCountry] = useState<countryType | undefined>(hasCookie('immo-country') ? getCookie('immo-country') as countryType : country)
@@ -40,23 +40,23 @@ export const CountrySelector = ({ country, lang }: ICountry & ILang) => {
                 <div className={styles.selectedLangImmo} onClick={() => { setOpen(state => !state) }} >
                     <Image alt={currentCountry} src={flags[currentCountry]} width={24} height={24} className={styles.flag} />
                     {
-                        currentCountry === 'ES' && <span className={styles.langHeader} style={poppinsMedium.style}>{glosary.spain}</span>
+                        currentCountry === 'ES' && <span className={dark ? styles.langHeaderAlt : styles.langHeader} style={poppinsMedium.style}>{glosary.spain}</span>
                     }
                     {
-                        currentCountry === 'AE' && <span className={styles.langHeader} style={poppinsMedium.style}>{glosary.emirates}</span>
+                        currentCountry === 'AE' && <span className={dark ? styles.langHeaderAlt : styles.langHeader} style={poppinsMedium.style}>{glosary.emirates}</span>
                     }
                     {
-                        currentCountry === 'LU' && <span className={styles.langHeader} style={poppinsMedium.style}>{glosary.luxemburg}</span>
+                        currentCountry === 'LU' && <span className={dark ? styles.langHeaderAlt : styles.langHeader} style={poppinsMedium.style}>{glosary.luxemburg}</span>
                     }
                     {
-                        currentCountry === 'ALL' && <span className={styles.langHeader} style={poppinsMedium.style}>{glosary.earth}</span>
+                        currentCountry === 'ALL' && <span className={dark ? styles.langHeaderAlt : styles.langHeader} style={poppinsMedium.style}>{glosary.earth}</span>
                     }
                     {
                         !!open
                             ?
-                            <FiChevronUp className={styles.icon} />
+                            <FiChevronUp className={dark ? styles.iconAlt : styles.icon} />
                             :
-                            <FiChevronDown className={styles.icon} />
+                            <FiChevronDown className={dark ? styles.iconAlt : styles.icon} />
                     }
                 </div>
                 <div className={open ? styles.langListActive : styles.langList}>

@@ -13,6 +13,7 @@ import FooterImmo from '@/app/components/footerImmo'
 import { getCookie } from 'cookies-next'
 import { countryType } from '@/app/interfaces'
 import { cookies } from 'next/headers'
+import ContactForm from '@/app/components/contactForm'
 
 
 
@@ -35,10 +36,12 @@ export default function RootLandingLayout({
     <html lang={lang} style={{backgroundColor:'#FAFAFA', color:'#000000DE'}}>
       <body style={poppinsRegular.style} className={styles.layout}>
         <ToastContainer />
-        <Menu lang={lang} />
         <NavbarImmo lang={lang} country={country} />
         {children}
         <ContactSection lang={lang}/>
+        <div className={styles.contactForm}>
+          <ContactForm lang={lang}/>
+        </div>
         <FooterImmo lang={lang} />
       </body>
     </html>

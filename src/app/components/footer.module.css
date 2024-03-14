@@ -10,13 +10,14 @@
     flex-direction: column;
     gap: 1.5rem;
 }
+
 .footerImmo {
     background-color: #FB8601;
     display: flex;
     justify-content: center;
     align-items: stretch;
     align-content: stretch;
-    padding: 88px 140px;
+    padding: 88px 32px;
     padding-bottom: 80px;
     color: #fff;
     flex-direction: column;
@@ -40,6 +41,9 @@
     flex-grow: 1;
     gap: 32px;
     row-gap: 48px;
+    width: 100%;
+    max-width: 1214px;
+    align-self:center;
     /* max-width: 1200px; */
     flex-grow: 1;
 }
@@ -250,16 +254,25 @@
     cursor: pointer;
 }
 
+.ribbon {
+    background-color: #FAFAFA;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 32px;
+}
+
 .bottomRibbon {
     background-color: #FAFAFA;
-    height: 64px;
     width: 100%;
+    max-width: 1214px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     color: #000000DE;
-    padding: 20px 140px;
     font-size: 12px;
 }
 
@@ -278,19 +291,22 @@
 .ribbonTextFaded {
     color: #00000099;
 }
-.immoText{
+
+.immoText {
     font-size: 14px;
     color: #fff;
     text-align: center;
 }
-.immoIconsContainer{
+
+.immoIconsContainer {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 24px;
 }
-.iconImmo{
+
+.iconImmo {
     font-size: 32px;
     color: #FB8601;
     background-color: #fff;
@@ -328,6 +344,37 @@
         justify-content: space-between;
         width: 100%;
         align-items: center;
+    }
+
+    .bottomRibbon {
+        background-color: #FAFAFA;
+        width: 100%;
+        max-width: 1214px;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-items: flex-start;
+        color: #000000DE;
+        font-size: 12px;
+        gap: 16px;
+    }
+
+    .ribbonHalf {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        column-gap: 24px;
+        row-gap: 8px;
+    }
+
+    .ribbonText {
+        color: #00000099;
+    }
+
+    .ribbonTextFaded {
+        color: #000000DE;
     }
 }
 

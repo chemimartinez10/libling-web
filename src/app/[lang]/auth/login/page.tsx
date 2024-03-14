@@ -87,6 +87,7 @@ const Login = ({ params }: { params: { lang: "es" | "en" | "fr" } }) => {
     }
     return (
         <section className={styles.section}>
+            
             <LogoSVG />
             <div className={styles.card}>
                 <div className={styles.cardHeader}>
