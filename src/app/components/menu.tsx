@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { poppinsBold } from '../fonts';
 import { dict } from '../utils';
 
-const Menu = ({ lang, alt = false }: { lang: "es" | "en" | "fr", alt: boolean }) => {
+const Menu = ({ lang, alt = false }: { lang: "es" | "en" | "fr", alt?: boolean }) => {
     const glosary = dict[lang]?.navbar
     const glosaryAuth = dict[lang]?.auth
     const [open, setOpen] = useState(false)
