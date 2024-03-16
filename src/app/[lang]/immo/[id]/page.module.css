@@ -132,3 +132,14 @@
     font-size: 16px;
     color: #000000DE;
 }
+@media (width <= 700px){
+    .head {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        padding-bottom: 32px;
+    }
+    .sectionContent{
+        flex-direction: column;
+    }
+}

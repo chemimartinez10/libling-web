@@ -5,6 +5,7 @@ import pin from '@/app/img/pin.png'
 import Image from 'next/image'
 import { getMapStyles } from '../actions';
 import { relative } from 'path';
+import styles from './map.module.css'
 
 interface IMap {
     longitude: number
@@ -24,7 +25,7 @@ const CustomMap: React.FC<IMap> = ({ longitude, latitude, width, height, zoom })
         getMapStyles().then(result => setMapStyle(result))
     }, [])
     return (
-        <div style={{ width: 1060, height: 300 }}>
+        <div className={styles.map}>
             {
                 (!!mapStyle && !!lng && !!lat)
                 &&
@@ -34,7 +35,7 @@ const CustomMap: React.FC<IMap> = ({ longitude, latitude, width, height, zoom })
                         latitude: lat,
                         zoom: 10
                     }}
-                    style={{ width: 1060, height: 300, borderRadius: 10, overflow:'hidden' }}
+                    style={{ width: '100%', height: 300, borderRadius: 10, overflow:'hidden' }}
                     mapStyle={mapStyle}
                     interactive={false}
                     latitude={lat}

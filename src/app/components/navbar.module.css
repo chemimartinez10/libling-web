@@ -60,6 +60,10 @@
     align-items: center;
     cursor: pointer;
 }
+.icon{
+    color: #FFFFFFBD;
+    font-size: 24px;
+}
 
 /* .selectedLink {
     border-right: .5px solid #fff;

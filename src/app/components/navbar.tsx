@@ -9,6 +9,7 @@ import { usePathname, useRouter } from 'next/navigation'
 import { LanguageSelector } from './languageSelector'
 import LogoNavSVG from './icons/logoNavSVG'
 import WhatsappIcon from '@/app/img/whatsapp.png'
+import { FiLogIn } from 'react-icons/fi'
 
 
 export default function Navbar({ lang }: { lang: "es" | "en" | "fr" }) {
@@ -42,6 +43,14 @@ export default function Navbar({ lang }: { lang: "es" | "en" | "fr" }) {
                             </span>
                         </div>
                     </Link></li>
+
+                    <li>
+                        <Link href={'/auth/login'} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                            <FiLogIn className={styles.icon} />
+                        </Link>
+
+                    </li>
+
                 </ul>
             </div>
         </nav>

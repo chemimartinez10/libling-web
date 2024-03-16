@@ -115,18 +115,21 @@ const Detail: React.FC<IDetail> = async ({ params: { id, lang } }) => {
                                 }
                             </div>
                         </div>
-                        <div className={styles.sectionContentRow}>
-                            <div className={styles.sectionContentRowTitle}>
-                                {
-                                    glosaryAdmin.formLabelHeatingType
-                                }
+                        {
+                            (!!heatingType && heatingType in glosaryData) &&
+                            <div className={styles.sectionContentRow}>
+                                <div className={styles.sectionContentRowTitle}>
+                                    {
+                                        glosaryAdmin.formLabelHeatingType
+                                    }
+                                </div>
+                                <div className={styles.sectionContentRowDescription}>
+                                    {
+                                        (!!heatingType && heatingType in glosaryData) && glosaryData[heatingType as dataTranslate]
+                                    }
+                                </div>
                             </div>
-                            <div className={styles.sectionContentRowDescription}>
-                                {
-                                    (!!heatingType && heatingType in glosaryData) && glosaryData[heatingType as dataTranslate]
-                                }
-                            </div>
-                        </div>
+                        }
                         <div className={styles.sectionContentRow}>
                             <div className={styles.sectionContentRowTitle}>
                                 {
@@ -155,18 +158,21 @@ const Detail: React.FC<IDetail> = async ({ params: { id, lang } }) => {
                                 }
                             </div>
                         </div>
-                        <div className={styles.sectionContentRow}>
-                            <div className={styles.sectionContentRowTitle}>
-                                {
-                                    glosaryAdmin.formLabelHeatingMedium
-                                }
+                        {
+                            (!!heatingMedium && heatingMedium in glosaryData) && 
+                            <div className={styles.sectionContentRow}>
+                                <div className={styles.sectionContentRowTitle}>
+                                    {
+                                        glosaryAdmin.formLabelHeatingMedium
+                                    }
+                                </div>
+                                <div className={styles.sectionContentRowDescription}>
+                                    {
+                                        (!!heatingMedium && heatingMedium in glosaryData) && glosaryData[heatingMedium as dataTranslate]
+                                    }
+                                </div>
                             </div>
-                            <div className={styles.sectionContentRowDescription}>
-                                {
-                                    (!!heatingMedium && heatingMedium in glosaryData) && glosaryData[heatingMedium as dataTranslate]
-                                }
-                            </div>
-                        </div>
+                        }
 
 
                     </div>
@@ -183,19 +189,21 @@ const Detail: React.FC<IDetail> = async ({ params: { id, lang } }) => {
                                 }
                             </div>
                         </div>
-                        <div className={styles.sectionContentRow}>
-                            <div className={styles.sectionContentRowTitle}>
-                                {
-                                    glosaryAdmin.formLabelHeatingEnergy
-                                }
+                        {
+                            (!!heatingEnergy && heatingEnergy in glosaryData) &&
+                            <div className={styles.sectionContentRow}>
+                                <div className={styles.sectionContentRowTitle}>
+                                    {
+                                        glosaryAdmin.formLabelHeatingEnergy
+                                    }
+                                </div>
+                                <div className={styles.sectionContentRowDescription}>
+                                    {
+                                        (!!heatingEnergy && heatingEnergy in glosaryData) && glosaryData[heatingEnergy as dataTranslate]
+                                    }
+                                </div>
                             </div>
-                            <div className={styles.sectionContentRowDescription}>
-                                {
-                                    (!!heatingEnergy && heatingEnergy in glosaryData) && glosaryData[heatingEnergy as dataTranslate]
-                                }
-                            </div>
-                        </div>
-
+                        }
                     </div>
 
                 </div>

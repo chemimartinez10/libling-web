@@ -12,6 +12,7 @@ import { CountrySelector } from './countrySelector'
 import Image from 'next/image'
 import { ICountry, ILang } from '../interfaces'
 import Menu from './menu'
+import { FiLogIn } from 'react-icons/fi'
 
 
 export default function NavbarImmo({ lang, country }: ICountry & ILang) {
@@ -46,15 +47,21 @@ export default function NavbarImmo({ lang, country }: ICountry & ILang) {
                     <div className={styles.separator}>
                     </div>
                     <LanguageSelector lang={lang} />
-                    <li><a href="#contact">
-                        <div className={styles.textImageContainer}>
-                            <Image src={WhatsappIcon} width={24} height={24} alt='contact' style={{ width: 24, height: 24 }} />
-                            <span>
-                                {glosary.link_4}
-                            </span>
-                        </div>
+                    <li>
+                        <a href="#contact">
+                            <div className={styles.textImageContainer}>
+                                <Image src={WhatsappIcon} width={24} height={24} alt='contact' style={{ width: 24, height: 24 }} />
+                                <span>
+                                    {glosary.link_4}
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <Link href={'/auth/login'} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
 
-                    </a>
+                            <FiLogIn className={styles.icon} />
+                        </Link>
                     </li>
                 </ul>
             </div>

@@ -86,3 +86,8 @@
       padding: 0px 16px;
     }
   }
+  @media (width <= 500px){
+    .leftScroller, .rightScroller{
+      display: none;
+    }
+  }
