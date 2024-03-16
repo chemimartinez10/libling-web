@@ -59,7 +59,7 @@ const Preview: React.FC<IPreview> = ({ params: { lang }, onNext, onGo, files, fa
         const newArray = data?.map(el => ({ key: el.id, value: el.name }))
         setCountries(newArray || [])
     }
-    const findByKey = (array: ISelectElement[], key: number | undefined) => {
+    const findByKey = (array: ISelectElement[], key: number | null | undefined) => {
         return array.find(el => key?.toString() === el.key.toString())?.value
     }
     const handleCheck = (event: React.ChangeEvent<HTMLInputElement>) => {
