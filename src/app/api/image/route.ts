@@ -20,7 +20,7 @@ const uploadFileToS3 = async (file: Buffer, filename: string) => {
 		Bucket: process.env.S3_BUCKET_NAME,
 		Key: key,
 		Body: file,
-		ContentType: "image/*",
+		ContentType: "image/jpeg",
 	}
 	const command = new PutObjectCommand(params)
 	await bucketClient.send(command)
