@@ -39,7 +39,16 @@ export const templates = {
 	<p>Here is your url to change password</p>
 	<a href="${url}">Change password</a>
 	`,
+	immo: (name: string, url: string) => `
+	<h2>${name} wnats to comunicate with you</h2>
+	<p>I'm interested on this property</p>
+	<a href="${url}">Click here to see the property</a>
+	<br>
+	<br>
+	
+	`,
 }
 export const subjects = {
 	forgotPassword: `Change your password`,
+	immo: `Someone is asking for a property`,
 }

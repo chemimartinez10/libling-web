@@ -88,7 +88,7 @@ const Detail: React.FC<IDetail> = async ({ params: { id, lang } }) => {
                     <div className={styles.buttonContainer}>
                         <Button title={'Whatsapp'} type='secondary'
                             icon='ws' goTo={`https://api.whatsapp.com/send?phone=${352691367757}`}/>
-                        <Button title={glosary.askFor} type='outline' />
+                        <Button title={glosary.askFor} type='outline' goTo='#contact' />
                     </div>
                 </div>
             </div>

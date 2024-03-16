@@ -36,6 +36,9 @@ export const dict = {
 			emirates: "Propiedades en Emiratos Árabes Unidos",
 			spain: "Propiedades en España",
 			earth: "Otros paises",
+			success:"Éxito",
+			successEmail:"Correo enviado exitosamente",
+			failEmail:"Ha surgido un error en el envío del correo",
 		},
 		data: {
 			"Individual": "Individual",
@@ -423,6 +426,9 @@ export const dict = {
 			emirates: "Properties in United Arab Emirates",
 			spain: "Properties in Spain",
 			earth: "Other countries",
+			success: "Success",
+			successEmail: "Email sent successfully",
+			failEmail: "An error occurred while sending the email",
 		},
 		data: {
 			"Individual": "Individual",
@@ -809,6 +815,9 @@ export const dict = {
 			emirates: "Propriétés aux Émirats arabes unis",
 			spain: "Propriétés en Espagne",
 			earth: "Autres pays",
+			success: "Succès",
+			successEmail: "Email envoyé avec succès",
+			failEmail: "Une erreur est survenue lors de l'envoi de l'email",
 		},
 		data: {
 			"Individual": "Individuel",
