@@ -57,7 +57,7 @@ const StepThree: React.FC<IStepThree> = ({ params: { lang }, onNext, onBack }) =
         formRef.current?.setFieldValue(`surfaces.${index}.areaUnit`, key)
     }
     const validationSchema = Yup.object({
-        view: Yup.string().optional(),
+        view: Yup.string().required(glosary.formValidationRequired),
         surfaces: Yup.array().of(Yup.object().shape({
             quantity: Yup.string().required(glosary.formValidationRequired),
             description: Yup.string().required(glosary.formValidationRequired),
