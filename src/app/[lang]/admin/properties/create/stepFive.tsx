@@ -61,7 +61,7 @@ const StepFive: React.FC<IStepFive> = ({ params: { lang }, onNext, onBack }) => 
     const validationSchema = Yup.object({
         price: Yup.string().required(glosary.formValidationRequired),
         currency: Yup.number().required(glosary.formValidationRequired),
-        frecuency: store?.form_1?.type ? Yup.number().required(glosary.formValidationRequired) : Yup.number().nullable().optional(),
+        frecuency: !store?.form_1?.type ? Yup.number().required(glosary.formValidationRequired) : Yup.number().nullable().optional(),
     });
     const handleSubmit = async (values: IValues, { setSubmitting }: FormikHelpers<IValues>) => {
         const formData = values
@@ -109,7 +109,6 @@ const StepFive: React.FC<IStepFive> = ({ params: { lang }, onNext, onBack }) => 
                                 :
                                 null
                             }
-                            {JSON.stringify(errors)}
 
                         </Form>
                     )}
