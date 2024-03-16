@@ -121,8 +121,8 @@ const PropertyCreate: React.FC<IPage> = ({ params: { lang } }) => {
         }
         finally{
             storeInterface?.setLoading(false)
-            // store?.resetForm()
-            // store?.resetStep()
+            store?.resetForm()
+            store?.resetStep()
         }
 
     }
