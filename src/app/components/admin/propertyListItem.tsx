@@ -59,7 +59,7 @@ const PropertyListItem: React.FC<IListItem> = ({ item, lang, onSelect, onPreview
                         <span className={styles.price} style={poppinsMedium.style}>{item.price.toLocaleString('en-US')}</span>
                     }
                     {
-                        !!item.frecuency &&
+                        (item.frecuency !== '0') &&
                         <span className={styles.frecuency}>{` / ${item.frecuency ? rentPaymentPeriods.find(element => item.frecuency?.toString() === element.key.toString())?.value : undefined}`}</span>
                     }
                 </div>
