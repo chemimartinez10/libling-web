@@ -69,9 +69,9 @@ const StepTwo: React.FC<IStepTwo> = ({ params: { lang }, onNext, onBack }) => {
         area: Yup.number().required(glosary.formValidationRequired).typeError(glosary.formValidationNumbers),
         bedrooms: Yup.number().required(glosary.formValidationRequired).typeError(glosary.formValidationNumbers),
         bathrooms: Yup.number().required(glosary.formValidationRequired).typeError(glosary.formValidationNumbers),
-        heatingType: Yup.number().required(glosary.formValidationRequired),
-        heatingMedium: Yup.number().required(glosary.formValidationRequired),
-        heatingEnergy: Yup.number().required(glosary.formValidationRequired),
+        heatingType: Yup.number().optional(),
+        heatingMedium: Yup.number().optional(),
+        heatingEnergy: Yup.number().optional(),
     });
     const handleSubmit = async (values: IValues, { setSubmitting }: FormikHelpers<IValues>) => {
         const formData = values
