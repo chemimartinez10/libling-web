@@ -44,7 +44,7 @@ interface IForm4 {
 interface IForm5 {
 	price?: string
     currency?: number
-    frecuency?: number
+    frecuency?: number | null
 }
 interface TypePropertyStore {
 	lastStep: number

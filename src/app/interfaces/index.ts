@@ -67,7 +67,7 @@ export interface IInputSelect {
 	onChange?: (e: string) => void
 	description?: string
 	name?: string
-	initialValue?: string | number
+	initialValue?: string | number | null
 	lang?: langType
 }
 export interface IInputRadio {

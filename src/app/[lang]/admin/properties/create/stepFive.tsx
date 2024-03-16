@@ -21,7 +21,7 @@ import { rentPaymentPeriods } from '@/app/utils/data';
 interface IValues {
     price?: string
     currency?: number
-    frecuency?: number
+    frecuency?: number | null
 }
 interface IStepFive extends IPage {
     onNext: VoidFunction
@@ -40,7 +40,7 @@ const StepFive: React.FC<IStepFive> = ({ params: { lang }, onNext, onBack }) => 
     const initialValues: IValues = {
         price: store?.form_5?.price || '',
         currency: store?.form_5?.currency,
-        frecuency: store?.form_5?.frecuency,
+        frecuency: store?.form_5?.frecuency || null,
     }
 
     const [periods, setPeriods] = useState<ISelectElement[]>(rentPaymentPeriods)
@@ -109,6 +109,7 @@ const StepFive: React.FC<IStepFive> = ({ params: { lang }, onNext, onBack }) => 
                                 :
                                 null
                             }
+                            {JSON.stringify(errors)}
 
                         </Form>
                     )}
