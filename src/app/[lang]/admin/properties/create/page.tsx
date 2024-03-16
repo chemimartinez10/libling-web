@@ -111,7 +111,7 @@ const PropertyCreate: React.FC<IPage> = ({ params: { lang } }) => {
             } else {
                 toast.error(<CustomToast type='error' title='Error' content={'error particular'} />, { theme: 'colored', icon: false, style: { backgroundColor: '#FF4444', maxWidth: 450, padding: 24, borderRadius: 10 } })
             }
-            toast.success(<CustomToast type='success' title='Error' content={glosary.toastPublish} />, { theme: 'colored', icon: false, style: { backgroundColor: '#00C851', maxWidth: 450, padding: 24, borderRadius: 10 } })
+            toast.success(<CustomToast type='success' title='Nice' content={glosary.toastPublish} />, { theme: 'colored', icon: false, style: { backgroundColor: '#00C851', maxWidth: 450, padding: 24, borderRadius: 10 } })
             router.push('/admin/properties')
             
         }
@@ -121,8 +121,8 @@ const PropertyCreate: React.FC<IPage> = ({ params: { lang } }) => {
         }
         finally{
             storeInterface?.setLoading(false)
-            store?.resetForm()
-            store?.resetStep()
+            // store?.resetForm()
+            // store?.resetStep()
         }
 
     }
