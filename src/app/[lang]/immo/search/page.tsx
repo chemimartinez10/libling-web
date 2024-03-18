@@ -23,6 +23,7 @@ const Search: React.FC<ISearch> = async ({ params: { lang }, searchParams }) => 
         type: !!searchParams?.type && typeof searchParams?.type === 'string' && parseInt(searchParams?.type) ? true : false,
         propertyTypeId: !!searchParams?.propertyType && typeof searchParams?.propertyType === 'string' ? parseInt(searchParams?.propertyType) : undefined,
         address: !!searchParams?.address && typeof searchParams?.address === 'string' ? searchParams?.address : undefined,
+        active:true
 
     }
     const page = !!searchParams?.page && typeof searchParams?.page === 'string' && parseInt(searchParams?.page) ? parseInt(searchParams?.page) : undefined
