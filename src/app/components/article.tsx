@@ -25,11 +25,11 @@ const Article: React.FC<IArticle> = ({ title, subtitle, content, list, Icon, but
                 <Icon style={{fontSize:64, alignSelf:'center'}}/>
             }
             {title &&
-                <h5 className={styles.title} >{title}</h5>
+                <h3 className={styles.title} >{title}</h3>
             }
             {
                 subtitle &&
-                <h3 className={bigSubtitle ? styles.bigSubtitle : styles.subtitle} style={poppinsBold.style}>{subtitle}</h3>
+                <h5 className={bigSubtitle ? styles.bigSubtitle : styles.subtitle} style={poppinsBold.style}>{subtitle}</h5>
             }
             {
                 content &&

@@ -11,11 +11,6 @@ import Recurso3 from '@/app/img/Recurso 3.png'
 import Recurso4 from '@/app/img/Recurso 4.png'
 import Recurso5 from '@/app/img/Recurso 5.png'
 import Recurso6 from '@/app/img/Recurso 6.png'
-
-import Testigo1 from '@/app/img/contact_1.png'
-import Testigo2 from '@/app/img/contact_2.png'
-import Testigo3 from '@/app/img/contact_3.png'
-
 import { poppinsBold, poppinsRegular, poppinsSemiBold } from '@/app/fonts'
 import Article from '@/app/components/article'
 import Section from '@/app/components/section'
@@ -56,9 +51,9 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
         <div className={styles.headerMask}>
           <div className={styles.textContainer}>
             <div>
-              <h4 className={styles.headerTitle} style={poppinsBold.style}>{glosary.titleHeader_1}</h4>
-              <h4 className={styles.headerTitle} style={poppinsBold.style}>{glosary.titleHeader_2}</h4>
-              <h4 className={styles.headerTitle} style={poppinsBold.style}>{glosary.titleHeader_3}</h4>
+              <h1 className={styles.headerTitle} style={poppinsBold.style}>{glosary.titleHeader_1}</h1>
+              <h1 className={styles.headerTitle} style={poppinsBold.style}>{glosary.titleHeader_2}</h1>
+              <h1 className={styles.headerTitle} style={poppinsBold.style}>{glosary.titleHeader_3}</h1>
             </div>
           </div>
         </div>

@@ -14,7 +14,9 @@ import Script from 'next/script'
 
 export const metadata: Metadata = {
   title: 'Libling Solutions',
-  description: 'Landing page for Libling solutions',
+  description: 'Travel to Luxemburg, providing you with comprehensive service and optimal support in your relocation process to Luxembourg. We are by your side to assist you with whatever you need',
+  robots:'index, follow',
+  keywords:'relocation, help, travel, experiences, country, Luxemburg, Libling, assist, support, languages',
 }
 
 export default function RootLandingLayout({

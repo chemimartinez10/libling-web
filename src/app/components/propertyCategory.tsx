@@ -85,7 +85,7 @@ const PropertyCategory: React.FC<IPropertyCategory> = ({ title, description, fil
         <article className={styles.propertiesContainer}>
             <div className={styles.propertiesTextContainer}>
                 <h2 className={styles.propertiesContainerTitle}>{title}</h2>
-                <p className={styles.propertiesContainerDescription}>{description}</p>
+                <h3 className={styles.propertiesContainerDescription}>{description}</h3>
             </div>
             <div className={styles.propertiesCarrouselContainer}>
                 {

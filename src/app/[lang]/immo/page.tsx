@@ -36,7 +36,7 @@ const Home: React.FC<IPage> = async ({ params: { lang } }) => {
       <header className={styles.header}>
         <div className={styles.headerMask}>
           <div className={styles.textContainer}>
-            <h4 className={styles.headerTitle} style={poppinsSemiBold.style}>{glosary.headerTitle}</h4>
+            <h1 className={styles.headerTitle} style={poppinsSemiBold.style}>{glosary.headerTitle}</h1>
             <p className={styles.headerDescription}>{glosary.headerDescription}</p>
           </div>
           <PropertySearchForm list={propertyTypes} lang={lang} />
@@ -47,7 +47,7 @@ const Home: React.FC<IPage> = async ({ params: { lang } }) => {
       <section className={styles.mobileSection}>
       <CountrySelector country={country} lang={lang} dark={true}/>
         <div className={styles.textContainer}>
-          <h4 className={styles.headerTitle} style={poppinsSemiBold.style}>{glosary.headerTitle}</h4>
+          <h1 className={styles.headerTitle} style={poppinsSemiBold.style}>{glosary.headerTitle}</h1>
           <p className={styles.headerDescription}>{glosary.headerDescription}</p>
         </div>
         <PropertySearchForm list={propertyTypes} lang={lang} />

@@ -19,8 +19,10 @@ import ContactForm from '@/app/components/contactForm'
 
 
 export const metadata: Metadata = {
-  title: 'Libling Solutions',
-  description: 'Landing page for Libling solutions',
+  title: 'Libling Immo',
+  description: 'Get your new property with Libling Immo a Libling solution to find a property, get a new life in luxemburg, and search for properties arround the world',
+  robots:'index, follow',
+  keywords:'real state, immobilier, rent, sale, houses, libling, live, immo',
 }
 
 export default function RootLandingLayout({
