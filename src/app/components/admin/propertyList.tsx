@@ -254,17 +254,17 @@ const PropertyList: React.FC<IPropertyList> = ({ lang, initialData, metaData }) 
             </div>
             <article className={styles.cardContent}>
                 <table className={styles.tableContainer}>
-                    <thead >
-                        <th>
+                    <thead>
+                        <th style={poppinsMedium.style}>
                             <div className={globalStyles.checkboxControl}>
                                 <input type="checkbox" id="cboxInput" name="select_all" onChange={handleCheck} checked={selected.length === properties?.length} />
                             </div>
                         </th>
-                        <th>{glosary.listBasic}</th>
-                        <th>{glosary.formLabelPrice}</th>
-                        <th>{glosary.formLabelPropertyType}</th>
-                        <th>{glosary.listStatus}</th>
-                        <th>{glosary.listActions}</th>
+                        <th style={poppinsMedium.style}>{glosary.listBasic}</th>
+                        <th style={poppinsMedium.style}>{glosary.formLabelPrice}</th>
+                        <th style={poppinsMedium.style}>{glosary.formLabelPropertyType}</th>
+                        <th style={poppinsMedium.style}>{glosary.listStatus}</th>
+                        <th style={poppinsMedium.style}>{glosary.listActions}</th>
                     </thead>
                     <tbody>
                         {
