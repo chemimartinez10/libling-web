@@ -4,7 +4,7 @@ import { dict } from '@/app/utils'
 import { showProperty } from '@/services'
 import ImageGallery from '@/app/components/imageGallery'
 import InnerNav from '@/app/components/innerNav'
-import { poppinsMedium } from '@/app/fonts'
+import { poppinsMedium, poppinsRegular } from '@/app/fonts'
 import { combustiblesCalefaccion, mecanismosCalefaccion, medidasAreaTerrenos, mediosCalefaccion, rentPaymentPeriods } from '@/app/utils/data'
 import IconArea from '@/app/components/icons/iconArea'
 import IconBed from '@/app/components/icons/iconBed'
@@ -40,7 +40,7 @@ const Detail: React.FC<IDetail> = async ({ params: { id, lang } }) => {
                 <ImageGallery images={property?.PropertyImage} thumbnail={property?.thumbnail} />
                 <div className={styles.summaryContainer}>
                     <div className={styles.textContainer}>
-                        <h4 className={styles.type}>
+                        <h4 className={styles.type} style={poppinsRegular.style}>
                             {
                                 property?.active
                                     ?
@@ -60,7 +60,7 @@ const Detail: React.FC<IDetail> = async ({ params: { id, lang } }) => {
                         <h1 className={styles.title} style={poppinsMedium.style}>
                             {property?.title}
                         </h1>
-                        <h3 className={styles.price}>
+                        <h3 className={styles.price} style={poppinsRegular.style}>
                             <span>
                                 {property?.currency.symbol}
                                 {" "}
@@ -87,13 +87,13 @@ const Detail: React.FC<IDetail> = async ({ params: { id, lang } }) => {
                         <span className={styles.feature}>
                             <IconBed fill='#1973FA' />
                             <span>
-                                {`${glosaryAdmin.formLabelBedrooms}: ${property?.bedrooms}`}
+                                {`${glosaryAdmin.formLabelBedrooms}: ${property?.bedrooms || 0}`}
                             </span>
                         </span>
                         <span className={styles.feature}>
                             <IconBath fill='#1973FA' />
                             <span>
-                                {`${glosaryAdmin.formLabelBathrooms}: ${property?.bathrooms}`}
+                                {`${glosaryAdmin.formLabelBathrooms}: ${property?.bathrooms || 0}`}
                             </span>
                         </span>
                     </div>

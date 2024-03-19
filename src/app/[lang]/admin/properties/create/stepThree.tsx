@@ -57,7 +57,7 @@ const StepThree: React.FC<IStepThree> = ({ params: { lang }, onNext, onBack }) =
         formRef.current?.setFieldValue(`surfaces.${index}.areaUnit`, key)
     }
     const validationSchema = Yup.object({
-        view: Yup.string().required(glosary.formValidationRequired),
+        view: Yup.string().optional().nullable(),
         surfaces: Yup.array().of(Yup.object().shape({
             quantity: Yup.string().required(glosary.formValidationRequired),
             description: Yup.string().required(glosary.formValidationRequired),
@@ -98,7 +98,7 @@ const StepThree: React.FC<IStepThree> = ({ params: { lang }, onNext, onBack }) =
                 >
                     {({ values, handleChange, errors, touched }) => (
                         <Form className={styles.cardContentBig}>
-                            <InputText label={glosary.formLabelView} placeholder={glosary.formPlaceholderView} error={errors.view} touched={touched.view} value={values.view || undefined} onChange={handleChange('view')} />
+                            <InputText label={glosary.formLabelView} description={glosary.formLabelOptional} placeholder={glosary.formPlaceholderView} error={errors.view} touched={touched.view} value={values.view || undefined} onChange={handleChange('view')} />
                             <FieldArray name='surfaces'>
                                 {
                                     ({ push, remove }) => (

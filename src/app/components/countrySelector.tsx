@@ -30,7 +30,8 @@ export const CountrySelector = ({ country, lang, dark = false }: ICountry & ILan
             setCurrentCountry(currCountry)
             setCookie('immo-country', currCountry)
             setOpen(false)
-            router.refresh()
+            // router.refresh()
+            window.location.reload()
         }
     }
     return (<>

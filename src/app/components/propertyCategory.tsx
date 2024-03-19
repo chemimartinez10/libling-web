@@ -8,6 +8,7 @@ import PropertyCard from './propertyCard'
 import { rentPaymentPeriods } from '../utils/data'
 import { dict } from '../utils'
 import { IPropertyCategory, dataTranslate } from '../interfaces'
+import { poppinsMedium, poppinsRegular } from '../fonts'
 
 
 
@@ -84,8 +85,8 @@ const PropertyCategory: React.FC<IPropertyCategory> = ({ title, description, fil
     return (
         <article className={styles.propertiesContainer}>
             <div className={styles.propertiesTextContainer}>
-                <h2 className={styles.propertiesContainerTitle}>{title}</h2>
-                <h3 className={styles.propertiesContainerDescription}>{description}</h3>
+                <h2 className={styles.propertiesContainerTitle} style={poppinsMedium.style}>{title}</h2>
+                <h3 className={styles.propertiesContainerDescription} style={poppinsRegular.style}>{description}</h3>
             </div>
             <div className={styles.propertiesCarrouselContainer}>
                 {

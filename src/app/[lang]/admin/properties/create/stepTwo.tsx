@@ -67,8 +67,8 @@ const StepTwo: React.FC<IStepTwo> = ({ params: { lang }, onNext, onBack }) => {
     }
     const validationSchema = Yup.object({
         area: Yup.number().required(glosary.formValidationRequired).typeError(glosary.formValidationNumbers),
-        bedrooms: Yup.number().required(glosary.formValidationRequired).typeError(glosary.formValidationNumbers),
-        bathrooms: Yup.number().required(glosary.formValidationRequired).typeError(glosary.formValidationNumbers),
+        bedrooms: Yup.number().optional().typeError(glosary.formValidationNumbers),
+        bathrooms: Yup.number().optional().typeError(glosary.formValidationNumbers),
         heatingType: Yup.number().optional(),
         heatingMedium: Yup.number().optional(),
         heatingEnergy: Yup.number().optional(),
@@ -109,12 +109,12 @@ const StepTwo: React.FC<IStepTwo> = ({ params: { lang }, onNext, onBack }) => {
                                     <InputText label={glosary.formLabelArea} placeholder={glosary.formPlaceholderText} Icon={AreaIcon} error={errors.area} touched={touched.area} value={values.area} onChange={handleChange('area')} />
                                 </div>
                                 <div className={styles.inputRowHalf}>
-                                    <InputText label={glosary.formLabelBedrooms} placeholder={glosary.formPlaceholderText} error={errors.bedrooms} touched={touched.bedrooms} value={values.bedrooms} onChange={handleChange('bedrooms')} />
+                                    <InputText label={glosary.formLabelBedrooms} description={glosary.formLabelOptional} placeholder={glosary.formPlaceholderText} error={errors.bedrooms} touched={touched.bedrooms} value={values.bedrooms} onChange={handleChange('bedrooms')} />
                                 </div>
                             </div>
                             <div className={styles.inputRow}>
                                 <div className={styles.inputRowHalf}>
-                                    <InputText label={glosary.formLabelBathrooms} placeholder={glosary.formPlaceholderText} error={errors.bathrooms} touched={touched.bathrooms} value={values.bathrooms} onChange={handleChange('bathrooms')} />
+                                    <InputText label={glosary.formLabelBathrooms} description={glosary.formLabelOptional} placeholder={glosary.formPlaceholderText} error={errors.bathrooms} touched={touched.bathrooms} value={values.bathrooms} onChange={handleChange('bathrooms')} />
                                 </div>
                                 <div className={styles.inputRowHalf}>
                                     <InputSelect label={glosary.formLabelHeatingType} description={glosary.formLabelOptional} placeholder={glosary.formPlaceholderSelect} list={mecanismosCalefaccion} onChange={handleHeatingType} error={errors.heatingType} touched={touched.heatingType} initialValue={values.heatingType} lang={lang} />

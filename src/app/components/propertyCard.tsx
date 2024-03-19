@@ -62,7 +62,7 @@ const PropertyCard: React.FC<IPropertyCard> = ({ thumbnail, location, currency, 
                     &&
                     <span className={styles.feature}>
                         <IconBed />
-                        <span>{bedrooms}</span>
+                        <span>{bedrooms || 0}</span>
                     </span>
                 }
                 {
@@ -70,7 +70,7 @@ const PropertyCard: React.FC<IPropertyCard> = ({ thumbnail, location, currency, 
                     &&
                     <span className={styles.feature}>
                         <IconBath />
-                        <span>{bathrooms}</span>
+                        <span>{bathrooms || 0}</span>
                     </span>
                 }
             </div>

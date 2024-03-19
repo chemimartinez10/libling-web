@@ -4,7 +4,7 @@ import { dict } from '@/app/utils'
 import { showProperty } from '@/services'
 import ImageGallery from '@/app/components/imageGallery'
 import InnerNav from '@/app/components/innerNav'
-import { poppinsMedium } from '@/app/fonts'
+import { poppinsMedium, poppinsRegular } from '@/app/fonts'
 import { combustiblesCalefaccion, mecanismosCalefaccion, medidasAreaTerrenos, mediosCalefaccion, rentPaymentPeriods } from '@/app/utils/data'
 import IconArea from '@/app/components/icons/iconArea'
 import IconBed from '@/app/components/icons/iconBed'
@@ -40,7 +40,7 @@ const Detail: React.FC<IDetail> = async ({ params: { id, lang } }) => {
                 <ImageGallery images={property?.PropertyImage} thumbnail={property?.thumbnail} />
                 <div className={styles.summaryContainer}>
                     <div className={styles.textContainer}>
-                        <h4 className={styles.type}>
+                        <h4 className={styles.type} style={poppinsRegular.style}>
                             {
                                 `${property?.propertyType?.name && property?.propertyType?.name in glosaryData ? glosaryData[property.propertyType.name as dataTranslate] : property?.propertyType.name} ${glosary.miniatureConector} ${property?.type ? glosaryAdmin.formLabelSale.toLocaleLowerCase() : glosaryAdmin.formLabelRent.toLocaleLowerCase()}`
                             }
@@ -48,7 +48,7 @@ const Detail: React.FC<IDetail> = async ({ params: { id, lang } }) => {
                         <h1 className={styles.title} style={poppinsMedium.style}>
                             {property?.title}
                         </h1>
-                        <h3 className={styles.price}>
+                        <h3 className={styles.price} style={poppinsRegular.style}>
                             <span>
                                 {property?.currency.symbol}
                                 {" "}
@@ -154,7 +154,7 @@ const Detail: React.FC<IDetail> = async ({ params: { id, lang } }) => {
                             </div>
                             <div className={styles.sectionContentRowDescription}>
                                 {
-                                    property?.bedrooms?.toNumber()
+                                    property?.bedrooms?.toNumber() || 0
                                 }
                             </div>
                         </div>
@@ -185,7 +185,7 @@ const Detail: React.FC<IDetail> = async ({ params: { id, lang } }) => {
                             </div>
                             <div className={styles.sectionContentRowDescription}>
                                 {
-                                    property?.bathrooms?.toNumber()
+                                    property?.bathrooms?.toNumber() || 0
                                 }
                             </div>
                         </div>

@@ -130,7 +130,7 @@ const PropertyCreate: React.FC<IPage> = ({ params: { lang } }) => {
 
     return (<>
         {
-            !!(step && step < finalStep && step > 0)
+            !!(step && step <= finalStep && step > 0)
             &&
             <div className={styles.titleBar}>
                 <div className={styles.stepContainer}>
