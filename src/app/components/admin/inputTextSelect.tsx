@@ -56,7 +56,9 @@ const InputTextSelect: React.FC<IInputTextSelect> = ({ label, placeholder, list,
         if (!error || !touched) {
             setFocused(false)
         }
-        setOpenList(false)
+        setTimeout(()=>{
+            setOpenList(false)
+        },200)
     }
     useEffect(() => {
         setListFiltered(list)
