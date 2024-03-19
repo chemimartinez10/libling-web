@@ -158,6 +158,16 @@ const StepOne: React.FC<IStepOne> = ({ params: { lang }, onNext }) => {
                                                 latitude: values.latitude,
                                                 zoom: 10
                                             }}
+                                            onDrag={(e)=>{
+                                                formRef.current?.setFieldValue('longitude', e.viewState.longitude)
+                                                formRef.current?.setFieldValue('latitude', e.viewState.latitude)
+
+                                            }}
+                                            onZoom={(e)=>{
+                                                formRef.current?.setFieldValue('longitude', e.viewState.longitude)
+                                                formRef.current?.setFieldValue('latitude', e.viewState.latitude)
+
+                                            }}
                                             style={{ width: 600, height: 400, borderRadius: 10 }}
                                             mapStyle={mapStyle}
                                         >
