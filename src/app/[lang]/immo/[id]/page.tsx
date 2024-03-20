@@ -13,6 +13,7 @@ import { Button } from '@/app/components/admin/button'
 import { ISelectElement, dataTranslate } from '@/app/interfaces'
 import { getMapStyles } from '@/app/actions'
 import CustomMap from '@/app/components/map'
+import { Metadata, ResolvingMetadata } from 'next'
 
 interface IDetail {
     params: {
@@ -20,6 +21,26 @@ interface IDetail {
         lang: "es" | "en" | "fr"
     }
 }
+export async function generateMetadata(
+    { params }: IDetail,
+    parent: ResolvingMetadata
+  ): Promise<Metadata> {
+    const id = params.id
+    const property = await showProperty({ id: parseInt(id) })   
+    const previousImages = property?.PropertyImage?.map(el=>el.path || "") || []
+    return {
+      title: `Libling Immo | ${property?.title}`,
+      openGraph: {
+        images: [property?.thumbnail || "", ...previousImages],
+        title: property?.title,
+        description:property?.content || property?.title,
+        url:"https://libling.lu/immo/"+id,
+      },
+      robots:"index,follow",
+      
+    }
+  }
+
 
 const Detail: React.FC<IDetail> = async ({ params: { id, lang } }) => {
     const property = await showProperty({ id: parseInt(id) })
