@@ -4,7 +4,7 @@ import styles from './input.module.css'
 import { poppinsMedium, poppinsRegular } from '@/app/fonts'
 import { FiChevronDown, FiChevronUp, FiPlus } from 'react-icons/fi'
 import { dict } from '@/app/utils'
-import { IInputTextSelect, ISelectElement } from '@/app/interfaces'
+import { IInputTextSelect, ISelectElement, dataTranslate } from '@/app/interfaces'
 
 const InputTextSelect: React.FC<IInputTextSelect> = ({ label, placeholder, list, onAdd, error, touched, description, onChange, name, lang, initialValue }) => {
     const [focused, setFocused] = useState(false)
@@ -19,7 +19,14 @@ const InputTextSelect: React.FC<IInputTextSelect> = ({ label, placeholder, list,
         if (!!e.value && (!error || !touched)) setFocused(true)
         if (!!e.key && !!e.value && !!onChange) {
             if (inputRef?.current) {
-                inputRef.current.value = e.value.toString()
+                if (!!lang && !!e.value && e.value in dict[lang].data && dict[lang].data[e.value as dataTranslate]) {
+
+                    inputRef.current.value = dict[lang].data[e.value.toString() as dataTranslate]
+
+                } else {
+
+                    inputRef.current.value = e.value.toString()
+                }
             }
             onChange(e.key.toString())
             handleBlur()
@@ -105,7 +112,18 @@ const InputTextSelect: React.FC<IInputTextSelect> = ({ label, placeholder, list,
                     {
                         listFiltered.map((el, index) => (
                             <div key={index} className={styles.listItem} onClick={() => { handleChange(el) }}>
-                                {el.value}
+                                {
+                                    (!!lang && !!el.value && el.value in dict[lang].data && dict[lang].data[el.value as dataTranslate])
+                                        ?
+                                        dict[lang].data[el.value as dataTranslate]
+                                        :
+                                        el.value
+                                }
+                                {
+                                    !!el.description ? <span className={styles.listItemDescription}>
+                                        {` (${el.description})`}
+                                    </span> : null
+                                }
                             </div>
                         ))
                     }
