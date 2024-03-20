@@ -18,7 +18,7 @@ const Properties: React.FC<IPage> = async ({ params: { lang } }) => {
     <div className={styles.titleBar}>
       <h1 className={styles.titleBarTitle} style={poppinsMedium.style}>{glosaryNav.propertiesTitle}</h1>
       <div className={styles.breadcrumsContainer}>
-        <Link href={'/admin/dashboard'}>
+        <Link href={'/admin/properties'}>
           <span className={styles.breadcrumsLink}>{glosaryNav.dashboardTitle}</span>
         </Link>
         <span className={styles.breadcrumsText}>/</span>
