@@ -16,9 +16,9 @@ import ContactForm from '@/app/components/contactForm'
 
 export const metadata: Metadata = {
   title: 'Libling Immo',
-  description: 'Get your new property with Libling Immo a Libling solution to find a property, get a new life in luxemburg, and search for properties arround the world',
-  robots:'index, follow',
-  keywords:'real state, immobilier, rent, sale, houses, libling, live, immo',
+  description: 'Get your new property with Libling Immo a solution to find a property, get a new life in luxemburg, and search for properties arround the world',
+  robots: 'index, follow',
+  keywords: ['Real state solution', 'immobilier Luxemburg', 'rent', 'sale', 'best houses on Luxemburg', 'libling', 'live in Luxemburg', 'immo', 'secure relocation to Luxembourg', 'easy relocation', 'real state on luxemburg', 'travel to luxemburg', 'commercial office at luxemburg', 'houses in europe', "Solución inmobiliaria", "Inmobiliaria Luxemburgo", "Alquiler", "Venta", "Las mejores casas en Luxemburgo", "Vivir en Luxemburgo", "Inmobiliaria", "Mudanza segura a Luxemburgo", "Mudanza fácil", "Bienes raíces en Luxemburgo", "Viajar a Luxemburgo", "Oficina comercial en Luxemburgo", "Casas en Europa",],
   alternates:
   {
     canonical: "https://libling.lu/immo",
@@ -40,14 +40,14 @@ export default function RootLandingLayout({
 }) {
   const country = cookies().get('immo-country')?.value as countryType || 'LU'
   return (
-    <html lang={lang} style={{backgroundColor:'#FAFAFA', color:'#000000DE'}}>
+    <html lang={lang} style={{ backgroundColor: '#FAFAFA', color: '#000000DE' }}>
       <body style={poppinsRegular.style} className={styles.layout}>
         <ToastContainer />
         <NavbarImmo lang={lang} country={country} />
         {children}
-        <ContactSection lang={lang}/>
+        <ContactSection lang={lang} />
         <div className={styles.contactForm}>
-          <ContactForm lang={lang}/>
+          <ContactForm lang={lang} />
         </div>
         <FooterImmo lang={lang} />
       </body>
