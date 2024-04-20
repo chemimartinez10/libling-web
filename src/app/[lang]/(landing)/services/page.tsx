@@ -28,21 +28,6 @@ interface IPage {
     lang: "es" | "en" | "fr"
   }
 }
-export const metadata: Metadata = {
-  title: 'Relocation - Services | Libling Solutions',
-  description: 'Travel to Luxembourg, providing you with comprehensive service and optimal support in your relocation process to Luxembourg. We are by your side to assist you with whatever you need',
-  robots: 'index, follow',
-  keywords: ['relocation', 'relocation help', 'experiences on Luxembourg', 'Luxembourg country', 'Libling', 'assist to relocation', 'support to your relocation', 'multilanguages relocation page', 'secure relocation to Luxembourg', 'easy relocation', 'real state on Luxembourg', 'travel to Luxembourg', 'Best option to relocate to Luxembourg', "Relocación","Ayuda para la reubicación","Experiencias en Luxemburgo","Luxemburgo (país)","Asistencia para la reubicación","Apoyo para tu reubicación","Página de reubicación multilingüe","Mudanza segura a Luxemburgo","Mudanza fácil","Bienes raíces en Luxemburgo","Viajar a Luxemburgo","La mejor opción para reubicarse en Luxemburgo","Latinos en Luxemburgo"],
-  alternates:
-  {
-    canonical: "https://libling.lu/services",
-    languages: {
-      en: "https://libling.lu/en/services",
-      es: "https://libling.lu/es/services",
-      fr: "https://libling.lu/fr/services",
-    }
-  }
-}
 const Services: React.FC<IPage> = ({ params: { lang } }) => {
   const glosary = dict[lang]?.services
   const { height, width } = useWindowDimensions();
