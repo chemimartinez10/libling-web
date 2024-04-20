@@ -50,11 +50,11 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
       <header className={styles.header}>
         <div className={styles.headerMask}>
           <div className={styles.textContainer}>
-            <div>
-              <h1 className={styles.headerTitle} style={poppinsBold.style}>{glosary.titleHeader_1}</h1>
-              <h1 className={styles.headerTitle} style={poppinsBold.style}>{glosary.titleHeader_2}</h1>
-              <h1 className={styles.headerTitle} style={poppinsBold.style}>{glosary.titleHeader_3}</h1>
-            </div>
+            <h1>
+              <span className={styles.headerTitle} style={poppinsBold.style}>{glosary.titleHeader_1}</span>
+              <span className={styles.headerTitle} style={poppinsBold.style}>{glosary.titleHeader_2}</span>
+              <span className={styles.headerTitle} style={poppinsBold.style}>{glosary.titleHeader_3}</span>
+            </h1>
           </div>
         </div>
         {

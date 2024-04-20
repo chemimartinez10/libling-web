@@ -15,10 +15,10 @@ import ContactForm from '@/app/components/contactForm'
 
 
 export const metadata: Metadata = {
-  title: 'Libling Immo',
-  description: 'Get your new property with Libling Immo a solution to find a property, get a new life in luxemburg, and search for properties arround the world',
+  title: 'Real Estate - Luxembourg | Libling Immo',
+  description: 'Get your new property with Libling Immo a solution to find a property, get a new life in Luxembourg, and search for properties arround the world',
   robots: 'index, follow',
-  keywords: ['Real state solution', 'immobilier Luxemburg', 'rent', 'sale', 'best houses on Luxemburg', 'libling', 'live in Luxemburg', 'immo', 'secure relocation to Luxembourg', 'easy relocation', 'real state on luxemburg', 'travel to luxemburg', 'commercial office at luxemburg', 'houses in europe', "Solución inmobiliaria", "Inmobiliaria Luxemburgo", "Alquiler", "Venta", "Las mejores casas en Luxemburgo", "Vivir en Luxemburgo", "Inmobiliaria", "Mudanza segura a Luxemburgo", "Mudanza fácil", "Bienes raíces en Luxemburgo", "Viajar a Luxemburgo", "Oficina comercial en Luxemburgo", "Casas en Europa",],
+  keywords: ['Real estate solution', 'immobilier Luxembourg', 'rent', 'sale', 'best houses on Luxembourg', 'libling', 'live in Luxembourg', 'immo', 'secure relocation to Luxembourg', 'easy relocation', 'real estate on Luxembourg', 'travel to Luxembourg', 'commercial office at Luxembourg', 'houses in europe', "Solución inmobiliaria", "Inmobiliaria Luxemburgo", "Alquiler", "Venta", "Las mejores casas en Luxemburgo", "Vivir en Luxemburgo", "Inmobiliaria", "Mudanza segura a Luxemburgo", "Mudanza fácil", "Bienes raíces en Luxemburgo", "Viajar a Luxemburgo", "Oficina comercial en Luxemburgo", "Casas en Europa",],
   alternates:
   {
     canonical: "https://libling.lu/immo",

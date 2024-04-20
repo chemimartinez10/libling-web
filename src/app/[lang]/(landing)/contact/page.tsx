@@ -13,6 +13,7 @@ import { Calendar } from 'react-calendar'
 import { poppinsMedium, poppinsRegular } from '@/app/fonts';
 import { CalendarEvent } from './calendar'
 import ical from 'ical'
+import { Metadata } from 'next'
 
 interface IPage {
   params: {
@@ -34,6 +35,21 @@ interface ICalEvent {
   transparency: string
 }
 
+export const metadata: Metadata = {
+  title: 'Relocation - Contact | Libling Solutions',
+  description: 'Travel to Luxembourg, providing you with comprehensive service and optimal support in your relocation process to Luxembourg. We are by your side to assist you with whatever you need',
+  robots: 'index, follow',
+  keywords: ['relocation', 'relocation help', 'experiences on Luxembourg', 'Luxembourg country', 'Libling', 'assist to relocation', 'support to your relocation', 'multilanguages relocation page', 'secure relocation to Luxembourg', 'easy relocation', 'real state on Luxembourg', 'travel to Luxembourg', 'Best option to relocate to Luxembourg', "Relocación","Ayuda para la reubicación","Experiencias en Luxemburgo","Luxemburgo (país)","Asistencia para la reubicación","Apoyo para tu reubicación","Página de reubicación multilingüe","Mudanza segura a Luxemburgo","Mudanza fácil","Bienes raíces en Luxemburgo","Viajar a Luxemburgo","La mejor opción para reubicarse en Luxemburgo","Latinos en Luxemburgo"],
+  alternates:
+  {
+    canonical: "https://libling.lu/contact",
+    languages: {
+      en: "https://libling.lu/en/contact",
+      es: "https://libling.lu/es/contact",
+      fr: "https://libling.lu/fr/contact",
+    }
+  }
+}
 
 const getEvents = async () => {
   let items: ICalEvent[] | [] = await new Promise((resolve, reject) => {
