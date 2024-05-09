@@ -50,6 +50,7 @@ const Services: React.FC<IPage> = ({ params: { lang } }) => {
       </header>
       <Section>
         <Article subtitle={glosary.sectionTitle_1} content={glosary.sectionContent_1} />
+        <Image src={placesImg} id='places-img' width={450} height={450} style={{ borderRadius: 24, padding:10, objectFit:'cover' }} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 450px, 450px' layout="responsive" />
       </Section>
       <Section reverse={true}>
         <Article subtitle={glosary.sectionTitle_2} content={glosary.sectionContent_2} />
