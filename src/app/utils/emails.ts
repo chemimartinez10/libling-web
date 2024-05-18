@@ -38,6 +38,33 @@ export const sendMessage = async (
 	})
 	return info
 }
+export const sendEmail = async (
+	from: string,
+	message: string,
+	subject: string
+) => {
+	transporter.verify(function (error, success) {
+		if (error) {
+			console.log(error)
+		} else {
+			console.log("Server is ready to take our messages")
+		}
+	})
+	console.log(
+		"sending email... ",
+		process.env.SMTP_SERVER,
+		process.env.MAIL_USER,
+		process.env.MAIL_PWD
+	)
+	console.log('env variables... ',from,subject,message)
+	const info = await transporter.sendMail({
+		from, // sender address
+		to: '"Libling solutions" <info@libling.lu>', // list of receivers
+		subject: subject, // Subject line
+		html: `${message}`, // html body
+	})
+	return info
+}
 export const sendInfo = async (
 	from: string,
 	message: string,

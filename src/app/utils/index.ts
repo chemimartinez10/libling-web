@@ -275,7 +275,7 @@ export const dict = {
 				"Búsqueda de su casa, apartamento.",
 				"Busqueda de escuela y guardería para sus hijos.",
 				"Mercado inmobiliario, servicio de compra-venta, alquiler y gestión de propiedades.",
-				"Asoramiento de bienes inmuebles.",
+				"Asesoramiento de bienes inmuebles.",
 				"Organización de la mudanza.",
 			],
 			reviewName_1: "MARIA SMITH",

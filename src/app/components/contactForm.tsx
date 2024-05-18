@@ -7,8 +7,8 @@ import * as Yup from 'yup';
 import styles from './contactForm.module.css'
 import { InputText } from './admin/inputText';
 import { poppinsMedium } from '../fonts';
-import { sendEmail, subjects, templates } from '../utils/funtions'
-import { sendInfo, sendMessage } from '../utils/emails'
+import { subjects, templates } from '../utils/funtions'
+import { sendInfo } from '../utils/emails'
 import CustomToast from './toast'
 import { toast } from 'react-toastify'
 

@@ -8,8 +8,11 @@ import { poppinsBold, poppinsMedium, poppinsRegular, poppinsSemiBold } from '../
 import { RiFacebookFill, RiInstagramFill, RiLinkedinFill } from "react-icons/ri";
 import { IoMdSend } from "react-icons/io";
 import { dict } from '../utils'
-import { sendEmail } from '../utils/funtions'
+import { templates } from '../utils/funtions'
 import { InputText } from './admin/inputText'
+import { sendEmail } from '../utils/emails'
+import CustomToast from './toast'
+import { toast } from 'react-toastify'
 
 
 export default function Footer({ lang }: { lang: "es" | "en" | "fr" }) {
@@ -17,6 +20,7 @@ export default function Footer({ lang }: { lang: "es" | "en" | "fr" }) {
     const glosaryForms = dict[lang]?.adminProperties
     const glosaryAuth = dict[lang]?.auth
     const glosaryContact = dict[lang]?.contact
+    const glosaryImmo = dict[lang]?.immo
     const mailMessages = dict[lang]?.mail
     const [inputValue, setInputValue] = useState('');
     const [loading, setLoading] = useState<boolean | undefined>();
@@ -36,15 +40,21 @@ export default function Footer({ lang }: { lang: "es" | "en" | "fr" }) {
         if (loading) { return }
         event.preventDefault()
         setLoading(true)
-        const templateParams = {
-            reply_to: inputValue,
-            from_name: inputValue,
-            subject: mailMessages.subject_1,
-            message: mailMessages.main
-        };
-        await sendEmail(templateParams, lang)
-        setLoading(undefined)
-        setInputValue('')
+        try{
+            await sendEmail(
+                inputValue || 'email',
+                templates.contactUs(inputValue || '', mailMessages.main),
+                mailMessages.subject_1
+            )
+            toast.success(<CustomToast type='success' title={glosaryImmo.success} content={glosaryImmo.successEmail} />, { theme: 'colored', icon: false, style: { backgroundColor: '#00C851', maxWidth: 450, padding: 24, borderRadius: 10 } })
+
+        }catch(error){
+            console.error(error)
+            toast.error(<CustomToast type='error' title='Error' content={glosaryImmo.failEmail} />, { theme: 'colored', icon: false, style: { backgroundColor: '#FF4444', maxWidth: 450, padding: 24, borderRadius: 10 } })
+        }finally{
+            setLoading(undefined)
+            setInputValue('')
+        }
     }
     return (<>
         <div className={styles.footer}>

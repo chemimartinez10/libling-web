@@ -5,8 +5,11 @@ import styles from './form.module.css'
 import Button from './button'
 import { poppinsBold, poppinsRegular } from '../fonts'
 import { dict } from '../utils'
-import { sendEmail } from '../utils/funtions'
+import { templates } from '../utils/funtions'
 import { useSearchParams } from 'next/navigation'
+import CustomToast from './toast'
+import { toast } from 'react-toastify'
+import { sendEmail } from '../utils/emails'
 
 
 interface IContactForm {
@@ -19,6 +22,7 @@ interface IContactForm {
 
 const ContactForm: React.FC<IContactForm> = ({ lang }) => {
     const glosary = dict[lang]?.contact
+    const glosaryImmo = dict[lang]?.immo
     const mailMessages = dict[lang]?.mail
     const query = useSearchParams()
     
@@ -32,19 +36,25 @@ const ContactForm: React.FC<IContactForm> = ({ lang }) => {
         if (loading) { return }
         event.preventDefault()
         setLoading(true)
-        const templateParams = {
-            reply_to: inputValue,
-            from_name: inputName,
-            subject: inputSubject,
-            message: inputMessage
-        };
-        console.log(templateParams)
-        await sendEmail(templateParams, lang)
-        setLoading(undefined)
-        setInputValue('')
-        setInputMessage('')
-        setInputName('')
-        setInputSubject('')
+        try{
+            await sendEmail(
+                inputValue || 'email',
+                templates.contactUs(inputName || '', inputMessage),
+                inputSubject
+            )
+            toast.success(<CustomToast type='success' title={glosaryImmo.success} content={glosaryImmo.successEmail} />, { theme: 'colored', icon: false, style: { backgroundColor: '#00C851', maxWidth: 450, padding: 24, borderRadius: 10 } })
+            setInputValue('')
+            setInputMessage('')
+            setInputName('')
+            setInputSubject('')
+
+        }catch(error){
+            console.error(error)
+            toast.error(<CustomToast type='error' title='Error' content={glosaryImmo.failEmail} />, { theme: 'colored', icon: false, style: { backgroundColor: '#FF4444', maxWidth: 450, padding: 24, borderRadius: 10 } })
+        }finally{
+            setLoading(undefined)
+        }
+
     }
     useEffect(() => {
         let initialSubject = ''

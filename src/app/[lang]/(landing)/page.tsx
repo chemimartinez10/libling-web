@@ -52,7 +52,9 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
           <div className={styles.textContainer}>
             <h1>
               <span className={styles.headerTitle} style={poppinsBold.style}>{glosary.titleHeader_1}</span>
+              <span>{' '}</span>
               <span className={styles.headerTitle} style={poppinsBold.style}>{glosary.titleHeader_2}</span>
+              <span>{' '}</span>
               <span className={styles.headerTitle} style={poppinsBold.style}>{glosary.titleHeader_3}</span>
             </h1>
           </div>

@@ -1,35 +1,14 @@
 'use client'
-import React, { SyntheticEvent, useState } from 'react'
+import React from 'react'
 import styles from './footer.module.css'
-import { poppinsBold, poppinsMedium, poppinsRegular, poppinsSemiBold } from '../fonts'
+import { poppinsRegular } from '../fonts'
 import { RiFacebookFill, RiInstagramFill, RiLinkedinFill } from "react-icons/ri";
 import { dict } from '../utils'
-import { sendEmail } from '../utils/funtions'
 
 
 export default function FooterImmo({ lang }: { lang: "es" | "en" | "fr" }) {
     const glosary = dict[lang]?.footer
-    const glosaryForms = dict[lang]?.adminProperties
-    const glosaryAuth = dict[lang]?.auth
-    const glosaryContact = dict[lang]?.contact
-    const mailMessages = dict[lang]?.mail
-    const [inputValue, setInputValue] = useState('');
-    const [loading, setLoading] = useState<boolean | undefined>();
 
-    const handleSubmit = async (event: SyntheticEvent) => {
-        if (loading) { return }
-        event.preventDefault()
-        setLoading(true)
-        const templateParams = {
-            reply_to: inputValue,
-            from_name: inputValue,
-            subject: mailMessages.subject_1,
-            message: mailMessages.main
-        };
-        await sendEmail(templateParams, lang)
-        setLoading(undefined)
-        setInputValue('')
-    }
     return (<>
         <div className={styles.footerImmo}>
             <div className={styles.immoIconsContainer}>
