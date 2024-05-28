@@ -13,6 +13,32 @@
     box-shadow: 0px 6px 12px #1973FA29;
     cursor: pointer;
 }
+.miniTitle{
+    letter-spacing: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: #00000099;
+}
+.bigTitle{
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 60px;
+    text-transform: uppercase;
+    color: #00000099;
+    padding-bottom: 8px;
+}
+.commonText{
+    font-size: 16px;
+    color: #00000099;
+    font-weight: 400;
+    line-height: 24px;
+    padding-bottom: 16px;
+}
+.textPrimary{
+    color: var(--primary-700);
+}
 
 .buttonMain:hover {
     display: flex;
