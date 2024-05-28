@@ -10,7 +10,8 @@
   --foreground-rgb: 255, 255, 255;
   --background-start-rgb: 0, 0, 0;
   --background-end-rgb: 0, 0, 0;
-  --background-color: #f1f1f1;
+  --background-color: #fff;
+  --text-color: #000000DE;
   --button-flat-hover-color:#56B7FF;
   --button-flat-pressed-color:#0086FF;
   --button-secondary-color:#FB8601;
@@ -19,7 +20,7 @@
   --mask-color: #fffb;
   --calendar-color: #fff;
   --shadow-color: #0003;
-  --secondary-text-color: #000a;
+  --secondary-text-color: #00000099;
   --color-success: #00C851;
   --color-warning: #FFBB33;
   --color-error: #FF4444;
@@ -60,12 +61,13 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 0, 0, 0;
-    --background-color: #161616;
+    --background-color: #fff;
+    --text-color: #000000DE;
     --background-start-rgb: 214, 219, 220;
     --background-end-rgb: 255, 255, 255;
     --mask-color: #000a;
     --calendar-color: #000a;
-    --secondary-text-color: #fffb;
+    --secondary-text-color: #00000099;
     --shadow-color: #fff3;
     --toastify-color-success: #00C851;
     --toastify-color-warning: #FFBB33;
@@ -110,6 +112,8 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 

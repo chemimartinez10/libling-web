@@ -1,0 +1,8 @@
+.sliderItem{
+    width: 170px;
+    height: 64px;
+}
+.slider{
+    width: calc(100% - 140px);
+    overflow: hidden;
+}

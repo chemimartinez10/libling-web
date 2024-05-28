@@ -19,7 +19,7 @@ const HeaderHome:React.FC<IHeader> = ({lang}) => {
 
     return (
         <>
-            <Carousel autoPlay={true} infiniteLoop={true} showIndicators={false} showStatus={false}>
+            <Carousel autoPlay={true} infiniteLoop={true} showIndicators={false} showStatus={false} className={styles.sliderImage}>
                 <div className={styles.sliderItem}>
                     <Image src={headerImg1} alt='header image' width={1440} height={500} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} quality={100} sizes="(max-width: 1440px) 100vw, 1440px" className={styles.sliderImage}/>
                     <div className={styles.sliderTextContainer}>

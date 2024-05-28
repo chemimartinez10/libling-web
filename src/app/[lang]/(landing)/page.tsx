@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import styles from './page.module.css'
+import globalStyles from '@/app/globals.module.css'
 import Image from 'next/image'
 import headerImg from '@/app/img/home_banner.gif'
 import travelImg from '@/app/img/Recurso 18 1.png'
@@ -19,6 +20,7 @@ import Review from '@/app/components/review'
 import { dict } from '@/app/utils'
 import useWindowDimensions from '@/app/hooks/useWindowDimensions'
 import HeaderHome from '@/app/components/headerHome'
+import PartnerSlider from '@/app/components/partnerSlider'
 interface IPage {
   params: {
     lang: "es" | "en" | "fr"
@@ -74,6 +76,10 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
         }
         
       </header> */}
+      <Section backgroundColor='#fff' vertical={true}>
+        <h4 className={[globalStyles.miniTitle, globalStyles.textPrimary].join(' ')} style={poppinsSemiBold.style}>{glosary.sectionPartners}</h4>
+        <PartnerSlider/>
+      </Section>
       <Section>
         <Article subtitle={glosary.sectionTitle_1} content={glosary.sectionContent_1} buttonText={glosary.sectionButton_1} buttonAction='/contact' />
         <Image src={travelImg} id='travel-img' width={490} height={465} style={{ borderRadius: 24, maxWidth: 490 }} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 490px' layout="responsive" />

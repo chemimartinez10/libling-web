@@ -1,7 +1,9 @@
 .sliderItem{
     position: relative;
 }
-.sliderImage{}
+.sliderImage{
+    height: 500px;
+}
 .sliderTextContainer{
     position: absolute;
     z-index: 2;
