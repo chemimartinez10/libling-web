@@ -1,9 +1,13 @@
 .container{
-    padding: 3rem 2rem;
     width: 100%;
-    gap: 3rem;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.innerContainer{
+    padding: 80px 140px;
+    width: var(--max-width);
 }
 .title{
     text-align: center;
@@ -28,7 +32,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 120px;
+    flex-grow: 1;
+
 }
 .bodyReversed{
     display: flex;
@@ -36,6 +41,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 120px;
+
 }
 .bodyVertical{
     display: flex;
@@ -43,6 +49,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 120px;
+
 }
 .bodyVerticalReversed{
     display: flex;
@@ -50,12 +57,14 @@
     align-items: center;
     justify-content: space-between;
     gap: 100px;
+
 }
 .head{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 56px;
 }
 
 /* mobile screens */

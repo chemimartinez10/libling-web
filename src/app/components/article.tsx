@@ -1,10 +1,11 @@
 import React from 'react'
 import styles from './article.module.css'
+import globalStyles from '@/app/globals.module.css'
 import { FaCircle } from "react-icons/fa6";
 import { poppinsBold, poppinsSemiBold } from '../fonts'
-import Button from './button'
 import Link from 'next/link'
 import Image, { StaticImageData } from 'next/image';
+import { Button } from './admin/button';
 
 interface IArticle {
     title?: string
@@ -25,15 +26,15 @@ const Article: React.FC<IArticle> = ({ title, subtitle, content, list, Icon, but
                 <Icon style={{fontSize:64, alignSelf:'center'}}/>
             }
             {title &&
-                <h3 className={styles.title} >{title}</h3>
+                <h3 className={[globalStyles.miniTitle, globalStyles.textPrimary].join(' ')} style={poppinsSemiBold.style}>{title}</h3>
             }
             {
                 subtitle &&
-                <h5 className={bigSubtitle ? styles.bigSubtitle : styles.subtitle} style={poppinsBold.style}>{subtitle}</h5>
+                <h5 className={[globalStyles.regularTitle].join(' ')}>{subtitle}</h5>
             }
             {
                 content &&
-                <p className={styles.content}>{content}</p>
+                <p className={[globalStyles.commonText].join(' ')}>{content}</p>
             }
             {
                 list &&
@@ -41,10 +42,10 @@ const Article: React.FC<IArticle> = ({ title, subtitle, content, list, Icon, but
                     {
                         list.map((el, index) => (
                             <li key={index}>
-                                <div style={{ width: 20, height: 20, paddingTop:2 }}>
-                                    <FaCircle style={{ fontSize: 10, alignSelf: 'center', color:'#225FE7' }} />
+                                <div style={{ width: 16, height: 16, display:'flex', justifyContent:'center', alignContent:'center' }}>
+                                    <FaCircle style={{ fontSize: 8, alignSelf: 'center', color:'#00000099' }} />
                                 </div>
-                                <span>
+                                <span className={globalStyles.text} style={{flexShrink:1, flexWrap:'wrap'}}>
                                     {el}
                                 </span>
                             </li>
@@ -58,8 +59,8 @@ const Article: React.FC<IArticle> = ({ title, subtitle, content, list, Icon, but
             }
             {
                 buttonText &&
-                <Link href={buttonAction} style={{alignSelf:'center'}}>
-                    <Button text={buttonText}/>
+                <Link href={buttonAction} style={{alignSelf:'flex-start'}}>
+                    <Button title={buttonText}/>
                 </Link>
             }
         </article>

@@ -1,23 +1,23 @@
 'use client'
 import React from 'react'
 import styles from './page.module.css'
-import Image from 'next/image'
-import headerImg from '@/app/img/home_banner.gif'
-import travelImg from '@/app/img/Recurso 18 1.png'
-import teamImg from '@/app/img/Recurso 20 1.png'
-import familyImg from '@/app/img/family.png'
-import alarmImg from '@/app/img/Recurso 22 1.png'
-import Recurso3 from '@/app/img/Recurso 3.png'
-import Recurso4 from '@/app/img/Recurso 4.png'
-import Recurso5 from '@/app/img/Recurso 5.png'
-import Recurso6 from '@/app/img/Recurso 6.png'
+import globalStyles from '@/app/globals.module.css'
+import HighlightIMG1 from '@/app/img/Ellipse1.jpg'
+import HighlightIMG2 from '@/app/img/Ellipse2.jpg'
+import HighlightIMG3 from '@/app/img/Ellipse3.jpg'
+import HighlightIMG4 from '@/app/img/Ellipse4.jpg'
 import { poppinsBold, poppinsRegular, poppinsSemiBold } from '@/app/fonts'
 import Article from '@/app/components/article'
 import Section from '@/app/components/section'
 import Highlight from '@/app/components/highlight'
-import Review from '@/app/components/review'
 import { dict } from '@/app/utils'
 import useWindowDimensions from '@/app/hooks/useWindowDimensions'
+import HeaderHome from '@/app/components/headerHome'
+import PartnerSlider from '@/app/components/partnerSlider'
+import AnimatedImage from '@/app/components/animatedImage'
+import AsesoramientoIMG from '@/app/img/asesoramiento.jpeg'
+import ConoceIMG from '@/app/img/conoce.png'
+import AyudaIMG from '@/app/img/ayuda.jpeg'
 interface IPage {
   params: {
     lang: "es" | "en" | "fr"
@@ -30,24 +30,26 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
   const listaBeneficios = [
     {
       title: glosary.sectionList_3[0],
-      img: Recurso3
+      img: HighlightIMG1
     },
     {
       title: glosary.sectionList_3[1],
-      img: Recurso4
+      img: HighlightIMG2
     },
     {
       title: glosary.sectionList_3[2],
-      img: Recurso5
+      img: HighlightIMG3
     },
     {
       title: glosary.sectionList_3[3],
-      img: Recurso6
+      img: HighlightIMG4
     },
   ]
   return (
     <main className={styles.main}>
-      <header className={styles.header}>
+
+      <HeaderHome lang={lang}/>
+      {/* <header className={styles.header}>
         <div className={styles.headerMask}>
           <div className={styles.textContainer}>
             <h1>
@@ -70,16 +72,20 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
             </video>
         }
         
-      </header>
-      <Section>
-        <Article subtitle={glosary.sectionTitle_1} content={glosary.sectionContent_1} buttonText={glosary.sectionButton_1} buttonAction='/contact' />
-        <Image src={travelImg} id='travel-img' width={490} height={465} style={{ borderRadius: 24, maxWidth: 490 }} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 490px' layout="responsive" />
+      </header> */}
+      <Section backgroundColor='#fff' vertical={true}>
+        <h4 className={[globalStyles.miniTitle, globalStyles.textPrimary].join(' ')} style={poppinsSemiBold.style}>{glosary.sectionPartners}</h4>
+        <PartnerSlider/>
       </Section>
-      <Section reverse={true}>
-        <Article subtitle={glosary.sectionTitle_2} content={glosary.sectionContent_2} buttonText={glosary.sectionButton_2} buttonAction='/services' />
-        <Image src={teamImg} width={674} height={575} style={{ borderRadius: 24, maxWidth: 490, flexShrink:1 }} alt='family' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 500px, 674px' layout="responsive" />
+      <Section backgroundColor='#EDF0F4'>
+        <Article title={glosary.sectionMiniTitle_1} subtitle={glosary.sectionTitle_1} content={glosary.sectionContent_1} buttonText={glosary.sectionButton_1} buttonAction='/contact' />
+        <AnimatedImage image={AyudaIMG} alt={glosary.sectionTitle_1}/>
       </Section>
-      <Section vertical={true} subtitle={glosary.sectionTitle_3} space={true} backgroundColor={'transparent'}>
+      <Section reverse={true} backgroundColor='#EDF0F4'>
+        <Article title={glosary.sectionMiniTitle_2} subtitle={glosary.sectionTitle_2} content={glosary.sectionContent_2} buttonText={glosary.sectionButton_2} buttonAction='/services' />
+        <AnimatedImage image={ConoceIMG} alt={glosary.sectionTitle_2} reverse={true}/>
+      </Section>
+      <Section vertical={true} subtitle={glosary.sectionTitle_3} backgroundColor={'#fff'}>
         <div className={styles.listHighlights}>
           {
             listaBeneficios.map((el, index) => (<Highlight key={index} title={el?.title} alt={`highlight${index}`} img={el?.img} description={el?.title} />))
@@ -87,9 +93,10 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
         </div>
 
       </Section>
-      <Section>
-        <Article subtitle={glosary.sectionTitle_4} list={glosary.sectionList_4} />
-        <Image src={familyImg} width={558} height={631} style={{ borderRadius: 24, maxWidth: 520 }} className={styles.image} alt='work' sizes='(max-width: 768px) 558px, (max-width: 1120px) 380px, 558px' layout="responsive" />
+      <Section backgroundColor='#EDF0F4'>
+        <Article title={glosary.sectionMiniTitle_3} subtitle={glosary.sectionTitle_4} list={glosary.sectionList_4} buttonText={glosary.sectionButton_2} buttonAction='/services'/>
+        <AnimatedImage image={AsesoramientoIMG} alt={glosary.sectionTitle_3}/>
+
 
       </Section>
       {/* <Section>
