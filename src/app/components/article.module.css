@@ -1,8 +1,8 @@
 .container {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    max-width: 50%;
+    gap: 8px;
+    max-width: 572px;
     min-width: 220px;
     justify-content: center;
 }
@@ -33,6 +33,7 @@
 
 .list {
     padding-top: 1rem;
+    padding-bottom: 1rem;
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -44,6 +45,8 @@
 .list>li {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
     gap: 1rem;
 }
 .image{

@@ -3,6 +3,7 @@
 }
 .sliderImage{
     height: 500px;
+    max-width: var(--max-width);
 }
 .sliderTextContainer{
     position: absolute;

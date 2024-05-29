@@ -29,6 +29,27 @@
     color: #00000099;
     padding-bottom: 8px;
 }
+.regularTitle{
+    font-size: 33px;
+    font-weight: 400;
+    line-height: 49.5px;
+    color: #000000DE;
+}
+.regularSubtitle{
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 28.5px;
+    letter-spacing: 0.0015em;
+    text-align: center;
+    color: #00000099;
+
+}
+.text{
+    font-size: 16px;
+    color: #00000099;
+    font-weight: 400;
+    line-height: 24px;
+}
 .commonText{
     font-size: 16px;
     color: #00000099;

@@ -1,0 +1,33 @@
+.container{
+    position: relative;
+    width: 514px;
+    height: 390px;
+}
+.square, .squareReversed{
+    position: absolute;
+    border: 3px solid #424242;
+    border-radius: 16px;
+    width: 490px;
+    height: 366px;
+}
+
+.container:hover > .square:first-child{
+    transform: translate(-8px,-8px);
+    transition: transform cubic-bezier(0, 0, 0.58, 1) 150ms;
+
+}
+.container:hover > .square:last-child{
+    transform: translate(8px,8px);
+    transition: transform cubic-bezier(0, 0, 0.58, 1) 150ms;
+
+}
+.container:hover > .squareReversed:first-child{
+    transform: translate(8px,-8px);
+    transition: transform cubic-bezier(0, 0, 0.58, 1) 150ms;
+
+}
+.container:hover > .squareReversed:last-child{
+    transform: translate(-8px,8px);
+    transition: transform cubic-bezier(0, 0, 0.58, 1) 150ms;
+
+}

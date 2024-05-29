@@ -3,8 +3,9 @@
 import Image, { StaticImageData } from 'next/image'
 import React, { BaseSyntheticEvent, SyntheticEvent, useState } from 'react'
 import styles from './highlight.module.css'
+import globalStyles from '@/app/globals.module.css'
 import { FaTimes } from 'react-icons/fa'
-import { poppinsBold } from '../fonts'
+import { poppinsBold, poppinsMedium } from '../fonts'
 
 interface IHighlight {
     title?: string
@@ -52,13 +53,13 @@ const Highlight: React.FC<IHighlight> = ({ title, description, img, Icon, alt })
                 img
                 &&
                 <div className={styles.circleContainer}>
-                    <Image src={img} width={80} height={80} alt={alt} />
+                    <Image src={img} width={150} height={150} alt={alt} />
 
                 </div>
             }
             {
                 description &&
-                <p className={styles.description}>{description}</p>
+                <p className={[styles.description, globalStyles.regularSubtitle].join(' ')} style={poppinsMedium.style}>{description}</p>
             }
         </div>
     </>

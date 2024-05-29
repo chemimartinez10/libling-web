@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react'
 import styles from './section.module.css'
+import globalStyles from '@/app/globals.module.css'
 import { poppinsBold, poppinsSemiBold } from '../fonts'
 
 interface ISection {
@@ -17,6 +18,7 @@ interface ISection {
 const Section: React.FC<ISection> = ({ title, subtitle, resume, vertical = false, reverse = false, children, backgroundColor, space }) => {
     return (
         <div className={styles.container} style={{backgroundColor, paddingTop: space ? 100 : undefined, paddingBottom: space ? 100 : undefined}}>
+            <div className={styles.innerContainer}>
             {
                 (title || subtitle || resume) &&
                 <div className={styles.head}>
@@ -26,7 +28,7 @@ const Section: React.FC<ISection> = ({ title, subtitle, resume, vertical = false
                     }
                     {
                         subtitle &&
-                            <h3 className={styles.subtitle} style={poppinsBold.style}>{subtitle}</h3>
+                            <h3 className={globalStyles.regularTitle}>{subtitle}</h3>
                     }
                     {
                         resume &&
@@ -46,6 +48,7 @@ const Section: React.FC<ISection> = ({ title, subtitle, resume, vertical = false
                     {children}
                 </div>
             }
+            </div>
         </div>
     )
 }
