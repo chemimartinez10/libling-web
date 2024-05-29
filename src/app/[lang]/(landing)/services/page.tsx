@@ -23,6 +23,7 @@ import useWindowDimensions from '@/app/hooks/useWindowDimensions'
 import CardHorizontal from '@/app/components/cardHorizontal'
 import { useRouter } from 'next/navigation'
 import { Metadata } from 'next'
+import HeaderServices from '@/app/components/headerServices'
 interface IPage {
   params: {
     lang: "es" | "en" | "fr"
@@ -58,23 +59,8 @@ const Services: React.FC<IPage> = ({ params: { lang } }) => {
   ]
   return (
     <main className={styles.main}>
-      <header className={styles.header}>
-        <div className={styles.headerMask}>
-          {/* logotipo de libling */}
-
-        </div>
-        {
-          (width && width < 600)
-            ?
-            <Image src={headerImg} alt='header image' width={1500} height={500} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} />
-            :
-            <video autoPlay muted={true} loop style={{ width: '1500px', height: '500px', objectFit: 'cover', objectPosition: 'center center' }}>
-              <source src={"/en/videos/services_video.webm"} type="video/webm" />
-              <source src={"/en/videos/services_video.mp4"} type="video/mp4" />
-            </video>
-        }
-      </header>
-      <Section>
+      <HeaderServices lang={lang}/>
+      <Section backgroundColor='#EDF0F4' vertical={true}>
         <Article subtitle={glosary.sectionTitle_1} content={glosary.sectionContent_1} />
         <Image src={meetImg} id='travel-img' width={600} height={600} style={{ borderRadius: 24, padding: 24 }} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 600px' layout="responsive" />
       </Section>

@@ -308,6 +308,43 @@ export const dict = {
 				"Hola, soy Laura de Mexico. Luxemburgo para mí siempre ha sido una ciudad magnífica y con grandes oportunidades, así que contacté a Libling para tener los requisitos necesarios para poder vivir allí. Los recomiendo al 100%",
 		},
 		services: {
+			bigTitleHeader1_1:"Educación de calidad para tus hijos",
+			commonHeader1:"Te ayudamos a encontrar la escuela o colegio ideal para tus hijos, garantizando su acceso a una educación de excelencia.",
+			sectionTitle_1: "Afiliaciones",
+			sectionSubtitle_1: "Prueba ahora nuestras afiliaciones",
+			sectionContent_1_1: "Elige el plan ",
+			sectionContent_1_2: "que mejor se adapte a tus necesidades y presupuesto:",
+			sectionOption1: "Mensual",
+			sectionOption2: "6 meses",
+			sectionOption3: "Anual",
+			sectionOptionBy1: "mes",
+			sectionOptionBy2: "semestre",
+			sectionOptionBy3: "año",
+			planActionButton:"Solicitar",
+			planTitle1:"Estudiante",
+			planContent1:"Estudiar en Luxemburgo.",
+			planList1:["Actualizaciones.", "Próximos eventos y oportunidades para estudiantes internacionales.", "Orientación sobre cómo postularse y dónde establecerse."],
+			planTitle2:"Buscador de empleo",
+			planContent2:"Relocarse a Luxemburgo.",
+			planList2:["Acceso exclusivo a guías para encontrar empleo, solicitudes de visas y navegación del proceso de reubicación.", "Recursos seleccionados sobre empresas, costo de vida y vida en Luxemburgo.", "Webinars con expertos de la industria sobre estrategias de búsqueda de empleo."],
+			planTitle3:"Emprendedor",
+			planContent3:"Iniciar un negocio en Luxemburgo.",
+			planList3:["Orientación integral sobre la creación de empresas, requisitos legales y licencias.", "Acceso a consultas en línea sobre financiación, marketing y creación de equipos en Luxemburgo.", "Desafíos para establecer un negocio en Luxemburgo."],
+			sectionSubtitle_2: "Beneficios de pertenecer a nuestros afiliados",
+			sectionList_2: ["Descuentos en servicios y paquetes","Sesiones de llamadas personalizadas","Orientación personalizada","Video llamadas para aclarar dudas","Hasta 50% de descuento en tu segundo paquete de servicios","Actualización constante","Acceso a programas, talleres e información exclusiva"],
+			sectionTitle_3: "Nuestros paquetes",
+			sectionSubtitle_3: "Tu camino hacia una nueva vida en Luxemburgo",
+			sectionContent_3: "Elige el plan que mejor se adapte a tus necesidades y presupuesto:",
+			packageTitle1:"Básico",
+			packageList1:["Asistencia inicial para tu llegada.","Gestión de trámites administrativos esenciales.","Inscripción en servicios básicos (electricidad, agua, internet)."],
+			packageTitle2:"Premium",
+			packageList2:["Asistencia integral en todos los aspectos de tu nueva vida.","Gestión completa de trámites administrativos y legales.", "Búsqueda de vivienda y acompañamiento personalizado en la mudanza.", "Orientación para la elección del colegio ideal para tus hijos.", "Alojamiento temporal en un entorno confortable.", "Recepción y traslado desde el aeropuerto.", "Tour de orientación de 3 días con asistencia personalizada."],
+			packageTitle3:"Emprendedor",
+			packageList3:["Asistencia continua durante tu proceso de adaptación.","Tramitación completa de documentos y permisos.", "Búsqueda de vivienda y acompañamiento en el proceso de mudanza.", "Orientación para la elección del colegio ideal para tus hijos.","2 días de asistencia personalizada."],
+			
+			
+			
+
 			aditionalTitle_1: "Tenemos más para usted",
 			aditionalService_1: "Organización de recogida en el aeropuerto",
 			aditionalService_2:
@@ -315,9 +352,6 @@ export const dict = {
 			aditionalService_3: "Asistencia en servicios de limpieza y mantenimiento",
 			aditionalService_4:
 				"Asistencia de soporte después de la mudanza (1 mes vía teléfono).",
-			sectionTitle_1: "Le acompañamos desde el día 1",
-			sectionContent_1:
-				"Desde su llegada al aeropuerto, hasta hacer un tour por la ciudad de Luxemburgo, Libling estará allí para usted, brindándole toda la información y en su idioma nativo.",
 			sectionTitle_2: "Paquetes para todos",
 			cardTitle_1: "Básico",
 			cardList_1: [
@@ -357,9 +391,6 @@ export const dict = {
 			],
 			cardDescription_4: "Servicio de orientación y consultoría básica",
 			cardActionText: "Solicitar",
-			sectionTitle_3: "¡La educación en Luxemburgo es GRATIS!",
-			sectionContent_3:
-				"La educación de los pequeños es de gran importancia y Libling le ayudará a encontrar las escuelas/colegios y guarderías que sean de agrado para su familia.",
 			sectionTitle_4: "Le ayudamos con sus tramites administrativos",
 			sectionContent_4:
 				"Durante su llegada a Luxemburgo Libling tendrá todo a la mano para usted y su familia. Esto incluye hospedaje temporal y servicios de traslado y una guía de instalación y asistencia telefónica.",
@@ -716,6 +747,41 @@ export const dict = {
 				"'Hello, I'm Laura from Mexico. Luxembourg has always been a magnificent city with great opportunities for me, so I contacted Libling to get the necessary requirements to live there. I recommend them 100%.'",
 		},
 		services: {
+			bigTitleHeader1_1: "Quality Education for Your Children",
+			commonHeader1: "We help you find the ideal school or college for your children, guaranteeing their access to an education of excellence.",
+			sectionTitle_1: "Affiliations",
+			sectionSubtitle_1: "Try our affiliations now",
+			sectionContent_1_1: "Choose the plan",
+			sectionContent_1_2: "that best suits your needs and budget:",
+			sectionOption1: "Monthly",
+			sectionOption2: "6 months",
+			sectionOption3: "Annual",
+			sectionOptionBy1: "month",
+			sectionOptionBy2: "semester",
+			sectionOptionBy3: "year",
+			planActionButton:"Apply",
+			planTitle1:"Student",
+			planContent1:"Study in Luxembourg.",
+			planList1:["Updates.", "Upcoming events and opportunities for international students.", "Guidance on how to apply and where to settle."],
+			planTitle2:"Job Seeker",
+			planContent2:"Relocate to Luxembourg.",
+			planList2:["Exclusive access to guides for finding employment, visa applications and navigating the relocation process.", "Curated resources on companies, cost of living and life in Luxembourg.", "Webinars with industry experts on job search strategies."],
+			planTitle3:"Entrepreneur",
+			planContent3:"Start a business in Luxembourg.",
+			planList3:["Comprehensive guidance on business creation, legal requirements and licenses.", "Access to online consultations on financing, marketing and team building in Luxembourg.", "Challenges of setting up a business in Luxembourg."],
+			sectionSubtitle_2: "Benefits of belonging to our affiliates",
+			sectionList_2: ["Discounts on services and packages","Personalized call sessions","Personalized guidance","Video calls to clarify doubts","Up to 50% discount on your second service package","Constant updates","Access to programs, workshops and exclusive information"],
+			sectionTitle_3: "Our Packages",
+			sectionSubtitle_3: "Your path to a new life in Luxembourg",
+			sectionContent_3: "Choose the plan that best suits your needs and budget:",
+			packageTitle1:"Basic",
+			packageList1:["Initial assistance on arrival.", "Management of essential administrative procedures.", "Registration for basic services (electricity, water, internet)."],
+			packageTitle2:"Premium",
+			packageList2:["Comprehensive assistance in all aspects of your new life.", "Complete management of administrative and legal procedures.", "Housing search and personalized support during the move.", "Guidance for choosing the ideal school for your children.", "Temporary accommodation in a comfortable environment.", "Reception and transfer from the airport.", "3-day orientation tour with personalized assistance."],
+			packageTitle3:"Entrepreneur",
+			packageList3:["Continuous assistance during your adaptation process.", "Complete processing of documents and permits.", "Housing search and support in the moving process.", "Guidance for choosing the ideal school for your children.", "2 days of personalized assistance."],
+
+
 			aditionalTitle_1: "We have more for you",
 			aditionalService_1: "Airport pickup arrangement",
 			aditionalService_2:
@@ -723,7 +789,6 @@ export const dict = {
 			aditionalService_3: "Assistance in cleaning and maintenance services",
 			aditionalService_4:
 				"Support assistance after the move (1 month via phone).",
-			sectionTitle_1: "We accompany you from day one",
 			sectionContent_1:
 				"From your arrival at the airport to taking a tour of the city of Luxembourg, Libling will be there for you, providing you with all the information in your native language.",
 			sectionTitle_2: "Packages for everyone",
@@ -765,9 +830,6 @@ export const dict = {
 			],
 			cardDescription_4: "Guidance and consulting services",
 			cardActionText: "Request",
-			sectionTitle_3: "Education in Luxembourg is FREE!",
-			sectionContent_3:
-				"The education of the little ones is of great importance, and Libling will help you find schools/colleges and nurseries that suit your family.",
 			sectionTitle_4: "We help you with your administrative procedures",
 			sectionContent_4:
 				"During your arrival in Luxembourg, Libling will have everything at hand for you and your family. This includes temporary accommodation and transfer services, an installation guide, and telephone assistance.",
@@ -1129,6 +1191,41 @@ export const dict = {
 				"'Bonjour, je m'appelle Laura et je viens du Mexique. Luxembourg a toujours été une ville magnifique avec de grandes opportunités pour moi, alors j'ai contacté Libling pour obtenir les requis nécessaires pour y vivre. Je les recommande à 100%.'",
 		},
 		services: {
+			bigTitleHeader1_1: "Éducation de qualité pour vos enfants",
+			commonHeader1: "Nous vous aidons à trouver l'école ou le collège idéal pour vos enfants, en garantissant leur accès à une éducation d'excellence.",
+			sectionTitle_1: "Affiliations",
+			sectionSubtitle_1: "Essayez nos affiliations maintenant",
+			sectionContent_1_1: "Choisissez le plan",
+			sectionContent_1_2: "qui correspond le mieux à vos besoins et à votre budget:",
+			sectionOption1: "Mensuel",
+			sectionOption2: "6 mois",
+			sectionOption3: "Annuel",
+			sectionOptionBy1: "mois",
+			sectionOptionBy2: "semestre",
+			sectionOptionBy3: "an",
+			planActionButton:"Demander",
+			planTitle1:"Étudiant",
+			planContent1:"Étudier au Luxembourg.",
+			planList1:["Mises à jour.", "Événements et opportunités à venir pour les étudiants internationaux.", "Conseils sur la façon de postuler et où s'installer."],
+			planTitle2:"Demandeur d'emploi",
+			planContent2:"S'installer au Luxembourg.",
+			planList2:["Accès exclusif à des guides pour trouver un emploi, des demandes de visa et la navigation dans le processus de relocalisation.", "Ressources sélectionnées sur les entreprises, le coût de la vie et la vie au Luxembourg.", "Webinars avec des experts du secteur sur les stratégies de recherche d'emploi."],
+			planTitle3:"Entrepreneur",
+			planContent3:"Créer une entreprise au Luxembourg.",
+			planList3:["Accompagnement continu tout au long de votre processus d'adaptation.", "Traitement complet des documents et autorisations.", "Recherche de logement et accompagnement dans le processus de déménagement.", "Conseils pour choisir l'école idéale pour vos enfants.", "2 jours d'assistance personnalisée."],
+			sectionSubtitle_2: "Avantages de faire partie de nos affiliés",
+			sectionList_2: ["Remises sur les services et les forfaits","Séances d'appels personnalisées","Conseils personnalisés","Appels vidéo pour éclaircir vos doutes","Jusqu'à 50% de réduction sur votre deuxième forfait de services","Mises à jour constantes","Accès à des programmes, des ateliers et des informations exclusives"],
+			sectionTitle_3: "Nos forfaits",
+			sectionSubtitle_3: "Votre chemin vers une nouvelle vie au Luxembourg",
+			sectionContent_3: "Choisissez le plan qui correspond le mieux à vos besoins et à votre budget:",
+			packageTitle1:"Basique",
+			packageList1:["Assistance initiale à l'arrivée.", "Gestion des démarches administratives essentielles.", "Inscription aux services de base (électricité, eau, internet)."],
+			packageTitle2:"Premium",
+			packageList2:["Assistance complète dans tous les aspects de votre nouvelle vie.", "Gestion complète des démarches administratives et juridiques.", "Recherche de logement et accompagnement personnalisé lors du déménagement.", "Conseils pour choisir l'école idéale pour vos enfants.", "Hébergement temporaire dans un environnement confortable.", "Accueil et transfert depuis l'aéroport.", "Visite d'orientation de 3 jours avec assistance personnalisée."],
+			packageTitle3:"Entrepreneur",
+			packageList3:["Accompagnement continu tout au long de votre processus d'adaptation.", "Traitement complet des documents et autorisations.", "Recherche de logement et accompagnement dans le processus de déménagement.", "Conseils pour choisir l'école idéale pour vos enfants.", "2 jours d'assistance personnalisée."],
+
+
 			aditionalTitle_1: "Nous en avons plus pour vous",
 			aditionalService_1: "Organisation de la prise en charge à l'aéroport",
 			aditionalService_2:
@@ -1137,7 +1234,6 @@ export const dict = {
 				"Assistance dans les services de nettoyage et d'entretien",
 			aditionalService_4:
 				"Assistance de soutien après le déménagement (1 mois par téléphone).",
-			sectionTitle_1: "Nous vous accompagnons dès le premier jour",
 			sectionContent_1:
 				"De votre arrivée à l'aéroport à une visite de la ville de Luxembourg, Libling sera là pour vous, vous fournissant toutes les informations dans votre langue maternelle.",
 			sectionTitle_2: "Des forfaits pour tout le monde",
@@ -1179,9 +1275,6 @@ export const dict = {
 			],
 			cardDescription_4: "Service d'orientation et de consultation basique",
 			cardActionText: "Demander",
-			sectionTitle_3: "L'éducation au Luxembourg est GRATUITE !",
-			sectionContent_3:
-				"L'éducation des tout-petits est d'une grande importance, et Libling vous aidera à trouver des écoles/collèges et des garderies qui conviennent à votre famille.",
 			sectionTitle_4: "Nous vous aidons avec vos procédures administratives",
 			sectionContent_4:
 				"Lors de votre arrivée au Luxembourg, Libling aura tout à portée de main pour vous et votre famille. Cela comprend un logement temporaire, des services de transfert, un guide d'installation et une assistance téléphonique.",
