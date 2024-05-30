@@ -49,30 +49,6 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
     <main className={styles.main}>
 
       <HeaderHome lang={lang}/>
-      {/* <header className={styles.header}>
-        <div className={styles.headerMask}>
-          <div className={styles.textContainer}>
-            <h1>
-              <span className={styles.headerTitle} style={poppinsBold.style}>{glosary.titleHeader_1}</span>
-              <span>{' '}</span>
-              <span className={styles.headerTitle} style={poppinsBold.style}>{glosary.titleHeader_2}</span>
-              <span>{' '}</span>
-              <span className={styles.headerTitle} style={poppinsBold.style}>{glosary.titleHeader_3}</span>
-            </h1>
-          </div>
-        </div>
-        {
-          (width && width < 600)
-            ?
-            <Image src={headerImg} alt='header image' width={1500} height={500} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} />
-            :
-            <video autoPlay muted={true} loop style={{ width: '1500px', height: '500px', objectFit: 'cover', objectPosition: 'center center' }}>
-              <source src={"/en/videos/home_video.webm"} type="video/webm" />
-              <source src={"/en/videos/home_video.mp4"} type="video/mp4" />
-            </video>
-        }
-        
-      </header> */}
       <Section backgroundColor='#fff' vertical={true}>
         <h4 className={[globalStyles.miniTitle, globalStyles.textPrimary].join(' ')} style={poppinsSemiBold.style}>{glosary.sectionPartners}</h4>
         <PartnerSlider/>

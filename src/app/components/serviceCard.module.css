@@ -1,0 +1,9 @@
+.container{
+    width: 278px;
+    height: 183px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: #fff;
+    padding: 16px;
+}

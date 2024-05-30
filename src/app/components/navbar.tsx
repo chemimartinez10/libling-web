@@ -37,7 +37,6 @@ export default function Navbar({ lang }: { lang: "es" | "en" | "fr" }) {
                     <LanguageSelector lang={lang} />
                     <li className={verifyCurrentLink('/contact') ? styles.selectedLink : undefined}><Link href={'/contact'}>
                         <div className={styles.textImageContainer}>
-                            <img style={{ width: 24, height: 24 }} src={WhatsappIcon.src} alt='contact' />
                             <span>
                                 {glosary.link_4}
                             </span>
