@@ -354,7 +354,7 @@ export const dict = {
 			aditionalConsultContent_4:"Lorem ipsum dolor sit amet consectetur. Sed nunc aenean placerat non neque tempus et fermentum.",
 			aditionalConsultTitle_5:"Integración a la vida social y cultural del país",
 			aditionalConsultContent_5:"Lorem ipsum dolor sit amet consectetur. Sed nunc aenean placerat non neque tempus et fermentum.",
-			aditionalConsultTitle_6:"tención personalizada en tu viaje y mudanza",
+			aditionalConsultTitle_6:"Atención personalizada en tu viaje y mudanza",
 			aditionalConsultContent_6:"Lorem ipsum dolor sit amet consectetur. Sed nunc aenean placerat non neque tempus et fermentum.",
 			sectionTitle_5: "aún hay más",
 			sectionSubtitle_5: "Servicios adicionales para tu comodidad",

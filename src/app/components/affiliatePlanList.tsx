@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from 'react'
 import styles from './affiliatePlanList.module.css'
 import { dict } from '../utils'
@@ -136,7 +137,7 @@ const AffiliatePlanList:React.FC<IAffiliatePlanList> = ({lang}) => {
             <InputSwitch list={listFrecuency} initialValue={1} onChange={handleFrecuency} />
             <div className={styles.cardContainer}>
             {
-                affiliateList?.find(el=>el.id === frecuency)?.plans?.map((el)=>(<AffiliateCard key={el.id} id={el.id} frecuency={frecuencyName} onSelect={handleSelectedPlan} title={el.title} content={el.content} list={el.list} price={el.price} type={el.id === 2 ? 'main' : 'outline'} lang={lang}/>))
+                affiliateList.find(el=>el.id === frecuency)?.plans?.map((el)=>(<AffiliateCard key={el.id} id={el.id} frecuency={frecuencyName} onSelect={handleSelectedPlan} title={el.title} content={el.content} list={el.list} price={el.price} type={el.id === 2 ? 'main' : 'outline'} lang={lang}/>))
             }
             </div>
         </div>
