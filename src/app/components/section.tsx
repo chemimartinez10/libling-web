@@ -18,7 +18,7 @@ interface ISection {
 
 const Section: React.FC<ISection> = ({ title, subtitle, resume, vertical = false, negative = false, reverse = false, children, backgroundColor, space }) => {
     return (
-        <div className={styles.container} style={{background:backgroundColor, paddingTop: space ? 100 : undefined, paddingBottom: space ? 100 : undefined}}>
+        <div className={styles.container} style={{background:backgroundColor, paddingBottom: space ? 260 : undefined}}>
             <div className={styles.innerContainer}>
             {
                 (title || subtitle || resume) &&

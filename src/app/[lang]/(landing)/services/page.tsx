@@ -16,6 +16,7 @@ import IconCheck from '@/app/components/icons/iconCheck'
 import ConsultCard from '@/app/components/consultCard'
 import ServiceCard from '@/app/components/serviceCard'
 import { ScheduleBanner } from '@/app/components/scheduleBanner'
+import PackagePlanList from '@/app/components/packagePlanList'
 interface IPage {
   params: {
     lang: "es" | "en" | "fr"
@@ -101,7 +102,11 @@ const Services: React.FC<IPage> = ({ params: { lang } }) => {
         </ul>
       </Section>
 
-      <Section title={glosary.sectionTitle_3} subtitle={glosary.sectionSubtitle_3} resume={glosary.sectionContent_3} vertical={true} backgroundColor='#D2DAE1'>
+      <Section title={glosary.sectionTitle_3} subtitle={glosary.sectionSubtitle_3} resume={glosary.sectionContent_3} vertical={true} backgroundColor='#D2DAE1' space={true} >
+      </Section>
+      <Section backgroundColor='#EDF0F4'>
+        <PackagePlanList lang={lang} action={onRequest}/>
+        <div className={styles.transparentBox}></div>
       </Section>
       <Section title={glosary.sectionTitle_4} subtitle={glosary.sectionSubtitle_4} resume={glosary.sectionContent_4} vertical={true} backgroundColor='#EDF0F4'>
         <ul className={styles.consultList}>
