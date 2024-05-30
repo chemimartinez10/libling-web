@@ -2,12 +2,9 @@
 import React from 'react'
 import styles from './page.module.css'
 import globalStyles from '@/app/globals.module.css'
-import Image from 'next/image'
-import houseImg from '@/app/img/Recurso 24 2.png'
 import imagen1 from '@/app/img/Recurso 35.png'
 import imagen2 from '@/app/img/Recurso 33.png'
 import imagen3 from '@/app/img/Recurso 36.png'
-import Article from '@/app/components/article'
 import Section from '@/app/components/section'
 import { dict } from '@/app/utils'
 import useWindowDimensions from '@/app/hooks/useWindowDimensions'
@@ -18,6 +15,7 @@ import AffiliatePlanList from '@/app/components/affiliatePlanList'
 import IconCheck from '@/app/components/icons/iconCheck'
 import ConsultCard from '@/app/components/consultCard'
 import ServiceCard from '@/app/components/serviceCard'
+import { ScheduleBanner } from '@/app/components/scheduleBanner'
 interface IPage {
   params: {
     lang: "es" | "en" | "fr"
@@ -115,6 +113,7 @@ const Services: React.FC<IPage> = ({ params: { lang } }) => {
           {serviceCardList.map((el, index) => (<ServiceCard key={index} title={el} />))}
         </ul>
       </Section>
+      <ScheduleBanner lang={lang}/>
     </main>
   )
 }

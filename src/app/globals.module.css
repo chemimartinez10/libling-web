@@ -13,7 +13,8 @@
     box-shadow: 0px 6px 12px #1973FA29;
     cursor: pointer;
 }
-.miniTitle{
+
+.miniTitle {
     letter-spacing: 4px;
     font-size: 12px;
     font-weight: 600;
@@ -21,7 +22,8 @@
     text-transform: uppercase;
     color: #00000099;
 }
-.bigTitle{
+
+.bigTitle {
     font-size: 50px;
     font-weight: 500;
     line-height: 60px;
@@ -29,26 +31,39 @@
     color: #00000099;
     padding-bottom: 8px;
 }
-.regularTitle{
+
+.mediumTitle {
+    font-size: 47px;
+    font-weight: 400;
+    line-height: 70.5px;
+    text-align: left;
+    color: #404D59;
+
+}
+
+.regularTitle {
     font-size: 33px;
     font-weight: 400;
     line-height: 49.5px;
     color: #000000DE;
 }
-.smallTitle{
+
+.smallTitle {
     font-size: 23px;
     font-weight: 600;
     line-height: 34.5px;
 
 }
-.tinyTitle{
+
+.tinyTitle {
     font-size: 19px;
     font-weight: 500;
     line-height: 28.5px;
     letter-spacing: 0.0015em;
     color: #000000DE;
 }
-.regularSubtitle{
+
+.regularSubtitle {
     font-size: 19px;
     font-weight: 500;
     line-height: 28.5px;
@@ -56,40 +71,46 @@
     text-align: center;
     color: #00000099;
 }
-.subtitle{
+
+.subtitle {
     font-size: 19px;
     font-weight: 500;
     line-height: 28.5px;
     letter-spacing: 0.0015em;
     color: #00000099;
 }
-.text{
+
+.text {
     font-size: 16px;
     color: #00000099;
     font-weight: 400;
     line-height: 24px;
 }
-.commonText{
+
+.commonText {
     font-size: 16px;
     color: #00000099;
     font-weight: 400;
     line-height: 24px;
     padding-bottom: 16px;
 }
-.smallText{
+
+.smallText {
     font-size: 14px;
     font-weight: 400;
     line-height: 21px;
-    color:#00000099
-
+    color: #00000099
 }
-.textPrimary{
+
+.textPrimary {
     color: var(--primary-700);
 }
-.textFaded{
+
+.textFaded {
     color: var(--text_38);
 }
-.textNegative{
+
+.textNegative {
     color: var(--text-negative);
 }
 
@@ -122,6 +143,7 @@
     border: 1px solid var(--button-flat-pressed-color);
     box-shadow: 0px 6px 12px #1973FA29;
 }
+
 .buttonOutline {
     display: flex;
     flex-direction: row;
@@ -151,7 +173,8 @@
     border: none;
     cursor: pointer;
 }
-.checkboxControl{
+
+.checkboxControl {
     display: flex;
     flex-direction: row;
     justify-content: start;
@@ -159,7 +182,8 @@
     gap: 12px;
     font-size: 14px;
 }
-.checkboxControl input{
+
+.checkboxControl input {
     -webkit-appearance: none;
     width: 18px;
     height: 18px;
@@ -168,6 +192,7 @@
     border: 2px solid #00000099;
     position: relative;
 }
+
 .checkboxControl input:checked:after {
     content: '\2714';
     font-size: 14px;
@@ -176,7 +201,10 @@
     left: 1.5px;
     color: #fff;
 }
-.checkboxControl input:active, .checkboxControl input:checked, .checkboxControl input:checked:active{
+
+.checkboxControl input:active,
+.checkboxControl input:checked,
+.checkboxControl input:checked:active {
     border-radius: 2px;
     background-color: var(--libling-main-ui-color);
     border: 2px solid var(--libling-main-ui-color);
