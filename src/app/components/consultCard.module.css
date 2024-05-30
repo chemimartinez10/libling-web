@@ -1,0 +1,17 @@
+.container{
+    width: 278px;
+    height: 201px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.borderContainer{
+    width: 450px;
+    height: 201px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0px 80px;
+    border-left: 1px solid #0000001F;
+    border-right: 1px solid #0000001F;
+}

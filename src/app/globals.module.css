@@ -35,6 +35,19 @@
     line-height: 49.5px;
     color: #000000DE;
 }
+.smallTitle{
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 34.5px;
+
+}
+.tinyTitle{
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 28.5px;
+    letter-spacing: 0.0015em;
+    color: #000000DE;
+}
 .regularSubtitle{
     font-size: 19px;
     font-weight: 500;
@@ -42,7 +55,13 @@
     letter-spacing: 0.0015em;
     text-align: center;
     color: #00000099;
-
+}
+.subtitle{
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 28.5px;
+    letter-spacing: 0.0015em;
+    color: #00000099;
 }
 .text{
     font-size: 16px;
@@ -57,8 +76,21 @@
     line-height: 24px;
     padding-bottom: 16px;
 }
+.smallText{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    color:#00000099
+
+}
 .textPrimary{
     color: var(--primary-700);
+}
+.textFaded{
+    color: var(--text_38);
+}
+.textNegative{
+    color: var(--text-negative);
 }
 
 .buttonMain:hover {

@@ -68,7 +68,43 @@
   gap: 48px;
   row-gap: 2rem;
 }
+.benefitList{
+  padding-top: 24px;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 328px);
+  justify-content: space-between;
+  gap: 48px;
+  width: 100%;
 
+}
+.consultList{
+  padding-top: 32px;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  row-gap: 72px;
+  width: 100%;
+
+}
+.serviceCardList{
+  padding-top: 32px;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3,278px);
+  justify-content: space-between;
+  row-gap: 72px;
+  width: 100%;
+
+}
+.benefitItem{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  gap: 8px;
+}
 
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {

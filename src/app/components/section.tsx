@@ -8,6 +8,7 @@ interface ISection {
     subtitle?: string
     resume?: string
     vertical?: boolean
+    negative?: boolean
     children?: ReactNode
     backgroundColor?: string
     reverse?: boolean
@@ -15,24 +16,24 @@ interface ISection {
 
 }
 
-const Section: React.FC<ISection> = ({ title, subtitle, resume, vertical = false, reverse = false, children, backgroundColor, space }) => {
+const Section: React.FC<ISection> = ({ title, subtitle, resume, vertical = false, negative = false, reverse = false, children, backgroundColor, space }) => {
     return (
-        <div className={styles.container} style={{backgroundColor, paddingTop: space ? 100 : undefined, paddingBottom: space ? 100 : undefined}}>
+        <div className={styles.container} style={{background:backgroundColor, paddingTop: space ? 100 : undefined, paddingBottom: space ? 100 : undefined}}>
             <div className={styles.innerContainer}>
             {
                 (title || subtitle || resume) &&
                 <div className={styles.head}>
                     {
                         title &&
-                            <h2 className={styles.title} style={poppinsBold.style}>{title}</h2>
+                            <h2 className={[globalStyles.miniTitle, globalStyles.textPrimary].join(' ')} style={{...poppinsSemiBold.style, color: negative ? '#FFFFFF' : undefined}}>{title}</h2>
                     }
                     {
                         subtitle &&
-                            <h3 className={globalStyles.regularTitle}>{subtitle}</h3>
+                            <h3 className={globalStyles.regularTitle} style={{color: negative ? '#FFFFFF' : undefined}}>{subtitle}</h3>
                     }
                     {
                         resume &&
-                        <span className={styles.resume}>{resume}</span>
+                        <span className={[globalStyles.text].join(' ')} style={{color: negative ? '#FFFFFF' : undefined}}>{resume}</span>
 
                     }
                 </div>

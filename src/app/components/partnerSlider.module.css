@@ -5,4 +5,5 @@
 .slider{
     width: calc(100% - 140px);
     overflow: hidden;
+    padding-top: 32px;
 }
