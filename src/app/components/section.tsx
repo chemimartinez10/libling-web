@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react'
 import styles from './section.module.css'
 import globalStyles from '@/app/globals.module.css'
 import { poppinsBold, poppinsSemiBold } from '../fonts'
+import Image, { StaticImageData } from 'next/image'
 
 interface ISection {
     title?: string
@@ -11,14 +12,16 @@ interface ISection {
     negative?: boolean
     children?: ReactNode
     backgroundColor?: string
+    backgroundImage?: StaticImageData
     reverse?: boolean
     space?: boolean
 
 }
 
-const Section: React.FC<ISection> = ({ title, subtitle, resume, vertical = false, negative = false, reverse = false, children, backgroundColor, space }) => {
+const Section: React.FC<ISection> = ({ title, subtitle, resume, vertical = false, negative = false, reverse = false, children, backgroundColor, space, backgroundImage }) => {
     return (
         <div className={styles.container} style={{background:backgroundColor, paddingBottom: space ? 260 : undefined}}>
+            {!!backgroundImage && <Image src={backgroundImage} alt='background' style={{position:'absolute', zIndex:1, pointerEvents:'none', top:0, left:0, width:'100%', height:'100%', objectFit: 'cover', objectPosition:'center center'}}/>}
             <div className={styles.innerContainer}>
             {
                 (title || subtitle || resume) &&

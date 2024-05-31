@@ -4,10 +4,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 .innerContainer{
     padding: 80px 140px;
     width: var(--max-width);
+    z-index: 2;
 }
 .title{
     text-align: center;
