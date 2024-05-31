@@ -47,7 +47,7 @@ const Services: React.FC<IPage> = ({ params: { lang } }) => {
         <AnimatedImage image={HelpIMG} alt={'move'}/>
         <Article title={glosary.sectionTitle_3} subtitle={glosary.sectionSubtitle_3} content={glosary.sectionContent_3_1 + glosary.sectionContent_3_2 + glosary.sectionContent_3_3} buttonText={glosary.actionButton_3} buttonAction='/contact' />
       </Section>
-      <Section vertical={true}>
+      <Section vertical={true} backgroundColor='url(/about_section_3.jpg)'>
         <Article title={glosary.sectionTitle_4} subtitle={glosary.sectionSubtitle_4_1 + glosary.sectionSubtitle_4_2} content={glosary.sectionContent_4} buttonText={glosary.actionButton_4} buttonAction='/contact' center={true}/>
       </Section>
     </main>
