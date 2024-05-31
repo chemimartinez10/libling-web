@@ -12,7 +12,7 @@ import HeaderAbout from '@/app/components/headerAbout'
 import AnimatedImage from '@/app/components/animatedImage'
 import MoveIMG from '@/app/img/about_section_1.png'
 import HelpIMG from '@/app/img/about_section_2.jpeg'
-import HousesIMG from '@/app/img/about_section_3.png'
+import HousesIMG from '@/app/img/about_section_3.jpg'
 interface IPage {
   params: {
     lang: "es" | "en" | "fr"
@@ -47,7 +47,7 @@ const Services: React.FC<IPage> = ({ params: { lang } }) => {
         <AnimatedImage image={HelpIMG} alt={'move'}/>
         <Article title={glosary.sectionTitle_3} subtitle={glosary.sectionSubtitle_3} content={glosary.sectionContent_3_1 + glosary.sectionContent_3_2 + glosary.sectionContent_3_3} buttonText={glosary.actionButton_3} buttonAction='/contact' />
       </Section>
-      <Section vertical={true} backgroundColor='url(/about_section_3.jpg)'>
+      <Section vertical={true} backgroundColor={`url(${HousesIMG.src})`}>
         <Article title={glosary.sectionTitle_4} subtitle={glosary.sectionSubtitle_4_1 + glosary.sectionSubtitle_4_2} content={glosary.sectionContent_4} buttonText={glosary.actionButton_4} buttonAction='/contact' center={true}/>
       </Section>
     </main>
