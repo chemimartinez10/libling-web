@@ -1,0 +1,11 @@
+.container{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -400px;
+    left: 0;
+}

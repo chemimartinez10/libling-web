@@ -1,15 +1,18 @@
 import React from 'react'
 import styles from './page.module.css'
 import Image from 'next/image'
-import headerImg from '@/app/img/about_banner.jpeg'
 import meetImg from '@/app/img/Capa_Logo.png'
 import placesImg from '@/app/img/CEO_about.jpg'
 import houseImg from '@/app/img/house.jpg'
 import Article from '@/app/components/article'
 import Section from '@/app/components/section'
 import { dict } from '@/app/utils'
-import { poppinsBold } from '@/app/fonts'
 import { Metadata } from 'next'
+import HeaderAbout from '@/app/components/headerAbout'
+import AnimatedImage from '@/app/components/animatedImage'
+import MoveIMG from '@/app/img/about_section_1.png'
+import HelpIMG from '@/app/img/about_section_2.jpeg'
+import HousesIMG from '@/app/img/about_section_3.png'
 interface IPage {
   params: {
     lang: "es" | "en" | "fr"
@@ -35,30 +38,17 @@ const Services: React.FC<IPage> = ({ params: { lang } }) => {
 
   return (
     <main className={styles.main}>
-      <header className={styles.header}>
-        <div className={styles.headerMask}>
-          <div className={styles.textContainer}>
-            <div>
-              <h4 className={styles.headerTitle} style={poppinsBold.style}>{glosary.titleHeader_1}</h4>
-              <h4 className={styles.headerTitle} style={poppinsBold.style}>{glosary.titleHeader_2}</h4>
-              <h4 className={styles.headerTitle} style={poppinsBold.style}>{glosary.titleHeader_3}</h4>
-            </div>
-          </div>
-
-        </div>
-        <Image src={headerImg} alt='header image' width={1500} height={500} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} />
-      </header>
+      <HeaderAbout lang={lang}/>
       <Section>
-        <Article subtitle={glosary.sectionTitle_1} content={glosary.sectionContent_1} />
-        <Image src={placesImg} id='places-img' width={450} height={450} style={{ borderRadius: 24, padding:10, objectFit:'cover' }} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 450px, 450px' layout="responsive" />
+        <AnimatedImage image={MoveIMG} alt={'move'} reverse={true}/>
+        <Article title={glosary.sectionTitle_2} subtitle={glosary.sectionSubtitle_2} content={glosary.sectionContent_2_1 + glosary.sectionContent_2_2} buttonText={glosary.actionButton_2} buttonAction='/contact' />
       </Section>
       <Section reverse={true}>
-        <Article subtitle={glosary.sectionTitle_2} content={glosary.sectionContent_2} />
-        <Image src={meetImg} id='travel-img' width={600} height={600} style={{ borderRadius: 24 }} className={styles.image} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 600px' layout="responsive" />
+        <AnimatedImage image={HelpIMG} alt={'move'}/>
+        <Article title={glosary.sectionTitle_3} subtitle={glosary.sectionSubtitle_3} content={glosary.sectionContent_3_1 + glosary.sectionContent_3_2 + glosary.sectionContent_3_3} buttonText={glosary.actionButton_3} buttonAction='/contact' />
       </Section>
-      <Section>
-        <Article subtitle={glosary.sectionTitle_3} content={glosary.sectionContent_3} />
-        <Image src={houseImg} id='house-img' width={600} height={600} style={{ borderRadius: 24, padding:10 }} className={styles.image} alt='travel' sizes='(max-width: 768px) 100vw, (max-width: 1120px) 400px, 600px' layout="responsive" />
+      <Section vertical={true} backgroundColor='url(/about_section_3.jpg)'>
+        <Article title={glosary.sectionTitle_4} subtitle={glosary.sectionSubtitle_4_1 + glosary.sectionSubtitle_4_2} content={glosary.sectionContent_4} buttonText={glosary.actionButton_4} buttonAction='/contact' center={true}/>
       </Section>
     </main>
   )

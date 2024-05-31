@@ -6,6 +6,16 @@
     min-width: 220px;
     justify-content: center;
 }
+.containerCenter{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 572px;
+    min-width: 220px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
 .title {
     font-size: .75rem;

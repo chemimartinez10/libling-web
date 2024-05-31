@@ -1,13 +1,13 @@
 .container{
     width: 278px;
-    height: 201px;
+    height: 260px;
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 .borderContainer{
     width: 450px;
-    height: 201px;
+    height: 260px;
     display: flex;
     flex-direction: column;
     gap: 16px;

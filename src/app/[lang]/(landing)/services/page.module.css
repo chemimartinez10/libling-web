@@ -98,6 +98,11 @@
   width: 100%;
 
 }
+.transparentBox{
+  height: 280px;
+  width: 100%;
+  background-color: transparent;
+}
 .benefitItem{
   display: flex;
   flex-direction: row;
