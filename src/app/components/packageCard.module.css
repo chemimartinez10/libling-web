@@ -8,6 +8,7 @@
     border-radius: 16px;
     background-color: #fff;
     box-shadow: 0px 12px 30px 0px #1973FA14;
+    overflow: hidden;
 }
 .headContainer{
     position: relative;
@@ -15,6 +16,7 @@
     flex-direction: column;
     gap: 8px;
     height: 147px;
+    overflow: hidden;
 }
 .headImage{
     position: absolute;
@@ -22,6 +24,9 @@
     left: 0;
 }
 .headTextContainer{
+    position: absolute;
+    top: 0;
+    left: 0;
     padding: 32px 24px;
     display: flex;
     flex-direction: row;
@@ -29,6 +34,7 @@
     justify-content: flex-start;
     gap: 16px;
     height: 100%;
+    width: 100%;
 }
 .bodyContainer{
     display: flex;
