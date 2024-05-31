@@ -14,27 +14,28 @@ interface IArticle {
     buttonAction?: string
     content?: string
     bigSubtitle?: boolean
+    center?: boolean
     list?: string[]
     Icon?: React.ElementType
     image?:StaticImageData
 }
 
-const Article: React.FC<IArticle> = ({ title, subtitle, content, list, Icon, buttonText, buttonAction='#', bigSubtitle=false, image }) => {
+const Article: React.FC<IArticle> = ({ title, subtitle, content, list, Icon, buttonText, buttonAction='#', bigSubtitle=false, image, center = false }) => {
     return (
-        <article className={styles.container}>
+        <article className={center ? styles.containerCenter : styles.container}>
             {Icon &&
                 <Icon style={{fontSize:64, alignSelf:'center'}}/>
             }
             {title &&
-                <h3 className={[globalStyles.miniTitle, globalStyles.textPrimary].join(' ')} style={poppinsSemiBold.style}>{title}</h3>
+                <h3 className={[globalStyles.miniTitle, globalStyles.textPrimary, center ? globalStyles.textCenter : ''].join(' ')} style={poppinsSemiBold.style}>{title}</h3>
             }
             {
                 subtitle &&
-                <h5 className={[globalStyles.regularTitle].join(' ')}>{subtitle}</h5>
+                <h5 className={[globalStyles.regularTitle, center ? globalStyles.textCenter : ''].join(' ')}>{subtitle}</h5>
             }
             {
                 content &&
-                <p className={[globalStyles.commonText].join(' ')}>{content}</p>
+                <p className={[globalStyles.commonText, center ? globalStyles.textCenter : ''].join(' ')}>{content}</p>
             }
             {
                 list &&
@@ -59,7 +60,7 @@ const Article: React.FC<IArticle> = ({ title, subtitle, content, list, Icon, but
             }
             {
                 buttonText &&
-                <Link href={buttonAction} style={{alignSelf:'flex-start'}}>
+                <Link href={buttonAction} style={{alignSelf:center ? 'center' : 'flex-start'}}>
                     <Button title={buttonText}/>
                 </Link>
             }

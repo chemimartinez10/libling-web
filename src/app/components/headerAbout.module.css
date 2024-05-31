@@ -1,0 +1,46 @@
+.container{
+    position: relative;
+    height: 600px;
+    max-width: var(--max-width);
+    width: 100%;
+    overflow:hidden;
+}
+.imageContainer{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(98.96deg, #F5F9FF 41.03%, #CDD8E7 99.47%);
+    overflow:hidden;
+    
+}
+.image{
+    position: absolute;
+    width: 575px;
+    height: 575px;
+    bottom: 0;
+    right: 64px;
+}
+.form{
+    position: absolute;
+    width: 670px;
+    height: 670px;
+    bottom: -200px;
+    right: -100px;
+    background: #1973FA;
+    border-radius: 50%;
+
+}
+.sliderTextContainer{
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 140px;
+    padding: 150px 0;
+    max-width: 575px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    gap: 8px;
+}
