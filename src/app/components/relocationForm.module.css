@@ -1,0 +1,85 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 692px;
+    padding: 0px;
+}
+.row{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 16px;
+}
+.column{
+    flex-grow: 1;
+
+}
+.formTitle{
+    font-size: 24px;
+    color: #000000DE;
+}
+.button{
+    padding: 8px 140px;
+    margin-top: 16px;
+    font-size: 16px;
+    color: #FFFFFF;
+    border-radius: 18px;
+    background-color: #1973FA;
+    box-shadow: 0px 6px 12px #FB860129;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    align-self: center;
+    transition: all .25s ease;
+}
+.button:hover{
+    padding: 8px 140px;
+    margin-top: 16px;
+    font-size: 16px;
+    color: #FFFFFF;
+    border-radius: 18px;
+    background-color: #1973FAD0;
+    box-shadow: 0px 6px 12px #FB860129;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    align-self: center;
+    transition: all .25s ease;
+}
+@media (width <= 700px){
+    .card {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        max-width: 100%;
+    }
+    .button{
+        padding: 8px 16px;
+        font-size: 14px;
+        color: #FFFFFF;
+        border-radius: 18px;
+        background-color: #FB8601;
+        box-shadow: 0px 6px 12px #FB860129;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        align-self: stretch;
+        transition: all .25s ease;
+    }
+    .button:hover{
+        padding: 8px 16px;
+        font-size: 14px;
+        color: #FFFFFF;
+        border-radius: 18px;
+        background-color: #FB8601D0;
+        box-shadow: 0px 6px 12px #FB860129;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        align-self: stretch;
+        transition: all .25s ease;
+    }
+}
