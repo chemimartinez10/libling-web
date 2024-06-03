@@ -85,7 +85,7 @@ const Contact: React.FC<IPage> = async ({ params: { lang } }) => {
               </div>
               <CalendarEvent calendarTitle={glosary.calendarTitle} events={events} lang={lang} />
             </div>
-            <div className={styles.step}>
+            <div className={styles.step} id='contactForm'>
               <div className={styles.stepTitleContainer}>
                   <span className={styles.stepTitleNumber}> 2 </span>
                   <span className={globalStyles.tinyMediumTitle}>{glosary.formTitle2}</span>

@@ -104,7 +104,7 @@ const RelocationForm: React.FC<IRelocationForm> = ({ lang }) => {
             enableReinitialize
         >
             {({ values, handleChange, errors, touched }) => (
-                <Form className={styles.card} id='contactForm'>
+                <Form className={styles.card}>
                     <InputText label={glosary.formLabelName} name='name' placeholder={glosary.formPlaceholderName} value={values.name} error={errors.name} touched={touched.name} onChange={handleChange('name')} />
                     <div className={styles.row}>
                         <div className={styles.column}>
