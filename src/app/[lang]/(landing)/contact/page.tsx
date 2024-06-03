@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './page.module.css'
+import globalStyles from '@/app/globals.module.css'
 import Image from 'next/image'
 import headerImg from '@/app/img/contact_banner.gif'
 import familyImg from '@/app/img/CEO_contact.jpg'
@@ -14,6 +15,8 @@ import { poppinsMedium, poppinsRegular } from '@/app/fonts';
 import { CalendarEvent } from './calendar'
 import ical from 'ical'
 import { Metadata } from 'next'
+import HeaderContact from '@/app/components/headerContact'
+import RelocationForm from '@/app/components/relocationForm'
 
 interface IPage {
   params: {
@@ -71,36 +74,27 @@ const Contact: React.FC<IPage> = async ({ params: { lang } }) => {
 
   return (
     <main className={styles.main}>
-      <header className={styles.header}>
-        <div className={styles.headerMask}>
-          {/* logotipo de libling */}
-
+      <HeaderContact lang={lang}/>
+      <Section backgroundColor='#EDF0F4' vertical={true}>
+        <div className={styles.containerForm}>
+          <div className={styles.card}>
+            <div className={styles.step}>
+              <div className={styles.stepTitleContainer}>
+                  <span className={styles.stepTitleNumber}> 1 </span>
+                  <span className={globalStyles.tinyMediumTitle}>{glosary.formTitle1}</span>
+              </div>
+              <CalendarEvent calendarTitle={glosary.calendarTitle} events={events} lang={lang} />
+            </div>
+            <div className={styles.step} id='contactForm'>
+              <div className={styles.stepTitleContainer}>
+                  <span className={styles.stepTitleNumber}> 2 </span>
+                  <span className={globalStyles.tinyMediumTitle}>{glosary.formTitle2}</span>
+              </div>
+              <RelocationForm lang={lang} />
+            </div>
+          </div>
         </div>
-        {
-          // (width && width < 600)
-          //   ?
-          //   <Image src={headerImg} alt='header image' width={1500} height={500} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} />
-          //   :
-          <video autoPlay muted={true} loop style={{ width: '1500px', height: '500px', objectFit: 'cover', objectPosition: 'center center' }}>
-            <source src={"/en/videos/contact_video.webm"} type="video/webm" />
-            <source src={"/en/videos/contact_video.mp4"} type="video/mp4" />
-          </video>
-        }
-      </header>
-      <Section>
-        <Article subtitle={glosary.sectionTitle_1} content={glosary.sectionContent_1} image={familyImg} />
-        <CalendarEvent calendarTitle={glosary.calendarTitle} events={events} lang={lang} />
-      </Section>
-      <Section title={glosary.sectionTitle_2} resume={glosary.sectionContent_2}>
-        <div className={styles.listContactCards}>
-          <ContactCard description='+352691367757' url={`https://api.whatsapp.com/send?phone=${352691367757}`} Icon={RiWhatsappLine} color={'#659E43'} />
-          <ContactCard description='+352691367757' url='https://m.me/61554771181200' Icon={RiMessengerLine} color={'#225FE7'} />
-          <ContactCard description='+352691367757' url='https://www.instagram.com/libling_solutions' Icon={RiInstagramLine} color={'#FB8501'} />
-          <ContactCard description='+352691367757' url='https://www.linkedin.com/company/libling/' Icon={RiLinkedinFill} color={'#F0C712'} />
-        </div>
-      </Section>
-      <Section vertical={true}>
-        <ContactForm lang={lang} />
+        <div className={styles.fillDiv}></div>
       </Section>
     </main>
   )

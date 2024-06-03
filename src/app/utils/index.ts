@@ -402,6 +402,26 @@ export const dict = {
 			successMessageContent:"Por favor, revise su correo electrónico.",
 		},
 		contact: {
+			miniTitleHeader1:"Embárcate en la aventura",
+			bigTitleHeader1:"¡Agenda una cita ahora!",
+			formTitle1:"Elige un día para poder contactarte",
+			formTitle2:"Coméntanos un poco de ti",
+			formLabelName:"Nombres",
+			formPlaceholderName:"Dinos tu nombre y apellido",
+			formLabelSubject:"Asunto a tratar",
+			formPlaceholderSubject:"Selecciona",
+			formLabelEmail:"Correo electrónico",
+			formPlaceholderEmail:"Ej.: example@email.com",
+			formLabelMessage:"Mensaje",
+			formPlaceholderMessage:"Dinos el motivo por el que nos contactas",
+			formActionButton:"Agendar cita",
+			formSubjectList:[
+				{
+					key:'job',
+					value:'Quiero trabajar en Luxemburgo',
+				}
+			],
+
 			calendarTitle: "Selecciona una fecha",
 			sectionTitle_1: "¡Agende con nosotros!",
 			sectionContent_1:
@@ -852,6 +872,26 @@ export const dict = {
 
 		},
 		contact: {
+			miniTitleHeader1: "Embark on the adventure",
+			bigTitleHeader1: "Schedule your appointment now!",
+			formTitle1: "Choose a day for us to contact you",
+			formTitle2: "Tell us a little bit about yourself",
+			formLabelName: "Full Name",
+			formPlaceholderName: "Enter your full name",
+			formLabelSubject: "Topic of Interest",
+			formPlaceholderSubject: "Select",
+			formLabelEmail: "Email Address",
+			formPlaceholderEmail: "Eg.: example@email.com",
+			formLabelMessage: "Message",
+			formPlaceholderMessage: "Tell us why you're contacting us",
+			formActionButton: "Schedule Appointment",
+			formSubjectList: [
+				{
+				  key: 'job',
+				  value: 'I want to work in Luxembourg',
+				},
+			],
+
 			calendarTitle: "Select a date",
 			sectionTitle_1: "Schedule with us !",
 			sectionContent_1:
@@ -1306,6 +1346,26 @@ export const dict = {
 			successMessageContent: "Veuillez vérifier votre boîte de réception."
 		},
 		contact: {
+			miniTitleHeader1: "Embarquez pour l'aventure",
+			bigTitleHeader1: "Prenez rendez-vous dès maintenant !",
+			formTitle1: "Choisissez un jour pour que nous puissions vous contacter",
+			formTitle2: "Parlez-nous un peu de vous",
+			formLabelName: "Nom complet",
+			formPlaceholderName: "Entrez votre nom complet",
+			formLabelSubject: "Sujet",
+			formPlaceholderSubject: "Sélectionner",
+			formLabelEmail: "Adresse e-mail",
+			formPlaceholderEmail: "Ex. : example@email.com",
+			formLabelMessage: "Message",
+			formPlaceholderMessage: "Dites-nous pourquoi vous nous contactez",
+			formActionButton: "Prendre rendez-vous",
+			formSubjectList: [
+				{
+				  key: 'job',
+				  value: 'Je souhaite travailler au Luxembourg',
+				},
+			  ],
+
 			calendarTitle: "Sélectionnez une date",
 			sectionTitle_1: "Planifiez avec nous !",
 			sectionContent_1:

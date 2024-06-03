@@ -64,8 +64,7 @@ export const CalendarEvent: React.FC<ICalendarEvents> = ({ calendarTitle, lang, 
         }
     }
     return (
-        <div className={styles.calendar}>
-            <h3 style={poppinsMedium.style}>{calendarTitle}</h3>
+        <div className={[styles.calendar, poppinsMedium.className].join(' ')}>
             <Calendar
                 locale={lang}
                 className={poppinsRegular.className}
