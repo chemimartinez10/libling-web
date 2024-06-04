@@ -21,6 +21,7 @@ export default function Footer({ lang }: { lang: "es" | "en" | "fr" }) {
     const glosaryAuth = dict[lang]?.auth
     const glosaryContact = dict[lang]?.contact
     const glosaryImmo = dict[lang]?.immo
+    const glosaryHome = dict[lang]?.home
     const mailMessages = dict[lang]?.mail
     const [inputValue, setInputValue] = useState('');
     const [loading, setLoading] = useState<boolean | undefined>();
@@ -43,7 +44,7 @@ export default function Footer({ lang }: { lang: "es" | "en" | "fr" }) {
         try{
             await sendEmail(
                 inputValue || 'email',
-                templates.contactUs(inputValue || '', mailMessages.main),
+                templates.info(glosaryHome.bigTitleHeader1_1 + glosaryHome.bigTitleHeader1_2,inputValue || '', mailMessages.main, lang),
                 mailMessages.subject_1
             )
             toast.success(<CustomToast type='success' title={glosaryImmo.success} content={glosaryImmo.successEmail} />, { theme: 'colored', icon: false, style: { backgroundColor: '#00C851', maxWidth: 450, padding: 24, borderRadius: 10 } })
@@ -87,7 +88,7 @@ export default function Footer({ lang }: { lang: "es" | "en" | "fr" }) {
                                     onChange={(e) => setInputValue(e.target.value)} required />
                             </div>
                         </div>
-                        <button disabled={loading} style={poppinsMedium.style}>{glosaryContact.form_button}</button>
+                        <button disabled={loading} style={poppinsMedium.style}>{loading ? <span className={styles.loader}></span> : <span>{glosaryContact.form_button}</span>}</button>
                     </form>
                     <div className={styles.socialContainer} style={{ maxWidth: 300 }}>
                         <h5 style={poppinsMedium.style}>{glosary.title_3}</h5>
