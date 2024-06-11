@@ -5,6 +5,7 @@ import { dict } from '../utils'
 import AffiliateCard from './affiliateCard'
 import InputSwitch from './admin/inputSwitch'
 import { Payment } from './payment'
+import ReactModal from 'react-modal'
 
 interface IAffiliatePlanList{
     lang: "es" | "en" | "fr"
@@ -12,6 +13,7 @@ interface IAffiliatePlanList{
 
 
 const AffiliatePlanList:React.FC<IAffiliatePlanList> = ({lang}) => {
+    ReactModal.setAppElement('#main')
     const glosary = dict[lang]?.services
     const [ open, setOpen ] = useState(false);
     const affiliateList = [
@@ -147,7 +149,7 @@ const AffiliatePlanList:React.FC<IAffiliatePlanList> = ({lang}) => {
                 }
             </div>
         </div>
-        <Payment open={open} closeModal={()=>{setOpen(false)}} lang={lang}/>
+        <Payment open={open} closeModal={()=>{setOpen(false)}} lang={lang} plan={plan}/>
     </>
     )
 }

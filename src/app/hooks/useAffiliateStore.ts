@@ -6,7 +6,7 @@ interface IForm1 {
 	name?: string
 	phone?: string
 	email?: string
-	country?: number
+	country?: string
 	note?: string
 }
 interface TypeAffiliateStore {
