@@ -190,6 +190,7 @@ export const Payment:React.FC<IPayment> = ({open = false, lang, closeModal}) => 
                 <div className={page === 1 ? styles.form_1 : styles.form_2}>
                     <div className={styles.innerForm}>
                         <Formik
+                            key={1}
                             initialValues={initialValues_1}
                             validationSchema={validationSchema_1}
                             onSubmit={handleSubmit_1}
@@ -219,6 +220,7 @@ export const Payment:React.FC<IPayment> = ({open = false, lang, closeModal}) => 
                     </div>
                     <div className={styles.innerForm}>
                     <Formik
+                            key={2}
                             initialValues={initialValues_2}
                             validationSchema={validationSchema_2}
                             onSubmit={handleSubmit_2}
