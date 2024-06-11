@@ -153,6 +153,8 @@ export const dict = {
 			formStep: "Paso",
 			formStepConnector: "de",
 			formValidationRequired: "Este campo es requerido",
+			formValidationCardDate: "Este campo debe tener el formato MM/YYYY. ej:12/2024",
+			formValidationCvc: "Este campo debe tener 3 digitos",
 			formValidationNumbers: "Este campo solo acepta números",
 			formValidationLetters: "Este campo solo acepta letras",
 			formValidationEmail: "Este campo debe ser un correo electrónico",
@@ -419,7 +421,35 @@ export const dict = {
 				{
 					key:'job',
 					value:'Quiero trabajar en Luxemburgo',
-				}
+				},
+				{
+					key:'jobs',
+					value:'Quiero saber acerca de empleos en Luxemburgo',
+				},
+				{
+					key:'job_permit',
+					value:'Quiero ⁠información sobre permiso de trabajo',
+				},
+				{
+					key:'business',
+					value:'Quiero ⁠iniciar un negocio en Luxemburgo',
+				},
+				{
+					key:'study',
+					value:'Quiero ⁠estudiar en Luxemburgo',
+				},
+				{
+					key:'languages',
+					value:'Quiero ⁠aprender de idiomas en Luxemburgo',
+				},
+				{
+					key:'stay',
+					value:'Quiero saber donde alojarme en Luxemburgo',
+				},
+				{
+					key:'investment',
+					value:'Quiero ⁠⁠invertir en Luxemburgo',
+				},
 			],
 
 			calendarTitle: "Selecciona una fecha",
@@ -640,6 +670,8 @@ export const dict = {
 			formStep: "Step",
 			formStepConnector: "of",
 			formValidationRequired: "This field is required",
+			formValidationCardDate: "This field must be in MM/YYYY format. eg: 12/2024",
+			formValidationCvc: "This field must be 3 digits long.",
 			formValidationNumbers: "This field only accepts numbers",
 			formValidationLetters: "This field only accepts letters",
 			formValidationEmail: "This field must be an email address",
@@ -906,9 +938,37 @@ export const dict = {
 			formActionButton: "Schedule Appointment",
 			formSubjectList: [
 				{
-				  key: 'job',
-				  value: 'I want to work in Luxembourg',
+					"key": "job",
+					"value": "I want to work in Luxembourg"
 				},
+				{
+					"key": "jobs",
+					"value": "I want to know about jobs in Luxembourg"
+				},
+				{
+					"key": "job_permit",
+					"value": "I want information about work permits"
+				},
+				{
+					"key": "business",
+					"value": "I want to start a business in Luxembourg"
+				},
+				{
+					"key": "study",
+					"value": "I want to study in Luxembourg"
+				},
+				{
+					"key": "languages",
+					"value": "I want to learn languages in Luxembourg"
+				},
+				{
+					"key": "stay",
+					"value": "I want to know where to stay in Luxembourg"
+				},
+				{
+					"key": "investment",
+					"value": "I want to invest in Luxembourg"
+				}
 			],
 
 			calendarTitle: "Select a date",
@@ -1130,6 +1190,8 @@ export const dict = {
 			formStep: "Étape",
 			formStepConnector: "de",
 			formValidationRequired: "Ce champ est obligatoire",
+			formValidationCardDate: "Ce champ doit être au format MM/AAAA. ex: 12/2024",
+			formValidationCvc: "Ce champ doit comporter 3 chiffres.",
 			formValidationNumbers: "Ce champ n'accepte que des chiffres",
 			formValidationLetters: "Ce champ n'accepte que des lettres",
 			formValidationEmail: "Ce champ doit être une adresse e-mail",
@@ -1399,9 +1461,37 @@ export const dict = {
 			formActionButton: "Prendre rendez-vous",
 			formSubjectList: [
 				{
-				  key: 'job',
-				  value: 'Je souhaite travailler au Luxembourg',
+					"key": "job",
+					"value": "Je veux travailler au Luxembourg"
 				},
+				{
+					"key": "jobs",
+					"value": "Je veux en savoir plus sur les emplois au Luxembourg"
+				},
+				{
+					"key": "job_permit",
+					"value": "Je souhaite des informations sur le permis de travail"
+				},
+				{
+					"key": "business",
+					"value": "Je veux créer une entreprise au Luxembourg"
+				},
+				{
+					"key": "study",
+					"value": "Je veux étudier au Luxembourg"
+				},
+				{
+					"key": "languages",
+					"value": "Je veux apprendre des langues au Luxembourg"
+				},
+				{
+					"key": "stay",
+					"value": "Je veux savoir où me loger au Luxembourg"
+				},
+				{
+					"key": "investment",
+					"value": "Je veux investir au Luxembourg"
+				}
 			  ],
 
 			calendarTitle: "Sélectionnez une date",

@@ -73,6 +73,7 @@ const RelocationForm: React.FC<IRelocationForm> = ({ lang }) => {
                 glosary.formSubjectList.find(el=>el.key === values.subject)?.value || glosary.formSubjectList[0]?.value
             )
             toast.success(<CustomToast type='success' title={glosaryImmo.success} content={glosaryImmo.successEmail} />, { theme: 'colored', icon: false, style: { backgroundColor: '#00C851', maxWidth: 450, padding: 24, borderRadius: 10 } })
+            formRef?.current?.resetForm({values:{...initialValues, subject:values.subject}})
             
         } catch (error) {
             console.error(error)

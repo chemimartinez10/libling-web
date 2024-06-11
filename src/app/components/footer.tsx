@@ -1,15 +1,10 @@
 'use client'
-import Link from 'next/link'
 import React, { SyntheticEvent, useState } from 'react'
 import styles from './footer.module.css'
-import Image from 'next/image'
-import luxemburgImg from '../img/Capa_1.png'
-import { poppinsBold, poppinsMedium, poppinsRegular, poppinsSemiBold } from '../fonts'
+import { poppinsMedium, poppinsRegular, poppinsSemiBold } from '../fonts'
 import { RiFacebookFill, RiInstagramFill, RiLinkedinFill } from "react-icons/ri";
-import { IoMdSend } from "react-icons/io";
 import { dict } from '../utils'
 import { templates } from '../utils/funtions'
-import { InputText } from './admin/inputText'
 import { sendEmail } from '../utils/emails'
 import CustomToast from './toast'
 import { toast } from 'react-toastify'

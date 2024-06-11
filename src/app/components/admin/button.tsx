@@ -21,10 +21,11 @@ interface IButton {
     onClick?: VoidFunction
     goTo?: string
     submit?: boolean
+    grow?: boolean
 }
 
 
-export const Button: React.FC<IButton> = ({ type = 'main', title, Icon, loading = false, disabled = false, onClick = () => { }, submit = false, icon, goTo }) => {
+export const Button: React.FC<IButton> = ({ type = 'main', title, Icon, loading = false, disabled = false, onClick = () => { }, submit = false, icon, goTo, grow=false }) => {
     let style: {
         readonly [key: string]: string;
     }
@@ -78,7 +79,7 @@ export const Button: React.FC<IButton> = ({ type = 'main', title, Icon, loading 
     }
 
     return (
-        <button className={currentStyle} onClick={loading || disabled ? () => { } : !!goTo ? () => { router.push(goTo) } : onClick} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} onTouchStart={handleMouseDown} onTouchEnd={handleMouseUp} type={submit ? 'submit' : 'button'}>
+        <button className={currentStyle} onClick={loading || disabled ? () => { } : !!goTo ? () => { router.push(goTo) } : onClick} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} onTouchStart={handleMouseDown} onTouchEnd={handleMouseUp} type={submit ? 'submit' : 'button'} style={{flexGrow: grow ? 1: undefined}}>
             {!!Icon && <Icon className={style.icon} />}
             {!!IconFunc && <IconFunc className={style.iconFunc} />}
 

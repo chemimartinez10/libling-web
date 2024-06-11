@@ -12,6 +12,7 @@ import {
 } from "./app/interfaces/models"
 import { PropertyCreate, PropertyUpdate } from "./app/classes"
 import { cookies } from "next/headers"
+import countries from '@/app/utils/countries.json'
 const saltRounds = 12
 
 const prisma = new PrismaClient()
@@ -137,6 +138,19 @@ export async function getCountries() {
 	} catch (e) {
 		console.error("Error getting Countries", e)
 		await prisma.$disconnect()
+		return undefined
+	}
+}
+export async function getStatesByCode(code:string) {
+	try {
+		const states = countries.find(el=>el?.code2 === code)?.states
+		return states?.map(el=>({
+			key:el.code,
+			value:el.name,
+			description:el.code,
+		}))
+	} catch (e) {
+		console.error("Error getting states", e)
 		return undefined
 	}
 }
