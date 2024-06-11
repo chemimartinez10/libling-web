@@ -153,6 +153,8 @@ export const dict = {
 			formStep: "Paso",
 			formStepConnector: "de",
 			formValidationRequired: "Este campo es requerido",
+			formValidationCardDate: "Este campo debe tener el formato MM/YYYY. ej:12/2024",
+			formValidationCvc: "Este campo debe tener 3 digitos",
 			formValidationNumbers: "Este campo solo acepta números",
 			formValidationLetters: "Este campo solo acepta letras",
 			formValidationEmail: "Este campo debe ser un correo electrónico",
@@ -419,7 +421,35 @@ export const dict = {
 				{
 					key:'job',
 					value:'Quiero trabajar en Luxemburgo',
-				}
+				},
+				{
+					key:'jobs',
+					value:'Quiero saber acerca de empleos en Luxemburgo',
+				},
+				{
+					key:'job_permit',
+					value:'Quiero ⁠información sobre permiso de trabajo',
+				},
+				{
+					key:'business',
+					value:'Quiero ⁠iniciar un negocio en Luxemburgo',
+				},
+				{
+					key:'study',
+					value:'Quiero ⁠estudiar en Luxemburgo',
+				},
+				{
+					key:'languages',
+					value:'Quiero ⁠aprender de idiomas en Luxemburgo',
+				},
+				{
+					key:'stay',
+					value:'Quiero saber donde alojarme en Luxemburgo',
+				},
+				{
+					key:'investment',
+					value:'Quiero ⁠⁠invertir en Luxemburgo',
+				},
 			],
 
 			calendarTitle: "Selecciona una fecha",
@@ -466,6 +496,25 @@ export const dict = {
 			date: "Hola quisiera una cita para el día: ",
 			notify: "Su mensaje ha sido enviado con éxito",
 			failed: "No se ha podido completar la solicitud",
+
+			affiliateTitle:"Gracias por unirte a nuestra familia",
+			affiliateContent_1:"¡Te damos la bienvenida!",
+			affiliateContent_2:"En Libling estamos muy contentos de que te hayas unido a nuestro programa de afiliados.",
+			affiliateContent_3:"Tu decisión de formar parte de nuestra comunidad nos llena de alegría y nos impulsa a seguir ofreciendo el mejor servicio a quienes buscan un nuevo comienzo en Luxemburgo.",
+			affiliateContent_4:"Como afiliado/a, tienes acceso a beneficios exclusivos y al apoyo constante de nuestro equipo de expertos.",
+			affiliateContent_5:"¡Juntos podemos lograr grandes cosas y ayudar a muchos a cumplir sus sueños!",
+			contentBottom:"El equipo de Libling.",
+
+			footerTopTitle:"Estamos para servirte",
+			footerTopText_1:"¿Tienes preguntas?",
+			footerTopText_2:" Escríbenos a ",
+			footerTopText_3:"info@libling.com",
+			footerTopText_4:" y estaremos en contacto contigo lo más pronto posible. También nos puedes dejar comentarios acerca de nuestros servicios en ",
+			footerTopText_5:"feedback.libling@gmail.com",
+			footerBottomText_1:"Término",
+			footerBottomText_2:"Privacidad",
+			footerBottomText_3:"Contáctanos",
+			footerBottomText_4:"Dar de baja",
 		},
 	},
 	en: {
@@ -621,6 +670,8 @@ export const dict = {
 			formStep: "Step",
 			formStepConnector: "of",
 			formValidationRequired: "This field is required",
+			formValidationCardDate: "This field must be in MM/YYYY format. eg: 12/2024",
+			formValidationCvc: "This field must be 3 digits long.",
 			formValidationNumbers: "This field only accepts numbers",
 			formValidationLetters: "This field only accepts letters",
 			formValidationEmail: "This field must be an email address",
@@ -887,9 +938,37 @@ export const dict = {
 			formActionButton: "Schedule Appointment",
 			formSubjectList: [
 				{
-				  key: 'job',
-				  value: 'I want to work in Luxembourg',
+					"key": "job",
+					"value": "I want to work in Luxembourg"
 				},
+				{
+					"key": "jobs",
+					"value": "I want to know about jobs in Luxembourg"
+				},
+				{
+					"key": "job_permit",
+					"value": "I want information about work permits"
+				},
+				{
+					"key": "business",
+					"value": "I want to start a business in Luxembourg"
+				},
+				{
+					"key": "study",
+					"value": "I want to study in Luxembourg"
+				},
+				{
+					"key": "languages",
+					"value": "I want to learn languages in Luxembourg"
+				},
+				{
+					"key": "stay",
+					"value": "I want to know where to stay in Luxembourg"
+				},
+				{
+					"key": "investment",
+					"value": "I want to invest in Luxembourg"
+				}
 			],
 
 			calendarTitle: "Select a date",
@@ -936,6 +1015,25 @@ export const dict = {
 			date: "Hello, I would like an appointment for the day: ",
 			notify: "Your message was sent with success",
 			failed: "Your request could not be completed",
+
+			affiliateTitle: "Thank you for joining our family",
+			affiliateContent_1: "Welcome!",
+			affiliateContent_2: "At Libling, we are delighted that you have joined our affiliate program.",
+			affiliateContent_3: "Your decision to be part of our community fills us with joy and motivates us to continue offering the best service to those seeking a new beginning in Luxembourg.",
+			affiliateContent_4: "As an affiliate, you have access to exclusive benefits and ongoing support from our team of experts.",
+			affiliateContent_5: "Together we can achieve great things and help many people fulfill their dreams!",
+			contentBottom: "The Libling Team.",
+
+			footerTopTitle: "We are here to serve you",
+			footerTopText_1: "Do you have any questions?",
+			footerTopText_2: " Write to us at ",
+			footerTopText_3: "info@libling.com",
+			footerTopText_4: " and we will be in touch with you as soon as possible. You can also leave us comments about our services at ",
+			footerTopText_5: "feedback.libling@gmail.com",
+			footerBottomText_1: "Terms",
+			footerBottomText_2: "Privacy",
+			footerBottomText_3: "Contact Us",
+			footerBottomText_4: "Unsubscribe",
 		},
 	},
 	fr: {
@@ -1092,6 +1190,8 @@ export const dict = {
 			formStep: "Étape",
 			formStepConnector: "de",
 			formValidationRequired: "Ce champ est obligatoire",
+			formValidationCardDate: "Ce champ doit être au format MM/AAAA. ex: 12/2024",
+			formValidationCvc: "Ce champ doit comporter 3 chiffres.",
 			formValidationNumbers: "Ce champ n'accepte que des chiffres",
 			formValidationLetters: "Ce champ n'accepte que des lettres",
 			formValidationEmail: "Ce champ doit être une adresse e-mail",
@@ -1361,9 +1461,37 @@ export const dict = {
 			formActionButton: "Prendre rendez-vous",
 			formSubjectList: [
 				{
-				  key: 'job',
-				  value: 'Je souhaite travailler au Luxembourg',
+					"key": "job",
+					"value": "Je veux travailler au Luxembourg"
 				},
+				{
+					"key": "jobs",
+					"value": "Je veux en savoir plus sur les emplois au Luxembourg"
+				},
+				{
+					"key": "job_permit",
+					"value": "Je souhaite des informations sur le permis de travail"
+				},
+				{
+					"key": "business",
+					"value": "Je veux créer une entreprise au Luxembourg"
+				},
+				{
+					"key": "study",
+					"value": "Je veux étudier au Luxembourg"
+				},
+				{
+					"key": "languages",
+					"value": "Je veux apprendre des langues au Luxembourg"
+				},
+				{
+					"key": "stay",
+					"value": "Je veux savoir où me loger au Luxembourg"
+				},
+				{
+					"key": "investment",
+					"value": "Je veux investir au Luxembourg"
+				}
 			  ],
 
 			calendarTitle: "Sélectionnez une date",
@@ -1410,6 +1538,25 @@ export const dict = {
 			date: "Bonjour, je souhaite un rendez-vous pour la journée :",
 			notify: "Ton message a été envoyé avec succès",
 			failed: "La demande n'a pas pu être complétée",
+
+			affiliateTitle: "Merci de rejoindre notre famille",
+			affiliateContent_1: "Bienvenue !",
+			affiliateContent_2: "Chez Libling, nous sommes ravis que vous ayez rejoint notre programme d'affiliation.",
+			affiliateContent_3: "Votre décision de faire partie de notre communauté nous remplit de joie et nous motive à continuer à offrir le meilleur service à ceux qui recherchent un nouveau départ au Luxembourg.",
+			affiliateContent_4: "En tant qu'affilié, vous avez accès à des avantages exclusifs et à un soutien constant de notre équipe d'experts.",
+			affiliateContent_5: "Ensemble, nous pouvons réaliser de grandes choses et aider de nombreuses personnes à réaliser leurs rêves !",
+			contentBottom: "L'équipe Libling.",
+
+			footerTopTitle: "Nous sommes là pour vous servir",
+			footerTopText_1: "Avez-vous des questions ?",
+			footerTopText_2: " Écrivez-nous à ",
+			footerTopText_3: "info@libling.com",
+			footerTopText_4: " et nous vous contacterons dans les plus brefs délais. Vous pouvez également nous laisser des commentaires sur nos services à l'adresse ",
+			footerTopText_5: "feedback.libling@gmail.com",
+			footerBottomText_1: "Conditions générales",
+			footerBottomText_2: "Confidentialité",
+			footerBottomText_3: "Contactez-nous",
+			footerBottomText_4: "Se désabonner",
 		},
 	},
 }

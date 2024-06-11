@@ -4,6 +4,7 @@ import styles from './affiliatePlanList.module.css'
 import { dict } from '../utils'
 import AffiliateCard from './affiliateCard'
 import InputSwitch from './admin/inputSwitch'
+import { Payment } from './payment'
 
 interface IAffiliatePlanList{
     lang: "es" | "en" | "fr"
@@ -12,6 +13,7 @@ interface IAffiliatePlanList{
 
 const AffiliatePlanList:React.FC<IAffiliatePlanList> = ({lang}) => {
     const glosary = dict[lang]?.services
+    const [ open, setOpen ] = useState(false);
     const affiliateList = [
         {
             id:1,
@@ -120,6 +122,7 @@ const AffiliatePlanList:React.FC<IAffiliatePlanList> = ({lang}) => {
     
     //states
     const [frecuency, setFrecuency] = useState<string | number>(1)
+    const [plan, setPlan] = useState<string | number>(1)
     const [frecuencyName, setFrecuencyName] = useState<string>(glosary.sectionOptionBy1)
 
     //functions
@@ -130,17 +133,22 @@ const AffiliatePlanList:React.FC<IAffiliatePlanList> = ({lang}) => {
     }
     const handleSelectedPlan = (key:number) =>{
         console.log('the selected key was', key)
+        setPlan(key)
+        setOpen(true)
     }
 
     return (
+    <>
         <div className={styles.container}>
             <InputSwitch list={listFrecuency} initialValue={1} onChange={handleFrecuency} />
             <div className={styles.cardContainer}>
             {
                 affiliateList.find(el=>el.id === frecuency)?.plans?.map((el)=>(<AffiliateCard key={el.id} id={el.id} frecuency={frecuencyName} onSelect={handleSelectedPlan} title={el.title} content={el.content} list={el.list} price={el.price} type={el.id === 2 ? 'main' : 'outline'} lang={lang}/>))
-            }
+                }
             </div>
         </div>
+        <Payment open={open} closeModal={()=>{setOpen(false)}} lang={lang}/>
+    </>
     )
 }
 

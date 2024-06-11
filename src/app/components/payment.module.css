@@ -1,0 +1,126 @@
+.wizardContainer {
+    background-color: #ffffff;
+    width: 100%;
+    height: 800px;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.selectedPlanContainer {
+    height: 800px;
+    width: 400px;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    background-color: #EDF0F4;
+}
+
+.stepContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+}
+
+.step {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    opacity: .6;
+}
+
+.stepActive {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+
+}
+
+.square {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    background-color: #1973FA;
+}
+
+.stepText {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: left;
+}
+.formContainer{
+    display: flex;
+    width: 660px;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.form_1{
+    width: 1320px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    transition: all ease-out .5s;
+}
+.form_2{
+    width: 1320px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    transition: all ease-out .5s;
+    transform: translateX(-660px);
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.title{
+    font-size: 22px;
+    line-height: 28px;
+    color: #000000DE;
+    font-weight: 600;
+}
+.innerForm{
+    width: 660px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: stretch;
+    gap: 16px;
+}
+.rowButtons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: stretch;
+    gap: 24px;
+    width: 100%;
+}
+.inputRow{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-grow: 1;
+    justify-content: stretch;
+    gap: 16px;
+}
+.inputColumn{
+    flex-grow: 1;
+}

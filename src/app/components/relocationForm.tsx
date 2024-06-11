@@ -32,6 +32,7 @@ interface IValues {
 
 const RelocationForm: React.FC<IRelocationForm> = ({ lang }) => {
     const glosary = dict[lang]?.contact
+    const glosaryHome = dict[lang]?.home
     const glosaryAdmin = dict[lang]?.adminProperties
     const glosaryImmo = dict[lang]?.immo
     const mailMessages = dict[lang]?.mail
@@ -68,10 +69,11 @@ const RelocationForm: React.FC<IRelocationForm> = ({ lang }) => {
             setLoading(true)
             await sendEmail(
                 values.email || 'email',
-                templates.contactUs(values.name || '', values.message || ''),
+                templates.info(glosaryHome.bigTitleHeader1_1 + glosaryHome.bigTitleHeader1_2, values.name || '', values.message || '', lang),
                 glosary.formSubjectList.find(el=>el.key === values.subject)?.value || glosary.formSubjectList[0]?.value
             )
             toast.success(<CustomToast type='success' title={glosaryImmo.success} content={glosaryImmo.successEmail} />, { theme: 'colored', icon: false, style: { backgroundColor: '#00C851', maxWidth: 450, padding: 24, borderRadius: 10 } })
+            formRef?.current?.resetForm({values:{...initialValues, subject:values.subject}})
             
         } catch (error) {
             console.error(error)

@@ -22,6 +22,7 @@ interface IContactForm {
 
 const ContactForm: React.FC<IContactForm> = ({ lang }) => {
     const glosary = dict[lang]?.contact
+    const glosaryHome = dict[lang]?.home
     const glosaryImmo = dict[lang]?.immo
     const mailMessages = dict[lang]?.mail
     const query = useSearchParams()
@@ -39,7 +40,7 @@ const ContactForm: React.FC<IContactForm> = ({ lang }) => {
         try{
             await sendEmail(
                 inputValue || 'email',
-                templates.contactUs(inputName || '', inputMessage),
+                templates.info(glosaryHome.bigTitleHeader1_1 + glosaryHome.bigTitleHeader1_2,inputValue || '', inputMessage, lang),
                 inputSubject
             )
             toast.success(<CustomToast type='success' title={glosaryImmo.success} content={glosaryImmo.successEmail} />, { theme: 'colored', icon: false, style: { backgroundColor: '#00C851', maxWidth: 450, padding: 24, borderRadius: 10 } })

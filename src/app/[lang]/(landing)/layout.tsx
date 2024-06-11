@@ -37,7 +37,7 @@ export default function RootLandingLayout({
 
 }) {
   return (
-    <html lang={lang}>
+    <html id='main' lang={lang}>
       <Script
         id="google-analytics-call"
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
