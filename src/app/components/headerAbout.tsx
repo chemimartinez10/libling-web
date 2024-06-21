@@ -6,7 +6,7 @@ import Image from 'next/image';
 import headerImg1 from '@/app/img/about_section_header.png'
 import { dict } from '../utils';
 import { Button } from './admin/button';
-import { poppinsMedium } from '../fonts';
+import { poppinsBold, poppinsMedium } from '../fonts';
 import { FaChevronDown } from 'react-icons/fa6';
 interface IHeader {
     lang: "es" | "en" | "fr"
@@ -25,7 +25,7 @@ const HeaderAbout:React.FC<IHeader> = ({lang}) => {
                 <div className={styles.sliderTextContainer}>
                     <h4 className={[globalStyles.miniTitle, globalStyles.textPrimary].join(' ')} style={poppinsMedium.style}>{glosary.headerTitle_1}</h4>
                     <h2 className={globalStyles.regularTitle}><span>{glosary.headerSubtitle_1}</span></h2>
-                    <p className={globalStyles.commonText}><span>{glosary.headerContent_1_1}</span><span>{glosary.headerContent_1_2}</span></p>
+                    <p className={globalStyles.commonText}><span style={poppinsBold.style}>{glosary.headerContent_1_1}</span><span>{glosary.headerContent_1_2}</span><span style={poppinsBold.style}>{glosary.headerContent_1_3}</span></p>
                     <Button title={glosary.actionButton_1} Icon={FaChevronDown} />
                 </div>
             </div>

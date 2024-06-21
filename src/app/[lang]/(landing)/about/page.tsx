@@ -1,15 +1,12 @@
 import React from 'react'
 import styles from './page.module.css'
-import Image from 'next/image'
-import meetImg from '@/app/img/Capa_Logo.png'
-import placesImg from '@/app/img/CEO_about.jpg'
-import houseImg from '@/app/img/house.jpg'
-import Article from '@/app/components/article'
+import Article, { IArticleContent } from '@/app/components/article'
 import Section from '@/app/components/section'
 import { dict } from '@/app/utils'
 import { Metadata } from 'next'
 import HeaderAbout from '@/app/components/headerAbout'
 import AnimatedImage from '@/app/components/animatedImage'
+import EmbraceIMG from '@/app/img/about_section_1.jpg'
 import MoveIMG from '@/app/img/about_section_1.png'
 import HelpIMG from '@/app/img/about_section_2.jpeg'
 import HousesIMG from '@/app/img/about_section_3.jpg'
@@ -35,20 +32,66 @@ export const metadata: Metadata = {
 }
 const Services: React.FC<IPage> = ({ params: { lang } }) => {
   const glosary = dict[lang]?.about
+  const content_1:IArticleContent[] = [
+    {
+      bold:true,
+      value:glosary.sectionContent_1_1
+    },
+    {
+      value:glosary.sectionContent_1_2
+    },
+    {
+      bold:true,
+      value:glosary.sectionContent_1_3
+    },
+    {
+      value:glosary.sectionContent_1_4
+    },
+  ]
+  const content_2:IArticleContent[] = [
+    {
+      value:glosary.sectionContent_2_1
+    },
+    {
+      bold:true,
+      value:glosary.sectionContent_2_2
+    },
+    {
+      value:glosary.sectionContent_2_3
+    },
+  ]
+  const content_3:IArticleContent[] = [
+    {
+      bold:true,
+      value:glosary.sectionContent_3_1
+    },
+    {
+      value:glosary.sectionContent_3_2
+    },
+  ]
+  const content_4:IArticleContent[] = [
+    {
+      value:glosary.sectionContent_4
+    },
+  ]
 
   return (
     <main className={styles.main}>
       <HeaderAbout lang={lang}/>
       <Section>
-        <AnimatedImage image={MoveIMG} alt={'move'} reverse={true}/>
-        <Article title={glosary.sectionTitle_2} subtitle={glosary.sectionSubtitle_2} content={glosary.sectionContent_2_1 + glosary.sectionContent_2_2} buttonText={glosary.actionButton_2} buttonAction='/contact' />
+        <AnimatedImage image={EmbraceIMG} alt={'embrace'} reverse={true}/>
+        <Article title={glosary.sectionTitle_1} subtitle={glosary.sectionSubtitle_1} content={content_1} buttonText={glosary.actionButton_1_1} buttonAction='/contact' />
       </Section>
       <Section reverse={true}>
-        <AnimatedImage image={HelpIMG} alt={'move'}/>
-        <Article title={glosary.sectionTitle_3} subtitle={glosary.sectionSubtitle_3} content={glosary.sectionContent_3_1 + glosary.sectionContent_3_2 + glosary.sectionContent_3_3} buttonText={glosary.actionButton_3} buttonAction='/contact' />
+        <AnimatedImage image={HelpIMG} alt={'help'}/>
+        <Article title={glosary.sectionTitle_2} subtitle={glosary.sectionSubtitle_2} content={content_2} buttonText={glosary.actionButton_2} buttonAction='/contact' />
+      </Section>
+      <Section>
+        <AnimatedImage image={MoveIMG} alt={'move'} reverse={true}/>
+        <Article title={glosary.sectionTitle_3} subtitle={glosary.sectionSubtitle_3} content={content_3} buttonText={glosary.actionButton_3} buttonAction='/contact' />
       </Section>
       <Section vertical={true} backgroundImage={HousesIMG}>
-        <Article title={glosary.sectionTitle_4} subtitle={glosary.sectionSubtitle_4_1 + glosary.sectionSubtitle_4_2} content={glosary.sectionContent_4} buttonText={glosary.actionButton_4} buttonAction='/contact' center={true}/>
+        <Article title={glosary.sectionTitle_4} subtitle={glosary.sectionSubtitle_4_1 + glosary.sectionSubtitle_4_2} content={content_4} buttonText={glosary.actionButton_4} buttonAction='/contact' center={true}/>
       </Section>
     </main>
   )

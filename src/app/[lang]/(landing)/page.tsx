@@ -7,7 +7,7 @@ import HighlightIMG2 from '@/app/img/Ellipse2.jpg'
 import HighlightIMG3 from '@/app/img/Ellipse3.jpg'
 import HighlightIMG4 from '@/app/img/Ellipse4.jpg'
 import { poppinsBold, poppinsRegular, poppinsSemiBold } from '@/app/fonts'
-import Article from '@/app/components/article'
+import Article, { IArticleContent } from '@/app/components/article'
 import Section from '@/app/components/section'
 import Highlight from '@/app/components/highlight'
 import { dict } from '@/app/utils'
@@ -45,6 +45,16 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
       img: HighlightIMG4
     },
   ]
+  const content_1:IArticleContent[] = [
+    {
+      value:glosary.sectionContent_1
+    },
+  ]
+  const content_2:IArticleContent[] = [
+    {
+      value:glosary.sectionContent_2
+    },
+  ]
   return (
     <main className={styles.main}>
 
@@ -54,11 +64,11 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
         <PartnerSlider/>
       </Section>
       <Section backgroundColor='#EDF0F4'>
-        <Article title={glosary.sectionMiniTitle_1} subtitle={glosary.sectionTitle_1} content={glosary.sectionContent_1} buttonText={glosary.sectionButton_1} buttonAction='/contact' />
+        <Article title={glosary.sectionMiniTitle_1} subtitle={glosary.sectionTitle_1} content={content_1} buttonText={glosary.sectionButton_1} buttonAction='/contact' />
         <AnimatedImage image={AyudaIMG} alt={glosary.sectionTitle_1}/>
       </Section>
       <Section reverse={true} backgroundColor='#EDF0F4'>
-        <Article title={glosary.sectionMiniTitle_2} subtitle={glosary.sectionTitle_2} content={glosary.sectionContent_2} buttonText={glosary.sectionButton_2} buttonAction='/services' />
+        <Article title={glosary.sectionMiniTitle_2} subtitle={glosary.sectionTitle_2} content={content_2} buttonText={glosary.sectionButton_2} buttonAction='/services' />
         <AnimatedImage image={ConoceIMG} alt={glosary.sectionTitle_2} reverse={true}/>
       </Section>
       <Section vertical={true} subtitle={glosary.sectionTitle_3} backgroundColor={'#fff'}>

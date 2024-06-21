@@ -1,14 +1,20 @@
 "use server"
 import { PrismaClient } from "@prisma/client"
 import {
+	IAffiliateData,
+	IAffiliateOrderBy,
+	IAffiliateSearch,
 	IMetaPaginate,
-	IProperty,
+	IPayOrderBy,
+	IPaySearch,
 	IPropertyCreateDTO,
 	IPropertyData,
 	IPropertyImageCreate,
 	IPropertyOrderBy,
 	IPropertySearch,
 	IPropertyUpdateDTO,
+	IUpdateAffiliateData,
+	IUpdatePay,
 } from "./app/interfaces/models"
 import { PropertyCreate, PropertyUpdate } from "./app/classes"
 import { cookies } from "next/headers"
@@ -423,3 +429,141 @@ export const getCountryFilter = async () => {
 		return (await findCountryByCode(countryCookie))?.id
 	}
 }
+export const createPay = async(data:IUpdatePay)=>{
+	try {
+		const pay = await prisma.pay.create({ data })
+		console.log(pay)
+		await prisma.$disconnect()
+	} catch (e) {
+		console.error(e)
+		await prisma.$disconnect()
+		process.exit(1)
+	}
+}
+export const updatePay = async(data: IUpdatePay)=>{
+	try {
+		const pay = await prisma.pay.update({ where: { id:data.id }, data })
+		console.log(pay)
+		await prisma.$disconnect()
+	} catch (e) {
+		console.error(e)
+		await prisma.$disconnect()
+		process.exit(1)
+	}
+}
+export const createAffiliate = async(data: IUpdateAffiliateData)=>{
+	try {
+		const affiliate = await prisma.affiliate.create({ data })
+		console.log(affiliate)
+		await prisma.$disconnect()
+	} catch (e) {
+		console.error(e)
+		await prisma.$disconnect()
+		process.exit(1)
+	}
+}
+export const updateAffiliate = async(data: IUpdateAffiliateData)=>{
+	try {
+		const affiliate = await prisma.affiliate.update({ where: { id:data.id }, data })
+		console.log(affiliate)
+		await prisma.$disconnect()
+	} catch (e) {
+		console.error(e)
+		await prisma.$disconnect()
+		process.exit(1)
+	}
+}
+
+export const getAffiliates = async(
+	filters: IAffiliateSearch = {},
+	orderBy: IAffiliateOrderBy = {},
+	page: number = 1,
+	limit: number = 15,
+)=>{
+	console.log("index request", filters, orderBy, page, limit)
+	const affiliates = await prisma.affiliate.findMany({
+		where: {
+			...filters,
+		},
+		orderBy,
+		include: {
+			country:true,
+			Pay:true
+		},
+	})
+	const fromResult = (page - 1) * limit
+	const toResult = fromResult + limit
+	console.log("affiliates found:", affiliates.length, fromResult, toResult)
+	const data = affiliates
+		.slice(fromResult, toResult)
+		.map((el) => ({
+			...el,
+			Pay:el.Pay.map(element => ({...element, quantity:element.quantity?.toNumber()}))
+		}))
+	const totalPages = Math.ceil(affiliates.length / limit)
+	const newPage = page > totalPages ? totalPages : page
+	const meta: IMetaPaginate = {
+		page: newPage,
+		prevPage: newPage <= 1 ? null : newPage - 1,
+		nextPage: newPage >= totalPages ? null : newPage + 1,
+		dataPerPage: affiliates.length >= limit ? limit : affiliates.length,
+		totalData: affiliates.length,
+		totalPages,
+	}
+	return {
+		data,
+		meta,
+	}
+}
+export const getPays = async(
+	filters: IPaySearch = {},
+	orderBy: IPayOrderBy = {},
+	page: number = 1,
+	limit: number = 15,
+)=>{
+	console.log("index request", filters, orderBy, page, limit)
+	const pays = await prisma.pay.findMany({
+		where: {
+			...filters,
+		},
+		orderBy,
+		include: {
+			affiliate:true
+		},
+	})
+	const fromResult = (page - 1) * limit
+	const toResult = fromResult + limit
+	console.log("pays found:", pays.length, fromResult, toResult)
+	const data = pays
+		.slice(fromResult, toResult)
+		.map((el) => ({
+			...el,
+			quantity:el.quantity?.toNumber()
+		}))
+	const totalPages = Math.ceil(pays.length / limit)
+	const newPage = page > totalPages ? totalPages : page
+	const meta: IMetaPaginate = {
+		page: newPage,
+		prevPage: newPage <= 1 ? null : newPage - 1,
+		nextPage: newPage >= totalPages ? null : newPage + 1,
+		dataPerPage: pays.length >= limit ? limit : pays.length,
+		totalData: pays.length,
+		totalPages,
+	}
+	return {
+		data,
+		meta,
+	}
+}
+export const showAffiliate = async(filters:IAffiliateSearch)=>{
+	const affiliate = await prisma.affiliate.findFirst({
+		where: filters,
+		include: {
+			country:true,
+			Pay:true
+		},
+	})
+	return affiliate
+}
+
+

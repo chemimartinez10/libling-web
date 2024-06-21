@@ -7,12 +7,16 @@ import Link from 'next/link'
 import Image, { StaticImageData } from 'next/image';
 import { Button } from './admin/button';
 
+export interface IArticleContent{
+    value:string,
+    bold?:boolean
+}
 interface IArticle {
     title?: string
     subtitle: string
     buttonText?: string
     buttonAction?: string
-    content?: string
+    content?: IArticleContent[]
     bigSubtitle?: boolean
     center?: boolean
     list?: string[]
@@ -35,7 +39,11 @@ const Article: React.FC<IArticle> = ({ title, subtitle, content, list, Icon, but
             }
             {
                 content &&
-                <p className={[globalStyles.commonText, center ? globalStyles.textCenter : ''].join(' ')}>{content}</p>
+                <p className={[globalStyles.commonText, center ? globalStyles.textCenter : ''].join(' ')}>{
+                    content.map((el, index)=>(<span key={index} style={el.bold ? poppinsBold.style : undefined}>
+                        {el.value}
+                    </span>))
+                }</p>
             }
             {
                 list &&

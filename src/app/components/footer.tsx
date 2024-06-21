@@ -8,6 +8,7 @@ import { templates } from '../utils/funtions'
 import { sendEmail } from '../utils/emails'
 import CustomToast from './toast'
 import { toast } from 'react-toastify'
+import Link from 'next/link';
 
 
 export default function Footer({ lang }: { lang: "es" | "en" | "fr" }) {
@@ -17,6 +18,7 @@ export default function Footer({ lang }: { lang: "es" | "en" | "fr" }) {
     const glosaryContact = dict[lang]?.contact
     const glosaryImmo = dict[lang]?.immo
     const glosaryHome = dict[lang]?.home
+    const glosaryNav = dict[lang]?.navbar
     const mailMessages = dict[lang]?.mail
     const [inputValue, setInputValue] = useState('');
     const [loading, setLoading] = useState<boolean | undefined>();
@@ -55,7 +57,7 @@ export default function Footer({ lang }: { lang: "es" | "en" | "fr" }) {
     return (<>
         <div className={styles.footer}>
             <div className={styles.footerContainer}>
-                <div className={styles.contactInfo} style={{ maxWidth: 450 }}>
+                <div className={styles.contactInfo}>
                     <h3 style={poppinsSemiBold.style}>{glosary.title_1}</h3>
                     <p>
                         Email: info@libling.lu
@@ -69,11 +71,18 @@ export default function Footer({ lang }: { lang: "es" | "en" | "fr" }) {
                     </p>
 
                 </div>
+                <ul>
+                    <li><Link href={'/'}>{glosaryNav.link_2}</Link></li>
+                    <li><Link href={'/immo'}>{'Immo'}</Link></li>
+                    <li><Link href={'/about'}>{glosaryNav.link_1}</Link></li>
+                    <li><Link href={'/contact'}>{glosaryNav.link_4}</Link></li>
+                    <li><Link href={'/services'}>{glosaryNav.link_3}</Link></li>
+                </ul>
                 {/* <div className={styles.luxemburgContainer}>
                     <Image src={luxemburgImg} alt='madeInLuxemburg' width={96} height={77} />
                     
                 </div> */}
-                <div className={styles.contactInfo} style={{ maxWidth: 450 }}>
+                <div className={styles.contactInfo}>
                     <h4 style={{ ...poppinsMedium.style, maxWidth: 300, padding: 0 }} >{glosary.title_2}</h4>
                     <form onSubmit={handleSubmit} className={styles.formEmail}>
                         <div className={styles.formControl}>
