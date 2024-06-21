@@ -35,13 +35,16 @@ export default function Navbar({ lang }: { lang: "es" | "en" | "fr" }) {
 
                     </div>
                     <LanguageSelector lang={lang} />
-                    <li className={verifyCurrentLink('/contact') ? styles.selectedLink : undefined}><Link href={'/contact'}>
-                        <div className={styles.textImageContainer}>
+                    <div className={styles.textImageContainer}>
+                        <a href={`https://api.whatsapp.com/send?phone=${352691367757}`}>
+                            <Image width={24} height={24} style={{ width: 24, height: 24 }} src={WhatsappIcon} alt='contact' />
+                        </a>
+                        <li className={verifyCurrentLink('/contact') ? styles.selectedLink : undefined}><Link href={'/contact'}>
                             <span>
                                 {glosary.link_4}
                             </span>
-                        </div>
-                    </Link></li>
+                        </Link></li>
+                    </div>
 
                     <li>
                         <Link href={'/auth/login'} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>

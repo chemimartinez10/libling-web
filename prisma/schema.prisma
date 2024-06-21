@@ -117,11 +117,42 @@ model Currency {
 }
 
 model Country {
-  id       Int        @id @default(autoincrement())
-  name     String
-  code     String     @unique
-  capital  String
-  phone    String
-  currency String
-  Property Property[]
+  id        Int         @id @default(autoincrement())
+  name      String
+  code      String      @unique
+  capital   String
+  phone     String
+  currency  String
+  Property  Property[]
+  Affiliate Affiliate[]
+}
+
+model Affiliate {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  status    Boolean
+  phone     String
+  plan      Plan
+  plan_date DateTime
+  country   Country  @relation(fields: [countryId], references: [id])
+  countryId Int
+  Pay       Pay[]
+}
+
+enum Plan {
+  Student
+  JobSeeker
+  Business
+}
+
+model Pay {
+  id          Int       @id @default(autoincrement())
+  date        DateTime? @default(now())
+  reference   String?   @default(uuid())
+  months      Int       @default(1)
+  quantity    Decimal?
+  status      Boolean
+  affiliate   Affiliate @relation(fields: [affiliateId], references: [id])
+  affiliateId Int
 }

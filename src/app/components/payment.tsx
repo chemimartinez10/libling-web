@@ -155,7 +155,8 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
         const formData = values
         console.log('formik values', formData)
         try {
-            //end process
+            
+            toast.success(<CustomToast type='success' title={glosary.successMessageTitle} content={glosary.successMessageContent} />, { theme: 'colored', icon: false, style: { backgroundColor: '#00C851', maxWidth: 450, padding: 24, borderRadius: 10 } })
             closeModal()
         } catch (e) {
             console.error(e)

@@ -301,3 +301,76 @@ export interface ICountry {
 	currency: string
 	Property?: IPropertyData[]
 }
+export interface IAffiliateData {
+	id: number;
+	name: string;
+	email: string; // Unique identifier
+	status: boolean;
+	phone: string;
+	plan: 'Student'|'JobSeeker'|'Business';
+	plan_date: Date;
+	country: ICountry; // Relationship with Country model
+	countryId: number;
+	Pay: IPay[]; // List of related Pay models
+  }
+export interface IUpdateAffiliateData {
+	id?: number;
+	name: string;
+	email: string; // Unique identifier
+	status: boolean;
+	phone: string;
+	plan: 'Student'|'JobSeeker'|'Business';
+	plan_date: Date;
+	countryId: number;
+  }
+  
+  // Interface for Pay model
+  export interface IPay {
+	id: number;
+	date?: Date;
+	reference?: string; // Uses UUID
+	months: number;
+	quantity?: number;
+	status: boolean;
+	affiliate: IAffiliateData; // Relationship with Affiliate model
+	affiliateId: number;
+  }
+  export interface IUpdatePay {
+	id?: number;
+	months: number;
+	quantity?: number;
+	status: boolean;
+	affiliateId: number;
+  }
+  export interface IAffiliateSearch {
+	id?: number
+	name?:string
+	email?:string
+}
+export interface IAffiliateOrderBy {
+	id?: "asc" | "desc"
+	name?: "asc" | "desc"
+	email?: "asc" | "desc"
+	date?: "asc" | "desc"
+	status?: "asc" | "desc"
+	phone?: "asc" | "desc"
+	plan?: "asc" | "desc"
+	plan_date?: "asc" | "desc"
+}
+  export interface IPaySearch {
+	id?: number;
+	date?: Date;
+	reference?: string; // Uses UUID
+	months?: number;
+	quantity?: number;
+	status?: boolean;
+	affiliateId?: number;
+}
+export interface IPayOrderBy {
+	id?: "asc" | "desc"
+	date?: "asc" | "desc"
+	months?: "asc" | "desc"
+	quantity?: "asc" | "desc"
+	status?: "asc" | "desc"
+	affiliateId?: "asc" | "desc"
+}
