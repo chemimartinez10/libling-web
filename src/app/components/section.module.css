@@ -76,9 +76,11 @@
 @media (width <= 500px) {
     .body{
         flex-direction: column;
+        text-align: center;
     }
     .bodyReversed{
         flex-direction: column;
+        text-align: center;
     }
     .subtitle {
         font-size: 36px;

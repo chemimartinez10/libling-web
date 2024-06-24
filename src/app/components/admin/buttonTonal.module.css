@@ -13,6 +13,8 @@
     border: 1px solid #E2F2FF;
     box-shadow: none;
     cursor: pointer;
+    flex-grow: 0;
+
 }
 
 .iconFunc{
@@ -33,6 +35,8 @@
     outline: none;
     border: 1px solid #23A6FF;
     box-shadow: none;
+    flex-grow: 0;
+
 }
 
 .buttonPressed .icon {
@@ -54,6 +58,8 @@
     font-size: 16px;
     outline: none;
     border: 1px solid #00000061;
+    flex-grow: 0;
+
 }
 
 .buttonDisabled .icon {
@@ -79,6 +85,7 @@
     box-sizing: border-box;
     animation: animloader 1.25s linear infinite alternate;
 }
+
 
 @keyframes animloader {
     0% {
@@ -113,11 +120,27 @@
         outline: none;
         border: 1px solid #8CCBFF;
         box-shadow: none;
+        flex-grow: 0;
+
     }
 
     .button:hover .icon {
         font-size: 24px;
         padding: 4px;
         color: #fff;
+    }
+}
+@media (width <= 500px) {
+    .button{
+        flex-grow: 1;
+    }
+    .buttonPressed{
+        flex-grow: 1;
+    }
+    .buttonDisabled{
+        flex-grow: 1;
+    }
+    .button:hover{
+        flex-grow: 1;
     }
 }

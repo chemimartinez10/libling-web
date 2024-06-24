@@ -29,7 +29,10 @@ export const ScheduleBanner:React.FC<IBanner> = ({lang}) => {
                 }
                 <div className={styles.sliderTextContainer}>
                     <h2 className={globalStyles.mediumTitle} style={poppinsRegular.style}><span>{glosary.contactTitle}</span></h2>
+                    <div style={{display:'flex', flexGrow:0}}>
                     <Button title={glosary.contactActionButton}/>
+                    </div>
+
                 </div>
             </div>
         </>

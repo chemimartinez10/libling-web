@@ -60,16 +60,22 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
 
       <HeaderHome lang={lang}/>
       <Section backgroundColor='#fff' vertical={true}>
-        <h4 className={[globalStyles.miniTitle, globalStyles.textPrimary].join(' ')} style={poppinsSemiBold.style}>{glosary.sectionPartners}</h4>
-        <PartnerSlider/>
+        <h4 className={[globalStyles.miniTitle, globalStyles.textPrimary].join(' ')} style={{...poppinsSemiBold.style, paddingRight:16, paddingLeft:16, textAlign:'center'}}>{glosary.sectionPartners}</h4>
+        <div className={styles.mobileContainer}>
+          <PartnerSlider/>
+        </div>
       </Section>
       <Section backgroundColor='#EDF0F4'>
-        <Article title={glosary.sectionMiniTitle_1} subtitle={glosary.sectionTitle_1} content={content_1} buttonText={glosary.sectionButton_1} buttonAction='/contact' />
-        <AnimatedImage image={AyudaIMG} alt={glosary.sectionTitle_1}/>
+        <Article title={glosary.sectionMiniTitle_1} subtitle={glosary.sectionTitle_1} content={content_1} buttonText={glosary.sectionButton_1} buttonAction='/contact' image={AyudaIMG} alt={glosary.sectionTitle_1} />
+        <div className={styles.imageDesktop}>
+          <AnimatedImage image={AyudaIMG} alt={glosary.sectionTitle_1}/>
+        </div>
       </Section>
       <Section reverse={true} backgroundColor='#EDF0F4'>
-        <Article title={glosary.sectionMiniTitle_2} subtitle={glosary.sectionTitle_2} content={content_2} buttonText={glosary.sectionButton_2} buttonAction='/services' />
-        <AnimatedImage image={ConoceIMG} alt={glosary.sectionTitle_2} reverse={true}/>
+        <Article title={glosary.sectionMiniTitle_2} subtitle={glosary.sectionTitle_2} content={content_2} buttonText={glosary.sectionButton_2} buttonAction='/services' image={ConoceIMG} alt={glosary.sectionTitle_2} />
+        <div className={styles.imageDesktop}>
+          <AnimatedImage image={ConoceIMG} alt={glosary.sectionTitle_2} reverse={true}/>
+        </div>
       </Section>
       <Section vertical={true} subtitle={glosary.sectionTitle_3} backgroundColor={'#fff'}>
         <div className={styles.listHighlights}>
@@ -80,10 +86,10 @@ const Home: React.FC<IPage> = ({ params: { lang } }) => {
 
       </Section>
       <Section backgroundColor='#EDF0F4'>
-        <Article title={glosary.sectionMiniTitle_3} subtitle={glosary.sectionTitle_4} list={glosary.sectionList_4} buttonText={glosary.sectionButton_2} buttonAction='/services'/>
-        <AnimatedImage image={AsesoramientoIMG} alt={glosary.sectionTitle_3}/>
-
-
+        <Article title={glosary.sectionMiniTitle_3} subtitle={glosary.sectionTitle_4} list={glosary.sectionList_4} buttonText={glosary.sectionButton_2} buttonAction='/services' image={AsesoramientoIMG} alt={glosary.sectionTitle_3}/>
+        <div className={styles.imageDesktop}>
+          <AnimatedImage image={AsesoramientoIMG} alt={glosary.sectionTitle_3}/>
+        </div>
       </Section>
       {/* <Section>
         <div className={styles.listReview}>

@@ -8,7 +8,12 @@
   /* background: var(--background-color); */
   margin: auto;
 }
-
+.mobileContainer{
+  width: 100%;
+}
+.imageDesktop{
+  display: flex;
+}
 .layout {
   position: relative;
 }
@@ -80,6 +85,8 @@
   align-items: center;
   justify-items: center;
   gap: 132px;
+  padding-top: 0px;
+  column-gap: 16px;
   row-gap: 2rem;
   width: 100%;
   grid-template-columns:
@@ -139,6 +146,19 @@
     gap: 16px;
 
   }
+  .listHighlights {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    gap: 132px;
+    row-gap: 40px;
+    column-gap: 16px;
+    padding-top: 16px;
+    width: 100%;
+    grid-template-columns:
+      repeat(auto-fit, minmax(150px, 1fr));
+  }
 
   .image {
     max-width: 100%;
@@ -158,6 +178,13 @@
   .headerMask {
     padding: 4rem;
 
+  }
+  .mobileContainer{
+    width: 100vw;
+    overflow-y: scroll;
+  }
+  .imageDesktop{
+    display: none;
   }
 
   #travel-img {

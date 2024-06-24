@@ -42,7 +42,9 @@ const PackageCard: React.FC<IPackageCard> = ({ image, alt,title, Icon, list, onS
                         </li>))
                     }
                 </ul>
+                <div style={{display:'flex', flexGrow:0}}>
                 <Button type={type} title={glosary.planActionButton} onClick={()=>{onSelect(title)}}/>
+                </div>                
             </div>
         </div>
     )
