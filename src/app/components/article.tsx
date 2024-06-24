@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import styles from './article.module.css'
 import globalStyles from '@/app/globals.module.css'

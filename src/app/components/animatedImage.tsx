@@ -1,3 +1,4 @@
+'use client'
 import Image, { StaticImageData } from 'next/image'
 import styles from './animatedImage.module.css'
 import React from 'react'

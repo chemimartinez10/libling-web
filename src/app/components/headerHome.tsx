@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
@@ -21,10 +22,11 @@ interface IHeader {
 const HeaderHome:React.FC<IHeader> = ({lang}) => {
     const glosary = dict[lang]?.home
     const { height, width } = useWindowDimensions();
-
-
     return (
         <>
+        {
+            (width !== null)
+            &&
             <Carousel autoPlay={true} infiniteLoop={true} interval={15000} showIndicators={false} showStatus={false} className={styles.sliderImage}>
                 <div className={styles.sliderItem}>
                     {
@@ -79,6 +81,7 @@ const HeaderHome:React.FC<IHeader> = ({lang}) => {
                     </div>
                 </div>
             </Carousel>
+        }
         </>
     )
 }
