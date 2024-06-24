@@ -5,8 +5,29 @@
     align-items: center;
     gap: 24px;
 }
+
 .cardContainer{
     display: flex;
     flex-direction: row;
     gap: 16px;
+    justify-content: center;
+    width: 1200px;
+}
+@media (width <= 500px) {
+    .container{
+        width: 100vw;
+        max-width: 100vw;
+    }
+    .edgeContainer{
+        width: 100vw;
+        overflow-y: scroll;
+    }
+    .cardContainer{
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        width: 1000px;
+        align-self: flex-start;
+        padding: 0px 16px;
+    } 
 }

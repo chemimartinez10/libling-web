@@ -1,4 +1,6 @@
 .container{
+}
+.edgeContainer{
     display: flex;
     width: 100%;
     flex-direction: row;
@@ -8,4 +10,24 @@
     position: absolute;
     top: -400px;
     left: 0;
+    
+}
+
+
+@media (width <= 500px) {
+    .container{
+        width: 100vw;
+        overflow-y: scroll;
+        padding-top: 16px;
+    }
+    .edgeContainer{
+        width: 1000px;
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        top: 0px;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
 }

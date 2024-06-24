@@ -1,23 +1,34 @@
+'use client'
 import React from 'react'
 import styles from './headerServices.module.css'
 import globalStyles from '@/app/globals.module.css'
 import Image from 'next/image';
 import headerImg1 from '@/app/img/services_header_1440.jpg'
+import headerImg2 from '@/app/img/banner_services_mobile_1.png'
 import { dict } from '../utils';
-import { poppinsMedium } from '../fonts';
+import { poppinsBold, poppinsRegular } from '../fonts';
+import useWindowDimensions from '../hooks/useWindowDimensions';
 interface IHeader {
     lang: "es" | "en" | "fr"
 }
 const HeaderServices:React.FC<IHeader> = ({lang}) => {
     const glosary = dict[lang]?.services
+    const { height, width } = useWindowDimensions();
+
 
     return (
         <>
             <div className={styles.sliderItem}>
-                <Image src={headerImg1} alt='header image' width={1440} height={450} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} quality={100} sizes="(max-width: 1440px) 100vw, 1440px" className={styles.sliderImage}/>
+                {
+                    (width !== null && width <= 500)
+                    ?
+                    <Image src={headerImg2} alt='header image' width={360} height={580} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} quality={100} sizes="(max-width: 360px) 100vw, 360px" className={styles.sliderImage}/>
+                    :
+                    <Image src={headerImg1} alt='header image' width={1440} height={450} priority={true} style={{ objectFit: 'cover', objectPosition: 'right center' }} quality={100} sizes="(max-width: 1440px) 100vw, 1440px" className={styles.sliderImage}/>
+                }
                 <div className={styles.sliderTextContainer}>
-                    <h2 className={globalStyles.bigTitle} style={{...poppinsMedium.style, color:'#000000DE'}}><span>{glosary.bigTitleHeader1_1}</span></h2>
-                    <p className={globalStyles.commonText}>{glosary.commonHeader1}</p>
+                    <h2 className={globalStyles.boldTitle} style={{...poppinsRegular.style, color:'#000000DE'}}><span>{glosary.bigTitleHeader1_1}</span></h2>
+                    <p className={globalStyles.commonText}><span>{glosary.commonHeader1}</span><span className={globalStyles.textPrimary} style={poppinsBold.style}>{glosary.commonHeader2}</span><span>{glosary.commonHeader3}</span></p>
                 </div>
             </div>
         </>

@@ -16,6 +16,13 @@
     align-items: center;
     text-align: center;
 }
+.mobileContainer{
+    display: flex;
+    padding: 0px;
+    text-align: left;
+    justify-content: flex-start;
+
+}
 
 .title {
     font-size: .75rem;
@@ -64,13 +71,28 @@
     align-self: center;
     flex-shrink: 1;
 }
+.linkButton{
+    display: flex;
+    padding: 0px;
+}
+.imageContainer{
+    display: none;
+}
 
 @media (max-width: 700px) {
+    .mobileContainer{
+        display: flex;
+        padding: 0px 16px;
+        text-align: center;
+        justify-content: center;
+
+    }
     .image{
         max-width: 100%;
     }
     .container {
         max-width: 100%;
+        gap: 24px;
     }
 
     .title {
@@ -85,5 +107,16 @@
 
     .bigSubtitle {
         font-size: 36px;
+    }
+    .linkButton{
+        display: flex;
+        padding: 0px 16px;
+    }
+    .imageContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        padding: 0px 16px;
     }
 }

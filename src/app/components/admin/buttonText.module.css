@@ -12,6 +12,8 @@
     outline: none;
     border: 1px solid transparent;
     cursor: pointer;
+    flex-grow: 0;
+
 }
 
 .iconFunc{
@@ -33,6 +35,8 @@
     outline: none;
     border: 1px solid transparent;
     cursor: pointer;
+    flex-grow: 0;
+
 }
 
 .buttonDisabled {
@@ -49,7 +53,10 @@
     outline: none;
     border: 1px solid transparent;
     cursor: pointer;
+    flex-grow: 0;
+
 }
+
 
 .icon {
     font-size: 24px;
@@ -103,5 +110,21 @@
         outline: none;
         border: 1px solid transparent;
         cursor: pointer;
+        flex-grow: 0;
+
+    }
+}
+@media (width <= 500px) {
+    .button{
+        flex-grow: 1;
+    }
+    .buttonPressed{
+        flex-grow: 1;
+    }
+    .buttonDisabled{
+        flex-grow: 1;
+    }
+    .button:hover{
+        flex-grow: 1;
     }
 }

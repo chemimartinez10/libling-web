@@ -143,10 +143,12 @@ const AffiliatePlanList:React.FC<IAffiliatePlanList> = ({lang}) => {
     <>
         <div className={styles.container}>
             <InputSwitch list={listFrecuency} initialValue={1} onChange={handleFrecuency} />
-            <div className={styles.cardContainer}>
-            {
-                affiliateList.find(el=>el.id === frecuency)?.plans?.map((el)=>(<AffiliateCard key={el.id} id={el.id} frecuency={frecuencyName} onSelect={handleSelectedPlan} title={el.title} content={el.content} list={el.list} price={el.price} type={el.id === 2 ? 'main' : 'outline'} lang={lang}/>))
-                }
+            <div className={styles.edgeContainer}>
+                <div className={styles.cardContainer}>
+                {
+                    affiliateList.find(el=>el.id === frecuency)?.plans?.map((el)=>(<AffiliateCard key={el.id} id={el.id} frecuency={frecuencyName} onSelect={handleSelectedPlan} title={el.title} content={el.content} list={el.list} price={el.price} type={el.id === 2 ? 'main' : 'outline'} lang={lang}/>))
+                    }
+                </div>
             </div>
         </div>
         <Payment open={open} closeModal={()=>{setOpen(false)}} lang={lang} plan={plan}/>

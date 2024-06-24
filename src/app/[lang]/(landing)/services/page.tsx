@@ -30,8 +30,8 @@ const Services: React.FC<IPage> = ({ params: { lang } }) => {
     router.push(`/contact?pack=${pack}#contactForm`, { scroll: true })
   }
   const serviceCardList = [
-    glosary.aditionalService_1, 
-    glosary.aditionalService_2, 
+    glosary.aditionalService_1,
+    glosary.aditionalService_2,
     glosary.aditionalService_3
   ]
   const consultList = [
@@ -101,24 +101,34 @@ const Services: React.FC<IPage> = ({ params: { lang } }) => {
           </li>))}
         </ul>
       </Section>
-
-      <Section title={glosary.sectionTitle_3} subtitle={glosary.sectionSubtitle_3} resume={glosary.sectionContent_3} vertical={true} backgroundColor='#D2DAE1' space={true} >
+      <Section title={glosary.sectionTitle_3} subtitle={glosary.sectionSubtitle_3} resume={glosary.sectionContent_3} vertical={true} backgroundColor='#D2DAE1' space={!(width !== null && width <= 500)} >
+        {
+          (width !== null && width <= 500)
+          &&
+          <PackagePlanList lang={lang} action={onRequest} />
+        }
       </Section>
-      <Section backgroundColor='#EDF0F4'>
-        <PackagePlanList lang={lang} action={onRequest}/>
-        <div className={styles.transparentBox}></div>
-      </Section>
+      {
+        !(width !== null && width <= 500)
+        &&
+        <Section backgroundColor='#EDF0F4'>
+          <PackagePlanList lang={lang} action={onRequest} />
+          <div className={styles.transparentBox}></div>
+        </Section>
+      }
       <Section title={glosary.sectionTitle_4} subtitle={glosary.sectionSubtitle_4} resume={glosary.sectionContent_4} vertical={true} backgroundColor='#EDF0F4'>
         <ul className={styles.consultList}>
-          {consultList.map((el, index) => (<ConsultCard key={index} title={el.title} content={el.content} align={el?.align} border={el?.border} />))}
+          {consultList.map((el, index) => (<ConsultCard key={index} title={el.title} content={el.content} align={(width !== null && width <= 500) ? 'center' :el?.align} border={el?.border} />))}
         </ul>
       </Section>
       <Section title={glosary.sectionTitle_5} subtitle={glosary.sectionSubtitle_5} vertical={true} backgroundColor='#EDF0F4'>
-        <ul className={styles.serviceCardList}>
-          {serviceCardList.map((el, index) => (<ServiceCard key={index} title={el} />))}
-        </ul>
+        <div className={styles.edgeContainer}>
+          <ul className={styles.serviceCardList}>
+            {serviceCardList.map((el, index) => (<ServiceCard key={index} title={el} />))}
+          </ul>
+        </div>
       </Section>
-      <ScheduleBanner lang={lang}/>
+      <ScheduleBanner lang={lang} />
     </main>
   )
 }
