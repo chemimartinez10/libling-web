@@ -21,6 +21,7 @@ export default function useWindowDimensions() {
 
 	useEffect(() => {
 		if (hasWindow) {
+			handleResize()
 			window.addEventListener("DOMContentLoaded", handleResize)
 			window.addEventListener("resize", handleResize)
 			return () => window.removeEventListener("resize", handleResize)
