@@ -39,7 +39,7 @@ const HeaderHome:React.FC<IHeader> = ({lang}) => {
                         <h2 className={globalStyles.bigTitle} style={poppinsMedium.style}><span>{glosary.bigTitleHeader1_1}</span><span className={globalStyles.textPrimary}>{glosary.bigTitleHeader1_2}</span> </h2>
                         <p className={globalStyles.commonText}>{glosary.commonHeader1}</p>
                         <div style={{display:'flex', flexGrow:0}}>
-                        <Button title={glosary.actionButtonHeader1} Icon={FaChevronRight}/>
+                            <Button title={glosary.actionButtonHeader1} Icon={FaChevronRight}/>
 
                         </div>
                     </div>
@@ -56,7 +56,9 @@ const HeaderHome:React.FC<IHeader> = ({lang}) => {
                         <h4 className={globalStyles.miniTitle} style={poppinsSemiBold.style}>{glosary.miniTitleHeader2}</h4>
                         <h2 className={globalStyles.bigTitle} style={poppinsMedium.style}><span className={globalStyles.textPrimary}>{glosary.bigTitleHeader2_1}</span><span>{glosary.bigTitleHeader2_2}</span> </h2>
                         <p className={globalStyles.commonText}>{glosary.commonHeader2}</p>
-                        <Button title={glosary.actionButtonHeader2} Icon={FaChevronRight}/>
+                        <div style={{display:'flex', flexGrow:0}}>
+                            <Button title={glosary.actionButtonHeader2} Icon={FaChevronRight}/>
+                        </div>
                     </div>
                 </div>
                 <div className={styles.sliderItem}>
@@ -71,7 +73,9 @@ const HeaderHome:React.FC<IHeader> = ({lang}) => {
                         <h4 className={globalStyles.miniTitle} style={poppinsSemiBold.style}>{glosary.miniTitleHeader3}</h4>
                         <h2 className={globalStyles.bigTitle} style={poppinsMedium.style}><span>{glosary.bigTitleHeader3_1}</span><span className={globalStyles.textPrimary}>{glosary.bigTitleHeader3_2}</span> </h2>
                         <p className={globalStyles.commonText}>{glosary.commonHeader3}</p>
+                        <div style={{display:'flex', flexGrow:0}}>
                         <Button title={glosary.actionButtonHeader3} Icon={FaChevronRight}/>
+                        </div>
                     </div>
                 </div>
             </Carousel>
