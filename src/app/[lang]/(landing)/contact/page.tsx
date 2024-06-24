@@ -75,7 +75,7 @@ const Contact: React.FC<IPage> = async ({ params: { lang } }) => {
   return (
     <main className={styles.main}>
       <HeaderContact lang={lang}/>
-      <Section backgroundColor='#EDF0F4' vertical={true}>
+      <Section backgroundColor='#FFFFFF' vertical={true}>
         <div className={styles.containerForm}>
           <div className={styles.card}>
             <div className={styles.step}>

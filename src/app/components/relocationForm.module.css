@@ -55,13 +55,23 @@
         flex-direction: column;
         gap: 24px;
         max-width: 100%;
+        width: 100vw;
+        padding: 0px 16px;
+    }
+    .row{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        gap: 16px;
     }
     .button{
         padding: 8px 16px;
         font-size: 14px;
         color: #FFFFFF;
         border-radius: 18px;
-        background-color: #FB8601;
+        background-color: #1973FA;
         box-shadow: 0px 6px 12px #FB860129;
         outline: none;
         border: none;
@@ -74,7 +84,7 @@
         font-size: 14px;
         color: #FFFFFF;
         border-radius: 18px;
-        background-color: #FB8601D0;
+        background-color: #1973FAD0;
         box-shadow: 0px 6px 12px #FB860129;
         outline: none;
         border: none;

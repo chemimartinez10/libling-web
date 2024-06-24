@@ -46,3 +46,63 @@
     text-align: left;
     gap: 8px;
 }
+
+@media (width <= 500px) {
+    .container{
+        position: relative;
+        height: 800px;
+        max-width: var(--max-width);
+        width: 100%;
+        overflow:hidden;
+        display: flex;
+        flex-direction: column-reverse;
+        
+    }
+    .imageContainer{
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(98.96deg, #F5F9FF 41.03%, #CDD8E7 99.47%);
+        overflow:hidden;
+        
+    }
+    .image{
+        position: absolute;
+        width: 380px;
+        height: 380px;
+        bottom: 0;
+        left: 64px;
+        z-index: 2;
+    }
+    .form{
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        bottom: -100px;
+        right: -120px;
+        background: #1973FA;
+        border-radius: 50%;
+        z-index: 1;
+    
+    }
+    .sliderTextContainer{
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0px;
+        padding: 40px 16px;
+        max-width: 100vw;
+        height: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+        gap: 8px;
+
+    }
+    .sliderTextContainer h2{
+        font-size: 33px;
+        line-height: 44px;
+        padding-bottom: 0px;
+    }
+}

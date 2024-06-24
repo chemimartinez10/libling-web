@@ -16,6 +16,10 @@
   margin: 0 5rem;
 }
 
+.imageDesktop {
+  display: flex;
+}
+
 .headerTitle {
   color: #000;
   font-size: 54px;
@@ -123,10 +127,15 @@
     max-width: 100%;
     padding: 40px;
   }
-    .headerTitle {
-      font-size: 40px;
-      text-align: center;
-    }
+
+  .headerTitle {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .imageDesktop {
+    display: none;
+  }
 }
 
 /* Tablet and Smaller Desktop */
@@ -135,10 +144,11 @@
     width: 450px;
     height: 450px;
   }
-    .headerTitle {
-      font-size: 50px;
-      /* text-align: center; */
-    }
+
+  .headerTitle {
+    font-size: 50px;
+    /* text-align: center; */
+  }
 }
 
 @media (prefers-color-scheme: dark) {}

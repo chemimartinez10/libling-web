@@ -35,7 +35,7 @@
     .container{
         position: relative;
         width: calc(100vw - 64px);
-        height: calc(85vw - 64px);
+        height: calc(90vw - 64px);
     }
     .square, .squareReversed{
         position: absolute;
