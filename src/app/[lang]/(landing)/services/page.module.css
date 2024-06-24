@@ -88,6 +88,9 @@
   width: 100%;
 
 }
+.edgeContainer{
+  
+}
 .serviceCardList{
   padding-top: 32px;
   list-style: none;
@@ -95,6 +98,7 @@
   grid-template-columns: repeat(3,278px);
   justify-content: space-between;
   row-gap: 72px;
+  gap: 16px;
   width: 100%;
 
 }
@@ -130,7 +134,7 @@
 }
 
 /* Mobile */
-@media (max-width: 700px) {
+@media (width <= 500px) {
   .headerMask {
     padding: 4rem;
   }
@@ -138,14 +142,42 @@
   #travel-img {
     width: 100%;
   }
-    
-}
+  .benefitList{
+    padding-top: 24px;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: space-between;
+    gap: 48px;
+    width: 100%;
+    padding: 16px;
+  
+  }
+  .consultList{
+    padding-top: 32px;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    row-gap: 40px;
+    width: 100vw;
+  }
+  .edgeContainer{
+    width: 100vw;
+    overflow-y: scroll;
 
-/* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {
-  #travel-img {
-    width: 450px;
-    height: 450px;
+  }
+  .serviceCardList{
+    padding: 0px 16px;
+    padding-top: 32px;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3,278px);
+    justify-content: space-between;
+    row-gap: 72px;
+    column-gap: 16px;
+    width: 900px;
+  
   }
     
 }
