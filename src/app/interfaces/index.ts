@@ -71,6 +71,18 @@ export interface IInputSelect {
 	initialValue?: string | number | null
 	lang?: langType
 }
+export interface IInputSelectButton {
+	list: ISelectElement[]
+	touched?: boolean
+	error?: string
+	onChange?: (e: string | number) => void
+	initialValue?: string | number | null
+	lang?: langType
+    title: string
+    loading?: boolean
+    disabled?: boolean
+    grow?: boolean
+}
 export interface IInputRadio {
 	label: string
 	onChange?: (e: boolean) => void

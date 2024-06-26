@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
 import styles from './payment.module.css'
+import globalStyles from '@/app/globals.module.css'
 import * as Yup from 'yup';
 import ReactModal from 'react-modal'
 import { dict } from '../utils'
@@ -18,12 +19,23 @@ import { toast } from 'react-toastify';
 import CustomToast from './toast';
 import { useAffiliateStore } from '../hooks/useAffiliateStore';
 import { InputText } from './admin/inputText';
+import InputSwitch from './admin/inputSwitch';
+import InputSelectButton from './admin/inputSelectButton';
 
 interface IPayment {
     open: boolean
     lang: "es" | "en" | "fr"
     closeModal: VoidFunction
     plan?: string | number
+    frecuency?: string | number
+    changeFrecuency?: (key: number | string) => void
+}
+interface IPlan {
+    id: number;
+    title: string;
+    content: string;
+    list: string[]; // Assuming list is an array of strings
+    price: number;
 }
 interface IValues1 {
     name?: string
@@ -42,11 +54,133 @@ interface IValues2 {
     date?: string
 }
 
-export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, plan }) => {
-    
+export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, plan = 1, frecuency = 1 }) => {
+
     const glosary = dict[lang].services
     const glosaryAdmin = dict[lang]?.adminProperties
     const glosaryAuth = dict[lang]?.auth
+    const affiliateList = [
+        {
+            id: 1,
+            name: glosary.sectionOption1,
+            priceFrecuency: glosary.sectionOptionBy1,
+            plans: [
+                {
+                    id: 1,
+                    title: glosary.planTitle1,
+                    content: glosary.planContent1,
+                    list: glosary.planList1,
+                    price: 8.56,
+                },
+                {
+                    id: 2,
+                    title: glosary.planTitle2,
+                    content: glosary.planContent2,
+                    list: glosary.planList2,
+                    price: 22.95,
+                },
+                {
+                    id: 3,
+                    title: glosary.planTitle3,
+                    content: glosary.planContent3,
+                    list: glosary.planList3,
+                    price: 13.40,
+                },
+            ]
+        },
+        {
+            id: 2,
+            name: glosary.sectionOption2,
+            priceFrecuency: glosary.sectionOptionBy2,
+            plans: [
+                {
+                    id: 1,
+                    title: glosary.planTitle1,
+                    content: glosary.planContent1,
+                    list: glosary.planList1,
+                    price: 47.08,
+                },
+                {
+                    id: 2,
+                    title: glosary.planTitle2,
+                    content: glosary.planContent2,
+                    list: glosary.planList2,
+                    price: 126.25,
+                },
+                {
+                    id: 3,
+                    title: glosary.planTitle3,
+                    content: glosary.planContent3,
+                    list: glosary.planList3,
+                    price: 73.7,
+                },
+            ]
+        },
+        {
+            id: 3,
+            name: glosary.sectionOption3,
+            priceFrecuency: glosary.sectionOptionBy3,
+            plans: [
+                {
+                    id: 1,
+                    title: glosary.planTitle1,
+                    content: glosary.planContent1,
+                    list: glosary.planList1,
+                    price: 85.6,
+                },
+                {
+                    id: 2,
+                    title: glosary.planTitle2,
+                    content: glosary.planContent2,
+                    list: glosary.planList2,
+                    price: 229.5,
+                },
+                {
+                    id: 3,
+                    title: glosary.planTitle3,
+                    content: glosary.planContent3,
+                    list: glosary.planList3,
+                    price: 134.0,
+                },
+            ]
+        },
+    ]
+    const listFrecuency = [
+        {
+            key: 1,
+            value: glosary.sectionOption1,
+            priceFrecuency: glosary.sectionOptionBy1,
+
+        },
+        {
+            key: 2,
+            value: glosary.sectionOption2,
+            priceFrecuency: glosary.sectionOptionBy2,
+
+        },
+        {
+            key: 3,
+            value: glosary.sectionOption3,
+            priceFrecuency: glosary.sectionOptionBy3,
+        },
+    ]
+    const plans :ISelectElement[] = [
+        {
+            key: 1,
+            value: glosary.planTitle1,
+            description: glosary.planContent1,
+        },
+        {
+            key: 2,
+            value: glosary.planTitle2,
+            description: glosary.planContent2,
+        },
+        {
+            key: 3,
+            value: glosary.planTitle3,
+            description: glosary.planContent3,
+        }
+    ]
 
     const steps = [
         {
@@ -62,6 +196,8 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
     const [countries, setCountries] = useState<ISelectElement[]>([])
     const [lastCode, setLastCode] = useState<string>()
     const [states, setStates] = useState<ISelectElement[]>([])
+    const [planSelected, setPlanSelected] = useState<IPlan| undefined>()
+    const [frecuencySelected, setFrecuencySelected] = useState<number| string>(frecuency)
     const formRef_1 = useRef<FormikProps<IValues1>>(null)
     const formRef_2 = useRef<FormikProps<IValues2>>(null)
     const store = useStore(useAffiliateStore, (state) => state)
@@ -82,12 +218,11 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
         postal: '',
         state: ''
     }
-    console.log('initialValues_1', initialValues_1)
-    const onSubmit1 = ()=>{
+    const onSubmit1 = () => {
         console.log(formRef_1.current)
         formRef_1.current?.handleSubmit()
     }
-    const onSubmit2 = ()=>{
+    const onSubmit2 = () => {
         console.log(formRef_2.current)
         formRef_2.current?.handleSubmit()
     }
@@ -118,6 +253,15 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
     const handleState = (key: string) => {
         console.log('selected key', key)
         formRef_2.current?.setFieldValue('state', key)
+    }
+    const handlePlan = (key: string|number) => {
+        console.log('selected key', key)
+        setPlanSelected(affiliateList?.find(el => el.id === frecuencySelected)?.plans.find(el => el.id.toString() === key.toString()))
+    }
+    const handleFrecuency = (key: string|number) => {
+        console.log('selected key', key)
+        setFrecuencySelected(key)
+        setPlanSelected(affiliateList?.find(el => el.id.toString() === key.toString())?.plans.find(el => el.id.toString() === planSelected?.id?.toString()))
     }
     const validationSchema_1 = Yup.object({
         name: Yup.string().required(glosaryAdmin.formValidationRequired),
@@ -155,7 +299,6 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
         const formData = values
         console.log('formik values', formData)
         try {
-            
             toast.success(<CustomToast type='success' title={glosary.successMessageTitle} content={glosary.successMessageContent} />, { theme: 'colored', icon: false, style: { backgroundColor: '#00C851', maxWidth: 450, padding: 24, borderRadius: 10 } })
             closeModal()
         } catch (e) {
@@ -178,6 +321,11 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
             fetchStates(lastCode)
         }
     }, [lastCode])
+    useEffect(()=>{
+        if(open && plan && frecuencySelected){
+            setPlanSelected(affiliateList?.find(el => el.id === frecuencySelected)?.plans.find(el => el.id === plan))
+        }
+    },[open, plan])
     return (
         <ReactModal isOpen={open} onRequestClose={() => { }} style={{
             overlay: { backgroundColor: '#00000052', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 4 },
@@ -299,7 +447,27 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                 </div>
             </div>
             <div className={styles.selectedPlanContainer}>
-
+                <div className={styles.planContainer}>
+                    <h4>{glosary.modalTitle}</h4>
+                    <div className={styles.titleContainer}>
+                        <h2>{planSelected?.title}</h2>
+                        <span>{planSelected?.content}</span>
+                    </div>
+                    <InputSelectButton list={plans} title={glosary.buttonAction_5} onChange={handlePlan} lang={lang} loading={false} initialValue={plan} grow={true}/>
+                </div>
+                <InputSwitch list={listFrecuency} initialValue={1} onChange={handleFrecuency} />
+                <div className={styles.priceContainer}>
+                    <span className={[globalStyles.regularTitle].join(' ')}>
+                        {planSelected?.price.toLocaleString('es-es',{minimumFractionDigits: 2})}
+                        {' €'}
+                    </span>
+                    <span className={[globalStyles.regularTitle,globalStyles.textFaded].join(' ')}>
+                        {' / '}
+                    </span>
+                    <span className={[globalStyles.regularTitle,globalStyles.textFaded].join(' ')}>
+                        {listFrecuency.find(el=>el.key.toString() === frecuencySelected.toString())?.priceFrecuency}
+                    </span>
+                </div>
             </div>
         </ReactModal>
     )

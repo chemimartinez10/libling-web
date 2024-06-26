@@ -151,7 +151,7 @@ const AffiliatePlanList:React.FC<IAffiliatePlanList> = ({lang}) => {
                 </div>
             </div>
         </div>
-        <Payment open={open} closeModal={()=>{setOpen(false)}} lang={lang} plan={plan}/>
+        <Payment open={open} closeModal={()=>{setOpen(false)}} lang={lang} plan={plan} frecuency={frecuency} changeFrecuency={handleFrecuency}/>
     </>
     )
 }
