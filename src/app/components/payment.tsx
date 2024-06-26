@@ -465,7 +465,7 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                         {' / '}
                     </span>
                     <span className={[globalStyles.regularTitle,globalStyles.textFaded].join(' ')}>
-                        {listFrecuency.find(el=>el.key.toString() === frecuencySelected.toString())?.value}
+                        {listFrecuency.find(el=>el.key.toString() === frecuencySelected.toString())?.priceFrecuency}
                     </span>
                 </div>
             </div>
