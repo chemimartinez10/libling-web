@@ -28,7 +28,7 @@ export const InputText: React.FC<ITextInput> = ({ name, error, touched, label, p
             {
                 !!label
                 &&
-                <label htmlFor={`${name}Input`} style={poppinsMedium.style} className={error && touched ? styles.labelError : focused ? styles.labelActive : undefined}>
+                <label htmlFor={`${name || label}Input`} style={poppinsMedium.style} className={error && touched ? styles.labelError : focused ? styles.labelActive : undefined}>
                     <span>{label}</span>
                     {
                         !!description &&
@@ -41,7 +41,7 @@ export const InputText: React.FC<ITextInput> = ({ name, error, touched, label, p
                 {
                     !!Icon && <Icon />
                 }
-                <input id={`${name}Input`} name={name} type="text" ref={inputRef} value={value} placeholder={placeholder} style={{ ...poppinsRegular.style, paddingLeft: !!Icon ? 46 : 16 }} onFocus={handleFocus} onBlur={handleBlur} onChange={handleChange} className={(error && touched) ? styles.inputError : focused ? styles.inputFocus : styles.input} />
+                <input id={`${name || label}Input`} name={name || label} type="text" ref={inputRef} value={value} placeholder={placeholder} style={{ ...poppinsRegular.style, paddingLeft: !!Icon ? 46 : 16 }} onFocus={handleFocus} onBlur={handleBlur} onChange={handleChange} className={(error && touched) ? styles.inputError : focused ? styles.inputFocus : styles.input} />
             </div>
             {
                 !!(error && touched) && <span className={styles.errorMessage} style={poppinsRegular.style}>{error}</span>

@@ -196,6 +196,49 @@
     cursor: pointer;
 
 }
+.listItemButton {
+    color: #000000DE;
+    padding: 14px 16px;
+    background-color: transparent;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+    border-bottom: 1px solid var(--color-border-primary, #0000001F);
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 28.5px;
+    text-align: left;
+
+}
+
+
+.listItemButtonDescription {
+    color: #00000099;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.listItemButton:hover {
+    color: #1973FA;
+    padding: 14px 16px;
+    background-color: #1973FA14;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--color-border-primary, #0000001F);
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 28.5px;
+    text-align: left;
+
+}
 
 .iconPlus {
     font-size: 16px;
@@ -216,6 +259,7 @@
     padding: 12px 16px;
     font-size: 14px;
     resize: none;
+    width: 100%;
 
 }
 
@@ -229,6 +273,7 @@
     font-size: 14px;
     outline: none;
     resize: none;
+    width: 100%;
 }
 
 .inputError {
@@ -241,7 +286,7 @@
     font-size: 14px;
     outline: none;
     resize: none;
-
+    width: 100%;
 }
 
 .errorMessage {
@@ -406,6 +451,10 @@
     border-radius: 10px;
     transition: all .15s ease;
     font-size: 14px;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 
 }
 
@@ -417,6 +466,10 @@
     border-radius: 10px;
     transition: all .15s ease;
     font-size: 14px;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 
 }
 

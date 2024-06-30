@@ -11,7 +11,6 @@ import { poppinsSemiBold } from '../fonts'
 import { Form, Formik, FormikHelpers, FormikProps } from 'formik'
 import InputSelect from './admin/inputSelect'
 import { InputTextArea } from './admin/inputTextArea'
-import InputTextSelect from './admin/inputTextSelect'
 import { ISelectElement } from '../interfaces'
 import { getCountries, getStatesByCode } from '@/services'
 import { useStore } from 'zustand';
@@ -21,6 +20,7 @@ import { useAffiliateStore } from '../hooks/useAffiliateStore';
 import { InputText } from './admin/inputText';
 import InputSwitch from './admin/inputSwitch';
 import InputSelectButton from './admin/inputSelectButton';
+import IconCheck from './icons/iconCheck';
 
 interface IPayment {
     open: boolean
@@ -256,12 +256,11 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
     }
     const handlePlan = (key: string|number) => {
         console.log('selected key', key)
-        setPlanSelected(affiliateList?.find(el => el.id === frecuencySelected)?.plans.find(el => el.id.toString() === key.toString()))
+        store?.setPlan(key?.toString())
     }
     const handleFrecuency = (key: string|number) => {
         console.log('selected key', key)
-        setFrecuencySelected(key)
-        setPlanSelected(affiliateList?.find(el => el.id.toString() === key.toString())?.plans.find(el => el.id.toString() === planSelected?.id?.toString()))
+        store?.setFrecuency(key)
     }
     const validationSchema_1 = Yup.object({
         name: Yup.string().required(glosaryAdmin.formValidationRequired),
@@ -322,10 +321,10 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
         }
     }, [lastCode])
     useEffect(()=>{
-        if(open && plan && frecuencySelected){
-            setPlanSelected(affiliateList?.find(el => el.id === frecuencySelected)?.plans.find(el => el.id === plan))
+        if(open && store?.frecuency && store?.plan){
+            setPlanSelected(affiliateList?.find(el => el.id == store?.frecuency)?.plans.find(el => el.id == store?.plan))
         }
-    },[open, plan])
+    },[store?.frecuency, store?.plan])
     return (
         <ReactModal isOpen={open} onRequestClose={() => { }} style={{
             overlay: { backgroundColor: '#00000052', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 4 },
@@ -448,14 +447,14 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
             </div>
             <div className={styles.selectedPlanContainer}>
                 <div className={styles.planContainer}>
-                    <h4>{glosary.modalTitle}</h4>
+                    <h4 className={globalStyles.miniTitle} style={poppinsSemiBold.style}>{glosary.modalTitle}</h4>
                     <div className={styles.titleContainer}>
-                        <h2>{planSelected?.title}</h2>
-                        <span>{planSelected?.content}</span>
+                        <h2 className={globalStyles.smallMediumTitle} style={poppinsSemiBold.style}>{planSelected?.title}</h2>
+                        <span className={globalStyles.smallText}>{planSelected?.content}</span>
                     </div>
                     <InputSelectButton list={plans} title={glosary.buttonAction_5} onChange={handlePlan} lang={lang} loading={false} initialValue={plan} grow={true}/>
                 </div>
-                <InputSwitch list={listFrecuency} initialValue={1} onChange={handleFrecuency} />
+                <InputSwitch list={listFrecuency} initialValue={store?.frecuency} onChange={handleFrecuency} backgroundColor='transparent' grow={true}/>
                 <div className={styles.priceContainer}>
                     <span className={[globalStyles.regularTitle].join(' ')}>
                         {planSelected?.price.toLocaleString('es-es',{minimumFractionDigits: 2})}
@@ -465,9 +464,21 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                         {' / '}
                     </span>
                     <span className={[globalStyles.regularTitle,globalStyles.textFaded].join(' ')}>
-                        {listFrecuency.find(el=>el.key.toString() === frecuencySelected.toString())?.priceFrecuency}
+                        {listFrecuency.find(el=>el.key.toString() === store?.frecuency?.toString())?.priceFrecuency}
                     </span>
                 </div>
+                <ul className={styles.listContainer}>
+                    {
+                        planSelected?.list.map((el,index)=>(<li className={[styles.listItem].join(' ')} key={index}>
+                            <div className={styles.iconList}>
+                                <IconCheck/>
+                            </div>
+                            <span className={[globalStyles.text].join(' ')}>
+                                {el}
+                            </span>
+                        </li>))
+                    }
+                </ul>
             </div>
         </ReactModal>
     )
