@@ -6,12 +6,11 @@ import * as Yup from 'yup';
 import ReactModal from 'react-modal'
 import { dict } from '../utils'
 import { Button } from './admin/button'
-import { FaChevronLeft } from 'react-icons/fa6'
+import { FaChevronDown, FaChevronLeft } from 'react-icons/fa6'
 import { poppinsSemiBold } from '../fonts'
 import { Form, Formik, FormikHelpers, FormikProps } from 'formik'
 import InputSelect from './admin/inputSelect'
 import { InputTextArea } from './admin/inputTextArea'
-import InputTextSelect from './admin/inputTextSelect'
 import { ISelectElement } from '../interfaces'
 import { getCountries, getStatesByCode } from '@/services'
 import { useStore } from 'zustand';
@@ -21,6 +20,8 @@ import { useAffiliateStore } from '../hooks/useAffiliateStore';
 import { InputText } from './admin/inputText';
 import InputSwitch from './admin/inputSwitch';
 import InputSelectButton from './admin/inputSelectButton';
+import IconCheck from './icons/iconCheck';
+import useWindowDimensions from '../hooks/useWindowDimensions';
 
 interface IPayment {
     open: boolean
@@ -59,6 +60,7 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
     const glosary = dict[lang].services
     const glosaryAdmin = dict[lang]?.adminProperties
     const glosaryAuth = dict[lang]?.auth
+  const { height, width } = useWindowDimensions();
     const affiliateList = [
         {
             id: 1,
@@ -256,12 +258,11 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
     }
     const handlePlan = (key: string|number) => {
         console.log('selected key', key)
-        setPlanSelected(affiliateList?.find(el => el.id === frecuencySelected)?.plans.find(el => el.id.toString() === key.toString()))
+        store?.setPlan(key?.toString())
     }
     const handleFrecuency = (key: string|number) => {
         console.log('selected key', key)
-        setFrecuencySelected(key)
-        setPlanSelected(affiliateList?.find(el => el.id.toString() === key.toString())?.plans.find(el => el.id.toString() === planSelected?.id?.toString()))
+        store?.setFrecuency(key)
     }
     const validationSchema_1 = Yup.object({
         name: Yup.string().required(glosaryAdmin.formValidationRequired),
@@ -322,153 +323,192 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
         }
     }, [lastCode])
     useEffect(()=>{
-        if(open && plan && frecuencySelected){
-            setPlanSelected(affiliateList?.find(el => el.id === frecuencySelected)?.plans.find(el => el.id === plan))
+        if(open && store?.frecuency && store?.plan){
+            setPlanSelected(affiliateList?.find(el => el.id == store?.frecuency)?.plans.find(el => el.id == store?.plan))
         }
-    },[open, plan])
+    },[store?.frecuency, store?.plan, open])
     return (
-        <ReactModal isOpen={open} onRequestClose={() => { }} style={{
-            overlay: { backgroundColor: '#00000052', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 4 },
-            content: { backgroundColor: '#FFFFFF', padding: 0, borderRadius: 8, boxShadow: '0px 12px 30px 0px #1973FA14', width: 1050, position: 'relative', display: 'flex', flexDirection: 'row', gap: 0, color: '#000000DE', inset: 0, zIndex: 5 }
-        }}>
-            <div className={styles.wizardContainer}>
-                <div className={styles.stepContainer}>
-                    {
-                        steps.map(el => (
-                            <div key={el.index} className={el.index === page ? styles.stepActive : styles.step}>
-                                <div className={styles.square}></div>
-                                <span className={styles.stepText}>
-                                    {el.text}
-                                </span>
+        <>
+            {
+                !!width &&
+                <ReactModal isOpen={open} onRequestClose={() => { }} style={{
+                    overlay: { backgroundColor: '#00000052', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 4 },
+                    content: { backgroundColor: '#FFFFFF', padding: 0, borderRadius: 8, boxShadow: '0px 12px 30px 0px #1973FA14', width: width < 800 ? '100vw' : 1050 , position: 'relative', display: 'flex', flexDirection: width < 800 ? 'column-reverse' : 'row', gap: 0, color: '#000000DE', inset: 0, zIndex: 5,height: width < 800 ? '100vh' : undefined , }
+                }}>
+                    <div className={styles.wizardContainer}>
+                        <div className={styles.stepContainer}>
+                            {
+                                steps.map(el => (
+                                    <div key={el.index} className={el.index === page ? styles.stepActive : styles.step}>
+                                        <div className={styles.square}></div>
+                                        <span className={styles.stepText}>
+                                            {el.text}
+                                        </span>
+                                    </div>
+                                ))
+                            }
+                        </div>
+                        <h3 className={styles.title} style={poppinsSemiBold.style}>
+                            {page === 1 ? glosary.formTitle_1 : glosary.formTitle_2}
+                        </h3>
+                        <div className={styles.formContainer}>
+                            <div className={page === 1 ? styles.form_1 : styles.form_2}>
+                                <div className={styles.innerForm}>
+                                    <Formik
+                                        key={1}
+                                        initialValues={initialValues_1}
+                                        validationSchema={validationSchema_1}
+                                        onSubmit={handleSubmit_1}
+                                        innerRef={formRef_1}
+                                        enableReinitialize
+                                    >
+                                        {({ isSubmitting, values, handleChange, errors, touched }) => (
+                                            <Form className={styles.form}>
+                                                <div className={styles.inputRow}>
+                                                    <div className={styles.inputColumn}>
+                                                        <InputText label={glosary.inputLabel_1} placeholder={glosary.inputPlaceholder_1} error={errors.name} touched={touched.name} value={values.name} onChange={handleChange('name')}
+                                                        />
+                                                    </div>
+                                                    <div className={styles.inputColumn}>
+                                                        <InputText label={glosary.inputLabel_2} placeholder={glosary.inputPlaceholder_2} error={errors.phone} touched={touched.phone} value={values.phone} onChange={handleChange('phone')}
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <InputText label={glosary.inputLabel_3} placeholder={glosary.inputPlaceholder_3} error={errors.email} touched={touched.email} value={values.email} onChange={handleChange('email')}
+                                                />
+                                                <InputSelect label={glosary.inputLabel_4} placeholder={glosary.inputPlaceholder_4} list={countries} onChange={handleCountry_1} error={errors.country} touched={touched.country} initialValue={values.country} />
+                                                <InputTextArea label={glosary.inputLabel_5} placeholder={glosary.inputPlaceholder_5} error={errors.note} touched={touched.note} value={values.note} onChange={handleChange('note')} />
+
+                                            </Form>
+                                        )}
+                                    </Formik>
+                                </div>
+                                <div className={styles.innerForm}>
+                                    <Formik
+                                        key={2}
+                                        initialValues={initialValues_2}
+                                        validationSchema={validationSchema_2}
+                                        onSubmit={handleSubmit_2}
+                                        innerRef={formRef_2}
+                                        enableReinitialize
+
+                                    >
+                                        {({ isSubmitting, values, handleChange, errors, touched }) => (
+                                            <Form className={styles.form}>
+                                                <InputText label={glosary.inputLabel_6} placeholder={glosary.inputPlaceholder_6} error={errors.card} touched={touched.card} value={values.card} onChange={handleChange('card')}
+                                                />
+                                                <InputText label={glosary.inputLabel_7} placeholder={glosary.inputPlaceholder_7} error={errors.name} touched={touched.name} value={values.name} onChange={handleChange('name')}
+                                                />
+                                                <div className={styles.inputRow}>
+                                                    <div className={styles.inputColumn}>
+                                                        <InputText label={glosary.inputLabel_8} placeholder={glosary.inputPlaceholder_8} error={errors.date} touched={touched.date} value={values.date} onChange={handleChange('date')}
+                                                        />
+                                                    </div>
+                                                    <div className={styles.inputColumn}>
+                                                        <InputText label={glosary.inputLabel_9} placeholder={glosary.inputPlaceholder_9} error={errors.cvc} touched={touched.cvc} value={values.cvc} onChange={handleChange('cvc')}
+                                                        />
+                                                    </div>
+                                                </div>
+
+                                                <InputSelect label={glosary.inputLabel_10} placeholder={glosary.inputPlaceholder_10} list={countries} onChange={handleCountry_2} error={errors.country} touched={touched.country} initialValue={values.country} />
+                                                <div className={styles.inputRow}>
+
+                                                    <div className={styles.inputColumn}>
+                                                        <InputSelect label={glosary.inputLabel_11} placeholder={glosary.inputPlaceholder_11} list={states} onChange={handleState} error={errors.state} touched={touched.state} initialValue={values.state} />
+                                                    </div>
+
+                                                    <div className={styles.inputColumn}>
+                                                        <InputText label={glosary.inputLabel_12} placeholder={glosary.inputPlaceholder_12} error={errors.postal} touched={touched.postal} value={values.postal} onChange={handleChange('postal')}
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <div className={styles.subtotalContainer}>
+                                                    <span className={styles.subtotalText}>
+                                                        {
+                                                            glosary.priceLabel
+                                                        }
+                                                    </span>
+                                                    <span className={styles.subtotalText}>
+                                                        {planSelected?.price.toLocaleString('es-es',{minimumFractionDigits: 2})}
+                                                        {' €'}
+                                                    </span>
+                                                </div>
+                                                <div className={styles.totalContainer}>
+                                                    <span className={styles.totalText} style={poppinsSemiBold.style}>
+                                                        {planSelected?.price.toLocaleString('es-es',{minimumFractionDigits: 2})}
+                                                        {' €'}
+                                                    </span>
+                                                    <span className={[globalStyles.smallText,globalStyles.textFaded].join(' ')}>
+                                                        {listFrecuency.find(el=>el.key.toString() === store?.frecuency?.toString())?.priceFrecuency}
+                                                    </span>
+                                                </div>
+
+                                            </Form>
+                                        )}
+                                    </Formik>
+                                </div>
                             </div>
-                        ))
-                    }
-                </div>
-                <h3 className={styles.title} style={poppinsSemiBold.style}>
-                    {page === 1 ? glosary.formTitle_1 : glosary.formTitle_2}
-                </h3>
-                <div className={styles.formContainer}>
-                    <div className={page === 1 ? styles.form_1 : styles.form_2}>
-                        <div className={styles.innerForm}>
-                            <Formik
-                                key={1}
-                                initialValues={initialValues_1}
-                                validationSchema={validationSchema_1}
-                                onSubmit={handleSubmit_1}
-                                innerRef={formRef_1}
-                                enableReinitialize
-                            >
-                                {({ isSubmitting, values, handleChange, errors, touched }) => (
-                                    <Form className={styles.form}>
-                                        <div className={styles.inputRow}>
-                                            <div className={styles.inputColumn}>
-                                                <InputText label={glosary.inputLabel_1} placeholder={glosary.inputPlaceholder_1} error={errors.name} touched={touched.name} value={values.name} onChange={handleChange('name')}
-                                                />
-                                            </div>
-                                            <div className={styles.inputColumn}>
-                                                <InputText label={glosary.inputLabel_2} placeholder={glosary.inputPlaceholder_2} error={errors.phone} touched={touched.phone} value={values.phone} onChange={handleChange('phone')}
-                                                />
-                                            </div>
-                                        </div>
-                                        <InputText label={glosary.inputLabel_3} placeholder={glosary.inputPlaceholder_3} error={errors.email} touched={touched.email} value={values.email} onChange={handleChange('email')}
-                                        />
-                                        <InputSelect label={glosary.inputLabel_4} placeholder={glosary.inputPlaceholder_4} list={countries} onChange={handleCountry_1} error={errors.country} touched={touched.country} initialValue={values.country} />
-                                        <InputTextArea label={glosary.inputLabel_5} placeholder={glosary.inputPlaceholder_5} error={errors.note} touched={touched.note} value={values.note} onChange={handleChange('note')} />
-
-                                    </Form>
-                                )}
-                            </Formik>
                         </div>
-                        <div className={styles.innerForm}>
-                            <Formik
-                                key={2}
-                                initialValues={initialValues_2}
-                                validationSchema={validationSchema_2}
-                                onSubmit={handleSubmit_2}
-                                innerRef={formRef_2}
-                                enableReinitialize
+                        <div className={styles.rowButtons}>
+                            {
+                                page === 1
+                                &&
+                                <>
+                                    <Button title={glosary.buttonAction_1} onClick={closeModal} Icon={FaChevronLeft} type='outline' />
+                                    <Button title={glosary.buttonAction_2} grow={true} onClick={onSubmit1} loading={formRef_1.current?.isSubmitting} />
+                                </>
 
-                            >
-                                {({ isSubmitting, values, handleChange, errors, touched }) => (
-                                    <Form className={styles.form}>
-                                        <InputText label={glosary.inputLabel_6} placeholder={glosary.inputPlaceholder_6} error={errors.card} touched={touched.card} value={values.card} onChange={handleChange('card')}
-                                        />
-                                        <InputText label={glosary.inputLabel_7} placeholder={glosary.inputPlaceholder_7} error={errors.name} touched={touched.name} value={values.name} onChange={handleChange('name')}
-                                        />
-                                        <div className={styles.inputRow}>
-                                            <div className={styles.inputColumn}>
-                                                <InputText label={glosary.inputLabel_8} placeholder={glosary.inputPlaceholder_8} error={errors.date} touched={touched.date} value={values.date} onChange={handleChange('date')}
-                                                />
-                                            </div>
-                                            <div className={styles.inputColumn}>
-                                                <InputText label={glosary.inputLabel_9} placeholder={glosary.inputPlaceholder_9} error={errors.cvc} touched={touched.cvc} value={values.cvc} onChange={handleChange('cvc')}
-                                                />
-                                            </div>
-                                        </div>
+                            }
+                            {
 
-                                        <InputSelect label={glosary.inputLabel_10} placeholder={glosary.inputPlaceholder_10} list={countries} onChange={handleCountry_2} error={errors.country} touched={touched.country} initialValue={values.country} />
-                                        <div className={styles.inputRow}>
-
-                                            <div className={styles.inputColumn}>
-                                                <InputSelect label={glosary.inputLabel_11} placeholder={glosary.inputPlaceholder_11} list={states} onChange={handleState} error={errors.state} touched={touched.state} initialValue={values.state} />
-                                            </div>
-
-                                            <div className={styles.inputColumn}>
-                                                <InputText label={glosary.inputLabel_12} placeholder={glosary.inputPlaceholder_12} error={errors.postal} touched={touched.postal} value={values.postal} onChange={handleChange('postal')}
-                                                />
-                                            </div>
-                                        </div>
-
-                                    </Form>
-                                )}
-                            </Formik>
+                                page === 2
+                                &&
+                                <>
+                                    <Button title={glosary.buttonAction_3} Icon={FaChevronLeft} type='outline' onClick={() => { setPage(1) }} />
+                                    <Button title={glosary.buttonAction_4} grow={true} loading={formRef_2.current?.isSubmitting} onClick={onSubmit2} />
+                                </>
+                            }
                         </div>
                     </div>
-                </div>
-                <div className={styles.rowButtons}>
-                    {
-                        page === 1
-                        &&
-                        <>
-                            <Button title={glosary.buttonAction_1} onClick={closeModal} Icon={FaChevronLeft} type='outline' />
-                            <Button title={glosary.buttonAction_2} grow={true} onClick={onSubmit1} loading={formRef_1.current?.isSubmitting} />
-                        </>
-
-                    }
-                    {
-
-                        page === 2
-                        &&
-                        <>
-                            <Button title={glosary.buttonAction_3} Icon={FaChevronLeft} type='outline' onClick={() => { setPage(1) }} />
-                            <Button title={glosary.buttonAction_4} grow={true} loading={formRef_2.current?.isSubmitting} onClick={onSubmit2} />
-                        </>
-                    }
-                </div>
-            </div>
-            <div className={styles.selectedPlanContainer}>
-                <div className={styles.planContainer}>
-                    <h4>{glosary.modalTitle}</h4>
-                    <div className={styles.titleContainer}>
-                        <h2>{planSelected?.title}</h2>
-                        <span>{planSelected?.content}</span>
+                    <div className={styles.selectedPlanContainer}>
+                        <div className={styles.planContainer}>
+                            <FaChevronDown className={styles.closeIcon} onClick={closeModal}/>
+                            <h4 className={globalStyles.miniTitle} style={poppinsSemiBold.style}>{glosary.modalTitle}</h4>
+                            <div className={styles.titleContainer}>
+                                <h2 className={globalStyles.smallMediumTitle} style={poppinsSemiBold.style}>{planSelected?.title}</h2>
+                                <span className={globalStyles.smallText}>{planSelected?.content}</span>
+                            </div>
+                            <InputSelectButton list={plans} title={glosary.buttonAction_5} onChange={handlePlan} lang={lang} loading={false} initialValue={plan} grow={true}/>
+                        </div>
+                        <InputSwitch list={listFrecuency} initialValue={store?.frecuency} onChange={handleFrecuency} backgroundColor='transparent' grow={true}/>
+                        <div className={styles.priceContainer}>
+                            <span className={[globalStyles.regularTitle].join(' ')}>
+                                {planSelected?.price.toLocaleString('es-es',{minimumFractionDigits: 2})}
+                                {' €'}
+                            </span>
+                            <span className={[globalStyles.regularTitle,globalStyles.textFaded].join(' ')}>
+                                {' / '}
+                            </span>
+                            <span className={[globalStyles.regularTitle,globalStyles.textFaded].join(' ')}>
+                                {listFrecuency.find(el=>el.key.toString() === store?.frecuency?.toString())?.priceFrecuency}
+                            </span>
+                        </div>
+                        <ul className={styles.listContainer}>
+                            {
+                                planSelected?.list.map((el,index)=>(<li className={[styles.listItem].join(' ')} key={index}>
+                                    <div className={styles.iconList}>
+                                        <IconCheck/>
+                                    </div>
+                                    <span className={[globalStyles.text].join(' ')}>
+                                        {el}
+                                    </span>
+                                </li>))
+                            }
+                        </ul>
                     </div>
-                    <InputSelectButton list={plans} title={glosary.buttonAction_5} onChange={handlePlan} lang={lang} loading={false} initialValue={plan} grow={true}/>
-                </div>
-                <InputSwitch list={listFrecuency} initialValue={1} onChange={handleFrecuency} />
-                <div className={styles.priceContainer}>
-                    <span className={[globalStyles.regularTitle].join(' ')}>
-                        {planSelected?.price.toLocaleString('es-es',{minimumFractionDigits: 2})}
-                        {' €'}
-                    </span>
-                    <span className={[globalStyles.regularTitle,globalStyles.textFaded].join(' ')}>
-                        {' / '}
-                    </span>
-                    <span className={[globalStyles.regularTitle,globalStyles.textFaded].join(' ')}>
-                        {listFrecuency.find(el=>el.key.toString() === frecuencySelected.toString())?.priceFrecuency}
-                    </span>
-                </div>
-            </div>
-        </ReactModal>
+                </ReactModal>
+            }
+        </>
+
     )
 }

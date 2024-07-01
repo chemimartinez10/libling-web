@@ -10,24 +10,26 @@ interface IForm1 {
 	note?: string
 }
 interface TypeAffiliateStore {
-	lastStep: number
 	form_1: IForm1 | undefined
+	frecuency: number | string | undefined
+	plan: number | string | undefined
 	//actions
 	setForm_1: (form: IForm1) => void
+	setFrecuency: (frecuency: number | string) => void
+	setPlan: (plan: number | string) => void
 	resetForm: VoidFunction
 }
 
 export const useAffiliateStore = create<TypeAffiliateStore>()(
 	persist(
 		(set, get) => ({
-			lastStep: 1,
 			form_1: undefined,
-			form_2: undefined,
-			form_3: undefined,
-			form_4: undefined,
-			form_5: undefined,
+			frecuency:1,
+			plan:undefined,
 			//Actions
 			setForm_1: (form: IForm1) => set({ form_1: form }),
+			setFrecuency: (frecuency: number | string) => set({ frecuency }),
+			setPlan: (plan: number | string) => set({ plan }),
 			resetForm: () =>
 				set({
 					form_1: undefined,

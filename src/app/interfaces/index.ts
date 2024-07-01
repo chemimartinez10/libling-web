@@ -97,7 +97,9 @@ export interface IInputSwitch {
 	initialValue?: string | number
 	label?: string
 	mainColor?: string
+	backgroundColor?: string
 	textColor?: string
+	grow?:boolean
 }
 export interface IInputPhoto {
 	description?: string

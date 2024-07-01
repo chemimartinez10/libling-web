@@ -1,11 +1,13 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './affiliatePlanList.module.css'
 import { dict } from '../utils'
 import AffiliateCard from './affiliateCard'
 import InputSwitch from './admin/inputSwitch'
 import { Payment } from './payment'
 import ReactModal from 'react-modal'
+import useStore from '../hooks/useStore'
+import { useAffiliateStore } from '../hooks/useAffiliateStore'
 
 interface IAffiliatePlanList{
     lang: "es" | "en" | "fr"
@@ -126,27 +128,31 @@ const AffiliatePlanList:React.FC<IAffiliatePlanList> = ({lang}) => {
     const [frecuency, setFrecuency] = useState<string | number>(1)
     const [plan, setPlan] = useState<string | number>(1)
     const [frecuencyName, setFrecuencyName] = useState<string>(glosary.sectionOptionBy1)
+    const store = useStore(useAffiliateStore, (state) => state)
 
     //functions
     const handleFrecuency = (key: string | number) => {
         console.log('selected key', key)
-        setFrecuency(key)
-        setFrecuencyName(listFrecuency?.find(el=>el.key === key)?.priceFrecuency || glosary.sectionOptionBy1)
+        store?.setFrecuency(key)
     }
     const handleSelectedPlan = (key:number) =>{
         console.log('the selected key was', key)
-        setPlan(key)
+        store?.setPlan(key)
         setOpen(true)
     }
+
+    useEffect(()=>{
+        setFrecuencyName(listFrecuency?.find(el=>el.key == store?.frecuency)?.priceFrecuency || glosary.sectionOptionBy1)
+    },[store?.frecuency])
 
     return (
     <>
         <div className={styles.container}>
-            <InputSwitch list={listFrecuency} initialValue={1} onChange={handleFrecuency} />
+            <InputSwitch list={listFrecuency} initialValue={store?.frecuency} onChange={handleFrecuency} />
             <div className={styles.edgeContainer}>
                 <div className={styles.cardContainer}>
                 {
-                    affiliateList.find(el=>el.id === frecuency)?.plans?.map((el)=>(<AffiliateCard key={el.id} id={el.id} frecuency={frecuencyName} onSelect={handleSelectedPlan} title={el.title} content={el.content} list={el.list} price={el.price} type={el.id === 2 ? 'main' : 'outline'} lang={lang}/>))
+                    affiliateList.find(el=>el.id == store?.frecuency)?.plans?.map((el)=>(<AffiliateCard key={el.id} id={el.id} frecuency={frecuencyName} onSelect={handleSelectedPlan} title={el.title} content={el.content} list={el.list} price={el.price} type={el.id === 2 ? 'main' : 'outline'} lang={lang}/>))
                     }
                 </div>
             </div>

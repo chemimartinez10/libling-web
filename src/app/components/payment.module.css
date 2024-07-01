@@ -1,6 +1,6 @@
 .wizardContainer {
     background-color: #ffffff;
-    width: 100%;
+    width: 650px;
     height: 800px;
     padding: 48px;
     display: flex;
@@ -16,6 +16,18 @@
     flex-direction: column;
     gap: 32px;
     background-color: #EDF0F4;
+}
+
+.planContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.titleContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .stepContainer {
@@ -57,55 +69,63 @@
     line-height: 18px;
     text-align: left;
 }
-.formContainer{
+
+.formContainer {
     display: flex;
-    width: 660px;
+    width: 550px;
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
 }
-.form_1{
-    width: 1320px;
+
+.form_1 {
+    width: 1100px;
     height: 100%;
     display: flex;
     flex-direction: row;
     transition: all ease-out .5s;
 }
-.form_2{
-    width: 1320px;
+
+.form_2 {
+    width: 1100px;
     height: 100%;
     display: flex;
     flex-direction: row;
     transition: all ease-out .5s;
-    transform: translateX(-660px);
+    transform: translateX(-550px);
 }
-.form{
+
+.form {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
 }
-.title{
+
+.title {
     font-size: 22px;
     line-height: 28px;
     color: #000000DE;
     font-weight: 600;
 }
-.innerForm{
-    width: 660px;
+
+.innerForm {
+    width: 550px;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 24px;
 }
-.row{
+
+.row {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: stretch;
     gap: 16px;
 }
-.rowButtons{
+
+.rowButtons {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -113,14 +133,169 @@
     gap: 24px;
     width: 100%;
 }
-.inputRow{
-    display: flex;
+
+.inputRow {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(265px, 1fr));
     flex-direction: row;
     align-items: flex-start;
-    flex-grow: 1;
     justify-content: stretch;
     gap: 16px;
 }
-.inputColumn{
-    flex-grow: 1;
+
+.inputColumn {
+    display: grid;
+}
+
+.listContainer {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+}
+
+.iconList {
+    width: 24px;
+    height: 24px;
+}
+
+.listItem {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.subtotalContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2px;
+}
+
+.subtotalText {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: left;
+}
+
+.totalContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    border-top: 1px solid var(--color-border-primary, #0000001F);
+    padding-top: 4px;
+    gap: 2px;
+}
+.totalText {
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 34.5px;
+    text-align: left;
+}
+.closeIcon{
+    display: none;
+}
+
+@media (width < 800px) {
+    .listContainer {
+        display: none;
+    }
+
+    .priceContainer {
+        display: none;
+    }
+    .closeIcon{
+        display: flex;
+        padding: 4px;
+        font-size: 24px;
+        color: #00000099;
+        cursor: pointer;
+    }
+
+    .inputRow {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: stretch;
+        gap: 16px;
+    }
+    .formContainer {
+        display: flex;
+        width: calc(100vw - 32px);
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    .form_1 {
+        width: calc(200vw - 32px);
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        transition: all ease-out .5s;
+    }
+    
+    .form_2 {
+        width: calc(200vw - 32px);
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        transition: all ease-out .5s;
+        transform: translateX(calc(-100vw + 32px));
+    }
+    
+    .form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .innerForm {
+        width: calc(100vw - 32px);
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 24px;
+    }
+
+    .wizardContainer {
+        background-color: #ffffff;
+        width: 100vw;
+        height: auto;
+        padding: 24px 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+
+    .selectedPlanContainer {
+        height: auto;
+        width: 100vw;
+        padding: 32px 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        background-color: #EDF0F4;
+    }
+    .subtotalContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 24px;
+    }
+    .totalContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        border-top: 1px solid var(--color-border-primary, #0000001F);
+        padding-top: 8px;
+        gap: 2px;
+    }
 }

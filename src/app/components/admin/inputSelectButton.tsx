@@ -75,7 +75,7 @@ const InputSelectButton: React.FC<IInputSelectButton> = ({list, error, touched, 
     return (
         <div className={styles.formControl}>
             <div className={styles.inputContainer}>
-                <button className={currentStyle} onMouseDown={handleMouseDown} onClick={handleClick} onMouseUp={handleMouseUp} onTouchStart={handleMouseDown} onTouchEnd={handleMouseUp} type={'button'} style={{flexGrow: grow ? 1: undefined}} onFocus={loading || disabled ? () => { } :handleFocus} onBlur={handleBlur}>
+                <button className={currentStyle} onMouseDown={handleMouseDown} onClick={handleClick} onMouseUp={handleMouseUp} onTouchStart={handleMouseDown} onTouchEnd={handleMouseUp} type={'button'} style={{flexGrow: grow ? 1: undefined}} onBlur={handleBlur}>
 
                     {
                         loading
@@ -91,7 +91,7 @@ const InputSelectButton: React.FC<IInputSelectButton> = ({list, error, touched, 
                 <div className={openList ? styles.listContainer : styles.listContainerHidden}>
                     {
                         listFiltered.map((el, index) => (
-                            <div key={index} className={styles.listItem} onClick={() => { handleChange(el) }} onMouseDown={() => { handleChange(el) }}>
+                            <div key={index} className={styles.listItemButton} onClick={() => { handleChange(el) }} onMouseDown={() => { handleChange(el) }}>
                                 {
                                     (!!lang && !!el.value && el.value in dict[lang].data && dict[lang].data[el.value as dataTranslate])
                                         ?
@@ -100,8 +100,8 @@ const InputSelectButton: React.FC<IInputSelectButton> = ({list, error, touched, 
                                         el.value
                                 }
                                 {
-                                    !!el.description ? <span className={styles.listItemDescription}>
-                                        {` (${el.description})`}
+                                    !!el.description ? <span className={styles.listItemButtonDescription}>
+                                        {` ${el.description}`}
                                     </span> : null
                                 }
                             </div>
