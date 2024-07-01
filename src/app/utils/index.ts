@@ -239,6 +239,9 @@ export const dict = {
 			link_2: "Inicio",
 			link_3: "Servicios",
 			link_4: "Contáctanos",
+			link_5: "Afiliación",
+			link_6: "Afiliarme",
+			link_7: "Renovar mi afiliación",
 			admin_1: "Propiedades",
 		},
 		footer: {
@@ -766,6 +769,9 @@ export const dict = {
 			link_2: "Home",
 			link_3: "Services",
 			link_4: "Contact",
+			link_5: "Membership",
+			link_6: "Join",
+			link_7: "Renew Membership",
 			admin_1: "Properties",
 		},
 		footer: {
@@ -1300,6 +1306,9 @@ export const dict = {
 			link_2: "Accueil",
 			link_3: "Services",
 			link_4: "Contact",
+			link_5: "Adhésion",
+			link_6: "Adhérer",
+			link_7: "Renouveler mon adhésion",
 			admin_1: "Propriétés",
 		},
 		footer: {

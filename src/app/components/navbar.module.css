@@ -7,6 +7,7 @@
     color: var(--navbar-text-color);
     height: 64px;
     padding: 0px 32px;
+    z-index: 3;
 
 }
 .navbarImmo {
@@ -85,13 +86,56 @@
     height: 34px;
     background-color: #FFFFFF61;
 }
+.closeIcon{
+    display: flex;
+    padding: 2px;
+    font-size: 26px;
+    color: #FFFFFFBD;
+    cursor: pointer;
+}
+.mobileMenu{
+    display: none;
+}
+.navlist{
+    position: relative;
+    display: block;
+    min-height: 0px;
+    max-height: 0px;
+    padding: 0px;
+    top:-100vh;
+    transition: all .5s ease;
+    background-color: var(--libling-main-color);
+    z-index: 1;
+    text-align: center;
+    overflow: hidden;
+
+}
+.navlistItem{
+    padding: 16px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navlistItem:hover{
+    background-color: #ffffff66;
+}
+.navlistOpen{
+    position: relative;
+    display: block;
+    min-height: 100%;
+    max-height: 100%;
+    top:0px;
+    transition: all .5s ease;
+    z-index: 1;
+    background-color: var(--libling-main-color);
+    padding: 16px 0px;
+    text-align: center;
+}
 
 
-@media (width <= 1214px) {
-    .innernav {
-        justify-content: space-between;
-        padding: 14px 24px;
-    }
+@media (width <= 1000px) {
 
     .innernav>ul {
         display: none;
@@ -101,6 +145,35 @@
         flex-direction: row;
         align-items: center;
         gap: 16px;
+    }
+    .mobileMenu{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+    }
+    .navbar {
+        background-color: var(--libling-main-color);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        color: var(--navbar-text-color);
+        height: 64px;
+        padding: 0px;
+        z-index: 3;
+        position: relative;
+    }
+    .innernav {
+        display: flex;
+        flex-direction: row;
+        max-width: 1214px;
+        width: 100%;
+        padding: 14px 16px;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
     }
 
 }
