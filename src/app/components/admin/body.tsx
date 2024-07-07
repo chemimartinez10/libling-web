@@ -6,7 +6,7 @@ import Aside from './aside';
 import { poppinsMedium, poppinsRegular } from '@/app/fonts';
 import Navbar from './navbar';
 import { dict } from '@/app/utils';
-import { FiHome } from 'react-icons/fi';
+import { FiHome, FiCreditCard } from 'react-icons/fi';
 import { IUserSession } from '@/services';
 import ActionBar from './actionBar';
 import useStore from '@/app/hooks/useStore';
@@ -47,6 +47,11 @@ export const Body = ({
             name: glosary.propertiesTitle,
             uri: '/admin/properties',
             icon: FiHome
+        },
+        {
+            name: glosary.affiliateTitle,
+            uri: '/admin/affiliates',
+            icon: FiCreditCard
         },
     ]
     const toggleOpen = () => { setOpen(state => !state) }

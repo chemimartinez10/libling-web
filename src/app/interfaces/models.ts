@@ -327,12 +327,12 @@ export interface IUpdateAffiliateData {
   // Interface for Pay model
   export interface IPay {
 	id: number;
-	date?: Date;
-	reference?: string; // Uses UUID
+	date?: Date | null;
+	reference?: string | null; // Uses UUID
 	months: number;
 	quantity?: number;
 	status: boolean;
-	affiliate: IAffiliateData; // Relationship with Affiliate model
+	affiliate?: IAffiliateData; // Relationship with Affiliate model
 	affiliateId: number;
   }
   export interface IUpdatePay {

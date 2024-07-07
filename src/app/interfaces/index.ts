@@ -1,4 +1,4 @@
-import { IMetaPaginate, IPropertyData, IPropertyOrderBy, IPropertySearch } from "./models"
+import { IAffiliateData, IMetaPaginate, IPropertyData, IPropertyOrderBy, IPropertySearch } from "./models"
 
 export type countryType = "ES" | "AE" | "LU" | "ALL"
 export type langType = "es" | "en" | "fr"
@@ -133,6 +133,12 @@ export interface IPropertyCategory {
 export interface IPropertyList{
 	lang: 'es' | 'en' | 'fr'
 	initialData?: IPropertyData[] | null
+	metaData?: IMetaPaginate
+	
+}
+export interface IAffiliateList{
+	lang: 'es' | 'en' | 'fr'
+	initialData?: IAffiliateData[] | null
 	metaData?: IMetaPaginate
 	
 }
