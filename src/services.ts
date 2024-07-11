@@ -4,6 +4,7 @@ import {
 	IAffiliateData,
 	IAffiliateOrderBy,
 	IAffiliateSearch,
+	ICreatePay,
 	IMetaPaginate,
 	IPayOrderBy,
 	IPaySearch,
@@ -18,10 +19,25 @@ import {
 } from "./app/interfaces/models"
 import { PropertyCreate, PropertyUpdate } from "./app/classes"
 import { cookies } from "next/headers"
-import countries from '@/app/utils/countries.json'
+import countries from "@/app/utils/countries.json"
+import axios, { AxiosRequestConfig } from "axios"
+import { randomUUID } from "crypto"
 const saltRounds = 12
 
 const prisma = new PrismaClient()
+const authCode =
+	"Basic " +
+	Buffer.from(
+		process.env.SAFERPAY_API_USER + ":" + process.env.SAFERPAY_API_PWD
+	).toString("base64")
+
+const saferpayConfig: AxiosRequestConfig = {
+	headers: {
+		Authorization: authCode,
+		"Content-Type": "application/json",
+		Accept: "application/json",
+	},
+}
 
 export interface IPropertyTypeData {
 	id?: number
@@ -125,7 +141,9 @@ export async function findPropertyType(id: number) {
 }
 export async function findPropertyTypeByCode(code: string) {
 	try {
-		const propertyType = await prisma.propertyType.findFirst({ where: { code } })
+		const propertyType = await prisma.propertyType.findFirst({
+			where: { code },
+		})
 		await prisma.$disconnect()
 		return propertyType
 	} catch (e) {
@@ -147,13 +165,13 @@ export async function getCountries() {
 		return undefined
 	}
 }
-export async function getStatesByCode(code:string) {
+export async function getStatesByCode(code: string) {
 	try {
-		const states = countries.find(el=>el?.code2 === code)?.states
-		return states?.map(el=>({
-			key:el.code,
-			value:el.name,
-			description:el.code,
+		const states = countries.find((el) => el?.code2 === code)?.states
+		return states?.map((el) => ({
+			key: el.code,
+			value: el.name,
+			description: el.code,
 		}))
 	} catch (e) {
 		console.error("Error getting states", e)
@@ -429,42 +447,48 @@ export const getCountryFilter = async () => {
 		return (await findCountryByCode(countryCookie))?.id
 	}
 }
-export const createPay = async(data:IUpdatePay)=>{
+export const createPay = async (data: ICreatePay) => {
 	try {
 		const pay = await prisma.pay.create({ data })
 		console.log(pay)
 		await prisma.$disconnect()
+		return pay
 	} catch (e) {
 		console.error(e)
 		await prisma.$disconnect()
 		process.exit(1)
 	}
 }
-export const updatePay = async(data: IUpdatePay)=>{
+export const updatePay = async (data: IUpdatePay) => {
 	try {
-		const pay = await prisma.pay.update({ where: { id:data.id }, data })
+		const pay = await prisma.pay.update({ where: { id: data.id }, data })
 		console.log(pay)
 		await prisma.$disconnect()
+		return pay
 	} catch (e) {
 		console.error(e)
 		await prisma.$disconnect()
 		process.exit(1)
 	}
 }
-export const createAffiliate = async(data: IUpdateAffiliateData)=>{
+export const createAffiliate = async (data: IUpdateAffiliateData) => {
 	try {
 		const affiliate = await prisma.affiliate.create({ data })
-		console.log(affiliate)
+		console.log("createAffiliate service for: ", affiliate)
 		await prisma.$disconnect()
+		return affiliate
 	} catch (e) {
 		console.error(e)
 		await prisma.$disconnect()
 		process.exit(1)
 	}
 }
-export const updateAffiliate = async(data: IUpdateAffiliateData)=>{
+export const updateAffiliate = async (data: IUpdateAffiliateData) => {
 	try {
-		const affiliate = await prisma.affiliate.update({ where: { id:data.id }, data })
+		const affiliate = await prisma.affiliate.update({
+			where: { id: data.id },
+			data,
+		})
 		console.log(affiliate)
 		await prisma.$disconnect()
 	} catch (e) {
@@ -474,12 +498,12 @@ export const updateAffiliate = async(data: IUpdateAffiliateData)=>{
 	}
 }
 
-export const getAffiliates = async(
+export const getAffiliates = async (
 	filters: IAffiliateSearch = {},
 	orderBy: IAffiliateOrderBy = {},
 	page: number = 1,
-	limit: number = 15,
-)=>{
+	limit: number = 15
+) => {
 	console.log("index request", filters, orderBy, page, limit)
 	const affiliates = await prisma.affiliate.findMany({
 		where: {
@@ -487,19 +511,20 @@ export const getAffiliates = async(
 		},
 		orderBy,
 		include: {
-			country:true,
-			Pay:true
+			country: true,
+			Pay: true,
 		},
 	})
 	const fromResult = (page - 1) * limit
 	const toResult = fromResult + limit
 	console.log("affiliates found:", affiliates.length, fromResult, toResult)
-	const data = affiliates
-		.slice(fromResult, toResult)
-		.map((el) => ({
-			...el,
-			Pay:el.Pay.map(element => ({...element, quantity:element.quantity?.toNumber()}))
-		}))
+	const data = affiliates.slice(fromResult, toResult).map((el) => ({
+		...el,
+		Pay: el.Pay.map((element) => ({
+			...element,
+			quantity: element.quantity?.toNumber(),
+		})),
+	}))
 	const totalPages = Math.ceil(affiliates.length / limit)
 	const newPage = page > totalPages ? totalPages : page
 	const meta: IMetaPaginate = {
@@ -515,12 +540,16 @@ export const getAffiliates = async(
 		meta,
 	}
 }
-export const getPays = async(
+export const getPaysCount = async () => {
+	const pays = await getPays()
+	return pays.meta.totalData
+}
+export const getPays = async (
 	filters: IPaySearch = {},
 	orderBy: IPayOrderBy = {},
 	page: number = 1,
-	limit: number = 15,
-)=>{
+	limit: number = 15
+) => {
 	console.log("index request", filters, orderBy, page, limit)
 	const pays = await prisma.pay.findMany({
 		where: {
@@ -528,18 +557,16 @@ export const getPays = async(
 		},
 		orderBy,
 		include: {
-			affiliate:true
+			affiliate: true,
 		},
 	})
 	const fromResult = (page - 1) * limit
 	const toResult = fromResult + limit
 	console.log("pays found:", pays.length, fromResult, toResult)
-	const data = pays
-		.slice(fromResult, toResult)
-		.map((el) => ({
-			...el,
-			quantity:el.quantity?.toNumber()
-		}))
+	const data = pays.slice(fromResult, toResult).map((el) => ({
+		...el,
+		quantity: el.quantity?.toNumber(),
+	}))
 	const totalPages = Math.ceil(pays.length / limit)
 	const newPage = page > totalPages ? totalPages : page
 	const meta: IMetaPaginate = {
@@ -555,15 +582,130 @@ export const getPays = async(
 		meta,
 	}
 }
-export const showAffiliate = async(filters:IAffiliateSearch)=>{
+export const showPay = async (filters: IPaySearch) => {
+	const pay = await prisma.pay.findFirst({
+		where: filters,
+		include: {
+			affiliate: true,
+		},
+	})
+	return pay
+}
+export const showAffiliate = async (filters: IAffiliateSearch) => {
 	const affiliate = await prisma.affiliate.findFirst({
 		where: filters,
 		include: {
-			country:true,
-			Pay:true
+			country: true,
+			Pay: true,
 		},
 	})
 	return affiliate
 }
+export const verifyPayStatus = async (payId: string) => {
+	const pay = await showPay({ id: parseInt(payId) })
+	const twoDaysAgo = new Date()
+	twoDaysAgo.setDate(twoDaysAgo.getDate() - 2)
+	if ((!pay?.status) && pay?.date && pay.date >= twoDaysAgo) {
+		return pay.id
+	}
+	return null
+}
+export const paymentInitialization = async (
+	description: string,
+	price: number,
+	affiliateId: number,
+	returnUrl: string,
+	months: number
+) => {
+	const paysCount = await getPaysCount()
+	const newPay = await createPay({
+		affiliateId,
+		status: false,
+		quantity: price,
+		months,
+	})
+	const data = {
+		RequestHeader: {
+			SpecVersion: "1.41",
+			CustomerId: process.env.SAFERPAY_API_CUSTOMER_ID,
+			RequestId: randomUUID(),
+			RetryIndicator: 0,
+		},
+		TerminalId: process.env.SAFERPAY_API_TERMINAL_ID,
+		Payment: {
+			Amount: {
+				Value: price * 100,
+				CurrencyCode: "EUR",
+			},
+			OrderId: paysCount + 1,
+			Description: description,
+		},
+		ReturnUrl: {
+			Url: `${returnUrl}?pay=${newPay.id}`,
+		},
+	}
 
-
+	try {
+		const response = await axios.post(
+			"https://test.saferpay.com/api/payment/v1/PaymentPage/Initialize",
+			data,
+			saferpayConfig
+		)
+		console.log(response.data)
+		const updatedPay = await updatePay({
+			id: newPay.id,
+			reference: response?.data?.Token,
+		})
+		return {
+			redirectUrl: response.data?.RedirectUrl,
+			status: 200,
+			pay: {
+				...updatedPay,
+				quantity: updatedPay.quantity?.toFixed(2),
+			},
+		}
+	} catch (e) {
+		console.error(e)
+		return {
+			status: 500,
+		}
+	}
+}
+export const paymentAssert = async (payId: number) => {
+	const pay = await showPay({ id: payId })
+	if(!pay) throw new Error('No pay founded on DB')
+	const data = {
+		RequestHeader: {
+			SpecVersion: "1.41",
+			CustomerId: process.env.SAFERPAY_API_CUSTOMER_ID,
+			RequestId: randomUUID(),
+			RetryIndicator: 0,
+		},
+		Token: pay.reference,
+	}
+	try {
+		const response = await axios.post(
+			"https://test.saferpay.com/api/Payment/v1/PaymentPage/Assert",
+			data,
+			saferpayConfig
+		)
+		console.log(response.data)
+		const updatedPay = await updatePay({
+			id: pay.id,
+			status: true,
+		})
+		return {
+			redirectUrl: response.data?.RedirectUrl,
+			status: 200,
+			pay: {
+				...updatedPay,
+				quantity: updatedPay.quantity?.toFixed(2),
+			},
+		}
+	} catch (e) {
+		console.error(e)
+		return {
+			status: 500,
+		}
+	}
+}

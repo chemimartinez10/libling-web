@@ -34,6 +34,21 @@
     border: 2px solid var(--libling-main-ui-color);
     color: #fff;
 }
+.link{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.closeIcon{
+    display: flex;
+    padding: 4px;
+    font-size: 24px;
+    color: #FFFFFFBD;
+    cursor: pointer;
+}
 
 .formControl {
     display: flex;
@@ -108,6 +123,22 @@
 
 }
 
+.listContainerLarge {
+    display: block;
+    position: absolute;
+    max-height: 256px;
+    width: 100%;
+    min-width: 190px;
+    top: 50px;
+    left: 0px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 12px 30px #1973FA14;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: 99;
+    transition: all .25s ease;
+}
 .listContainer {
     display: block;
     position: absolute;
@@ -143,6 +174,7 @@
     position: absolute;
     max-height: 0px;
     width: 100%;
+    min-width: 190px;
     top: 50px;
     left: 0px;
     border-radius: 10px;
@@ -213,6 +245,19 @@
     text-align: left;
 
 }
+.listItemButtonMini {
+    color: #000000DE;
+    padding: 14px 16px;
+    background-color: transparent;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+    border-bottom: 1px solid var(--color-border-primary, #0000001F);
+
+}
 
 
 .listItemButtonDescription {
@@ -237,6 +282,20 @@
     font-weight: 500;
     line-height: 28.5px;
     text-align: left;
+
+}
+.listItemButtonMini:hover {
+    color: #1973FA;
+    padding: 14px 16px;
+    background-color: #1973FA14;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--color-border-primary, #0000001F);
 
 }
 

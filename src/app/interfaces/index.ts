@@ -83,6 +83,12 @@ export interface IInputSelectButton {
     disabled?: boolean
     grow?: boolean
 }
+export interface ILinkSelect {
+	list: ISelectElement[]
+	lang?: langType
+    title: string
+    disabled?: boolean
+}
 export interface IInputRadio {
 	label: string
 	onChange?: (e: boolean) => void

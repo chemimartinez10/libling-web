@@ -11,12 +11,26 @@ import LogoNavSVG from './icons/logoNavSVG'
 import WhatsappIcon from '@/app/img/whatsapp.png'
 import { FiLogIn } from 'react-icons/fi'
 import { FaBars, FaChevronDown } from 'react-icons/fa6'
+import InputSelectButton from './admin/inputSelectButton'
+import LinkSelect from './admin/linkSelect'
 
 
 export default function Navbar({ lang }: { lang: "es" | "en" | "fr" }) {
     const glosary = dict[lang]?.navbar
     const [open, setOpen] = useState<boolean>(false)
     const pathname = usePathname()
+    const affiliateList = [
+        {
+            key:1,
+            value:glosary.link_6,
+            extra:'/services?member=1'
+        },
+        {
+            key:2,
+            value:glosary.link_7,
+            extra:'/services?member=2'
+        },
+    ]
     const router = useRouter()
     const verifyCurrentLink = (site: string) => {
         let currentLocation = pathname
@@ -34,7 +48,7 @@ export default function Navbar({ lang }: { lang: "es" | "en" | "fr" }) {
                         <li className={verifyCurrentLink('/about') ? styles.selectedLink : undefined}><Link href={'/about'}>{glosary.link_1}</Link></li>
                         <li className={verifyCurrentLink('/services') ? styles.selectedLink : undefined}><Link href={'/services'}>{glosary.link_3}</Link></li>
                         <li className={verifyCurrentLink('/immo') ? styles.selectedLink : undefined}><Link href={'/immo'}>{'Libling Immo'}</Link></li>
-                        <li >{glosary.link_5} <FaChevronDown className={styles.closeIcon}/></li>
+                        <li ><LinkSelect list={affiliateList} title={glosary.link_5} lang={lang}/></li>
                         <div className={styles.separator}>
                         </div>
                         <LanguageSelector lang={lang} />
@@ -74,8 +88,8 @@ export default function Navbar({ lang }: { lang: "es" | "en" | "fr" }) {
                 <Link href={'/services'}><div className={styles.navlistItem}>{glosary.link_3}</div></Link>
                 <Link href={'/immo'}><div className={styles.navlistItem}>{'Libling Immo'}</div></Link>
                 <Link href={'/contact'}><div className={styles.navlistItem}>{glosary.link_4}</div></Link>
-                <div className={styles.navlistItem}>{glosary.link_6}</div>
-                <div className={styles.navlistItem}>{glosary.link_7}</div>
+                <Link href={'/services?member=1'}><div className={styles.navlistItem}>{glosary.link_6}</div></Link>
+                <Link href={'/services?member=2'}><div className={styles.navlistItem}>{glosary.link_7}</div></Link>
                 <div className={styles.navlistItem}>
                     <LanguageSelector lang={lang} />
                 </div>

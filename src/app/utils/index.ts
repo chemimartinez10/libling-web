@@ -431,6 +431,10 @@ export const dict = {
 			priceLabel:"Subtotal",
 			successMessageTitle:"Su afiliación fue efectuada con éxito.",
 			successMessageContent:"Por favor, revise su correo electrónico.",
+			errorMessageTitle:"Su afiliación no pudo ser efectuada.",
+			errorMessageContent:"No se pudo comprobar la información de su pago.",
+			infoMessageTitle:"Estamos verificando tu pago.",
+			infoMessageContent:"No salgas de esta página, mientras verificamos tu pago.",
 		},
 		contact: {
 			miniTitleHeader1:"Embárcate en la aventura",
@@ -985,7 +989,11 @@ export const dict = {
 			buttonAction_5: "Choose a Different Plan",
 			priceLabel: "Subtotal",
 			successMessageTitle: "Your membership was successful.",
-			successMessageContent: "Please check your email."
+			successMessageContent: "Please check your email.",
+			errorMessageTitle: "Your affiliation could not be processed.",
+			errorMessageContent: "Your payment information could not be verified.",
+			infoMessageTitle: "We are verifying your payment.",
+			infoMessageContent: "Please do not leave this page while we verify your payment.",
 
 		},
 		contact: {
@@ -1545,7 +1553,11 @@ export const dict = {
 			buttonAction_5: "Choisir un autre plan",
 			priceLabel: "Sous-total",
 			successMessageTitle: "Votre adhésion a été effectuée avec succès.",
-			successMessageContent: "Veuillez vérifier votre boîte de réception."
+			successMessageContent: "Veuillez vérifier votre boîte de réception.",
+			errorMessageTitle: "Votre affiliation n'a pas pu être effectuée.",
+			errorMessageContent: "Impossible de vérifier vos informations de paiement.",
+			infoMessageTitle: "Nous vérifions votre paiement.",
+			infoMessageContent: "Veuillez ne pas quitter cette page pendant que nous vérifions votre paiement.",
 		},
 		contact: {
 			miniTitleHeader1: "Embarquez pour l'aventure",

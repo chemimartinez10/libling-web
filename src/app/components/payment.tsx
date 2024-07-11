@@ -12,7 +12,7 @@ import { Form, Formik, FormikHelpers, FormikProps } from 'formik'
 import InputSelect from './admin/inputSelect'
 import { InputTextArea } from './admin/inputTextArea'
 import { ISelectElement } from '../interfaces'
-import { getCountries, getStatesByCode } from '@/services'
+import { createAffiliate, getCountries, getStatesByCode, paymentInitialization, showAffiliate } from '@/services'
 import { useStore } from 'zustand';
 import { toast } from 'react-toastify';
 import CustomToast from './toast';
@@ -22,6 +22,7 @@ import InputSwitch from './admin/inputSwitch';
 import InputSelectButton from './admin/inputSelectButton';
 import IconCheck from './icons/iconCheck';
 import useWindowDimensions from '../hooks/useWindowDimensions';
+import { Plan } from '@prisma/client';
 
 interface IPayment {
     open: boolean
@@ -30,6 +31,7 @@ interface IPayment {
     plan?: string | number
     frecuency?: string | number
     changeFrecuency?: (key: number | string) => void
+    initialForm?: number
 }
 interface IPlan {
     id: number;
@@ -55,12 +57,12 @@ interface IValues2 {
     date?: string
 }
 
-export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, plan = 1, frecuency = 1 }) => {
+export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, plan = 1, frecuency = 1, initialForm=1 }) => {
 
     const glosary = dict[lang].services
     const glosaryAdmin = dict[lang]?.adminProperties
     const glosaryAuth = dict[lang]?.auth
-  const { height, width } = useWindowDimensions();
+    const { height, width } = useWindowDimensions();
     const affiliateList = [
         {
             id: 1,
@@ -100,21 +102,21 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                     title: glosary.planTitle1,
                     content: glosary.planContent1,
                     list: glosary.planList1,
-                    price: 47.08,
+                    price: 48,
                 },
                 {
                     id: 2,
                     title: glosary.planTitle2,
                     content: glosary.planContent2,
                     list: glosary.planList2,
-                    price: 126.25,
+                    price: 132,
                 },
                 {
                     id: 3,
                     title: glosary.planTitle3,
                     content: glosary.planContent3,
                     list: glosary.planList3,
-                    price: 73.7,
+                    price: 78,
                 },
             ]
         },
@@ -128,21 +130,21 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                     title: glosary.planTitle1,
                     content: glosary.planContent1,
                     list: glosary.planList1,
-                    price: 85.6,
+                    price: 96.6,
                 },
                 {
                     id: 2,
                     title: glosary.planTitle2,
                     content: glosary.planContent2,
                     list: glosary.planList2,
-                    price: 229.5,
+                    price: 275.4,
                 },
                 {
                     id: 3,
                     title: glosary.planTitle3,
                     content: glosary.planContent3,
                     list: glosary.planList3,
-                    price: 134.0,
+                    price: 160.8,
                 },
             ]
         },
@@ -183,23 +185,47 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
             description: glosary.planContent3,
         }
     ]
+    const getPlanEnum = (id?:number):Plan=>{
+        let enumerable = Plan.Student
+        if(id === 2) return Plan.JobSeeker
+        if(id === 3) return Plan.Business
+        console.log('getPlanEnum: ', enumerable)
+        return enumerable
+    }
+    const getFrecuencyDate = (id?:number | string):Date=>{
+        let months = 1
+        if(id?.toString() === '2') months = 6
+        if(id?.toString() === '3') months = 12
+        const today = new Date()
+        console.log('getFrecuencyDate - Today date: ',today)
+        today.setMonth(today.getMonth() + months)
+        const expirationDate = new Date(today)
+        console.log('getFrecuencyDate - Expire date: ',expirationDate)
+        return expirationDate
+    }
+    const getPlanMonths = (id?:number | string):number=>{
+        let months = 1
+        if(id?.toString() === '2') months = 6
+        if(id?.toString() === '3') months = 12
+        return months
+    }
 
     const steps = [
         {
             index: 1,
             text: glosary.formPageLabel_1
         },
-        {
-            index: 2,
-            text: glosary.formPageLabel_2
-        },
+        // {
+        //     index: 2,
+        //     text: glosary.formPageLabel_2
+        // },
     ]
     const [page, setPage] = useState(1)
+    const [saferpayUrl, setSaferpayUrl] = useState<string|null>()
     const [countries, setCountries] = useState<ISelectElement[]>([])
     const [lastCode, setLastCode] = useState<string>()
     const [states, setStates] = useState<ISelectElement[]>([])
     const [planSelected, setPlanSelected] = useState<IPlan| undefined>()
-    const [frecuencySelected, setFrecuencySelected] = useState<number| string>(frecuency)
     const formRef_1 = useRef<FormikProps<IValues1>>(null)
     const formRef_2 = useRef<FormikProps<IValues2>>(null)
     const store = useStore(useAffiliateStore, (state) => state)
@@ -287,6 +313,36 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
         console.log('formik values', formData)
         try {
             store?.setForm_1(formData)
+            let affiliateStored = await showAffiliate({email:formData.email})
+            let affiliateId
+            console.log('there is a previous affiliate ', affiliateStored)
+            if(!affiliateStored){
+                const newAffiliate = await createAffiliate({
+                    email:formData.email || '',
+                    name:formData.name || '',
+                    phone:formData.phone || '',
+                    countryId: !!formData.country ? parseInt(formData.country) : 0,
+                    plan:getPlanEnum(planSelected?.id),
+                    plan_date:getFrecuencyDate(store?.frecuency),
+                    status:false,
+                })
+                console.log('there is a new affiliate ', newAffiliate)
+                formRef_1.current?.setFieldValue('id', newAffiliate.id)
+                affiliateId = newAffiliate.id
+                store.setAffiliateId(newAffiliate.id)
+            }else{
+                formRef_1.current?.setFieldValue('id', affiliateStored.id)
+                affiliateId = affiliateStored.id
+                store.setAffiliateId(affiliateStored.id)
+            }
+            console.log('making a saferpay bank request')
+            const response = await paymentInitialization(planSelected?.title || 'Description', planSelected?.price || 100, affiliateId, (window.location.origin + window.location.pathname), getPlanMonths(store?.frecuency))
+            console.log('repuesta del servidor: ',response)
+            if(response?.redirectUrl){
+                window.location.href = response?.redirectUrl
+            }else{
+                throw new Error('Failed comunication with Saferpay')
+            }
             setPage(2)
         } catch (e) {
             console.error(e)
@@ -318,6 +374,9 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
         formRef_2.current?.handleReset()
     }, [page])
     useEffect(() => {
+        setPage(initialForm)
+    }, [initialForm])
+    useEffect(() => {
         if (lastCode) {
             fetchStates(lastCode)
         }
@@ -339,7 +398,7 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                         <div className={styles.stepContainer}>
                             {
                                 steps.map(el => (
-                                    <div key={el.index} className={el.index === page ? styles.stepActive : styles.step}>
+                                    <div key={el.index} className={styles.stepActive}>
                                         <div className={styles.square}></div>
                                         <span className={styles.stepText}>
                                             {el.text}
@@ -349,7 +408,7 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                             }
                         </div>
                         <h3 className={styles.title} style={poppinsSemiBold.style}>
-                            {page === 1 ? glosary.formTitle_1 : glosary.formTitle_2}
+                            {glosary.formTitle_1}
                         </h3>
                         <div className={styles.formContainer}>
                             <div className={page === 1 ? styles.form_1 : styles.form_2}>
@@ -378,13 +437,33 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                                                 />
                                                 <InputSelect label={glosary.inputLabel_4} placeholder={glosary.inputPlaceholder_4} list={countries} onChange={handleCountry_1} error={errors.country} touched={touched.country} initialValue={values.country} />
                                                 <InputTextArea label={glosary.inputLabel_5} placeholder={glosary.inputPlaceholder_5} error={errors.note} touched={touched.note} value={values.note} onChange={handleChange('note')} />
+                                                <div className={styles.subtotalContainer}>
+                                                    <span className={styles.subtotalText}>
+                                                        {
+                                                            glosary.priceLabel
+                                                        }
+                                                    </span>
+                                                    <span className={styles.subtotalText}>
+                                                        {planSelected?.price.toLocaleString('es-es',{minimumFractionDigits: 2})}
+                                                        {' €'}
+                                                    </span>
+                                                </div>
 
+                                                <div className={styles.totalContainer}>
+                                                    <span className={styles.totalText} style={poppinsSemiBold.style}>
+                                                        {planSelected?.price.toLocaleString('es-es',{minimumFractionDigits: 2})}
+                                                        {' €'}
+                                                    </span>
+                                                    <span className={[globalStyles.smallText,globalStyles.textFaded].join(' ')}>
+                                                        {listFrecuency.find(el=>el.key.toString() === store?.frecuency?.toString())?.priceFrecuency}
+                                                    </span>
+                                                </div>
                                             </Form>
                                         )}
                                     </Formik>
                                 </div>
                                 <div className={styles.innerForm}>
-                                    <Formik
+                                    {/* <Formik
                                         key={2}
                                         initialValues={initialValues_2}
                                         validationSchema={validationSchema_2}
@@ -445,7 +524,14 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
 
                                             </Form>
                                         )}
-                                    </Formik>
+                                    </Formik> */}
+                                    {
+                                        !!saferpayUrl
+                                        &&
+                                        <iframe src={saferpayUrl} width={550} height={600}>
+
+                                        </iframe>
+                                    }
                                 </div>
                             </div>
                         </div>
@@ -464,7 +550,7 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                                 page === 2
                                 &&
                                 <>
-                                    <Button title={glosary.buttonAction_3} Icon={FaChevronLeft} type='outline' onClick={() => { setPage(1) }} />
+                                    <Button title={glosary.buttonAction_1} onClick={closeModal} Icon={FaChevronLeft} type='outline' />
                                     <Button title={glosary.buttonAction_4} grow={true} loading={formRef_2.current?.isSubmitting} onClick={onSubmit2} />
                                 </>
                             }

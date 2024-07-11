@@ -1,15 +1,11 @@
 'use client'
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from './page.module.css'
 import globalStyles from '@/app/globals.module.css'
-import imagen1 from '@/app/img/Recurso 35.png'
-import imagen2 from '@/app/img/Recurso 33.png'
-import imagen3 from '@/app/img/Recurso 36.png'
 import Section from '@/app/components/section'
 import { dict } from '@/app/utils'
 import useWindowDimensions from '@/app/hooks/useWindowDimensions'
 import { useRouter } from 'next/navigation'
-import { Metadata } from 'next'
 import HeaderServices from '@/app/components/headerServices'
 import AffiliatePlanList from '@/app/components/affiliatePlanList'
 import IconCheck from '@/app/components/icons/iconCheck'
@@ -64,22 +60,6 @@ const Services: React.FC<IPage> = ({ params: { lang } }) => {
       title: glosary.aditionalConsultTitle_6,
       content: glosary.aditionalConsultContent_6,
       align: "end",
-    },
-  ]
-  const serviciosAdicionales = [
-    {
-      img: imagen1,
-      description: glosary.aditionalService_1
-    },
-    {
-      img: imagen2,
-      description: glosary.aditionalService_2
-
-    },
-    {
-      img: imagen3,
-      description: glosary.aditionalService_3
-
     },
   ]
   return (

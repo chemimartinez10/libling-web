@@ -335,12 +335,21 @@ export interface IUpdateAffiliateData {
 	affiliate?: IAffiliateData; // Relationship with Affiliate model
 	affiliateId: number;
   }
-  export interface IUpdatePay {
+  export interface ICreatePay {
 	id?: number;
 	months: number;
 	quantity?: number;
 	status: boolean;
 	affiliateId: number;
+	reference?: string | null; // Uses UUID
+  }
+  export interface IUpdatePay {
+	id?: number;
+	months?: number;
+	quantity?: number;
+	status?: boolean;
+	affiliateId?: number;
+	reference?: string | null; // Uses UUID
   }
   export interface IAffiliateSearch {
 	id?: number
