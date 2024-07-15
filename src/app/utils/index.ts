@@ -397,7 +397,7 @@ export const dict = {
 			formPageLabel_1:"Datos personales",
 			formPageLabel_2:"Detalles de pago",
 			formTitle_1:"Datos básicos",
-			formTitle_2:"Información de pago",
+			formTitle_2:"Indícanos tu correo electrónico",
 			modalTitle:"Plan seleccionado",
 			inputLabel_1:"Nombre",
 			inputPlaceholder_1:"Escribe tu nombre",
@@ -435,6 +435,7 @@ export const dict = {
 			errorMessageContent:"No se pudo comprobar la información de su pago.",
 			infoMessageTitle:"Estamos verificando tu pago.",
 			infoMessageContent:"No salgas de esta página, mientras verificamos tu pago.",
+			errorFindAffiliate: "Este correo no se encuentra afiliado",
 		},
 		contact: {
 			miniTitleHeader1:"Embárcate en la aventura",
@@ -956,7 +957,7 @@ export const dict = {
 			formPageLabel_1: "Personal Information",
 			formPageLabel_2: "Payment Details",
 			formTitle_1: "Basic Information",
-			formTitle_2: "Payment Information",
+			formTitle_2: "Tell us your email address",
 			modalTitle: "Selected Plan",
 			inputLabel_1: "Name",
 			inputPlaceholder_1: "Enter your name",
@@ -994,6 +995,7 @@ export const dict = {
 			errorMessageContent: "Your payment information could not be verified.",
 			infoMessageTitle: "We are verifying your payment.",
 			infoMessageContent: "Please do not leave this page while we verify your payment.",
+			errorFindAffiliate: "This email is not affiliated",
 
 		},
 		contact: {
@@ -1520,7 +1522,7 @@ export const dict = {
 			formPageLabel_1: "Informations personnelles",
 			formPageLabel_2: "Détails du paiement",
 			formTitle_1: "Informations de base",
-			formTitle_2: "Informations de paiement",
+			formTitle_2: "Indiquez-nous votre adresse e-mail",
 			modalTitle: "Plan sélectionné",
 			inputLabel_1: "Nom",
 			inputPlaceholder_1: "Entrez votre nom",
@@ -1558,6 +1560,8 @@ export const dict = {
 			errorMessageContent: "Impossible de vérifier vos informations de paiement.",
 			infoMessageTitle: "Nous vérifions votre paiement.",
 			infoMessageContent: "Veuillez ne pas quitter cette page pendant que nous vérifions votre paiement.",
+			errorFindAffiliate: "Cet e-mail n'est pas affilié"
+
 		},
 		contact: {
 			miniTitleHeader1: "Embarquez pour l'aventure",

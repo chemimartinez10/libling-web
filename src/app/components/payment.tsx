@@ -48,13 +48,8 @@ interface IValues1 {
     note?: string
 }
 interface IValues2 {
-    name?: string
-    card?: string
-    country?: string
-    state?: string
-    cvc?: string
-    postal?: string
-    date?: string
+    email?: string
+
 }
 
 export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, plan = 1, frecuency = 1, initialForm=1 }) => {
@@ -238,13 +233,7 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
         note: store?.form_1?.note,
     }
     const initialValues_2: IValues2 = {
-        country: '',
-        card: '',
-        cvc: '',
-        date: '',
-        name: '',
-        postal: '',
-        state: ''
+        email: store?.form_1?.email
     }
     const onSubmit1 = () => {
         console.log(formRef_1.current)
@@ -271,17 +260,6 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
         console.log('country selected: ', countrySelected)
         setLastCode(countrySelected?.extra)
     }
-    const handleCountry_2 = (key: string) => {
-        console.log('selected key', key)
-        formRef_2.current?.setFieldValue('country', key)
-        const countrySelected = countries.find(el => el.key == key)
-        console.log('country selected: ', countrySelected)
-        setLastCode(countrySelected?.extra)
-    }
-    const handleState = (key: string) => {
-        console.log('selected key', key)
-        formRef_2.current?.setFieldValue('state', key)
-    }
     const handlePlan = (key: string|number) => {
         console.log('selected key', key)
         store?.setPlan(key?.toString())
@@ -299,13 +277,7 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
 
     });
     const validationSchema_2 = Yup.object({
-        name: Yup.string().required(glosaryAdmin.formValidationRequired),
-        card: Yup.string().matches(/^\D*\d{16}$/, glosaryAdmin.formValidationNumbers).required(glosaryAdmin.formValidationRequired),
-        cvc: Yup.string().matches(/^\D*\d{3}$/, glosaryAdmin.formValidationCvc).required(glosaryAdmin.formValidationRequired).typeError(glosaryAdmin.formValidationNumbers),
-        country: Yup.string().required(glosaryAdmin.formValidationRequired),
-        state: Yup.string().required(glosaryAdmin.formValidationRequired),
-        postal: Yup.string().matches(/^[\d -]+$/, glosaryAdmin.formValidationRequired).required(glosaryAdmin.formValidationRequired),
-        date: Yup.string().matches(/(0[1-9]|1[1,2])(\/|-)(19|20)\d{2}/, glosaryAdmin.formValidationCardDate).required(glosaryAdmin.formValidationRequired),
+        email: Yup.string().email(glosaryAdmin.formValidationEmail).required(glosaryAdmin.formValidationRequired),
 
     });
     const handleSubmit_1 = async (values: IValues1, { setSubmitting }: FormikHelpers<IValues1>) => {
@@ -343,7 +315,6 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
             }else{
                 throw new Error('Failed comunication with Saferpay')
             }
-            setPage(2)
         } catch (e) {
             console.error(e)
             toast.error(<CustomToast type='error' title='Error' content={glosaryAuth.error_default} />, { theme: 'colored', icon: false, style: { backgroundColor: '#FF4444', maxWidth: 450, padding: 24, borderRadius: 10 } })
@@ -356,8 +327,25 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
         const formData = values
         console.log('formik values', formData)
         try {
-            toast.success(<CustomToast type='success' title={glosary.successMessageTitle} content={glosary.successMessageContent} />, { theme: 'colored', icon: false, style: { backgroundColor: '#00C851', maxWidth: 450, padding: 24, borderRadius: 10 } })
-            closeModal()
+            store?.setForm_1(formData)
+            let affiliateStored = await showAffiliate({email:formData.email})
+            let affiliateId
+            console.log('there is a previous affiliate ', affiliateStored)
+            if(!affiliateStored){
+                return toast.error(<CustomToast type='error' title='Error' content={glosary.errorFindAffiliate} />, { theme: 'colored', icon: false, style: { backgroundColor: '#FF4444', maxWidth: 450, padding: 24, borderRadius: 10 } })
+            }else{
+                formRef_1.current?.setFieldValue('id', affiliateStored.id)
+                affiliateId = affiliateStored.id
+                store.setAffiliateId(affiliateStored.id)
+            }
+            console.log('making a saferpay bank request')
+            const response = await paymentInitialization(planSelected?.title || 'Description', planSelected?.price || 100, affiliateId, (window.location.origin + window.location.pathname), getPlanMonths(store?.frecuency))
+            console.log('repuesta del servidor: ',response)
+            if(response?.redirectUrl){
+                window.location.href = response?.redirectUrl
+            }else{
+                throw new Error('Failed comunication with Saferpay')
+            }
         } catch (e) {
             console.error(e)
             toast.error(<CustomToast type='error' title='Error' content={glosaryAuth.error_default} />, { theme: 'colored', icon: false, style: { backgroundColor: '#FF4444', maxWidth: 450, padding: 24, borderRadius: 10 } })
@@ -408,7 +396,7 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                             }
                         </div>
                         <h3 className={styles.title} style={poppinsSemiBold.style}>
-                            {glosary.formTitle_1}
+                            {page === 1 ? glosary.formTitle_1 : glosary.formTitle_2}
                         </h3>
                         <div className={styles.formContainer}>
                             <div className={page === 1 ? styles.form_1 : styles.form_2}>
@@ -463,7 +451,7 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                                     </Formik>
                                 </div>
                                 <div className={styles.innerForm}>
-                                    {/* <Formik
+                                    {<Formik
                                         key={2}
                                         initialValues={initialValues_2}
                                         validationSchema={validationSchema_2}
@@ -474,64 +462,11 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                                     >
                                         {({ isSubmitting, values, handleChange, errors, touched }) => (
                                             <Form className={styles.form}>
-                                                <InputText label={glosary.inputLabel_6} placeholder={glosary.inputPlaceholder_6} error={errors.card} touched={touched.card} value={values.card} onChange={handleChange('card')}
+                                                <InputText label={glosary.inputLabel_3} placeholder={glosary.inputPlaceholder_3} error={errors.email} touched={touched.email} value={values.email} onChange={handleChange('email')}
                                                 />
-                                                <InputText label={glosary.inputLabel_7} placeholder={glosary.inputPlaceholder_7} error={errors.name} touched={touched.name} value={values.name} onChange={handleChange('name')}
-                                                />
-                                                <div className={styles.inputRow}>
-                                                    <div className={styles.inputColumn}>
-                                                        <InputText label={glosary.inputLabel_8} placeholder={glosary.inputPlaceholder_8} error={errors.date} touched={touched.date} value={values.date} onChange={handleChange('date')}
-                                                        />
-                                                    </div>
-                                                    <div className={styles.inputColumn}>
-                                                        <InputText label={glosary.inputLabel_9} placeholder={glosary.inputPlaceholder_9} error={errors.cvc} touched={touched.cvc} value={values.cvc} onChange={handleChange('cvc')}
-                                                        />
-                                                    </div>
-                                                </div>
-
-                                                <InputSelect label={glosary.inputLabel_10} placeholder={glosary.inputPlaceholder_10} list={countries} onChange={handleCountry_2} error={errors.country} touched={touched.country} initialValue={values.country} />
-                                                <div className={styles.inputRow}>
-
-                                                    <div className={styles.inputColumn}>
-                                                        <InputSelect label={glosary.inputLabel_11} placeholder={glosary.inputPlaceholder_11} list={states} onChange={handleState} error={errors.state} touched={touched.state} initialValue={values.state} />
-                                                    </div>
-
-                                                    <div className={styles.inputColumn}>
-                                                        <InputText label={glosary.inputLabel_12} placeholder={glosary.inputPlaceholder_12} error={errors.postal} touched={touched.postal} value={values.postal} onChange={handleChange('postal')}
-                                                        />
-                                                    </div>
-                                                </div>
-                                                <div className={styles.subtotalContainer}>
-                                                    <span className={styles.subtotalText}>
-                                                        {
-                                                            glosary.priceLabel
-                                                        }
-                                                    </span>
-                                                    <span className={styles.subtotalText}>
-                                                        {planSelected?.price.toLocaleString('es-es',{minimumFractionDigits: 2})}
-                                                        {' €'}
-                                                    </span>
-                                                </div>
-                                                <div className={styles.totalContainer}>
-                                                    <span className={styles.totalText} style={poppinsSemiBold.style}>
-                                                        {planSelected?.price.toLocaleString('es-es',{minimumFractionDigits: 2})}
-                                                        {' €'}
-                                                    </span>
-                                                    <span className={[globalStyles.smallText,globalStyles.textFaded].join(' ')}>
-                                                        {listFrecuency.find(el=>el.key.toString() === store?.frecuency?.toString())?.priceFrecuency}
-                                                    </span>
-                                                </div>
-
                                             </Form>
                                         )}
-                                    </Formik> */}
-                                    {
-                                        !!saferpayUrl
-                                        &&
-                                        <iframe src={saferpayUrl} width={550} height={600}>
-
-                                        </iframe>
-                                    }
+                                    </Formik>}
                                 </div>
                             </div>
                         </div>
@@ -551,7 +486,7 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                                 &&
                                 <>
                                     <Button title={glosary.buttonAction_1} onClick={closeModal} Icon={FaChevronLeft} type='outline' />
-                                    <Button title={glosary.buttonAction_4} grow={true} loading={formRef_2.current?.isSubmitting} onClick={onSubmit2} />
+                                    <Button title={glosary.buttonAction_2} grow={true} loading={formRef_2.current?.isSubmitting} onClick={onSubmit2} />
                                 </>
                             }
                         </div>
