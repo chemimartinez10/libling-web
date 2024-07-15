@@ -1,4 +1,4 @@
-import { IMetaPaginate, IPropertyData, IPropertyOrderBy, IPropertySearch } from "./models"
+import { IAffiliateData, IMetaPaginate, IPropertyData, IPropertyOrderBy, IPropertySearch } from "./models"
 
 export type countryType = "ES" | "AE" | "LU" | "ALL"
 export type langType = "es" | "en" | "fr"
@@ -83,6 +83,12 @@ export interface IInputSelectButton {
     disabled?: boolean
     grow?: boolean
 }
+export interface ILinkSelect {
+	list: ISelectElement[]
+	lang?: langType
+    title: string
+    disabled?: boolean
+}
 export interface IInputRadio {
 	label: string
 	onChange?: (e: boolean) => void
@@ -133,6 +139,12 @@ export interface IPropertyCategory {
 export interface IPropertyList{
 	lang: 'es' | 'en' | 'fr'
 	initialData?: IPropertyData[] | null
+	metaData?: IMetaPaginate
+	
+}
+export interface IAffiliateList{
+	lang: 'es' | 'en' | 'fr'
+	initialData?: IAffiliateData[] | null
 	metaData?: IMetaPaginate
 	
 }

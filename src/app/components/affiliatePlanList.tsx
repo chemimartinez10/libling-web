@@ -8,6 +8,10 @@ import { Payment } from './payment'
 import ReactModal from 'react-modal'
 import useStore from '../hooks/useStore'
 import { useAffiliateStore } from '../hooks/useAffiliateStore'
+import { useSearchParams } from 'next/navigation'
+import { toast } from 'react-toastify';
+import CustomToast from './toast';
+import { paymentAssert, verifyPayStatus } from '@/services'
 
 interface IAffiliatePlanList{
     lang: "es" | "en" | "fr"
@@ -18,6 +22,9 @@ const AffiliatePlanList:React.FC<IAffiliatePlanList> = ({lang}) => {
     ReactModal.setAppElement('#main')
     const glosary = dict[lang]?.services
     const [ open, setOpen ] = useState(false);
+    const [initialForm, setInitialForm] = useState(1)
+    const [isVerifying, setIsVerifying] = useState(false)
+    const query = useSearchParams()
     const affiliateList = [
         {
             id:1,
@@ -53,25 +60,25 @@ const AffiliatePlanList:React.FC<IAffiliatePlanList> = ({lang}) => {
             priceFrecuency:glosary.sectionOptionBy2,
             plans:[
                 {
-                    id:1,
-                    title:glosary.planTitle1,
-                    content:glosary.planContent1,
-                    list:glosary.planList1,
-                    price:47.08,
+                    id: 1,
+                    title: glosary.planTitle1,
+                    content: glosary.planContent1,
+                    list: glosary.planList1,
+                    price: 48,
                 },
                 {
-                    id:2,
-                    title:glosary.planTitle2,
-                    content:glosary.planContent2,
-                    list:glosary.planList2,
-                    price:126.25,
+                    id: 2,
+                    title: glosary.planTitle2,
+                    content: glosary.planContent2,
+                    list: glosary.planList2,
+                    price: 132,
                 },
                 {
-                    id:3,
-                    title:glosary.planTitle3,
-                    content:glosary.planContent3,
-                    list:glosary.planList3,
-                    price:73.7,
+                    id: 3,
+                    title: glosary.planTitle3,
+                    content: glosary.planContent3,
+                    list: glosary.planList3,
+                    price: 78,
                 },
             ]   
         },
@@ -81,25 +88,25 @@ const AffiliatePlanList:React.FC<IAffiliatePlanList> = ({lang}) => {
             priceFrecuency:glosary.sectionOptionBy3,
             plans:[
                 {
-                    id:1,
-                    title:glosary.planTitle1,
-                    content:glosary.planContent1,
-                    list:glosary.planList1,
-                    price:85.6,
+                    id: 1,
+                    title: glosary.planTitle1,
+                    content: glosary.planContent1,
+                    list: glosary.planList1,
+                    price: 96.6,
                 },
                 {
-                    id:2,
-                    title:glosary.planTitle2,
-                    content:glosary.planContent2,
-                    list:glosary.planList2,
-                    price:229.5,
+                    id: 2,
+                    title: glosary.planTitle2,
+                    content: glosary.planContent2,
+                    list: glosary.planList2,
+                    price: 275.4,
                 },
                 {
-                    id:3,
-                    title:glosary.planTitle3,
-                    content:glosary.planContent3,
-                    list:glosary.planList3,
-                    price:134.0,
+                    id: 3,
+                    title: glosary.planTitle3,
+                    content: glosary.planContent3,
+                    list: glosary.planList3,
+                    price: 160.8,
                 },
             ]   
         },
@@ -140,10 +147,37 @@ const AffiliatePlanList:React.FC<IAffiliatePlanList> = ({lang}) => {
         store?.setPlan(key)
         setOpen(true)
     }
+    const handlePayVerification = async (payId:string)=>{
+        const isWaitingVerify = await verifyPayStatus(payId)
+        if(isWaitingVerify){
+            toast.warning(<CustomToast type='warning' title={glosary.infoMessageTitle} content={glosary.infoMessageContent} />, { theme: 'colored', icon: false, style: { backgroundColor: '#FFBB33', maxWidth: 450, padding: 24, borderRadius: 10 } })
+            setIsVerifying(true)
+            const verifyResponse = await paymentAssert(isWaitingVerify)
+            if(verifyResponse.status === 200){
+                toast.success(<CustomToast type='success' title={glosary.successMessageTitle} content={glosary.successMessageContent} />, { theme: 'colored', icon: false, style: { backgroundColor: '#00C851', maxWidth: 450, padding: 24, borderRadius: 10 } })
+            }else{
+                toast.error(<CustomToast type='error' title={glosary.errorMessageTitle} content={glosary.errorMessageContent} />, { theme: 'colored', icon: false, style: { backgroundColor: '#FF4444', maxWidth: 450, padding: 24, borderRadius: 10 } })
+            }
+        }else{
+            window.location.href = (window.location.origin + window.location.pathname)
+        }
+        
+    }
 
     useEffect(()=>{
         setFrecuencyName(listFrecuency?.find(el=>el.key == store?.frecuency)?.priceFrecuency || glosary.sectionOptionBy1)
     },[store?.frecuency])
+    useEffect(()=>{
+        const payQuery = query.get('pay')
+        const memberQuery = query.get('member')
+        if(payQuery && (parseInt(payQuery || '0') > 0) && isVerifying === false){
+            handlePayVerification(payQuery)
+        }
+        if(memberQuery && (memberQuery === '1' || memberQuery === '2')){
+          setInitialForm(parseInt(memberQuery))
+          setOpen(true)
+        }
+      }, [query])
 
     return (
     <>
@@ -157,7 +191,7 @@ const AffiliatePlanList:React.FC<IAffiliatePlanList> = ({lang}) => {
                 </div>
             </div>
         </div>
-        <Payment open={open} closeModal={()=>{setOpen(false)}} lang={lang} plan={plan} frecuency={frecuency} changeFrecuency={handleFrecuency}/>
+        <Payment open={open} closeModal={()=>{setOpen(false)}} lang={lang} plan={plan} frecuency={frecuency} changeFrecuency={handleFrecuency} initialForm={initialForm}/>
     </>
     )
 }
