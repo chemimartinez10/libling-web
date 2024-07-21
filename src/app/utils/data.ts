@@ -1,3 +1,5 @@
+export const FEE_MULTIPLY = 1.17
+export const FEE = 0.17
 export const rentPaymentPeriods = [
     { key: 1, value: "mo.", description: "Monthly" },
     { key: 2, value: "bi-wkly", description: "Bi-weekly" },

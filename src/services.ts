@@ -4,6 +4,7 @@ import {
 	IAffiliateData,
 	IAffiliateOrderBy,
 	IAffiliateSearch,
+	ICreateAffiliateData,
 	ICreatePay,
 	IMetaPaginate,
 	IPayOrderBy,
@@ -22,6 +23,8 @@ import { cookies } from "next/headers"
 import countries from "@/app/utils/countries.json"
 import axios, { AxiosRequestConfig } from "axios"
 import { randomUUID } from "crypto"
+import { FEE_MULTIPLY } from "./app/utils/data"
+import { sendEmail } from "./app/utils/emails"
 const saltRounds = 12
 
 const prisma = new PrismaClient()
@@ -471,7 +474,7 @@ export const updatePay = async (data: IUpdatePay) => {
 		process.exit(1)
 	}
 }
-export const createAffiliate = async (data: IUpdateAffiliateData) => {
+export const createAffiliate = async (data: ICreateAffiliateData) => {
 	try {
 		const affiliate = await prisma.affiliate.create({ data })
 		console.log("createAffiliate service for: ", affiliate)
@@ -491,6 +494,7 @@ export const updateAffiliate = async (data: IUpdateAffiliateData) => {
 		})
 		console.log(affiliate)
 		await prisma.$disconnect()
+		return affiliate
 	} catch (e) {
 		console.error(e)
 		await prisma.$disconnect()
@@ -621,7 +625,7 @@ export const paymentInitialization = async (
 	const newPay = await createPay({
 		affiliateId,
 		status: false,
-		quantity: price,
+		quantity: price * FEE_MULTIPLY,
 		months,
 	})
 	const data = {
@@ -694,6 +698,17 @@ export const paymentAssert = async (payId: number) => {
 			id: pay.id,
 			status: true,
 		})
+		//actuliza el afiliado
+		const affiliate = await showAffiliate({id:updatedPay.affiliateId})
+		const newDate = new Date(affiliate?.plan_date || '')
+		if(affiliate?.plan_date){
+			newDate.setMonth(affiliate?.plan_date.getMonth() + updatedPay.months)
+		}
+		const updatedAffiliate = await updateAffiliate({
+			id:updatedPay.affiliateId,
+			plan_date: affiliate?.plan_date ? newDate : undefined,
+			status:newDate > new Date(),
+		})
 		return {
 			redirectUrl: response.data?.RedirectUrl,
 			status: 200,
@@ -701,6 +716,7 @@ export const paymentAssert = async (payId: number) => {
 				...updatedPay,
 				quantity: updatedPay.quantity?.toFixed(2),
 			},
+			affiliate:updatedAffiliate
 		}
 	} catch (e) {
 		console.error(e)

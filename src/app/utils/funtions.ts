@@ -1,4 +1,14 @@
+import { Plan } from "@prisma/client"
 import { dict } from "."
+import { IAffiliateData, IAffiliateShow } from "../interfaces/models"
+
+export const getPlanEnum = (id?:number):Plan=>{
+	let enumerable = Plan.Student
+	if(id === 2) return Plan.JobSeeker
+	if(id === 3) return Plan.Business
+	console.log('getPlanEnum: ', enumerable)
+	return enumerable
+}
 
 export const templates = {
 	forgotPassword: (name: string, url: string) => `
@@ -46,6 +56,29 @@ export const templates = {
 				glosary.affiliateContent_3,
 				glosary.affiliateContent_4,
 				glosary.affiliateContent_5,
+			],
+			lang
+		)
+	},
+	affiliateAdmin: (lang: "es" | "en" | "fr", affiliate: IAffiliateShow) => {
+		const glosary = dict[lang].mail
+		const glosaryHome = dict[lang].home
+		const glosaryService = dict[lang].services
+		const plans = {
+			'Student':glosaryService.planTitle1,
+			'JobSeeker':glosaryService.planTitle2,
+			'Business':glosaryService.planTitle3,
+		}
+		return emailBase(
+			glosaryHome.bigTitleHeader1_1 + glosaryHome.bigTitleHeader1_2,
+			glosary.affiliateTitleAdmin,
+			[
+				glosaryService.inputLabel_1+': ' + affiliate.name,
+				glosaryService.inputLabel_2+': ' + affiliate.phone,
+				glosaryService.inputLabel_3+': ' + affiliate.email,
+				glosaryService.inputLabel_4+': ' + affiliate.country.name,
+				glosaryService.planDate+': ' + affiliate.plan_date.toDateString(),
+				glosaryService.plan+': ' + plans[affiliate.plan]
 			],
 			lang
 		)

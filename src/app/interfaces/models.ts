@@ -313,7 +313,19 @@ export interface IAffiliateData {
 	countryId: number;
 	Pay: IPay[]; // List of related Pay models
   }
-export interface IUpdateAffiliateData {
+export interface IAffiliateShow {
+	id: number;
+	name: string;
+	email: string; // Unique identifier
+	status: boolean;
+	phone: string;
+	plan: 'Student'|'JobSeeker'|'Business';
+	plan_date: Date;
+	country: ICountry; // Relationship with Country model
+	countryId: number;
+	Pay: IPayOriginal[]; // List of related Pay models
+  }
+export interface ICreateAffiliateData {
 	id?: number;
 	name: string;
 	email: string; // Unique identifier
@@ -323,8 +335,28 @@ export interface IUpdateAffiliateData {
 	plan_date: Date;
 	countryId: number;
   }
+export interface IUpdateAffiliateData {
+	id: number;
+	name?: string;
+	email?: string; // Unique identifier
+	status?: boolean;
+	phone?: string;
+	plan?: 'Student'|'JobSeeker'|'Business';
+	plan_date?: Date;
+	countryId?: number;
+  }
   
   // Interface for Pay model
+  export interface IPayOriginal {
+	id: number;
+	date?: Date | null;
+	reference?: string | null; // Uses UUID
+	months: number;
+	quantity?: Decimal | null;
+	status: boolean;
+	affiliate?: IAffiliateData; // Relationship with Affiliate model
+	affiliateId: number;
+  }
   export interface IPay {
 	id: number;
 	date?: Date | null;

@@ -182,10 +182,18 @@
 
 .totalContainer {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--color-border-primary, #0000001F);
+    padding-top: 4px;
+    gap: 2px;
+}
+.totalPriceContainer {
+    display: flex;
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
-    border-top: 1px solid var(--color-border-primary, #0000001F);
     padding-top: 4px;
     gap: 2px;
 }

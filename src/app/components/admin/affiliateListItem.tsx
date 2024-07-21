@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import styles from './propertyList.module.css'
+import styles from './affiliateList.module.css'
 import globalStyles from '@/app/globals.module.css'
 import { IAffiliateData, IPropertyData } from '@/app/interfaces/models'
 import { poppinsMedium } from '@/app/fonts'
@@ -22,7 +22,7 @@ interface IListItem {
 
 const AffiliateListItem: React.FC<IListItem> = ({ item, lang, onSelect, onPreview, onDelete, isChecked = false }) => {
     const glosaryData = dict[lang].data
-    const glosaryAdmin = dict[lang].adminProperties
+    const glosaryAdmin = dict[lang].adminAffiliate
     const glosary = dict[lang].immo
     const [checked, setChecked] = useState(isChecked)
     const handleSelect = (event: React.FormEvent<HTMLInputElement>) => {
@@ -55,7 +55,7 @@ const AffiliateListItem: React.FC<IListItem> = ({ item, lang, onSelect, onPrevie
             </td>
             <td>
                 {
-                    item.status
+                    (!!item?.plan_date && item?.plan_date > new Date())
                         ?
                         <span className={styles.badgeActive}>
                             {glosaryAdmin.listActive}
