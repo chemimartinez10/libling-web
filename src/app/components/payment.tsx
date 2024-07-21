@@ -325,6 +325,7 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
             }
         } catch (e) {
             console.error(e)
+            setSubmitting(false)
             toast.error(<CustomToast type='error' title='Error' content={glosaryAuth.error_default} />, { theme: 'colored', icon: false, style: { backgroundColor: '#FF4444', maxWidth: 450, padding: 24, borderRadius: 10 } })
         } finally {
             setSubmitting(false)
@@ -360,6 +361,7 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
             }
         } catch (e) {
             console.error(e)
+            setSubmitting(false)
             toast.error(<CustomToast type='error' title='Error' content={glosaryAuth.error_default} />, { theme: 'colored', icon: false, style: { backgroundColor: '#FF4444', maxWidth: 450, padding: 24, borderRadius: 10 } })
         } finally {
             setSubmitting(false)

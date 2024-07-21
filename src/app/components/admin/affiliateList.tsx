@@ -132,7 +132,7 @@ const AffiliateList: React.FC<IAffiliateList> = ({ lang, initialData, metaData }
                             {glosary.listLastPay}
                         </span>
                         <span style={poppinsSemiBold.style} className={styles.rowDescriptionBase}>
-                            {affiliate?.Pay?.at(0)?.date?.toLocaleString(lang, {dateStyle:'medium', timeStyle:'medium', hour12:true})}
+                            {affiliate?.Pay?.at(-1)?.date?.toLocaleString(lang, {dateStyle:'medium', timeStyle:'medium', hour12:true})}
                         </span>
                     </div>
                     <div className={styles.rowDescription}>
@@ -151,6 +151,14 @@ const AffiliateList: React.FC<IAffiliateList> = ({ lang, initialData, metaData }
                                 {glosary.listInactive}
                             </span>
                         }
+                    </div>
+                    <div className={styles.rowDescription}>
+                        <span className={styles.rowDescriptionBase}>
+                            {glosaryService.planDate}
+                        </span>
+                        <span style={poppinsSemiBold.style} className={styles.rowDescriptionBase}>
+                            {affiliate?.plan_date?.toLocaleString(lang, {dateStyle:'medium', timeStyle:'medium', hour12:true})}
+                        </span>
                     </div>
                 </div>
                 <div className={styles.modalList}>
@@ -171,8 +179,9 @@ const AffiliateList: React.FC<IAffiliateList> = ({ lang, initialData, metaData }
                             {glosary.detailColumn3}
                         </div>
                     </div>
+                    <div style={{maxHeight:200, overflowY:'scroll'}}>
                     {
-                        affiliate?.Pay.filter(el=>el.status).map((el,index) => (
+                        affiliate?.Pay.filter(el=>el.status).reverse().map((el,index) => (
                             <div className={styles.listRow} key={index}>
                                 <div className={styles.listColumnContent}>
                                     {el.reference}
@@ -186,6 +195,8 @@ const AffiliateList: React.FC<IAffiliateList> = ({ lang, initialData, metaData }
                             </div>
                         ))
                     }
+
+                    </div>
                 </div>
                 <div className={styles.modalButtons}>
                     <Button title={glosary.detailAction} type='outline' onClick={() => { setOpenPreview(false) }} />
@@ -195,7 +206,7 @@ const AffiliateList: React.FC<IAffiliateList> = ({ lang, initialData, metaData }
                 <div className={styles.cardHeader}>
                     <h2 className={styles.cardTitle} style={poppinsMedium.style}>{glosary.indexTitle}</h2>
                     <div className={styles.listTools}>
-                        <InputSearch placeholder={glosaryImmo.headerButton} />
+                        {/* <InputSearch placeholder={glosaryImmo.headerButton} /> */}
                     </div>
                 </div>
             </div>

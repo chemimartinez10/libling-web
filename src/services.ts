@@ -638,7 +638,7 @@ export const paymentInitialization = async (
 		TerminalId: process.env.SAFERPAY_API_TERMINAL_ID,
 		Payment: {
 			Amount: {
-				Value: price * 100,
+				Value: parseFloat((price * FEE_MULTIPLY * 100).toFixed(2)),
 				CurrencyCode: "EUR",
 			},
 			OrderId: paysCount + 1,

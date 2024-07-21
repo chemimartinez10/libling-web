@@ -12,7 +12,7 @@ import { useSearchParams } from 'next/navigation'
 import { toast } from 'react-toastify';
 import CustomToast from './toast';
 import { paymentAssert, showAffiliate, verifyPayStatus } from '@/services'
-import { sendEmail } from '../utils/emails'
+import { sendAffiliate, sendAffiliateAdmin, sendEmail } from '../utils/emails'
 import { templates } from '../utils/funtions'
 
 interface IAffiliatePlanList{
@@ -158,7 +158,7 @@ const AffiliatePlanList:React.FC<IAffiliatePlanList> = ({lang}) => {
             setIsVerifying(true)
             const verifyResponse = await paymentAssert(isWaitingVerify)
             if(verifyResponse.status === 200 && !!verifyResponse.affiliate){
-                sendEmail(
+                sendAffiliate(
                     verifyResponse.affiliate?.email || 'email',
                     templates.affiliate(lang),
                     glosaryMail.affiliateTitle
@@ -166,7 +166,7 @@ const AffiliatePlanList:React.FC<IAffiliatePlanList> = ({lang}) => {
                 toast.success(<CustomToast type='success' title={glosary.successMessageTitle} content={glosary.successMessageContent} />, { theme: 'colored', icon: false, style: { backgroundColor: '#00C851', maxWidth: 450, padding: 24, borderRadius: 10 } })
                 const affiliate = await showAffiliate({id:verifyResponse.affiliate.id})
                 if(affiliate){
-                    await sendEmail(
+                    await sendAffiliateAdmin(
                         verifyResponse.affiliate?.email || 'email',
                         templates.affiliateAdmin(lang, affiliate),
                         glosaryMail.affiliateTitle

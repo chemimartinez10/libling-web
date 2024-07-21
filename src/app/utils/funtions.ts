@@ -311,7 +311,7 @@ const emailBase = (
 							${title}
 						</h1>
 						<p class="contentText">
-							${text.map((el) => "<span>" + el + "</span>")}
+							${text.map((el) => "<span>" + el + "</span>").join('')}
 							<span style="font-weight: 700;">${glosary.contentBottom}</span>
 						</p>
 					</div>
