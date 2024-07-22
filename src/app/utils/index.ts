@@ -1473,7 +1473,7 @@ export const dict = {
 		},
 		services: {
 			bigTitleHeader1_1: "Déménager au Luxembourg n'a jamais été aussi facile",
-			commonHeader1: "Assurez votre déménagement au Luxembourg avec l'accompagnement professionnel de",
+			commonHeader1: "Assurez votre déménagement au Luxembourg avec l'accompagnement professionnel de ",
 			commonHeader2: "Libling Solutions",
 			commonHeader3: ", à votre service.",
 			sectionTitle_1: "Affiliations",
