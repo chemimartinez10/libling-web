@@ -12,7 +12,7 @@ import { Form, Formik, FormikHelpers, FormikProps } from 'formik'
 import InputSelect from './admin/inputSelect'
 import { InputTextArea } from './admin/inputTextArea'
 import { ISelectElement } from '../interfaces'
-import { createAffiliate, getCountries, getStatesByCode, paymentInitialization, showAffiliate } from '@/services'
+import { createAffiliate, getCountries, getStatesByCode, paymentInitialization, showAffiliate, updateAffiliate } from '@/services'
 import { useStore } from 'zustand';
 import { toast } from 'react-toastify';
 import CustomToast from './toast';
@@ -23,6 +23,7 @@ import InputSelectButton from './admin/inputSelectButton';
 import IconCheck from './icons/iconCheck';
 import useWindowDimensions from '../hooks/useWindowDimensions';
 import { Plan } from '@prisma/client';
+import { FEE, FEE_MULTIPLY } from '../utils/data';
 
 interface IPayment {
     open: boolean
@@ -220,7 +221,7 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
     const [countries, setCountries] = useState<ISelectElement[]>([])
     const [lastCode, setLastCode] = useState<string>()
     const [states, setStates] = useState<ISelectElement[]>([])
-    const [planSelected, setPlanSelected] = useState<IPlan| undefined>()
+    const [planSelected, setPlanSelected] = useState<IPlan| undefined>(affiliateList?.at(0)?.plans?.at(0))
     const formRef_1 = useRef<FormikProps<IValues1>>(null)
     const formRef_2 = useRef<FormikProps<IValues2>>(null)
     const store = useStore(useAffiliateStore, (state) => state)
@@ -295,7 +296,7 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                     phone:formData.phone || '',
                     countryId: !!formData.country ? parseInt(formData.country) : 0,
                     plan:getPlanEnum(planSelected?.id),
-                    plan_date:getFrecuencyDate(store?.frecuency),
+                    plan_date:new Date(),
                     status:false,
                 })
                 console.log('there is a new affiliate ', newAffiliate)
@@ -303,6 +304,13 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                 affiliateId = newAffiliate.id
                 store.setAffiliateId(newAffiliate.id)
             }else{
+                await updateAffiliate({
+                    id:affiliateStored.id,
+                    name:formData.name || '',
+                    phone:formData.phone || '',
+                    countryId: !!formData.country ? parseInt(formData.country) : 0,
+                    plan:getPlanEnum(planSelected?.id),
+                })
                 formRef_1.current?.setFieldValue('id', affiliateStored.id)
                 affiliateId = affiliateStored.id
                 store.setAffiliateId(affiliateStored.id)
@@ -317,6 +325,7 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
             }
         } catch (e) {
             console.error(e)
+            setSubmitting(false)
             toast.error(<CustomToast type='error' title='Error' content={glosaryAuth.error_default} />, { theme: 'colored', icon: false, style: { backgroundColor: '#FF4444', maxWidth: 450, padding: 24, borderRadius: 10 } })
         } finally {
             setSubmitting(false)
@@ -334,6 +343,10 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
             if(!affiliateStored){
                 return toast.error(<CustomToast type='error' title='Error' content={glosary.errorFindAffiliate} />, { theme: 'colored', icon: false, style: { backgroundColor: '#FF4444', maxWidth: 450, padding: 24, borderRadius: 10 } })
             }else{
+                await updateAffiliate({
+                    id:affiliateStored.id,
+                    plan:getPlanEnum(planSelected?.id),
+                })
                 formRef_1.current?.setFieldValue('id', affiliateStored.id)
                 affiliateId = affiliateStored.id
                 store.setAffiliateId(affiliateStored.id)
@@ -348,6 +361,7 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
             }
         } catch (e) {
             console.error(e)
+            setSubmitting(false)
             toast.error(<CustomToast type='error' title='Error' content={glosaryAuth.error_default} />, { theme: 'colored', icon: false, style: { backgroundColor: '#FF4444', maxWidth: 450, padding: 24, borderRadius: 10 } })
         } finally {
             setSubmitting(false)
@@ -436,15 +450,37 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                                                         {' €'}
                                                     </span>
                                                 </div>
-
-                                                <div className={styles.totalContainer}>
-                                                    <span className={styles.totalText} style={poppinsSemiBold.style}>
-                                                        {planSelected?.price.toLocaleString('es-es',{minimumFractionDigits: 2})}
+                                                <div className={styles.subtotalContainer}>
+                                                    <span className={styles.subtotalText}>
+                                                        {
+                                                            glosary.feeLabel
+                                                        }
+                                                        {
+                                                            ' (17.00%)'
+                                                        }
+                                                    </span>
+                                                    <span className={styles.subtotalText}>
+                                                        {((planSelected?.price || 0) * FEE).toLocaleString('es-es',{minimumFractionDigits: 2, maximumFractionDigits:2})}
                                                         {' €'}
                                                     </span>
-                                                    <span className={[globalStyles.smallText,globalStyles.textFaded].join(' ')}>
-                                                        {listFrecuency.find(el=>el.key.toString() === store?.frecuency?.toString())?.priceFrecuency}
-                                                    </span>
+                                                </div>
+
+                                                <div className={styles.totalContainer}>
+                                                    <span className={styles.subtotalText}>
+                                                            {
+                                                                glosary.priceTotalLabel
+                                                            }
+                                                        </span>
+                                                        <div className={styles.totalPriceContainer}>
+                                                            <span className={styles.totalText} style={poppinsSemiBold.style}>
+                                                                {((planSelected?.price || 0) * FEE_MULTIPLY).toLocaleString('es-es',{minimumFractionDigits: 2, maximumFractionDigits:2})}
+                                                                {' €'}
+                                                            </span>
+                                                            <span className={[globalStyles.smallText,globalStyles.textFaded].join(' ')}>
+                                                                {listFrecuency.find(el=>el.key.toString() === store?.frecuency?.toString())?.priceFrecuency}
+                                                            </span>
+
+                                                        </div>
                                                 </div>
                                             </Form>
                                         )}
@@ -461,9 +497,53 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
 
                                     >
                                         {({ isSubmitting, values, handleChange, errors, touched }) => (
-                                            <Form className={styles.form}>
+                                            <Form className={styles.form} style={{flexGrow:1, justifyContent:'space-between'}}>
                                                 <InputText label={glosary.inputLabel_3} placeholder={glosary.inputPlaceholder_3} error={errors.email} touched={touched.email} value={values.email} onChange={handleChange('email')}
                                                 />
+                                                <div className={styles.form}>
+                                                    <div className={styles.subtotalContainer}>
+                                                        <span className={styles.subtotalText}>
+                                                            {
+                                                                glosary.priceLabel
+                                                            }
+                                                        </span>
+                                                        <span className={styles.subtotalText}>
+                                                            {planSelected?.price.toLocaleString('es-es',{minimumFractionDigits: 2})}
+                                                            {' €'}
+                                                        </span>
+                                                    </div>
+                                                    <div className={styles.subtotalContainer}>
+                                                        <span className={styles.subtotalText}>
+                                                            {
+                                                                glosary.feeLabel
+                                                            }
+                                                            {
+                                                                ' (17.00%)'
+                                                            }
+                                                        </span>
+                                                        <span className={styles.subtotalText}>
+                                                            {((planSelected?.price || 0) * FEE).toLocaleString('es-es',{minimumFractionDigits: 2, maximumFractionDigits:2})}
+                                                            {' €'}
+                                                        </span>
+                                                    </div>
+                                                    <div className={styles.totalContainer}>
+                                                        <span className={styles.subtotalText}>
+                                                                {
+                                                                    glosary.priceTotalLabel
+                                                                }
+                                                            </span>
+                                                            <div className={styles.totalPriceContainer}>
+                                                                <span className={styles.totalText} style={poppinsSemiBold.style}>
+                                                                    {((planSelected?.price || 0) * FEE_MULTIPLY).toLocaleString('es-es',{minimumFractionDigits: 2, maximumFractionDigits:2})}
+                                                                    {' €'}
+                                                                </span>
+                                                                <span className={[globalStyles.smallText,globalStyles.textFaded].join(' ')}>
+                                                                    {listFrecuency.find(el=>el.key.toString() === store?.frecuency?.toString())?.priceFrecuency}
+                                                                </span>
+
+                                                            </div>
+                                                    </div>
+                                                </div>
                                             </Form>
                                         )}
                                     </Formik>}

@@ -436,6 +436,10 @@ export const dict = {
 			infoMessageTitle:"Estamos verificando tu pago.",
 			infoMessageContent:"No salgas de esta página, mientras verificamos tu pago.",
 			errorFindAffiliate: "Este correo no se encuentra afiliado",
+			priceTotalLabel:"Total",
+			feeLabel:"Impuesto",
+			planDate:"Fecha de corte",
+			plan:"Plan",
 		},
 		contact: {
 			miniTitleHeader1:"Embárcate en la aventura",
@@ -540,6 +544,7 @@ export const dict = {
 			failed: "No se ha podido completar la solicitud",
 
 			affiliateTitle:"Gracias por unirte a nuestra familia",
+			affiliateTitleAdmin:"Se ha registrado un nuevo pago de afiliado",
 			affiliateContent_1:"¡Te damos la bienvenida!",
 			affiliateContent_2:"En Libling estamos muy contentos de que te hayas unido a nuestro programa de afiliados.",
 			affiliateContent_3:"Tu decisión de formar parte de nuestra comunidad nos llena de alegría y nos impulsa a seguir ofreciendo el mejor servicio a quienes buscan un nuevo comienzo en Luxemburgo.",
@@ -996,6 +1001,10 @@ export const dict = {
 			infoMessageTitle: "We are verifying your payment.",
 			infoMessageContent: "Please do not leave this page while we verify your payment.",
 			errorFindAffiliate: "This email is not affiliated",
+			priceTotalLabel: "Total",
+  			feeLabel: "Tax",
+			planDate: "Cut-off date",
+  			plan: "Plan"
 
 		},
 		contact: {
@@ -1101,6 +1110,7 @@ export const dict = {
 			failed: "Your request could not be completed",
 
 			affiliateTitle: "Thank you for joining our family",
+			affiliateTitleAdmin: "A new affiliate payment has been registered",
 			affiliateContent_1: "Welcome!",
 			affiliateContent_2: "At Libling, we are delighted that you have joined our affiliate program.",
 			affiliateContent_3: "Your decision to be part of our community fills us with joy and motivates us to continue offering the best service to those seeking a new beginning in Luxembourg.",
@@ -1560,7 +1570,11 @@ export const dict = {
 			errorMessageContent: "Impossible de vérifier vos informations de paiement.",
 			infoMessageTitle: "Nous vérifions votre paiement.",
 			infoMessageContent: "Veuillez ne pas quitter cette page pendant que nous vérifions votre paiement.",
-			errorFindAffiliate: "Cet e-mail n'est pas affilié"
+			errorFindAffiliate: "Cet e-mail n'est pas affilié",
+			priceTotalLabel: "Total",
+  			feeLabel: "Taxe",
+			planDate: "Date limite",
+  			plan: "Plan"
 
 		},
 		contact: {
@@ -1666,6 +1680,7 @@ export const dict = {
 			failed: "La demande n'a pas pu être complétée",
 
 			affiliateTitle: "Merci de rejoindre notre famille",
+			affiliateTitleAdmin: "Un nouveau paiement d'affiliation a été enregistré",
 			affiliateContent_1: "Bienvenue !",
 			affiliateContent_2: "Chez Libling, nous sommes ravis que vous ayez rejoint notre programme d'affiliation.",
 			affiliateContent_3: "Votre décision de faire partie de notre communauté nous remplit de joie et nous motive à continuer à offrir le meilleur service à ceux qui recherchent un nouveau départ au Luxembourg.",

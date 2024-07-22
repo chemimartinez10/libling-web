@@ -1,18 +1,17 @@
 'use client'
-import { IAffiliateList, IPropertyList } from '@/app/interfaces'
+import { IAffiliateList } from '@/app/interfaces'
 import React, { useEffect, useState } from 'react'
 import styles from './affiliateList.module.css'
-import globalStyles from '@/app/globals.module.css'
 import { dict } from '@/app/utils'
-import { poppinsMedium } from '@/app/fonts'
+import { poppinsMedium, poppinsRegular, poppinsSemiBold } from '@/app/fonts'
 import { InputSearch } from './inputSearch'
 import { Button } from './button'
 import useStore from '@/app/hooks/useStore'
 import { useInterfaceStore } from '@/app/hooks/useInterfaceStore'
 import InputSelectMini from './inputSelecMini'
-import { activeMultipleProperty, deactivateMultipleProperty, deleteProperty, getAffiliates, indexProperty } from '@/services'
-import { IMetaPaginate } from '@/app/interfaces/models'
-import { FiChevronLeft, FiChevronRight, FiChevronsLeft, FiChevronsRight, FiHome, FiMonitor, FiPause, FiPlay } from 'react-icons/fi'
+import { getAffiliates, showAffiliate } from '@/services'
+import { IAffiliateShow, IMetaPaginate } from '@/app/interfaces/models'
+import { FiChevronLeft, FiChevronRight, FiChevronsLeft, FiChevronsRight } from 'react-icons/fi'
 import Modal from './modal'
 import { toast } from 'react-toastify'
 import CustomToast from '../toast'
@@ -21,19 +20,22 @@ import AffiliateListItem from './affiliateListItem'
 
 const AffiliateList: React.FC<IAffiliateList> = ({ lang, initialData, metaData }) => {
     const glosary = dict[lang].adminAffiliate
+    const glosaryService = dict[lang].services
     const glosaryImmo = dict[lang].immo
     const store = useStore(useInterfaceStore, (state) => state)
     const [properties, setProperties] = useState(initialData)
     const [meta, setMeta] = useState<IMetaPaginate | undefined>(metaData)
     const [currentPage, setCurrentPage] = useState<number>(1)
     const [selected, setSelected] = useState<number[]>([])
-    const [openPublish, setOpenPublish] = useState<boolean>(false)
-    const [openPause, setOpenPause] = useState<boolean>(false)
     const [openPreview, setOpenPreview] = useState<boolean>(false)
-    const [openDelete, setOpenDelete] = useState<boolean>(false)
-    const [selectedDelete, setSelectedDelete] = useState<{ id: number, active: boolean } | undefined>()
+    const [affiliate, setAffiliate] = useState<IAffiliateShow>()
     const [tab, setTab] = useState(0)
     const router = useRouter()
+    const plans = {
+        'Student':glosaryService.planTitle1,
+        'JobSeeker':glosaryService.planTitle2,
+        'Business':glosaryService.planTitle3,
+    }
     const handlePrevPage = (jump: number) => {
         const canGoBack = currentPage - jump > 0
         if (canGoBack) {
@@ -56,7 +58,7 @@ const AffiliateList: React.FC<IAffiliateList> = ({ lang, initialData, metaData }
     const fetchProperties = async () => {
         store?.setLoading(true)
         console.log('executing fetch')
-        const data = await getAffiliates( {}, {}, currentPage, store?.limit)
+        const data = await getAffiliates({}, {}, currentPage, store?.limit)
         console.log('affiliateData', data)
         setMeta(data?.meta)
         setProperties(data?.data)
@@ -93,11 +95,21 @@ const AffiliateList: React.FC<IAffiliateList> = ({ lang, initialData, metaData }
         console.log('selected key', key)
         store?.setLimit(parseInt(key))
     }
-    const handlePreview = () => { 
+    const handlePreview = async (id: number) => {
         store?.setLoading(true)
-        store?.setLoading(false)
-        setOpenPreview(true)
-     }
+        try {
+            const affiliate = await showAffiliate({ id })
+            if (!!affiliate) setAffiliate(affiliate)
+            setOpenPreview(true)
+
+        } catch {
+            toast.error(<CustomToast type='error' title={'Error'} content={'Error'} />, { theme: 'colored', icon: false, style: { backgroundColor: '#FF4444', maxWidth: 450, padding: 24, borderRadius: 10 } })
+
+        } finally {
+            store?.setLoading(false)
+
+        }
+    }
     useEffect(() => {
         setProperties(initialData)
     }, [initialData])
@@ -108,9 +120,84 @@ const AffiliateList: React.FC<IAffiliateList> = ({ lang, initialData, metaData }
     }, [store?.limit, currentPage, tab])
     return (
         <div className={styles.card}>
-            <Modal open={openPreview} onRequestClose={() => { setOpenPreview(false) }}>
-                <FiHome className={styles.modalIconPublish} />
-                <h3 style={poppinsMedium.style} className={styles.sectionTitle}>{glosary.detailTitle}</h3>
+            <Modal open={openPreview} onRequestClose={() => { setOpenPreview(false) }} width='80vw'>
+                <div className={styles.modalHeader}>
+                    <h5 style={poppinsRegular.style} className={styles.sectionTitle}>{affiliate?.name}</h5>
+                    <p className={styles.fadedTextHeader}>{affiliate?.phone}</p>
+                    <p className={styles.fadedTextHeader}>{affiliate?.email}</p>
+                </div>
+                <div className={styles.modalDescription}>
+                    <div className={styles.rowDescription}>
+                        <span className={styles.rowDescriptionBase}>
+                            {glosary.listLastPay}
+                        </span>
+                        <span style={poppinsSemiBold.style} className={styles.rowDescriptionBase}>
+                            {affiliate?.Pay?.at(-1)?.date?.toLocaleString(lang, {dateStyle:'medium', timeStyle:'medium', hour12:true})}
+                        </span>
+                    </div>
+                    <div className={styles.rowDescription}>
+                        <span className={styles.rowDescriptionBase}>
+                            {glosary.listStatus}
+                        </span>
+                        {
+                            (!!affiliate?.plan_date && affiliate?.plan_date > new Date())
+                            ?
+                            <span className={styles.badgeActive}>
+                                {glosary.listActive}
+                            </span>
+                            :
+                            <span className={styles.badge}>
+    
+                                {glosary.listInactive}
+                            </span>
+                        }
+                    </div>
+                    <div className={styles.rowDescription}>
+                        <span className={styles.rowDescriptionBase}>
+                            {glosaryService.planDate}
+                        </span>
+                        <span style={poppinsSemiBold.style} className={styles.rowDescriptionBase}>
+                            {affiliate?.plan_date?.toLocaleString(lang, {dateStyle:'medium', timeStyle:'medium', hour12:true})}
+                        </span>
+                    </div>
+                </div>
+                <div className={styles.modalList}>
+                    <h6 style={poppinsMedium.style} className={styles.listTitle}>
+                        {glosary.detailTitle}
+                        <span style={poppinsRegular.style}>
+                            {affiliate?.name}
+                        </span>
+                    </h6>
+                    <div className={styles.listRow} style={poppinsSemiBold.style}>
+                        <div className={styles.listColumnTitle}>
+                            {glosary.detailColumn1}
+                        </div>
+                        <div className={styles.listColumnTitle}>
+                            {glosary.detailColumn2}
+                        </div>
+                        <div className={styles.listColumnTitle}>
+                            {glosary.detailColumn3}
+                        </div>
+                    </div>
+                    <div style={{maxHeight:200, overflowY:'scroll'}}>
+                    {
+                        affiliate?.Pay.filter(el=>el.status).reverse().map((el,index) => (
+                            <div className={styles.listRow} key={index}>
+                                <div className={styles.listColumnContent}>
+                                    {el.reference}
+                                </div>
+                                <div className={styles.listColumnContent}>
+                                    {el.date?.toLocaleString(lang, {dateStyle:'medium', timeStyle:'medium', hour12:true})}
+                                </div>
+                                <div className={styles.listColumnContent}>
+                                    {plans[affiliate.plan]}
+                                </div>
+                            </div>
+                        ))
+                    }
+
+                    </div>
+                </div>
                 <div className={styles.modalButtons}>
                     <Button title={glosary.detailAction} type='outline' onClick={() => { setOpenPreview(false) }} />
                 </div>
@@ -119,7 +206,7 @@ const AffiliateList: React.FC<IAffiliateList> = ({ lang, initialData, metaData }
                 <div className={styles.cardHeader}>
                     <h2 className={styles.cardTitle} style={poppinsMedium.style}>{glosary.indexTitle}</h2>
                     <div className={styles.listTools}>
-                        <InputSearch placeholder={glosaryImmo.headerButton} />
+                        {/* <InputSearch placeholder={glosaryImmo.headerButton} /> */}
                     </div>
                 </div>
             </div>
