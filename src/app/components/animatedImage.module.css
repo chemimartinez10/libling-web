@@ -6,7 +6,7 @@
 .square, .squareReversed{
     position: absolute;
     border: 3px solid #424242;
-    border-radius: 16px;
+    border-radius: 18px;
     width: 490px;
     height: 366px;
 }

@@ -73,7 +73,7 @@ const Article: React.FC<IArticle> = ({ title, subtitle, content, list, Icon, but
                         {
                             list.map((el, index) => (
                                 <li key={index}>
-                                    <div style={{ width: 16, height: 16, display:'flex', justifyContent:'center', alignContent:'center' }}>
+                                    <div style={{ width: 16, height: 16, display:'flex', justifyContent:'center', alignContent:'center', minWidth:16, minHeight:16 }}>
                                         <FaCircle style={{ fontSize: 8, alignSelf: 'center', color:'#00000099' }} />
                                     </div>
                                     <span className={globalStyles.text} style={{flexShrink:1, flexWrap:'wrap'}}>
