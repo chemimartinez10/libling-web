@@ -21,7 +21,7 @@ import {
 import { PropertyCreate, PropertyUpdate } from "./app/classes"
 import { cookies } from "next/headers"
 import countries from "@/app/utils/countries.json"
-import axios, { AxiosRequestConfig } from "axios"
+import axios, { AxiosError, AxiosRequestConfig } from "axios"
 import { randomUUID } from "crypto"
 import { FEE_MULTIPLY } from "./app/utils/data"
 import { sendEmail } from "./app/utils/emails"
@@ -669,8 +669,12 @@ export const paymentInitialization = async (
 				quantity: updatedPay.quantity?.toFixed(2),
 			},
 		}
-	} catch (e) {
-		console.error(e)
+	} catch (e:any) {
+		if(e?.response){
+			console.error(JSON.stringify(e?.response))
+		}else{
+			console.error(e)
+		}
 		return {
 			status: 500,
 		}
