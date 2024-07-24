@@ -671,7 +671,7 @@ export const paymentInitialization = async (
 		}
 	} catch (e:any) {
 		if(e?.response){
-			console.error(e?.response)
+			console.error(e?.response?.data)
 		}else{
 			console.error(e)
 		}
