@@ -139,7 +139,7 @@ export const sendInfo = async (
 	)
 	const info = await transporter.sendMail({
 		from: from, // sender address
-		to: 'immo@libling.lu', // list of receivers
+		to: '"Libling solutions" <immo@libling.lu>', // list of receivers
 		subject: subject, // Subject line
 		html: `${message}`, // html body
 	})
