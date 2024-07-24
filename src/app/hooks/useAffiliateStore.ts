@@ -7,7 +7,6 @@ interface IForm1 {
 	phone?: string
 	email?: string
 	country?: string
-	note?: string
 }
 interface TypeAffiliateStore {
 	form_1: IForm1 | undefined

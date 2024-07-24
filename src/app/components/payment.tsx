@@ -46,7 +46,6 @@ interface IValues1 {
     phone?: string
     email?: string
     country?: string
-    note?: string
 }
 interface IValues2 {
     email?: string
@@ -231,7 +230,6 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
         email: store?.form_1?.email,
         name: store?.form_1?.name,
         phone: store?.form_1?.phone,
-        note: store?.form_1?.note,
     }
     const initialValues_2: IValues2 = {
         email: store?.form_1?.email
@@ -424,63 +422,66 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                                         enableReinitialize
                                     >
                                         {({ isSubmitting, values, handleChange, errors, touched }) => (
-                                            <Form className={styles.form}>
-                                                <div className={styles.inputRow}>
-                                                    <div className={styles.inputColumn}>
-                                                        <InputText label={glosary.inputLabel_1} placeholder={glosary.inputPlaceholder_1} error={errors.name} touched={touched.name} value={values.name} onChange={handleChange('name')}
-                                                        />
+                                            <Form className={styles.form} style={{justifyContent:'space-between', flexGrow:1}}>
+                                                <div className={styles.form} style={{gap:16}}>
+                                                    <div className={styles.inputRow}>
+                                                        <div className={styles.inputColumn}>
+                                                            <InputText label={glosary.inputLabel_1} placeholder={glosary.inputPlaceholder_1} error={errors.name} touched={touched.name} value={values.name} onChange={handleChange('name')}
+                                                            />
+                                                        </div>
+                                                        <div className={styles.inputColumn}>
+                                                            <InputText label={glosary.inputLabel_2} placeholder={glosary.inputPlaceholder_2} error={errors.phone} touched={touched.phone} value={values.phone} onChange={handleChange('phone')}
+                                                            />
+                                                        </div>
                                                     </div>
-                                                    <div className={styles.inputColumn}>
-                                                        <InputText label={glosary.inputLabel_2} placeholder={glosary.inputPlaceholder_2} error={errors.phone} touched={touched.phone} value={values.phone} onChange={handleChange('phone')}
-                                                        />
-                                                    </div>
+                                                    <InputText label={glosary.inputLabel_3} placeholder={glosary.inputPlaceholder_3} error={errors.email} touched={touched.email} value={values.email} onChange={handleChange('email')}
+                                                    />
+                                                    <InputSelect label={glosary.inputLabel_4} placeholder={glosary.inputPlaceholder_4} list={countries} onChange={handleCountry_1} error={errors.country} touched={touched.country} initialValue={values.country} />
                                                 </div>
-                                                <InputText label={glosary.inputLabel_3} placeholder={glosary.inputPlaceholder_3} error={errors.email} touched={touched.email} value={values.email} onChange={handleChange('email')}
-                                                />
-                                                <InputSelect label={glosary.inputLabel_4} placeholder={glosary.inputPlaceholder_4} list={countries} onChange={handleCountry_1} error={errors.country} touched={touched.country} initialValue={values.country} />
-                                                <InputTextArea label={glosary.inputLabel_5} placeholder={glosary.inputPlaceholder_5} error={errors.note} touched={touched.note} value={values.note} onChange={handleChange('note')} />
-                                                <div className={styles.subtotalContainer}>
-                                                    <span className={styles.subtotalText}>
-                                                        {
-                                                            glosary.priceLabel
-                                                        }
-                                                    </span>
-                                                    <span className={styles.subtotalText}>
-                                                        {planSelected?.price.toLocaleString('es-es',{minimumFractionDigits: 2})}
-                                                        {' €'}
-                                                    </span>
-                                                </div>
-                                                <div className={styles.subtotalContainer}>
-                                                    <span className={styles.subtotalText}>
-                                                        {
-                                                            glosary.feeLabel
-                                                        }
-                                                        {
-                                                            ' (17.00%) TVA'
-                                                        }
-                                                    </span>
-                                                    <span className={styles.subtotalText}>
-                                                        {((planSelected?.price || 0) * FEE).toLocaleString('es-es',{minimumFractionDigits: 2, maximumFractionDigits:2})}
-                                                        {' €'}
-                                                    </span>
-                                                </div>
-
-                                                <div className={styles.totalContainer}>
-                                                    <span className={styles.subtotalText}>
+                                                <div className={styles.form}>
+                                                    <div className={styles.subtotalContainer}>
+                                                        <span className={styles.subtotalText}>
                                                             {
-                                                                glosary.priceTotalLabel
+                                                                glosary.priceLabel
                                                             }
                                                         </span>
-                                                        <div className={styles.totalPriceContainer}>
-                                                            <span className={styles.totalText} style={poppinsSemiBold.style}>
-                                                                {((planSelected?.price || 0) * FEE_MULTIPLY).toLocaleString('es-es',{minimumFractionDigits: 2, maximumFractionDigits:2})}
-                                                                {' €'}
-                                                            </span>
-                                                            <span className={[globalStyles.smallText,globalStyles.textFaded].join(' ')}>
-                                                                {listFrecuency.find(el=>el.key.toString() === store?.frecuency?.toString())?.priceFrecuency}
-                                                            </span>
+                                                        <span className={styles.subtotalText}>
+                                                            {planSelected?.price.toLocaleString('es-es',{minimumFractionDigits: 2})}
+                                                            {' €'}
+                                                        </span>
+                                                    </div>
+                                                    <div className={styles.subtotalContainer}>
+                                                        <span className={styles.subtotalText}>
+                                                            {
+                                                                glosary.feeLabel
+                                                            }
+                                                            {
+                                                                ' (17.00%) TVA'
+                                                            }
+                                                        </span>
+                                                        <span className={styles.subtotalText}>
+                                                            {((planSelected?.price || 0) * FEE).toLocaleString('es-es',{minimumFractionDigits: 2, maximumFractionDigits:2})}
+                                                            {' €'}
+                                                        </span>
+                                                    </div>
 
-                                                        </div>
+                                                    <div className={styles.totalContainer}>
+                                                        <span className={styles.subtotalText}>
+                                                                {
+                                                                    glosary.priceTotalLabel
+                                                                }
+                                                            </span>
+                                                            <div className={styles.totalPriceContainer}>
+                                                                <span className={styles.totalText} style={poppinsSemiBold.style}>
+                                                                    {((planSelected?.price || 0) * FEE_MULTIPLY).toLocaleString('es-es',{minimumFractionDigits: 2, maximumFractionDigits:2})}
+                                                                    {' €'}
+                                                                </span>
+                                                                <span className={[globalStyles.smallText,globalStyles.textFaded].join(' ')}>
+                                                                    {listFrecuency.find(el=>el.key.toString() === store?.frecuency?.toString())?.priceFrecuency}
+                                                                </span>
+
+                                                            </div>
+                                                    </div>
                                                 </div>
                                             </Form>
                                         )}

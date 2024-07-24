@@ -545,7 +545,7 @@ const emailImmoBase = (
 				text-decoration: none;
 			}
 			.footerTitle{
-				color: #1973FA;
+				color: #fff;
 				font-weight: 500;
 				font-size: 20px;
 				line-height: 24px;

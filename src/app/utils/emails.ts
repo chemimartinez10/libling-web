@@ -31,7 +31,8 @@ export const sendMessage = async (
 	)
 	console.log('env variables... ',to,subject,message)
 	const info = await transporter.sendMail({
-		from: '"Libling solutions" <info@libling.lu>', // sender address
+		from: '"Libling solutions" <no-reply@libling.lu>', // sender address
+		replyTo: '"Libling solutions" <info@libling.lu>', // sender address
 		to: to, // list of receivers
 		subject: subject, // Subject line
 		html: `${message}`, // html body
@@ -59,6 +60,7 @@ export const sendEmail = async (
 	console.log('env variables... ',from,subject)
 	const info = await transporter.sendMail({
 		from, // sender address
+		replyTo:from, // sender address
 		to: '"Libling solutions" <info@libling.lu>', // list of receivers
 		subject: subject, // Subject line
 		html: `${message}`, // html body
@@ -86,6 +88,7 @@ export const sendAffiliateAdmin = async (
 	console.log('env variables... ',from,subject)
 	const info = await transporter.sendMail({
 		from, // sender address
+		replyTo:from, // sender address
 		to: '"Libling solutions" <affiliate@libling.lu>', // list of receivers
 		subject: subject, // Subject line
 		html: `${message}`, // html body
@@ -113,6 +116,7 @@ export const sendAffiliate = async (
 	console.log('env variables... ',to,subject)
 	const info = await transporter.sendMail({
 		from:'"Libling solutions" <affiliate@libling.lu>', // sender address
+		replyTo:'"Libling solutions" <affiliate@libling.lu>', // sender address
 		to, // list of receivers
 		subject: subject, // Subject line
 		html: `${message}`, // html body
@@ -138,10 +142,12 @@ export const sendInfo = async (
 		process.env.MAIL_PWD
 	)
 	const info = await transporter.sendMail({
-		from: from, // sender address
-		to: '"Libling solutions" <immo@libling.lu>', // list of receivers
+		from:'no-reply@libling.lu',
+		replyTo:from,
+		to: '"Libling Immo" <immo@libling.lu>', // list of receivers
 		subject: subject, // Subject line
 		html: `${message}`, // html body
 	})
+	console.log(JSON.stringify(info))
 	return info
 }
