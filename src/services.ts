@@ -638,7 +638,7 @@ export const paymentInitialization = async (
 		TerminalId: process.env.SAFERPAY_API_TERMINAL_ID,
 		Payment: {
 			Amount: {
-				Value: parseFloat((price * FEE_MULTIPLY * 100).toFixed(2)),
+				Value: parseFloat((price * FEE_MULTIPLY * 100).toFixed(0)),
 				CurrencyCode: "EUR",
 			},
 			OrderId: paysCount + 1,
@@ -671,7 +671,7 @@ export const paymentInitialization = async (
 		}
 	} catch (e:any) {
 		if(e?.response){
-			console.error(e?.response?.data)
+			console.error(e?.response?.data?.ErrorDetail)
 		}else{
 			console.error(e)
 		}
