@@ -40,7 +40,7 @@ const ContactForm = ({ lang }: ILang) => {
             setLoading(true)
             await sendInfo(
                 values.email || 'email',
-                templates.immo(values.name || '', currentURL),
+                templates.immo(values.name || '', currentURL, lang),
                 subjects.immo
             )
             toast.success(<CustomToast type='success' title={glosary.success} content={glosary.successEmail} />, { theme: 'colored', icon: false, style: { backgroundColor: '#00C851', maxWidth: 450, padding: 24, borderRadius: 10 } })

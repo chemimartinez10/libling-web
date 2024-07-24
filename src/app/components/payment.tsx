@@ -61,38 +61,38 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
     const { height, width } = useWindowDimensions();
     const affiliateList = [
         {
-            id: 1,
-            name: glosary.sectionOption1,
-            priceFrecuency: glosary.sectionOptionBy1,
-            plans: [
+            id:1,
+            name:glosary.sectionOption1,
+            priceFrecuency:glosary.sectionOptionBy1,
+            plans:[
                 {
-                    id: 1,
-                    title: glosary.planTitle1,
-                    content: glosary.planContent1,
-                    list: glosary.planList1,
-                    price: 8.56,
+                    id:1,
+                    title:glosary.planTitle1,
+                    content:glosary.planContent1,
+                    list:glosary.planList1,
+                    price:8.56,
                 },
                 {
-                    id: 2,
-                    title: glosary.planTitle2,
-                    content: glosary.planContent2,
-                    list: glosary.planList2,
-                    price: 22.95,
+                    id:2,
+                    title:glosary.planTitle2,
+                    content:glosary.planContent2,
+                    list:glosary.planList2,
+                    price:22.95,
                 },
                 {
-                    id: 3,
-                    title: glosary.planTitle3,
-                    content: glosary.planContent3,
-                    list: glosary.planList3,
-                    price: 13.40,
+                    id:3,
+                    title:glosary.planTitle3,
+                    content:glosary.planContent3,
+                    list:glosary.planList3,
+                    price:13.40,
                 },
-            ]
+            ]   
         },
         {
-            id: 2,
-            name: glosary.sectionOption2,
-            priceFrecuency: glosary.sectionOptionBy2,
-            plans: [
+            id:2,
+            name:glosary.sectionOption2,
+            priceFrecuency:glosary.sectionOptionBy2,
+            plans:[
                 {
                     id: 1,
                     title: glosary.planTitle1,
@@ -105,44 +105,44 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                     title: glosary.planTitle2,
                     content: glosary.planContent2,
                     list: glosary.planList2,
-                    price: 132,
+                    price: 120,
                 },
                 {
                     id: 3,
                     title: glosary.planTitle3,
                     content: glosary.planContent3,
                     list: glosary.planList3,
-                    price: 78,
+                    price: 68,
                 },
-            ]
+            ]   
         },
         {
-            id: 3,
-            name: glosary.sectionOption3,
-            priceFrecuency: glosary.sectionOptionBy3,
-            plans: [
+            id:3,
+            name:glosary.sectionOption3,
+            priceFrecuency:glosary.sectionOptionBy3,
+            plans:[
                 {
                     id: 1,
                     title: glosary.planTitle1,
                     content: glosary.planContent1,
-                    list: glosary.planList1,
-                    price: 96.6,
+                    list: glosary.planList1Extra,
+                    price: 90,
                 },
                 {
                     id: 2,
                     title: glosary.planTitle2,
                     content: glosary.planContent2,
-                    list: glosary.planList2,
-                    price: 275.4,
+                    list: glosary.planList2Extra,
+                    price: 220,
                 },
                 {
                     id: 3,
                     title: glosary.planTitle3,
                     content: glosary.planContent3,
-                    list: glosary.planList3,
-                    price: 160.8,
+                    list: glosary.planList3Extra,
+                    price: 128,
                 },
-            ]
+            ]   
         },
     ]
     const listFrecuency = [
@@ -456,7 +456,7 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                                                             glosary.feeLabel
                                                         }
                                                         {
-                                                            ' (17.00%)'
+                                                            ' (17.00%) TVA'
                                                         }
                                                     </span>
                                                     <span className={styles.subtotalText}>
@@ -518,7 +518,7 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                                                                 glosary.feeLabel
                                                             }
                                                             {
-                                                                ' (17.00%)'
+                                                                ' (17.00%) TVA'
                                                             }
                                                         </span>
                                                         <span className={styles.subtotalText}>
