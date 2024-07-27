@@ -83,13 +83,13 @@ export default function Navbar({ lang }: { lang: "es" | "en" | "fr" }) {
                 </div>
             </nav>
             <div className={open ? styles.navlistOpen : styles.navlist}>
-                <Link href={'/'}><div className={styles.navlistItem}>{glosary.link_2}</div></Link>
-                <Link href={'/about'}><div className={styles.navlistItem}>{glosary.link_1}</div></Link>
-                <Link href={'/services'}><div className={styles.navlistItem}>{glosary.link_3}</div></Link>
-                <Link href={'/immo'}><div className={styles.navlistItem}>{'Libling Immo'}</div></Link>
-                <Link href={'/contact'}><div className={styles.navlistItem}>{glosary.link_4}</div></Link>
-                <Link href={'/services?member=1'}><div className={styles.navlistItem}>{glosary.link_6}</div></Link>
-                <Link href={'/services?member=2'}><div className={styles.navlistItem}>{glosary.link_7}</div></Link>
+                <Link onClick={()=>{setOpen(state => !state)}} href={'/'}><div className={styles.navlistItem}>{glosary.link_2}</div></Link>
+                <Link onClick={()=>{setOpen(state => !state)}} href={'/about'}><div className={styles.navlistItem}>{glosary.link_1}</div></Link>
+                <Link onClick={()=>{setOpen(state => !state)}} href={'/services'}><div className={styles.navlistItem}>{glosary.link_3}</div></Link>
+                <Link onClick={()=>{setOpen(state => !state)}} href={'/immo'}><div className={styles.navlistItem}>{'Libling Immo'}</div></Link>
+                <Link onClick={()=>{setOpen(state => !state)}} href={'/contact'}><div className={styles.navlistItem}>{glosary.link_4}</div></Link>
+                <Link onClick={()=>{setOpen(state => !state)}} href={'/services?member=1'}><div className={styles.navlistItem}>{glosary.link_6}</div></Link>
+                <Link onClick={()=>{setOpen(state => !state)}} href={'/services?member=2'}><div className={styles.navlistItem}>{glosary.link_7}</div></Link>
                 <div className={styles.navlistItem}>
                     <LanguageSelector lang={lang} />
                 </div>

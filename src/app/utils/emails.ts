@@ -29,7 +29,7 @@ export const sendMessage = async (
 		process.env.MAIL_USER,
 		process.env.MAIL_PWD
 	)
-	console.log('env variables... ',to,subject,message)
+	console.log('env variables... ',to,subject)
 	const info = await transporter.sendMail({
 		from: '"Libling solutions" <no-reply@libling.lu>', // sender address
 		replyTo: '"Libling solutions" <info@libling.lu>', // sender address
