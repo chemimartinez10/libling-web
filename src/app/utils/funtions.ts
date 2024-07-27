@@ -43,6 +43,21 @@ export const templates = {
 			[message],
 			lang
 		),
+	infoClient: (
+		banner: string,
+		name: string | null,
+		lang: "es" | "en" | "fr"
+	) =>{
+		const glosary = dict[lang].mail
+		return emailBase(
+			banner,
+			``,
+			[`${glosary.infoContent1}${name ? ' '+name+' ' : ''}${glosary.infoContent2}`],
+			lang
+		)
+
+	}
+		,
 
 	affiliate: (lang: "es" | "en" | "fr") => {
 		const glosary = dict[lang].mail
@@ -346,7 +361,7 @@ const emailBase = (
 								<p>Email: info@libling.lu</p>
 								<p>Autorisation n°10154859/0 /RCS B278845/TVA: LU35451932</p>
 								<p>Advice - Management and Relocation to Luxembourg</p>
-								<p>Libling Solutions for you!</p>
+								<p>Libling Solutions for you</p>
 							</div>
 							<div class="footerLinks">
 								<a class="footerText" href="#">${glosary.footerBottomText_1}</a>
@@ -578,7 +593,7 @@ const emailImmoBase = (
 			<div class="main">
 				<div class="card">
 					<div class="cardHeader">
-						<img src="https://libling-assets.s3.eu-west-2.amazonaws.com/header_immo_mail.jpg" alt="Banner Libling" class="bannerImage">
+						<img src="https://libling-assets.s3.eu-west-2.amazonaws.com/immo_header_mail.jpg" alt="Banner Libling" class="bannerImage">
 						<h2 class="headerTitle">
 							<span class="textPrimary"></span>
 						</h2>
@@ -623,7 +638,7 @@ const emailImmoBase = (
 								<p>Email: immo@libling.lu</p>
 								<p>Autorisation n°10154859/0 /RCS B278845/TVA: LU35451932</p>
 								<p>Advice - Management and Relocation to Luxembourg</p>
-								<p>Libling Solutions for you!</p>
+								<p>Libling Solutions for you</p>
 							</div>
 							<div class="footerLinks">
 								<a class="footerText" href="#">${glosary.footerBottomText_1}</a>

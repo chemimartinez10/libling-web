@@ -9,7 +9,7 @@ import { subjects, templates } from '../utils/funtions'
 import { useSearchParams } from 'next/navigation'
 import CustomToast from './toast'
 import { toast } from 'react-toastify'
-import { sendEmail, sendInfo } from '../utils/emails'
+import { sendEmail, sendInfo, sendMessage } from '../utils/emails'
 import { Form, Formik, FormikHelpers, FormikProps } from 'formik'
 import * as Yup from 'yup';
 import { InputText } from './admin/inputText'
@@ -67,6 +67,11 @@ const RelocationForm: React.FC<IRelocationForm> = ({ lang }) => {
         console.log(values)
         try {
             setLoading(true)
+            await sendMessage(
+                values.email || 'email',
+                templates.infoClient(glosaryHome.bigTitleHeader1_1 + glosaryHome.bigTitleHeader1_2, values.name || '', lang),
+                mailMessages.subject_3
+            )
             await sendEmail(
                 values.email || 'email',
                 templates.info(glosaryHome.bigTitleHeader1_1 + glosaryHome.bigTitleHeader1_2, values.name || '', values.message || '', lang),

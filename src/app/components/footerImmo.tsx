@@ -29,7 +29,7 @@ export default function FooterImmo({ lang }: { lang: "es" | "en" | "fr" }) {
                 <br />
                 Advice - Management and Relocation to Luxembourg
                 <br />
-                Libling Solutions for you!
+                Libling Solutions for you
 
             </p>
         </div>
