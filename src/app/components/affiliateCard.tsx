@@ -31,12 +31,6 @@ const AffiliateCard: React.FC<IAffiliateCard> = ({ id,title, content, list, pric
                     {price.toLocaleString('es-es',{minimumFractionDigits: 2})}
                     {' €'}
                 </span>
-                <span className={[globalStyles.regularTitle,globalStyles.textFaded].join(' ')}>
-                    {' / '}
-                </span>
-                <span className={[globalStyles.regularTitle,globalStyles.textFaded].join(' ')}>
-                    {frecuency}
-                </span>
             </div>
             <div className={styles.bodyContainer}>
                 <Button type={type} title={glosary.planActionButton} onClick={()=>{onSelect(id)}}/>
