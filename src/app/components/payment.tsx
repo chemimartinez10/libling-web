@@ -476,10 +476,6 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                                                                     {((planSelected?.price || 0) * FEE_MULTIPLY).toLocaleString('es-es',{minimumFractionDigits: 2, maximumFractionDigits:2})}
                                                                     {' €'}
                                                                 </span>
-                                                                <span className={[globalStyles.smallText,globalStyles.textFaded].join(' ')}>
-                                                                    {listFrecuency.find(el=>el.key.toString() === store?.frecuency?.toString())?.priceFrecuency}
-                                                                </span>
-
                                                             </div>
                                                     </div>
                                                 </div>
@@ -538,9 +534,6 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                                                                     {((planSelected?.price || 0) * FEE_MULTIPLY).toLocaleString('es-es',{minimumFractionDigits: 2, maximumFractionDigits:2})}
                                                                     {' €'}
                                                                 </span>
-                                                                <span className={[globalStyles.smallText,globalStyles.textFaded].join(' ')}>
-                                                                    {listFrecuency.find(el=>el.key.toString() === store?.frecuency?.toString())?.priceFrecuency}
-                                                                </span>
 
                                                             </div>
                                                     </div>
@@ -587,12 +580,6 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                             <span className={[globalStyles.regularTitle].join(' ')}>
                                 {planSelected?.price.toLocaleString('es-es',{minimumFractionDigits: 2})}
                                 {' €'}
-                            </span>
-                            <span className={[globalStyles.regularTitle,globalStyles.textFaded].join(' ')}>
-                                {' / '}
-                            </span>
-                            <span className={[globalStyles.regularTitle,globalStyles.textFaded].join(' ')}>
-                                {listFrecuency.find(el=>el.key.toString() === store?.frecuency?.toString())?.priceFrecuency}
                             </span>
                         </div>
                         <ul className={styles.listContainer}>
