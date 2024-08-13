@@ -471,6 +471,7 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                                                                     glosary.priceTotalLabel
                                                                 }
                                                             </span>
+                                                            
                                                             <div className={styles.totalPriceContainer}>
                                                                 <span className={styles.totalText} style={poppinsSemiBold.style}>
                                                                     {((planSelected?.price || 0) * FEE_MULTIPLY).toLocaleString('es-es',{minimumFractionDigits: 2, maximumFractionDigits:2})}
