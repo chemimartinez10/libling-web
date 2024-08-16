@@ -392,7 +392,7 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                 !!width &&
                 <ReactModal isOpen={open} onRequestClose={() => { }} style={{
                     overlay: { backgroundColor: '#00000052', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 4 },
-                    content: { backgroundColor: '#FFFFFF', padding: 0, borderRadius: 8, boxShadow: '0px 12px 30px 0px #1973FA14', width: width < 800 ? '100vw' : 1050 , position: 'relative', display: 'flex', flexDirection: width < 800 ? 'column-reverse' : 'row', gap: 0, color: '#000000DE', inset: 0, zIndex: 5,height: width < 800 ? '100vh' : undefined , }
+                    content: { backgroundColor: '#FFFFFF', padding: 0, borderRadius: 8, boxShadow: '0px 12px 30px 0px #1973FA14', width: width < 800 ? '100vw' : 1000 , position: 'relative', display: 'flex', flexDirection: width < 800 ? 'column-reverse' : 'row', gap: 0, color: '#000000DE', inset: 0, zIndex: 5,height: width < 800 ? '100vh' : undefined , }
                 }}>
                     <div className={styles.wizardContainer}>
                         <div className={styles.stepContainer}>
@@ -589,7 +589,7 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                                     <div className={styles.iconList}>
                                         <IconCheck/>
                                     </div>
-                                    <span className={[globalStyles.text].join(' ')}>
+                                    <span className={[globalStyles.text].join(' ')} style={{fontSize:12, lineHeight:1.4}}>
                                         {el}
                                     </span>
                                 </li>))

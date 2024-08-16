@@ -75,7 +75,7 @@ const Services: React.FC<IPage> = ({ params: { lang } }) => {
             <div className={styles.iconList}>
               <IconCheck fill='#FFFFFFBD' />
             </div>
-            <span className={[globalStyles.subtitle, globalStyles.textNegative].join(' ')}>
+            <span className={[globalStyles.subtitle, globalStyles.textNegative].join(' ')} style={{fontSize:18}}>
               {el}
             </span>
           </li>))}

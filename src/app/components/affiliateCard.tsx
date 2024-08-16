@@ -40,7 +40,7 @@ const AffiliateCard: React.FC<IAffiliateCard> = ({ id,title, content, list, pric
                             <div className={styles.iconList}>
                                 <IconCheck/>
                             </div>
-                            <span className={[globalStyles.text].join(' ')}>
+                            <span className={[globalStyles.text].join(' ')} style={{fontSize:14, lineHeight:1.4}}>
                                 {el}
                             </span>
                         </li>))
