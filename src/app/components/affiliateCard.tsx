@@ -23,7 +23,7 @@ const AffiliateCard: React.FC<IAffiliateCard> = ({ id,title, content, list, pric
     return (
         <div className={styles.container}>
             <div className={styles.headContainer}>
-                <h3 className={globalStyles.smallTitle} style={poppinsSemiBold.style}>{title}</h3>
+                <h3 className={globalStyles.smallTitle} style={{...poppinsSemiBold.style, fontSize:20}}>{title}</h3>
                 <p className={globalStyles.smallText}>{content}</p>
             </div>
             <div className={styles.priceContainer}>

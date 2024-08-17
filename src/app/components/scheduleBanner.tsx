@@ -5,6 +5,7 @@ import globalStyles from '@/app/globals.module.css'
 import Image from 'next/image';
 import headerImg1Contact from '@/app/img/banner_contactanos_1440.jpg'
 import headerImg2Contact from '@/app/img/banner_services_mobile_2.jpg'
+import headerImg3Contact from '@/app/img/banner_contactanos_2_1920.jpg'
 import { dict } from '../utils';
 import { poppinsMedium, poppinsRegular } from '../fonts';
 import { Button } from './admin/button';
@@ -25,7 +26,11 @@ export const ScheduleBanner:React.FC<IBanner> = ({lang}) => {
                     ?
                     <Image src={headerImg2Contact} alt='contact image' width={360} height={580} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} quality={100} sizes="(max-width: 360px) 100vw, 360px" className={styles.sliderImage}/>
                     :
-                    <Image src={headerImg1Contact} alt='contact image' width={1440} height={340} priority={true} style={{ objectFit: 'cover', objectPosition: 'right center' }} quality={100} sizes="(max-width: 1440px) 100vw, 1440px" className={styles.sliderImage}/>
+                    (width !== null && width > 500 && width <= 1440)
+                        ?
+                        <Image src={headerImg1Contact} alt='contact image' width={1440} height={340} priority={true} style={{ objectFit: 'cover', objectPosition: 'right center' }} quality={100} sizes="(max-width: 1440px) 100vw, 1440px" className={styles.sliderImage}/>
+                        :
+                        <Image src={headerImg3Contact} alt='header image' width={1920} height={500} priority={true} style={{ objectFit: 'cover', objectPosition: 'right bottom' }} quality={100} sizes="(max-width: 1920px) 100vw, 1920px" className={styles.sliderImage}/>
                 }
                 <div className={styles.sliderTextContainer}>
                     <h2 className={globalStyles.mediumTitle} style={poppinsRegular.style}><span>{glosary.contactTitle}</span></h2>

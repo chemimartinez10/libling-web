@@ -421,7 +421,7 @@
         flex-grow: 1;
         border: 1px solid var(--color-border-invert, #FFFFFF61);
         border-radius: 10px;
-        background-color: transparent;
+        background-color: #fff;
         color: var(--color-text-secondary_invert, #FFFFFFBD);
         padding: 12px 16px;
         font-size: 14px;

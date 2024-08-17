@@ -3,7 +3,7 @@
     height: 64px;
 }
 .slider{
-    width: calc(1440px - 140px);
+    width: calc(1800px - 140px);
     overflow: hidden;
     padding-top: 32px;
 }

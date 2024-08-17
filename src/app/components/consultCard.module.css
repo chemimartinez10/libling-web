@@ -16,6 +16,18 @@
     border-right: 1px solid #0000001F;
 }
 
+@media (width > 1600px) {
+    .borderContainer{
+        width: 600px;
+        height: 260px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 0px 120px;
+        border-left: 1px solid #0000001F;
+        border-right: 1px solid #0000001F;
+    }
+}
 @media (width <= 500px) {
     .container{
         width: 100%;

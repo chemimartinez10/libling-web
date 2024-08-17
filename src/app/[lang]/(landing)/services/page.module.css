@@ -82,7 +82,7 @@
   padding-top: 32px;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   justify-content: space-between;
   row-gap: 72px;
   width: 100%;
@@ -130,6 +130,18 @@
 @media (prefers-reduced-motion) {
   .card:hover span {
     transform: none;
+  }
+}
+@media (width > 1200px) {
+  .consultList{
+    padding-top: 32px;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    row-gap: 72px;
+    width: 100%;
+  
   }
 }
 

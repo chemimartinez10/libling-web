@@ -5,10 +5,13 @@ import { Carousel } from 'react-responsive-carousel';
 import styles from './headerHome.module.css'
 import globalStyles from '@/app/globals.module.css'
 import Image from 'next/image';
+import headerImg1_2 from '@/app/img/carrusel_banner_1_1920.jpg'
 import headerImg1 from '@/app/img/carrusel_banner_1_1440.jpg'
 import headerImg1_1 from '@/app/img/banner_home_mobile_1.png'
+import headerImg2_2 from '@/app/img/carrusel_banner_2_1920.jpg'
 import headerImg2 from '@/app/img/carrusel_banner_2_1440.jpg'
 import headerImg2_1 from '@/app/img/banner_home_mobile_2.png'
+import headerImg3_2 from '@/app/img/carrusel_banner_3_1920.jpg'
 import headerImg3 from '@/app/img/carrusel_banner_3_1440.jpg'
 import headerImg3_1 from '@/app/img/banner_home_mobile_3.png'
 import { dict } from '../utils';
@@ -27,14 +30,19 @@ const HeaderHome:React.FC<IHeader> = ({lang}) => {
         {
             (width !== null)
             &&
-            <Carousel autoPlay={true} infiniteLoop={true} interval={15000} showIndicators={false} showStatus={false} className={styles.sliderImage}>
+            <Carousel autoPlay={true} infiniteLoop={true} interval={15000} showIndicators={false} showStatus={false} className={styles.sliderImage} preventMovementUntilSwipeScrollTolerance={true}>
                 <div className={styles.sliderItem}>
                     {
                         (width !== null && width <= 500)
                         ?
                         <Image src={headerImg1_1} alt='header image' width={360} height={580} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} quality={100} sizes="(max-width: 360px) 100vw, 360px" className={styles.sliderImage}/>
                         :
+                        (width !== null && width > 500 && width <= 1440)
+                        ?
                         <Image src={headerImg1} alt='header image' width={1440} height={500} priority={true} style={{ objectFit: 'cover', objectPosition: 'right bottom' }} quality={100} sizes="(max-width: 1440px) 100vw, 1440px" className={styles.sliderImage}/>
+                        :
+                        <Image src={headerImg1_2} alt='header image' width={1920} height={500} priority={true} style={{ objectFit: 'cover', objectPosition: 'right bottom' }} quality={100} sizes="(max-width: 1920px) 100vw, 1920px" className={styles.sliderImage}/>
+
                     }
                     <div className={styles.sliderTextContainer}>
                         <h4 className={[globalStyles.miniTitle, globalStyles.textPrimary].join(' ')} style={poppinsSemiBold.style}>{glosary.miniTitleHeader1}</h4>
@@ -52,7 +60,12 @@ const HeaderHome:React.FC<IHeader> = ({lang}) => {
                         ?
                         <Image src={headerImg2_1} alt='header image' width={360} height={580} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} quality={100} sizes="(max-width: 360px) 100vw, 360px" className={styles.sliderImage}/>
                         :
+                        (width !== null && width > 500 && width <= 1440)
+                        ?
                         <Image src={headerImg2} alt='header image' width={1440} height={500} priority={true} style={{ objectFit: 'cover', objectPosition: 'right bottom' }} quality={100} sizes="(max-width: 1440px) 100vw, 1440px" className={styles.sliderImage}/>
+                        :
+                        <Image src={headerImg2_2} alt='header image' width={1920} height={500} priority={true} style={{ objectFit: 'cover', objectPosition: 'right bottom' }} quality={100} sizes="(max-width: 1920px) 100vw, 1920px" className={styles.sliderImage}/>
+                        
                     }
                     <div className={styles.sliderTextContainer}>
                         <h4 className={globalStyles.miniTitle} style={poppinsSemiBold.style}>{glosary.miniTitleHeader2}</h4>
@@ -69,7 +82,11 @@ const HeaderHome:React.FC<IHeader> = ({lang}) => {
                         ?
                         <Image src={headerImg3_1} alt='header image' width={360} height={580} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} quality={100} sizes="(max-width: 360px) 100vw, 360px" className={styles.sliderImage}/>
                         :
+                        (width !== null && width > 500 && width <= 1440)
+                        ?
                         <Image src={headerImg3} alt='header image' width={1440} height={500} priority={true} style={{ objectFit: 'cover', objectPosition: 'right bottom' }} quality={100} sizes="(max-width: 1440px) 100vw, 1440px" className={styles.sliderImage}/>
+                        :
+                        <Image src={headerImg3_2} alt='header image' width={1920} height={500} priority={true} style={{ objectFit: 'cover', objectPosition: 'right bottom' }} quality={100} sizes="(max-width: 1920px) 100vw, 1920px" className={styles.sliderImage}/>
                     }
                     <div className={styles.sliderTextContainer}>
                         <h4 className={globalStyles.miniTitle} style={poppinsSemiBold.style}>{glosary.miniTitleHeader3}</h4>

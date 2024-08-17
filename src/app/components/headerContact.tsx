@@ -5,6 +5,7 @@ import globalStyles from '@/app/globals.module.css'
 import Image from 'next/image';
 import headerImg1 from '@/app/img/contact_banner.jpg'
 import headerImg1_1 from '@/app/img/banner_contact_mobile.jpg'
+import headerImg1_2 from '@/app/img/banner_contactanos_1920.jpg'
 import { dict } from '../utils';
 import { poppinsMedium, poppinsSemiBold } from '../fonts';
 import useWindowDimensions from '../hooks/useWindowDimensions';
@@ -23,7 +24,11 @@ const HeaderContact:React.FC<IHeader> = ({lang}) => {
                     ?
                     <Image src={headerImg1_1} alt='header image' width={360} height={580} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} quality={100} sizes="(max-width: 360px) 100vw, 360px" className={styles.sliderImage}/>
                     :
+                    (width !== null && width > 500 && width <= 1440)
+                    ?
                     <Image src={headerImg1} alt='header image' width={1440} height={450} priority={true} style={{ objectFit: 'cover', objectPosition: 'right center' }} quality={100} sizes="(max-width: 1440px) 100vw, 1440px" className={styles.sliderImage}/>
+                    :
+                    <Image src={headerImg1_2} alt='header image' width={1920} height={500} priority={true} style={{ objectFit: 'cover', objectPosition: 'right bottom' }} quality={100} sizes="(max-width: 1920px) 100vw, 1920px" className={styles.sliderImage}/>
 
                 }
                 <div className={styles.sliderTextContainer}>
