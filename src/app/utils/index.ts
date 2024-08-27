@@ -370,6 +370,16 @@ export const dict = {
 				"Búsqueda de alojamiento y apoyo en el proceso de mudanza",
 				"2 días de soporte personalizado"
 			],
+			planList1Extra2: [
+				"Actualizaciones sobre próximos eventos y oportunidades para estudiantes internacionales",
+				"Guía sobre cómo aplicar y dónde establecerse",
+				"Acceso exclusivo a información sobre universidades, programas, becas y opciones de alojamiento estudiantil",
+				"Sesión de preguntas y respuestas",
+				"Soporte continuo durante tu proceso de adaptación",
+				"Procesamiento completo de documentos y autorizaciones",
+				"Búsqueda de alojamiento y apoyo en el proceso de mudanza",
+				"2 días de soporte personalizado"
+			],
 			planTitle2: "Demandante de empleo",
 			planContent2: "Instalarse en Luxemburgo",
 			planList2: [
@@ -393,6 +403,17 @@ export const dict = {
 				"Búsqueda de alojamiento y apoyo en el proceso de mudanza",
 				"2 días de asistencia personalizada"
 			],
+			planList2Extra2: [
+				"Acceso exclusivo a guías para encontrar trabajo, solicitar visas y navegar el proceso de reubicación",
+				"Recursos seleccionados sobre empresas, costo de vida y vida en Luxemburgo",
+				"Suscripción a webinars con expertos de la industria sobre estrategias de búsqueda de empleo",
+				"Actualizaciones",
+				"Eventos y oportunidades para venir, establecerse y trabajar en Luxemburgo",
+				"Consejos sobre cómo aplicar y dónde establecerse",
+				"Requisitos y documentos necesarios para solicitar una visa de trabajo",
+				"Búsqueda de alojamiento y apoyo en el proceso de mudanza",
+				"2 días de asistencia personalizada"
+			],
 			planTitle3: "Emprendedor",
 			planContent3: "Crear una empresa en Luxemburgo",
 			planList3: [
@@ -405,6 +426,17 @@ export const dict = {
 				"Búsqueda de alojamiento y apoyo en el proceso de mudanza"
 			],
 			planList3Extra: [
+				"Orientación completa sobre negocios, configuración, requisitos legales y licencias",
+				"Acceso a consultas en línea sobre temas como financiación, marketing y formación de equipos en Luxemburgo",
+				"Desafíos al lanzar un negocio en Luxemburgo",
+				"Actualizaciones",
+				"Eventos y oportunidades para venir al Gran Ducado",
+				"Asesoramiento, guía sobre cómo tributar y ventajas de mudarse a Luxemburgo",
+				"Búsqueda de alojamiento y apoyo en el proceso de mudanza",
+				"Requisitos y documentos necesarios para la solicitud de visa de emprendedor/inversor",
+				"2 días de asistencia personalizada"
+			],
+			planList3Extra2: [
 				"Orientación completa sobre negocios, configuración, requisitos legales y licencias",
 				"Acceso a consultas en línea sobre temas como financiación, marketing y formación de equipos en Luxemburgo",
 				"Desafíos al lanzar un negocio en Luxemburgo",
@@ -501,6 +533,9 @@ export const dict = {
 			feeLabel:"Impuesto",
 			planDate:"Fecha de corte",
 			plan:"Plan",
+			terms1:"Al hacer click en ",
+			terms2:" aceptas que estás de acuerdo con nuestros ",
+			terms3:"términos y condiciones",
 		},
 		contact: {
 			miniTitleHeader1:"Embárcate en la aventura",
@@ -627,6 +662,61 @@ export const dict = {
 			footerBottomText_3:"Contáctanos",
 			footerBottomText_4:"Dar de baja",
 		},
+		terms: {
+			mainTitle:"Términos y condiciones",
+			title1: "Objeto",
+			description1: [
+				"El Cliente instruye irrevocablemente a Libling para que le asista en su instalación en Luxemburgo.",
+				"Los servicios de Libling se entienden como asistencia puramente administrativa de orientación y tienen como objetivo desplegar sus mejores esfuerzos para ayudar al Cliente en su instalación.",
+				"Libling apoya al Cliente sobre la base de los servicios o la fórmula de paquete elegida de acuerdo con el Apéndice 1, el \"Servicio\" o los \"Servicios\".",
+			],
+			title2: "Servicios",
+			description2: [
+				"Los Servicios incluyen los servicios indicados y, en caso de indicación de un límite o duración, se entiende que el Servicio se ejecutará tan pronto como ocurra este evento.",
+				"En ausencia de indicación de duración o límite, el Servicio se entiende como asistencia con las formalidades administrativas para la introducción del respectivo procedimiento administrativo.",
+				"El Cliente está obligado a proporcionar espontáneamente todos los documentos e información necesarios.",
+				"El Cliente reconoce que Libling utiliza parcialmente proveedores de servicios externos y que el resultado de los Servicios siempre depende del Cliente y de terceros, por lo que Libling nunca puede ser responsable de un resultado.",
+				"Libling actúa como intermediario para facilitar los procesos.",
+				"El Cliente mantiene el poder de decisión en cualquier caso y Libling no tiene, a menos que se acuerde lo contrario, ningún poder para representar al Cliente.",
+			],
+			title3: "Facturación",
+			description3: [
+				"Dependiendo de los Servicios elegidos por el Cliente, Libling procede con la facturación.",
+				"Libling no estará obligado a prestar servicios si el Cliente no realiza el pago.",
+				"Incluso si Libling ha comenzado a prestar sus servicios, Libling puede en cualquier momento suspender sus servicios, en particular si el Cliente solicita la prestación de servicios adicionales que aún no han sido objeto de un contrato o facturación o pago.",
+				"Los créditos de Libling son directamente exigibles y pagaderos. En caso de falta de pago, Libling cobrará intereses convencionales del 10% y cobrará automáticamente todos los gastos incurridos en el contexto de una posible recuperación forzada (juez de ejecución, abogado, etc.).",
+			],
+			title4: "Declaraciones",
+			description4: [
+				"El Cliente declara que tiene la capacidad de celebrar este contrato y de cumplir sus obligaciones en virtud del mismo.",
+				"El Cliente declara que no existen obstáculos para la realización de los Servicios.",
+				"El Cliente se compromete espontáneamente a notificar a Libling sin demora cualquier información o cambio que sea relevante para los Servicios.",
+				"A menos que se declare expresamente, ningún comportamiento de Libling puede interpretarse como una renuncia a un derecho.",
+			],
+			title5: "Responsabilidad",
+			description5: [
+				"Excepto por mala conducta grave, Libling no puede incurrir en ninguna responsabilidad.",
+				"Libling se basa durante los Servicios, en particular, en la información proporcionada por el Cliente, cuya exactitud garantiza y, de lo contrario, asume en cualquier caso por sí sola todas las consecuencias en caso de incumplimiento.",
+				"En caso de mala conducta grave o cualquier otra responsabilidad por parte de Libling, su responsabilidad se limita en cualquier caso al importe de la indemnización recibida, menos los gastos; cantidad que constituye un límite para todas las causas y daños combinados.",
+				"Cualquier posible responsabilidad de Libling está limitada por hechos susceptibles de ser cubiertos por su seguro de responsabilidad profesional. Como parte de esta limitación relacionada con la previsibilidad del daño, las reclamaciones del Cliente están condicionadas a una cobertura efectiva por parte del seguro y el Cliente no puede actuar contra Libling durante el procedimiento de liquidación de la reclamación.",
+			],
+			title6: "Protección de datos",
+			description6: [
+				"Libling debe recopilar los datos personales del Cliente para cumplir sus obligaciones. En este contexto, Libling debe procesar y utilizar esta información personal. El Cliente reconoce y acepta esta necesidad.",
+				"El Cliente está informado de los riesgos inherentes a las comunicaciones electrónicas y los acepta comunicándose por este medio de comunicación con Libling.",
+				"Se concede a Libling el derecho de guardar datos personales en un servidor de computadora, que se mantendrán durante el tiempo que sea necesario para la prestación de los Servicios, para hacer valer los derechos de Libling o para permitir a Libling cumplir con sus obligaciones.",
+				"El Cliente autoriza a Libling a obtener o intercambiar datos personales con cualquier agente, autoridad u otras instituciones, administraciones, intermediarios, proveedores de servicios, asistentes, etc. en (o que puedan utilizarse para) la prestación de los Servicios y para cumplir con las obligaciones del contrato.",
+				"El Cliente tiene en particular un derecho de acceso, rectificación, portabilidad, supresión de datos o puede solicitar la limitación del tratamiento. El Cliente puede oponerse al tratamiento de datos, ejercer sus derechos o retirar su consentimiento en cualquier momento poniéndose en contacto con: [Correo electrónico].",
+				"El Cliente también puede presentar una queja ante la Comisión Nacional de Protección de Datos.",
+			],
+			title7: "Ley aplicable y elección de foro",
+			description7: [
+				"Este contrato se rige por y debe interpretarse exclusivamente de conformidad con la ley sustantiva del Gran Ducado de Luxemburgo, excluyendo el derecho internacional privado.",
+				"Cualquier reclamación o posible queja del Cliente debe (i) bajo pena de caducidad ser puesta en conocimiento de Libling dentro de los 8 (ocho) días siguientes a la ocurrencia del supuesto incumplimiento y (ii) bajo pena de inadmisibilidad ser notificada antes de cualquier procedimiento legal a Libling, que debe tener la posibilidad de proceder con una resolución alternativa de disputas por un período de 6 (seis) meses a partir de la notificación que debe tener lugar mediante carta certificada con acuse de recibo.",
+				"Las Partes acuerdan irrevocablemente que cualquier disputa que surja de o en relación con este contrato se someterá exclusivamente a los tribunales de la ciudad de Luxemburgo, Gran Ducado de Luxemburgo.",
+			],
+		},
+		
 	},
 	en: {
 		immo: {
@@ -985,14 +1075,17 @@ export const dict = {
 			planContent1:"Study in Luxembourg.",
 			planList1: ["Updates on upcoming events and opportunities for international students", "Guidance on how to apply and where to settes", "Exclusive access to information about universities, programs, scholarships, and student housing options", "Q&A Session"],
 			planList1Extra: ["Updates on upcoming events and opportunities for international students", "Guidance on how to apply and where to settes", "Exclusive access to information about universities, programs, scholarships, and student housing options", "Q&A Session", "Ongoing support throughout your adaptation process", "Complete document processing and authorizations", "Search for accommodation and support in the moving process", "2 days of personalized support"],
+			planList1Extra2: ["Updates on upcoming events and opportunities for international students", "Guidance on how to apply and where to settes", "Exclusive access to information about universities, programs, scholarships, and student housing options", "Q&A Session", "Ongoing support throughout your adaptation process", "Complete document processing and authorizations", "Search for accommodation and support in the moving process", "2 days of personalized support"],
 			planTitle2: "Job Seeker",
 			planContent2: "Settle in Luxembourg",
 			planList2: ["Exclusive access to guides for finding work, applying for visas, and navigating the relocation process", "Curated resources on companies, cost of living, and life in Luxembourg", "Subscription to webinars with industry experts on job search strategies", "Updates", "Event and opportunities to come and settle and work in Luxembourg","Tips on how to apply and where to set up","Requirements and documents needed to apply for a work visa","Search for accommodation and support in the moving process"],
 			planList2Extra: ["Exclusive access to guides for finding work, applying for visas, and navigating the relocation process", "Curated resources on companies, cost of living, and life in Luxembourg", "Subscription to webinars with industry experts on job search strategies", "Updates", "Event and opportunities to come and settle and work in Luxembourg","Tips on how to apply and where to set up","Requirements and documents needed to apply for a work visa","Search for accommodation and support in the moving process", "2 days of personalized assistance"],
+			planList2Extra2: ["Exclusive access to guides for finding work, applying for visas, and navigating the relocation process", "Curated resources on companies, cost of living, and life in Luxembourg", "Subscription to webinars with industry experts on job search strategies", "Updates", "Event and opportunities to come and settle and work in Luxembourg","Tips on how to apply and where to set up","Requirements and documents needed to apply for a work visa","Search for accommodation and support in the moving process", "2 days of personalized assistance"],
 			planTitle3: "Entrepreneur",
 			planContent3: "Start a business in Luxembourg",
 			planList3: ["Comprehensive guidance on business, setup, legal requirements, and licenses", "Access to online consultations on topics such as financing, marketing, and team formation in Luxembourg", "Challenges in launching a business in Luxembourg", "Updates","Event and opportunities to come to the Grand Duchy","Advice, guide on how to tax and advantages of moving to Luxembourg","Search for accommodation and support in the moving process"],
 			planList3Extra: ["Comprehensive guidance on business, setup, legal requirements, and licenses", "Access to online consultations on topics such as financing, marketing, and team formation in Luxembourg", "Challenges in launching a business in Luxembourg", "Updates","Event and opportunities to come to the Grand Duchy","Advice, guide on how to tax and advantages of moving to Luxembourg","Search for accommodation and support in the moving process", "Requirements and documents needed for an entrepreneur/investor visa application", "2 days of personalized assistance"],
+			planList3Extra2: ["Comprehensive guidance on business, setup, legal requirements, and licenses", "Access to online consultations on topics such as financing, marketing, and team formation in Luxembourg", "Challenges in launching a business in Luxembourg", "Updates","Event and opportunities to come to the Grand Duchy","Advice, guide on how to tax and advantages of moving to Luxembourg","Search for accommodation and support in the moving process", "Requirements and documents needed for an entrepreneur/investor visa application", "2 days of personalized assistance"],
 			sectionSubtitle_2: "Benefits of being Libling Affilates",
 			sectionList_2: [
 				"Personalized guidance.",
@@ -1078,8 +1171,10 @@ export const dict = {
 			priceTotalLabel: "Total",
   			feeLabel: "Tax",
 			planDate: "Cut-off date",
-  			plan: "Plan"
-
+  			plan: "Plan",
+			terms1:"By clicking on ",
+			terms2:" you agree to our ",
+			terms3:"terms and conditions",
 		},
 		contact: {
 			miniTitleHeader1: "Embark on the adventure",
@@ -1206,6 +1301,25 @@ export const dict = {
 			footerBottomText_3: "Contact Us",
 			footerBottomText_4: "Unsubscribe",
 		},
+		terms:{
+			mainTitle: "Terms and Conditions",
+			title1:"Object",
+			description1:[`The Client irrevocably instructs Libling to assist it with its installation in Luxembourg.`,
+			`Libling's services are understood as purely administrative guidance assistance and aim to deploy its best efforts to assist the Customer in their installation.`, `Libling supports the Client on the basis of the services or package formula chosen in accordance with Appendix 1 the “Service” or the “Services”.`],
+			title2:"Services",
+			description2:[`The Services include the services indicated and in the event of an indication of a limit or duration, the Service is understood to be executed as soon as this event occurs.`,
+			`In the absence of an indication of duration or limit, the Service is understood as assistance with administrative formalities for the introduction of the respective administrative procedure.`, `The Customer is required to spontaneously provide all necessary documents and information.`,`The Client acknowledges that Libling partially uses external service providers and that the outcome of the Services always depends on the Client and third parties, which is why Libling can never be held to a result.`,`Libing acts as an intermediary to facilitate processes.`,`The Client retains decision-making power in any case and Libling does not have, unless otherwise agreed, any power to represent the Client.`],
+			title3:"Billing",
+			description3:[`Depending on the Services chosen by the Customer, Libling proceeds with invoicing.`,`Libling will not be required to perform services if the Customer does not make payment.`, `Even if Libling has started to perform its services, Libling may at any time suspend its services, in particular if the Client requests the provision of additional services which have not yet been the subject of a contract or invoicing. or payment.`,`Libling's claims are directly due and payable. In the event of non-payment, Libling charges conventional interest of 10% and will automatically charge all costs incurred in the context of possible forced recovery (bailiff, lawyer, etc.).`],
+			title4:"Declarations",
+			description4:[`The Client declares that it has the capacity to enter into this contract and to perform its obligations under this contract.`,`The Client declares that there are no obstacles to carrying out the Services.`,`The Client spontaneously undertakes to notify Libling without delay of any information or change that is relevant to the Services.`,`Unless expressly declared, no behavior by Libling can be interpreted as a waiver of a right.`],
+			title5:"Liability",
+			description5:[`Except for serious misconduct, Libling cannot incur any liability.`,`Libling relies during the Services in particular on the information provided by the Client, the accuracy of which it guarantees and otherwise, it assumes in any case alone all consequences in the event of a breach.`,`In the event of serious misconduct or any other liability on the part of Libling, its liability is in any case limited to the amount of the compensation received, less any expenses; amount which constitutes a ceiling for all causes and damages combined.`,`Any possible liability of Libling is limited by facts likely to be covered by its professional liability insurance. As part of this limitation relating to the foreseeability of the damage, the Customer's claims are conditional on effective coverage by the insurance and the Customer cannot act against Libling during the claim settlement procedure.`],
+			title6:"Data protection",
+			description6:[`Libling must collect the Customer's personal data to fulfill its obligations. In this context Libling must process and use this personal information. The Customer recognizes and accepts this necessity. The Customer is informed of the risks inherent in electronic communications and accepts them by communicating via this means of communication with Libling. Libling is granted the right to save personal data on a computer server, which will be kept for as long as necessary for the performance of the Services, to assert Libling's rights or to enable Libling to comply with its obligations. The Client authorizes Libling to obtain or exchange personal data with any agent, authority or other institutions, administrations, intermediaries, service providers, assistants, etc. in (or which may be used for) the performance of the Services and to comply with the obligations of the this contract.`,`The Customer has in particular a right of access, rectification, portability, erasure of data or may request limitation of processing. The Customer may object to the processing of data, exercise their rights or withdraw their consent at any time by contacting: [Email].`,`The Customer may also submit a complaint to the National Commission for Data Protection.`],
+			title7:"Applicable law and choice of forum",
+			description7:[`This contract is governed by and must be interpreted exclusively in accordance with the substantive law of the Grand Duchy of Luxembourg to the exclusion of private international law.`,`Any claim or possible complaint from the Customer must (i) under penalty of forfeiture be brought within 8 (eight) days from the occurrence of the alleged breach to the attention of Libling and (ii) under penalty of inadmissibility be notified before any legal proceedings to Libling, which must have the possibility of proceeding with an alternative resolution of disputes for a period of 6 (six) months from the notification which must take place by registered letter with acknowledgment of receipt.`,`The Parties irrevocably agree that any dispute arising from or in connection with this contract will be submitted exclusively to the courts of the city of Luxembourg, Grand Duchy of Luxembourg.`],
+		}
 	},
 	fr: {
 		immo: {
@@ -1582,6 +1696,16 @@ export const dict = {
 				"Recherche de logement et soutien dans le processus de déménagement",
 				"2 jours de support personnalisé"
 			],
+			planList1Extra2: [
+				"Mises à jour sur les prochains événements et opportunités pour les étudiants internationaux",
+				"Guide sur la façon de postuler et où s'établir",
+				"Accès exclusif aux informations sur les universités, les programmes, les bourses et les options de logement étudiant",
+				"Session de questions-réponses",
+				"Soutien continu tout au long de votre processus d'adaptation",
+				"Traitement complet des documents et autorisations",
+				"Recherche de logement et soutien dans le processus de déménagement",
+				"2 jours de support personnalisé"
+			],
 			planTitle2:"Demandeur d'emploi",
 			planContent2:"S'installer au Luxembourg.",
 			planList2: [
@@ -1605,6 +1729,17 @@ export const dict = {
 				"Recherche de logement et soutien dans le processus de déménagement",
 				"2 jours d'assistance personnalisée"
 			],
+			planList2Extra2: [
+				"Accès exclusif à des guides pour trouver du travail, demander des visas et naviguer dans le processus de réinstallation",
+				"Ressources sélectionnées sur les entreprises, le coût de la vie et la vie au Luxembourg",
+				"Abonnement à des webinaires avec des experts de l'industrie sur les stratégies de recherche d'emploi",
+				"Mises à jour",
+				"Événements et opportunités pour venir s'installer et travailler au Luxembourg",
+				"Conseils sur la façon de postuler et où s'installer",
+				"Exigences et documents nécessaires pour demander un visa de travail",
+				"Recherche de logement et soutien dans le processus de déménagement",
+				"2 jours d'assistance personnalisée"
+			],
 			planTitle3:"Entrepreneur",
 			planContent3:"Créer une entreprise au Luxembourg.",
 			planList3:[
@@ -1617,6 +1752,17 @@ export const dict = {
 				"Recherche de logement et soutien dans le processus de déménagement"
 			],
 			planList3Extra:[
+				"Orientation complète sur les affaires, la configuration, les exigences légales et les licences",
+				"Accès à des consultations en ligne sur des sujets tels que le financement, le marketing et la formation d'équipes au Luxembourg",
+				"Défis lors du lancement d'une entreprise au Luxembourg",
+				"Mises à jour",
+				"Événements et opportunités de venir au Grand-Duché",
+				"Conseils, guide sur la fiscalité et les avantages de déménager au Luxembourg",
+				"Recherche de logement et soutien dans le processus de déménagement",
+				"Exigences et documents nécessaires pour une demande de visa d'entrepreneur/investisseur",
+				"2 jours d'assistance personnalisée"
+			],
+			planList3Extra2:[
 				"Orientation complète sur les affaires, la configuration, les exigences légales et les licences",
 				"Accès à des consultations en ligne sur des sujets tels que le financement, le marketing et la formation d'équipes au Luxembourg",
 				"Défis lors du lancement d'une entreprise au Luxembourg",
@@ -1712,7 +1858,10 @@ export const dict = {
 			priceTotalLabel: "Total",
   			feeLabel: "Taxe",
 			planDate: "Date limite",
-  			plan: "Plan"
+  			plan: "Plan",
+			terms1:"En cliquant sur ",
+			terms2:" vous acceptez nos ",
+			terms3:"termes et conditions",
 
 		},
 		contact: {
@@ -1841,6 +1990,60 @@ export const dict = {
 			footerBottomText_2: "Confidentialité",
 			footerBottomText_3: "Contactez-nous",
 			footerBottomText_4: "Se désabonner",
+		},
+		terms: {
+			mainTitle: "Conditions générales",
+			title1: "Objet",
+			description1: [
+				"Le Client charge irrévocablement Libling de l'assister dans son installation au Luxembourg.",
+				"Les services de Libling sont compris comme une simple assistance de conseil administratif et visent à déployer ses meilleurs efforts pour aider le Client dans son installation.",
+				"Libling soutient le Client sur la base des services ou de la formule de forfait choisie conformément à l'Annexe 1, le \"Service\" ou les \"Services\".",
+			],
+			title2: "Services",
+			description2: [
+				"Les Services comprennent les services indiqués et, en cas d'indication d'une limite ou d'une durée, le Service est entendu comme étant exécuté dès que cet événement se produit.",
+				"En l'absence d'indication de durée ou de limite, le Service est entendu comme une assistance aux formalités administratives pour l'introduction de la procédure administrative correspondante.",
+				"Le Client est tenu de fournir spontanément tous les documents et informations nécessaires.",
+				"Le Client reconnaît que Libling utilise partiellement des prestataires de services externes et que le résultat des Services dépend toujours du Client et de tiers, c'est pourquoi Libling ne peut jamais être tenu responsable d'un résultat.",
+				"Libling agit en tant qu'intermédiaire pour faciliter les processus.",
+				"Le Client conserve le pouvoir de décision en tout cas et Libling n'a pas, sauf convention contraire, le pouvoir de représenter le Client.",
+			],
+			title3: "Facturation",
+			description3: [
+				"Selon les Services choisis par le Client, Libling procède à la facturation.",
+				"Libling ne sera pas tenu de fournir des services si le Client ne paie pas.",
+				"Même si Libling a commencé à fournir ses services, Libling peut à tout moment suspendre ses services, en particulier si le Client demande la fourniture de services supplémentaires qui n'ont pas encore fait l'objet d'un contrat ou d'une facturation ou d'un paiement.",
+				"Les créances de Libling sont directement exigibles et payables. En cas de non-paiement, Libling facture des intérêts conventionnels de 10 % et facturera automatiquement tous les frais encourus dans le cadre d'un éventuel recouvrement forcé (huissier, avocat, etc.).",
+			],
+			title4: "Déclarations",
+			description4: [
+				"Le Client déclare qu'il a la capacité de conclure ce contrat et d'exécuter ses obligations en vertu de celui-ci.",
+				"Le Client déclare qu'il n'y a pas d'obstacles à l'exécution des Services.",
+				"Le Client s'engage spontanément à notifier sans délai à Libling toute information ou tout changement pertinent aux Services.",
+				"Sauf déclaration expresse, aucun comportement de Libling ne peut être interprété comme une renonciation à un droit.",
+			],
+			title5: "Responsabilité",
+			description5: [
+				"Sauf faute grave, Libling ne peut encourir aucune responsabilité.",
+				"Libling s'appuie pendant les Services en particulier sur les informations fournies par le Client, dont il garantit l'exactitude et, dans le cas contraire, il assume en tout cas seul toutes les conséquences en cas de manquement.",
+				"En cas de faute grave ou de toute autre responsabilité de Libling, sa responsabilité est en tout cas limitée au montant de l'indemnisation perçue, déduction faite des frais ; montant qui constitue un plafond pour toutes les causes et tous les dommages réunis.",
+				"Toute responsabilité éventuelle de Libling est limitée par des faits susceptibles d'être couverts par son assurance responsabilité professionnelle. Dans le cadre de cette limitation relative à la prévisibilité du dommage, les réclamations du Client sont conditionnées à une couverture effective par l'assurance et le Client ne peut agir contre Libling pendant la procédure de règlement de la réclamation.",
+			],
+			title6: "Protection des données",
+			description6: [
+				"Libling doit collecter les données personnelles du Client pour remplir ses obligations. Dans ce contexte, Libling doit traiter et utiliser ces informations personnelles. Le Client reconnaît et accepte cette nécessité.",
+				"Le Client est informé des risques inhérents aux communications électroniques et les accepte en communiquant par ce moyen de communication avec Libling.",
+				"Libling se voit accorder le droit de sauvegarder des données personnelles sur un serveur informatique, qui seront conservées aussi longtemps que nécessaire pour l'exécution des Services, pour faire valoir les droits de Libling ou pour permettre à Libling de se conformer à ses obligations.",
+				"Le Client autorise Libling à obtenir ou à échanger des données personnelles avec tout agent, autorité ou autre institution, administration, intermédiaire, prestataire de services, assistant, etc. dans (ou qui peuvent être utilisées pour) l'exécution des Services et pour se conformer aux obligations du présent contrat.",
+				"Le Client dispose notamment d'un droit d'accès, de rectification, de portabilité, d'effacement des données ou peut demander la limitation du traitement. Le Client peut s'opposer au traitement des données, exercer ses droits ou retirer son consentement à tout moment en contactant : [Email].",
+				"Le Client peut également déposer une plainte auprès de la Commission nationale de protection des données.",
+			],
+			title7: "Loi applicable et choix du for",
+			description7: [
+				"Le présent contrat est régi par et doit être interprété exclusivement conformément au droit substantiel du Grand-Duché de Luxembourg à l'exclusion du droit international privé.",
+				"Toute réclamation ou plainte éventuelle du Client doit (i) sous peine de forclusion être portée à l'attention de Libling dans les 8 (huit) jours suivant la survenance du manquement allégué et (ii) sous peine d'irrecevabilité être notifiée avant toute procédure judiciaire à Libling, qui doit avoir la possibilité de procéder à une résolution alternative des litiges pour une durée de 6 (six) mois à compter de la notification qui doit avoir lieu par lettre recommandée avec accusé de réception.",
+				"Les Parties conviennent irrévocablement que tout litige résultant de ou en relation avec le présent contrat sera soumis exclusivement aux tribunaux de la ville de Luxembourg, Grand-Duché de Luxembourg.",
+			],
 		},
 	},
 }

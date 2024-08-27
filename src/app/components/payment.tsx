@@ -7,7 +7,7 @@ import ReactModal from 'react-modal'
 import { dict } from '../utils'
 import { Button } from './admin/button'
 import { FaChevronDown, FaChevronLeft } from 'react-icons/fa6'
-import { poppinsSemiBold } from '../fonts'
+import { poppinsBold, poppinsMedium, poppinsRegular, poppinsSemiBold } from '../fonts'
 import { Form, Formik, FormikHelpers, FormikProps } from 'formik'
 import InputSelect from './admin/inputSelect'
 import { InputTextArea } from './admin/inputTextArea'
@@ -24,6 +24,7 @@ import IconCheck from './icons/iconCheck';
 import useWindowDimensions from '../hooks/useWindowDimensions';
 import { Plan } from '@prisma/client';
 import { FEE, FEE_MULTIPLY } from '../utils/data';
+import Link from 'next/link';
 
 interface IPayment {
     open: boolean
@@ -96,21 +97,21 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                     id: 1,
                     title: glosary.planTitle1,
                     content: glosary.planContent1,
-                    list: glosary.planList1,
+                    list: glosary.planList1Extra,
                     price: 48,
                 },
                 {
                     id: 2,
                     title: glosary.planTitle2,
                     content: glosary.planContent2,
-                    list: glosary.planList2,
+                    list: glosary.planList2Extra,
                     price: 120,
                 },
                 {
                     id: 3,
                     title: glosary.planTitle3,
                     content: glosary.planContent3,
-                    list: glosary.planList3,
+                    list: glosary.planList3Extra,
                     price: 68,
                 },
             ]   
@@ -124,21 +125,21 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                     id: 1,
                     title: glosary.planTitle1,
                     content: glosary.planContent1,
-                    list: glosary.planList1Extra,
+                    list: glosary.planList1Extra2,
                     price: 90,
                 },
                 {
                     id: 2,
                     title: glosary.planTitle2,
                     content: glosary.planContent2,
-                    list: glosary.planList2Extra,
+                    list: glosary.planList2Extra2,
                     price: 220,
                 },
                 {
                     id: 3,
                     title: glosary.planTitle3,
                     content: glosary.planContent3,
-                    list: glosary.planList3Extra,
+                    list: glosary.planList3Extra2,
                     price: 128,
                 },
             ]   
@@ -564,6 +565,11 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                                     <Button title={glosary.buttonAction_2} grow={true} loading={formRef_2.current?.isSubmitting} onClick={onSubmit2} />
                                 </>
                             }
+                        </div>
+                        <div className={styles.rowButtons}>
+                            <p className={[globalStyles.text].join(' ')} style={{...poppinsRegular.style,fontSize:12, lineHeight:1.4}}>
+                                <span>{glosary.terms1}</span><span style={poppinsSemiBold.style}>{glosary.buttonAction_2}</span><span>{glosary.terms2}</span><Link className={[globalStyles.textPrimary].join(' ')} style={poppinsSemiBold.style} href="/terms" target='_blank'>{glosary.terms3}</Link>
+                            </p>
                         </div>
                     </div>
                     <div className={styles.selectedPlanContainer}>
