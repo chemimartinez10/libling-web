@@ -123,9 +123,13 @@ export default function Footer({ lang }: { lang: "es" | "en" | "fr" }) {
                     <span className={styles.ribbonText}>{`© Libling 2024 | ${glosary.rights}.`}</span>
                 </div>
                 <div className={styles.ribbonHalf}>
-                    <span className={styles.ribbonTextFaded}>{glosary.cookies}</span>
-                    <span className={styles.ribbonTextFaded}>{glosary.privacy}</span>
-                    <span className={styles.ribbonTextFaded}>{glosary.terms}</span>
+                    {/* <span className={styles.ribbonTextFaded}>{glosary.cookies}</span> */}
+                    <Link href={'/privacy'}>
+                        <span className={styles.ribbonTextFaded}>{glosary.privacy}</span>
+                    </Link>
+                    <Link href={'/terms'}>
+                        <span className={styles.ribbonTextFaded}>{glosary.terms}</span>
+                    </Link>
                 </div>
             </div>
         </div>

@@ -456,6 +456,8 @@ export const dict = {
 			terms1:"Al hacer click en ",
 			terms2:" aceptas que estás de acuerdo con nuestros ",
 			terms3:"términos y condiciones",
+			terms4:" así como con nuestra ",
+			terms5:"politica de privacidad",
 		},
 		contact: {
 			miniTitleHeader1:"Embárcate en la aventura",
@@ -636,6 +638,19 @@ export const dict = {
 				"Las Partes acuerdan irrevocablemente que cualquier disputa que surja de o en relación con este contrato se someterá exclusivamente a los tribunales de la ciudad de Luxemburgo, Gran Ducado de Luxemburgo.",
 			],
 		},
+		privacy:{
+            mainTitle: "Protección de Datos Personales",
+            title1:"",
+            description1:[`En Libling.lu, valoramos su privacidad. Esta política detalla cómo recopilamos, usamos y protegemos su información personal.`],
+            title2:"¿Qué datos recopilamos?",
+            description2:[`Cuando se registra en nuestro sitio web o se pone en contacto con nosotros, podemos recopilar los siguientes datos personales: Nombre, Correo electrónico, Número de teléfono, País`],
+            title3:"¿Cómo usamos sus datos?",
+            description3:[`Utilizamos sus datos personales para:`,`Ofrecerle un servicio personalizado: Sus datos nos permiten brindarle una mejor experiencia de usuario y responder a sus solicitudes de manera eficiente.`, `Comunicarnos con usted: Utilizamos sus datos para enviarle información relevante sobre nuestros servicios, como confirmaciones de pedidos, actualizaciones y ofertas especiales.`,`Mantener un registro de nuestros usuarios: Mantenemos un registro de nuestros usuarios para fines internos, como análisis estadístico y mejora de nuestros servicios.`],
+            title4:"¿Compartimos sus datos con terceros?",
+            description4:[`No compartimos sus datos personales con terceros. Su información está segura con nosotros.`],
+            title5:"¿Cómo puede controlar sus datos?",
+            description5:[`Tiene derecho a acceder, corregir o eliminar sus datos personales en cualquier momento. Si desea ejercer alguno de estos derechos, puede contactarnos en info@libling.com`],
+        },
 		
 	},
 	en: {
@@ -1092,6 +1107,8 @@ export const dict = {
 			terms1:"By clicking on ",
 			terms2:" you agree to our ",
 			terms3:"terms and conditions",
+			terms4: " as well as with our ",
+            terms5: "privacy policy",
 		},
 		contact: {
 			miniTitleHeader1: "Embark on the adventure",
@@ -1236,6 +1253,19 @@ export const dict = {
 			description6:[`Libling must collect the Customer's personal data to fulfill its obligations. In this context Libling must process and use this personal information. The Customer recognizes and accepts this necessity. The Customer is informed of the risks inherent in electronic communications and accepts them by communicating via this means of communication with Libling. Libling is granted the right to save personal data on a computer server, which will be kept for as long as necessary for the performance of the Services, to assert Libling's rights or to enable Libling to comply with its obligations. The Client authorizes Libling to obtain or exchange personal data with any agent, authority or other institutions, administrations, intermediaries, service providers, assistants, etc. in (or which may be used for) the performance of the Services and to comply with the obligations of the this contract.`,`The Customer has in particular a right of access, rectification, portability, erasure of data or may request limitation of processing. The Customer may object to the processing of data, exercise their rights or withdraw their consent at any time by contacting: [Email].`,`The Customer may also submit a complaint to the National Commission for Data Protection.`],
 			title7:"Applicable law and choice of forum",
 			description7:[`This contract is governed by and must be interpreted exclusively in accordance with the substantive law of the Grand Duchy of Luxembourg to the exclusion of private international law.`,`Any claim or possible complaint from the Customer must (i) under penalty of forfeiture be brought within 8 (eight) days from the occurrence of the alleged breach to the attention of Libling and (ii) under penalty of inadmissibility be notified before any legal proceedings to Libling, which must have the possibility of proceeding with an alternative resolution of disputes for a period of 6 (six) months from the notification which must take place by registered letter with acknowledgment of receipt.`,`The Parties irrevocably agree that any dispute arising from or in connection with this contract will be submitted exclusively to the courts of the city of Luxembourg, Grand Duchy of Luxembourg.`],
+		},
+		privacy:{
+			mainTitle: "Protection of Personal Data",
+			title1:"",
+			description1:[`At Libling.lu, we value your privacy. This policy details how we collect, use and protect your personal information.`],
+			title2:"What data do we collect?",
+			description2:[`When you register on our website or contact us, we may collect the following personal data: Name, Email, Phone number, Country`],
+			title3:"How do we use your data?",
+			description3:[`We use your personal data in order to:`,`Offer you a personalized service: Your data allows us to provide you with a better user experience and respond to your requests efficiently.`, `Communicate with you: We use your data to send you relevant information about our services, such as order confirmations, updates and special offers.`,`Keep a record of our users: We keep a record of our users for internal purposes, such as statistical analysis and improvement of our services.`],
+			title4:"Do we share your data with third parties?",
+			description4:[`We do not share your personal data with third parties. Your information is safe with us.`],
+			title5:"How can you control your data?",
+			description5:[`You have the right to access, correct or delete your personal data at any time. If you wish to exercise any of these rights, you can contact us at info@libling.com`],
 		}
 	},
 	fr: {
@@ -1699,7 +1729,8 @@ export const dict = {
 			terms1:"En cliquant sur ",
 			terms2:" vous acceptez nos ",
 			terms3:"termes et conditions",
-
+			terms4: " ainsi qu'avec notre ",
+            terms5: "politique de confidentialité",
 		},
 		contact: {
 			miniTitleHeader1: "Embarquez pour l'aventure",
@@ -1882,5 +1913,18 @@ export const dict = {
 				"Les Parties conviennent irrévocablement que tout litige résultant de ou en relation avec le présent contrat sera soumis exclusivement aux tribunaux de la ville de Luxembourg, Grand-Duché de Luxembourg.",
 			],
 		},
+		privacy:{
+            mainTitle: "Protection des Données Personnelles",
+            title1:"",
+            description1:[`Chez Libling.lu, nous accordons une grande importance à votre vie privée. Cette politique détaille la façon dont nous collectons, utilisons et protégeons vos informations personnelles.`],
+            title2:"Quelles données recueillons-nous ?",
+            description2:[`Lorsque vous vous inscrivez sur notre site Web ou que vous nous contactez, nous pouvons collecter les données personnelles suivantes : Nom, E-mail, Numéro de téléphone, Pays`],
+            title3:"Comment utilisons-nous vos datos ?",
+            description3:[`Nous utilisons vos données personnelles pour :`, `Vous offrir un service personnalisé : Vos données nous permettent de vous offrir une meilleure expérience utilisateur et de répondre à vos demandes de manière efficace.`, `Communiquer avec vous : Nous utilisons vos données pour vous envoyer des informations pertinentes sur nos services, telles que des confirmations de commande, mises à jour et des offres spéciales.`, `Tenir un registre de nos utilisateurs : Nous conservons un registre de nos utilisateurs à des fins internes, telles que l'analyse statistique et l'amélioration de nos services.`],
+            title4:"Partageons-nous vos données avec des tiers ?",
+            description4:[`Nous ne partageons pas vos données personnelles avec des tiers. Vos informations sont en sécurité chez nous.`],
+            title5:"Comment pouvez-vous contrôler vos données ?",
+            description5:[`Vous avez le droit d'accéder à vos données personnelles, de les rectifier ou de les supprimer à tout moment. Si desea ejercer l'un de ces droits, vous pouvez nous contacter à info@libling.com`],
+        }
 	},
 }

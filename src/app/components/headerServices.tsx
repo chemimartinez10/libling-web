@@ -23,7 +23,7 @@ const HeaderServices:React.FC<IHeader> = ({lang}) => {
                 {
                     (width !== null && width <= 500)
                     ?
-                    <Image src={headerImg2} alt='header image' width={360} height={580} priority={true} style={{ objectFit: 'cover', objectPosition: 'center center' }} quality={100} sizes="(max-width: 360px) 100vw, 360px" className={styles.sliderImage}/>
+                    <Image src={headerImg2} alt='header image' width={360} height={580} priority={true} style={{ objectFit: 'cover', objectPosition: 'bottom center' }} quality={100} sizes="(max-width: 360px) 100vw, 360px" className={styles.sliderImage}/>
                     :
                     (width !== null && width > 500 && width <= 1440)
                         ?

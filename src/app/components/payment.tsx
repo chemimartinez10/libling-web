@@ -568,7 +568,7 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                         </div>
                         <div className={styles.rowButtons}>
                             <p className={[globalStyles.text].join(' ')} style={{...poppinsRegular.style,fontSize:12, lineHeight:1.4}}>
-                                <span>{glosary.terms1}</span><span style={poppinsSemiBold.style}>{glosary.buttonAction_2}</span><span>{glosary.terms2}</span><Link className={[globalStyles.textPrimary].join(' ')} style={poppinsSemiBold.style} href="/terms" target='_blank'>{glosary.terms3}</Link>
+                                <span>{glosary.terms1}</span><span style={poppinsSemiBold.style}>{glosary.buttonAction_2}</span><span>{glosary.terms2}</span><Link className={[globalStyles.textPrimary].join(' ')} style={poppinsSemiBold.style} href="/terms" target='_blank'>{glosary.terms3}</Link><span>{glosary.terms4}</span><Link className={[globalStyles.textPrimary].join(' ')} style={poppinsSemiBold.style} href="/privacy" target='_blank'>{glosary.terms5}</Link>
                             </p>
                         </div>
                     </div>

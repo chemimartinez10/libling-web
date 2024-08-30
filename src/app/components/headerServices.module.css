@@ -1,5 +1,6 @@
 .sliderItem{
     position: relative;
+    max-width: 100vw;
     height: 450px;
 }
 .sliderImage{
@@ -27,6 +28,7 @@
     }
     .sliderImage{
         height: 580px;
+        width: 100vw;
         max-width: 100vw;
     }
     .sliderTextContainer{

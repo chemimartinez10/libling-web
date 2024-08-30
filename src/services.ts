@@ -650,13 +650,13 @@ export const paymentInitialization = async (
 	}
 
 	try {
-		console.log(JSON.stringify(saferpayConfig))
+		console.log('Safer Pay config: ',JSON.stringify(saferpayConfig))
 		const response = await axios.post(
-			"https://www.saferpay.com/api/payment/v1/PaymentPage/Initialize",
+			"https://test.saferpay.com/api/payment/v1/PaymentPage/Initialize",
 			data,
 			saferpayConfig
 		)
-		console.log(response.data)
+		console.log('respuesta de la primera peticion', response.data)
 		const updatedPay = await updatePay({
 			id: newPay.id,
 			reference: response?.data?.Token,
@@ -671,7 +671,8 @@ export const paymentInitialization = async (
 		}
 	} catch (e:any) {
 		if(e?.response){
-			console.error(e?.response?.data?.ErrorDetail)
+			console.error('Catch Error Name: ', e?.response?.data?.ErrorName)
+			console.error('Catch Error Detail: ', e?.response?.data?.ErrorDetail)
 		}else{
 			console.error(e)
 		}
@@ -693,13 +694,13 @@ export const paymentAssert = async (payId: number) => {
 		Token: pay.reference,
 	}
 	try {
-		console.log(JSON.stringify(saferpayConfig))
+		console.log('Safer Pay config: ',JSON.stringify(saferpayConfig))
 		const response = await axios.post(
-			"https://www.saferpay.com/api/Payment/v1/PaymentPage/Assert",
+			"https://test.saferpay.com/api/Payment/v1/PaymentPage/Assert",
 			data,
 			saferpayConfig
 		)
-		console.log(response.data)
+		console.log('respuesta de la primera peticion', response.data)
 		const updatedPay = await updatePay({
 			id: pay.id,
 			status: true,

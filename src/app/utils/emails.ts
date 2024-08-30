@@ -118,9 +118,10 @@ export const sendAffiliate = async (
 		from:'"Libling solutions" <affiliate@libling.lu>', // sender address
 		replyTo:'"Libling solutions" <affiliate@libling.lu>', // sender address
 		to, // list of receivers
-		subject: subject, // Subject line
+		subject, // Subject line
 		html: `${message}`, // html body
 	})
+	console.log('email sent: ', info)
 	return info
 }
 export const sendInfo = async (
