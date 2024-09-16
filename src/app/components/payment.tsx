@@ -47,6 +47,7 @@ interface IValues1 {
     phone?: string
     email?: string
     country?: string
+    checked?: boolean
 }
 interface IValues2 {
     email?: string
@@ -231,6 +232,7 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
         email: store?.form_1?.email,
         name: store?.form_1?.name,
         phone: store?.form_1?.phone,
+        checked: false,
     }
     const initialValues_2: IValues2 = {
         email: store?.form_1?.email
@@ -268,12 +270,16 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
         console.log('selected key', key)
         store?.setFrecuency(key)
     }
+    const handleCheckChange = (event:React.ChangeEvent<HTMLInputElement>)=>{
+        formRef_1.current?.setFieldValue('checked',event.target.checked)
+    }
     const validationSchema_1 = Yup.object({
         name: Yup.string().required(glosaryAdmin.formValidationRequired),
         country: Yup.string().required(glosaryAdmin.formValidationRequired),
         email: Yup.string().email(glosaryAdmin.formValidationEmail).required(glosaryAdmin.formValidationRequired),
         phone: Yup.string().matches(phoneRegExp, glosaryAdmin.formValidationRequired).required(glosaryAdmin.formValidationRequired),
         note: Yup.string().optional(),
+        checked: Yup.bool().isTrue().required(),
 
     });
     const validationSchema_2 = Yup.object({
@@ -438,6 +444,7 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                                                     <InputText label={glosary.inputLabel_3} placeholder={glosary.inputPlaceholder_3} error={errors.email} touched={touched.email} value={values.email} onChange={handleChange('email')}
                                                     />
                                                     <InputSelect label={glosary.inputLabel_4} placeholder={glosary.inputPlaceholder_4} list={countries} onChange={handleCountry_1} error={errors.country} touched={touched.country} initialValue={values.country} />
+                                                    
                                                 </div>
                                                 <div className={styles.form}>
                                                     <div className={styles.subtotalContainer}>
@@ -480,6 +487,14 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                                                                 </span>
                                                             </div>
                                                     </div>
+                                                </div>
+                                                <div className={styles.checkboxControl}>
+                                                    <input className={errors.checked && touched.checked ? styles.checkError : styles.checkNormal} type="checkbox" id="cboxInput" name="remember_me" onChange={handleCheckChange} />
+                                                    <label htmlFor="cboxInput">
+                                                        <p className={errors.checked && touched.checked ? globalStyles.textError : globalStyles.text} style={{...poppinsRegular.style,fontSize:12, lineHeight:1.4}}>
+                                                            <span>{glosary.terms1}</span><span style={poppinsSemiBold.style}>{glosary.buttonAction_2}</span><span>{glosary.terms2}</span><Link className={[globalStyles.textPrimary].join(' ')} style={poppinsSemiBold.style} href="/terms" target='_blank'>{glosary.terms3}</Link><span>{glosary.terms4}</span><Link className={[globalStyles.textPrimary].join(' ')} style={poppinsSemiBold.style} href="/privacy" target='_blank'>{glosary.terms5}</Link>
+                                                        </p>
+                                                    </label>
                                                 </div>
                                             </Form>
                                         )}
@@ -566,11 +581,7 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                                 </>
                             }
                         </div>
-                        <div className={styles.rowButtons}>
-                            <p className={[globalStyles.text].join(' ')} style={{...poppinsRegular.style,fontSize:12, lineHeight:1.4}}>
-                                <span>{glosary.terms1}</span><span style={poppinsSemiBold.style}>{glosary.buttonAction_2}</span><span>{glosary.terms2}</span><Link className={[globalStyles.textPrimary].join(' ')} style={poppinsSemiBold.style} href="/terms" target='_blank'>{glosary.terms3}</Link><span>{glosary.terms4}</span><Link className={[globalStyles.textPrimary].join(' ')} style={poppinsSemiBold.style} href="/privacy" target='_blank'>{glosary.terms5}</Link>
-                            </p>
-                        </div>
+                        
                     </div>
                     <div className={styles.selectedPlanContainer}>
                         <div className={styles.planContainer}>

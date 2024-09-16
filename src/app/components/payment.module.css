@@ -206,6 +206,55 @@
 .closeIcon{
     display: none;
 }
+.checkboxControl {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+}
+
+.checkboxControl .checkNormal{
+    -webkit-appearance: none;
+    width: 28px;
+    height: 18px;
+    border-radius: 2px;
+    background-color: #fff;
+    border: 2px solid #00000099;
+    position: relative;
+}
+.checkboxControl .checkError{
+    -webkit-appearance: none;
+    width: 28px;
+    height: 18px;
+    border-radius: 2px;
+    background-color: #fff;
+    border: 2px solid var(--color-error);
+    position: relative;
+}
+
+.checkboxControl .checkNormal:checked:after,
+.checkboxControl .checkError:checked:after {
+    content: '\2714';
+    font-size: 14px;
+    position: absolute;
+    top: 0px;
+    left: 1.5px;
+    color: #fff;
+}
+
+.checkboxControl .checkNormal:active,
+.checkboxControl .checkNormal:checked,
+.checkboxControl .checkNormal:checked:active,
+.checkboxControl .checkError:active,
+.checkboxControl .checkError:checked,
+.checkboxControl .checkError:checked:active {
+    border-radius: 2px;
+    background-color: var(--libling-main-ui-color);
+    border: 2px solid var(--libling-main-ui-color);
+    color: #fff;
+}
 
 @media (width < 800px) {
     .listContainer {

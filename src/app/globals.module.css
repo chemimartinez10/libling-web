@@ -102,6 +102,12 @@
     font-weight: 400;
     line-height: 24px;
 }
+.textError {
+    font-size: 16px;
+    color: var(--color-error);
+    font-weight: 400;
+    line-height: 24px;
+}
 
 .commonText {
     font-size: 16px;
