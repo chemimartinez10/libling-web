@@ -22,6 +22,9 @@ const Terms: React.FC<IPage> = ({ params: { lang } }) => {
         { title: glosary.title5, list: glosary.description5 },
         { title: glosary.title6, list: glosary.description6 },
         { title: glosary.title7, list: glosary.description7 },
+        { title: glosary.title8, list: glosary.description8 },
+        { title: glosary.title9, list: glosary.description9 },
+        { title: glosary.title10, list: glosary.description10 },
     ]
 
     return (
@@ -35,7 +38,14 @@ const Terms: React.FC<IPage> = ({ params: { lang } }) => {
                         <div>
                         {
                             el.list.map((listElement,listIndex)=>(<p key={listIndex} style={{paddingBottom:16}}>
-                                {index+1}{'.'}{listIndex + 1}{'. '}{listElement}
+                                <span style={poppinsSemiBold.style}>
+                                    {index+1}{'.'}{listIndex + 1}
+                                </span>
+                                {'. '}{
+                                    listElement.split("\n").map((textElement, textIndex)=>(
+                                        (textIndex === 0) ? <span key={textIndex}>{textElement}</span> : (textIndex === 1) ? <span key={textIndex}><br/><br/><p style={{marginLeft:24}}>{textElement}</p></span> : <span key={textIndex}><br/><p style={{marginLeft:24}}>{textElement}</p></span>
+                                    ))
+                                }
                             </p>))
                         }
                         </div>

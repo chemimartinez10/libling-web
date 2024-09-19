@@ -637,6 +637,21 @@ export const dict = {
 				"Cualquier reclamación o posible queja del Cliente debe (i) bajo pena de caducidad ser puesta en conocimiento de Libling dentro de los 8 (ocho) días siguientes a la ocurrencia del supuesto incumplimiento y (ii) bajo pena de inadmisibilidad ser notificada antes de cualquier procedimiento legal a Libling, que debe tener la posibilidad de proceder con una resolución alternativa de disputas por un período de 6 (seis) meses a partir de la notificación que debe tener lugar mediante carta certificada con acuse de recibo.",
 				"Las Partes acuerdan irrevocablemente que cualquier disputa que surja de o en relación con este contrato se someterá exclusivamente a los tribunales de la ciudad de Luxemburgo, Gran Ducado de Luxemburgo.",
 			],
+			title8: "Condiciones Adicionales",
+			description8: [
+				"Duración: La duración del servicio dependerá del plan contratado:\nPlan Mensual: El servicio tendrá una duración de un mes calendario a partir de la fecha de inicio del servicio. Por ejemplo, si el servicio inicia el 15 de agosto, finalizará el 15 del siguiente mes.\n⁠Plan Semestral: El servicio tendrá una duración de seis meses calendario a partir de la fecha de inicio del servicio. Por ejemplo, si el servicio inicia el 1 de enero, finalizará el 1 de julio del mismo año.\n⁠Plan Anual: El servicio tendrá una duración de un año calendario a partir de la fecha de inicio del servicio. Por ejemplo, si el servicio inicia el 2 de diciembre de 2024, finalizará el 2 de diciembre de 2025.",
+				"Horario de Atención:\n⁠Días Laborables: De lunes a viernes, de 9:30 a 17:30 horas.\n⁠Sábados: Con cita previa.\n⁠Afiliados: Todos los afiliados deberán reservar cita previa para ser atendidos.",
+			],
+			title9: "Acceso a los Servicios y Canales de Comunicación",
+			description9: [
+				"Inicio del Servicio: El servicio de asistencia se activará inmediatamente después de la confirmación del pago.",
+				"Canales de Comunicación: El cliente podrá comunicarse con nosotros a través de los siguientes canales:\nSitio web: Sección \"Agenda una cita\".\nCorreo electrónico:\nInformación general: Info@libling.lu\nAfiliados: Affiliate@libling.lu\nTeléfono: +352 691 367 757\nWhatsApp",
+				"Frecuencia de Consultas: Los afiliados podrán realizar todas las consultas que deseen durante el período de vigencia de su servicio.",
+			],
+			title10: "Dirección y Atención al Cliente",
+			description10: [
+				"Para recibir atención presencial en nuestras oficinas, es necesario agendar una cita previa de acuerdo con el horario establecido en la sección 8.2.\nLibling Solution\n27 Bd Prince Henri, L-1724 Luxembourg, Luxembourg.",
+			],
 		},
 		privacy:{
             mainTitle: "Protección de Datos Personales",
@@ -1253,6 +1268,21 @@ export const dict = {
 			description6:[`Libling must collect the Customer's personal data to fulfill its obligations. In this context Libling must process and use this personal information. The Customer recognizes and accepts this necessity. The Customer is informed of the risks inherent in electronic communications and accepts them by communicating via this means of communication with Libling. Libling is granted the right to save personal data on a computer server, which will be kept for as long as necessary for the performance of the Services, to assert Libling's rights or to enable Libling to comply with its obligations. The Client authorizes Libling to obtain or exchange personal data with any agent, authority or other institutions, administrations, intermediaries, service providers, assistants, etc. in (or which may be used for) the performance of the Services and to comply with the obligations of the this contract.`,`The Customer has in particular a right of access, rectification, portability, erasure of data or may request limitation of processing. The Customer may object to the processing of data, exercise their rights or withdraw their consent at any time by contacting: [Email].`,`The Customer may also submit a complaint to the National Commission for Data Protection.`],
 			title7:"Applicable law and choice of forum",
 			description7:[`This contract is governed by and must be interpreted exclusively in accordance with the substantive law of the Grand Duchy of Luxembourg to the exclusion of private international law.`,`Any claim or possible complaint from the Customer must (i) under penalty of forfeiture be brought within 8 (eight) days from the occurrence of the alleged breach to the attention of Libling and (ii) under penalty of inadmissibility be notified before any legal proceedings to Libling, which must have the possibility of proceeding with an alternative resolution of disputes for a period of 6 (six) months from the notification which must take place by registered letter with acknowledgment of receipt.`,`The Parties irrevocably agree that any dispute arising from or in connection with this contract will be submitted exclusively to the courts of the city of Luxembourg, Grand Duchy of Luxembourg.`],
+			title8: "Additional Conditions",
+			description8: [
+				"Duration: The duration of the service will depend on the plan contracted:\nMonthly Plan: The service will have a duration of one calendar month from the start date of the service. For example, if the service starts on August 15th, it will end on the 15th of the following month.\nSemi-annual Plan: The service will have a duration of six calendar months from the start date of the service. For example, if the service starts on January 1st, it will end on July 1st of the same year.\nAnnual Plan: The service will have a duration of one calendar year from the start date of the service. For example, if the service starts on December 2, 2024, it will end on December 2, 2025.",
+				"Business Hours:\nWeekdays: Monday to Friday, from 9:30 AM to 5:30 PM.\nSaturdays: By appointment only.\nAffiliates: All affiliates must book an appointment to be attended.",
+			],
+			title9: "Access to Services and Communication Channels",
+			description9: [
+				"Service Start: The support service will be activated immediately after payment confirmation.",
+				"Communication Channels: The customer can contact us through the following channels:\nWebsite: \"Schedule an appointment\" section.\nEmail:\nGeneral information: Info@libling.lu\nAffiliates: Affiliate@libling.lu\nPhone: +352 691 367 757\nWhatsApp",
+				"Frequency of Queries: Affiliates can make as many inquiries as they wish during the validity period of their service.",
+			],
+			title10: "Address and Customer Service",
+			description10: [
+				"To receive in-person attention at our offices, it is necessary to schedule an appointment in accordance with the schedule established in section 8.2.\nLibling Solution\n27 Bd Prince Henri, L-1724 Luxembourg, Luxembourg.",
+			],
 		},
 		privacy:{
 			mainTitle: "Protection of Personal Data",
@@ -1911,6 +1941,21 @@ export const dict = {
 				"Le présent contrat est régi par et doit être interprété exclusivement conformément au droit substantiel du Grand-Duché de Luxembourg à l'exclusion du droit international privé.",
 				"Toute réclamation ou plainte éventuelle du Client doit (i) sous peine de forclusion être portée à l'attention de Libling dans les 8 (huit) jours suivant la survenance du manquement allégué et (ii) sous peine d'irrecevabilité être notifiée avant toute procédure judiciaire à Libling, qui doit avoir la possibilité de procéder à une résolution alternative des litiges pour une durée de 6 (six) mois à compter de la notification qui doit avoir lieu par lettre recommandée avec accusé de réception.",
 				"Les Parties conviennent irrévocablement que tout litige résultant de ou en relation avec le présent contrat sera soumis exclusivement aux tribunaux de la ville de Luxembourg, Grand-Duché de Luxembourg.",
+			],
+			title8: "Conditions Supplémentaires",
+			description8: [
+				"Durée : La durée du service dépendra du forfait souscrit :\nForfait Mensuel : Le service aura une durée d'un mois calendaire à compter de la date de début du service. Par exemple, si le service commence le 15 août, il se terminera le 15 du mois suivant.\nForfait Semestriel : Le service aura une durée de six mois calendaires à compter de la date de début du service. Par exemple, si le service commence le 1er janvier, il se terminera le 1er juillet de la même année.\nForfait Annuel : Le service aura une durée de un an calendaire à compter de la date de début du service. Par exemple, si le service commence le 2 décembre 2024, il se terminera le 2 décembre 2025.",
+				"Horaires d'Ouverture :\nJours Ouvrables : Du lundi au vendredi, de 9h30 à 17h30.\nSamedis : Sur rendez-vous uniquement.\nAffiliés : Tous les affiliés doivent prendre rendez-vous pour être reçus.",
+			],
+			title9: "Accès aux Services et Canaux de Communication",
+			description9: [
+				"Démarrage du Service : Le service d'assistance sera activé immédiatement après confirmation du paiement.",
+				"Canaux de Communication : Le client peut nous contacter via les canaux suivants :\nSite web : Section \"Planifier un rendez-vous\".\nCourriel :\nInformations générales : Info@libling.lu\nAffiliés : Affiliate@libling.lu\nTéléphone : +352 691 367 757\nWhatsApp",
+				"Fréquence des Requêtes : Les affiliés peuvent faire autant de demandes qu'ils le souhaitent pendant la période de validité de leur service.",
+			],
+			title10: "Adresse et Service Client",
+			description10: [
+				"Pour recevoir une assistance en personne dans nos bureaux, il est nécessaire de prendre rendez-vous conformément aux horaires établis à la section 8.2.\nLibling Solution\n27 Bd Prince Henri, L-1720 Luxembourg, Luxembourg.",
 			],
 		},
 		privacy:{
