@@ -25,7 +25,7 @@ const Privacy: React.FC<IPage> = ({ params: { lang } }) => {
     return (
         <main className={styles.main}>
             <Section backgroundColor='#fff' vertical={true}>
-                <div>
+                <div style={{padding:24}}>
                 <h2>{glosary.mainTitle}</h2>
                 {
                     list.map((el,index)=>(<div key={index}>
