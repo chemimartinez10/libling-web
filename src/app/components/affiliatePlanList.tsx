@@ -12,7 +12,7 @@ import { useSearchParams } from 'next/navigation'
 import { toast } from 'react-toastify';
 import CustomToast from './toast';
 import { paymentAssert, showAffiliate, verifyPayStatus } from '@/services'
-import { sendAffiliate, sendAffiliateAdmin, sendEmail } from '../utils/emails'
+import { sendAffiliate, sendAffiliateAdmin, sendEmailToOwner } from '../utils/emails'
 import { templates } from '../utils/funtions'
 
 interface IAffiliatePlanList{

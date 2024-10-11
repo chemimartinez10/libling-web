@@ -10,36 +10,7 @@ const transporter = nodemailer.createTransport({
 		pass: process.env.MAIL_PWD || "REPLACE-WITH-YOUR-GENERATED-PASSWORD",
 	},
 })
-
-export const sendMessage = async (
-	to: string,
-	message: string,
-	subject: string
-) => {
-	transporter.verify(function (error, success) {
-		if (error) {
-			console.log(error)
-		} else {
-			console.log("Server is ready to take our messages")
-		}
-	})
-	console.log(
-		"sending email... ",
-		process.env.SMTP_SERVER,
-		process.env.MAIL_USER,
-		process.env.MAIL_PWD
-	)
-	console.log('env variables... ',to,subject)
-	const info = await transporter.sendMail({
-		from: '"Libling solutions" <no-reply@libling.lu>', // sender address
-		replyTo: '"Libling solutions" <info@libling.lu>', // sender address
-		to: to, // list of receivers
-		subject: subject, // Subject line
-		html: `${message}`, // html body
-	})
-	return info
-}
-export const sendEmail = async (
+export const sendEmailToOwner = async (
 	from: string,
 	message: string,
 	subject: string
@@ -62,6 +33,34 @@ export const sendEmail = async (
 		from, // sender address
 		replyTo:from, // sender address
 		to: '"Libling solutions" <info@libling.lu>', // list of receivers
+		subject: subject, // Subject line
+		html: `${message}`, // html body
+	})
+	return info
+}
+export const sendEmailToClient = async (
+	to: string,
+	message: string,
+	subject: string
+) => {
+	transporter.verify(function (error, success) {
+		if (error) {
+			console.log(error)
+		} else {
+			console.log("Server is ready to take our messages")
+		}
+	})
+	console.log(
+		"sending email... ",
+		process.env.SMTP_SERVER,
+		process.env.MAIL_USER,
+		process.env.MAIL_PWD
+	)
+	console.log('env variables... ',to,subject)
+	const info = await transporter.sendMail({
+		from:'"Libling solutions" <no-reply@libling.lu>', // sender address
+		replyTo:'"Libling solutions" <info@libling.lu>', // sender address
+		to, // list of receivers
 		subject: subject, // Subject line
 		html: `${message}`, // html body
 	})
@@ -115,7 +114,7 @@ export const sendAffiliate = async (
 	)
 	console.log('env variables... ',to,subject)
 	const info = await transporter.sendMail({
-		from:'"Libling solutions" <affiliate@libling.lu>', // sender address
+		from:'"Libling solutions" <no-reply@libling.lu>', // sender address
 		replyTo:'"Libling solutions" <affiliate@libling.lu>', // sender address
 		to, // list of receivers
 		subject, // Subject line

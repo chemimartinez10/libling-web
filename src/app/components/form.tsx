@@ -9,7 +9,7 @@ import { templates } from '../utils/funtions'
 import { useSearchParams } from 'next/navigation'
 import CustomToast from './toast'
 import { toast } from 'react-toastify'
-import { sendEmail, sendMessage } from '../utils/emails'
+import { sendEmailToOwner, sendEmailToClient } from '../utils/emails'
 
 
 interface IContactForm {
@@ -38,12 +38,12 @@ const ContactForm: React.FC<IContactForm> = ({ lang }) => {
         event.preventDefault()
         setLoading(true)
         try{
-            await sendMessage(
+            await sendEmailToClient(
                 inputValue || 'email',
                 templates.infoClient(glosaryHome.bigTitleHeader1_1 + glosaryHome.bigTitleHeader1_2, null, lang),
                 mailMessages.subject_3
             )
-            await sendEmail(
+            await sendEmailToOwner(
                 inputValue || 'email',
                 templates.info(glosaryHome.bigTitleHeader1_1 + glosaryHome.bigTitleHeader1_2,inputValue || '', inputMessage, lang),
                 inputSubject

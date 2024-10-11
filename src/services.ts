@@ -24,7 +24,7 @@ import countries from "@/app/utils/countries.json"
 import axios, { AxiosError, AxiosRequestConfig } from "axios"
 import { randomUUID } from "crypto"
 import { FEE_MULTIPLY } from "./app/utils/data"
-import { sendEmail } from "./app/utils/emails"
+import { sendEmailToOwner } from "./app/utils/emails"
 const saltRounds = 12
 
 const prisma = new PrismaClient()

@@ -605,6 +605,7 @@ export const dict = {
 			description3: [
 				"Dependiendo de los Servicios elegidos por el Cliente, Libling procede con la facturación.",
 				"Libling no estará obligado a prestar servicios si el Cliente no realiza el pago.",
+				"El dinero será debitado desde la pasarela de pago al momento de realizar la suscripción",
 				"Incluso si Libling ha comenzado a prestar sus servicios, Libling puede en cualquier momento suspender sus servicios, en particular si el Cliente solicita la prestación de servicios adicionales que aún no han sido objeto de un contrato o facturación o pago.",
 				"Los créditos de Libling son directamente exigibles y pagaderos. En caso de falta de pago, Libling cobrará intereses convencionales del 10% y cobrará automáticamente todos los gastos incurridos en el contexto de una posible recuperación forzada (juez de ejecución, abogado, etc.).",
 			],
@@ -628,7 +629,7 @@ export const dict = {
 				"El Cliente está informado de los riesgos inherentes a las comunicaciones electrónicas y los acepta comunicándose por este medio de comunicación con Libling.",
 				"Se concede a Libling el derecho de guardar datos personales en un servidor de computadora, que se mantendrán durante el tiempo que sea necesario para la prestación de los Servicios, para hacer valer los derechos de Libling o para permitir a Libling cumplir con sus obligaciones.",
 				"El Cliente autoriza a Libling a obtener o intercambiar datos personales con cualquier agente, autoridad u otras instituciones, administraciones, intermediarios, proveedores de servicios, asistentes, etc. en (o que puedan utilizarse para) la prestación de los Servicios y para cumplir con las obligaciones del contrato.",
-				"El Cliente tiene en particular un derecho de acceso, rectificación, portabilidad, supresión de datos o puede solicitar la limitación del tratamiento. El Cliente puede oponerse al tratamiento de datos, ejercer sus derechos o retirar su consentimiento en cualquier momento poniéndose en contacto con: [Correo electrónico].",
+				"El Cliente tiene en particular un derecho de acceso, rectificación, portabilidad, supresión de datos o puede solicitar la limitación del tratamiento. El Cliente puede oponerse al tratamiento de datos, ejercer sus derechos o retirar su consentimiento en cualquier momento poniéndose en contacto con: Info@libling.lu",
 				"El Cliente también puede presentar una queja ante la Comisión Nacional de Protección de Datos.",
 			],
 			title7: "Ley aplicable y elección de foro",
@@ -641,6 +642,7 @@ export const dict = {
 			description8: [
 				"Duración: La duración del servicio dependerá del plan contratado:\nPlan Mensual: El servicio tendrá una duración de un mes calendario a partir de la fecha de inicio del servicio. Por ejemplo, si el servicio inicia el 15 de agosto, finalizará el 15 del siguiente mes.\n⁠Plan Semestral: El servicio tendrá una duración de seis meses calendario a partir de la fecha de inicio del servicio. Por ejemplo, si el servicio inicia el 1 de enero, finalizará el 1 de julio del mismo año.\n⁠Plan Anual: El servicio tendrá una duración de un año calendario a partir de la fecha de inicio del servicio. Por ejemplo, si el servicio inicia el 2 de diciembre de 2024, finalizará el 2 de diciembre de 2025.",
 				"Horario de Atención:\n⁠Días Laborables: De lunes a viernes, de 9:30 a 17:30 horas.\n⁠Sábados: Con cita previa.\n⁠Afiliados: Todos los afiliados deberán reservar cita previa para ser atendidos.",
+				"Pagos:\nLos pagos de afiliación realizados por nuestros clientes en esta plataforma, es referente a índole de consultoría, acompañamiento en el proceso e información sobre los requerimientos para instalarse en Luxembourgo."
 			],
 			title9: "Acceso a los Servicios y Canales de Comunicación",
 			description9: [
@@ -650,7 +652,7 @@ export const dict = {
 			],
 			title10: "Dirección y Atención al Cliente",
 			description10: [
-				"Para recibir atención presencial en nuestras oficinas, es necesario agendar una cita previa de acuerdo con el horario establecido en la sección 8.2.\nLibling Solution\n27 Bd Prince Henri, L-1724 Luxembourg, Luxembourg.",
+				"Para recibir atención presencial en nuestras oficinas, es necesario agendar una cita previa de acuerdo con el horario establecido en la sección 8.2.\nLibling Solution\nAutorisation N.10154859|0\nRCS: B278845\nTVA: LU35451932\n27 Bd Prince Henri, L-1724 Luxembourg, Luxembourg.",
 			],
 		},
 		privacy:{
@@ -1259,19 +1261,20 @@ export const dict = {
 			description2:[`The Services include the services indicated and in the event of an indication of a limit or duration, the Service is understood to be executed as soon as this event occurs.`,
 			`In the absence of an indication of duration or limit, the Service is understood as assistance with administrative formalities for the introduction of the respective administrative procedure.`, `The Customer is required to spontaneously provide all necessary documents and information.`,`The Client acknowledges that Libling partially uses external service providers and that the outcome of the Services always depends on the Client and third parties, which is why Libling can never be held to a result.`,`Libing acts as an intermediary to facilitate processes.`,`The Client retains decision-making power in any case and Libling does not have, unless otherwise agreed, any power to represent the Client.`],
 			title3:"Billing",
-			description3:[`Depending on the Services chosen by the Customer, Libling proceeds with invoicing.`,`Libling will not be required to perform services if the Customer does not make payment.`, `Even if Libling has started to perform its services, Libling may at any time suspend its services, in particular if the Client requests the provision of additional services which have not yet been the subject of a contract or invoicing. or payment.`,`Libling's claims are directly due and payable. In the event of non-payment, Libling charges conventional interest of 10% and will automatically charge all costs incurred in the context of possible forced recovery (bailiff, lawyer, etc.).`],
+			description3:[`Depending on the Services chosen by the Customer, Libling proceeds with invoicing.`,`Libling will not be required to perform services if the Customer does not make payment.`, `The money will be debited from the payment gateway at the time of subscription.`,`Even if Libling has started to perform its services, Libling may at any time suspend its services, in particular if the Client requests the provision of additional services which have not yet been the subject of a contract or invoicing. or payment.`,`Libling's claims are directly due and payable. In the event of non-payment, Libling charges conventional interest of 10% and will automatically charge all costs incurred in the context of possible forced recovery (bailiff, lawyer, etc.).`],
 			title4:"Declarations",
 			description4:[`The Client declares that it has the capacity to enter into this contract and to perform its obligations under this contract.`,`The Client declares that there are no obstacles to carrying out the Services.`,`The Client spontaneously undertakes to notify Libling without delay of any information or change that is relevant to the Services.`,`Unless expressly declared, no behavior by Libling can be interpreted as a waiver of a right.`],
 			title5:"Liability",
 			description5:[`Except for serious misconduct, Libling cannot incur any liability.`,`Libling relies during the Services in particular on the information provided by the Client, the accuracy of which it guarantees and otherwise, it assumes in any case alone all consequences in the event of a breach.`,`In the event of serious misconduct or any other liability on the part of Libling, its liability is in any case limited to the amount of the compensation received, less any expenses; amount which constitutes a ceiling for all causes and damages combined.`,`Any possible liability of Libling is limited by facts likely to be covered by its professional liability insurance. As part of this limitation relating to the foreseeability of the damage, the Customer's claims are conditional on effective coverage by the insurance and the Customer cannot act against Libling during the claim settlement procedure.`],
 			title6:"Data protection",
-			description6:[`Libling must collect the Customer's personal data to fulfill its obligations. In this context Libling must process and use this personal information. The Customer recognizes and accepts this necessity. The Customer is informed of the risks inherent in electronic communications and accepts them by communicating via this means of communication with Libling. Libling is granted the right to save personal data on a computer server, which will be kept for as long as necessary for the performance of the Services, to assert Libling's rights or to enable Libling to comply with its obligations. The Client authorizes Libling to obtain or exchange personal data with any agent, authority or other institutions, administrations, intermediaries, service providers, assistants, etc. in (or which may be used for) the performance of the Services and to comply with the obligations of the this contract.`,`The Customer has in particular a right of access, rectification, portability, erasure of data or may request limitation of processing. The Customer may object to the processing of data, exercise their rights or withdraw their consent at any time by contacting: [Email].`,`The Customer may also submit a complaint to the National Commission for Data Protection.`],
+			description6:[`Libling must collect the Customer's personal data to fulfill its obligations. In this context Libling must process and use this personal information. The Customer recognizes and accepts this necessity. The Customer is informed of the risks inherent in electronic communications and accepts them by communicating via this means of communication with Libling. Libling is granted the right to save personal data on a computer server, which will be kept for as long as necessary for the performance of the Services, to assert Libling's rights or to enable Libling to comply with its obligations. The Client authorizes Libling to obtain or exchange personal data with any agent, authority or other institutions, administrations, intermediaries, service providers, assistants, etc. in (or which may be used for) the performance of the Services and to comply with the obligations of the this contract.`,`The Customer has in particular a right of access, rectification, portability, erasure of data or may request limitation of processing. The Customer may object to the processing of data, exercise their rights or withdraw their consent at any time by contacting: Info@libling.lu.`,`The Customer may also submit a complaint to the National Commission for Data Protection.`],
 			title7:"Applicable law and choice of forum",
 			description7:[`This contract is governed by and must be interpreted exclusively in accordance with the substantive law of the Grand Duchy of Luxembourg to the exclusion of private international law.`,`Any claim or possible complaint from the Customer must (i) under penalty of forfeiture be brought within 8 (eight) days from the occurrence of the alleged breach to the attention of Libling and (ii) under penalty of inadmissibility be notified before any legal proceedings to Libling, which must have the possibility of proceeding with an alternative resolution of disputes for a period of 6 (six) months from the notification which must take place by registered letter with acknowledgment of receipt.`,`The Parties irrevocably agree that any dispute arising from or in connection with this contract will be submitted exclusively to the courts of the city of Luxembourg, Grand Duchy of Luxembourg.`],
 			title8: "Additional Conditions",
 			description8: [
 				"Duration: The duration of the service will depend on the plan contracted:\nMonthly Plan: The service will have a duration of one calendar month from the start date of the service. For example, if the service starts on August 15th, it will end on the 15th of the following month.\nSemi-annual Plan: The service will have a duration of six calendar months from the start date of the service. For example, if the service starts on January 1st, it will end on July 1st of the same year.\nAnnual Plan: The service will have a duration of one calendar year from the start date of the service. For example, if the service starts on December 2, 2024, it will end on December 2, 2025.",
 				"Business Hours:\nWeekdays: Monday to Friday, from 9:30 AM to 5:30 PM.\nSaturdays: By appointment only.\nAffiliates: All affiliates must book an appointment to be attended.",
+				"Payments:\nMembership payments made by our clients on this platform pertain to consultancy services, guidance throughout the process, and information regarding the requirements for settling in Luxembourg."
 			],
 			title9: "Access to Services and Communication Channels",
 			description9: [
@@ -1281,7 +1284,7 @@ export const dict = {
 			],
 			title10: "Address and Customer Service",
 			description10: [
-				"To receive in-person attention at our offices, it is necessary to schedule an appointment in accordance with the schedule established in section 8.2.\nLibling Solution\n27 Bd Prince Henri, L-1724 Luxembourg, Luxembourg.",
+				"To receive in-person attention at our offices, it is necessary to schedule an appointment in accordance with the schedule established in section 8.2.\nLibling Solution\nAutorisation N.10154859|0\nRCS: B278845\nTVA: LU35451932\n27 Bd Prince Henri, L-1724 Luxembourg, Luxembourg.",
 			],
 		},
 		privacy:{
@@ -1910,6 +1913,7 @@ export const dict = {
 			description3: [
 				"Selon les Services choisis par le Client, Libling procède à la facturation.",
 				"Libling ne sera pas tenu de fournir des services si le Client ne paie pas.",
+				"L’argent sera débité de la passerelle de paiement au moment de l’abonnement.",
 				"Même si Libling a commencé à fournir ses services, Libling peut à tout moment suspendre ses services, en particulier si le Client demande la fourniture de services supplémentaires qui n'ont pas encore fait l'objet d'un contrat ou d'une facturation ou d'un paiement.",
 				"Les créances de Libling sont directement exigibles et payables. En cas de non-paiement, Libling facture des intérêts conventionnels de 10 % et facturera automatiquement tous les frais encourus dans le cadre d'un éventuel recouvrement forcé (huissier, avocat, etc.).",
 			],
@@ -1933,7 +1937,7 @@ export const dict = {
 				"Le Client est informé des risques inhérents aux communications électroniques et les accepte en communiquant par ce moyen de communication avec Libling.",
 				"Libling se voit accorder le droit de sauvegarder des données personnelles sur un serveur informatique, qui seront conservées aussi longtemps que nécessaire pour l'exécution des Services, pour faire valoir les droits de Libling ou pour permettre à Libling de se conformer à ses obligations.",
 				"Le Client autorise Libling à obtenir ou à échanger des données personnelles avec tout agent, autorité ou autre institution, administration, intermédiaire, prestataire de services, assistant, etc. dans (ou qui peuvent être utilisées pour) l'exécution des Services et pour se conformer aux obligations du présent contrat.",
-				"Le Client dispose notamment d'un droit d'accès, de rectification, de portabilité, d'effacement des données ou peut demander la limitation du traitement. Le Client peut s'opposer au traitement des données, exercer ses droits ou retirer son consentement à tout moment en contactant : [Email].",
+				"Le Client dispose notamment d'un droit d'accès, de rectification, de portabilité, d'effacement des données ou peut demander la limitation du traitement. Le Client peut s'opposer au traitement des données, exercer ses droits ou retirer son consentement à tout moment en contactant : Info@libling.lu.",
 				"Le Client peut également déposer une plainte auprès de la Commission nationale de protection des données.",
 			],
 			title7: "Loi applicable et choix du for",
@@ -1946,6 +1950,7 @@ export const dict = {
 			description8: [
 				"Durée : La durée du service dépendra du forfait souscrit :\nForfait Mensuel : Le service aura une durée d'un mois calendaire à compter de la date de début du service. Par exemple, si le service commence le 15 août, il se terminera le 15 du mois suivant.\nForfait Semestriel : Le service aura une durée de six mois calendaires à compter de la date de début du service. Par exemple, si le service commence le 1er janvier, il se terminera le 1er juillet de la même année.\nForfait Annuel : Le service aura une durée de un an calendaire à compter de la date de début du service. Par exemple, si le service commence le 2 décembre 2024, il se terminera le 2 décembre 2025.",
 				"Horaires d'Ouverture :\nJours Ouvrables : Du lundi au vendredi, de 9h30 à 17h30.\nSamedis : Sur rendez-vous uniquement.\nAffiliés : Tous les affiliés doivent prendre rendez-vous pour être reçus.",
+				"Paiements:\nLes paiements d'adhésion effectués par nos clients sur cette plateforme font référence à un caractère de conseil, d'accompagnement dans la démarche et d'information sur les conditions d'installation au Luxembourg."
 			],
 			title9: "Accès aux Services et Canaux de Communication",
 			description9: [
@@ -1955,7 +1960,7 @@ export const dict = {
 			],
 			title10: "Adresse et Service Client",
 			description10: [
-				"Pour recevoir une assistance en personne dans nos bureaux, il est nécessaire de prendre rendez-vous conformément aux horaires établis à la section 8.2.\nLibling Solution\n27 Bd Prince Henri, L-1720 Luxembourg, Luxembourg.",
+				"Pour recevoir une assistance en personne dans nos bureaux, il est nécessaire de prendre rendez-vous conformément aux horaires établis à la section 8.2.\nLibling Solution\nAutorisation N.10154859|0\nRCS: B278845\nTVA: LU35451932\n27 Bd Prince Henri, L-1720 Luxembourg, Luxembourg.",
 			],
 		},
 		privacy:{

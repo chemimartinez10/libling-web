@@ -5,7 +5,7 @@ import { poppinsMedium, poppinsRegular, poppinsSemiBold } from '../fonts'
 import { RiFacebookFill, RiInstagramFill, RiLinkedinFill } from "react-icons/ri";
 import { dict } from '../utils'
 import { templates } from '../utils/funtions'
-import { sendEmail, sendMessage } from '../utils/emails'
+import { sendEmailToOwner, sendEmailToClient } from '../utils/emails'
 import CustomToast from './toast'
 import { toast } from 'react-toastify'
 import Link from 'next/link';
@@ -39,12 +39,12 @@ export default function Footer({ lang }: { lang: "es" | "en" | "fr" }) {
         event.preventDefault()
         setLoading(true)
         try{
-            await sendMessage(
+            await sendEmailToClient(
                 inputValue || 'email',
                 templates.infoClient(glosaryHome.bigTitleHeader1_1 + glosaryHome.bigTitleHeader1_2, null, lang),
                 mailMessages.subject_3
             )
-            await sendEmail(
+            await sendEmailToOwner(
                 inputValue || 'email',
                 templates.info(glosaryHome.bigTitleHeader1_1 + glosaryHome.bigTitleHeader1_2,inputValue || '', mailMessages.main, lang),
                 mailMessages.subject_1
