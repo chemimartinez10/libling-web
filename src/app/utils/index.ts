@@ -589,59 +589,59 @@ export const dict = {
 			title1: "Objeto",
 			description1: [
 				"El Cliente instruye irrevocablemente a Libling para que le asista en su instalación en Luxemburgo.",
-				"Los servicios de Libling se entienden como asistencia puramente administrativa de orientación y tienen como objetivo desplegar sus mejores esfuerzos para ayudar al Cliente en su instalación.",
-				"Libling apoya al Cliente sobre la base de los servicios o la fórmula de paquete elegida de acuerdo con el Apéndice 1, el \"Servicio\" o los \"Servicios\".",
+				"Los servicios de Libling Solutions se entienden como asistencia puramente administrativa de orientación y tienen como objetivo desplegar sus mejores esfuerzos para ayudar al Cliente en su instalación en Luxemburgo.",
+				`Libling Solutions apoya al Cliente sobre la base de los servicios o la fórmula de paquete elegida de acuerdo con el Apéndice 1, el "Servicio" o los "Servicios" y Consultaria general.`,
 			],
 			title2: "Servicios",
 			description2: [
-				"Los Servicios incluyen los servicios indicados y, en caso de indicación de un límite o duración, se entiende que el Servicio se ejecutará tan pronto como ocurra este evento.",
+				"Los servicios incluyen los servicios indicados en los paquetes presentados por Libling Solutions y, en caso de indicación de un límite o duración, se entiende que el servicio se ejecutará tan pronto como ocurra este evento. La consultoria General tiene una duracion de una hora de servicio por parte de Libling Solutions.",
 				"En ausencia de indicación de duración o límite, el Servicio se entiende como asistencia con las formalidades administrativas para la introducción del respectivo procedimiento administrativo.",
 				"El Cliente está obligado a proporcionar espontáneamente todos los documentos e información necesarios.",
-				"El Cliente reconoce que Libling utiliza parcialmente proveedores de servicios externos y que el resultado de los Servicios siempre depende del Cliente y de terceros, por lo que Libling nunca puede ser responsable de un resultado.",
-				"Libling actúa como intermediario para facilitar los procesos.",
-				"El Cliente mantiene el poder de decisión en cualquier caso y Libling no tiene, a menos que se acuerde lo contrario, ningún poder para representar al Cliente.",
+				"El Cliente reconoce que Libling Solutions utiliza parcialmente proveedores de servicios externos y que el resultado de los Servicios siempre depende del Cliente y de terceros, por lo que Libling Solutions nunca puede ser responsable de un resultado.",
+				"Libling Solutions actúa como intermediario para facilitar los procesos.",
+				"El Cliente mantiene el poder de decisión en cualquier caso y Libling Solutions no tiene, a menos que se acuerde lo contrario, ningún poder para representar al Cliente.",
 			],
 			title3: "Facturación",
 			description3: [
-				"Dependiendo de los Servicios elegidos por el Cliente, Libling procede con la facturación.",
-				"Libling no estará obligado a prestar servicios si el Cliente no realiza el pago.",
-				"El dinero será debitado desde la pasarela de pago al momento de realizar la suscripción",
-				"Incluso si Libling ha comenzado a prestar sus servicios, Libling puede en cualquier momento suspender sus servicios, en particular si el Cliente solicita la prestación de servicios adicionales que aún no han sido objeto de un contrato o facturación o pago.",
-				"Los créditos de Libling son directamente exigibles y pagaderos. En caso de falta de pago, Libling cobrará intereses convencionales del 10% y cobrará automáticamente todos los gastos incurridos en el contexto de una posible recuperación forzada (juez de ejecución, abogado, etc.).",
+				"Dependiendo de los Servicios elegidos por el Cliente, Libling Solutions procede con la facturación.",
+				"Libling Solutions no estará obligado a prestar servicios si el Cliente no realiza el pago.",
+				"El dinero será debitado desde la pasarela de pago al momento de realizar la suscripción.",
+				"Incluso si Libling Solutions ha comenzado a prestar sus servicios, Libling Solutions puede en cualquier momento suspender sus servicios, en particular si el Cliente solicita la prestación de servicios adicionales que aún no han sido objeto de un contrato o facturación o pago.",
+				"Los créditos de Libling Solutions son directamente exigibles y pagaderos. En caso de falta de pago, Libling Solutions cobrará intereses convencionales del 10% y cobrará automáticamente todos los gastos incurridos en el contexto de una posible recuperación forzada (juez de ejecución, abogado, etc.).",
 			],
 			title4: "Declaraciones",
 			description4: [
 				"El Cliente declara que tiene la capacidad de celebrar este contrato y de cumplir sus obligaciones en virtud del mismo.",
 				"El Cliente declara que no existen obstáculos para la realización de los Servicios.",
-				"El Cliente se compromete espontáneamente a notificar a Libling sin demora cualquier información o cambio que sea relevante para los Servicios.",
-				"A menos que se declare expresamente, ningún comportamiento de Libling puede interpretarse como una renuncia a un derecho.",
+				"El Cliente se compromete espontáneamente a notificar a Libling Solutions sin demora cualquier información o cambio que sea relevante para los Servicios.",
+				"A menos que se declare expresamente, ningún comportamiento de Libling Solutions puede interpretarse como una renuncia a un derecho.",
 			],
 			title5: "Responsabilidad",
 			description5: [
-				"Excepto por mala conducta grave, Libling no puede incurrir en ninguna responsabilidad.",
-				"Libling se basa durante los Servicios, en particular, en la información proporcionada por el Cliente, cuya exactitud garantiza y, de lo contrario, asume en cualquier caso por sí sola todas las consecuencias en caso de incumplimiento.",
-				"En caso de mala conducta grave o cualquier otra responsabilidad por parte de Libling, su responsabilidad se limita en cualquier caso al importe de la indemnización recibida, menos los gastos; cantidad que constituye un límite para todas las causas y daños combinados.",
-				"Cualquier posible responsabilidad de Libling está limitada por hechos susceptibles de ser cubiertos por su seguro de responsabilidad profesional. Como parte de esta limitación relacionada con la previsibilidad del daño, las reclamaciones del Cliente están condicionadas a una cobertura efectiva por parte del seguro y el Cliente no puede actuar contra Libling durante el procedimiento de liquidación de la reclamación.",
+				"Excepto por mala conducta grave, Libling Solutions no puede incurrir en ninguna responsabilidad.",
+				"Libling Solutions se basa durante los Servicios, en particular, en la información proporcionada por el Cliente, cuya exactitud garantiza y, de lo contrario, asume en cualquier caso por sí sola todas las consecuencias en caso de incumplimiento.",
+				"En caso de mala conducta grave o cualquier otra responsabilidad por parte de Libling Solutions, su responsabilidad se limita en cualquier caso al importe de la indemnización recibida, menos los gastos; cantidad que constituye un límite para todas las causas y daños combinados.",
+				"Cualquier posible responsabilidad de Libling Solutions está limitada por hechos susceptibles de ser cubiertos por su seguro de responsabilidad profesional. Como parte de esta limitación relacionada con la previsibilidad del daño, las reclamaciones del Cliente están condicionadas a una cobertura efectiva por parte del seguro y el Cliente no puede actuar contra Libling Solutions durante el procedimiento de liquidación de la reclamación.",
 			],
 			title6: "Protección de datos",
 			description6: [
-				"Libling debe recopilar los datos personales del Cliente para cumplir sus obligaciones. En este contexto, Libling debe procesar y utilizar esta información personal. El Cliente reconoce y acepta esta necesidad.",
-				"El Cliente está informado de los riesgos inherentes a las comunicaciones electrónicas y los acepta comunicándose por este medio de comunicación con Libling.",
-				"Se concede a Libling el derecho de guardar datos personales en un servidor de computadora, que se mantendrán durante el tiempo que sea necesario para la prestación de los Servicios, para hacer valer los derechos de Libling o para permitir a Libling cumplir con sus obligaciones.",
-				"El Cliente autoriza a Libling a obtener o intercambiar datos personales con cualquier agente, autoridad u otras instituciones, administraciones, intermediarios, proveedores de servicios, asistentes, etc. en (o que puedan utilizarse para) la prestación de los Servicios y para cumplir con las obligaciones del contrato.",
-				"El Cliente tiene en particular un derecho de acceso, rectificación, portabilidad, supresión de datos o puede solicitar la limitación del tratamiento. El Cliente puede oponerse al tratamiento de datos, ejercer sus derechos o retirar su consentimiento en cualquier momento poniéndose en contacto con: Info@libling.lu",
-				"El Cliente también puede presentar una queja ante la Comisión Nacional de Protección de Datos.",
+				"Libling Solutions debe recopilar los datos personales del Cliente para cumplir sus obligaciones. En este contexto, Libling Solutions debe procesar y utilizar esta información personal. El Cliente reconoce y acepta esta necesidad.",
+				"El Cliente está informado de los riesgos inherentes a las comunicaciones electrónicas y los acepta comunicándose por este medio de comunicación con Libling Solutions.",
+				"Se concede a Libling Solutions el derecho de guardar datos personales en un servidor de computadora, que se mantendrán durante el tiempo que sea necesario para la prestación de los Servicios, para hacer valer los derechos de Libling Solutions o para permitir a Libling Solutions cumplir con sus obligaciones.",
+				"El Cliente autoriza a Libling Solutions a obtener o intercambiar datos personales con cualquier agente, autoridad u otras instituciones, administraciones, intermediarios, proveedores de servicios, asistentes, etc. en (o que puedan utilizarse para) la prestación de los Servicios y para cumplir con las obligaciones del contrato.",
+				"El Cliente tiene en particular un derecho de acceso, rectificación, portabilidad, supresión de datos o puede solicitar la limitación del tratamiento. El Cliente puede oponerse al tratamiento de datos, ejercer sus derechos o retirar su consentimiento en cualquier momento poniéndose en contacto con: Info@libling.lu y tambien llamando 00352 691 367 757 Libling Solutions.",
+				"El Cliente también puede presentar una queja ante la RGPD (Reglamento General de Protección de Datos).",
 			],
 			title7: "Ley aplicable y elección de foro",
 			description7: [
 				"Este contrato se rige por y debe interpretarse exclusivamente de conformidad con la ley sustantiva del Gran Ducado de Luxemburgo, excluyendo el derecho internacional privado.",
-				"Cualquier reclamación o posible queja del Cliente debe (i) bajo pena de caducidad ser puesta en conocimiento de Libling dentro de los 8 (ocho) días siguientes a la ocurrencia del supuesto incumplimiento y (ii) bajo pena de inadmisibilidad ser notificada antes de cualquier procedimiento legal a Libling, que debe tener la posibilidad de proceder con una resolución alternativa de disputas por un período de 6 (seis) meses a partir de la notificación que debe tener lugar mediante carta certificada con acuse de recibo.",
+				"Cualquier reclamación o posible queja del Cliente debe (I) bajo pena de caducidad ser puesta en conocimiento de Libling Solutions dentro de los 8 (ocho) días siguientes a la ocurrencia del supuesto incumplimiento y (II) bajo pena de inadmisibilidad ser notificada antes de cualquier procedimiento legal a Libling Solutions, que debe tener la posibilidad de proceder con una resolución alternativa de disputas por un período de 6 (seis) meses a partir de la notificación que debe tener lugar mediante carta certificada con acuse de recibo.",
 				"Las Partes acuerdan irrevocablemente que cualquier disputa que surja de o en relación con este contrato se someterá exclusivamente a los tribunales de la ciudad de Luxemburgo, Gran Ducado de Luxemburgo.",
 			],
 			title8: "Condiciones Adicionales",
 			description8: [
-				"Duración: La duración del servicio dependerá del plan contratado:\nPlan Mensual: El servicio tendrá una duración de un mes calendario a partir de la fecha de inicio del servicio. Por ejemplo, si el servicio inicia el 15 de agosto, finalizará el 15 del siguiente mes.\n⁠Plan Semestral: El servicio tendrá una duración de seis meses calendario a partir de la fecha de inicio del servicio. Por ejemplo, si el servicio inicia el 1 de enero, finalizará el 1 de julio del mismo año.\n⁠Plan Anual: El servicio tendrá una duración de un año calendario a partir de la fecha de inicio del servicio. Por ejemplo, si el servicio inicia el 2 de diciembre de 2024, finalizará el 2 de diciembre de 2025.",
-				"Horario de Atención:\n⁠Días Laborables: De lunes a viernes, de 9:30 a 17:30 horas.\n⁠Sábados: Con cita previa.\n⁠Afiliados: Todos los afiliados deberán reservar cita previa para ser atendidos.",
+				"Duración: La duración del servicio dependerá del plan contratado y la respuesta de las administraciones competentes y servidores externos.\nPlan Mensual: El servicio tendrá una duración de un mes calendario a partir de la fecha de inicio del servicio. Por ejemplo, si el servicio inicia el 15 de agosto, finalizará el 15 del siguiente mes.\n⁠Plan Semestral: El servicio tendrá una duración de seis meses calendario a partir de la fecha de inicio del servicio. Por ejemplo, si el servicio inicia el 1 de enero, finalizará el 1 de julio del mismo año.\n⁠Plan Anual: El servicio tendrá una duración de un año calendario a partir de la fecha de inicio del servicio. Por ejemplo, si el servicio inicia el 2 de diciembre de 2024, finalizará el 2 de diciembre de 2025.",
+				`Horario de Atención:\n⁠Días laborables - Horarios de oficina de Lunes a viernes:\nLunes       13h30-17h\nMartes      9h30 – 12h / 13h30 - 17h\nMiércoles 9h30 – 12h / 13h30- 17h\nJueves        9h30 - 12h / 13h30- 17h\nViernes      9h30 - 12h / 13h30- 16h\nLas citas puede ser presencial  en Libling Solutions 27, Blvd Prince Henri L-1724 Luxembourg o por medio de videollamada.\n⁠Afiliados: Todos los miembros afiliados deberán y pondrán reservar cita por medio de nuestro sitio web : www.libling.lu Sección "Agenda una cita"., correo electrónico: Affiliate@libling.lu o llamando a 00352 691 367 757 para ser atendidos.`,
 				"Pagos:\nLos pagos de afiliación realizados por nuestros clientes en esta plataforma, es referente a índole de consultoría, acompañamiento en el proceso e información sobre los requerimientos para instalarse en Luxembourgo."
 			],
 			title9: "Acceso a los Servicios y Canales de Comunicación",
@@ -652,7 +652,7 @@ export const dict = {
 			],
 			title10: "Dirección y Atención al Cliente",
 			description10: [
-				"Para recibir atención presencial en nuestras oficinas, es necesario agendar una cita previa de acuerdo con el horario establecido en la sección 8.2.\nLibling Solution\nAutorisation N.10154859|0\nRCS: B278845\nTVA: LU35451932\n27 Bd Prince Henri, L-1724 Luxembourg, Luxembourg.",
+				"Para recibir atención presencial en nuestras oficinas, es necesario agendar una cita previa de acuerdo con el horario establecido en la sección 8.2.\nLibling SARL-S con su insignia comercial Libling Solutions \n\nContacto\n\nLibling Solutions\n27 Bd Prince Henri L-1724  Luxembourg\nInfo@libling.lu - Affiliate@libling.lu - Immo@libling.lu\nTelephone : +352 691 367 757\nWhatsApp : Libling Solutions\nEtablissement: 10154859|0   Matricule: 20232434385\nTVA: LU35451932     RCS: B278845",
 			],
 		},
 		privacy:{
@@ -1256,35 +1256,73 @@ export const dict = {
 			mainTitle: "Terms and Conditions",
 			title1:"Object",
 			description1:[`The Client irrevocably instructs Libling to assist it with its installation in Luxembourg.`,
-			`Libling's services are understood as purely administrative guidance assistance and aim to deploy its best efforts to assist the Customer in their installation.`, `Libling supports the Client on the basis of the services or package formula chosen in accordance with Appendix 1 the “Service” or the “Services”.`],
+			`Libling Solutions’ services are understood as purely administrative orientation assistance and aim to make their best efforts to help the Client settle in Luxembourg.`, `Libling Solutions supports the Client based on the services or package formula chosen according to Appendix 1, the "Service" or "Services" and general Consulting.`],
 			title2:"Services",
-			description2:[`The Services include the services indicated and in the event of an indication of a limit or duration, the Service is understood to be executed as soon as this event occurs.`,
-			`In the absence of an indication of duration or limit, the Service is understood as assistance with administrative formalities for the introduction of the respective administrative procedure.`, `The Customer is required to spontaneously provide all necessary documents and information.`,`The Client acknowledges that Libling partially uses external service providers and that the outcome of the Services always depends on the Client and third parties, which is why Libling can never be held to a result.`,`Libing acts as an intermediary to facilitate processes.`,`The Client retains decision-making power in any case and Libling does not have, unless otherwise agreed, any power to represent the Client.`],
+			description2:[
+				"The services include the services indicated in the packages presented by Libling Solutions and, in case of indication of a limit or duration, it is understood that the service will be executed as soon as this event occurs. General consulting has a duration of one hour of service by Libling Solutions.",
+				"In the absence of an indication of duration or limit, the Service is understood as assistance with administrative formalities for the introduction of the respective administrative procedure.",
+				"The Client is obliged to spontaneously provide all necessary documents and information.",
+				"The Client acknowledges that Libling Solutions partially uses external service providers and that the result of the Services always depends on the Client and third parties, so Libling Solutions can never be responsible for a result.",
+				"Libling Solutions acts as an intermediary to facilitate processes.",
+				"The Client retains decision-making power in any case and Libling Solutions does not have, unless otherwise agreed, any power to represent the Client."
+			]
+			,
 			title3:"Billing",
-			description3:[`Depending on the Services chosen by the Customer, Libling proceeds with invoicing.`,`Libling will not be required to perform services if the Customer does not make payment.`, `The money will be debited from the payment gateway at the time of subscription.`,`Even if Libling has started to perform its services, Libling may at any time suspend its services, in particular if the Client requests the provision of additional services which have not yet been the subject of a contract or invoicing. or payment.`,`Libling's claims are directly due and payable. In the event of non-payment, Libling charges conventional interest of 10% and will automatically charge all costs incurred in the context of possible forced recovery (bailiff, lawyer, etc.).`],
+			description3:[
+				"Depending on the Services chosen by the Client, Libling Solutions proceeds with invoicing.",
+				"Libling Solutions will not be obliged to provide services if the Client does not make the payment.",
+				"The money will be debited from the payment gateway at the time of subscription.",
+				"Even if Libling Solutions has started providing its services, Libling Solutions may at any time suspend its services, particularly if the Client requests the provision of additional services that have not yet been the subject of a contract or invoicing or payment.",
+				"Libling Solutions' credits are directly due and payable. In case of non-payment, Libling Solutions will charge conventional interest of 10% and will automatically charge all costs incurred in the context of a possible forced recovery (enforcement judge, lawyer, etc.).",
+			],
 			title4:"Declarations",
-			description4:[`The Client declares that it has the capacity to enter into this contract and to perform its obligations under this contract.`,`The Client declares that there are no obstacles to carrying out the Services.`,`The Client spontaneously undertakes to notify Libling without delay of any information or change that is relevant to the Services.`,`Unless expressly declared, no behavior by Libling can be interpreted as a waiver of a right.`],
+			description4:[`The Client declares that it has the capacity to enter into this contract and to perform its obligations under this contract.`,`The Client declares that there are no obstacles to carrying out the Services.`,`The Client spontaneously undertakes to notify Libling Solutions without delay of any information or change that is relevant to the Services.`,`Unless expressly declared, no behavior by Libling Solutions can be interpreted as a waiver of a right.`],
 			title5:"Liability",
-			description5:[`Except for serious misconduct, Libling cannot incur any liability.`,`Libling relies during the Services in particular on the information provided by the Client, the accuracy of which it guarantees and otherwise, it assumes in any case alone all consequences in the event of a breach.`,`In the event of serious misconduct or any other liability on the part of Libling, its liability is in any case limited to the amount of the compensation received, less any expenses; amount which constitutes a ceiling for all causes and damages combined.`,`Any possible liability of Libling is limited by facts likely to be covered by its professional liability insurance. As part of this limitation relating to the foreseeability of the damage, the Customer's claims are conditional on effective coverage by the insurance and the Customer cannot act against Libling during the claim settlement procedure.`],
+			description5:[`Except for serious misconduct, Libling Solutions cannot incur any liability.`,`Libling Solutions relies during the Services in particular on the information provided by the Client, the accuracy of which it guarantees and otherwise, it assumes in any case alone all consequences in the event of a breach.`,`In the event of serious misconduct or any other liability on the part of Libling Solutions, its liability is in any case limited to the amount of the compensation received, less any expenses; amount which constitutes a ceiling for all causes and damages combined.`,`Any possible liability of Libling Solutions is limited by facts likely to be covered by its professional liability insurance. As part of this limitation relating to the foreseeability of the damage, the Customer's claims are conditional on effective coverage by the insurance and the Customer cannot act against Libling Solutions during the claim settlement procedure.`],
 			title6:"Data protection",
-			description6:[`Libling must collect the Customer's personal data to fulfill its obligations. In this context Libling must process and use this personal information. The Customer recognizes and accepts this necessity. The Customer is informed of the risks inherent in electronic communications and accepts them by communicating via this means of communication with Libling. Libling is granted the right to save personal data on a computer server, which will be kept for as long as necessary for the performance of the Services, to assert Libling's rights or to enable Libling to comply with its obligations. The Client authorizes Libling to obtain or exchange personal data with any agent, authority or other institutions, administrations, intermediaries, service providers, assistants, etc. in (or which may be used for) the performance of the Services and to comply with the obligations of the this contract.`,`The Customer has in particular a right of access, rectification, portability, erasure of data or may request limitation of processing. The Customer may object to the processing of data, exercise their rights or withdraw their consent at any time by contacting: Info@libling.lu.`,`The Customer may also submit a complaint to the National Commission for Data Protection.`],
+			description6:[`Libling Solutions must collect the Customer's personal data to fulfill its obligations. In this context Libling Solutions must process and use this personal information. The Customer recognizes and accepts this necessity. The Customer is informed of the risks inherent in electronic communications and accepts them by communicating via this means of communication with Libling Solutions. Libling Solutions is granted the right to save personal data on a computer server, which will be kept for as long as necessary for the performance of the Services, to assert Libling Solutions's rights or to enable Libling Solutions to comply with its obligations. The Client authorizes Libling Solutions to obtain or exchange personal data with any agent, authority or other institutions, administrations, intermediaries, service providers, assistants, etc. in (or which may be used for) the performance of the Services and to comply with the obligations of the this contract.`,`The Client has, in particular, the right to access, rectify, port, delete data, or may request the limitation of processing. The Client can object to data processing, exercise their rights, or withdraw their consent at any time by contacting: Info@libling.lu and also calling 00352 691 367 757 Libling Solutions.`,`The customer can also file a complaint with the GDPR (General Data Protection Regulation).`],
 			title7:"Applicable law and choice of forum",
-			description7:[`This contract is governed by and must be interpreted exclusively in accordance with the substantive law of the Grand Duchy of Luxembourg to the exclusion of private international law.`,`Any claim or possible complaint from the Customer must (i) under penalty of forfeiture be brought within 8 (eight) days from the occurrence of the alleged breach to the attention of Libling and (ii) under penalty of inadmissibility be notified before any legal proceedings to Libling, which must have the possibility of proceeding with an alternative resolution of disputes for a period of 6 (six) months from the notification which must take place by registered letter with acknowledgment of receipt.`,`The Parties irrevocably agree that any dispute arising from or in connection with this contract will be submitted exclusively to the courts of the city of Luxembourg, Grand Duchy of Luxembourg.`],
+			description7:[`This contract is governed by and must be interpreted exclusively in accordance with the substantive law of the Grand Duchy of Luxembourg to the exclusion of private international law.`,`Any claim or possible complaint from the Customer must (I) under penalty of forfeiture be brought within 8 (eight) days from the occurrence of the alleged breach to the attention of Libling Solutions and (II) under penalty of inadmissibility be notified before any legal proceedings to Libling Solutions, which must have the possibility of proceeding with an alternative resolution of disputes for a period of 6 (six) months from the notification which must take place by registered letter with acknowledgment of receipt.`,`The Parties irrevocably agree that any dispute arising from or in connection with this contract will be submitted exclusively to the courts of the city of Luxembourg, Grand Duchy of Luxembourg.`],
 			title8: "Additional Conditions",
 			description8: [
-				"Duration: The duration of the service will depend on the plan contracted:\nMonthly Plan: The service will have a duration of one calendar month from the start date of the service. For example, if the service starts on August 15th, it will end on the 15th of the following month.\nSemi-annual Plan: The service will have a duration of six calendar months from the start date of the service. For example, if the service starts on January 1st, it will end on July 1st of the same year.\nAnnual Plan: The service will have a duration of one calendar year from the start date of the service. For example, if the service starts on December 2, 2024, it will end on December 2, 2025.",
-				"Business Hours:\nWeekdays: Monday to Friday, from 9:30 AM to 5:30 PM.\nSaturdays: By appointment only.\nAffiliates: All affiliates must book an appointment to be attended.",
+				"Duration: The duration of the service is contingent upon the contracted package and the responsiveness of the competent authorities and third-party servers.\nMonthly Plan: The service will have a duration of one calendar month from the start date of the service. For example, if the service starts on August 15th, it will end on the 15th of the following month.\nSemi-annual Plan: The service will have a duration of six calendar months from the start date of the service. For example, if the service starts on January 1st, it will end on July 1st of the same year.\nAnnual Plan: The service will have a duration of one calendar year from the start date of the service. For example, if the service starts on December 2, 2024, it will end on December 2, 2025.",
+				"Business Hours:\n" +
+              "Weekdays - Office hours Monday to Friday:\n" +
+              "Monday       1:30 PM - 5:00 PM\n" +
+              "Tuesday      9:30 AM - 12:00 PM / 1:30 PM - 5:00 PM\n" +
+              "Wednesday 9:30 AM - 12:00 PM / 1:30 PM - 5:00 PM\n" +
+              "Thursday        9:30 AM - 12:00 PM / 1:30 PM - 5:00 PM\n" +
+              "Friday      9:30 AM - 12:00 PM / 1:30 PM - 4:00 PM\n" +
+              "Appointments can be in person at Libling Solutions 27, Blvd Prince Henri L-1724 Luxembourg or via video call.\n" +
+              "Affiliates: All affiliated members must book an appointment through our website: www.libling.lu, \"Schedule an appointment\" section, email: Affiliate@libling.lu or by calling 00352 691 367 757.",
 				"Payments:\nMembership payments made by our clients on this platform pertain to consultancy services, guidance throughout the process, and information regarding the requirements for settling in Luxembourg."
 			],
 			title9: "Access to Services and Communication Channels",
 			description9: [
 				"Service Start: The support service will be activated immediately after payment confirmation.",
-				"Communication Channels: The customer can contact us through the following channels:\nWebsite: \"Schedule an appointment\" section.\nEmail:\nGeneral information: Info@libling.lu\nAffiliates: Affiliate@libling.lu\nPhone: +352 691 367 757\nWhatsApp",
+				"Communication Channels:\n" +
+                "The customer can contact us through the following channels:\n" +
+                "Website: \"Schedule an appointment\" section.\n" +
+                "Email:\n" +
+                "General information: Info@libling.lu\n" +
+                "Affiliates: Affiliate@libling.lu\n" +
+                "Administrative Manager: LidizCruz@libling.lu\n" +
+                "Phone: +352 691 367 757\n" +
+                "WhatsApp",
 				"Frequency of Queries: Affiliates can make as many inquiries as they wish during the validity period of their service.",
 			],
 			title10: "Address and Customer Service",
 			description10: [
-				"To receive in-person attention at our offices, it is necessary to schedule an appointment in accordance with the schedule established in section 8.2.\nLibling Solution\nAutorisation N.10154859|0\nRCS: B278845\nTVA: LU35451932\n27 Bd Prince Henri, L-1724 Luxembourg, Luxembourg.",
+				"To receive in-person attention at our offices, it is necessary to schedule an appointment in accordance with the schedule established in section 8.2.\n" +
+				"Libling SARL-S with its commercial brand Libling Solutions\n\n" +
+				"Contact\n\n" +
+				"Libling Solutions\n" +
+				"27 Bd Prince Henri L-1724 Luxembourg\n" +
+				"Info@libling.lu - Affiliate@libling.lu - Immo@libling.lu\n" +
+				"Telephone: +352 691 367 757\n" +
+				"WhatsApp: Libling Solutions\n" +
+				"Establishment: 10154859|0   Registration Number: 20232434385\n" +
+				"VAT: LU35451932     RCS: B278845",
 			],
 		},
 		privacy:{
@@ -1897,70 +1935,96 @@ export const dict = {
 			title1: "Objet",
 			description1: [
 				"Le Client charge irrévocablement Libling de l'assister dans son installation au Luxembourg.",
-				"Les services de Libling sont compris comme une simple assistance de conseil administratif et visent à déployer ses meilleurs efforts pour aider le Client dans son installation.",
-				"Libling soutient le Client sur la base des services ou de la formule de forfait choisie conformément à l'Annexe 1, le \"Service\" ou les \"Services\".",
+				"Les services de Libling Solutions sont compris comme une assistance purement administrative d’orientation et visent à déployer leurs meilleurs efforts pour aider le Client à s’installer au Luxembourg.",
+				`Libling Solutions soutient le Client sur la base des services ou de la formule de forfait choisie conformément à l'Annexe 1, le "Service" ou les "Services" et la Consultation générale.`,
 			],
 			title2: "Services",
 			description2: [
-				"Les Services comprennent les services indiqués et, en cas d'indication d'une limite ou d'une durée, le Service est entendu comme étant exécuté dès que cet événement se produit.",
-				"En l'absence d'indication de durée ou de limite, le Service est entendu comme une assistance aux formalités administratives pour l'introduction de la procédure administrative correspondante.",
+				"Les services incluent les services indiqués dans les forfaits présentés par Libling Solutions et, en cas d'indication d'une limite ou d'une durée, il est entendu que le service sera exécuté dès que cet événement se produira. La consultation générale a une durée d'une heure de service par Libling Solutions.",
+				"En l'absence d'indication de durée ou de limite, le Service est compris comme une assistance aux formalités administratives pour l'introduction de la procédure administrative respective.",
 				"Le Client est tenu de fournir spontanément tous les documents et informations nécessaires.",
-				"Le Client reconnaît que Libling utilise partiellement des prestataires de services externes et que le résultat des Services dépend toujours du Client et de tiers, c'est pourquoi Libling ne peut jamais être tenu responsable d'un résultat.",
-				"Libling agit en tant qu'intermédiaire pour faciliter les processus.",
-				"Le Client conserve le pouvoir de décision en tout cas et Libling n'a pas, sauf convention contraire, le pouvoir de représenter le Client.",
-			],
+				"Le Client reconnaît que Libling Solutions utilise partiellement des prestataires de services externes et que le résultat des Services dépend toujours du Client et de tiers, de sorte que Libling Solutions ne peut jamais être responsable d'un résultat.",
+				"Libling Solutions agit comme intermédiaire pour faciliter les processus.",
+				"Le Client conserve le pouvoir de décision dans tous les cas et Libling Solutions n'a, sauf accord contraire, aucun pouvoir pour représenter le Client."
+			]
+			,
 			title3: "Facturation",
 			description3: [
-				"Selon les Services choisis par le Client, Libling procède à la facturation.",
-				"Libling ne sera pas tenu de fournir des services si le Client ne paie pas.",
-				"L’argent sera débité de la passerelle de paiement au moment de l’abonnement.",
-				"Même si Libling a commencé à fournir ses services, Libling peut à tout moment suspendre ses services, en particulier si le Client demande la fourniture de services supplémentaires qui n'ont pas encore fait l'objet d'un contrat ou d'une facturation ou d'un paiement.",
-				"Les créances de Libling sont directement exigibles et payables. En cas de non-paiement, Libling facture des intérêts conventionnels de 10 % et facturera automatiquement tous les frais encourus dans le cadre d'un éventuel recouvrement forcé (huissier, avocat, etc.).",
+				"En fonction des Services choisis par le Client, Libling Solutions procède à la facturation.",
+				"Libling Solutions ne sera pas obligé de fournir des services si le Client ne procède pas au paiement.",
+				"L'argent sera débité de la passerelle de paiement au moment de l'abonnement.",
+				"Même si Libling Solutions a commencé à fournir ses services, Libling Solutions peut à tout moment suspendre ses services, en particulier si le Client demande la fourniture de services supplémentaires qui n'ont pas encore fait l'objet d'un contrat ou d'une facturation ou d'un paiement.",
+				"Les crédits de Libling Solutions sont directement exigibles et payables. En cas de non-paiement, Libling Solutions facturera des intérêts conventionnels de 10% et facturera automatiquement tous les frais engagés dans le cadre d'une éventuelle récupération forcée (juge de l'exécution, avocat, etc.).",
 			],
 			title4: "Déclarations",
 			description4: [
 				"Le Client déclare qu'il a la capacité de conclure ce contrat et d'exécuter ses obligations en vertu de celui-ci.",
 				"Le Client déclare qu'il n'y a pas d'obstacles à l'exécution des Services.",
-				"Le Client s'engage spontanément à notifier sans délai à Libling toute information ou tout changement pertinent aux Services.",
-				"Sauf déclaration expresse, aucun comportement de Libling ne peut être interprété comme une renonciation à un droit.",
+				"Le Client s'engage spontanément à notifier sans délai à Libling Solutions toute information ou tout changement pertinent aux Services.",
+				"Sauf déclaration expresse, aucun comportement de Libling Solutions ne peut être interprété comme une renonciation à un droit.",
 			],
 			title5: "Responsabilité",
 			description5: [
-				"Sauf faute grave, Libling ne peut encourir aucune responsabilité.",
-				"Libling s'appuie pendant les Services en particulier sur les informations fournies par le Client, dont il garantit l'exactitude et, dans le cas contraire, il assume en tout cas seul toutes les conséquences en cas de manquement.",
-				"En cas de faute grave ou de toute autre responsabilité de Libling, sa responsabilité est en tout cas limitée au montant de l'indemnisation perçue, déduction faite des frais ; montant qui constitue un plafond pour toutes les causes et tous les dommages réunis.",
-				"Toute responsabilité éventuelle de Libling est limitée par des faits susceptibles d'être couverts par son assurance responsabilité professionnelle. Dans le cadre de cette limitation relative à la prévisibilité du dommage, les réclamations du Client sont conditionnées à une couverture effective par l'assurance et le Client ne peut agir contre Libling pendant la procédure de règlement de la réclamation.",
+				"Sauf faute grave, Libling Solutions ne peut encourir aucune responsabilité.",
+				"Libling Solutions s'appuie pendant les Services en particulier sur les informations fournies par le Client, dont il garantit l'exactitude et, dans le cas contraire, il assume en tout cas seul toutes les conséquences en cas de manquement.",
+				"En cas de faute grave ou de toute autre responsabilité de Libling Solutions, sa responsabilité est en tout cas limitée au montant de l'indemnisation perçue, déduction faite des frais ; montant qui constitue un plafond pour toutes les causes et tous les dommages réunis.",
+				"Toute responsabilité éventuelle de Libling Solutions est limitée par des faits susceptibles d'être couverts par son assurance responsabilité professionnelle. Dans le cadre de cette limitation relative à la prévisibilité du dommage, les réclamations du Client sont conditionnées à une couverture effective par l'assurance et le Client ne peut agir contre Libling Solutions pendant la procédure de règlement de la réclamation.",
 			],
 			title6: "Protection des données",
 			description6: [
-				"Libling doit collecter les données personnelles du Client pour remplir ses obligations. Dans ce contexte, Libling doit traiter et utiliser ces informations personnelles. Le Client reconnaît et accepte cette nécessité.",
-				"Le Client est informé des risques inhérents aux communications électroniques et les accepte en communiquant par ce moyen de communication avec Libling.",
-				"Libling se voit accorder le droit de sauvegarder des données personnelles sur un serveur informatique, qui seront conservées aussi longtemps que nécessaire pour l'exécution des Services, pour faire valoir les droits de Libling ou pour permettre à Libling de se conformer à ses obligations.",
-				"Le Client autorise Libling à obtenir ou à échanger des données personnelles avec tout agent, autorité ou autre institution, administration, intermédiaire, prestataire de services, assistant, etc. dans (ou qui peuvent être utilisées pour) l'exécution des Services et pour se conformer aux obligations du présent contrat.",
-				"Le Client dispose notamment d'un droit d'accès, de rectification, de portabilité, d'effacement des données ou peut demander la limitation du traitement. Le Client peut s'opposer au traitement des données, exercer ses droits ou retirer son consentement à tout moment en contactant : Info@libling.lu.",
-				"Le Client peut également déposer une plainte auprès de la Commission nationale de protection des données.",
+				"Libling Solutions doit collecter les données personnelles du Client pour remplir ses obligations. Dans ce contexte, Libling Solutions doit traiter et utiliser ces informations personnelles. Le Client reconnaît et accepte cette nécessité.",
+				"Le Client est informé des risques inhérents aux communications électroniques et les accepte en communiquant par ce moyen de communication avec Libling Solutions.",
+				"Libling Solutions se voit accorder le droit de sauvegarder des données personnelles sur un serveur informatique, qui seront conservées aussi longtemps que nécessaire pour l'exécution des Services, pour faire valoir les droits de Libling Solutions ou pour permettre à Libling Solutions de se conformer à ses obligations.",
+				"Le Client autorise Libling Solutions à obtenir ou à échanger des données personnelles avec tout agent, autorité ou autre institution, administration, intermédiaire, prestataire de services, assistant, etc. dans (ou qui peuvent être utilisées pour) l'exécution des Services et pour se conformer aux obligations du présent contrat.",
+				"Le Client a notamment le droit d’accéder, de rectifier, de porter, de supprimer des données ou peut demander la limitation du traitement. Le Client peut s’opposer au traitement des données, exercer ses droits ou retirer son consentement à tout moment en contactant : Info@libling.lu et en appelant également le 00352 691 367 757 Libling Solutions.",
+				"Le client peut également déposer une plainte auprès du RGPD (Règlement général sur la protection des données).",
 			],
 			title7: "Loi applicable et choix du for",
 			description7: [
 				"Le présent contrat est régi par et doit être interprété exclusivement conformément au droit substantiel du Grand-Duché de Luxembourg à l'exclusion du droit international privé.",
-				"Toute réclamation ou plainte éventuelle du Client doit (i) sous peine de forclusion être portée à l'attention de Libling dans les 8 (huit) jours suivant la survenance du manquement allégué et (ii) sous peine d'irrecevabilité être notifiée avant toute procédure judiciaire à Libling, qui doit avoir la possibilité de procéder à une résolution alternative des litiges pour une durée de 6 (six) mois à compter de la notification qui doit avoir lieu par lettre recommandée avec accusé de réception.",
+				"Toute réclamation ou plainte éventuelle du Client doit (I) sous peine de forclusion être portée à l'attention de Libling Solutions dans les 8 (huit) jours suivant la survenance du manquement allégué et (II) sous peine d'irrecevabilité être notifiée avant toute procédure judiciaire à Libling Solutions, qui doit avoir la possibilité de procéder à une résolution alternative des litiges pour une durée de 6 (six) mois à compter de la notification qui doit avoir lieu par lettre recommandée avec accusé de réception.",
 				"Les Parties conviennent irrévocablement que tout litige résultant de ou en relation avec le présent contrat sera soumis exclusivement aux tribunaux de la ville de Luxembourg, Grand-Duché de Luxembourg.",
 			],
 			title8: "Conditions Supplémentaires",
 			description8: [
-				"Durée : La durée du service dépendra du forfait souscrit :\nForfait Mensuel : Le service aura une durée d'un mois calendaire à compter de la date de début du service. Par exemple, si le service commence le 15 août, il se terminera le 15 du mois suivant.\nForfait Semestriel : Le service aura une durée de six mois calendaires à compter de la date de début du service. Par exemple, si le service commence le 1er janvier, il se terminera le 1er juillet de la même année.\nForfait Annuel : Le service aura une durée de un an calendaire à compter de la date de début du service. Par exemple, si le service commence le 2 décembre 2024, il se terminera le 2 décembre 2025.",
-				"Horaires d'Ouverture :\nJours Ouvrables : Du lundi au vendredi, de 9h30 à 17h30.\nSamedis : Sur rendez-vous uniquement.\nAffiliés : Tous les affiliés doivent prendre rendez-vous pour être reçus.",
+				"Durée : La durée du service est conditionnée par le forfait souscrit et par la réactivité des autorités compétentes et des serveurs tiers.\nForfait Mensuel : Le service aura une durée d'un mois calendaire à compter de la date de début du service. Par exemple, si le service commence le 15 août, il se terminera le 15 du mois suivant.\nForfait Semestriel : Le service aura une durée de six mois calendaires à compter de la date de début du service. Par exemple, si le service commence le 1er janvier, il se terminera le 1er juillet de la même année.\nForfait Annuel : Le service aura une durée de un an calendaire à compter de la date de début du service. Par exemple, si le service commence le 2 décembre 2024, il se terminera le 2 décembre 2025.",
+				"Horaires d'ouverture:\n" +
+              "Jours ouvrés - Horaires de bureau du lundi au vendredi:\n" +
+              "Lundi       13h30 - 17h\n" +
+              "Mardi      9h30 – 12h / 13h30 - 17h\n" +
+              "Mercredi 9h30 – 12h / 13h30 - 17h\n" +
+              "Jeudi        9h30 - 12h / 13h30 - 17h\n" +
+              "Vendredi      9h30 - 12h / 13h30 - 16h\n" +
+              "Rendez-vous possibles en personne à Libling Solutions 27, Blvd Prince Henri L-1724 Luxembourg ou par vidéoconférence.\n" +
+              "Affiliés: Tous les membres affiliés doivent prendre rendez-vous via notre site web : www.libling.lu, section \"Planifier un rendez-vous\", par e-mail : Affiliate@libling.lu ou par téléphone au 00352 691 367 757.",
 				"Paiements:\nLes paiements d'adhésion effectués par nos clients sur cette plateforme font référence à un caractère de conseil, d'accompagnement dans la démarche et d'information sur les conditions d'installation au Luxembourg."
 			],
 			title9: "Accès aux Services et Canaux de Communication",
 			description9: [
 				"Démarrage du Service : Le service d'assistance sera activé immédiatement après confirmation du paiement.",
-				"Canaux de Communication : Le client peut nous contacter via les canaux suivants :\nSite web : Section \"Planifier un rendez-vous\".\nCourriel :\nInformations générales : Info@libling.lu\nAffiliés : Affiliate@libling.lu\nTéléphone : +352 691 367 757\nWhatsApp",
+				"Canaux de communication :\n" +
+             "Le client peut nous contacter via les canaux suivants :\n" +
+             "Site Web : Section \"Planifier un rendez-vous\".\n" +
+             "Email :\n" +
+             "Informations générales : Info@libling.lu\n" +
+             "Affiliés : Affiliate@libling.lu\n" +
+             "Responsable Administrative : LidizCruz@libling.lu\n" +
+             "Téléphone : +352 691 367 757\n" +
+             "WhatsApp",
 				"Fréquence des Requêtes : Les affiliés peuvent faire autant de demandes qu'ils le souhaitent pendant la période de validité de leur service.",
 			],
 			title10: "Adresse et Service Client",
 			description10: [
-				"Pour recevoir une assistance en personne dans nos bureaux, il est nécessaire de prendre rendez-vous conformément aux horaires établis à la section 8.2.\nLibling Solution\nAutorisation N.10154859|0\nRCS: B278845\nTVA: LU35451932\n27 Bd Prince Henri, L-1720 Luxembourg, Luxembourg.",
+				"Pour recevoir une assistance en personne dans nos bureaux, il est nécessaire de prendre rendez-vous conformément aux horaires établis à la section 8.2.\n" +
+				"Libling SARL-S avec sa marque commerciale Libling Solutions\n\n" +
+				"Contact\n\n" +
+				"Libling Solutions\n" +
+				"27 Bd Prince Henri L-1724 Luxembourg\n" +
+				"Info@libling.lu - Affiliate@libling.lu - Immo@libling.lu\n" +
+				"Téléphone : +352 691 367 757\n" +
+				"WhatsApp : Libling Solutions\n" +
+				"Établissement : 10154859|0   Numéro d'enregistrement : 20232434385\n" +
+				"TVA : LU35451932     RCS : B278845",
 			],
 		},
 		privacy:{

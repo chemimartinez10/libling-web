@@ -65,14 +65,37 @@ export default function Footer({ lang }: { lang: "es" | "en" | "fr" }) {
                 <div className={styles.contactInfo}>
                     <h3 style={poppinsSemiBold.style}>{glosary.title_1}</h3>
                     <p>
-                        Email: info@libling.lu
+                        Advice - Management and relocation service in Luxembourg
                         <br />
-                        Autorisation n°10154859/0 /RCS B278845/TVA: LU35451932
                         <br />
-                        Advice - Management and Relocation to Luxembourg
+                        27 Bd Prince Henri L-1724  Luxembourg
                         <br />
-                        Libling Solutions for you
-
+                        <a href="mailto:Info@libling.lu" target='_blank'>
+                        Info@libling.lu 
+                        </a>
+                        /
+                        <a href="mailto:Affiliate@libling.lu" target='_blank'>
+                        Affiliate@libling.lu 
+                        </a>
+                        /
+                        <a href="mailto:Immo@libling.lu" target='_blank'>
+                        Immo@libling.lu 
+                        </a>
+                        <br />
+                        <a href="tel:+352691367757" target='_blank'>Telephone : +352 691 367 757 </a>
+                         /
+                        <a href="http://wa.me/+352691367757" target='_blank'> WhatsApp : Libling Solutions</a>
+                        <br />
+                        Banque
+                        <br />
+                        BIC: BGLLLULL
+                        <br />
+                        IBAN: LU89 0030 6821 2959 0000  
+                        <br />
+                        Etablissement: 10154859|0   Matricule: 20232434385 
+                        <br />
+                        TVA: LU35451932  RCS: B278845
+                        <br />
                     </p>
 
                 </div>
