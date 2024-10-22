@@ -53,7 +53,7 @@ const AffiliatePlanList:React.FC<IAffiliatePlanList> = ({lang}) => {
                     title:glosary.planTitle3,
                     content:glosary.planContent3,
                     list:glosary.planList3,
-                    price:13.40,
+                    price:45,
                 },
             ]   
         },
@@ -81,7 +81,7 @@ const AffiliatePlanList:React.FC<IAffiliatePlanList> = ({lang}) => {
                     title: glosary.planTitle3,
                     content: glosary.planContent3,
                     list: glosary.planList3Extra,
-                    price: 68,
+                    price: 45,
                 },
             ]   
         },
@@ -109,7 +109,7 @@ const AffiliatePlanList:React.FC<IAffiliatePlanList> = ({lang}) => {
                     title: glosary.planTitle3,
                     content: glosary.planContent3,
                     list: glosary.planList3Extra2,
-                    price: 128,
+                    price: 45,
                 },
             ]   
         },

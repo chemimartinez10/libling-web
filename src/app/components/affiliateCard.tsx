@@ -27,9 +27,12 @@ const AffiliateCard: React.FC<IAffiliateCard> = ({ id,title, content, list, pric
                 <p className={globalStyles.smallText}>{content}</p>
             </div>
             <div className={styles.priceContainer}>
-                <span className={[globalStyles.regularTitle].join(' ')}>
+                <span className={[globalStyles.regularTitle].join(' ')} style={{display:'flex', flexDirection:'row', alignItems:'center', gap:8}}>
                     {price.toLocaleString('es-es',{minimumFractionDigits: 2})}
-                    {' €'}
+                    {' € '}
+                    <span className={globalStyles.smallText}>
+                        {'+ TVA'}
+                    </span>
                 </span>
             </div>
             <div className={styles.bodyContainer}>

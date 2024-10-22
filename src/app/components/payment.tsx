@@ -85,7 +85,7 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                     title:glosary.planTitle3,
                     content:glosary.planContent3,
                     list:glosary.planList3,
-                    price:13.40,
+                    price:45,
                 },
             ]   
         },
@@ -113,7 +113,7 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                     title: glosary.planTitle3,
                     content: glosary.planContent3,
                     list: glosary.planList3Extra,
-                    price: 68,
+                    price: 45,
                 },
             ]   
         },
@@ -141,7 +141,7 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                     title: glosary.planTitle3,
                     content: glosary.planContent3,
                     list: glosary.planList3Extra2,
-                    price: 128,
+                    price: 45,
                 },
             ]   
         },
@@ -193,6 +193,7 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
         let months = 1
         if(id?.toString() === '2') months = 6
         if(id?.toString() === '3') months = 12
+        if(planSelected?.id === 3) months = 1
         const today = new Date()
         console.log('getFrecuencyDate - Today date: ',today)
         today.setMonth(today.getMonth() + months)
@@ -204,6 +205,7 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
         let months = 1
         if(id?.toString() === '2') months = 6
         if(id?.toString() === '3') months = 12
+        if(planSelected?.id === 3) months = 1
         return months
     }
 
@@ -593,11 +595,17 @@ export const Payment: React.FC<IPayment> = ({ open = false, lang, closeModal, pl
                             </div>
                             <InputSelectButton list={plans} title={glosary.buttonAction_5} onChange={handlePlan} lang={lang} loading={false} initialValue={plan} grow={true}/>
                         </div>
-                        <InputSwitch list={listFrecuency} initialValue={store?.frecuency} onChange={handleFrecuency} backgroundColor='transparent' grow={true}/>
+                        {
+                            planSelected?.id !== 3 &&
+                            <InputSwitch list={listFrecuency} initialValue={store?.frecuency} onChange={handleFrecuency} backgroundColor='transparent' grow={true}/>
+                        }
                         <div className={styles.priceContainer}>
-                            <span className={[globalStyles.regularTitle].join(' ')}>
+                            <span className={[globalStyles.regularTitle].join(' ')} style={{display:'flex', flexDirection:'row', alignItems:'center', gap:8}}>
                                 {planSelected?.price.toLocaleString('es-es',{minimumFractionDigits: 2})}
                                 {' €'}
+                                <span className={globalStyles.smallText}>
+                                    {'+ TVA'}
+                                </span>
                             </span>
                         </div>
                         <ul className={styles.listContainer}>
