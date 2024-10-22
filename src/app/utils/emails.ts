@@ -1,5 +1,9 @@
 "use server"
+import { showAffiliate } from "@/services"
 import nodemailer from "nodemailer"
+import { templates } from "./serverFuntions"
+import { langType } from "../interfaces"
+import { dict } from "./serverDict"
 
 const transporter = nodemailer.createTransport({
 	host: process.env.SMTP_SERVER || "test.net",
@@ -86,7 +90,7 @@ export const sendAffiliateAdmin = async (
 	)
 	console.log('env variables... ',from,subject)
 	const info = await transporter.sendMail({
-		from, // sender address
+		from: '"Libling solutions" <no-reply@libling.lu>', // sender address
 		replyTo:from, // sender address
 		to: '"Libling solutions" <affiliate@libling.lu>', // list of receivers
 		subject: subject, // Subject line
@@ -150,4 +154,20 @@ export const sendInfo = async (
 	})
 	console.log(JSON.stringify(info))
 	return info
+}
+export const assertAffiliate = async (id:number, lang:langType)=>{
+		const affiliateShow = await showAffiliate({id})
+		const glosaryMail = dict[lang].mail
+		if(affiliateShow) {
+			sendAffiliateAdmin(
+				affiliateShow?.email || 'email',
+				templates.affiliateAdmin(lang, affiliateShow),
+				glosaryMail.affiliateTitle
+			)
+			sendAffiliate(
+				affiliateShow?.email || 'email',
+				templates.affiliate(lang),
+				glosaryMail.affiliateTitle
+			)
+		}
 }
