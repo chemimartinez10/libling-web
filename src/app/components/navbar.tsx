@@ -53,7 +53,7 @@ export default function Navbar({ lang }: { lang: "es" | "en" | "fr" }) {
                         </div>
                         <LanguageSelector lang={lang} />
                         <div className={styles.textImageContainer}>
-                            <a href={`https://api.whatsapp.com/send?phone=${352691367757}`}>
+                            <a target='_blank' href={`https://api.whatsapp.com/send?phone=${352691367757}`}>
                                 <Image width={24} height={24} style={{ width: 24, height: 24 }} src={WhatsappIcon} alt='contact' />
                             </a>
                             <li className={verifyCurrentLink('/contact') ? styles.selectedLink : undefined}><Link href={'/contact'}>
@@ -75,7 +75,7 @@ export default function Navbar({ lang }: { lang: "es" | "en" | "fr" }) {
                         <FaBars className={styles.closeIcon} onClick={()=>{setOpen(state => !state)}}/>
                         <div className={styles.separator}></div>
                         <div className={styles.textImageContainer}>
-                            <a href={`https://api.whatsapp.com/send?phone=${352691367757}`}>
+                            <a target='_blank' href={`https://api.whatsapp.com/send?phone=${352691367757}`}>
                                 <Image width={24} height={24} style={{ width: 24, height: 24 }} src={WhatsappIcon} alt='contact' />
                             </a>
                         </div>
