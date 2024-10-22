@@ -24,7 +24,10 @@ import countries from "@/app/utils/countries.json"
 import axios, { AxiosError, AxiosRequestConfig } from "axios"
 import { randomUUID } from "crypto"
 import { FEE_MULTIPLY } from "./app/utils/data"
-import { sendEmailToOwner } from "./app/utils/emails"
+import { sendAffiliate, sendAffiliateAdmin, sendEmailToOwner } from "./app/utils/emails"
+import { langType } from "./app/interfaces"
+import { templates } from "./app/utils/funtions"
+import { dict } from "./app/utils"
 const saltRounds = 12
 
 const prisma = new PrismaClient()
@@ -681,7 +684,7 @@ export const paymentInitialization = async (
 		}
 	}
 }
-export const paymentAssert = async (payId: number) => {
+export const paymentAssert = async (payId: number, lang:langType) => {
 	const pay = await showPay({ id: payId })
 	if(!pay) throw new Error('No pay founded on DB')
 	const data = {
@@ -716,6 +719,20 @@ export const paymentAssert = async (payId: number) => {
 			plan_date: affiliate?.plan_date ? newDate : undefined,
 			status:newDate > new Date(),
 		})
+		const glosaryMail = dict[lang]?.mail
+		await sendAffiliate(
+			updatedAffiliate?.email || 'email',
+			templates.affiliate(lang),
+			glosaryMail.affiliateTitle
+		)
+		const affiliateShow = await showAffiliate({id:updatedAffiliate.id})
+		if(affiliateShow) {
+			await sendAffiliateAdmin(
+				updatedAffiliate?.email || 'email',
+				templates.affiliateAdmin(lang, affiliateShow),
+				glosaryMail.affiliateTitle
+			)
+		}
 		return {
 			redirectUrl: response.data?.RedirectUrl,
 			status: 200,

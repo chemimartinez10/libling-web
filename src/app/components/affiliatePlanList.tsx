@@ -23,7 +23,6 @@ interface IAffiliatePlanList{
 const AffiliatePlanList:React.FC<IAffiliatePlanList> = ({lang}) => {
     ReactModal.setAppElement('#main')
     const glosary = dict[lang]?.services
-    const glosaryMail = dict[lang]?.mail
     const [ open, setOpen ] = useState(false);
     const [initialForm, setInitialForm] = useState(1)
     const [isVerifying, setIsVerifying] = useState(false)
@@ -156,22 +155,10 @@ const AffiliatePlanList:React.FC<IAffiliatePlanList> = ({lang}) => {
         if(isWaitingVerify){
             toast.warning(<CustomToast type='warning' title={glosary.infoMessageTitle} content={glosary.infoMessageContent} />, { theme: 'colored', icon: false, style: { backgroundColor: '#FFBB33', maxWidth: 450, padding: 24, borderRadius: 10 } })
             setIsVerifying(true)
-            const verifyResponse = await paymentAssert(isWaitingVerify)
+            const verifyResponse = await paymentAssert(isWaitingVerify, lang)
             if(verifyResponse.status === 200 && !!verifyResponse.affiliate){
-                sendAffiliate(
-                    verifyResponse.affiliate?.email || 'email',
-                    templates.affiliate(lang),
-                    glosaryMail.affiliateTitle
-                )
+                
                 toast.success(<CustomToast type='success' title={glosary.successMessageTitle} content={glosary.successMessageContent} />, { theme: 'colored', icon: false, style: { backgroundColor: '#00C851', maxWidth: 450, padding: 24, borderRadius: 10 } })
-                const affiliate = await showAffiliate({id:verifyResponse.affiliate.id})
-                if(affiliate){
-                    await sendAffiliateAdmin(
-                        verifyResponse.affiliate?.email || 'email',
-                        templates.affiliateAdmin(lang, affiliate),
-                        glosaryMail.affiliateTitle
-                    )
-                }
             }else{
                 toast.error(<CustomToast type='error' title={glosary.errorMessageTitle} content={glosary.errorMessageContent} />, { theme: 'colored', icon: false, style: { backgroundColor: '#FF4444', maxWidth: 450, padding: 24, borderRadius: 10 } })
             }
