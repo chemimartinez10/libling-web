@@ -159,12 +159,12 @@ export const assertAffiliate = async (id:number, lang:langType)=>{
 		const affiliateShow = await showAffiliate({id})
 		const glosaryMail = dict[lang].mail
 		if(affiliateShow) {
-			sendAffiliateAdmin(
+			await sendAffiliateAdmin(
 				affiliateShow?.email || 'email',
 				templates.affiliateAdmin(lang, affiliateShow),
 				glosaryMail.affiliateTitle
 			)
-			sendAffiliate(
+			await sendAffiliate(
 				affiliateShow?.email || 'email',
 				templates.affiliate(lang),
 				glosaryMail.affiliateTitle
