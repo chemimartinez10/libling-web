@@ -651,7 +651,7 @@ export const paymentInitialization = async (
 	try {
 		console.log('Safer Pay config: ',JSON.stringify(saferpayConfig))
 		const response = await axios.post(
-			"https://test.saferpay.com/api/payment/v1/PaymentPage/Initialize",
+			"https://www.saferpay.com/api/payment/v1/PaymentPage/Initialize",
 			data,
 			saferpayConfig
 		)
@@ -695,7 +695,7 @@ export const paymentAssert = async (payId: number) => {
 	try {
 		console.log('Safer Pay config: ',JSON.stringify(saferpayConfig))
 		const response = await axios.post(
-			"https://test.saferpay.com/api/Payment/v1/PaymentPage/Assert",
+			"https://www.saferpay.com/api/Payment/v1/PaymentPage/Assert",
 			data,
 			saferpayConfig
 		)
