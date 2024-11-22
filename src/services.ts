@@ -627,6 +627,7 @@ export const paymentInitialization = async (
 		quantity: price * FEE_MULTIPLY,
 		months,
 	})
+	const affiliate = await showAffiliate({id:affiliateId})
 	const data = {
 		RequestHeader: {
 			SpecVersion: "1.41",
@@ -646,6 +647,10 @@ export const paymentInitialization = async (
 		ReturnUrl: {
 			Url: `${returnUrl}?pay=${newPay.id}`,
 		},
+		Notification:{
+			MerchantEmails:["Affiliate@libling.lu"],
+			PayerEmail:affiliate?.email || ""
+		}
 	}
 
 	try {
