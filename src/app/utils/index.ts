@@ -564,6 +564,7 @@ export const dict = {
 
 			infoContent1:"Hola",
 			infoContent2:". Agradecemos tu mensaje. Estamos revisando tu solicitud y te daremos una respuesta pronto.",
+			infoContent3:"Agradecemos tu mensaje. Estamos revisando tu solicitud y te daremos una respuesta pronto.",
 			affiliateTitle:"Gracias por unirte a nuestra familia",
 			affiliateTitleAdmin:"Se ha registrado un nuevo pago de afiliado",
 			affiliateContent_1:"¡Te damos la bienvenida!",
@@ -1231,6 +1232,7 @@ export const dict = {
 			failed: "Your request could not be completed",
 			infoContent1:"Thank you for contacting us",
 			infoContent2:". We have received your message and will get back to you as soon as possible.",
+			infoContent3:"We have received your message and will get back to you as soon as possible.",
 
 			affiliateTitle: "Thank you for joining our family",
 			affiliateTitleAdmin: "A new affiliate payment has been registered",
@@ -1909,6 +1911,7 @@ export const dict = {
 
 			infoContent1:"Merci de nous avoir contactés",
 			infoContent2:". Nous avons bien reçu votre message et nous vous répondrons dans les meilleurs délais.",
+			infoContent3:"Nous avons bien reçu votre message et nous vous répondrons dans les meilleurs délais.",
 
 			affiliateTitle: "Merci de rejoindre notre famille",
 			affiliateTitleAdmin: "Un nouveau paiement d'affiliation a été enregistré",

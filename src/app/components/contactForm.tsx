@@ -8,9 +8,10 @@ import styles from './contactForm.module.css'
 import { InputText } from './admin/inputText';
 import { poppinsMedium } from '../fonts';
 import { subjects, templates } from '../utils/funtions'
-import { sendInfo } from '../utils/emails'
+import { sendImmoConfirmation, sendInfo } from '../utils/emails'
 import CustomToast from './toast'
 import { toast } from 'react-toastify'
+import { Button } from './admin/button'
 
 
 
@@ -43,6 +44,11 @@ const ContactForm = ({ lang }: ILang) => {
                 templates.immo(values.name || '', currentURL, lang),
                 subjects.immo
             )
+            await sendImmoConfirmation(
+                values.email || 'email',
+                templates.immoConfirmation(lang),
+                subjects.welcomeImmo
+            )
             toast.success(<CustomToast type='success' title={glosary.success} content={glosary.successEmail} />, { theme: 'colored', icon: false, style: { backgroundColor: '#00C851', maxWidth: 450, padding: 24, borderRadius: 10 } })
             
         } catch (error) {
@@ -65,9 +71,12 @@ const ContactForm = ({ lang }: ILang) => {
                     <h4 className={styles.formTitle} style={poppinsMedium.style}>{glosary.contactFormTitle}</h4>
                     <InputText label={glosaryContact.form_name} name='name' placeholder={glosaryAdmin.formPlaceholderText} value={values.name} error={errors.name} touched={touched.name} onChange={handleChange('name')} />
                     <InputText label={glosaryContact.form_email} name='email' placeholder={glosaryAdmin.formPlaceholderText} value={values.email} error={errors.email} touched={touched.email} onChange={handleChange('email')} />
-                    <button className={styles.button} style={poppinsMedium.style} disabled={loading}>
-                        {glosary.contactFormButton}
-                    </button>
+                    <div className={styles.buttonContainer}>
+                        <Button title={'Whatsapp'} type='outline' icon='ws' goTo={`https://api.whatsapp.com/send?phone=${352691367757}`}/>
+                        <button className={styles.button} style={poppinsMedium.style} disabled={loading}>
+                            {glosary.contactFormButton}
+                        </button>
+                    </div>
                 </Form>
             )}
         </Formik>

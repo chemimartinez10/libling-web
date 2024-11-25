@@ -2,7 +2,6 @@
 import { StaticImageData } from 'next/image'
 import React, { SyntheticEvent, useEffect, useRef, useState } from 'react'
 import styles from './relocationForm.module.css'
-import Button from './button'
 import { poppinsBold, poppinsMedium, poppinsRegular } from '../fonts'
 import { dict } from '../utils'
 import { subjects, templates } from '../utils/funtions'
@@ -15,6 +14,7 @@ import * as Yup from 'yup';
 import { InputText } from './admin/inputText'
 import { InputTextArea } from './admin/inputTextArea'
 import InputSelect from './admin/inputSelect'
+import { Button } from './admin/button'
 
 interface IRelocationForm {
     title?: string
@@ -122,9 +122,14 @@ const RelocationForm: React.FC<IRelocationForm> = ({ lang }) => {
                         </div>
                     </div>
                     <InputTextArea label={glosary.formLabelMessage} placeholder={glosary.formPlaceholderMessage} onChange={handleChange('message')} value={values.message} error={errors.message} touched={touched.message} />
+                    <div className={styles.buttonContainer}>
                     <button className={styles.button} style={poppinsMedium.style} disabled={loading}>
                         {glosary.formActionButton}
                     </button>
+                    <Button title={'Whatsapp'} type='outline'
+                            icon='ws' goTo={`https://api.whatsapp.com/send?phone=${352691367757}`}/>
+
+                    </div>
                 </Form>
             )}
         </Formik>

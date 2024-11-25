@@ -17,13 +17,18 @@
     flex-grow: 1;
 
 }
+.buttonContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
 .formTitle{
     font-size: 24px;
     color: #000000DE;
 }
 .button{
-    padding: 8px 140px;
-    margin-top: 16px;
+    padding: 8px 16px;
+    width: 100%;
     font-size: 16px;
     color: #FFFFFF;
     border-radius: 18px;
@@ -36,8 +41,8 @@
     transition: all .25s ease;
 }
 .button:hover{
-    padding: 8px 140px;
-    margin-top: 16px;
+    padding: 8px 16px;
+    width: 100%;
     font-size: 16px;
     color: #FFFFFF;
     border-radius: 18px;
@@ -58,6 +63,11 @@
         width: 100vw;
         padding: 0px 16px;
     }
+    .buttonContainer{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
     .row{
         width: 100%;
         display: flex;
@@ -68,7 +78,7 @@
     }
     .button{
         padding: 8px 16px;
-        font-size: 14px;
+        font-size: 16px;
         color: #FFFFFF;
         border-radius: 18px;
         background-color: #1973FA;
@@ -81,7 +91,7 @@
     }
     .button:hover{
         padding: 8px 16px;
-        font-size: 14px;
+        font-size: 16px;
         color: #FFFFFF;
         border-radius: 18px;
         background-color: #1973FAD0;

@@ -155,6 +155,34 @@ export const sendInfo = async (
 	console.log(JSON.stringify(info))
 	return info
 }
+export const sendImmoConfirmation = async (
+	to: string,
+	message: string,
+	subject: string
+) => {
+	transporter.verify(function (error, success) {
+		if (error) {
+			console.log(error)
+		} else {
+			console.log("Server is ready to take our messages")
+		}
+	})
+	console.log(
+		"sending email... ",
+		process.env.SMTP_SERVER,
+		process.env.MAIL_USER,
+		process.env.MAIL_PWD
+	)
+	const info = await transporter.sendMail({
+		from:'no-reply@libling.lu',
+		replyTo:'"Libling Immo" <immo@libling.lu>',
+		to, // list of receivers
+		subject: subject, // Subject line
+		html: `${message}`, // html body
+	})
+	console.log(JSON.stringify(info))
+	return info
+}
 export const assertAffiliate = async (id:number, lang:langType)=>{
 		const affiliateShow = await showAffiliate({id})
 		const glosaryMail = dict[lang].mail
